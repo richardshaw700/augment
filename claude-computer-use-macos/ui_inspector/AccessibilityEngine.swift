@@ -343,7 +343,19 @@ class AccessibilityEngine: AccessibilityScanning {
     // MARK: - Container Handling
     
     private func isContainerRole(_ role: String) -> Bool {
-        return ["AXBrowser", "AXList", "AXScrollArea", "AXTable", "AXOutline"].contains(role)
+        return ["AXBrowser", "AXList", "AXScrollArea", "AXTable", "AXOutline", "AXWebArea", "AXGroup"].contains(role)
+    }
+    
+    // MARK: - Enhanced Input Field Detection
+    
+    private func isInputFieldRole(_ role: String) -> Bool {
+        // Extended list of input-related accessibility roles
+        return [
+            "AXTextField", "AXTextArea", "AXSearchField", "AXComboBox",
+            "AXPopUpButton", "AXButton", "AXCheckBox", "AXRadioButton",
+            "AXSlider", "AXIncrementor", "AXDateField", "AXTimeField",
+            "AXPasswordField", "AXSecureTextField"
+        ].contains(role)
     }
     
     private func tryAlternativeChildrenAccess(
@@ -380,5 +392,66 @@ class AccessibilityEngine: AccessibilityScanning {
                 break // Stop after first successful alternative
             }
         }
+        
+        // Special handling for web content - try to find form elements
+        if depth < maxDepth - 2 { // Only try for shallow depths to avoid infinite recursion
+            tryWebFormElementAccess(
+                element: element,
+                allElements: &allElements,
+                processedElements: &processedElements,
+                depth: depth,
+                maxDepth: maxDepth
+            )
+        }
+    }
+    
+    private func tryWebFormElementAccess(
+        element: AXUIElement,
+        allElements: inout [AccessibilityData],
+        processedElements: inout Set<String>,
+        depth: Int,
+        maxDepth: Int
+    ) {
+        // Try to find form elements using web-specific attributes
+        let webAttributes = [
+            kAXValueAttribute as CFString,
+            kAXPlaceholderValueAttribute as CFString,
+            kAXInsertionPointLineNumberAttribute as CFString
+        ]
+        
+        for attribute in webAttributes {
+            var valueRef: CFTypeRef?
+            if AXUIElementCopyAttributeValue(element, attribute, &valueRef) == .success {
+                // If element has web form attributes, it might be an input field
+                if let accessibilityData = createAccessibilityData(from: element) {
+                    let elementId = getElementIdentifier(accessibilityData)
+                    if !processedElements.contains(elementId) {
+                        print("🔍 DEBUG: Found potential web form element with \(attribute): \(accessibilityData.role)")
+                        allElements.append(accessibilityData)
+                        processedElements.insert(elementId)
+                    }
+                }
+                break
+            }
+        }
+    }
+    
+    private func getElementIdentifier(_ accessibilityData: AccessibilityData) -> String {
+        // Create a unique identifier for accessibility elements
+        var identifier = accessibilityData.role
+        
+        if let position = accessibilityData.position {
+            identifier += "_\(Int(position.x))_\(Int(position.y))"
+        }
+        
+        if let title = accessibilityData.title {
+            identifier += "_\(title)"
+        }
+        
+        if let description = accessibilityData.description {
+            identifier += "_\(description)"
+        }
+        
+        return identifier
     }
 } 

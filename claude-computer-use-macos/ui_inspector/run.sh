@@ -14,13 +14,18 @@ swiftc \
   CompressionEngine.swift \
   OutputManager.swift \
   PerformanceMonitor.swift \
+  BrowserInspector.swift \
+  EdgeDetectionEngine.swift \
   main.swift \
   -o compiled_ui_inspector
 
 if [ $? -eq 0 ]; then
     echo "✅ Compilation successful!"
     echo "🏃 Running UI Inspector..."
-    ./compiled_ui_inspector
+    ./compiled_ui_inspector > latest_run_logs.txt 2>&1
+    echo "📝 Logs saved to latest_run_logs.txt"
+    echo "📊 Last few lines of output:"
+    tail -10 latest_run_logs.txt
 else
     echo "❌ Compilation failed!"
     exit 1

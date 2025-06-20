@@ -3,6 +3,47 @@
 import Foundation
 import AppKit
 
+// MARK: - App Configuration
+// Change these values to test different applications
+struct AppConfig {
+    // Current configuration - Safari
+    static let bundleID = "com.apple.Safari"
+    static let appName = "Safari"
+    static let displayName = "Safari"
+    
+    // Other popular app configurations (uncomment to use):
+    
+    // Finder
+    // static let bundleID = "com.apple.finder"
+    // static let appName = "Finder"
+    // static let displayName = "Finder"
+    
+    // Chrome
+    // static let bundleID = "com.google.Chrome"
+    // static let appName = "Google Chrome"
+    // static let displayName = "Chrome"
+    
+    // Firefox
+    // static let bundleID = "org.mozilla.firefox"
+    // static let appName = "Firefox"
+    // static let displayName = "Firefox"
+    
+    // VS Code
+    // static let bundleID = "com.microsoft.VSCode"
+    // static let appName = "Visual Studio Code"
+    // static let displayName = "VS Code"
+    
+    // Terminal
+    // static let bundleID = "com.apple.Terminal"
+    // static let appName = "Terminal"
+    // static let displayName = "Terminal"
+    
+    // TextEdit
+    // static let bundleID = "com.apple.TextEdit"
+    // static let appName = "TextEdit"
+    // static let displayName = "TextEdit"
+}
+
 // MARK: - Main Application
 
 class UIInspectorApp {
@@ -10,12 +51,16 @@ class UIInspectorApp {
     private let accessibilityEngine: AccessibilityEngine
     private let ocrEngine: OCREngine
     private let performanceMonitor: PerformanceMonitor
+    private let browserInspector: BrowserInspector
+    private let edgeDetectionEngine: EdgeDetectionEngine
     
     init() {
         self.windowManager = WindowManager()
         self.accessibilityEngine = AccessibilityEngine()
         self.ocrEngine = OCREngine()
         self.performanceMonitor = PerformanceMonitor()
+        self.browserInspector = BrowserInspector()
+        self.edgeDetectionEngine = EdgeDetectionEngine()
     }
     
     func run() {
@@ -25,9 +70,9 @@ class UIInspectorApp {
         print("🚀 UI Inspector - Refactored Architecture")
         print("==========================================")
         
-        // Step 1: Ensure Finder window is available
+        // Step 1: Ensure app window is available
         let setupStart = Date()
-        windowManager.ensureFinderWindow()
+        windowManager.ensureAppWindow()
         let setupTime = Date().timeIntervalSince(setupStart)
         stepTimes.append(("App setup", setupTime))
         
@@ -63,6 +108,12 @@ class UIInspectorApp {
         let ocrTime = Date().timeIntervalSince(ocrStart)
         stepTimes.append(("OCR processing", ocrTime))
         
+        // Step 5.5: Edge Detection for Input Fields
+        let edgeDetectionStart = Date()
+        let visualElements = edgeDetectionEngine.detectVisualElements(in: screenshot)
+        let edgeDetectionTime = Date().timeIntervalSince(edgeDetectionStart)
+        stepTimes.append(("Edge detection", edgeDetectionTime))
+        
         // Step 6: Coordinate correction and fusion
         let fusionStart = Date()
         let correctedOCRElements = correctOCRCoordinates(filteredOCRElements, windowFrame: windowInfo.frame)
@@ -87,13 +138,34 @@ class UIInspectorApp {
             coordinates: coordinateSystem
         )
         
-        print("\n🔍 COMPARISON - OCR-only vs Fusion:")
+        // Step 6a: Integrate Visual Elements (Edge Detection)
+        let fusedWithVisualElements = integrateVisualElements(
+            fusedElements: fusedElements,
+            visualElements: visualElements,
+            windowFrame: windowInfo.frame
+        )
+        
+        // Step 6b: Browser Enhancement (if in browser context)
+        let enhancedElements: [UIElement]
+        if BrowserInspector.isBrowserApp(AppConfig.bundleID),
+           let browserType = BrowserInspector.getBrowserType(AppConfig.bundleID) {
+            print("🌐 Browser detected: \(browserType.rawValue)")
+            enhancedElements = browserInspector.enhanceBrowserElements(fusedWithVisualElements, browserType: browserType)
+        } else {
+            enhancedElements = fusedWithVisualElements
+        }
+        
+        print("\n🔍 COMPARISON - OCR-only vs Fusion vs Visual vs Enhanced:")
         print("   OCR-only elements: \(ocrOnlyElements.count)")
         print("   Fused elements: \(fusedElements.count)")
+        print("   + Visual elements: \(fusedWithVisualElements.count)")
+        print("   Final enhanced: \(enhancedElements.count)")
+        print("   Visual contribution: \(visualElements.count)")
         print("   Accessibility contribution: \(fusedElements.count - ocrOnlyElements.count)")
+        print("   Browser enhancement: \(enhancedElements.count - fusedWithVisualElements.count)")
         
-        // Test improved fusion vs OCR-only
-        let finalElements = fusedElements
+        // Use enhanced elements as final result
+        let finalElements = enhancedElements
         let fusionTime = Date().timeIntervalSince(fusionStart)
         stepTimes.append(("Data fusion", fusionTime))
         
@@ -255,6 +327,72 @@ class UIInspectorApp {
         print("   Occupied cells: \(occupiedCells.count)/\(UniversalGrid.COLUMNS * UniversalGrid.ROWS)")
         print("   Coverage: \(String(format: "%.1f", Double(occupiedCells.count) / Double(UniversalGrid.COLUMNS * UniversalGrid.ROWS) * 100))%")
         print("   Elements after deduplication: \(gridElements.count)")
+    }
+    
+    // MARK: - Visual Element Integration
+    
+    private func integrateVisualElements(
+        fusedElements: [UIElement],
+        visualElements: [VisualElement], 
+        windowFrame: CGRect
+    ) -> [UIElement] {
+        var integratedElements = fusedElements
+        let spatialThreshold: CGFloat = 30.0  // Distance threshold for avoiding duplicates
+        
+        print("🎨 Integrating \(visualElements.count) visual elements...")
+        
+        for visualElement in visualElements {
+            // Check if this visual element overlaps significantly with existing elements
+            let hasSignificantOverlap = integratedElements.contains { existing in
+                let existingRect = CGRect(origin: existing.position, size: existing.size)
+                let visualRect = visualElement.boundingBox
+                
+                // Calculate intersection
+                let intersection = existingRect.intersection(visualRect)
+                let overlapArea = intersection.width * intersection.height
+                let visualArea = visualRect.width * visualRect.height
+                
+                // If more than 50% of the visual element overlaps with existing, skip it
+                return overlapArea > (visualArea * 0.5)
+            }
+            
+            if !hasSignificantOverlap {
+                // Convert visual element to UI element
+                let newUIElement = createUIElementFromVisual(
+                    visualElement: visualElement,
+                    windowFrame: windowFrame
+                )
+                integratedElements.append(newUIElement)
+                
+                print("   ✅ Added visual element: \(visualElement.elementType) at (\(Int(visualElement.boundingBox.origin.x)), \(Int(visualElement.boundingBox.origin.y)))")
+            } else {
+                print("   ⚠️ Skipped overlapping visual element: \(visualElement.elementType)")
+            }
+        }
+        
+        print("🎨 Visual integration complete: \(integratedElements.count - fusedElements.count) new elements added")
+        return integratedElements
+    }
+    
+    private func createUIElementFromVisual(
+        visualElement: VisualElement,
+        windowFrame: CGRect
+    ) -> UIElement {
+        // Adjust coordinates to be relative to window frame
+        let adjustedPosition = CGPoint(
+            x: windowFrame.origin.x + visualElement.boundingBox.origin.x,
+            y: windowFrame.origin.y + visualElement.boundingBox.origin.y
+        )
+        
+        return UIElement(
+            type: "Visual_\(visualElement.elementType)",
+            position: adjustedPosition,
+            size: visualElement.boundingBox.size,
+            accessibilityData: nil,
+            ocrData: nil,
+            isClickable: visualElement.isInteractive,
+            confidence: visualElement.confidence
+        )
     }
     
     private func printPerformanceResults(stepTimes: [(String, TimeInterval)], totalTime: TimeInterval) {

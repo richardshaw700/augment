@@ -10,7 +10,7 @@ class WindowManager: WindowDetecting {
     private static let cacheTimeout: TimeInterval = 0.5 // 500ms cache
     
     func getActiveWindow() -> WindowInfo? {
-        return getFinderWindow()
+        return getAppWindow()
     }
     
     func captureWindow(_ window: WindowInfo) -> NSImage? {
@@ -19,18 +19,18 @@ class WindowManager: WindowDetecting {
     
     // MARK: - Window Detection
     
-    private func getFinderWindow() -> WindowInfo? {
+    private func getAppWindow() -> WindowInfo? {
         guard let windowList = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] else {
             return nil
         }
         
-        // Find the frontmost Finder window
+        // Find the frontmost app window
         for window in windowList {
             guard let ownerName = window[kCGWindowOwnerName as String] as? String,
                   let windowBounds = window[kCGWindowBounds as String] as? [String: Any],
                   let layer = window[kCGWindowLayer as String] as? Int,
                   let windowID = window[kCGWindowNumber as String] as? CGWindowID,
-                  ownerName == "Finder",
+                  ownerName == AppConfig.appName,
                   layer == 0 else { // layer 0 = normal windows
                 continue
             }
@@ -45,7 +45,7 @@ class WindowManager: WindowDetecting {
             }
             
             let frame = CGRect(x: x, y: y, width: width, height: height)
-            let title = window[kCGWindowName as String] as? String ?? "Finder"
+            let title = window[kCGWindowName as String] as? String ?? AppConfig.displayName
             
             return WindowInfo(
                 title: title,
@@ -85,9 +85,13 @@ class WindowManager: WindowDetecting {
         
         task.arguments = ["-x", "-t", "png", "-R", "\(x),\(y),\(w),\(h)", tempPath]
         
+        print("🔍 DEBUG: Attempting window capture with region: \(x),\(y),\(w),\(h)")
+        
         do {
             try task.run()
             task.waitUntilExit()
+            
+            print("🔍 DEBUG: Screencapture exit status: \(task.terminationStatus)")
             
             if task.terminationStatus == 0,
                let image = NSImage(contentsOfFile: tempPath) {
@@ -99,13 +103,17 @@ class WindowManager: WindowDetecting {
                 DispatchQueue.global(qos: .utility).async {
                     try? FileManager.default.removeItem(atPath: tempPath)
                 }
+                print("✅ Window capture successful!")
                 return image
+            } else {
+                print("❌ Window capture failed - no image created or exit status: \(task.terminationStatus)")
             }
         } catch {
             print("❌ Window capture failed: \(error)")
         }
         
         // Fallback to full screen if window capture fails
+        print("⚠️ Falling back to full screen capture")
         return captureFullScreen()
     }
     
@@ -158,18 +166,18 @@ class WindowManager: WindowDetecting {
     
     // MARK: - App Management
     
-    func ensureFinderWindow() {
+    func ensureAppWindow() {
         // OPTIMIZATION: Universal app activation using NSWorkspace (much faster than AppleScript)
-        let bundleID = "com.apple.finder"
-        let appName = "Finder"
+        let bundleID = AppConfig.bundleID
+        let appName = AppConfig.appName
         
         // Quick check if already active and has windows
         if NSWorkspace.shared.frontmostApplication?.bundleIdentifier == bundleID && hasAppWindows(bundleIdentifier: bundleID) {
-            print("⚡ Finder already active with windows, skipping setup")
+            print("⚡ \(AppConfig.displayName) already active with windows, skipping setup")
             return
         }
         
-        print("🔄 Activating Finder using NSWorkspace...")
+        print("🔄 Activating \(AppConfig.displayName) using NSWorkspace...")
         
         // Use fast NSWorkspace APIs instead of slow AppleScript
         let workspace = NSWorkspace.shared
@@ -177,14 +185,14 @@ class WindowManager: WindowDetecting {
         if let app = workspace.runningApplications.first(where: { $0.bundleIdentifier == bundleID }) {
             // App is running - just activate it
             app.activate(options: .activateIgnoringOtherApps)
-            print("⚡ Activated existing Finder process")
+            print("⚡ Activated existing \(AppConfig.displayName) process")
         } else {
             // App not running - launch it
             let success = workspace.launchApplication(appName)
             if success {
-                print("🚀 Launched Finder application")
+                print("🚀 Launched \(AppConfig.displayName) application")
             } else {
-                print("❌ Failed to launch Finder")
+                print("❌ Failed to launch \(AppConfig.displayName)")
                 return
             }
         }
