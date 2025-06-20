@@ -1,0 +1,212 @@
+🎯 COORDINATE ACCURACY ANALYSIS
+Generated: Thu Jun 19 23:30:07 EDT 2025
+JSON Source: /Users/richardshaw/augment/ui_map_2025-06-19_23-30-06.json
+=======================================
+
+🪟 WINDOW BOUNDS:
+Window Frame: x=0, y=0, width=800, height=600
+Window Title: Richard’s Laptop
+
+🔗 OCR vs ACCESSIBILITY CORRELATION:
+Total Elements: 118
+Fused (OCR + Accessibility): 14
+OCR Only: 6
+Accessibility Only: 98
+Fusion Rate: 11.9%
+
+KEY ELEMENT COORDINATE ANALYSIS:
+==================================================
+
+Macintosh HD:
+  [1] Type: AXStaticText+OCR
+      Position: (39.0, 431.0)
+      Normalized: (0.042, 0.989)
+      Size: 116.0 x 18.0
+      Region: SIDEBAR
+      Confidence: 0.79
+      OCR Bounds: (0.045, 0.794) 0.091x0.023
+      OCR Confidence: 0.50
+  [2] Type: TextContent
+      Position: (183.5, 499.5)
+      Normalized: (0.199, 1.146)
+      Size: 72.6 x 13.8
+      Region: SIDEBAR
+      Confidence: 0.50
+      OCR Bounds: (0.229, 0.833) 0.091x0.023
+      OCR Confidence: 0.50
+
+Network:
+  [1] Type: TextContent
+      Position: (165.7, 466.5)
+      Normalized: (0.180, 1.070)
+      Size: 60.9 x 17.9
+      Region: SIDEBAR
+      Confidence: 0.50
+      OCR Bounds: (0.207, 0.778) 0.076x0.030
+      OCR Confidence: 0.50
+
+Applications:
+  [1] Type: AXOutline+OCR
+      Position: (-1.0, 90.0)
+      Normalized: (-0.001, 0.206)
+      Size: 174.0 x 571.0
+      Region: SIDEBAR
+      Confidence: 0.57
+      OCR Bounds: (0.043, 0.595) 0.080x0.029
+      OCR Confidence: 0.30
+
+Downloads:
+  [1] Type: AXRow+OCR
+      Position: (0.0, 310.0)
+      Normalized: (0.000, 0.711)
+      Size: 172.0 x 28.0
+      Region: SIDEBAR
+      Confidence: 0.57
+      OCR Bounds: (0.045, 0.537) 0.071x0.023
+      OCR Confidence: 0.30
+
+Desktop:
+  [1] Type: AXRow+OCR
+      Position: (0.0, 138.0)
+      Normalized: (0.000, 0.317)
+      Size: 172.0 x 28.0
+      Region: SIDEBAR
+      Confidence: 0.71
+      OCR Bounds: (0.045, 0.265) 0.053x0.029
+      OCR Confidence: 0.50
+
+AirDrop:
+  [1] Type: AXRow+OCR
+      Position: (0.0, 426.0)
+      Normalized: (0.000, 0.977)
+      Size: 172.0 x 28.0
+      Region: SIDEBAR
+      Confidence: 0.71
+      OCR Bounds: (0.021, 0.724) 0.072x0.033
+      OCR Confidence: 0.50
+
+🗂️ GRID MAPPING ANALYSIS:
+Element Distribution by Region:
+  TOOLBAR: 20 elements (16.9%)
+  SIDEBAR: 96 elements (81.4%)
+  MAIN: 0 elements (0.0%)
+  STATUS: 2 elements (1.7%)
+
+Expected vs Actual Main Content:
+  Expected: Macintosh HD, Network (large, prominent)
+  Actual main region elements: 0
+  ⚠️  WARNING: Very few main content elements detected!
+     This suggests coordinate misalignment issues.
+
+📷 OCR COORDINATE ACCURACY:
+OCR Elements with Suspicious Coordinates:
+==================================================
+
+🚨 SUSPICIOUS: "Applications"
+   Position: (-1.0, 90.0) -> (-0.001, 0.206)
+   OCR Bounds: (0.043, 0.595)
+   Issues: Large Y coordinate discrepancy
+
+🚨 SUSPICIOUS: "iCloud Drive"
+   Position: (39.0, 199.0) -> (0.042, 0.456)
+   OCR Bounds: (0.044, 0.398)
+   Issues: Main content in sidebar region
+
+🚨 SUSPICIOUS: "Macintosh HD"
+   Position: (39.0, 431.0) -> (0.042, 0.989)
+   OCR Bounds: (0.045, 0.794)
+   Issues: Main content in sidebar region
+
+🚨 SUSPICIOUS: "• Network"
+   Position: (165.7, 466.5) -> (0.180, 1.070)
+   OCR Bounds: (0.207, 0.778)
+   Issues: Main content in sidebar region
+
+🚨 SUSPICIOUS: "Macintosh HD"
+   Position: (183.5, 499.5) -> (0.199, 1.146)
+   OCR Bounds: (0.229, 0.833)
+   Issues: Main content in sidebar region | Large Y coordinate discrepancy
+
+🚨 SUSPICIOUS: "Richard's Laptop"
+   Position: (227.8, 553.2) -> (0.248, 1.269)
+   OCR Bounds: (0.285, 0.922)
+   Issues: Large Y coordinate discrepancy
+
+🚨 SUSPICIOUS: "ooa"
+   Position: (580.0, 553.2) -> (0.630, 1.269)
+   OCR Bounds: (0.725, 0.922)
+   Issues: Large Y coordinate discrepancy
+
+🚨 SUSPICIOUS: "OOD"
+   Position: (580.0, 566.3) -> (0.630, 1.299)
+   OCR Bounds: (0.725, 0.944)
+   Issues: Large Y coordinate discrepancy
+
+Total Suspicious Elements: 8
+
+💡 RECOMMENDATIONS:
+   1. Check OCR coordinate normalization
+   2. Verify window bounds detection
+   3. Improve OCR-Accessibility spatial correlation
+   4. Consider visual layout analysis
+
+🎯 VISUAL GRID REPRESENTATION:
+Grid Occupancy (showing populated cells):
+Format: GridPos: [Element1, Element2, ...]
+============================================================
+A3: AXSplitG (0.70)
+A4: Gray (0.77)
+A7: AXStatic (0.70) | AXScroll (0.70) | AXRow (0.70) | ... +3 more
+A8: O Shared (0.71) | AXCell (0.70)
+A9: Tags (0.71)
+A10: Desktop (0.71) | AXCell (0.70)
+A11: AXImage (0.70)
+A12: AXRow (0.70) | AXCell (0.70)
+A13: AXImage (0.70)
+A14: AXCell (0.70) | Document (0.57) | AXImage (0.70)
+A16: AXRow (0.70) | AXCell (0.70) | AXImage (0.70)
+A19: AXStatic (0.70) | AXRow (0.70) | AXCell (0.70)
+A20: AXRow (0.70) | AXCell (0.70)
+A21: iCloud (0.57)
+A22: AXCell (0.70) | AXImage (0.70) | Download (0.57)
+A24: AXRow (0.70) | AXCell (0.70) | AXImage (0.70)
+A26: AXRow (0.70) | AXCell (0.70) | AXImage (0.70)
+A28: AXStatic (0.70)
+A29: Recents (0.71) | AXCell (0.70)
+A30: Q AirDro (0.71) | AXCell (0.70) | AXImage (0.70) | ... +21 more
+B1: le (0.30)
+B4: Pur (0.77) | AXGroup (0.70) | AXGroup (0.70) | ... +1 more
+B8: AXStatic (0.70)
+B10: AXStatic (0.70)
+B12: AXStatic (0.70)
+B14: iCloud D (0.65)
+B16: AXStatic (0.70)
+B20: AXStatic (0.70)
+B22: AXStatic (0.70)
+B24: AXStatic (0.70)
+B26: AXStatic (0.70)
+B30: Macintos (0.79) | AXStatic (0.70) | AXStatic (0.70) | ... +5 more
+D20: AXButton (0.70)
+E3: AXSplitG (0.70) | AXScroll (0.70)
+E7: AXList (0.70) | AXButton (0.70) | AXButton (0.70) | ... +2 more
+E25: AXButton (0.70)
+E30: • Networ (0.50)
+F3: AXGroup (0.70)
+F4: AXButton (0.70) | AXGroup (0.70)
+F7: AXGroup (0.70) | AXTextFi (0.70) | AXImage (0.70)
+F9: AXGroup (0.70) | AXTextFi (0.70) | AXImage (0.70)
+F30: Macintos (0.50)
+G4: AXButton (0.70)
+G30: Richard' (0.50)
+H3: AXStatic (0.70)
+Q3: AXGroup (0.70)
+Q4: AXPopUpB (0.70)
+Q30: ooa (0.30) | OOD (0.30)
+U3: AXButton (0.70)
+V3: AXButton (0.70)
+... and 2 more populated cells
+
+Total Populated Cells: 52 / 780 (6.7%)
+
+🎯 COORDINATE TEST COMPLETE
+Generated: Thu Jun 19 23:30:07 EDT 2025
