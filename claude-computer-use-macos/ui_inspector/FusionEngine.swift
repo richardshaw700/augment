@@ -367,4 +367,245 @@ extension UIElement {
         
         return actions
     }
+}
+
+// MARK: - Improved OCR-Primary Fusion Engine
+
+class ImprovedFusionEngine: DataFusion {
+    private let coordinateSystem: CoordinateSystem
+    
+    init(coordinateSystem: CoordinateSystem) {
+        self.coordinateSystem = coordinateSystem
+    }
+    
+    func fuse(accessibility: [AccessibilityData], ocr: [OCRData], coordinates: CoordinateMapping) -> [UIElement] {
+        var fusedElements: [UIElement] = []
+        
+        // Strategy: OCR-Primary Fusion
+        // 1. Start with OCR elements (perfect coordinates)
+        // 2. Enhance with nearby accessibility metadata (clickability, roles)
+        // 3. Add only high-value accessibility-only elements
+        
+        // Phase 1: Create OCR-primary elements with accessibility enhancement
+        for ocrData in ocr {
+            let ocrPosition = CGPoint(
+                x: ocrData.boundingBox.midX,
+                y: ocrData.boundingBox.midY
+            )
+            
+            // Find nearby accessibility element for metadata enhancement
+            let nearbyAccessibility = findNearbyAccessibilityElement(
+                for: ocrPosition, 
+                in: accessibility,
+                maxDistance: 30.0  // Tighter threshold
+            )
+            
+            let enhancedElement = createOCRPrimaryElement(
+                ocrData: ocrData,
+                position: ocrPosition,
+                accessibilityEnhancement: nearbyAccessibility
+            )
+            
+            fusedElements.append(enhancedElement)
+        }
+        
+        // Phase 2: Add high-value accessibility-only elements
+        let usedAccessibilityElements = Set(fusedElements.compactMap { $0.accessibilityData?.element })
+        
+        for accData in accessibility {
+            // Skip if already used for enhancement
+            if let element = accData.element, usedAccessibilityElements.contains(element) {
+                continue
+            }
+            
+            // Only add if it provides unique value
+            if isHighValueAccessibilityElement(accData) {
+                guard let position = accData.position else { continue }
+                
+                let accessibilityElement = createAccessibilityOnlyElement(
+                    accData: accData,
+                    position: position
+                )
+                fusedElements.append(accessibilityElement)
+            }
+        }
+        
+        print("🔗 Improved Fusion complete: \(fusedElements.count) total elements")
+        print("   • OCR-enhanced: \(fusedElements.filter { $0.ocrData != nil }.count)")
+        print("   • High-value accessibility: \(fusedElements.filter { $0.ocrData == nil && $0.accessibilityData != nil }.count)")
+        
+        return fusedElements
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func findNearbyAccessibilityElement(
+        for ocrPosition: CGPoint,
+        in accessibility: [AccessibilityData],
+        maxDistance: Double
+    ) -> AccessibilityData? {
+        var bestMatch: (data: AccessibilityData, distance: Double)?
+        
+        for accData in accessibility {
+            guard let accPosition = accData.position else { continue }
+            
+            let distance = coordinateSystem.spatialDistance(between: ocrPosition, and: accPosition)
+            
+            if distance <= maxDistance {
+                if bestMatch == nil || distance < bestMatch!.distance {
+                    bestMatch = (accData, distance)
+                }
+            }
+        }
+        
+        return bestMatch?.data
+    }
+    
+    private func isHighValueAccessibilityElement(_ accData: AccessibilityData) -> Bool {
+        // Only include accessibility elements that provide unique interaction value
+        let role = accData.role
+        
+        switch role {
+        case "AXButton", "AXMenuItem", "AXPopUpButton":
+            // Interactive buttons without text
+            return true
+        case "AXTextField", "AXTextArea":
+            // Text input fields
+            return true
+        case "AXCheckBox", "AXRadioButton":
+            // Form controls
+            return true
+        case "AXSlider", "AXProgressIndicator":
+            // UI controls
+            return true
+        case "AXScrollArea":
+            // Scrollable regions (only if large enough)
+            if let size = accData.size {
+                return size.width > 100 && size.height > 100
+            }
+            return false
+        case "AXRow", "AXCell":
+            // Table/list items (only if they have meaningful content)
+            return accData.title != nil || accData.description != nil
+        default:
+            return false
+        }
+    }
+    
+    private func createOCRPrimaryElement(
+        ocrData: OCRData,
+        position: CGPoint,
+        accessibilityEnhancement: AccessibilityData?
+    ) -> UIElement {
+        // Determine enhanced clickability
+        let isClickable = determineEnhancedClickability(
+            ocrData: ocrData,
+            accessibilityData: accessibilityEnhancement
+        )
+        
+        // Enhanced element type
+        let type = determineEnhancedType(
+            ocrData: ocrData,
+            accessibilityData: accessibilityEnhancement
+        )
+        
+        // Calculate enhanced confidence
+        let confidence = calculateEnhancedConfidence(
+            ocrData: ocrData,
+            accessibilityData: accessibilityEnhancement
+        )
+        
+        return UIElement(
+            type: type,
+            position: position,  // CRITICAL: Always use OCR position
+            size: ocrData.boundingBox.size,
+            accessibilityData: accessibilityEnhancement,
+            ocrData: ocrData,
+            isClickable: isClickable,
+            confidence: confidence
+        )
+    }
+    
+    private func createAccessibilityOnlyElement(
+        accData: AccessibilityData,
+        position: CGPoint
+    ) -> UIElement {
+        let isClickable = determineClickability(accData: accData, ocrData: nil)
+        
+        return UIElement(
+            type: accData.role,
+            position: position,
+            size: accData.size ?? CGSize(width: 20, height: 20),
+            accessibilityData: accData,
+            ocrData: nil,
+            isClickable: isClickable,
+            confidence: 0.7
+        )
+    }
+    
+    private func determineEnhancedClickability(
+        ocrData: OCRData,
+        accessibilityData: AccessibilityData?
+    ) -> Bool {
+        // Primary: Accessibility role-based detection
+        if let role = accessibilityData?.role {
+            switch role {
+            case "AXButton", "AXMenuItem", "AXPopUpButton", "AXCheckBox", "AXRadioButton":
+                return true
+            case "AXRow", "AXCell":
+                return true
+            default:
+                break
+            }
+        }
+        
+        // Secondary: OCR text-based detection
+        let text = ocrData.text.lowercased()
+        let clickableKeywords = ["button", "click", "open", "close", "save", "cancel", "download"]
+        return clickableKeywords.contains(where: { text.contains($0) })
+    }
+    
+    private func determineEnhancedType(
+        ocrData: OCRData,
+        accessibilityData: AccessibilityData?
+    ) -> String {
+        if let role = accessibilityData?.role {
+            return "\(role)+OCR"
+        }
+        return "TextContent"
+    }
+    
+    private func calculateEnhancedConfidence(
+        ocrData: OCRData,
+        accessibilityData: AccessibilityData?
+    ) -> Double {
+        var confidence = Double(ocrData.confidence)  // Start with OCR confidence
+        
+        // Bonus for accessibility enhancement
+        if accessibilityData != nil {
+            confidence += 0.2
+        }
+        
+        // Bonus for interactive elements
+        if let accData = accessibilityData, accData.enabled {
+            confidence += 0.1
+        }
+        
+        return min(1.0, confidence)
+    }
+    
+    // Legacy methods for compatibility
+    private func determineClickability(accData: AccessibilityData?, ocrData: OCRData?) -> Bool {
+        if let role = accData?.role {
+            switch role {
+            case "AXButton", "AXMenuItem", "AXPopUpButton", "AXCheckBox", "AXRadioButton":
+                return true
+            case "AXRow", "AXCell":
+                return true
+            default:
+                return false
+            }
+        }
+        return false
+    }
 } 

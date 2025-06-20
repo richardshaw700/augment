@@ -3,7 +3,7 @@
 echo "🚀 Compiling Refactored UI Inspector..."
 
 # Compile all Swift files together
-swift \
+swiftc \
   DataModels.swift \
   WindowManager.swift \
   CoordinateSystem.swift \
@@ -15,12 +15,12 @@ swift \
   OutputManager.swift \
   PerformanceMonitor.swift \
   main.swift \
-  -o ui_inspector_refactored
+  -o compiled_ui_inspector
 
 if [ $? -eq 0 ]; then
     echo "✅ Compilation successful!"
     echo "🏃 Running UI Inspector..."
-    ./ui_inspector_refactored
+    ./compiled_ui_inspector
 else
     echo "❌ Compilation failed!"
     exit 1

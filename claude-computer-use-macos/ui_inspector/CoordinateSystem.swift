@@ -28,13 +28,13 @@ class CoordinateSystem: CoordinateMapping {
     
     func toGrid(_ point: NormalizedPoint) -> AdaptiveGridPosition {
         // Convert normalized coordinates to grid position
-        let colIndex = min(25, max(0, Int(point.x * Double(UniversalGrid.COLUMNS))))
-        let rowIndex = min(29, max(0, Int(point.y * Double(UniversalGrid.ROWS))))
+        let colIndex = min(39, max(0, Int(point.x * Double(UniversalGrid.COLUMNS))))
+        let rowIndex = min(49, max(0, Int(point.y * Double(UniversalGrid.ROWS))))
         
-        let column = Character(UnicodeScalar(65 + colIndex)!)
+        let columnString = AdaptiveGridPosition.columnString(from: colIndex)
         let row = rowIndex + 1
         
-        return AdaptiveGridPosition(column, row)
+        return AdaptiveGridPosition(columnString, row)
     }
     
     // MARK: - Grid Mapping
@@ -52,26 +52,14 @@ class CoordinateSystem: CoordinateMapping {
     }
     
     func cellBounds(for gridPos: AdaptiveGridPosition) -> CGRect {
-        let x = windowFrame.origin.x + (CGFloat(gridPos.columnIndex) * gridMapper.cellWidth)
-        let y = windowFrame.origin.y + (CGFloat(gridPos.rowIndex) * gridMapper.cellHeight)
+        // Use the same coordinate system as toGrid() - consistent with normalized approach
+        let cellWidth = windowFrame.width / CGFloat(UniversalGrid.COLUMNS)
+        let cellHeight = windowFrame.height / CGFloat(UniversalGrid.ROWS)
         
-        return CGRect(x: x, y: y, width: gridMapper.cellWidth, height: gridMapper.cellHeight)
-    }
-    
-    // MARK: - Region Classification
-    
-    func classifyRegion(for position: AdaptiveGridPosition) -> GridRegion {
-        for region in GridRegion.allCases {
-            if region.contains(position: position) {
-                return region
-            }
-        }
-        return .main // Default fallback
-    }
-    
-    func classifyRegion(for point: CGPoint) -> GridRegion {
-        let gridPos = gridPosition(for: point)
-        return classifyRegion(for: gridPos)
+        let x = windowFrame.origin.x + (CGFloat(gridPos.columnIndex) * cellWidth)
+        let y = windowFrame.origin.y + (CGFloat(gridPos.rowIndex) * cellHeight)
+        
+        return CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
     }
     
     // MARK: - Coordinate Validation
@@ -159,13 +147,11 @@ class CoordinateSystem: CoordinateMapping {
     func debugCoordinateInfo(for point: CGPoint) -> [String: Any] {
         let normalized = normalize(point)
         let gridPos = gridPosition(for: point)
-        let region = classifyRegion(for: point)
         
         return [
             "absolute": ["x": point.x, "y": point.y],
             "normalized": ["x": normalized.x, "y": normalized.y],
             "grid": gridPos.description,
-            "region": region.rawValue,
             "windowFrame": [
                 "x": windowFrame.origin.x,
                 "y": windowFrame.origin.y,
@@ -196,13 +182,13 @@ class AdaptiveDensityMapper {
         let relativeX = point.x - windowOrigin.x
         let relativeY = point.y - windowOrigin.y
         
-        let colIndex = min(25, max(0, Int(relativeX / cellWidth)))
-        let rowIndex = min(29, max(0, Int(relativeY / cellHeight)))
+        let colIndex = min(39, max(0, Int(relativeX / cellWidth)))
+        let rowIndex = min(49, max(0, Int(relativeY / cellHeight)))
         
-        let column = Character(UnicodeScalar(65 + colIndex)!)
+        let columnString = AdaptiveGridPosition.columnString(from: colIndex)
         let row = rowIndex + 1
         
-        return AdaptiveGridPosition(column, row)
+        return AdaptiveGridPosition(columnString, row)
     }
     
     func pixelPosition(for gridPos: AdaptiveGridPosition) -> CGPoint {

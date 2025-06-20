@@ -68,19 +68,39 @@ class UIInspectorApp {
         let correctedOCRElements = correctOCRCoordinates(filteredOCRElements, windowFrame: windowInfo.frame)
         let validatedAccessibilityElements = validateAccessibilityCoordinates(accessibilityElements, coordinateSystem: coordinateSystem)
         
-        let fusionEngine = FusionEngine(coordinateSystem: coordinateSystem)
+        let fusionEngine = ImprovedFusionEngine(coordinateSystem: coordinateSystem)
+        // COMPARISON: Test OCR-only vs Fusion
+        let ocrOnlyElements = correctedOCRElements.map { ocrData in
+            UIElement(
+                type: "TextContent",
+                position: ocrData.boundingBox.origin,
+                size: ocrData.boundingBox.size,
+                accessibilityData: nil,
+                ocrData: ocrData,
+                isClickable: false,
+                confidence: Double(ocrData.confidence)
+            )
+        }
         let fusedElements = fusionEngine.fuse(
             accessibility: validatedAccessibilityElements,
             ocr: correctedOCRElements,
             coordinates: coordinateSystem
         )
+        
+        print("\n🔍 COMPARISON - OCR-only vs Fusion:")
+        print("   OCR-only elements: \(ocrOnlyElements.count)")
+        print("   Fused elements: \(fusedElements.count)")
+        print("   Accessibility contribution: \(fusedElements.count - ocrOnlyElements.count)")
+        
+        // Test improved fusion vs OCR-only
+        let finalElements = fusedElements
         let fusionTime = Date().timeIntervalSince(fusionStart)
         stepTimes.append(("Data fusion", fusionTime))
         
         // Step 7: Grid mapping
         let gridStart = Date()
         let gridMapper = GridSweepMapper(windowFrame: windowInfo.frame)
-        let gridMappedElements = gridMapper.mapToGrid(fusedElements)
+        let gridMappedElements = gridMapper.mapToGrid(finalElements)
         let gridTime = Date().timeIntervalSince(gridStart)
         stepTimes.append(("Grid mapping", gridTime))
         
@@ -103,7 +123,7 @@ class UIInspectorApp {
         let completeMap = CompleteUIMap(
             windowTitle: windowInfo.title,
             windowFrame: windowInfo.frame,
-            elements: fusedElements,
+            elements: finalElements,
             timestamp: Date(),
             processingTime: Date().timeIntervalSince(overallStartTime),
             performance: CompleteUIMap.PerformanceMetrics(
@@ -112,10 +132,10 @@ class UIInspectorApp {
                 ocrTime: ocrTime,
                 fusionTime: fusionTime,
                 totalElements: accessibilityElements.count + filteredOCRElements.count,
-                fusedElements: fusedElements.count,
+                fusedElements: finalElements.count,
                 memoryUsage: performanceMonitor.getMemoryUsage()
             ),
-            summary: CompleteUIMap.UIMapSummary(from: fusedElements)
+            summary: CompleteUIMap.UIMapSummary(from: finalElements)
         )
         let mapCreationTime = Date().timeIntervalSince(mapCreationStart)
         stepTimes.append(("Map creation", mapCreationTime))
@@ -135,7 +155,7 @@ class UIInspectorApp {
         let jsonPath = "/Users/richardshaw/augment/ui_map_\(timestamp).json"
         
         do {
-            try compressedFormat.write(to: URL(fileURLWithPath: compressedPath), atomically: false, encoding: .utf8)
+            try compressedFormat.write(to: URL(fileURLWithPath: compressedPath), atomically: false, encoding: String.Encoding.utf8)
             try jsonData.write(to: URL(fileURLWithPath: jsonPath))
         } catch {
             print("❌ Failed to save files: \(error)")
@@ -153,7 +173,7 @@ class UIInspectorApp {
             windowFrame: windowInfo.frame,
             accessibilityElements: validatedAccessibilityElements,
             ocrElements: correctedOCRElements,
-            fusedElements: fusedElements,
+            fusedElements: finalElements,
             gridElements: gridMappedElements
         )
         
@@ -210,40 +230,31 @@ class UIInspectorApp {
         print("\n🎯 COORDINATE DEBUGGING:")
         print("========================")
         print("Window Frame: \(windowFrame)")
+        print("Grid: \(UniversalGrid.COLUMNS) columns × \(UniversalGrid.ROWS) rows = \(UniversalGrid.COLUMNS * UniversalGrid.ROWS) cells")
         
-        // Check for main content elements
-        let mainContentKeywords = ["macintosh", "network", "drive"]
-        var mainContentFound = false
-        
-        for element in fusedElements {
-            if let text = element.visualText,
-               mainContentKeywords.contains(where: { text.lowercased().contains($0) }) {
-                let coordinateSystem = CoordinateSystem(windowFrame: windowFrame)
-                let debugInfo = coordinateSystem.debugCoordinateInfo(for: element.position)
-                
-                print("\n📍 Main Content Element: '\(text)'")
-                print("   Debug Info: \(debugInfo)")
-                mainContentFound = true
-            }
+        // Show sample grid positions for key elements
+        let keywordElements = fusedElements.filter { element in
+            guard let text = element.visualText else { return false }
+            return ["macintosh", "network", "drive", "downloads", "desktop", "applications"].contains(where: { text.lowercased().contains($0) })
         }
         
-        if !mainContentFound {
-            print("⚠️  No main content elements found - coordinate system may need adjustment")
-        }
-        
-        // Region distribution
+        print("\n📍 Key Elements Grid Positions:")
         let coordinateSystem = CoordinateSystem(windowFrame: windowFrame)
-        var regionCounts: [GridRegion: Int] = [:]
+        for element in keywordElements.prefix(5) {
+            let debugInfo = coordinateSystem.debugCoordinateInfo(for: element.position)
+            print("   '\(element.visualText ?? "Unknown")' -> \(debugInfo["grid"] ?? "?")")
+        }
         
+        // Grid cell occupancy
+        var occupiedCells = Set<String>()
         for element in gridElements {
-            let region = coordinateSystem.classifyRegion(for: element.gridPosition)
-            regionCounts[region, default: 0] += 1
+            occupiedCells.insert(element.gridPosition.description)
         }
         
-        print("\n📊 Element Distribution by Region:")
-        for (region, count) in regionCounts {
-            print("   \(region.rawValue): \(count) elements")
-        }
+        print("\n📊 Grid Coverage:")
+        print("   Occupied cells: \(occupiedCells.count)/\(UniversalGrid.COLUMNS * UniversalGrid.ROWS)")
+        print("   Coverage: \(String(format: "%.1f", Double(occupiedCells.count) / Double(UniversalGrid.COLUMNS * UniversalGrid.ROWS) * 100))%")
+        print("   Elements after deduplication: \(gridElements.count)")
     }
     
     private func printPerformanceResults(stepTimes: [(String, TimeInterval)], totalTime: TimeInterval) {

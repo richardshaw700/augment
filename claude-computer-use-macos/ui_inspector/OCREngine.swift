@@ -57,17 +57,21 @@ class OCREngine: TextRecognition {
         // Optimize for speed while maintaining accuracy
         request.recognitionLevel = .accurate
         request.usesLanguageCorrection = true
-        request.minimumTextHeight = 0.01 // Detect small text
+        request.minimumTextHeight = 0.005 // Detect smaller text (reduced from 0.01)
         
         // Set supported languages (English primarily, with fallbacks)
         request.recognitionLanguages = ["en-US", "en-GB"]
         
         // Enable automatic language detection
         request.automaticallyDetectsLanguage = true
+        
+        print("🔍 DEBUG: OCR configured with minTextHeight=0.005")
     }
     
     private func processOCRObservations(_ observations: [VNRecognizedTextObservation]) -> [OCRData] {
         var ocrElements: [OCRData] = []
+        
+        print("🔍 DEBUG: Processing \(observations.count) OCR observations")
         
         for observation in observations {
             guard let topCandidate = observation.topCandidates(1).first else {
@@ -76,10 +80,19 @@ class OCREngine: TextRecognition {
             
             let text = topCandidate.string
             let confidence = topCandidate.confidence
+            let bbox = observation.boundingBox
+            
+            // Debug output for all detected text (before filtering)
+            if text.count > 2 {
+                print("   OCR: '\(text)' (conf: \(String(format: "%.2f", confidence)), bbox: \(bbox))")
+            }
             
             // Filter out low-confidence or empty text
-            guard confidence > Config.minElementConfidence,
+            guard confidence > Float(Config.minElementConfidence),
                   !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                if text.count > 2 {
+                    print("     ❌ Filtered out: confidence \(confidence) < \(Config.minElementConfidence)")
+                }
                 continue
             }
             
@@ -130,7 +143,7 @@ class OCREngine: TextRecognition {
             guard text.contains(where: { $0.isLetter }) else { return false }
             
             // Filter out very low confidence text
-            guard element.confidence > Config.minElementConfidence else { return false }
+            guard element.confidence > Float(Config.minElementConfidence) else { return false }
             
             return true
         }

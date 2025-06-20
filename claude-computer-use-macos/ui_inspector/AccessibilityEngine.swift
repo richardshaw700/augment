@@ -9,7 +9,7 @@ class AccessibilityEngine: AccessibilityScanning {
     private static var lastCacheTime: Date?
     
     func scanElements() -> [AccessibilityData] {
-        guard let (windowData, accessibilityElements) = getAccessibilityData() else {
+        guard let (_, accessibilityElements) = getAccessibilityData() else {
             print("❌ Failed to get accessibility data")
             return []
         }
@@ -23,10 +23,11 @@ class AccessibilityEngine: AccessibilityScanning {
     private func getAccessibilityData() -> ([String: Any], [AccessibilityData])? {
         // Check cache first
         let now = Date()
-        if let cachedData = Self.cachedWindowData,
-           let lastCache = Self.lastCacheTime,
+        if let lastCache = Self.lastCacheTime,
            now.timeIntervalSince(lastCache) < Config.cacheTimeout,
-           !cachedData.isEmpty {
+           !Self.cachedWindowData.isEmpty {
+            
+            let cachedData = Self.cachedWindowData
             
             let elements = cachedData["elements"] as? [AccessibilityData] ?? []
             var windowData = cachedData
@@ -144,13 +145,13 @@ class AccessibilityEngine: AccessibilityScanning {
         var allElements: [AccessibilityData] = []
         var processedElements: Set<String> = []
         
-        // Recursively traverse the accessibility tree
+        // Recursively traverse the accessibility tree with increased depth for containers
         traverseAccessibilityTree(
             element: window,
             allElements: &allElements,
             processedElements: &processedElements,
             depth: 0,
-            maxDepth: 10
+            maxDepth: 20  // Increased from 10 to 20 for deeper browser/list traversal
         )
         
         return allElements
@@ -193,6 +194,17 @@ class AccessibilityEngine: AccessibilityScanning {
                     maxDepth: maxDepth
                 )
             }
+        } else {
+            // Special handling for container elements that might have lazy-loaded children
+            var roleRef: CFTypeRef?
+            if AXUIElementCopyAttributeValue(element, kAXRoleAttribute as CFString, &roleRef) == .success,
+               let role = roleRef as? String,
+               isContainerRole(role) {
+                print("🔍 DEBUG: Container \(role) at depth \(depth) has no immediate children - trying alternative methods")
+                
+                // Try to force refresh of children for browser/list elements
+                tryAlternativeChildrenAccess(element: element, allElements: &allElements, processedElements: &processedElements, depth: depth, maxDepth: maxDepth)
+            }
         }
     }
     
@@ -205,16 +217,16 @@ class AccessibilityEngine: AccessibilityScanning {
         }
         
         // Extract optional attributes
-        let description = getStringAttribute(element, kAXDescriptionAttribute)
-        let title = getStringAttribute(element, kAXTitleAttribute)
-        let help = getStringAttribute(element, kAXHelpAttribute)
-        let subrole = getStringAttribute(element, kAXSubroleAttribute)
-        let value = getStringAttribute(element, kAXValueAttribute)
+        let description = getStringAttribute(element, kAXDescriptionAttribute as CFString)
+        let title = getStringAttribute(element, kAXTitleAttribute as CFString)
+        let help = getStringAttribute(element, kAXHelpAttribute as CFString)
+        let subrole = getStringAttribute(element, kAXSubroleAttribute as CFString)
+        let value = getStringAttribute(element, kAXValueAttribute as CFString)
         
         // Extract boolean attributes
-        let enabled = getBoolAttribute(element, kAXEnabledAttribute) ?? true
-        let focused = getBoolAttribute(element, kAXFocusedAttribute) ?? false
-        let selected = getBoolAttribute(element, kAXSelectedAttribute) ?? false
+        let enabled = getBoolAttribute(element, kAXEnabledAttribute as CFString) ?? true
+        let focused = getBoolAttribute(element, kAXFocusedAttribute as CFString) ?? false
+        let selected = getBoolAttribute(element, kAXSelectedAttribute as CFString) ?? false
         
         // Extract position and size
         let position = getPositionAttribute(element)
@@ -296,13 +308,14 @@ class AccessibilityEngine: AccessibilityScanning {
     private func getParentInfo(_ element: AXUIElement) -> String? {
         var parentRef: CFTypeRef?
         guard AXUIElementCopyAttributeValue(element, kAXParentAttribute as CFString, &parentRef) == .success,
-              let parent = parentRef as? AXUIElement else {
+              let parent = parentRef else {
             return nil
         }
+        let parentElement = parent as! AXUIElement
         
         // Get parent role for identification
         var roleRef: CFTypeRef?
-        guard AXUIElementCopyAttributeValue(parent, kAXRoleAttribute as CFString, &roleRef) == .success,
+        guard AXUIElementCopyAttributeValue(parentElement, kAXRoleAttribute as CFString, &roleRef) == .success,
               let role = roleRef as? String else {
             return "Unknown Parent"
         }
@@ -324,6 +337,48 @@ class AccessibilityEngine: AccessibilityScanning {
                 return nil
             }
             return role
+        }
+    }
+    
+    // MARK: - Container Handling
+    
+    private func isContainerRole(_ role: String) -> Bool {
+        return ["AXBrowser", "AXList", "AXScrollArea", "AXTable", "AXOutline"].contains(role)
+    }
+    
+    private func tryAlternativeChildrenAccess(
+        element: AXUIElement,
+        allElements: inout [AccessibilityData],
+        processedElements: inout Set<String>,
+        depth: Int,
+        maxDepth: Int
+    ) {
+        // Try alternative attributes that might contain children
+        let alternativeAttributes = [
+            kAXRowsAttribute as CFString,
+            kAXVisibleRowsAttribute as CFString,
+            kAXSelectedRowsAttribute as CFString,
+            kAXColumnsAttribute as CFString,
+            kAXVisibleColumnsAttribute as CFString
+        ]
+        
+        for attribute in alternativeAttributes {
+            var valueRef: CFTypeRef?
+            if AXUIElementCopyAttributeValue(element, attribute, &valueRef) == .success,
+               let elements = valueRef as? [AXUIElement] {
+                print("🔍 DEBUG: Found \(elements.count) children via \(attribute)")
+                
+                for child in elements {
+                    traverseAccessibilityTree(
+                        element: child,
+                        allElements: &allElements,
+                        processedElements: &processedElements,
+                        depth: depth + 1,
+                        maxDepth: maxDepth
+                    )
+                }
+                break // Stop after first successful alternative
+            }
         }
     }
 } 

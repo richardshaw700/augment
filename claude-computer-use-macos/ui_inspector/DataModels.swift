@@ -113,51 +113,71 @@ struct WindowInfo {
 // MARK: - Grid System Models
 
 struct UniversalGrid {
-    static let COLUMNS = 26         // A-Z (26 columns)
-    static let ROWS = 30           // 1-30 (30 rows for full coverage)
-    static let TOTAL_CELLS = 780   // 26 × 30 = 780 addressable positions
+    static let COLUMNS = 40         // Extended columns: A-Z, AA-AN (40 total)
+    static let ROWS = 50           // High vertical resolution
+    static let TOTAL_CELLS = 2000  // 40 × 50 = 2000 addressable positions
     
-    static let COLUMN_RANGE = "A"..."Z"
-    static let ROW_RANGE = 1...30
+    static let COLUMN_RANGE = "A"..."Z"  // Base range, extends to AA-AN
+    static let ROW_RANGE = 1...50
     
     static let TOP_LEFT = "A1"
-    static let TOP_RIGHT = "Z1"
-    static let BOTTOM_LEFT = "A30"
-    static let BOTTOM_RIGHT = "Z30"
-    static let CENTER = "M15"
+    static let TOP_RIGHT = "AN1"   // 40th column
+    static let BOTTOM_LEFT = "A50"
+    static let BOTTOM_RIGHT = "AN50"
+    static let CENTER = "T25"      // Middle of 40x50 grid (T=20th column)
 }
 
 struct AdaptiveGridPosition: Hashable, CustomStringConvertible {
-    let column: Character  // A-Z
-    let row: Int          // 1-30
+    let columnString: String  // A-Z, AA-AN for extended columns
+    let row: Int             // 1-50
     
-    init(_ column: Character, _ row: Int) {
-        precondition(column >= "A" && column <= "Z", "Column must be A-Z")
-        precondition(row >= 1 && row <= 30, "Row must be 1-30")
+    init(_ columnString: String, _ row: Int) {
+        precondition(!columnString.isEmpty, "Column string cannot be empty")
+        precondition(row >= 1 && row <= 50, "Row must be 1-50")
         
-        self.column = column
+        self.columnString = columnString
         self.row = row
     }
     
+    // Convenience initializer for single character columns (A-Z)
+    init(_ column: Character, _ row: Int) {
+        self.init(String(column), row)
+    }
+    
     init?(gridString: String) {
-        guard gridString.count >= 2,
-              let firstChar = gridString.first,
-              firstChar >= "A" && firstChar <= "Z",
-              let rowValue = Int(String(gridString.dropFirst())),
-              rowValue >= 1 && rowValue <= 30 else {
+        guard gridString.count >= 2 else { return nil }
+        
+        // Extract column part (letters) and row part (numbers)
+        let columnPart = String(gridString.prefix(while: { $0.isLetter }))
+        let rowPart = String(gridString.dropFirst(columnPart.count))
+        
+        guard !columnPart.isEmpty,
+              let rowValue = Int(rowPart),
+              rowValue >= 1 && rowValue <= 50 else {
             return nil
         }
         
-        self.column = firstChar
+        self.columnString = columnPart
         self.row = rowValue
     }
     
     var description: String {
-        return "\(column)\(row)"
+        return "\(columnString)\(row)"
     }
     
     var columnIndex: Int {
-        return Int(column.asciiValue! - Character("A").asciiValue!)
+        if columnString.count == 1 {
+            // Single letter: A=0, B=1, ..., Z=25
+            let char = columnString.first!
+            return Int(char.asciiValue! - Character("A").asciiValue!)
+        } else if columnString.count == 2 && columnString.hasPrefix("A") {
+            // Double letter starting with A: AA=26, AB=27, ..., AN=39
+            let secondChar = columnString.last!
+            return 26 + Int(secondChar.asciiValue! - Character("A").asciiValue!)
+        } else {
+            // Fallback for unsupported formats
+            return 0
+        }
     }
     
     var rowIndex: Int {
@@ -170,6 +190,18 @@ struct AdaptiveGridPosition: Hashable, CustomStringConvertible {
     
     var normalizedY: Double {
         return Double(rowIndex) / Double(UniversalGrid.ROWS - 1)
+    }
+    
+    // Helper function to create column string from index (0-39)
+    static func columnString(from index: Int) -> String {
+        if index < 26 {
+            // Single letter: 0=A, 1=B, ..., 25=Z
+            return String(Character(UnicodeScalar(65 + index)!))
+        } else {
+            // Double letter: 26=AA, 27=AB, ..., 39=AN
+            let secondIndex = index - 26
+            return "A" + String(Character(UnicodeScalar(65 + secondIndex)!))
+        }
     }
 }
 
@@ -200,24 +232,7 @@ enum GridPrecision: String, CaseIterable {
     case veryLow = "very_low"
 }
 
-enum GridRegion: String, CaseIterable {
-    case toolbar = "TB"
-    case sidebar = "SB"
-    case main = "MC"
-    case status = "ST"
-    
-    func contains(position: AdaptiveGridPosition) -> Bool {
-        let x = position.normalizedX
-        let y = position.normalizedY
-        
-        switch self {
-        case .toolbar:  return y < 0.2  // Top 20%
-        case .sidebar:  return x < 0.25 // Left 25%
-        case .status:   return y > 0.85 // Bottom 15%
-        case .main:     return x >= 0.25 && y >= 0.2 && y <= 0.85 // Main content area
-        }
-    }
-}
+// Removed GridRegion enum - using pure grid-based approach
 
 struct GridMappedElement {
     let originalElement: UIElement
@@ -232,27 +247,8 @@ struct GridMappedElement {
     }
     
     private func makePositionReadable(_ position: AdaptiveGridPosition) -> String {
-        let x = position.normalizedX
-        let y = position.normalizedY
-        
-        // ENHANCED: More precise region mapping for better toolbar detection
-        let xRegion: Int
-        if x < 0.2 { xRegion = 0 }      // Left 20%
-        else if x < 0.7 { xRegion = 1 } // Center 50% 
-        else { xRegion = 2 }            // Right 30%
-        
-        let yRegion: Int  
-        if y < 0.2 { yRegion = 0 }      // Top 20% (toolbar area)
-        else if y < 0.8 { yRegion = 1 } // Middle 60%
-        else { yRegion = 2 }            // Bottom 20%
-        
-        let regions = [
-            ["TopLeft", "TopCenter", "TopRight"],
-            ["MidLeft", "Center", "MidRight"],
-            ["BotLeft", "BotCenter", "BotRight"]
-        ]
-        
-        return regions[yRegion][xRegion]
+        // Simple grid position: "A1", "B2", etc.
+        return position.description
     }
     
     private static func compressElementName(_ element: UIElement) -> String {
@@ -407,13 +403,13 @@ struct Config {
     static let defaultWindowTimeout: TimeInterval = 2.0
     static let gridSweepPollingInterval: TimeInterval = 0.05
     
-    // Grid configuration
-    static let gridColumns = 26
-    static let gridRows = 30
+    // Grid configuration - Higher resolution for better precision
+    static let gridColumns = 40  // Extended columns beyond A-Z
+    static let gridRows = 50      // High vertical resolution
     
     // Performance thresholds
     static let maxProcessingTime: TimeInterval = 5.0
-    static let minElementConfidence: Double = 0.3
+    static let minElementConfidence: Double = 0.1  // Temporarily lowered for debugging
     
     // Feature flags
     static let enableCaching = true
