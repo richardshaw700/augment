@@ -215,18 +215,15 @@ class BrowserInspector {
     // MARK: - AppleScript Execution
     
     private func executeAppleScript(_ script: String) -> [UIElement]? {
-        print("🔍 DEBUG: Attempting AppleScript execution...")
         let appleScript = NSAppleScript(source: script)
         var error: NSDictionary?
         
         guard let result = appleScript?.executeAndReturnError(&error),
               error == nil else {
             let errorDesc = error?.description ?? "Unknown error"
-            print("❌ AppleScript execution failed: \(errorDesc)")
             
             if errorDesc.contains("Allow JavaScript from Apple Events") {
                 print("⚠️ Safari JavaScript injection requires enabling 'Allow JavaScript from Apple Events' in Safari > Developer Settings")
-                print("💡 To enable: Safari > Develop > Allow JavaScript from Apple Events")
             } else if errorDesc.contains("Application isn't running") {
                 print("⚠️ Target browser application is not running")
             } else if errorDesc.contains("doesn't understand") {
@@ -236,14 +233,10 @@ class BrowserInspector {
         }
         
         guard let jsonString = result.stringValue else {
-            print("❌ AppleScript returned nil result")
             return nil
         }
         
-        print("🔍 DEBUG: AppleScript returned: \(jsonString.prefix(200))...")
-        
         guard let jsonData = jsonString.data(using: .utf8) else {
-            print("❌ Failed to convert AppleScript result to UTF8 data")
             return nil
         }
         
@@ -286,20 +279,15 @@ class BrowserInspector {
         
         // Create appropriate element type
         let type: String
-        let interactions: [String]
         
         if elementType == "input" || elementType == "textarea" {
             type = "WebTextField"
-            interactions = ["type", "select_all", "copy", "paste", "click"]
         } else if elementType == "select" {
             type = "WebSelect"
-            interactions = ["click", "select"]
         } else if isClickable {
             type = "WebButton"
-            interactions = ["click", "double_click"]
         } else {
             type = "WebElement"
-            interactions = []
         }
         
         // Create accessibility data

@@ -1,0 +1,199 @@
+🚀 UI Inspector - Refactored Architecture
+==========================================
+
+📱 WINDOW SETUP
+================
+⚡ Safari window ready in 0.027s
+📐 Target: Google (1223x869)
+
+⚡ PARALLEL DETECTION
+====================
+🔄 Running Accessibility, OCR, and Shape Detection in parallel...
+🔤 OCR processing completed: 14 elements (0.101s)
+🔧 Found 97 accessibility elements
+♿ Accessibility scan completed: 97 elements (0.122s)
+🔍 Detected 4 interactive UI elements from 117 contours
+🎯 SHAPE DETECTION SPECIALTIES:
+   📝 Text Input Detector: 0 elements
+   🔘 Button Detector: 4 elements
+      Buttons found:
+         • button at (1217, 811) - 31x32
+         • icon_button at (766, 605) - 46x31
+         • icon_button at (834, 711) - 62x20
+         • icon_button at (693, 707) - 40x24
+🔍 Shape detection completed: 4 elements (0.138s)
+⚡ Parallel detection completed in 0.139s
+   └─ Speedup: 2.6x faster than sequential
+
+🔗 DATA FUSION
+==============
+🔗 Improved Fusion complete: 40 total elements
+   • OCR-enhanced: 14
+   • High-value accessibility: 26
+   • Optimization: Linear spatial lookup
+🎨 Integrating 4 shape elements...
+   🔗 Enhanced existing element with button context: circle at (1217, 811)
+   🔗 Enhanced existing element with button context: irregular at (766, 605)
+   🔗 Enhanced existing element with button context: irregular at (834, 711)
+   🔗 Enhanced existing element with button context: irregular at (693, 707)
+🎨 Shape integration complete: 0 new elements added
+
+🌐 BROWSER ENHANCEMENT
+======================
+🔍 Browser: Safari
+🌐 Enhancing browser elements for Safari
+⚠️ JavaScript executed successfully but found 0 form elements
+📝 Browser enhancement complete - using existing accessibility/OCR detection
+
+📊 DETECTION SUMMARY
+====================
+📈 Element Count Progression:
+   OCR-only: 14
+   + Accessibility: 40 (+26)
+   + Shapes: 40 (+4)
+   + Browser: 40 (+0)
+🧹 Filtered out 4 low-quality elements
+
+🗂️ GRID MAPPING
+===============
+🗂️ Grid mapping complete: 34 unique elements
+🗂️ Grid mapping complete: 33 unique elements
+
+🔘 BUTTON ANALYSIS:
+==================================================
+📊 Button Summary:
+   • Accessibility Buttons: 20
+   • Shape-Detected Buttons: 0
+   • Total Interactive Elements: 20
+
+🎯 Accessibility Buttons:
+   1. Button at (1166, 99) - 40x41
+      Text: 'Google apps'
+      Action: Click Google apps
+
+   2. PopUpButton at (1214, 99) - 40x41
+      Text: 'Google Account: Richard Shaw (richard@cheddarcash.com)'
+      Action: Click Google Account: Richard Shaw (richard@cheddarcash.com)
+
+   3. Button at (902, 360) - 49x48
+      Text: 'Share'
+      Action: Click Share
+
+   4. Button at (855, 435) - 41x50
+      Text: 'Search by voice'
+      Action: Click Search by voice
+
+   5. Button at (895, 435) - 41x50
+      Text: 'Search by image'
+      Action: Click Search by image
+
+   6. Button at (511, 515) - 128x36
+      Text: 'Google Search'
+      Action: Click Google Search
+
+   7. Button at (650, 515) - 144x36
+      Text: 'I'm Feeling Lucky'
+      Action: Click I'm Feeling Lucky
+
+   8. PopUpButton at (1162, 862) - 83x46
+      Text: 'Settings'
+      Action: Clickable element
+
+   9. Button at (131, 50) - 35x30
+      Text: 'show sidebar'
+      Action: Click show sidebar
+
+   10. Button at (188, 45) - 40x40
+      Text: 'Go back'
+      Action: Click Go back
+
+   11. Button at (228, 45) - 39x40
+      Text: 'Go forward'
+      Action: Click Go forward
+
+   12. Button at (367, 50) - 31x30
+      Text: 'Activate WhatFont'
+      Action: Click Activate WhatFont
+
+   13. Button at (404, 54) - 30x23
+      Text: 'Page Menu'
+      Action: Click Page Menu
+
+   14. Button at (426, 53) - 24x24
+      Text: 'Add page to Reading List'
+      Action: Click Add page to Reading List
+
+   15. Button at (875, 54) - 23x23
+      Text: 'Reload this page'
+      Action: Click Reload this page
+
+   16. Button at (1143, 39) - 37x52
+      Text: 'Share'
+      Action: Click Share
+
+   17. Button at (1180, 39) - 36x52
+      Text: 'New Tab'
+      Action: Click New Tab
+
+   18. Button at (1183, 50) - 30x30
+      Text: 'new tab'
+      Action: Click new tab
+
+   19. Button at (1183, 50) - 30x30
+      Text: 'add'
+      Action: Click add
+
+   20. Button at (1216, 39) - 40x52
+      Text: 'Tab Overview'
+      Action: Click Tab Overview
+
+
+⏱️  PERFORMANCE BREAKDOWN:
+==================================================
+  • App setup: 0.091s (15.1%)
+  • Window capture: 0.201s (33.6%)
+  • Data fusion: 0.115s (19.2%)
+  • Grid mapping: 0.027s (4.5%)
+  • Compression: 0.000s (0.1%)
+  • Map creation: 0.000s (0.0%)
+  • Output generation: 0.026s (4.3%)
+  ⚡ Parallel Detection Group: 0.139s (23.1%)
+    ├─ Shape detection: 0.138s (23.1%)
+    ├─ Accessibility scan: 0.122s (20.4%)
+    ├─ OCR processing: 0.101s (16.9%)
+    └─ Sequential would be: 0.362s (2.6x speedup)
+--------------------------------------------------
+  🏁 TOTAL TIME: 0.599s
+📊 Window Capture Stats:
+   • Total attempts: 1
+   • Cache hits: 0 (0.0%)
+   • Fallbacks: 0
+   • In-memory successes: 0 (0.0%)
+   • Temp file successes: 1 (100.0%)
+   • Total in-memory time: 0.0s
+   • Total temp file time: 0.19898700714111328s
+   • Total full-screen time: 0.0s
+
+🎯 COORDINATE DEBUGGING:
+========================
+Window Frame: (41.0, 39.0, 1223.0, 869.0)
+Grid: 40 columns × 50 rows = 2000 cells
+
+📍 Key Elements Grid Positions:
+
+📊 Grid Coverage:
+   Occupied cells: 34/2000
+   Coverage: 1.7%
+   Elements after deduplication: 34
+
+🚀 RESULTS:
+===========
+📱 Window: Google
+📏 Frame: (41.0, 39.0, 1223.0, 869.0)
+🔢 Elements: 36
+🗜️  Compressed: btn:I'm Feeling Lucky@W29,btn:Search by voice (action)@AB25,btn:Share (share)@AC20,btn:Search by image (action)@AC24,btn:Tab Overview (tab)@AN2,btn:Google Search (action)@R29,btn:Reload this page (nav)@AB2,btn:Share (share)@AK2,btn:add@AL2,btn:Google apps@AL5,btn:New Tab (tab)@AM1,btn:show sidebar@D2,btn:Go back (nav)@F2,btn:Go forward (nav)@G2,btn:Activate WhatFont@L2,btn:Page Menu (config)@L3,btn:Button@N2,scroll:ScrollArea (scrollable)@Q6,link:icon_button button@Y34,dropdown:Settings (menu)@AL49,dropdown:PopUpButton (menu)@AN5,txtinp:TextField (url)@S2,txt:Gmail Images@AJ6,txt:About Store@E6,txt:Privacy@AH50,txt:Terns@AJ49,txt:Canada@C47,txt:Business@G49,txt:G.114G£E.@X21,txt:Advertising@D50,txt:How Search works@L49,txt:& google.com@V2,txt:I'm Feeling Lucky@Z29,txt:Settings@AN50
+📊 Compression: 4.3x smaller
+🎯 Confidence: 66.5%
+💾 Files saved:
+  📄 JSON: /Users/richardshaw/augment/ui_map_2025-06-21_02-47-21.json
+  🗜️  Compressed: /Users/richardshaw/augment/ui_compressed_2025-06-21_02-47-21.txt

@@ -7,6 +7,55 @@ class GridSweepMapper: GridMapping {
     private let windowFrame: CGRect
     private let coordinateSystem: CoordinateSystem
     
+    // Performance optimization: Spatial hash map for O(1) element lookups
+    private struct SpatialHashMap {
+        let cellSize: CGFloat = 100.0 // 100px grid cells for spatial hashing
+        private var hashMap: [String: [Int]] = [:]
+        
+        mutating func buildHashMap(from elements: [UIElement]) {
+            hashMap.removeAll()
+            
+            for (index, element) in elements.enumerated() {
+                let elementBounds = CGRect(origin: element.position, size: element.size)
+                let cells = getCellsForBounds(elementBounds)
+                
+                for cellKey in cells {
+                    hashMap[cellKey, default: []].append(index)
+                }
+            }
+        }
+        
+        func getElementIndices(for bounds: CGRect) -> [Int] {
+            let cells = getCellsForBounds(bounds)
+            var indices: Set<Int> = []
+            
+            for cellKey in cells {
+                if let cellIndices = hashMap[cellKey] {
+                    indices.formUnion(cellIndices)
+                }
+            }
+            
+            return Array(indices)
+        }
+        
+        private func getCellsForBounds(_ bounds: CGRect) -> [String] {
+            let minX = Int(bounds.minX / cellSize)
+            let maxX = Int(bounds.maxX / cellSize)
+            let minY = Int(bounds.minY / cellSize)
+            let maxY = Int(bounds.maxY / cellSize)
+            
+            var cells: [String] = []
+            for x in minX...maxX {
+                for y in minY...maxY {
+                    cells.append("\(x),\(y)")
+                }
+            }
+            return cells
+        }
+    }
+    
+    private var spatialHashMap = SpatialHashMap()
+    
     init(windowFrame: CGRect) {
         self.windowFrame = windowFrame
         self.coordinateSystem = CoordinateSystem(windowFrame: windowFrame)
@@ -15,19 +64,10 @@ class GridSweepMapper: GridMapping {
     func mapToGrid(_ elements: [UIElement]) -> [GridMappedElement] {
         var gridCellMap: [AdaptiveGridPosition: UIElement] = [:]
         
-        // Debug: Check input elements for System/Users/Applications
-        let inputSystemElements = elements.filter { $0.visualText?.lowercased().contains("system") == true }
-        let inputUsersElements = elements.filter { $0.visualText?.lowercased().contains("users") == true }
-        let inputApplicationsElements = elements.filter { $0.visualText?.lowercased().contains("applications") == true }
-        print("🔍 DEBUG: Input elements to grid mapper:")
-        print("   System elements: \(inputSystemElements.count)")
-        print("   Users elements: \(inputUsersElements.count)")
-        print("   Applications elements: \(inputApplicationsElements.count)")
-        for element in inputSystemElements + inputUsersElements + inputApplicationsElements {
-            print("   📍 '\(element.visualText ?? "")' at (\(element.position.x), \(element.position.y))")
-        }
+        // Performance optimization: Build spatial hash map for O(1) element lookups
+        spatialHashMap.buildHashMap(from: elements)
         
-        // Step 1: Sweep through all grid positions
+        // Step 1: Sweep through all grid positions with optimized spatial lookup
         var systemUsersChecked = false
         for columnIndex in 0..<UniversalGrid.COLUMNS {
             for rowIndex in 0..<UniversalGrid.ROWS {
@@ -35,28 +75,14 @@ class GridSweepMapper: GridMapping {
                 let row = rowIndex + 1
                 let gridPos = AdaptiveGridPosition(columnString, row)
                 
-                // Debug: Check if we're looking at S6 or S7
-                if gridPos.description == "S6" || gridPos.description == "S7" {
-                    if !systemUsersChecked {
-                        print("🔍 DEBUG: Checking System/Users cells S6 and S7...")
-                        systemUsersChecked = true
-                    }
-                    print("   Checking cell \(gridPos)...")
+                // Track that we've checked system/users cells
+                if (gridPos.description == "S6" || gridPos.description == "S7") && !systemUsersChecked {
+                    systemUsersChecked = true
                 }
                 
-                // Find the best element for this grid cell
-                if let bestElement = findBestElementForCell(gridPos, elements: elements) {
+                // Find the best element for this grid cell using spatial hash map
+                if let bestElement = findBestElementForCellOptimized(gridPos, elements: elements) {
                     gridCellMap[gridPos] = bestElement
-                    
-                    // Debug for S6/S7 cells specifically
-                    if gridPos.description == "S6" || gridPos.description == "S7" {
-                        print("       ✅ STORED '\(bestElement.visualText ?? "")' in gridCellMap[\(gridPos)]")
-                    }
-                } else {
-                    // Debug: Check if this should be a System/Users cell
-                    if gridPos.description == "S6" || gridPos.description == "S7" {
-                        print("       ❌ NO element found for cell \(gridPos)")
-                    }
                 }
             }
         }
@@ -132,7 +158,7 @@ class GridSweepMapper: GridMapping {
         // Keep vertically separated elements with same text (like our folder names)
         var uniqueElements: [GridMappedElement] = []
         
-        for (text, elements) in textBasedGroups {
+        for (_, elements) in textBasedGroups {
             if elements.count > 1 {
                 // Sort by row position and keep elements that are sufficiently separated vertically
                 let sortedByRow = elements.sorted { $0.gridPosition.row < $1.gridPosition.row }
@@ -171,37 +197,56 @@ class GridSweepMapper: GridMapping {
             return text.contains("applications") || text.contains("library") || text.contains("system") || text.contains("users")
         }
         
-        // Debug: Check what happened to System and Users
-        print("🔍 DEBUG: Checking for System/Users in all processing stages:")
-        
-        // Check in original gridCellMap
-        let systemInGrid = gridCellMap.values.filter { $0.visualText?.lowercased().contains("system") == true }
-        let usersInGrid = gridCellMap.values.filter { $0.visualText?.lowercased().contains("users") == true }
-        print("   System elements in gridCellMap: \(systemInGrid.count)")
-        print("   Users elements in gridCellMap: \(usersInGrid.count)")
-        
-        // Check in finalElements
-        let systemInFinal = finalElements.values.filter { $0.originalElement.visualText?.lowercased().contains("system") == true }
-        let usersInFinal = finalElements.values.filter { $0.originalElement.visualText?.lowercased().contains("users") == true }
-        print("   System elements in finalElements: \(systemInFinal.count)")
-        print("   Users elements in finalElements: \(usersInFinal.count)")
+        // Count system/users elements for debugging if needed
         
         print("🗂️ Grid mapping complete: \(result.count) unique elements")
-        print("📁 Folder elements detected: \(folderElements.count)")
-        for folder in folderElements {
-            print("   📁 '\(folder.originalElement.visualText ?? "")' -> \(folder.gridPosition) (importance: \(folder.importance))")
+        if !folderElements.isEmpty {
+            print("📁 Folder elements detected: \(folderElements.count)")
+            for folder in folderElements {
+                print("   📁 '\(folder.originalElement.visualText ?? "")' -> \(folder.gridPosition)")
+            }
         }
         return result
     }
     
+    private func findBestElementForCellOptimized(_ gridPos: AdaptiveGridPosition, elements: [UIElement]) -> UIElement? {
+        let cellBounds = coordinateSystem.cellBounds(for: gridPos)
+        let cellCenter = CGPoint(x: cellBounds.midX, y: cellBounds.midY)
+        
+        // Performance optimization: Use spatial hash map to get only relevant elements
+        let candidateIndices = spatialHashMap.getElementIndices(for: cellBounds)
+        
+        var bestCandidate: (element: UIElement, score: Double)?
+        
+        for index in candidateIndices {
+            guard index < elements.count else { continue }
+            let element = elements[index]
+            let elementBounds = CGRect(origin: element.position, size: element.size)
+            
+            // Check if element intersects with this grid cell
+            if cellBounds.intersects(elementBounds) {
+                let score = calculateCellElementScore(element, cellBounds: cellBounds, cellCenter: cellCenter)
+                
+                // Early termination: if we find a perfect match, use it immediately
+                if score > 20.0 { // High score threshold for perfect matches
+                    return element
+                }
+                
+                if bestCandidate == nil || score > bestCandidate!.score {
+                    bestCandidate = (element, score)
+                }
+            }
+        }
+        
+        return bestCandidate?.element
+    }
+    
+    // Keep original method for fallback if needed
     private func findBestElementForCell(_ gridPos: AdaptiveGridPosition, elements: [UIElement]) -> UIElement? {
         let cellBounds = coordinateSystem.cellBounds(for: gridPos)
         let cellCenter = CGPoint(x: cellBounds.midX, y: cellBounds.midY)
         
         var candidates: [(element: UIElement, score: Double)] = []
-        
-        // Debug for S6/S7 cells
-        let isSystemUsersCell = gridPos.description == "S6" || gridPos.description == "S7"
         
         for element in elements {
             let elementBounds = CGRect(origin: element.position, size: element.size)
@@ -210,25 +255,11 @@ class GridSweepMapper: GridMapping {
             if cellBounds.intersects(elementBounds) {
                 let score = calculateCellElementScore(element, cellBounds: cellBounds, cellCenter: cellCenter)
                 candidates.append((element, score))
-                
-                        // Debug all candidates for S6/S7 cells
-        if isSystemUsersCell {
-            print("       📊 '\(element.visualText ?? "")' at (\(element.position.x), \(element.position.y)) score: \(score)")
-        }
             }
         }
         
         // Return the highest scoring element for this cell
         let bestCandidate = candidates.max { $0.score < $1.score }
-        
-        // Debug winner for S6/S7 cells
-        if isSystemUsersCell {
-            if let winner = bestCandidate {
-                print("       🏆 WINNER: '\(winner.element.visualText ?? "")' with score \(winner.score)")
-            } else {
-                print("       ❌ No candidates found")
-            }
-        }
         
         return bestCandidate?.element
     }

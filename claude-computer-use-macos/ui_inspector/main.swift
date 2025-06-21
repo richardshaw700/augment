@@ -3,6 +3,11 @@
 import Foundation
 import AppKit
 
+// MARK: - Debug Configuration
+struct DebugConfig {
+    static let isEnabled = false  // Set to false for production logs
+}
+
 // MARK: - App Configuration
 // Change these values to test different applications
 struct AppConfig {
@@ -52,7 +57,7 @@ class UIInspectorApp {
     private let ocrEngine: OCREngine
     private let performanceMonitor: PerformanceMonitor
     private let browserInspector: BrowserInspector
-    private let edgeDetectionEngine: EdgeDetectionEngine
+    private let shapeDetectionEngine: ShapeDetectionEngine
     
     init() {
         self.windowManager = WindowManager()
@@ -60,7 +65,7 @@ class UIInspectorApp {
         self.ocrEngine = OCREngine()
         self.performanceMonitor = PerformanceMonitor()
         self.browserInspector = BrowserInspector()
-        self.edgeDetectionEngine = EdgeDetectionEngine()
+        self.shapeDetectionEngine = ShapeDetectionEngine()
     }
     
     func run() {
@@ -70,13 +75,14 @@ class UIInspectorApp {
         print("🚀 UI Inspector - Refactored Architecture")
         print("==========================================")
         
-        // Step 1: Ensure app window is available
+        // Step 1: App Setup & Window Capture
+        print("\n📱 WINDOW SETUP")
+        print("================")
         let setupStart = Date()
         windowManager.ensureAppWindow()
         let setupTime = Date().timeIntervalSince(setupStart)
         stepTimes.append(("App setup", setupTime))
         
-        // Step 2: Get window information and capture screenshot
         let windowStart = Date()
         guard let windowInfo = windowManager.getActiveWindow() else {
             print("❌ No active window found")
@@ -90,37 +96,108 @@ class UIInspectorApp {
         let windowTime = Date().timeIntervalSince(windowStart)
         stepTimes.append(("Window capture", windowTime))
         
-        print("📐 Window: \(windowInfo.title) (\(windowInfo.frame.width)x\(windowInfo.frame.height))")
+        print("📐 Target: \(windowInfo.title) (\(Int(windowInfo.frame.width))x\(Int(windowInfo.frame.height)))")
         
-        // Step 3: Initialize coordinate system with ACTUAL window bounds
+        // Step 2: Initialize coordinate system
         let coordinateSystem = CoordinateSystem(windowFrame: windowInfo.frame)
         
-        // Step 4: Collect accessibility data
-        let accessibilityStart = Date()
-        let accessibilityElements = accessibilityEngine.scanElements()
-        let accessibilityTime = Date().timeIntervalSince(accessibilityStart)
+        // Step 3-5: Parallel Detection (Accessibility + OCR + Shape Detection)
+        print("\n⚡ PARALLEL DETECTION")
+        print("====================")
+        print("🔄 Running Accessibility, OCR, and Shape Detection in parallel...")
+        
+        let parallelStart = Date()
+        
+        // Create dispatch group for parallel execution
+        let dispatchGroup = DispatchGroup()
+        let detectionQueue = DispatchQueue(label: "com.uiinspector.detection", attributes: .concurrent)
+        
+        // Results storage with thread-safe access
+        var accessibilityElements: [AccessibilityData] = []
+        var filteredOCRElements: [OCRData] = []
+        var shapeElements: [UIShapeCandidate] = []
+        var accessibilityTime: TimeInterval = 0
+        var ocrTime: TimeInterval = 0
+        var shapeDetectionTime: TimeInterval = 0
+        
+        let resultsQueue = DispatchQueue(label: "com.uiinspector.results")
+        
+        // Parallel Task 1: Accessibility Detection
+        dispatchGroup.enter()
+        detectionQueue.async {
+            let taskStart = Date()
+            let elements = self.accessibilityEngine.scanElements()
+            let taskTime = Date().timeIntervalSince(taskStart)
+            
+            resultsQueue.async {
+                accessibilityElements = elements
+                accessibilityTime = taskTime
+                print("♿ Accessibility scan completed: \(elements.count) elements (\(String(format: "%.3f", taskTime))s)")
+                dispatchGroup.leave()
+            }
+        }
+        
+        // Parallel Task 2: OCR Text Detection
+        dispatchGroup.enter()
+        detectionQueue.async {
+            let taskStart = Date()
+            let rawOCRElements = self.ocrEngine.extractText(from: screenshot)
+            let filtered = self.ocrEngine.filterTextElements(rawOCRElements)
+            let taskTime = Date().timeIntervalSince(taskStart)
+            
+            resultsQueue.async {
+                filteredOCRElements = filtered
+                ocrTime = taskTime
+                print("🔤 OCR processing completed: \(filtered.count) elements (\(String(format: "%.3f", taskTime))s)")
+                dispatchGroup.leave()
+            }
+        }
+        
+        // Parallel Task 3: Shape Detection
+        dispatchGroup.enter()
+        detectionQueue.async {
+            let taskStart = Date()
+            let elements = self.shapeDetectionEngine.detectUIShapes(in: screenshot, windowFrame: windowInfo.frame, debug: DebugConfig.isEnabled)
+            let taskTime = Date().timeIntervalSince(taskStart)
+            
+            resultsQueue.async {
+                shapeElements = elements
+                shapeDetectionTime = taskTime
+                print("🔍 Shape detection completed: \(elements.count) elements (\(String(format: "%.3f", taskTime))s)")
+                dispatchGroup.leave()
+            }
+        }
+        
+        // Wait for all parallel tasks to complete
+        dispatchGroup.wait()
+        
+        let parallelTime = Date().timeIntervalSince(parallelStart)
+        print("⚡ Parallel detection completed in \(String(format: "%.3f", parallelTime))s")
+        print("   └─ Speedup: \(String(format: "%.1f", (accessibilityTime + ocrTime + shapeDetectionTime) / parallelTime))x faster than sequential")
+        
+        // Record individual times for performance analysis
         stepTimes.append(("Accessibility scan", accessibilityTime))
-        
-        // Step 5: Perform OCR
-        let ocrStart = Date()
-        let rawOCRElements = ocrEngine.extractText(from: screenshot)
-        let filteredOCRElements = ocrEngine.filterTextElements(rawOCRElements)
-        let ocrTime = Date().timeIntervalSince(ocrStart)
         stepTimes.append(("OCR processing", ocrTime))
+        stepTimes.append(("Shape detection", shapeDetectionTime))
         
-        // Step 5.5: Edge Detection for Input Fields
-        let edgeDetectionStart = Date()
-        let visualElements = edgeDetectionEngine.detectVisualElements(in: screenshot)
-        let edgeDetectionTime = Date().timeIntervalSince(edgeDetectionStart)
-        stepTimes.append(("Edge detection", edgeDetectionTime))
+        // Record parallel execution time for performance display
+        stepTimes.append(("Parallel detection group", parallelTime))
         
-        // Step 6: Coordinate correction and fusion
+        if DebugConfig.isEnabled {
+            print("------------------------")
+            print("🔍 DEBUG")
+            print("------------------------")
+            // Debug info is printed inside ShapeDetectionEngine
+        }
+        
+        // Step 6: Data Fusion & Integration
+        print("\n🔗 DATA FUSION")
+        print("==============")
         let fusionStart = Date()
         let correctedOCRElements = correctOCRCoordinates(filteredOCRElements, windowFrame: windowInfo.frame)
         let validatedAccessibilityElements = validateAccessibilityCoordinates(accessibilityElements, coordinateSystem: coordinateSystem)
         
         let fusionEngine = ImprovedFusionEngine(coordinateSystem: coordinateSystem)
-        // COMPARISON: Test OCR-only vs Fusion
         let ocrOnlyElements = correctedOCRElements.map { ocrData in
             UIElement(
                 type: "TextContent",
@@ -138,38 +215,47 @@ class UIInspectorApp {
             coordinates: coordinateSystem
         )
         
-        // Step 6a: Integrate Visual Elements (Edge Detection)
+        // Integrate Visual Elements (Shape Detection)
         let fusedWithVisualElements = integrateVisualElements(
             fusedElements: fusedElements,
-            visualElements: visualElements,
+            visualElements: shapeElements,
+            ocrElements: correctedOCRElements,
             windowFrame: windowInfo.frame
         )
         
-        // Step 6b: Browser Enhancement (if in browser context)
+        // Step 7: Browser Enhancement
+        print("\n🌐 BROWSER ENHANCEMENT")
+        print("======================")
         let enhancedElements: [UIElement]
         if BrowserInspector.isBrowserApp(AppConfig.bundleID),
            let browserType = BrowserInspector.getBrowserType(AppConfig.bundleID) {
-            print("🌐 Browser detected: \(browserType.rawValue)")
+            print("🔍 Browser: \(browserType.rawValue)")
             enhancedElements = browserInspector.enhanceBrowserElements(fusedWithVisualElements, browserType: browserType)
         } else {
+            print("🔍 Browser: Not detected")
             enhancedElements = fusedWithVisualElements
         }
         
-        print("\n🔍 COMPARISON - OCR-only vs Fusion vs Visual vs Enhanced:")
-        print("   OCR-only elements: \(ocrOnlyElements.count)")
-        print("   Fused elements: \(fusedElements.count)")
-        print("   + Visual elements: \(fusedWithVisualElements.count)")
-        print("   Final enhanced: \(enhancedElements.count)")
-        print("   Visual contribution: \(visualElements.count)")
-        print("   Accessibility contribution: \(fusedElements.count - ocrOnlyElements.count)")
-        print("   Browser enhancement: \(enhancedElements.count - fusedWithVisualElements.count)")
+        print("\n📊 DETECTION SUMMARY")
+        print("====================")
+        print("📈 Element Count Progression:")
+        print("   OCR-only: \(ocrOnlyElements.count)")
+        print("   + Accessibility: \(fusedElements.count) (+\(fusedElements.count - ocrOnlyElements.count))")
+        print("   + Shapes: \(fusedWithVisualElements.count) (+\(shapeElements.count))")
+        print("   + Browser: \(enhancedElements.count) (+\(enhancedElements.count - fusedWithVisualElements.count))")
         
-        // Use enhanced elements as final result
-        let finalElements = enhancedElements
+        // Filter out low-quality elements before final processing
+        let filteredElements = filterMeaningfulElements(enhancedElements)
+        print("🧹 Filtered out \(enhancedElements.count - filteredElements.count) low-quality elements")
+        
+        // Use filtered elements as final result
+        let finalElements = filteredElements
         let fusionTime = Date().timeIntervalSince(fusionStart)
         stepTimes.append(("Data fusion", fusionTime))
         
-        // Step 7: Grid mapping
+        // Step 8: Grid Mapping
+        print("\n🗂️ GRID MAPPING")
+        print("===============")
         let gridStart = Date()
         let gridMapper = GridSweepMapper(windowFrame: windowInfo.frame)
         let gridMappedElements = gridMapper.mapToGrid(finalElements)
@@ -237,8 +323,17 @@ class UIInspectorApp {
         
         let totalTime = Date().timeIntervalSince(overallStartTime)
         
+        // Extract shape elements from filtered final elements for button summary
+        let filteredShapeElements = extractShapeElementsFromFiltered(finalElements)
+        
+        // Print button summary
+        printButtonSummary(elements: finalElements, shapeElements: filteredShapeElements)
+        
         // Print performance results
         printPerformanceResults(stepTimes: stepTimes, totalTime: totalTime)
+        
+        // Print window capture diagnostics
+        WindowManager.printCaptureStats()
         
         // Print coordinate debugging info
         printCoordinateDebugging(
@@ -333,17 +428,19 @@ class UIInspectorApp {
     
     private func integrateVisualElements(
         fusedElements: [UIElement],
-        visualElements: [VisualElement], 
+        visualElements: [UIShapeCandidate],
+        ocrElements: [OCRData],
         windowFrame: CGRect
     ) -> [UIElement] {
         var integratedElements = fusedElements
-        let spatialThreshold: CGFloat = 30.0  // Distance threshold for avoiding duplicates
         
-        print("🎨 Integrating \(visualElements.count) visual elements...")
+        print("🎨 Integrating \(visualElements.count) shape elements...")
         
         for visualElement in visualElements {
-            // Check if this visual element overlaps significantly with existing elements
-            let hasSignificantOverlap = integratedElements.contains { existing in
+            // Find overlapping existing elements to enhance
+            var enhancedExisting = false
+            
+            for (index, existing) in integratedElements.enumerated() {
                 let existingRect = CGRect(origin: existing.position, size: existing.size)
                 let visualRect = visualElement.boundingBox
                 
@@ -352,56 +449,388 @@ class UIInspectorApp {
                 let overlapArea = intersection.width * intersection.height
                 let visualArea = visualRect.width * visualRect.height
                 
-                // If more than 50% of the visual element overlaps with existing, skip it
-                return overlapArea > (visualArea * 0.5)
+                // If significant overlap (>30%), enhance the existing element instead of adding new
+                if overlapArea > (visualArea * 0.3) {
+                    let enhancedElement = enhanceElementWithButtonContext(
+                        existing: existing,
+                        buttonCandidate: visualElement,
+                        ocrElements: ocrElements,
+                        windowFrame: windowFrame
+                    )
+                    integratedElements[index] = enhancedElement
+                    enhancedExisting = true
+                    
+                    print("   🔗 Enhanced existing element with button context: \(visualElement.type.rawValue) at (\(Int(visualElement.boundingBox.origin.x)), \(Int(visualElement.boundingBox.origin.y)))")
+                    break
+                }
             }
             
-            if !hasSignificantOverlap {
-                // Convert visual element to UI element
+            // If no overlap, add as new element
+            if !enhancedExisting {
                 let newUIElement = createUIElementFromVisual(
                     visualElement: visualElement,
+                    ocrElements: ocrElements,
                     windowFrame: windowFrame
                 )
                 integratedElements.append(newUIElement)
                 
-                print("   ✅ Added visual element: \(visualElement.elementType) at (\(Int(visualElement.boundingBox.origin.x)), \(Int(visualElement.boundingBox.origin.y)))")
-            } else {
-                print("   ⚠️ Skipped overlapping visual element: \(visualElement.elementType)")
+                print("   ✅ Added new shape element: \(visualElement.type.rawValue) at (\(Int(visualElement.boundingBox.origin.x)), \(Int(visualElement.boundingBox.origin.y)))")
             }
         }
         
-        print("🎨 Visual integration complete: \(integratedElements.count - fusedElements.count) new elements added")
+        print("🎨 Shape integration complete: \(integratedElements.count - fusedElements.count) new elements added")
         return integratedElements
     }
     
-    private func createUIElementFromVisual(
-        visualElement: VisualElement,
+    private func enhanceElementWithButtonContext(
+        existing: UIElement,
+        buttonCandidate: UIShapeCandidate,
+        ocrElements: [OCRData],
         windowFrame: CGRect
     ) -> UIElement {
+        // Find OCR text within the button boundaries
+        let buttonText = findOCRTextInButton(buttonCandidate: buttonCandidate, ocrElements: ocrElements)
+        
+        // Create enhanced context
+        let enhancedContext = UIElement.ElementContext(
+            purpose: existing.context?.purpose ?? "Interactive element",
+            region: existing.context?.region ?? "Unknown region",
+            navigationPath: existing.context?.navigationPath ?? "",
+            availableActions: (existing.context?.availableActions ?? []) + [buttonCandidate.interactionType.rawValue]
+        )
+        
+        // Enhanced action hint combining original with button context
+        let enhancedActionHint = existing.actionHint?.isEmpty == false ? 
+            "\(existing.actionHint!) (\(buttonCandidate.interactionType.rawValue) button)" :
+            "\(buttonCandidate.interactionType.rawValue) button"
+        
+        // Enhanced semantic meaning
+        let enhancedSemanticMeaning = !existing.semanticMeaning.isEmpty ?
+            "\(existing.semanticMeaning) with \(buttonCandidate.uiRole.rawValue) visual" :
+            "\(buttonCandidate.uiRole.rawValue) button"
+        
+        return UIElement(
+            id: existing.id,
+            type: existing.type,
+            position: existing.position,
+            size: existing.size,
+            accessibilityData: existing.accessibilityData,
+            ocrData: existing.ocrData,
+            isClickable: existing.isClickable || (buttonCandidate.interactionType != .unknown),
+            confidence: max(existing.confidence, buttonCandidate.confidence),
+            semanticMeaning: enhancedSemanticMeaning,
+            actionHint: enhancedActionHint,
+            visualText: existing.visualText ?? buttonText,
+            interactions: existing.interactions,
+            context: enhancedContext
+        )
+    }
+    
+    private func filterMeaningfulElements(_ elements: [UIElement]) -> [UIElement] {
+        return elements.filter { element in
+            // Keep all non-button elements
+            guard element.type.contains("Button") || element.isClickable else {
+                return true
+            }
+            
+            // Filter criteria for buttons
+            return hasMeaningfulContext(element)
+        }
+    }
+    
+    private func hasMeaningfulContext(_ element: UIElement) -> Bool {
+        let size = element.size
+        let area = size.width * size.height
+        
+        // Filter out tiny buttons (likely UI artifacts)
+        if area < 400 { // Less than 20x20 pixels
+            return false
+        }
+        
+        // Check for meaningful text content
+        let hasGoodText = hasQualityText(element)
+        
+        // Check for meaningful accessibility description
+        let hasGoodAccessibility = hasQualityAccessibility(element)
+        
+        // Check for meaningful action hint
+        let hasGoodAction = hasQualityActionHint(element)
+        
+        // Must have at least one meaningful piece of context
+        return hasGoodText || hasGoodAccessibility || hasGoodAction
+    }
+    
+    private func hasQualityText(_ element: UIElement) -> Bool {
+        guard let text = element.visualText?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+            return false
+        }
+        
+        // Filter out empty or very short text
+        if text.isEmpty || text.count < 2 {
+            return false
+        }
+        
+        // Filter out generic/meaningless text
+        let lowercased = text.lowercased()
+        let meaninglessTexts = ["no text", "button", "click", "element", "ui", "icon"]
+        
+        return !meaninglessTexts.contains(lowercased)
+    }
+    
+    private func hasQualityAccessibility(_ element: UIElement) -> Bool {
+        guard let accessibility = element.accessibilityData else {
+            return false
+        }
+        
+        // Check for meaningful description
+        if let description = accessibility.description?.trimmingCharacters(in: .whitespacesAndNewlines),
+           !description.isEmpty && description.count > 2 {
+            let lowercased = description.lowercased()
+            let meaninglessDescs = ["button", "element", "ui", "icon", "click"]
+            return !meaninglessDescs.contains(lowercased)
+        }
+        
+        // Check for meaningful title
+        if let title = accessibility.title?.trimmingCharacters(in: .whitespacesAndNewlines),
+           !title.isEmpty && title.count > 2 {
+            let lowercased = title.lowercased()
+            let meaninglessTitles = ["button", "element", "ui", "icon", "click"]
+            return !meaninglessTitles.contains(lowercased)
+        }
+        
+        return false
+    }
+    
+    private func extractShapeElementsFromFiltered(_ elements: [UIElement]) -> [UIShapeCandidate] {
+        // Convert filtered UI elements back to shape candidates for button summary
+        return elements.compactMap { element in
+            // Only extract elements that were originally from shape detection
+            guard element.type.hasPrefix("Shape_") else { return nil }
+            
+            // Extract the shape type from the element type
+            let shapeTypeString = String(element.type.dropFirst(6)) // Remove "Shape_" prefix
+            guard let shapeType = ShapeType(rawValue: shapeTypeString) else { return nil }
+            
+            // Create a dummy contour path (just for display purposes)
+            let bounds = CGRect(origin: CGPoint(x: element.position.x - element.size.width/2, 
+                                               y: element.position.y - element.size.height/2), 
+                               size: element.size)
+            let path = CGPath(rect: bounds, transform: nil)
+            
+            // Determine interaction type from semantic meaning or action hint
+            let interactionType: InteractionType
+            if let actionHint = element.actionHint {
+                switch actionHint.lowercased() {
+                case let hint where hint.contains("text_input"):
+                    interactionType = .textInput
+                case let hint where hint.contains("close"):
+                    interactionType = .closeButton
+                case let hint where hint.contains("icon"):
+                    interactionType = .iconButton
+                case let hint where hint.contains("button"):
+                    interactionType = .button
+                default:
+                    interactionType = .button
+                }
+            } else {
+                interactionType = .button
+            }
+            
+            return UIShapeCandidate(
+                contour: path,
+                boundingBox: bounds,
+                type: shapeType,
+                uiRole: .button,
+                interactionType: interactionType,
+                confidence: element.confidence,
+                area: element.size.width * element.size.height,
+                aspectRatio: element.size.width / element.size.height,
+                corners: [],
+                curvature: 0.0
+            )
+        }
+    }
+    
+    private func hasQualityActionHint(_ element: UIElement) -> Bool {
+        guard let actionHint = element.actionHint?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+            return false
+        }
+        
+        // Filter out generic action hints
+        let genericHints = [
+            "clickable element",
+            "click element", 
+            "button button",
+            "click button",
+            "click ui",
+            "click icon"
+        ]
+        
+        let lowercased = actionHint.lowercased()
+        return !genericHints.contains(lowercased) && actionHint.count > 10
+    }
+    
+    private func findOCRTextInButton(buttonCandidate: UIShapeCandidate, ocrElements: [OCRData]) -> String {
+        let buttonRect = buttonCandidate.boundingBox
+        var foundTexts: [String] = []
+        
+        for ocrElement in ocrElements {
+            let ocrRect = ocrElement.boundingBox
+            
+            // Check if OCR text overlaps with button area (with some tolerance)
+            let expandedButtonRect = buttonRect.insetBy(dx: -5, dy: -5) // 5px tolerance
+            
+            if expandedButtonRect.intersects(ocrRect) {
+                // Calculate overlap percentage
+                let intersection = expandedButtonRect.intersection(ocrRect)
+                let overlapArea = intersection.width * intersection.height
+                let ocrArea = ocrRect.width * ocrRect.height
+                let overlapPercentage = overlapArea / ocrArea
+                
+                // If significant overlap (>20%) and decent confidence, include the text
+                if overlapPercentage > 0.2 && ocrElement.confidence > 0.5 {
+                    foundTexts.append(ocrElement.text.trimmingCharacters(in: .whitespacesAndNewlines))
+                }
+            }
+        }
+        
+        // Join multiple texts with space, remove duplicates
+        let uniqueTexts = Array(Set(foundTexts)).filter { !$0.isEmpty }
+        return uniqueTexts.joined(separator: " ")
+    }
+    
+    private func createUIElementFromVisual(
+        visualElement: UIShapeCandidate,
+        ocrElements: [OCRData],
+        windowFrame: CGRect
+    ) -> UIElement {
+        // Find OCR text within the visual element
+        let elementText = findOCRTextInButton(buttonCandidate: visualElement, ocrElements: ocrElements)
+        
         // Adjust coordinates to be relative to window frame
         let adjustedPosition = CGPoint(
             x: windowFrame.origin.x + visualElement.boundingBox.origin.x,
             y: windowFrame.origin.y + visualElement.boundingBox.origin.y
         )
         
+        let context = UIElement.ElementContext(
+            purpose: "Visual \(visualElement.uiRole.rawValue)",
+            region: "Shape detected",
+            navigationPath: "",
+            availableActions: [visualElement.interactionType.rawValue]
+        )
+        
         return UIElement(
-            type: "Visual_\(visualElement.elementType)",
+            id: UUID().uuidString,
+            type: "Shape_\(visualElement.type.rawValue)",
             position: adjustedPosition,
             size: visualElement.boundingBox.size,
             accessibilityData: nil,
             ocrData: nil,
-            isClickable: visualElement.isInteractive,
-            confidence: visualElement.confidence
+            isClickable: visualElement.interactionType != .unknown,
+            confidence: visualElement.confidence,
+            semanticMeaning: visualElement.uiRole.rawValue,
+            actionHint: visualElement.interactionType.rawValue,
+            visualText: elementText.isEmpty ? nil : elementText,
+            interactions: [],
+            context: context
         )
+    }
+    
+    private func printButtonSummary(elements: [UIElement], shapeElements: [UIShapeCandidate]) {
+        print("\n🔘 BUTTON ANALYSIS:")
+        print(String(repeating: "=", count: 50))
+        
+        // Find all button-like elements
+        let accessibilityButtons = elements.filter { element in
+            element.type.contains("Button") || element.actionHint?.contains("Click") == true
+        }
+        
+        let shapeButtons = shapeElements.filter { shape in
+            shape.interactionType == .button || shape.interactionType == .iconButton || shape.interactionType == .closeButton
+        }
+        
+        print("📊 Button Summary:")
+        print("   • Accessibility Buttons: \(accessibilityButtons.count)")
+        print("   • Shape-Detected Buttons: \(shapeButtons.count)")
+        print("   • Total Interactive Elements: \(accessibilityButtons.count + shapeButtons.count)")
+        
+        if !accessibilityButtons.isEmpty {
+            print("\n🎯 Accessibility Buttons:")
+            for (index, button) in accessibilityButtons.enumerated() {
+                let pos = button.position
+                let size = button.size
+                let text = button.visualText ?? button.accessibilityData?.description ?? button.accessibilityData?.title ?? "No text"
+                let type = button.type.replacingOccurrences(of: "AX", with: "")
+                
+                print("   \(index + 1). \(type) at (\(Int(pos.x)), \(Int(pos.y))) - \(Int(size.width))x\(Int(size.height))")
+                print("      Text: '\(text)'")
+                if let actionHint = button.actionHint {
+                    print("      Action: \(actionHint)")
+                }
+                print()
+            }
+        }
+        
+        if !shapeButtons.isEmpty {
+            print("🎨 Shape-Detected Buttons:")
+            for (index, button) in shapeButtons.enumerated() {
+                let bounds = button.boundingBox
+                
+                print("   \(index + 1). \(button.interactionType.rawValue) (\(button.type.rawValue)) at (\(Int(bounds.origin.x)), \(Int(bounds.origin.y))) - \(Int(bounds.width))x\(Int(bounds.height))")
+                print("      Confidence: \(String(format: "%.1f", button.confidence * 100))%")
+                print()
+            }
+        }
+        
+        if accessibilityButtons.isEmpty && shapeButtons.isEmpty {
+            print("   ℹ️  No buttons detected in this window")
+        }
     }
     
     private func printPerformanceResults(stepTimes: [(String, TimeInterval)], totalTime: TimeInterval) {
         print("\n⏱️  PERFORMANCE BREAKDOWN:")
         print(String(repeating: "=", count: 50))
+        
+        // Find parallel detection group time
+        var parallelGroupTime: TimeInterval = 0
+        var parallelSteps: [(String, TimeInterval)] = []
+        var otherSteps: [(String, TimeInterval)] = []
+        
         for (step, time) in stepTimes {
+            switch step {
+            case "Parallel detection group":
+                parallelGroupTime = time
+            case "Accessibility scan", "OCR processing", "Shape detection":
+                parallelSteps.append((step, time))
+            default:
+                otherSteps.append((step, time))
+            }
+        }
+        
+        // Print non-parallel steps first
+        for (step, time) in otherSteps {
             let percentage = (time / totalTime) * 100
             print("  • \(step): \(String(format: "%.3f", time))s (\(String(format: "%.1f", percentage))%)")
         }
+        
+        // Print parallel detection group
+        if parallelGroupTime > 0 {
+            let percentage = (parallelGroupTime / totalTime) * 100
+            print("  ⚡ Parallel Detection Group: \(String(format: "%.3f", parallelGroupTime))s (\(String(format: "%.1f", percentage))%)")
+            
+            // Calculate sequential time for comparison
+            let sequentialTime = parallelSteps.reduce(0) { $0 + $1.1 }
+            let speedup = sequentialTime / parallelGroupTime
+            
+            // Print individual parallel tasks with indentation
+            for (step, time) in parallelSteps.sorted(by: { $0.1 > $1.1 }) {
+                let percentage = (time / totalTime) * 100
+                print("    ├─ \(step): \(String(format: "%.3f", time))s (\(String(format: "%.1f", percentage))%)")
+            }
+            print("    └─ Sequential would be: \(String(format: "%.3f", sequentialTime))s (\(String(format: "%.1f", speedup))x speedup)")
+        }
+        
         print(String(repeating: "-", count: 50))
         print("  🏁 TOTAL TIME: \(String(format: "%.3f", totalTime))s")
     }

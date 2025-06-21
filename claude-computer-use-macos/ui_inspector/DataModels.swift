@@ -241,9 +241,15 @@ struct GridMappedElement {
     let importance: Int
     
     var compressedRepresentation: String {
-        let name = Self.compressElementName(originalElement)
+        let name = Self.getReadableElementName(originalElement)
+        let context = Self.getSemanticContext(originalElement)
         let readablePosition = makePositionReadable(gridPosition)
-        return "\(name)@\(readablePosition)"
+        
+        if !context.isEmpty {
+            return "\(name) (\(context))@\(readablePosition)"
+        } else {
+            return "\(name)@\(readablePosition)"
+        }
     }
     
     private func makePositionReadable(_ position: AdaptiveGridPosition) -> String {
@@ -251,15 +257,183 @@ struct GridMappedElement {
         return position.description
     }
     
-    private static func compressElementName(_ element: UIElement) -> String {
-        // Compress element names for UI representation
-        if let text = element.visualText, !text.isEmpty {
-            return String(text.prefix(8))
-        } else if let accData = element.accessibilityData {
+    private static func getReadableElementName(_ element: UIElement) -> String {
+        // Get readable element name for AI consumption
+        
+        // Priority 1: Use action hint if it's descriptive
+        if let actionHint = element.actionHint, 
+           !actionHint.isEmpty,
+           !actionHint.lowercased().contains("clickable element"),
+           actionHint.count > 3 {
+            // Clean up action hint (remove "Click " prefix)
+            let cleanAction = actionHint.replacingOccurrences(of: "Click ", with: "")
+            if cleanAction.count <= 20 {
+                return cleanAction
+            }
+        }
+        
+        // Priority 2: Use visual text if available
+        if let text = element.visualText, !text.isEmpty, text.count <= 20 {
+            return text
+        }
+        
+        // Priority 3: Use accessibility title
+        if let accData = element.accessibilityData,
+           let title = accData.title, !title.isEmpty, title.count <= 20 {
+            return title
+        }
+        
+        // Priority 4: Use accessibility description
+        if let accData = element.accessibilityData,
+           let description = accData.description, !description.isEmpty, description.count <= 20 {
+            return description
+        }
+        
+        // Fallback: Use element type
+        if let accData = element.accessibilityData {
             return accData.role.replacingOccurrences(of: "AX", with: "")
         } else {
             return element.type
         }
+    }
+    
+    private static func getSemanticContext(_ element: UIElement) -> String {
+        // Provide contextual information about what this element does
+        
+        // For text inputs, determine their purpose
+        if let accData = element.accessibilityData {
+            switch accData.role {
+            case "AXTextField", "AXTextArea", "AXSearchField":
+                return getTextFieldContext(element)
+            case "AXButton":
+                return getButtonContext(element)
+            case "AXPopUpButton":
+                return "menu"
+            case "AXScrollArea":
+                return "scrollable"
+            default:
+                break
+            }
+        }
+        
+        // Check element type for additional context
+        let type = element.type.lowercased()
+        if type.contains("textfield") || type.contains("input") {
+            return getTextFieldContext(element)
+        }
+        
+        return ""
+    }
+    
+    private static func getTextFieldContext(_ element: UIElement) -> String {
+        // Determine what kind of text input this is based on context clues
+        
+        // Check accessibility description for clues
+        if let accData = element.accessibilityData,
+           let description = accData.description?.lowercased() {
+            
+            // URL/Address bar detection
+            if description.contains("address") || description.contains("url") || 
+               description.contains("smart search field") {
+                return "url"
+            }
+            
+            // Search field detection
+            if description.contains("search") {
+                return "search"
+            }
+            
+            // Password field detection
+            if description.contains("password") || description.contains("secure") {
+                return "password"
+            }
+            
+            // Email field detection
+            if description.contains("email") || description.contains("mail") {
+                return "email"
+            }
+            
+            // Username field detection
+            if description.contains("username") || description.contains("user") {
+                return "username"
+            }
+            
+            // Comment/message field detection
+            if description.contains("comment") || description.contains("message") || 
+               description.contains("text area") {
+                return "text"
+            }
+        }
+        
+        // Check visual text for context
+        if let text = element.visualText?.lowercased() {
+            if text.contains("search") { return "search" }
+            if text.contains("email") { return "email" }
+            if text.contains("password") { return "password" }
+            if text.contains("username") { return "username" }
+        }
+        
+        // Check action hint for context
+        if let actionHint = element.actionHint?.lowercased() {
+            if actionHint.contains("search") { return "search" }
+            if actionHint.contains("email") { return "email" }
+            if actionHint.contains("password") { return "password" }
+        }
+        
+        // Position-based heuristics
+        let position = element.position
+        let size = element.size
+        
+        // Top of window + wide = likely address bar
+        if position.y < 100 && size.width > 300 {
+            return "url"
+        }
+        
+        // Center of page + medium width = likely search
+        if position.y > 200 && position.y < 600 && size.width > 200 && size.width < 500 {
+            return "search"
+        }
+        
+        // Default for unidentified text fields
+        return "input"
+    }
+    
+    private static func getButtonContext(_ element: UIElement) -> String {
+        // Provide context for what kind of button this is
+        
+        if let accData = element.accessibilityData,
+           let description = accData.description?.lowercased() {
+            
+            // Navigation buttons
+            if description.contains("back") { return "nav" }
+            if description.contains("forward") { return "nav" }
+            if description.contains("reload") || description.contains("refresh") { return "nav" }
+            if description.contains("home") { return "nav" }
+            
+            // Tab management
+            if description.contains("tab") { return "tab" }
+            if description.contains("new tab") { return "tab" }
+            
+            // Search/action buttons
+            if description.contains("search") { return "action" }
+            if description.contains("submit") || description.contains("send") { return "action" }
+            
+            // Settings/config
+            if description.contains("settings") || description.contains("preferences") { return "config" }
+            if description.contains("menu") { return "config" }
+            
+            // Share/social
+            if description.contains("share") { return "share" }
+        }
+        
+        // Check visual text
+        if let text = element.visualText?.lowercased() {
+            if text.contains("search") || text.contains("go") { return "action" }
+            if text.contains("back") || text.contains("forward") { return "nav" }
+            if text.contains("settings") || text.contains("menu") { return "config" }
+        }
+        
+        return ""
     }
 }
 
@@ -401,7 +575,7 @@ struct Config {
     static let maxCacheSize = 10
     static let cacheTimeout: TimeInterval = 30.0
     static let defaultWindowTimeout: TimeInterval = 2.0
-    static let gridSweepPollingInterval: TimeInterval = 0.05
+    static let gridSweepPollingInterval: TimeInterval = 0.01  // Optimized: 10ms instead of 50ms for faster app setup
     
     // Grid configuration - Higher resolution for better precision
     static let gridColumns = 40  // Extended columns beyond A-Z

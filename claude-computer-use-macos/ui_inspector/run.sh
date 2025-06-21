@@ -15,7 +15,7 @@ swiftc \
   OutputManager.swift \
   PerformanceMonitor.swift \
   BrowserInspector.swift \
-  EdgeDetectionEngine.swift \
+  ShapeDetectionEngine.swift \
   main.swift \
   -o compiled_ui_inspector
 

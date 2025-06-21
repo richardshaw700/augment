@@ -4,7 +4,9 @@ import Foundation
 
 class OutputManager: OutputFormatting {
     func toJSON(_ data: CompleteUIMap) -> Data {
+        // Performance optimization: Pre-allocate dictionary capacity
         var jsonDict: [String: Any] = [:]
+        jsonDict.reserveCapacity(3) // window, elements, metadata
         
         // Window information
         jsonDict["window"] = [
@@ -17,18 +19,25 @@ class OutputManager: OutputFormatting {
             ]
         ]
         
-        // Elements
-        jsonDict["elements"] = data.elements.map { element in
-            var elementDict: [String: Any] = [
-                "id": element.id,
-                "type": element.type,
-                "position": ["x": element.position.x, "y": element.position.y],
-                "size": ["width": element.size.width, "height": element.size.height],
-                "isClickable": element.isClickable,
-                "confidence": element.confidence,
-                "semanticMeaning": element.semanticMeaning
-            ]
+        // Elements - Performance optimization: Pre-allocate array capacity
+        var elementsArray: [[String: Any]] = []
+        elementsArray.reserveCapacity(data.elements.count)
+        
+        for element in data.elements {
+            var elementDict: [String: Any] = [:]
+            elementDict.reserveCapacity(12) // Estimate max keys per element
             
+            // Core properties
+            elementDict["id"] = element.id
+            elementDict["type"] = element.type
+            elementDict["position"] = ["x": element.position.x, "y": element.position.y]
+            elementDict["size"] = ["width": element.size.width, "height": element.size.height]
+            elementDict["isClickable"] = element.isClickable
+            elementDict["confidence"] = element.confidence
+            elementDict["semanticMeaning"] = element.semanticMeaning
+            elementDict["interactions"] = element.interactions
+            
+            // Optional properties - only add if present
             if let visualText = element.visualText {
                 elementDict["visualText"] = visualText
             }
@@ -37,14 +46,12 @@ class OutputManager: OutputFormatting {
                 elementDict["actionHint"] = actionHint
             }
             
-            elementDict["interactions"] = element.interactions
-            
             // Accessibility data
             if let accData = element.accessibilityData {
                 elementDict["accessibility"] = [
                     "role": accData.role,
                     "description": accData.description ?? NSNull(),
-                    "title": accData.title ?? NSNull(),
+                    "title": accData.title as Any? ?? NSNull(),
                     "enabled": accData.enabled,
                     "focused": accData.focused
                 ]
@@ -64,8 +71,10 @@ class OutputManager: OutputFormatting {
                 ]
             }
             
-            return elementDict
+            elementsArray.append(elementDict)
         }
+        
+        jsonDict["elements"] = elementsArray
         
         // Metadata
         jsonDict["metadata"] = [

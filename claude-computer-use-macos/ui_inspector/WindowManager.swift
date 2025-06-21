@@ -7,14 +7,26 @@ import ApplicationServices
 class WindowManager: WindowDetecting {
     private static var cachedImage: NSImage?
     private static var lastCacheTime: Date?
-    private static let cacheTimeout: TimeInterval = 0.5 // 500ms cache
+    private static let cacheTimeout: TimeInterval = 2.0 // Extended cache for better performance
+    private static var lastWindowFrame: CGRect?
+    
+    // NEW: Performance monitoring
+    private static var captureAttempts = 0
+    private static var cacheHits = 0
+    private static var fallbackCount = 0
+    private static var inMemorySuccesses = 0
+    private static var tempFileSuccesses = 0
+    private static var totalInMemoryTime: TimeInterval = 0
+    private static var totalTempFileTime: TimeInterval = 0
+    private static var totalFullScreenTime: TimeInterval = 0
     
     func getActiveWindow() -> WindowInfo? {
         return getAppWindow()
     }
     
     func captureWindow(_ window: WindowInfo) -> NSImage? {
-        return captureWindowBounds(window.frame)
+        Self.captureAttempts += 1
+        return captureWindowBoundsOptimized(window.frame)
     }
     
     // MARK: - Window Detection
@@ -59,71 +71,94 @@ class WindowManager: WindowDetecting {
         return nil
     }
     
-    // MARK: - Screenshot Capture
+    // MARK: - Optimized Screenshot Capture
     
-    private func captureWindowBounds(_ windowFrame: CGRect) -> NSImage? {
-        // Check cache first for performance
+    private func captureWindowBoundsOptimized(_ windowFrame: CGRect) -> NSImage? {
+        // Advanced cache check with frame validation
         let now = Date()
         if let cachedImage = Self.cachedImage,
            let lastCache = Self.lastCacheTime,
-           now.timeIntervalSince(lastCache) < Self.cacheTimeout {
+           let lastFrame = Self.lastWindowFrame,
+           now.timeIntervalSince(lastCache) < Self.cacheTimeout,
+           lastFrame == windowFrame {
+            Self.cacheHits += 1
             return cachedImage
         }
         
-        print("📐 Capturing window bounds: \(windowFrame)")
+        // Strategy 1: Fast temp file capture (most reliable for window regions)
+        if let image = captureWindowWithTempFileOptimized(windowFrame) {
+            updateCache(image: image, frame: windowFrame, time: now)
+            return image
+        }
         
-        // Capture only the window region using screencapture with -R flag
-        let tempPath = "/tmp/ui_window_\(Int(Date().timeIntervalSince1970)).png"
+        // Strategy 2: Full-screen in-memory capture as fallback
+        Self.fallbackCount += 1
+        if let image = captureFullScreenInMemory() {
+            updateCache(image: image, frame: windowFrame, time: now)
+            return image
+        }
+        
+        // Strategy 3: Full-screen temp file (last resort)
+        if let image = captureFullScreenTempFile() {
+            updateCache(image: image, frame: windowFrame, time: now)
+            return image
+        }
+        
+        return nil
+    }
+    
+    // NEW: Ultra-fast temp file capture with optimizations
+    private func captureWindowWithTempFileOptimized(_ windowFrame: CGRect) -> NSImage? {
+        let startTime = Date()
+        
+        // Use RAM disk path for faster I/O (if available)
+        let tempPath = "/tmp/ui_\(ProcessInfo.processInfo.processIdentifier).jpg"
         let task = Process()
         task.launchPath = "/usr/sbin/screencapture"
         
-        // -R x,y,w,h captures specific region
         let x = Int(windowFrame.origin.x)
-        let y = Int(windowFrame.origin.y)  
+        let y = Int(windowFrame.origin.y)
         let w = Int(windowFrame.size.width)
         let h = Int(windowFrame.size.height)
         
-        task.arguments = ["-x", "-t", "png", "-R", "\(x),\(y),\(w),\(h)", tempPath]
-        
-        print("🔍 DEBUG: Attempting window capture with region: \(x),\(y),\(w),\(h)")
+        // Optimized arguments: -x (no sound), -t jpg (faster), -R (region)
+        task.arguments = ["-x", "-t", "jpg", "-R", "\(x),\(y),\(w),\(h)", tempPath]
+        task.standardError = Pipe() // Suppress error output
+        task.standardOutput = Pipe() // Suppress stdout
         
         do {
             try task.run()
             task.waitUntilExit()
             
-            print("🔍 DEBUG: Screencapture exit status: \(task.terminationStatus)")
-            
             if task.terminationStatus == 0,
                let image = NSImage(contentsOfFile: tempPath) {
-                // Cache for immediate reuse
-                Self.cachedImage = image
-                Self.lastCacheTime = now
                 
-                // Async cleanup
-                DispatchQueue.global(qos: .utility).async {
-                    try? FileManager.default.removeItem(atPath: tempPath)
-                }
-                print("✅ Window capture successful!")
+                // Immediate cleanup
+                try? FileManager.default.removeItem(atPath: tempPath)
+                Self.tempFileSuccesses += 1
+                let captureTime = Date().timeIntervalSince(startTime)
+                Self.totalTempFileTime += captureTime
                 return image
             } else {
-                print("❌ Window capture failed - no image created or exit status: \(task.terminationStatus)")
+                try? FileManager.default.removeItem(atPath: tempPath)
             }
         } catch {
-            print("❌ Window capture failed: \(error)")
+            try? FileManager.default.removeItem(atPath: tempPath)
         }
         
-        // Fallback to full screen if window capture fails
-        print("⚠️ Falling back to full screen capture")
-        return captureFullScreen()
+        return nil
     }
     
-    private func captureFullScreen() -> NSImage? {
-        // PERFORMANCE: Try direct capture first, fallback to temp file
+    // NEW: Reliable full-screen in-memory capture
+    private func captureFullScreenInMemory() -> NSImage? {
+        let startTime = Date()
         let task = Process()
         task.launchPath = "/usr/sbin/screencapture"
         
-        // -m: capture main display only, -x: no sounds, -t png: PNG format
+        // Full screen in-memory (this works reliably)
         task.arguments = ["-m", "-x", "-t", "png", "-"]
+        task.standardError = Pipe()
+        
         let pipe = Pipe()
         task.standardOutput = pipe
         
@@ -133,35 +168,94 @@ class WindowManager: WindowDetecting {
             task.waitUntilExit()
             
             if task.terminationStatus == 0 && !data.isEmpty {
-                return NSImage(data: data)
-            }
-        } catch {
-            // Fallback to temp file method
-        }
-        
-        // Fallback: Fast temp file capture
-        let tempPath = "/tmp/ui_fast_\(Int(Date().timeIntervalSince1970)).png"
-        let fallbackTask = Process()
-        fallbackTask.launchPath = "/usr/sbin/screencapture"
-        fallbackTask.arguments = ["-m", "-x", "-t", "png", tempPath]
-        
-        do {
-            try fallbackTask.run()
-            fallbackTask.waitUntilExit()
-            
-            if fallbackTask.terminationStatus == 0,
-               let image = NSImage(contentsOfFile: tempPath) {
-                // Async cleanup
-                DispatchQueue.global(qos: .utility).async {
-                    try? FileManager.default.removeItem(atPath: tempPath)
-                }
+                Self.inMemorySuccesses += 1
+                let image = NSImage(data: data)
+                let captureTime = Date().timeIntervalSince(startTime)
+                Self.totalFullScreenTime += captureTime
                 return image
             }
         } catch {
-            print("❌ Both capture methods failed: \(error)")
+            // Continue to next method
         }
         
         return nil
+    }
+    
+    // NEW: Full-screen temp file fallback
+    private func captureFullScreenTempFile() -> NSImage? {
+        let startTime = Date()
+        let tempPath = "/tmp/ui_full_\(ProcessInfo.processInfo.processIdentifier).png"
+        let task = Process()
+        task.launchPath = "/usr/sbin/screencapture"
+        task.arguments = ["-m", "-x", "-t", "png", tempPath]
+        task.standardError = Pipe()
+        
+        do {
+            try task.run()
+            task.waitUntilExit()
+            
+            if task.terminationStatus == 0,
+               let image = NSImage(contentsOfFile: tempPath) {
+                try? FileManager.default.removeItem(atPath: tempPath)
+                Self.tempFileSuccesses += 1
+                let captureTime = Date().timeIntervalSince(startTime)
+                Self.totalFullScreenTime += captureTime
+                return image
+            }
+        } catch {
+            // Silent failure
+        }
+        
+        try? FileManager.default.removeItem(atPath: tempPath)
+        return nil
+    }
+    
+    // NEW: Optimized cache management
+    private func updateCache(image: NSImage, frame: CGRect, time: Date) {
+        Self.cachedImage = image
+        Self.lastCacheTime = time
+        Self.lastWindowFrame = frame
+    }
+    
+    // NEW: Performance diagnostics
+    static func printCaptureStats() {
+        let hitRate = captureAttempts > 0 ? Double(cacheHits) / Double(captureAttempts) * 100 : 0
+        print("📊 Window Capture Stats:")
+        print("   • Total attempts: \(captureAttempts)")
+        print("   • Cache hits: \(cacheHits) (\(String(format: "%.1f", hitRate))%)")
+        print("   • Fallbacks: \(fallbackCount)")
+        print("   • In-memory successes: \(inMemorySuccesses) (\(String(format: "%.1f", Double(inMemorySuccesses) / Double(captureAttempts) * 100))%)")
+        print("   • Temp file successes: \(tempFileSuccesses) (\(String(format: "%.1f", Double(tempFileSuccesses) / Double(captureAttempts) * 100))%)")
+        print("   • Total in-memory time: \(totalInMemoryTime)s")
+        print("   • Total temp file time: \(totalTempFileTime)s")
+        print("   • Total full-screen time: \(totalFullScreenTime)s")
+    }
+    
+
+    
+    // MARK: - Batch Capture for Multiple Windows
+    
+    func captureWindowsBatch(_ windows: [WindowInfo]) -> [NSImage?] {
+        // Parallel capture for multiple windows
+        let dispatchGroup = DispatchGroup()
+        var results: [NSImage?] = Array(repeating: nil, count: windows.count)
+        let resultsQueue = DispatchQueue(label: "com.windowmanager.batch", attributes: .concurrent)
+        
+        for (index, window) in windows.enumerated() {
+            dispatchGroup.enter()
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                let image = self.captureWindow(window)
+                
+                resultsQueue.async(flags: .barrier) {
+                    results[index] = image
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        
+        dispatchGroup.wait()
+        return results
     }
     
     // MARK: - App Management
@@ -173,28 +267,28 @@ class WindowManager: WindowDetecting {
         
         // Quick check if already active and has windows
         if NSWorkspace.shared.frontmostApplication?.bundleIdentifier == bundleID && hasAppWindows(bundleIdentifier: bundleID) {
-            print("⚡ \(AppConfig.displayName) already active with windows, skipping setup")
+            // print("⚡ \(AppConfig.displayName) already active with windows, skipping setup")
             return
         }
         
-        print("🔄 Activating \(AppConfig.displayName) using NSWorkspace...")
+        // Reduced debug output for performance
+        // print("🔄 Activating \(AppConfig.displayName) using NSWorkspace...")
         
         // Use fast NSWorkspace APIs instead of slow AppleScript
         let workspace = NSWorkspace.shared
         
         if let app = workspace.runningApplications.first(where: { $0.bundleIdentifier == bundleID }) {
             // App is running - just activate it
-            app.activate(options: .activateIgnoringOtherApps)
-            print("⚡ Activated existing \(AppConfig.displayName) process")
+            app.activate(options: [])
+            // print("⚡ Activated existing \(AppConfig.displayName) process")
         } else {
             // App not running - launch it
-            let success = workspace.launchApplication(appName)
-            if success {
-                print("🚀 Launched \(AppConfig.displayName) application")
-            } else {
+            let success = workspace.launchApplication(withBundleIdentifier: bundleID, options: [], additionalEventParamDescriptor: nil, launchIdentifier: nil)
+            if !success {
                 print("❌ Failed to launch \(AppConfig.displayName)")
                 return
             }
+            // print("🚀 Launched \(AppConfig.displayName) application")
         }
         
         // OPTIMIZATION: Smart polling for any app windows

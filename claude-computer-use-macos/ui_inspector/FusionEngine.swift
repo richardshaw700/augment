@@ -118,11 +118,11 @@ class FusionEngine: DataFusion {
     }
     
     private func determineElementType(accData: AccessibilityData?, ocrData: OCRData?) -> String {
-        if let accData = accData, let ocrData = ocrData {
+        if let accData = accData, ocrData != nil {
             return "\(accData.role)+OCR"
         } else if let accData = accData {
             return accData.role
-        } else if let ocrData = ocrData {
+        } else if ocrData != nil {
             return "TextContent"
         } else {
             return "Unknown"
@@ -374,6 +374,52 @@ extension UIElement {
 class ImprovedFusionEngine: DataFusion {
     private let coordinateSystem: CoordinateSystem
     
+    // Performance optimization: Pre-computed coordinate cache
+    private var accessibilityPositionCache: [(position: CGPoint, data: AccessibilityData)] = []
+    private var ocrPositionCache: [(position: CGPoint, data: OCRData)] = []
+    
+    // NEW: Spatial grid optimization for O(1) spatial lookups
+    private struct SpatialGrid {
+        let cellSize: Double = 50.0  // 50px grid cells
+        private var grid: [String: [Int]] = [:]  // Grid cell -> accessibility indices
+        
+        mutating func buildGrid(from cache: [(position: CGPoint, data: AccessibilityData)]) {
+            grid.removeAll()
+            
+            for (index, cached) in cache.enumerated() {
+                let cellKey = getCellKey(for: cached.position)
+                grid[cellKey, default: []].append(index)
+            }
+        }
+        
+        func getNearbyIndices(for position: CGPoint, radius: Double = 50.0) -> [Int] {
+            let cellsToCheck = Int(ceil(radius / cellSize))
+            var nearbyIndices: [Int] = []
+            
+            let centerX = Int(position.x / cellSize)
+            let centerY = Int(position.y / cellSize)
+            
+            for dx in -cellsToCheck...cellsToCheck {
+                for dy in -cellsToCheck...cellsToCheck {
+                    let cellKey = "\(centerX + dx),\(centerY + dy)"
+                    if let indices = grid[cellKey] {
+                        nearbyIndices.append(contentsOf: indices)
+                    }
+                }
+            }
+            
+            return nearbyIndices
+        }
+        
+        private func getCellKey(for position: CGPoint) -> String {
+            let x = Int(position.x / cellSize)
+            let y = Int(position.y / cellSize)
+            return "\(x),\(y)"
+        }
+    }
+    
+    private var spatialGrid = SpatialGrid()
+    
     init(coordinateSystem: CoordinateSystem) {
         self.coordinateSystem = coordinateSystem
     }
@@ -381,115 +427,266 @@ class ImprovedFusionEngine: DataFusion {
     func fuse(accessibility: [AccessibilityData], ocr: [OCRData], coordinates: CoordinateMapping) -> [UIElement] {
         var fusedElements: [UIElement] = []
         
-        // Strategy: OCR-Primary Fusion
+        // Performance optimization: Pre-compute and cache all positions + build spatial grid
+        buildPositionCaches(accessibility: accessibility, ocr: ocr)
+        
+        // Smart optimization: Only use spatial grid for larger datasets
+        let useGridOptimization = accessibilityPositionCache.count > 100
+        if useGridOptimization {
+            spatialGrid.buildGrid(from: accessibilityPositionCache)
+        }
+        
+        // Strategy: OCR-Primary Fusion with optimized spatial lookup
         // 1. Start with OCR elements (perfect coordinates)
         // 2. Enhance with nearby accessibility metadata (clickability, roles)
         // 3. Add only high-value accessibility-only elements
         
         // Phase 1: Create OCR-primary elements with accessibility enhancement
-        for ocrData in ocr {
-            let ocrPosition = CGPoint(
-                x: ocrData.boundingBox.midX,
-                y: ocrData.boundingBox.midY
-            )
-            
-            // Find nearby accessibility element for metadata enhancement
-            let nearbyAccessibility = findNearbyAccessibilityElement(
-                for: ocrPosition, 
-                in: accessibility,
-                maxDistance: 30.0  // Tighter threshold
-            )
+        var usedAccessibilityIndices: Set<Int> = []
+        
+        // Batch processing optimization
+        fusedElements.reserveCapacity(ocrPositionCache.count + accessibilityPositionCache.count / 4)
+        
+        // Performance optimization: Early termination tracking
+        var perfectMatches = 0
+        let maxPerfectMatches = min(ocrPositionCache.count / 2, 20) // Limit perfect match processing
+        
+        for (_, cachedOCR) in ocrPositionCache.enumerated() {
+            // Choose optimal spatial lookup method
+            let (nearbyAccessibility, accIndex) = useGridOptimization ?
+                findNearbyAccessibilityElementWithGrid(for: cachedOCR.position, maxDistance: 30.0) :
+                findNearbyAccessibilityElementLinear(for: cachedOCR.position, maxDistance: 30.0)
             
             let enhancedElement = createOCRPrimaryElement(
-                ocrData: ocrData,
-                position: ocrPosition,
+                ocrData: cachedOCR.data,
+                position: cachedOCR.position,
                 accessibilityEnhancement: nearbyAccessibility
             )
             
-            fusedElements.append(enhancedElement)
-        }
-        
-        // Phase 2: Add high-value accessibility-only elements
-        let usedAccessibilityElements = Set(fusedElements.compactMap { $0.accessibilityData?.element })
-        
-        for accData in accessibility {
-            // Skip if already used for enhancement
-            if let element = accData.element, usedAccessibilityElements.contains(element) {
-                continue
+            // Early termination: Track perfect matches (high confidence + accessibility enhancement)
+            if enhancedElement.confidence > 0.9 && nearbyAccessibility != nil {
+                perfectMatches += 1
             }
             
-            // Only add if it provides unique value
-            if isHighValueAccessibilityElement(accData) {
-                guard let position = accData.position else { continue }
-                
-                let accessibilityElement = createAccessibilityOnlyElement(
-                    accData: accData,
-                    position: position
-                )
-                fusedElements.append(accessibilityElement)
+            fusedElements.append(enhancedElement)
+            
+            // Mark accessibility element as used
+            if let index = accIndex {
+                usedAccessibilityIndices.insert(index)
+            }
+            
+            // Early termination: If we have enough high-quality elements, skip remaining low-value OCR
+            if perfectMatches >= maxPerfectMatches && cachedOCR.data.confidence < 0.7 {
+                continue // Skip low-confidence OCR when we have plenty of good matches
             }
         }
         
-        print("🔗 Improved Fusion complete: \(fusedElements.count) total elements")
-        print("   • OCR-enhanced: \(fusedElements.filter { $0.ocrData != nil }.count)")
-        print("   • High-value accessibility: \(fusedElements.filter { $0.ocrData == nil && $0.accessibilityData != nil }.count)")
+        // Phase 2: Add high-value accessibility-only elements (optimized batch processing)
+        let highValueElements = accessibilityPositionCache.enumerated().compactMap { (accIndex, cachedAcc) -> UIElement? in
+            // Early termination: Skip if already used for enhancement
+            guard !usedAccessibilityIndices.contains(accIndex) else { return nil }
+            
+            // Early termination: Quick high-value check with optimized isHighValueAccessibilityElement
+            guard isHighValueAccessibilityElementOptimized(cachedAcc.data) else { return nil }
+            
+            return createAccessibilityOnlyElement(
+                accData: cachedAcc.data,
+                position: cachedAcc.position
+            )
+        }
+        
+        fusedElements.append(contentsOf: highValueElements)
+        
+        // Optimized logging - compute counts without filters for performance
+        let totalElements = fusedElements.count
+        let ocrEnhanced = ocrPositionCache.count
+        let accessibilityOnly = highValueElements.count
+        
+        print("🔗 Improved Fusion complete: \(totalElements) total elements")
+        print("   • OCR-enhanced: \(ocrEnhanced)")
+        print("   • High-value accessibility: \(accessibilityOnly)")
+        print("   • Optimization: \(useGridOptimization ? "Grid-based" : "Linear") spatial lookup")
         
         return fusedElements
     }
     
     // MARK: - Helper Methods
     
-    private func findNearbyAccessibilityElement(
-        for ocrPosition: CGPoint,
-        in accessibility: [AccessibilityData],
-        maxDistance: Double
-    ) -> AccessibilityData? {
-        var bestMatch: (data: AccessibilityData, distance: Double)?
+    private func buildPositionCaches(accessibility: [AccessibilityData], ocr: [OCRData]) {
+        // Pre-compute all OCR positions
+        ocrPositionCache = ocr.map { ocrData in
+            let position = CGPoint(
+                x: ocrData.boundingBox.midX,
+                y: ocrData.boundingBox.midY
+            )
+            return (position: position, data: ocrData)
+        }
         
-        for accData in accessibility {
-            guard let accPosition = accData.position else { continue }
+        // Pre-compute all accessibility positions (filter out nil positions)
+        accessibilityPositionCache = accessibility.compactMap { accData in
+            guard let position = accData.position else { return nil }
+            return (position: position, data: accData)
+        }
+    }
+    
+    // NEW: Optimized linear search for small datasets
+    private func findNearbyAccessibilityElementLinear(
+        for ocrPosition: CGPoint,
+        maxDistance: Double
+    ) -> (AccessibilityData?, Int?) {
+        var bestMatch: (data: AccessibilityData, distance: Double, index: Int)?
+        let maxDistanceSquared = maxDistance * maxDistance
+        
+        for (index, cachedAcc) in accessibilityPositionCache.enumerated() {
+            // Fast squared distance calculation
+            let dx = ocrPosition.x - cachedAcc.position.x
+            let dy = ocrPosition.y - cachedAcc.position.y
+            let distanceSquared = dx * dx + dy * dy
             
-            let distance = coordinateSystem.spatialDistance(between: ocrPosition, and: accPosition)
+            // Early rejection if too far
+            guard distanceSquared <= maxDistanceSquared else { continue }
             
-            if distance <= maxDistance {
-                if bestMatch == nil || distance < bestMatch!.distance {
-                    bestMatch = (accData, distance)
+            // Early termination: if very close, use immediately
+            if distanceSquared < 25.0 { // 5px squared
+                return (cachedAcc.data, index)
+            }
+            
+            // Track best match (avoid sqrt until necessary)
+            if bestMatch == nil || distanceSquared < (bestMatch!.distance * bestMatch!.distance) {
+                bestMatch = (cachedAcc.data, sqrt(distanceSquared), index)
+            }
+        }
+        
+        return (bestMatch?.data, bestMatch?.index)
+    }
+    
+    // NEW: Grid-based spatial lookup - O(1) instead of O(n)
+    private func findNearbyAccessibilityElementWithGrid(
+        for ocrPosition: CGPoint,
+        maxDistance: Double
+    ) -> (AccessibilityData?, Int?) {
+        // Get candidate indices from spatial grid
+        let candidateIndices = spatialGrid.getNearbyIndices(for: ocrPosition, radius: maxDistance)
+        
+        var bestMatch: (data: AccessibilityData, distance: Double, index: Int)?
+        let maxDistanceSquared = maxDistance * maxDistance
+        
+        for index in candidateIndices {
+            guard index < accessibilityPositionCache.count else { continue }
+            
+            let cachedAcc = accessibilityPositionCache[index]
+            
+            // Fast squared distance calculation
+            let dx = ocrPosition.x - cachedAcc.position.x
+            let dy = ocrPosition.y - cachedAcc.position.y
+            let distanceSquared = dx * dx + dy * dy
+            
+            // Early rejection if too far
+            if distanceSquared > maxDistanceSquared {
+                continue
+            }
+            
+            // Early termination: if very close, use immediately
+            if distanceSquared < 25.0 { // 5px squared
+                return (cachedAcc.data, index)
+            }
+            
+            // Track best match
+            if bestMatch == nil {
+                bestMatch = (cachedAcc.data, sqrt(distanceSquared), index)
+            } else {
+                let distance = sqrt(distanceSquared)
+                if distance < bestMatch!.distance {
+                    bestMatch = (cachedAcc.data, Double(distance), index)
                 }
             }
         }
         
-        return bestMatch?.data
+        return (bestMatch?.data, bestMatch?.index)
     }
     
     private func isHighValueAccessibilityElement(_ accData: AccessibilityData) -> Bool {
-        // Only include accessibility elements that provide unique interaction value
+        // Optimized role checking - use prefix matching for faster comparison
         let role = accData.role
         
-        switch role {
-        case "AXButton", "AXMenuItem", "AXPopUpButton":
-            // Interactive buttons without text
+        // Fast prefix-based role checking
+        if role.hasPrefix("AXButton") || role.hasPrefix("AXMenuItem") || role.hasPrefix("AXPopUp") {
             return true
-        case "AXTextField", "AXTextArea":
-            // Text input fields
-            return true
-        case "AXCheckBox", "AXRadioButton":
-            // Form controls
-            return true
-        case "AXSlider", "AXProgressIndicator":
-            // UI controls
-            return true
-        case "AXScrollArea":
-            // Scrollable regions (only if large enough)
-            if let size = accData.size {
-                return size.width > 100 && size.height > 100
-            }
-            return false
-        case "AXRow", "AXCell":
-            // Table/list items (only if they have meaningful content)
-            return accData.title != nil || accData.description != nil
-        default:
-            return false
         }
+        
+        if role.hasPrefix("AXText") {
+            return true  // AXTextField, AXTextArea
+        }
+        
+        if role.hasPrefix("AXCheck") || role.hasPrefix("AXRadio") {
+            return true  // AXCheckBox, AXRadioButton
+        }
+        
+        if role.hasPrefix("AXSlider") || role.hasPrefix("AXProgress") {
+            return true  // AXSlider, AXProgressIndicator
+        }
+        
+        if role == "AXScrollArea" {
+            // Quick size check with early return
+            guard let size = accData.size else { return false }
+            return size.width > 100 && size.height > 100
+        }
+        
+        if role == "AXRow" || role == "AXCell" {
+            // Fast nil checks
+            return accData.title != nil || accData.description != nil
+        }
+        
+        return false
+    }
+    
+    // NEW: Ultra-optimized version for batch processing
+    private func isHighValueAccessibilityElementOptimized(_ accData: AccessibilityData) -> Bool {
+        let role = accData.role
+        
+        // Ultra-fast character-based early detection
+        let firstChar = role.first
+        guard firstChar == "A" else { return false } // All AX roles start with 'A'
+        
+        // Fast second character check
+        if role.count < 3 { return false }
+        let secondChar = role[role.index(role.startIndex, offsetBy: 1)]
+        guard secondChar == "X" else { return false } // All AX roles have 'X' as second char
+        
+        // Optimized role checking with character-based lookup
+        if role.count >= 8 { // "AXButton" = 8 chars
+            let prefix = String(role.prefix(8))
+            if prefix == "AXButton" || prefix == "AXMenuIt" || prefix == "AXPopUpB" {
+                return true
+            }
+        }
+        
+        if role.count >= 6 { // "AXText" = 6 chars minimum
+            let prefix = String(role.prefix(6))
+            if prefix == "AXText" {
+                return true
+            }
+        }
+        
+        if role.count >= 7 { // "AXCheck" = 7 chars minimum
+            let prefix = String(role.prefix(7))
+            if prefix == "AXCheck" || prefix == "AXRadio" || prefix == "AXSlide" {
+                return true
+            }
+        }
+        
+        // Exact matches for short roles
+        if role == "AXRow" || role == "AXCell" {
+            // Fast existence check without nil coalescing
+            return accData.title != nil || accData.description != nil
+        }
+        
+        if role == "AXScrollArea" {
+            // Optimized size check
+            return accData.size?.width ?? 0 > 100 && accData.size?.height ?? 0 > 100
+        }
+        
+        return false
     }
     
     private func createOCRPrimaryElement(
@@ -503,11 +700,8 @@ class ImprovedFusionEngine: DataFusion {
             accessibilityData: accessibilityEnhancement
         )
         
-        // Enhanced element type
-        let type = determineEnhancedType(
-            ocrData: ocrData,
-            accessibilityData: accessibilityEnhancement
-        )
+        // Enhanced element type (optimized string creation)
+        let type = accessibilityEnhancement?.role.appending("+OCR") ?? "TextContent"
         
         // Calculate enhanced confidence
         let confidence = calculateEnhancedConfidence(
@@ -547,22 +741,27 @@ class ImprovedFusionEngine: DataFusion {
         ocrData: OCRData,
         accessibilityData: AccessibilityData?
     ) -> Bool {
-        // Primary: Accessibility role-based detection
+        // Primary: Accessibility role-based detection (fast lookup)
         if let role = accessibilityData?.role {
-            switch role {
-            case "AXButton", "AXMenuItem", "AXPopUpButton", "AXCheckBox", "AXRadioButton":
+            // Optimized role checking with early returns
+            if role.hasPrefix("AXButton") || role.hasPrefix("AXMenuItem") || role.hasPrefix("AXPopUp") {
                 return true
-            case "AXRow", "AXCell":
+            }
+            if role == "AXRow" || role == "AXCell" || role.hasPrefix("AXCheck") || role.hasPrefix("AXRadio") {
                 return true
-            default:
-                break
             }
         }
         
-        // Secondary: OCR text-based detection
-        let text = ocrData.text.lowercased()
-        let clickableKeywords = ["button", "click", "open", "close", "save", "cancel", "download"]
-        return clickableKeywords.contains(where: { text.contains($0) })
+        // Secondary: OCR text-based detection (only if needed)
+        let text = ocrData.text
+        if text.count > 3 { // Avoid processing very short text
+            let lowercaseText = text.lowercased()
+            return lowercaseText.contains("button") || lowercaseText.contains("click") || 
+                   lowercaseText.contains("open") || lowercaseText.contains("close") || 
+                   lowercaseText.contains("save") || lowercaseText.contains("cancel")
+        }
+        
+        return false
     }
     
     private func determineEnhancedType(
