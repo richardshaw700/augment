@@ -1,0 +1,4705 @@
+{
+  "elements" : [
+    {
+      "size" : {
+        "height" : 9.9999999999999734,
+        "width" : 64
+      },
+      "semanticMeaning" : "Text content: 'reddit.com'",
+      "id" : "3E8D1DDF-DED7-49E8-92DB-EE214FED001B",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 584.5,
+        "y" : 81.000000000000014
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "reddit.com",
+      "ocr" : {
+        "text" : "reddit.com",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 64,
+          "height" : 9.9999999999999734,
+          "x" : 552.5,
+          "y" : 76.000000000000028
+        }
+      }
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 224.5,
+          "x" : 126.5,
+          "y" : 117,
+          "height" : 10.499999999999961
+        },
+        "text" : "best local LLM for M1 chip - Google Search",
+        "confidence" : 0.5
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXGroup",
+        "description" : null,
+        "focused" : false
+      },
+      "visualText" : "best local LLM for M1 chip - Google Search",
+      "id" : "E5E4D725-E73B-4282-BCD6-E53738D7CBF5",
+      "type" : "AXGroup+OCR",
+      "interactions" : [
+        "right_click"
+      ],
+      "position" : {
+        "x" : 238.75,
+        "y" : 122.24999999999999
+      },
+      "size" : {
+        "width" : 224.5,
+        "height" : 10.499999999999961
+      },
+      "semanticMeaning" : "AXGroup with text 'best local LLM for M1 chip - Google Search'",
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "id" : "DD4729AD-1B0E-4495-9E5F-0A80A73B0953",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 198.50000000000003,
+        "height" : 10.499999999999961
+      },
+      "semanticMeaning" : "Text content: 'best LLM for M2 8GB - Google Search'",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 487,
+          "width" : 198.50000000000003,
+          "y" : 117,
+          "height" : 10.499999999999961
+        },
+        "confidence" : 0.5,
+        "text" : "best LLM for M2 8GB - Google Search"
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 586.25,
+        "y" : 122.24999999999999
+      },
+      "visualText" : "best LLM for M2 8GB - Google Search",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "id" : "157B58DB-FCEF-42C8-9A8B-765993F6510B",
+      "position" : {
+        "y" : 122.24999999999999,
+        "x" : 913.5
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXLink with text 'X • Which model for Mac M2 8GB RAM 7 : rlLocalLLaMA'",
+      "interactions" : [
+
+      ],
+      "type" : "AXLink+OCR",
+      "ocr" : {
+        "text" : "X • Which model for Mac M2 8GB RAM 7 : rlLocalLLaMA",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 757,
+          "y" : 117,
+          "width" : 313.00000000000011,
+          "height" : 10.499999999999961
+        }
+      },
+      "accessibility" : {
+        "title" : "Create post",
+        "focused" : false,
+        "role" : "AXLink",
+        "description" : "Create post",
+        "enabled" : true
+      },
+      "visualText" : "X • Which model for Mac M2 8GB RAM 7 : rlLocalLLaMA",
+      "size" : {
+        "width" : 313.00000000000011,
+        "height" : 10.499999999999961
+      },
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "size" : {
+        "height" : 31.999999999999975,
+        "width" : 116
+      },
+      "visualText" : "O reddit",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'O reddit'",
+      "ocr" : {
+        "text" : "O reddit",
+        "boundingBox" : {
+          "height" : 31.999999999999975,
+          "y" : 147,
+          "x" : 119,
+          "width" : 116
+        },
+        "confidence" : 0.5
+      },
+      "interactions" : [
+
+      ],
+      "id" : "945DD6E4-7237-40DB-96F2-0340BF2875F8",
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 163,
+        "x" : 177
+      }
+    },
+    {
+      "id" : "A0B42B6A-9C23-4250-8189-2F29CE14C50C",
+      "semanticMeaning" : "AXGroup with text 'Q O rlLocalLLaMA O Search in rlLocalLLaMA'",
+      "interactions" : [
+        "right_click"
+      ],
+      "isClickable" : false,
+      "type" : "AXGroup+OCR",
+      "confidence" : 0.79999999999999993,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Q O rlLocalLLaMA O Search in rlLocalLLaMA",
+        "boundingBox" : {
+          "x" : 277,
+          "y" : 155.00000000000006,
+          "height" : 15.999999999999936,
+          "width" : 330
+        }
+      },
+      "size" : {
+        "width" : 330,
+        "height" : 15.999999999999936
+      },
+      "visualText" : "Q O rlLocalLLaMA O Search in rlLocalLLaMA",
+      "position" : {
+        "x" : 442,
+        "y" : 163.00000000000003
+      },
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXGroup",
+        "enabled" : true,
+        "description" : null
+      }
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'Create'",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "focused" : false,
+        "role" : "AXStaticText",
+        "title" : null
+      },
+      "id" : "BECF72C2-D05C-4A7D-87C2-08659EC12CBA",
+      "size" : {
+        "width" : 43.999999999999922,
+        "height" : 10.500000000000064
+      },
+      "ocr" : {
+        "text" : "Create",
+        "boundingBox" : {
+          "width" : 43.999999999999922,
+          "x" : 932.5,
+          "height" : 10.500000000000064,
+          "y" : 157.99999999999997
+        },
+        "confidence" : 0.5
+      },
+      "visualText" : "Create",
+      "position" : {
+        "y" : 163.25,
+        "x" : 954.5
+      },
+      "confidence" : 0.79999999999999993,
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false
+    },
+    {
+      "type" : "TextContent",
+      "id" : "54490701-F661-4823-9947-E979DDB8D571",
+      "semanticMeaning" : "Text content: 'Then none. Otherwise you can play around with 7B or 8B models in Q4, but it is really pushing it'",
+      "position" : {
+        "x" : 418.75,
+        "y" : 211.00000000000003
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 614.5,
+        "height" : 13.000000000000005
+      },
+      "visualText" : "Then none. Otherwise you can play around with 7B or 8B models in Q4, but it is really pushing it",
+      "ocr" : {
+        "text" : "Then none. Otherwise you can play around with 7B or 8B models in Q4, but it is really pushing it",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 111.5,
+          "height" : 13.000000000000005,
+          "y" : 204.50000000000003,
+          "width" : 614.5
+        }
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5
+    },
+    {
+      "id" : "8A2DEC3F-7281-4A09-8821-03E70E667F0F",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "visualText" : "because it alone needs about 5GB of your total memory. Then you have the 3B models, but",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 112,
+          "height" : 13.000000000000005,
+          "y" : 224.49999999999997,
+          "width" : 584.5
+        },
+        "confidence" : 0.5,
+        "text" : "because it alone needs about 5GB of your total memory. Then you have the 3B models, but"
+      },
+      "isClickable" : false,
+      "position" : {
+        "y" : 230.99999999999997,
+        "x" : 404.25
+      },
+      "size" : {
+        "width" : 584.5,
+        "height" : 13.000000000000005
+      },
+      "semanticMeaning" : "Text content: 'because it alone needs about 5GB of your total memory. Then you have the 3B models, but'"
+    },
+    {
+      "id" : "0F2B2640-1404-484C-9F8E-A81EA9016B28",
+      "position" : {
+        "x" : 416.25,
+        "y" : 251
+      },
+      "isClickable" : false,
+      "visualText" : "those are not really good for much to be honest if you don't have special requirements and just",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 609.5,
+        "height" : 13.000000000000005
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'those are not really good for much to be honest if you don't have special requirements and just'",
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "those are not really good for much to be honest if you don't have special requirements and just",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 609.5,
+          "x" : 111.5,
+          "height" : 13.000000000000005,
+          "y" : 244.5
+        }
+      }
+    },
+    {
+      "visualText" : "want a generic chat and knowledge model.",
+      "size" : {
+        "width" : 274,
+        "height" : 12.999999999999904
+      },
+      "position" : {
+        "y" : 271,
+        "x" : 248.5
+      },
+      "isClickable" : true,
+      "type" : "AXButton+OCR",
+      "actionHint" : "Click Give award",
+      "id" : "D2C6ECED-B1C1-41D5-ACDA-E3DB100D5150",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 274,
+          "height" : 12.999999999999904,
+          "x" : 111.5,
+          "y" : 264.50000000000006
+        },
+        "text" : "want a generic chat and knowledge model."
+      },
+      "semanticMeaning" : "AXButton with text 'want a generic chat and knowledge model.'",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : "Give award",
+        "title" : "Give award",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "semanticMeaning" : "Text content: 'Reddit Rules Privacy Policy User Agreement'",
+      "interactions" : [
+
+      ],
+      "id" : "7C323421-6A2F-4055-8686-B36D5AABE3D0",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 765,
+          "y" : 221.00000000000006,
+          "width" : 255.49999999999994,
+          "height" : 11.499999999999938
+        },
+        "text" : "Reddit Rules Privacy Policy User Agreement"
+      },
+      "position" : {
+        "y" : 226.75000000000003,
+        "x" : 892.75
+      },
+      "isClickable" : false,
+      "visualText" : "Reddit Rules Privacy Policy User Agreement",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 11.499999999999938,
+        "width" : 255.49999999999994
+      },
+      "confidence" : 0.5
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "y" : 250.75000000000003,
+        "x" : 876
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 221.99999999999997,
+          "x" : 765,
+          "height" : 11.500000000000041,
+          "y" : 245
+        },
+        "text" : "Reddit, Inc. 0 2025. All rights reserved.",
+        "confidence" : 0.5
+      },
+      "visualText" : "Reddit, Inc. 0 2025. All rights reserved.",
+      "id" : "DF057ED6-8F1C-4182-B8BF-17940C5634E6",
+      "semanticMeaning" : "Text content: 'Reddit, Inc. 0 2025. All rights reserved.'",
+      "size" : {
+        "height" : 11.500000000000041,
+        "width" : 221.99999999999997
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "accessibility" : {
+        "title" : "Reply reply",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : null
+      },
+      "size" : {
+        "width" : 164.5,
+        "height" : 16.000000000000039
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 79,
+          "width" : 164.5,
+          "y" : 292,
+          "height" : 16.000000000000039
+        },
+        "text" : "O Q441 OReply"
+      },
+      "type" : "AXButton+OCR",
+      "id" : "C53498C7-51AA-4A19-82B7-B5ED14B8E90F",
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "confidence" : 0.60000001192092889,
+      "semanticMeaning" : "AXButton with text 'O Q441 OReply'",
+      "visualText" : "O Q441 OReply",
+      "position" : {
+        "x" : 161.25,
+        "y" : 300
+      }
+    },
+    {
+      "position" : {
+        "y" : 300,
+        "x" : 301.5
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 14.999999999999959,
+          "y" : 292.5,
+          "width" : 56.999999999999986,
+          "x" : 273
+        },
+        "confidence" : 0.5,
+        "text" : "a Award"
+      },
+      "visualText" : "a Award",
+      "isClickable" : false,
+      "size" : {
+        "height" : 14.999999999999959,
+        "width" : 56.999999999999986
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'a Award'",
+      "interactions" : [
+
+      ],
+      "id" : "45BA5DDD-93CE-4410-A4E6-DA612D16555A"
+    },
+    {
+      "position" : {
+        "x" : 387,
+        "y" : 300.25
+      },
+      "semanticMeaning" : "Text content: '6> Share'",
+      "size" : {
+        "height" : 13.499999999999995,
+        "width" : 54.999999999999964
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "6> Share",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 359.5,
+          "y" : 293.5,
+          "width" : 54.999999999999964,
+          "height" : 13.499999999999995
+        },
+        "text" : "6> Share"
+      },
+      "id" : "8459B899-BED6-4B22-AB57-01428060FAF7",
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "y" : 336.74999999999994,
+        "x" : 214.75
+      },
+      "id" : "F21E32CE-BABA-4E23-873C-9CB9E5592E17",
+      "visualText" : "enzo_ghll OP 4mo ago",
+      "accessibility" : {
+        "title" : "Comment distinguished as the original poster",
+        "description" : "Comment distinguished as the original poster",
+        "role" : "AXGroup",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXGroup+OCR",
+      "isClickable" : false,
+      "size" : {
+        "width" : 142.50000000000003,
+        "height" : 11.500000000000041
+      },
+      "confidence" : 0.60000001192092889,
+      "semanticMeaning" : "AXGroup with text 'enzo_ghll OP 4mo ago'",
+      "interactions" : [
+        "right_click"
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 11.500000000000041,
+          "width" : 142.50000000000003,
+          "x" : 143.5,
+          "y" : 330.99999999999994
+        },
+        "text" : "enzo_ghll OP 4mo ago",
+        "confidence" : 0.30000001192092896
+      }
+    },
+    {
+      "isClickable" : false,
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "description" : null,
+        "title" : null,
+        "focused" : false
+      },
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 111,
+          "y" : 388.50000000000006,
+          "width" : 132.5,
+          "height" : 11.999999999999927
+        },
+        "text" : "this-just_in 4mo ago"
+      },
+      "size" : {
+        "height" : 11.999999999999927,
+        "width" : 132.5
+      },
+      "id" : "12909D7F-7DBB-45C6-9C02-869FAAD14E81",
+      "semanticMeaning" : "AXStaticText with text 'this-just_in 4mo ago'",
+      "type" : "AXStaticText+OCR",
+      "confidence" : 0.60000001192092889,
+      "interactions" : [
+
+      ],
+      "visualText" : "this-just_in 4mo ago",
+      "position" : {
+        "y" : 394.5,
+        "x" : 177.25
+      }
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "x" : 412.75,
+        "y" : 427
+      },
+      "semanticMeaning" : "Text content: 'Phi 4 mini, Llama 3.2 3B, Qwen 2.5 3B at 4bit quant would work fine as a general chatbot, and'",
+      "id" : "0CD6AC24-4855-4B59-8ABB-28C13A32C4CE",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "visualText" : "Phi 4 mini, Llama 3.2 3B, Qwen 2.5 3B at 4bit quant would work fine as a general chatbot, and",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 13.000000000000108,
+        "width" : 601.5
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Phi 4 mini, Llama 3.2 3B, Qwen 2.5 3B at 4bit quant would work fine as a general chatbot, and",
+        "boundingBox" : {
+          "width" : 601.5,
+          "height" : 13.000000000000108,
+          "x" : 112,
+          "y" : 420.49999999999994
+        }
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 111.5,
+          "width" : 603.5,
+          "y" : 440.50000000000006,
+          "height" : 12.999999999999904
+        },
+        "text" : "take about 2GB of RAM only. They won't find a cure for cancer but they are quite capable and"
+      },
+      "semanticMeaning" : "Text content: 'take about 2GB of RAM only. They won't find a cure for cancer but they are quite capable and'",
+      "id" : "5A55D0F6-19F6-4ABB-A8D8-E03CD28051BC",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "size" : {
+        "height" : 12.999999999999904,
+        "width" : 603.5
+      },
+      "position" : {
+        "x" : 413.25,
+        "y" : 447
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "take about 2GB of RAM only. They won't find a cure for cancer but they are quite capable and"
+    },
+    {
+      "confidence" : 0.79999999999999993,
+      "isClickable" : true,
+      "size" : {
+        "width" : 60.000000000000007,
+        "height" : 10.499999999999961
+      },
+      "visualText" : "coherent.",
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXCheckBox",
+        "focused" : false,
+        "title" : "Downvote"
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "coherent.",
+        "boundingBox" : {
+          "width" : 60.000000000000007,
+          "x" : 111.5,
+          "y" : 460.5,
+          "height" : 10.499999999999961
+        }
+      },
+      "id" : "608F9E9B-BB7F-4067-8B87-C4EA500BB70D",
+      "semanticMeaning" : "AXCheckBox with text 'coherent.'",
+      "position" : {
+        "x" : 141.5,
+        "y" : 465.75
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXCheckBox+OCR"
+    },
+    {
+      "position" : {
+        "y" : 496,
+        "x" : 161.25
+      },
+      "size" : {
+        "width" : 164.5,
+        "height" : 16.000000000000039
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXButton with text 'O Q341 OReply'",
+      "visualText" : "O Q341 OReply",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Clickable element",
+      "confidence" : 0.60000001192092889,
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Reply reply",
+        "enabled" : true,
+        "description" : null
+      },
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "height" : 16.000000000000039,
+          "x" : 79,
+          "width" : 164.5,
+          "y" : 488
+        },
+        "text" : "O Q341 OReply"
+      },
+      "id" : "7BFE64D1-9CC7-4E07-B523-C92340254A14",
+      "type" : "AXButton+OCR"
+    },
+    {
+      "id" : "7BDA3774-6E15-4466-93C6-8C7B625A1EF5",
+      "size" : {
+        "width" : 56.999999999999986,
+        "height" : 15.000000000000062
+      },
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 496.00000000000006,
+        "x" : 301.5
+      },
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 273,
+          "y" : 488.5,
+          "height" : 15.000000000000062,
+          "width" : 56.999999999999986
+        },
+        "text" : "a Award"
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'a Award'",
+      "confidence" : 0.5,
+      "visualText" : "a Award"
+    },
+    {
+      "position" : {
+        "x" : 387,
+        "y" : 496.25
+      },
+      "semanticMeaning" : "Text content: '6> Share'",
+      "interactions" : [
+
+      ],
+      "visualText" : "6> Share",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "6> Share",
+        "boundingBox" : {
+          "x" : 359.5,
+          "width" : 54.999999999999964,
+          "height" : 13.500000000000096,
+          "y" : 489.49999999999994
+        }
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "size" : {
+        "width" : 54.999999999999964,
+        "height" : 13.500000000000096
+      },
+      "id" : "55E16921-1404-4451-9652-C7D84E5942A8",
+      "isClickable" : false
+    },
+    {
+      "size" : {
+        "height" : 11.499999999999938,
+        "width" : 142.50000000000003
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXGroup with text 'enzo_ghll OP 4mo ago'",
+      "interactions" : [
+        "right_click"
+      ],
+      "visualText" : "enzo_ghll OP 4mo ago",
+      "position" : {
+        "x" : 214.75,
+        "y" : 532.75
+      },
+      "accessibility" : {
+        "role" : "AXGroup",
+        "title" : "Comment distinguished as the original poster",
+        "description" : "Comment distinguished as the original poster",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "B8A7C052-5346-4416-8E3F-C2F7769B55F8",
+      "confidence" : 0.60000001192092889,
+      "type" : "AXGroup+OCR",
+      "ocr" : {
+        "text" : "enzo_ghll OP 4mo ago",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 527,
+          "height" : 11.499999999999938,
+          "x" : 143.5,
+          "width" : 142.50000000000003
+        }
+      }
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "x" : 427,
+        "y" : 565
+      },
+      "confidence" : 0.5,
+      "visualText" : "I dont understand what is 4bit ? l understand that 3B, 7B etc a for billions of parameters,",
+      "interactions" : [
+
+      ],
+      "id" : "A1C7397C-230E-479C-A3EB-29A8ADE02B59",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "I dont understand what is 4bit ? l understand that 3B, 7B etc a for billions of parameters,",
+        "boundingBox" : {
+          "width" : 566,
+          "y" : 558.5,
+          "x" : 144,
+          "height" : 13.000000000000005
+        }
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'I dont understand what is 4bit ? l understand that 3B, 7B etc a for billions of parameters,'",
+      "size" : {
+        "width" : 566,
+        "height" : 13.000000000000005
+      }
+    },
+    {
+      "semanticMeaning" : "AXPopUpButton with text 'but what is 4 bit, 8 bit etc ? And how do i change these settings ?'",
+      "position" : {
+        "x" : 353.5,
+        "y" : 585
+      },
+      "confidence" : 0.79999999999999993,
+      "actionHint" : "Clickable element",
+      "size" : {
+        "width" : 419,
+        "height" : 13.000000000000005
+      },
+      "accessibility" : {
+        "title" : "Share Share",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null,
+        "role" : "AXPopUpButton"
+      },
+      "type" : "AXPopUpButton+OCR",
+      "isClickable" : true,
+      "visualText" : "but what is 4 bit, 8 bit etc ? And how do i change these settings ?",
+      "id" : "1D3F50E9-0A6C-420B-A84B-A09469285DB6",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "but what is 4 bit, 8 bit etc ? And how do i change these settings ?",
+        "boundingBox" : {
+          "width" : 419,
+          "x" : 144,
+          "height" : 13.000000000000005,
+          "y" : 578.5
+        }
+      }
+    },
+    {
+      "size" : {
+        "width" : 164,
+        "height" : 15.999999999999936
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "visualText" : "O Q241 OReply",
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "title" : "Reply reply",
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "actionHint" : "Clickable element",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "text" : "O Q241 OReply",
+        "boundingBox" : {
+          "height" : 15.999999999999936,
+          "x" : 111,
+          "y" : 606,
+          "width" : 164
+        }
+      },
+      "isClickable" : true,
+      "confidence" : 0.60000001192092889,
+      "id" : "D893001E-A2F9-48E4-B3E0-52DB1DF762A9",
+      "semanticMeaning" : "AXButton with text 'O Q241 OReply'",
+      "type" : "AXButton+OCR",
+      "position" : {
+        "y" : 614,
+        "x" : 193
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'a Award'",
+      "visualText" : "a Award",
+      "size" : {
+        "height" : 14.999999999999959,
+        "width" : 56.500000000000021
+      },
+      "id" : "AE4D1773-16F1-45AA-A30B-794EF5ACA8AE",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 305,
+          "y" : 606.5,
+          "height" : 14.999999999999959,
+          "width" : 56.500000000000021
+        },
+        "confidence" : 0.5,
+        "text" : "a Award"
+      },
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 333.25,
+        "y" : 614
+      }
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '&> Share'",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 418.75,
+        "y" : 614.25
+      },
+      "id" : "1ED5F832-0EC1-4127-94D9-606CBC6031E4",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 607.5,
+          "height" : 13.499999999999995,
+          "width" : 54.499999999999993,
+          "x" : 391.5
+        },
+        "text" : "&> Share",
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 13.499999999999995,
+        "width" : 54.499999999999993
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "visualText" : "&> Share"
+    },
+    {
+      "id" : "DD714584-5D74-403D-A700-30F4FC4257E0",
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "width" : 235.00000000000003,
+        "height" : 12.000000000000028
+      },
+      "position" : {
+        "x" : 292.5,
+        "y" : 650.5
+      },
+      "confidence" : 0.79999999999999993,
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXStaticText"
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.000000000000028,
+          "y" : 644.5,
+          "width" : 235.00000000000003,
+          "x" : 175
+        },
+        "text" : "this-just_in 4mo ago . Edited 4mo ago"
+      },
+      "visualText" : "this-just_in 4mo ago . Edited 4mo ago",
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'this-just_in 4mo ago . Edited 4mo ago'"
+    },
+    {
+      "semanticMeaning" : "Text content: 'Most consumers don't run full weight models locally because they are really big. So'",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.30000001192092896,
+      "id" : "6541F449-70B5-4857-B55B-3455F41200F5",
+      "position" : {
+        "x" : 445.5,
+        "y" : 683
+      },
+      "size" : {
+        "width" : 539,
+        "height" : 13.000000000000005
+      },
+      "isClickable" : false,
+      "visualText" : "Most consumers don't run full weight models locally because they are really big. So",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 176,
+          "width" : 539,
+          "y" : 676.5,
+          "height" : 13.000000000000005
+        },
+        "confidence" : 0.30000001192092896,
+        "text" : "Most consumers don't run full weight models locally because they are really big. So"
+      }
+    },
+    {
+      "id" : "7C0AEA05-B00D-4328-BDAF-CAB736C387A6",
+      "semanticMeaning" : "Text content: 'they use compiled version of them that reduce the size. The 4bit, 8bit stuff is about'",
+      "visualText" : "they use compiled version of them that reduce the size. The 4bit, 8bit stuff is about",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "they use compiled version of them that reduce the size. The 4bit, 8bit stuff is about",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.000000000000005,
+          "width" : 541,
+          "x" : 175.5,
+          "y" : 696.5
+        }
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 446,
+        "y" : 703
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "size" : {
+        "height" : 13.000000000000005,
+        "width" : 541
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'how many bits per parameter exist in the final output. So a 4 bit, 4B model is going to'",
+      "visualText" : "how many bits per parameter exist in the final output. So a 4 bit, 4B model is going to",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 176,
+          "height" : 13.000000000000005,
+          "width" : 551,
+          "y" : 716.5
+        },
+        "text" : "how many bits per parameter exist in the final output. So a 4 bit, 4B model is going to",
+        "confidence" : 0.5
+      },
+      "position" : {
+        "y" : 723,
+        "x" : 451.5
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "id" : "C880522B-1983-4EB6-BA34-91EDBFD02B7A",
+      "size" : {
+        "height" : 13.000000000000005,
+        "width" : 551
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "ocr" : {
+        "text" : "be approximately 2GB in size. Different inference engines use different compiled",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 736.5,
+          "x" : 176,
+          "height" : 13.000000000000005,
+          "width" : 519.50000000000011
+        }
+      },
+      "size" : {
+        "height" : 13.000000000000005,
+        "width" : 519.50000000000011
+      },
+      "id" : "661AD574-80EB-4562-A054-BC12B558EBCB",
+      "position" : {
+        "y" : 743,
+        "x" : 435.75000000000006
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "be approximately 2GB in size. Different inference engines use different compiled",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'be approximately 2GB in size. Different inference engines use different compiled'"
+    },
+    {
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "id" : "94B6E8B4-F460-4109-AFD0-AC1F94262222",
+      "semanticMeaning" : "Text content: 'formats. You are on a Mac, so your primary options are running MLX-format models'",
+      "ocr" : {
+        "text" : "formats. You are on a Mac, so your primary options are running MLX-format models",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.000000000000005,
+          "width" : 539.5,
+          "x" : 175.5,
+          "y" : 756.5
+        }
+      },
+      "visualText" : "formats. You are on a Mac, so your primary options are running MLX-format models",
+      "position" : {
+        "y" : 763,
+        "x" : 445.25
+      },
+      "size" : {
+        "height" : 13.000000000000005,
+        "width" : 539.5
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : false,
+      "size" : {
+        "width" : 538,
+        "height" : 13.000000000000005
+      },
+      "id" : "4927D4C1-A286-4B98-B90D-FBAC78272930",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 776.5,
+          "height" : 13.000000000000005,
+          "x" : 175.5,
+          "width" : 538
+        },
+        "text" : "via MLX engine, GGUF-format models via Llama.cpp or the many forks of it. An app"
+      },
+      "position" : {
+        "x" : 444.5,
+        "y" : 783
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "via MLX engine, GGUF-format models via Llama.cpp or the many forks of it. An app",
+      "semanticMeaning" : "Text content: 'via MLX engine, GGUF-format models via Llama.cpp or the many forks of it. An app'"
+    },
+    {
+      "visualText" : "like LM Studio supports both engines and makes it easy to use either type. MLX",
+      "size" : {
+        "height" : 13.000000000000005,
+        "width" : 515
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'like LM Studio supports both engines and makes it easy to use either type. MLX'",
+      "ocr" : {
+        "text" : "like LM Studio supports both engines and makes it easy to use either type. MLX",
+        "boundingBox" : {
+          "y" : 796.5,
+          "width" : 515,
+          "height" : 13.000000000000005,
+          "x" : 176
+        },
+        "confidence" : 0.5
+      },
+      "position" : {
+        "y" : 803,
+        "x" : 433.5
+      },
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "id" : "E11BE6E3-76E5-4C85-AA18-0F2922BAC9BF"
+    },
+    {
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'models at the same bit-per-parameter will run faster in MLX than as GGUF, as MLX is'",
+      "visualText" : "models at the same bit-per-parameter will run faster in MLX than as GGUF, as MLX is",
+      "isClickable" : false,
+      "id" : "DC048A9D-AD8A-4677-A3EC-F4FED26B24B7",
+      "size" : {
+        "height" : 13.000000000000005,
+        "width" : 546
+      },
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 823,
+        "x" : 449
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "models at the same bit-per-parameter will run faster in MLX than as GGUF, as MLX is",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 816.5,
+          "width" : 546,
+          "x" : 176,
+          "height" : 13.000000000000005
+        }
+      }
+    },
+    {
+      "visualText" : "optimized for Mac. MLX models are typically advertised in bit sizes, whereas GGUF",
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "optimized for Mac. MLX models are typically advertised in bit sizes, whereas GGUF",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 836.5,
+          "width" : 533,
+          "height" : 13.000000000000005,
+          "x" : 175.5
+        }
+      },
+      "semanticMeaning" : "Text content: 'optimized for Mac. MLX models are typically advertised in bit sizes, whereas GGUF'",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "id" : "367B9CBC-C55C-4BFF-9B29-7537926E716A",
+      "position" : {
+        "x" : 442,
+        "y" : 843
+      },
+      "size" : {
+        "width" : 533,
+        "height" : 13.000000000000005
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "confidence" : 0.5,
+      "visualText" : "models are advertised in a Q-prefixed size (e.g. Q8",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "models are advertised in a Q-prefixed size (e.g. Q8",
+        "boundingBox" : {
+          "y" : 856.5,
+          "width" : 326.5,
+          "height" : 13.000000000000005,
+          "x" : 176
+        }
+      },
+      "id" : "1AC7B810-24F4-46BE-8CEF-CFE854447DA0",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'models are advertised in a Q-prefixed size (e.g. Q8'",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 326.5,
+        "height" : 13.000000000000005
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 339.25,
+        "y" : 863
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "8 bit). It gets a little confusing",
+        "boundingBox" : {
+          "height" : 13.000000000000005,
+          "y" : 856.5,
+          "width" : 195.50000000000003,
+          "x" : 529
+        }
+      },
+      "type" : "TextContent",
+      "visualText" : "8 bit). It gets a little confusing",
+      "position" : {
+        "y" : 863,
+        "x" : 626.75
+      },
+      "semanticMeaning" : "Text content: '8 bit). It gets a little confusing'",
+      "id" : "5ACC878C-9758-4726-8916-5CBC956C1918",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 195.50000000000003,
+        "height" : 13.000000000000005
+      }
+    },
+    {
+      "position" : {
+        "y" : 883,
+        "x" : 451.5
+      },
+      "id" : "50133EC5-D4A0-43A3-93E9-26ED1A859673",
+      "size" : {
+        "width" : 552,
+        "height" : 13.000000000000005
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 876.5,
+          "height" : 13.000000000000005,
+          "width" : 552,
+          "x" : 175.5
+        },
+        "text" : "as for example there are many different variants of -4 bit GGUFs: q4_0, q4_1, q4_k_s,",
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'as for example there are many different variants of -4 bit GGUFs: q4_0, q4_1, q4_k_s,'",
+      "visualText" : "as for example there are many different variants of -4 bit GGUFs: q4_0, q4_1, q4_k_s,",
+      "type" : "TextContent",
+      "isClickable" : false
+    },
+    {
+      "isClickable" : false,
+      "id" : "590A8780-0AF8-45A7-B5D7-CFD2EED577E4",
+      "position" : {
+        "y" : 903,
+        "x" : 441.5
+      },
+      "semanticMeaning" : "Text content: 'q4_k_m, q4_k_I, etc. Most people use q4_k_m, and it's very similar to MLX 4bit in'",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 13.000000000000005,
+          "x" : 175.5,
+          "width" : 532,
+          "y" : 896.5
+        },
+        "confidence" : 0.5,
+        "text" : "q4_k_m, q4_k_I, etc. Most people use q4_k_m, and it's very similar to MLX 4bit in"
+      },
+      "size" : {
+        "width" : 532,
+        "height" : 13.000000000000005
+      },
+      "visualText" : "q4_k_m, q4_k_I, etc. Most people use q4_k_m, and it's very similar to MLX 4bit in"
+    },
+    {
+      "accessibility" : {
+        "description" : null,
+        "title" : "Downvote",
+        "role" : "AXCheckBox",
+        "focused" : false,
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 197.75,
+        "y" : 923
+      },
+      "confidence" : 0.60000001192092889,
+      "actionHint" : "Clickable element",
+      "ocr" : {
+        "text" : "quality.",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "width" : 44.500000000000007,
+          "height" : 13.000000000000005,
+          "y" : 916.5,
+          "x" : 175.5
+        }
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 44.500000000000007,
+        "height" : 13.000000000000005
+      },
+      "type" : "AXCheckBox+OCR",
+      "semanticMeaning" : "AXCheckBox with text 'quality.'",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "visualText" : "quality.",
+      "id" : "C7236FA5-9CB2-4B87-88C9-AD4F7C4894F4"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 225,
+        "y" : 952
+      },
+      "id" : "4503998D-F5B8-4A22-9BA9-3FDD5D7E7B3C",
+      "actionHint" : "Clickable element",
+      "ocr" : {
+        "text" : "O Q241 OReply",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 944,
+          "x" : 143,
+          "width" : 164,
+          "height" : 16.000000000000039
+        }
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 164,
+        "height" : 16.000000000000039
+      },
+      "type" : "AXButton+OCR",
+      "semanticMeaning" : "AXButton with text 'O Q241 OReply'",
+      "confidence" : 0.60000001192092889,
+      "accessibility" : {
+        "title" : "Reply reply",
+        "focused" : false,
+        "description" : null,
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "visualText" : "O Q241 OReply"
+    },
+    {
+      "type" : "AXPopUpButton+OCR",
+      "size" : {
+        "width" : 56.50000000000005,
+        "height" : 15.000000000000062
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "ocr" : {
+        "text" : "a Award",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 56.50000000000005,
+          "height" : 15.000000000000062,
+          "y" : 944.5,
+          "x" : 337
+        }
+      },
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "title" : "Share Share",
+        "role" : "AXPopUpButton",
+        "enabled" : true
+      },
+      "confidence" : 0.79999999999999993,
+      "visualText" : "a Award",
+      "semanticMeaning" : "AXPopUpButton with text 'a Award'",
+      "position" : {
+        "x" : 365.25,
+        "y" : 952
+      },
+      "id" : "51220B03-749A-4403-98CD-D9FC20D18B1E"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXPopUpButton",
+        "description" : "Open user actions",
+        "title" : "Open user actions",
+        "focused" : false
+      },
+      "actionHint" : "Click to share",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 423.5,
+          "height" : 13.499999999999995,
+          "y" : 945.5,
+          "width" : 54.50000000000005
+        },
+        "text" : "6> Share"
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "id" : "BA5F327B-723F-4317-AFE8-784C8FB07874",
+      "isClickable" : true,
+      "visualText" : "6> Share",
+      "size" : {
+        "height" : 13.499999999999995,
+        "width" : 54.50000000000005
+      },
+      "type" : "AXPopUpButton+OCR",
+      "position" : {
+        "x" : 450.75,
+        "y" : 952.25
+      },
+      "semanticMeaning" : "AXPopUpButton with text '6> Share'",
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 839,
+        "width" : 1041
+      },
+      "id" : "76110FE2-709E-4F2B-865B-F07A28D3F72F",
+      "isClickable" : false,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXScrollArea",
+        "description" : null,
+        "title" : null,
+        "focused" : false
+      },
+      "type" : "AXScrollArea",
+      "position" : {
+        "y" : 135,
+        "x" : 55
+      },
+      "semanticMeaning" : "AXScrollArea",
+      "interactions" : [
+        "scroll",
+        "swipe"
+      ]
+    },
+    {
+      "size" : {
+        "height" : 40,
+        "width" : 40
+      },
+      "position" : {
+        "y" : 143,
+        "x" : 71
+      },
+      "id" : "1901721B-078E-406A-969B-B2DBC67399FE",
+      "type" : "AXButton",
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : null,
+        "focused" : false,
+        "title" : "Open menu"
+      },
+      "isClickable" : true
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Current search is within r\/LocalLLaMA",
+        "description" : null
+      },
+      "id" : "BC6E6849-2D5B-4B75-A2EF-BC227C829F22",
+      "position" : {
+        "y" : 147,
+        "x" : 300
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "size" : {
+        "width" : 148,
+        "height" : 32
+      },
+      "semanticMeaning" : "AXButton"
+    },
+    {
+      "id" : "E76BCAB8-70C0-4ED0-8347-F17EDD985994",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 416,
+        "y" : 147
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Remove r\/LocalLLaMA filter and expand search to all of Reddit",
+        "focused" : false
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      },
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "semanticMeaning" : "AXTextField",
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ],
+      "accessibility" : {
+        "role" : "AXTextField",
+        "title" : "Current search is within r\/LocalLLaMA Remove r\/LocalLLaMA filter and expand search to all of Reddit",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null
+      },
+      "type" : "AXTextField",
+      "size" : {
+        "width" : 336,
+        "height" : 20
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 456,
+        "y" : 153
+      },
+      "id" : "A48DA571-DADE-4427-90FD-3F3307C70A8E",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "position" : {
+        "y" : 143,
+        "x" : 852
+      },
+      "isClickable" : true,
+      "size" : {
+        "height" : 40,
+        "width" : 41
+      },
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : null,
+        "enabled" : true,
+        "title" : "Open chat"
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "id" : "8C30C744-CAE1-441C-BDE6-336BAD0245EF",
+      "actionHint" : "Clickable element"
+    },
+    {
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXPopUpButton",
+      "position" : {
+        "y" : 142,
+        "x" : 1040
+      },
+      "size" : {
+        "width" : 40,
+        "height" : 41
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null,
+        "title" : "User Avatar Expand user menu"
+      },
+      "id" : "710BB67E-BCB3-41A3-8C53-8B78A0864EB8",
+      "type" : "AXPopUpButton"
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "Back",
+        "description" : "Back",
+        "focused" : false
+      },
+      "isClickable" : true,
+      "position" : {
+        "x" : 71,
+        "y" : 55
+      },
+      "id" : "0EC5E2CC-51D2-49D2-88C1-16A50FE853DE",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "semanticMeaning" : "Back",
+      "actionHint" : "Click Back"
+    },
+    {
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "position" : {
+        "y" : 55,
+        "x" : 715
+      },
+      "id" : "DAB4CA23-A43B-4754-851C-770A0ABE3511",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "accessibility" : {
+        "description" : "Open user actions",
+        "title" : "Open user actions",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXPopUpButton"
+      },
+      "type" : "AXPopUpButton",
+      "actionHint" : "Click Open user actions",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Open user actions"
+    },
+    {
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "Upvote",
+        "role" : "AXCheckBox",
+        "focused" : false,
+        "description" : null
+      },
+      "actionHint" : "Clickable element",
+      "semanticMeaning" : "AXCheckBox",
+      "position" : {
+        "x" : 71,
+        "y" : 55
+      },
+      "type" : "AXCheckBox",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "id" : "8A6DB0E5-8F09-4F8E-A905-AA2CD5A960E3"
+    },
+    {
+      "actionHint" : "Clickable element",
+      "type" : "AXCheckBox",
+      "accessibility" : {
+        "role" : "AXCheckBox",
+        "focused" : false,
+        "description" : null,
+        "title" : "Downvote",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 55,
+        "x" : 110
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      },
+      "id" : "2D59BC8D-4390-4C1B-8524-6E6281F0929A",
+      "semanticMeaning" : "AXCheckBox"
+    },
+    {
+      "confidence" : 1,
+      "isClickable" : true,
+      "position" : {
+        "x" : 154,
+        "y" : 55
+      },
+      "type" : "AXButton",
+      "id" : "A24B2D42-148C-48A0-8692-4F9283D04F92",
+      "semanticMeaning" : "AXButton with icon visual with icon visual",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "visualText" : "",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : null,
+        "enabled" : true,
+        "title" : "24 Go to comments",
+        "focused" : false
+      },
+      "actionHint" : "Clickable element (close_button button) (close_button button)",
+      "size" : {
+        "width" : 67,
+        "height" : 32
+      }
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Give award",
+        "title" : "Give award",
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "position" : {
+        "y" : 55,
+        "x" : 232
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Give award",
+      "size" : {
+        "width" : 45,
+        "height" : 32
+      },
+      "id" : "F42FF4BD-1D61-4DDF-8BFB-E48E4931091B",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Give award"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXPopUpButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : null,
+        "focused" : false,
+        "title" : "Share Share",
+        "role" : "AXPopUpButton",
+        "enabled" : true
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 85
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "id" : "3D0AB5DE-91A6-4608-B4F6-54694648436C",
+      "type" : "AXPopUpButton",
+      "actionHint" : "Clickable element",
+      "position" : {
+        "x" : 288,
+        "y" : 55
+      }
+    },
+    {
+      "id" : "376F06DF-DFE5-40AC-8168-C7B3B0CA43BE",
+      "position" : {
+        "y" : 55,
+        "x" : 708
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "type" : "AXPopUpButton",
+      "actionHint" : "Click Open user actions",
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "focused" : false,
+        "title" : "Open user actions",
+        "enabled" : true,
+        "description" : "Open user actions"
+      },
+      "semanticMeaning" : "Open user actions",
+      "isClickable" : true
+    },
+    {
+      "id" : "5DF25D59-2491-4B67-ACC4-EC0756C5688C",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "AXTextArea",
+      "position" : {
+        "x" : 88,
+        "y" : 55
+      },
+      "accessibility" : {
+        "role" : "AXTextArea",
+        "title" : null,
+        "focused" : false,
+        "description" : null,
+        "enabled" : true
+      },
+      "type" : "AXTextArea",
+      "size" : {
+        "width" : 635,
+        "height" : 20
+      },
+      "isClickable" : false
+    },
+    {
+      "semanticMeaning" : "Sort by: Best",
+      "type" : "AXPopUpButton",
+      "isClickable" : true,
+      "actionHint" : "Click Sort by: Best",
+      "accessibility" : {
+        "title" : "Sort by: Best",
+        "role" : "AXPopUpButton",
+        "description" : "Sort by: Best",
+        "enabled" : true,
+        "focused" : false
+      },
+      "position" : {
+        "y" : 74,
+        "x" : 119
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 65
+      },
+      "id" : "8E508C37-9DBE-472F-BC66-5E95E448AA03",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ]
+    },
+    {
+      "size" : {
+        "height" : 40,
+        "width" : 186
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "title" : "Search Comments Expand comment search",
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "semanticMeaning" : "AXButton",
+      "type" : "AXButton",
+      "id" : "9B5A3D9F-D2C9-48D2-B939-B57D65FB027B",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 70,
+        "x" : 191
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element"
+    },
+    {
+      "position" : {
+        "x" : 71,
+        "y" : 292
+      },
+      "semanticMeaning" : "Toggle Comment Thread",
+      "size" : {
+        "width" : 32,
+        "height" : 16
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Toggle Comment Thread",
+        "description" : "Toggle Comment Thread",
+        "focused" : false
+      },
+      "actionHint" : "Click Toggle Comment Thread",
+      "id" : "04DEFB92-CC4F-487B-9ED7-9FB3CB2C1EBF",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton"
+    },
+    {
+      "id" : "59929835-39A3-4F26-B331-95C9BBF0F0A7",
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXCheckBox",
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "role" : "AXCheckBox",
+        "title" : "Upvote",
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 103,
+        "y" : 284
+      }
+    },
+    {
+      "type" : "AXCheckBox",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "title" : "Downvote",
+        "enabled" : true,
+        "role" : "AXCheckBox",
+        "description" : null,
+        "focused" : false
+      },
+      "actionHint" : "Clickable element",
+      "id" : "D53012CB-0739-4821-81DB-98359B92C058",
+      "position" : {
+        "y" : 284,
+        "x" : 143
+      },
+      "size" : {
+        "width" : 33,
+        "height" : 32
+      },
+      "isClickable" : true
+    },
+    {
+      "actionHint" : "Clickable element",
+      "semanticMeaning" : "AXPopUpButton",
+      "type" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "description" : null,
+        "title" : "Share Share",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "E186BEB5-F0B1-4463-BCE5-3C80247EDEDC",
+      "position" : {
+        "x" : 345,
+        "y" : 284
+      },
+      "size" : {
+        "width" : 85,
+        "height" : 32
+      },
+      "isClickable" : true
+    },
+    {
+      "size" : {
+        "width" : 41,
+        "height" : 32
+      },
+      "id" : "EF91B627-70B0-4908-B639-06E1A5AC9471",
+      "type" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Open user actions",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "position" : {
+        "x" : 429,
+        "y" : 284
+      },
+      "accessibility" : {
+        "title" : "Open user actions",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Open user actions",
+        "role" : "AXPopUpButton"
+      },
+      "actionHint" : "Click Open user actions",
+      "isClickable" : true
+    },
+    {
+      "type" : "AXButton",
+      "size" : {
+        "height" : 16,
+        "width" : 32
+      },
+      "position" : {
+        "x" : 71,
+        "y" : 488
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "id" : "DCF001B3-DCDB-43B3-88C3-DC0B8E06AFFB",
+      "semanticMeaning" : "Toggle Comment Thread",
+      "actionHint" : "Click Toggle Comment Thread",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Toggle Comment Thread",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Toggle Comment Thread"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "actionHint" : "Clickable element",
+      "position" : {
+        "y" : 480,
+        "x" : 103
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "AXCheckBox",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "title" : "Upvote",
+        "role" : "AXCheckBox",
+        "focused" : false
+      },
+      "isClickable" : true,
+      "id" : "54CFFFBF-6EC4-4CE1-BBCA-C33C6A632C9F"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "size" : {
+        "height" : 32,
+        "width" : 88
+      },
+      "accessibility" : {
+        "title" : "Give award",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Give award",
+        "role" : "AXButton"
+      },
+      "actionHint" : "Click Give award",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 480,
+        "x" : 257
+      },
+      "isClickable" : true,
+      "id" : "949C47C1-7A3B-4FE8-9C31-F4E049D9BDE8",
+      "semanticMeaning" : "Give award"
+    },
+    {
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "title" : "Share Share",
+        "description" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "actionHint" : "Clickable element",
+      "position" : {
+        "x" : 344,
+        "y" : 480
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "id" : "C94C4F9F-7533-47AB-B3A4-E1EB951DFC86",
+      "type" : "AXPopUpButton",
+      "size" : {
+        "width" : 85,
+        "height" : 32
+      },
+      "semanticMeaning" : "AXPopUpButton"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXPopUpButton",
+        "description" : "Open user actions",
+        "focused" : false,
+        "title" : "Open user actions"
+      },
+      "isClickable" : true,
+      "actionHint" : "Click Open user actions",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 429,
+        "y" : 480
+      },
+      "id" : "52E74143-FD4F-4BC7-A0E2-C195D860EE0C",
+      "type" : "AXPopUpButton",
+      "size" : {
+        "height" : 32,
+        "width" : 41
+      },
+      "semanticMeaning" : "Open user actions",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ]
+    },
+    {
+      "size" : {
+        "height" : 16,
+        "width" : 32
+      },
+      "position" : {
+        "x" : 103,
+        "y" : 606
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Toggle Comment Thread",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Toggle Comment Thread",
+        "description" : "Toggle Comment Thread",
+        "enabled" : true
+      },
+      "id" : "C825A788-1110-4700-9AF3-ECFF7A7D764B",
+      "semanticMeaning" : "Toggle Comment Thread",
+      "type" : "AXButton",
+      "isClickable" : true
+    },
+    {
+      "id" : "09A3EDFF-B8B4-4E8E-B47C-E42BB5F8EEE8",
+      "position" : {
+        "y" : 598,
+        "x" : 135
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXCheckBox",
+        "focused" : false,
+        "title" : "Upvote",
+        "description" : null
+      },
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "AXCheckBox",
+      "actionHint" : "Clickable element",
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "toggle"
+      ]
+    },
+    {
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      },
+      "id" : "EEFE1077-2294-48FE-BE58-6856AEDFA3B6",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXCheckBox",
+        "title" : "Downvote"
+      },
+      "position" : {
+        "y" : 598,
+        "x" : 174
+      },
+      "type" : "AXCheckBox",
+      "actionHint" : "Clickable element"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Give award",
+      "position" : {
+        "y" : 598,
+        "x" : 289
+      },
+      "size" : {
+        "width" : 88,
+        "height" : 32
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Give award",
+      "accessibility" : {
+        "title" : "Give award",
+        "role" : "AXButton",
+        "description" : "Give award",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "5C656D51-9BDC-456B-AE61-68067A387F85",
+      "type" : "AXButton"
+    },
+    {
+      "id" : "1140C798-3F01-4694-916A-A6E94FF59689",
+      "semanticMeaning" : "Open user actions",
+      "type" : "AXPopUpButton",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Click Open user actions",
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Open user actions",
+        "enabled" : true,
+        "description" : "Open user actions",
+        "role" : "AXPopUpButton"
+      },
+      "position" : {
+        "x" : 460,
+        "y" : 598
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 41
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Toggle Comment Thread",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Toggle Comment Thread",
+        "title" : "Toggle Comment Thread",
+        "enabled" : true,
+        "focused" : false
+      },
+      "position" : {
+        "y" : 944,
+        "x" : 135
+      },
+      "semanticMeaning" : "Toggle Comment Thread",
+      "id" : "9D4C791B-140C-44B0-B89E-51E3A1F9E03D",
+      "size" : {
+        "width" : 32,
+        "height" : 16
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "position" : {
+        "y" : 936,
+        "x" : 167
+      },
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXCheckBox",
+        "description" : null,
+        "title" : "Upvote",
+        "enabled" : true
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "semanticMeaning" : "AXCheckBox",
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "actionHint" : "Clickable element",
+      "type" : "AXCheckBox",
+      "id" : "F429AEE4-0E15-4D54-A52E-A6FDB9B14D74"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "position" : {
+        "x" : 321,
+        "y" : 936
+      },
+      "actionHint" : "Click Give award",
+      "accessibility" : {
+        "title" : "Give award",
+        "role" : "AXButton",
+        "description" : "Give award",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "id" : "3723189A-81ED-47F9-AF90-D298F5A87E9F",
+      "size" : {
+        "height" : 32,
+        "width" : 88
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Give award"
+    },
+    {
+      "size" : {
+        "width" : 85,
+        "height" : 32
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 936,
+        "x" : 408
+      },
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : null,
+        "enabled" : true,
+        "title" : "Share Share"
+      },
+      "id" : "45491EE9-C7E3-41DA-9827-C19D250391A3",
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "semanticMeaning" : "AXPopUpButton",
+      "type" : "AXPopUpButton"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Open user actions",
+        "focused" : false,
+        "title" : "Open user actions",
+        "role" : "AXPopUpButton"
+      },
+      "size" : {
+        "width" : 41,
+        "height" : 32
+      },
+      "semanticMeaning" : "Open user actions",
+      "id" : "CB1044EC-8AB2-43AB-AEA2-5144307078C4",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXPopUpButton",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "position" : {
+        "x" : 492,
+        "y" : 936
+      },
+      "actionHint" : "Click Open user actions"
+    },
+    {
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Reply reply"
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Clickable element",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 974,
+        "x" : 270
+      },
+      "size" : {
+        "width" : 84,
+        "height" : 32
+      },
+      "id" : "BCA1F199-5E6E-4531-8426-8B2E2548B38B"
+    },
+    {
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "y" : 974,
+        "x" : 199
+      },
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXCheckBox",
+        "description" : null,
+        "title" : "Upvote",
+        "enabled" : true
+      },
+      "id" : "41CCC3ED-48B5-4819-9F90-DC3FE5C84D32",
+      "semanticMeaning" : "AXCheckBox",
+      "type" : "AXCheckBox",
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      }
+    },
+    {
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "role" : "AXCheckBox",
+        "title" : "Downvote",
+        "enabled" : true,
+        "description" : null,
+        "focused" : false
+      },
+      "position" : {
+        "y" : 974,
+        "x" : 238
+      },
+      "type" : "AXCheckBox",
+      "isClickable" : true,
+      "id" : "C724EC12-9F5A-4BAD-99B1-F91B19369003",
+      "semanticMeaning" : "AXCheckBox",
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ]
+    },
+    {
+      "accessibility" : {
+        "title" : "Give award",
+        "focused" : false,
+        "description" : "Give award",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "position" : {
+        "y" : 974,
+        "x" : 353
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 88
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Click Give award",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "id" : "1B7B03F7-9455-42E1-9B18-8E8D943BEDF6",
+      "semanticMeaning" : "Give award"
+    },
+    {
+      "position" : {
+        "x" : 440,
+        "y" : 974
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 85
+      },
+      "semanticMeaning" : "AXPopUpButton",
+      "id" : "7AF56A44-2394-4983-9359-3405F83AF9F6",
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "title" : "Share Share",
+        "description" : null
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "type" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "semanticMeaning" : "Open user actions",
+      "actionHint" : "Click Open user actions",
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "enabled" : true,
+        "description" : "Open user actions",
+        "title" : "Open user actions",
+        "focused" : false
+      },
+      "position" : {
+        "x" : 524,
+        "y" : 974
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "type" : "AXPopUpButton",
+      "id" : "56D189FD-8F5C-4461-9746-F4AA977DA043",
+      "isClickable" : true,
+      "size" : {
+        "width" : 41,
+        "height" : 32
+      }
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : null,
+        "title" : "Reply reply",
+        "focused" : false,
+        "enabled" : true
+      },
+      "id" : "947C8217-A53F-48D4-8DD3-C592F57ECF0B",
+      "position" : {
+        "x" : 268,
+        "y" : 974
+      },
+      "semanticMeaning" : "AXButton",
+      "actionHint" : "Clickable element",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "size" : {
+        "width" : 84,
+        "height" : 32
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 199,
+        "y" : 974
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Clickable element",
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "id" : "0D555AF3-6B66-4393-9286-B66D5A30EDDE",
+      "semanticMeaning" : "AXCheckBox",
+      "accessibility" : {
+        "description" : null,
+        "focused" : false,
+        "title" : "Upvote",
+        "role" : "AXCheckBox",
+        "enabled" : true
+      },
+      "type" : "AXCheckBox"
+    },
+    {
+      "position" : {
+        "x" : 236,
+        "y" : 974
+      },
+      "id" : "811011AC-217F-474F-ADD9-4113DFD5206C",
+      "size" : {
+        "width" : 33,
+        "height" : 32
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "title" : "Downvote",
+        "focused" : false,
+        "role" : "AXCheckBox"
+      },
+      "type" : "AXCheckBox",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "position" : {
+        "y" : 974,
+        "x" : 351
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 88,
+        "height" : 32
+      },
+      "actionHint" : "Click Give award",
+      "accessibility" : {
+        "description" : "Give award",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Give award"
+      },
+      "id" : "4904A359-5B6F-4254-95A4-62BF45395F5C",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "semanticMeaning" : "Give award"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 974,
+        "x" : 438
+      },
+      "type" : "AXPopUpButton",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "semanticMeaning" : "AXPopUpButton",
+      "id" : "C17417E8-4D60-491B-9820-924AF92683FE",
+      "actionHint" : "Clickable element",
+      "size" : {
+        "width" : 85,
+        "height" : 32
+      },
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "description" : null,
+        "title" : "Share Share",
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "size" : {
+        "width" : 41,
+        "height" : 32
+      },
+      "semanticMeaning" : "Open user actions",
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "description" : "Open user actions",
+        "title" : "Open user actions",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXPopUpButton",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "id" : "448B6F52-0808-4463-BA3E-4238308A10E5",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Open user actions",
+      "position" : {
+        "x" : 523,
+        "y" : 974
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXButton",
+      "id" : "3965F407-3508-4C20-8E75-5598F403C4F6",
+      "position" : {
+        "y" : 974,
+        "x" : 174
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "title" : "Reply reply",
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "type" : "AXButton",
+      "size" : {
+        "height" : 32,
+        "width" : 84
+      },
+      "isClickable" : true
+    },
+    {
+      "semanticMeaning" : "AXCheckBox",
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "id" : "5B998A2B-A4F9-45BC-BF98-8375FB175290",
+      "type" : "AXCheckBox",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "x" : 103,
+        "y" : 974
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXCheckBox",
+        "description" : null,
+        "focused" : false,
+        "title" : "Upvote"
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      }
+    },
+    {
+      "position" : {
+        "x" : 142,
+        "y" : 974
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "id" : "264251EC-AA89-45DE-BE03-2E6551E0D714",
+      "isClickable" : true,
+      "semanticMeaning" : "AXCheckBox",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : null,
+        "title" : "Downvote",
+        "role" : "AXCheckBox"
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXCheckBox",
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      }
+    },
+    {
+      "id" : "5AA9B6CA-6C27-4E17-BAC6-F4C683747788",
+      "size" : {
+        "height" : 32,
+        "width" : 88
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Give award",
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "Give award",
+        "focused" : false,
+        "description" : "Give award"
+      },
+      "position" : {
+        "x" : 257,
+        "y" : 974
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "type" : "AXButton",
+      "semanticMeaning" : "Give award"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "id" : "EE19A10E-0788-4B74-A8FF-7C723E3A226F",
+      "size" : {
+        "width" : 85,
+        "height" : 32
+      },
+      "position" : {
+        "y" : 974,
+        "x" : 344
+      },
+      "type" : "AXPopUpButton",
+      "actionHint" : "Clickable element",
+      "semanticMeaning" : "AXPopUpButton",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : null,
+        "title" : "Share Share"
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "accessibility" : {
+        "description" : "Open user actions",
+        "title" : "Open user actions",
+        "role" : "AXPopUpButton",
+        "focused" : false,
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "id" : "8D2BEDE9-4932-4C41-A885-4A246F087A0A",
+      "semanticMeaning" : "Open user actions",
+      "size" : {
+        "width" : 41,
+        "height" : 32
+      },
+      "actionHint" : "Click Open user actions",
+      "type" : "AXPopUpButton",
+      "position" : {
+        "x" : 428,
+        "y" : 974
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXPopUpButton",
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "position" : {
+        "x" : 708,
+        "y" : 974
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Open user actions",
+      "semanticMeaning" : "Open user actions",
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Open user actions",
+        "description" : "Open user actions"
+      },
+      "id" : "71E2CF78-509E-4621-9A78-79D5DCAE6D4C"
+    },
+    {
+      "id" : "D9EA5FAB-635D-42C5-90BC-51EC376981AA",
+      "size" : {
+        "width" : 32,
+        "height" : 16
+      },
+      "accessibility" : {
+        "title" : "Toggle Comment Thread",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Toggle Comment Thread"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Toggle Comment Thread",
+      "actionHint" : "Click Toggle Comment Thread",
+      "position" : {
+        "y" : 974,
+        "x" : 71
+      },
+      "type" : "AXButton",
+      "isClickable" : true
+    },
+    {
+      "actionHint" : "Clickable element",
+      "size" : {
+        "height" : 32,
+        "width" : 84
+      },
+      "position" : {
+        "y" : 974,
+        "x" : 172
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXButton",
+      "id" : "22C95C8B-C1FE-4A8C-B96A-BD742E73DEE2",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "role" : "AXButton",
+        "title" : "Reply reply",
+        "focused" : false
+      }
+    },
+    {
+      "type" : "AXCheckBox",
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "isClickable" : true,
+      "position" : {
+        "y" : 974,
+        "x" : 103
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXCheckBox",
+        "title" : "Upvote",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "1B0EBCF7-ED41-4E2E-A133-76FB18E3AB11"
+    },
+    {
+      "type" : "AXCheckBox",
+      "size" : {
+        "width" : 33,
+        "height" : 32
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "semanticMeaning" : "AXCheckBox",
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Downvote",
+        "role" : "AXCheckBox",
+        "description" : null,
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "id" : "3E8BCE44-CC58-4FC5-B107-8D39B890CC6F",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "y" : 974,
+        "x" : 140
+      }
+    },
+    {
+      "semanticMeaning" : "Give award",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "id" : "5618F707-8447-4BCE-B9FD-E399B6860893",
+      "actionHint" : "Click Give award",
+      "accessibility" : {
+        "description" : "Give award",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Give award",
+        "role" : "AXButton"
+      },
+      "position" : {
+        "x" : 255,
+        "y" : 974
+      },
+      "type" : "AXButton",
+      "size" : {
+        "width" : 88,
+        "height" : 32
+      },
+      "isClickable" : true
+    },
+    {
+      "position" : {
+        "x" : 342,
+        "y" : 974
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 85
+      },
+      "semanticMeaning" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "type" : "AXPopUpButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : "Share Share",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : null
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "id" : "DB18E897-619E-4031-ADBC-9AABB479E9F5"
+    },
+    {
+      "size" : {
+        "height" : 32,
+        "width" : 41
+      },
+      "id" : "4799808D-A92D-4D2B-B8EF-2B2A1CA8954E",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Open user actions",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : "Open user actions",
+        "title" : "Open user actions",
+        "enabled" : true
+      },
+      "type" : "AXPopUpButton",
+      "position" : {
+        "x" : 427,
+        "y" : 974
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Click Open user actions"
+    },
+    {
+      "size" : {
+        "height" : 32,
+        "width" : 84
+      },
+      "position" : {
+        "x" : 206,
+        "y" : 974
+      },
+      "type" : "AXButton",
+      "id" : "8F8842C9-1CC8-4F6C-B229-6C3544DBD55B",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "title" : "Reply reply",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : null
+      }
+    },
+    {
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "x" : 135,
+        "y" : 974
+      },
+      "isClickable" : true,
+      "id" : "D2790AE5-2527-4F7A-B123-F371D70044F0",
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXCheckBox",
+        "description" : null,
+        "title" : "Upvote",
+        "enabled" : true
+      }
+    },
+    {
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      },
+      "id" : "965F66DB-4D32-41D5-BAE0-C84F1E4FDD98",
+      "position" : {
+        "y" : 974,
+        "x" : 174
+      },
+      "isClickable" : true,
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "Downvote",
+        "focused" : false,
+        "role" : "AXCheckBox",
+        "description" : null
+      }
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "Give award",
+        "title" : "Give award",
+        "focused" : false
+      },
+      "position" : {
+        "y" : 974,
+        "x" : 289
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Give award",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "actionHint" : "Click Give award",
+      "size" : {
+        "height" : 32,
+        "width" : 88
+      },
+      "id" : "B872A07F-651E-4E63-8797-81F2670C40CD",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 974,
+        "x" : 376
+      },
+      "id" : "249E14CE-6E4E-4306-89E4-F4CE146203C6",
+      "accessibility" : {
+        "description" : null,
+        "title" : "Share Share",
+        "role" : "AXPopUpButton",
+        "focused" : false,
+        "enabled" : true
+      },
+      "type" : "AXPopUpButton",
+      "isClickable" : true,
+      "semanticMeaning" : "AXPopUpButton",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "size" : {
+        "height" : 32,
+        "width" : 85
+      },
+      "actionHint" : "Clickable element"
+    },
+    {
+      "actionHint" : "Click Open user actions",
+      "type" : "AXPopUpButton",
+      "size" : {
+        "height" : 32,
+        "width" : 41
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 974,
+        "x" : 460
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : "Open user actions",
+        "focused" : false,
+        "description" : "Open user actions",
+        "enabled" : true,
+        "role" : "AXPopUpButton"
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "semanticMeaning" : "Open user actions",
+      "id" : "2229316D-2C94-4258-8CA8-57301C3FC23F"
+    },
+    {
+      "size" : {
+        "width" : 32,
+        "height" : 16
+      },
+      "semanticMeaning" : "Toggle Comment Thread",
+      "position" : {
+        "x" : 71,
+        "y" : 974
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "Toggle Comment Thread",
+        "focused" : false,
+        "title" : "Toggle Comment Thread"
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "id" : "4518C0BF-CC86-41C7-BA74-5FD6ED18BD56",
+      "actionHint" : "Click Toggle Comment Thread"
+    },
+    {
+      "semanticMeaning" : "AXButton",
+      "type" : "AXButton",
+      "actionHint" : "Clickable element",
+      "id" : "DCBA9E86-DC91-45A8-92CA-7816886008B3",
+      "position" : {
+        "y" : 974,
+        "x" : 172
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Reply reply",
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 84,
+        "height" : 32
+      }
+    },
+    {
+      "type" : "AXCheckBox",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : null,
+        "title" : "Upvote",
+        "role" : "AXCheckBox"
+      },
+      "id" : "57517B2B-1933-44A1-BAAC-9622D3E6BBF7",
+      "position" : {
+        "x" : 103,
+        "y" : 974
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "actionHint" : "Clickable element"
+    },
+    {
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "description" : null,
+        "focused" : false,
+        "enabled" : true,
+        "title" : "Downvote",
+        "role" : "AXCheckBox"
+      },
+      "position" : {
+        "x" : 140,
+        "y" : 974
+      },
+      "id" : "9BF6114F-B642-4C75-9B27-BF030AFAFA9C",
+      "type" : "AXCheckBox",
+      "size" : {
+        "width" : 33,
+        "height" : 32
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "actionHint" : "Click Give award",
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Give award",
+        "title" : "Give award",
+        "enabled" : true
+      },
+      "semanticMeaning" : "Give award",
+      "position" : {
+        "x" : 255,
+        "y" : 974
+      },
+      "size" : {
+        "width" : 88,
+        "height" : 32
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "id" : "97526401-0FC8-43BD-9C35-D19A01341380",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXPopUpButton",
+      "id" : "F44B9540-8819-43E0-8549-9AB66BFAC299",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "role" : "AXPopUpButton",
+        "title" : "Share Share",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 974,
+        "x" : 342
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 85
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXPopUpButton"
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Open user actions",
+        "role" : "AXPopUpButton",
+        "description" : "Open user actions",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 427,
+        "y" : 974
+      },
+      "semanticMeaning" : "Open user actions",
+      "size" : {
+        "width" : 41,
+        "height" : 32
+      },
+      "id" : "F40F96BA-DEAF-4A79-A4CC-589C2448F2EF",
+      "actionHint" : "Click Open user actions",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "type" : "AXPopUpButton"
+    },
+    {
+      "id" : "B85DC360-491C-4961-A976-5CB06F6BB2F4",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Toggle Comment Thread",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 103,
+        "y" : 974
+      },
+      "size" : {
+        "height" : 16,
+        "width" : 32
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Toggle Comment Thread",
+      "accessibility" : {
+        "title" : "Toggle Comment Thread",
+        "enabled" : true,
+        "description" : "Toggle Comment Thread",
+        "role" : "AXButton",
+        "focused" : false
+      }
+    },
+    {
+      "position" : {
+        "x" : 204,
+        "y" : 974
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 84,
+        "height" : 32
+      },
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : null,
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Reply reply"
+      },
+      "actionHint" : "Clickable element",
+      "id" : "62814377-DD6E-49E2-A240-F04DE57B42A7",
+      "type" : "AXButton"
+    },
+    {
+      "semanticMeaning" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "isClickable" : true,
+      "position" : {
+        "y" : 974,
+        "x" : 135
+      },
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 32,
+        "width" : 32
+      },
+      "id" : "AC00E3C8-C3AC-40B4-8F12-1278661D1DC6",
+      "accessibility" : {
+        "description" : null,
+        "title" : "Upvote",
+        "role" : "AXCheckBox",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXCheckBox"
+    },
+    {
+      "id" : "3D3F44DB-639F-4015-888B-69D4EF89F900",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "AXCheckBox",
+      "actionHint" : "Clickable element",
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      },
+      "accessibility" : {
+        "description" : null,
+        "focused" : false,
+        "title" : "Downvote",
+        "enabled" : true,
+        "role" : "AXCheckBox"
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "y" : 974,
+        "x" : 172
+      },
+      "isClickable" : true
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : "Give award",
+        "description" : "Give award"
+      },
+      "size" : {
+        "height" : 32,
+        "width" : 88
+      },
+      "id" : "F4E25EFF-E218-447C-89F8-3E761A9E3AC7",
+      "position" : {
+        "x" : 287,
+        "y" : 974
+      },
+      "actionHint" : "Click Give award",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "semanticMeaning" : "Give award",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 84,
+        "height" : 32
+      },
+      "accessibility" : {
+        "title" : "Reply reply",
+        "description" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "id" : "49DC7DBD-E5DB-4F7A-9D02-7B2BEE989F6D",
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "position" : {
+        "y" : 974,
+        "x" : 236
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "AXButton"
+    },
+    {
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "id" : "AE6A635F-89F5-4DB6-91B2-9AE5EF183971",
+      "semanticMeaning" : "AXCheckBox",
+      "actionHint" : "Clickable element",
+      "type" : "AXCheckBox",
+      "position" : {
+        "x" : 167,
+        "y" : 974
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Upvote",
+        "role" : "AXCheckBox"
+      },
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "isClickable" : true
+    },
+    {
+      "id" : "CD227E02-DF6C-4CA7-AB3B-5295AC0353BA",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "title" : "Downvote",
+        "focused" : false,
+        "role" : "AXCheckBox"
+      },
+      "semanticMeaning" : "AXCheckBox",
+      "isClickable" : true,
+      "actionHint" : "Clickable element",
+      "position" : {
+        "x" : 204,
+        "y" : 974
+      },
+      "type" : "AXCheckBox",
+      "size" : {
+        "height" : 32,
+        "width" : 33
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "title" : "Give award",
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Give award",
+        "enabled" : true
+      },
+      "id" : "34BF7467-BA24-42E2-843E-1C9CFC7DB996",
+      "isClickable" : true,
+      "position" : {
+        "x" : 319,
+        "y" : 974
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "Give award",
+      "actionHint" : "Click Give award",
+      "size" : {
+        "width" : 88,
+        "height" : 32
+      }
+    },
+    {
+      "position" : {
+        "y" : 974,
+        "x" : 406
+      },
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "role" : "AXPopUpButton",
+        "focused" : false,
+        "title" : "Share Share"
+      },
+      "isClickable" : true,
+      "type" : "AXPopUpButton",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "id" : "0B7323FC-2FCA-446A-AEBC-1949FCCEA900",
+      "size" : {
+        "height" : 32,
+        "width" : 85
+      },
+      "semanticMeaning" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "id" : "BC8B3FC3-2C70-444F-AD87-8AFE27BA8BC7",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "Open user actions",
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : "Open user actions"
+      },
+      "type" : "AXPopUpButton",
+      "position" : {
+        "x" : 491,
+        "y" : 974
+      },
+      "actionHint" : "Click Open user actions",
+      "size" : {
+        "width" : 41,
+        "height" : 32
+      },
+      "semanticMeaning" : "Open user actions"
+    },
+    {
+      "id" : "FD5C3D14-99E4-44A9-96E3-1E4030AD94CB",
+      "size" : {
+        "width" : 70,
+        "height" : 32
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "position" : {
+        "x" : 994,
+        "y" : 55
+      },
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "Join",
+        "focused" : false
+      }
+    },
+    {
+      "semanticMeaning" : "AXPopUpButton",
+      "accessibility" : {
+        "title" : "u\/cheddarcash avatar cheddarcash",
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "enabled" : true,
+        "description" : null
+      },
+      "id" : "10066170-0873-4788-A723-B63228569C6E",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "type" : "AXPopUpButton",
+      "size" : {
+        "width" : 284,
+        "height" : 40
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "position" : {
+        "y" : 55,
+        "x" : 780
+      }
+    },
+    {
+      "position" : {
+        "x" : 145,
+        "y" : 66
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "show sidebar",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null
+      },
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "id" : "9054C398-0204-4F0A-AE62-21B9C9383BBF",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click show sidebar",
+      "semanticMeaning" : "show sidebar",
+      "size" : {
+        "height" : 30,
+        "width" : 35.5
+      }
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click Go back",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Go back",
+      "position" : {
+        "x" : 202,
+        "y" : 61
+      },
+      "type" : "AXButton",
+      "size" : {
+        "width" : 40,
+        "height" : 40
+      },
+      "accessibility" : {
+        "enabled" : false,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Go back",
+        "title" : null
+      },
+      "id" : "A0425C55-DC3F-496F-A959-AC2D080931B3",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "semanticMeaning" : "Go forward",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "position" : {
+        "x" : 242,
+        "y" : 61
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : false,
+        "focused" : false,
+        "title" : null,
+        "description" : "Go forward"
+      },
+      "actionHint" : "Click Go forward",
+      "size" : {
+        "height" : 40,
+        "width" : 39
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "id" : "AD208DD7-1CE8-44AE-A7E0-57C7A3182035"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Activate WhatFont",
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : null
+      },
+      "semanticMeaning" : "Activate WhatFont",
+      "type" : "AXButton",
+      "position" : {
+        "y" : 66,
+        "x" : 328
+      },
+      "size" : {
+        "width" : 31,
+        "height" : 30
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Activate WhatFont",
+      "id" : "DAAA6C26-2EB1-45F4-B126-200257B4CB48"
+    },
+    {
+      "actionHint" : "Click Page Menu",
+      "id" : "3D14E1EC-9C2A-41AA-B443-81242B229D33",
+      "position" : {
+        "x" : 365,
+        "y" : 70
+      },
+      "size" : {
+        "width" : 30.5,
+        "height" : 23
+      },
+      "accessibility" : {
+        "title" : "Page Menu",
+        "focused" : false,
+        "description" : "Page Menu",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "semanticMeaning" : "Page Menu",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "type" : "AXButton"
+    },
+    {
+      "id" : "E123DC11-08C6-4F77-A459-051683AC1684",
+      "type" : "AXButton",
+      "semanticMeaning" : "Add page to Reading List",
+      "size" : {
+        "height" : 24,
+        "width" : 24
+      },
+      "position" : {
+        "y" : 69,
+        "x" : 387
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add page to Reading List",
+      "accessibility" : {
+        "description" : "Add page to Reading List",
+        "enabled" : true,
+        "title" : "Add page to Reading List",
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXTextField",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "smart search field showing a secure address",
+      "position" : {
+        "x" : 388,
+        "y" : 73
+      },
+      "size" : {
+        "width" : 367,
+        "height" : 28
+      },
+      "accessibility" : {
+        "role" : "AXTextField",
+        "title" : null,
+        "enabled" : true,
+        "description" : "smart search field showing a secure address",
+        "focused" : false
+      },
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ],
+      "id" : "F84B3FAD-5D38-47CA-A45C-A288C6CB8B5F",
+      "isClickable" : false
+    },
+    {
+      "type" : "AXButton",
+      "id" : "58D34140-3DE0-4EF5-AF97-2135EFD77EC4",
+      "semanticMeaning" : "Reload this page",
+      "position" : {
+        "x" : 761,
+        "y" : 70.5
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 23.5,
+        "height" : 23
+      },
+      "actionHint" : "Click Reload this page",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Reload this page",
+        "title" : "Reload this page",
+        "focused" : false,
+        "enabled" : true
+      },
+      "isClickable" : true
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "id" : "D27B2AE7-1DCD-4EFB-8616-32B1FD526D95",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "description" : "Share",
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "semanticMeaning" : "Share",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "size" : {
+        "height" : 52,
+        "width" : 37
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 55,
+        "x" : 975
+      },
+      "actionHint" : "Click Share"
+    },
+    {
+      "position" : {
+        "x" : 1012,
+        "y" : 55
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "New Tab",
+      "accessibility" : {
+        "description" : "New Tab",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 36,
+        "height" : 52
+      },
+      "id" : "9438D115-6437-4AC6-90F5-0906ADB95C50",
+      "actionHint" : "Click New Tab",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 1015,
+        "y" : 66
+      },
+      "actionHint" : "Click new tab",
+      "size" : {
+        "width" : 30,
+        "height" : 30
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : null,
+        "description" : "new tab",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "new tab",
+      "id" : "AC2B3FA4-4426-417F-9426-08DAA75B8553"
+    },
+    {
+      "accessibility" : {
+        "description" : "add",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "700C5D02-31A3-42E5-B2BC-925A0CC7906C",
+      "actionHint" : "Click add",
+      "size" : {
+        "height" : 30,
+        "width" : 30
+      },
+      "position" : {
+        "x" : 1015,
+        "y" : 66
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "add"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "CF936C72-AB69-4964-800A-51F591BA3160",
+      "actionHint" : "Click Tab Overview",
+      "isClickable" : true,
+      "size" : {
+        "height" : 52,
+        "width" : 40
+      },
+      "position" : {
+        "y" : 55,
+        "x" : 1048
+      },
+      "accessibility" : {
+        "title" : null,
+        "description" : "Tab Overview",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Tab Overview",
+      "type" : "AXButton"
+    },
+    {
+      "id" : "37897CFD-CC01-4606-894E-C0B95725F859",
+      "semanticMeaning" : "AXRadioButton",
+      "isClickable" : true,
+      "size" : {
+        "width" : 348,
+        "height" : 28
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "role" : "AXRadioButton",
+        "description" : null,
+        "title" : "best local LLM for M1 chip - Google Search",
+        "enabled" : true,
+        "focused" : false
+      },
+      "position" : {
+        "y" : 107,
+        "x" : 55
+      },
+      "actionHint" : "Clickable element",
+      "type" : "AXRadioButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXRadioButton",
+      "actionHint" : "Clickable element",
+      "id" : "DD892D04-D890-4760-BB2A-4AA73F72C7DF",
+      "size" : {
+        "height" : 28,
+        "width" : 348
+      },
+      "type" : "AXRadioButton",
+      "position" : {
+        "x" : 401,
+        "y" : 107
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "title" : "best LLM for M2 8GB - Google Search",
+        "description" : null,
+        "focused" : false
+      }
+    },
+    {
+      "type" : "AXRadioButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "role" : "AXRadioButton",
+        "title" : "Which model for Mac M2 8GB RAM ? : r\/LocalLLaMA",
+        "enabled" : true
+      },
+      "semanticMeaning" : "AXRadioButton",
+      "id" : "C55126EC-BA52-4E47-9138-C20E83A302D4",
+      "actionHint" : "Clickable element",
+      "size" : {
+        "height" : 28,
+        "width" : 349
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "x" : 748,
+        "y" : 107
+      }
+    },
+    {
+      "actionHint" : "Click Apple",
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "confidence" : 0.94999999999999996,
+      "id" : "C964B1D4-A7EF-4FE3-B7D6-893D9F30252D",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: Apple",
+      "visualText" : "Apple",
+      "isClickable" : true
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "type" : "appMenu",
+      "visualText" : "Safari",
+      "isClickable" : true,
+      "actionHint" : "Click Safari",
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Safari",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "id" : "12FD6851-0097-4628-81B1-687FB1A790FB"
+    },
+    {
+      "isClickable" : true,
+      "id" : "2D7DDB9A-B2F3-4EA6-8050-2EE518F265F3",
+      "type" : "appMenu",
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: File",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "visualText" : "File",
+      "actionHint" : "Click File",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Edit",
+      "visualText" : "Edit",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click Edit",
+      "confidence" : 0.94999999999999996,
+      "id" : "FA64E004-DD45-4329-AFA0-BF8FF1E9E835"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "id" : "787EA6B0-BB17-4EF1-B75D-570353EC68DA",
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: View",
+      "confidence" : 0.94999999999999996,
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "visualText" : "View",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "actionHint" : "Click View",
+      "isClickable" : true
+    },
+    {
+      "isClickable" : true,
+      "visualText" : "History",
+      "id" : "EE3AA6F9-CDBA-4A0B-9776-91C483E91095",
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "semanticMeaning" : "Menu bar item: History",
+      "actionHint" : "Click History",
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "id" : "5C03A82E-3AEB-409E-8921-7C0A2CD92ABA",
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Bookmarks",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "confidence" : 0.94999999999999996,
+      "actionHint" : "Click Bookmarks",
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Bookmarks"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "id" : "9F412121-2F9B-47C4-82A9-0BD769AA0ACB",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "semanticMeaning" : "Menu bar item: Develop",
+      "actionHint" : "Click Develop",
+      "isClickable" : true,
+      "visualText" : "Develop",
+      "confidence" : 0.94999999999999996
+    },
+    {
+      "actionHint" : "Click Window",
+      "visualText" : "Window",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "semanticMeaning" : "Menu bar item: Window",
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "15413ED6-2878-40DF-B124-2B11C8613177",
+      "isClickable" : true,
+      "type" : "appMenu"
+    },
+    {
+      "type" : "appMenu",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "visualText" : "Help",
+      "confidence" : 0.94999999999999996,
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Help",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click Help",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "id" : "1AEFF53C-B065-478E-8B6B-347E6DB4A07F"
+    }
+  ],
+  "window" : {
+    "title" : "activwndw: Safari - Which model for Mac M2 8GB RAM ? : r\/LocalLLaMA",
+    "frame" : {
+      "y" : 55,
+      "height" : 919,
+      "x" : 55,
+      "width" : 1041
+    }
+  },
+  "systemContext" : {
+    "timestamp" : "2025-06-21T17:10:55Z",
+    "activeApplication" : {
+      "name" : "Safari",
+      "bundleIdentifier" : "com.apple.Safari"
+    },
+    "menuItems" : [
+      {
+        "title" : "Apple",
+        "type" : "appMenu",
+        "menuBarPosition" : "M1",
+        "index" : 0,
+        "isSystemWide" : false
+      },
+      {
+        "menuBarPosition" : "M2",
+        "title" : "Safari",
+        "type" : "appMenu",
+        "index" : 1,
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "menuBarPosition" : "M3",
+        "isSystemWide" : false,
+        "title" : "File",
+        "index" : 2
+      },
+      {
+        "title" : "Edit",
+        "type" : "appMenu",
+        "isSystemWide" : false,
+        "index" : 3,
+        "menuBarPosition" : "M4"
+      },
+      {
+        "type" : "appMenu",
+        "menuBarPosition" : "M5",
+        "index" : 4,
+        "isSystemWide" : false,
+        "title" : "View"
+      },
+      {
+        "index" : 5,
+        "type" : "appMenu",
+        "menuBarPosition" : "M6",
+        "isSystemWide" : false,
+        "title" : "History"
+      },
+      {
+        "isSystemWide" : false,
+        "menuBarPosition" : "M7",
+        "title" : "Bookmarks",
+        "type" : "appMenu",
+        "index" : 6
+      },
+      {
+        "index" : 7,
+        "menuBarPosition" : "M8",
+        "type" : "appMenu",
+        "title" : "Develop",
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "isSystemWide" : false,
+        "index" : 8,
+        "menuBarPosition" : "M9",
+        "title" : "Window"
+      },
+      {
+        "menuBarPosition" : "M10",
+        "index" : 9,
+        "isSystemWide" : false,
+        "title" : "Help",
+        "type" : "appMenu"
+      }
+    ]
+  },
+  "metadata" : {
+    "timestamp" : "2025-06-21T17:10:55Z",
+    "processingTime" : 2.267706036567688,
+    "performance" : {
+      "accessibilityTime" : 0.3563460111618042,
+      "totalElements" : 658,
+      "fusedElements" : 164,
+      "memoryUsage" : 86786048,
+      "ocrTime" : 0.1518319845199585,
+      "screenshotTime" : 0.20755994319915771,
+      "fusionTime" : 0.099638104438781738
+    }
+  }
+}

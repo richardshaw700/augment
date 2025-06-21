@@ -11,13 +11,15 @@ import asyncio
 import pyautogui
 import time
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Union
 from dataclasses import dataclass
 from openai import OpenAI
 from dotenv import load_dotenv
 import sys
 from pathlib import Path
 import pyperclip
+import re
+import requests  # For Ollama API calls
 
 # Add the project root to the path
 project_root = Path(__file__).parent.parent.parent
@@ -25,6 +27,144 @@ sys.path.append(str(project_root))
 
 # Load environment variables
 load_dotenv()
+
+# =============================================================================
+# 🤖 LLM ADAPTER SYSTEM
+# =============================================================================
+
+class LLMAdapter:
+    """Base class for LLM adapters"""
+    
+    async def chat_completion(self, messages: List[Dict[str, str]], **kwargs) -> str:
+        """Generate a chat completion"""
+        raise NotImplementedError
+    
+    def get_model_info(self) -> Dict[str, str]:
+        """Get information about the current model"""
+        raise NotImplementedError
+
+class OpenAIAdapter(LLMAdapter):
+    """Adapter for OpenAI models"""
+    
+    def __init__(self, model: str = "gpt-4o-mini"):
+        self.client = OpenAI()
+        self.model = model
+    
+    async def chat_completion(self, messages: List[Dict[str, str]], **kwargs) -> str:
+        """Generate a chat completion using OpenAI"""
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=messages,
+                max_tokens=kwargs.get('max_tokens', 1000),
+                temperature=kwargs.get('temperature', 0.1)
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            raise Exception(f"OpenAI API error: {str(e)}")
+    
+    def get_model_info(self) -> Dict[str, str]:
+        return {
+            "provider": "OpenAI",
+            "model": self.model,
+            "type": "cloud"
+        }
+
+class OllamaAdapter(LLMAdapter):
+    """Adapter for Ollama local models"""
+    
+    def __init__(self, model: str = "phi3:mini", base_url: str = "http://localhost:11434"):
+        self.model = model
+        self.base_url = base_url
+    
+    async def chat_completion(self, messages: List[Dict[str, str]], **kwargs) -> str:
+        """Generate a chat completion using Ollama"""
+        try:
+            # Convert messages to Ollama format
+            prompt = self._convert_messages_to_prompt(messages)
+            
+            # Make request to Ollama
+            response = requests.post(
+                f"{self.base_url}/api/generate",
+                json={
+                    "model": self.model,
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {
+                        "temperature": kwargs.get('temperature', 0.1),
+                        "num_predict": kwargs.get('max_tokens', 1000)
+                    }
+                },
+                timeout=60  # Increased timeout for local model
+            )
+            
+            if response.status_code != 200:
+                raise Exception(f"Ollama API error: {response.status_code} - {response.text}")
+            
+            result = response.json()
+            ollama_response = result.get('response', '')
+            
+            # Clean up the response if it has markdown formatting
+            if ollama_response.startswith('```json') and ollama_response.endswith('```'):
+                # Extract JSON from markdown code block
+                lines = ollama_response.split('\n')
+                json_lines = []
+                in_json = False
+                for line in lines:
+                    if line.strip() == '```json':
+                        in_json = True
+                        continue
+                    elif line.strip() == '```':
+                        break
+                    elif in_json:
+                        json_lines.append(line)
+                ollama_response = '\n'.join(json_lines)
+            
+            return ollama_response.strip()
+            
+        except requests.exceptions.RequestException as e:
+            raise Exception(f"Ollama connection error: {str(e)}")
+        except Exception as e:
+            raise Exception(f"Ollama API error: {str(e)}")
+    
+    def _convert_messages_to_prompt(self, messages: List[Dict[str, str]]) -> str:
+        """Convert OpenAI-style messages to a single prompt for Ollama"""
+        prompt_parts = []
+        
+        for message in messages:
+            role = message["role"]
+            content = message["content"]
+            
+            if role == "system":
+                prompt_parts.append(f"System: {content}")
+            elif role == "user":
+                prompt_parts.append(f"User: {content}")
+            elif role == "assistant":
+                prompt_parts.append(f"Assistant: {content}")
+        
+        prompt_parts.append("Assistant:")  # Prompt for response
+        
+        return "\n\n".join(prompt_parts)
+    
+    def get_model_info(self) -> Dict[str, str]:
+        return {
+            "provider": "Ollama",
+            "model": self.model,
+            "type": "local"
+        }
+
+def create_llm_adapter(provider: str, model: str) -> LLMAdapter:
+    """Factory function to create LLM adapters"""
+    if provider == "openai":
+        return OpenAIAdapter(model)
+    elif provider.startswith("ollama"):
+        return OllamaAdapter(model)
+    else:
+        raise ValueError(f"Unknown LLM provider: {provider}")
+
+# =============================================================================
+# 📊 DATA MODELS
+# =============================================================================
 
 @dataclass
 class ActionResult:
@@ -276,11 +416,14 @@ class PerformanceTracker:
 
 class GPTComputerUse:
     """
-    Simulates computer use API functionality using GPT-4o-mini
+    Computer use API functionality with configurable LLM backend
     """
     
-    def __init__(self):
-        self.client = OpenAI()
+    def __init__(self, llm_provider: str = "openai", llm_model: str = "gpt-4o-mini"):
+        # Initialize LLM adapter
+        self.llm_adapter = create_llm_adapter(llm_provider, llm_model)
+        self.llm_info = self.llm_adapter.get_model_info()
+        
         self.ui_inspector_path = project_root / "src" / "ui_inspector" / "compiled_ui_inspector"
         self.conversation_history = []
         
@@ -296,7 +439,8 @@ class GPTComputerUse:
         # Initialize performance tracker
         self.performance = PerformanceTracker()
         
-        print("🤖 GPT Computer Use initialized")
+        print("🤖 Computer Use initialized")
+        print(f"🧠 LLM: {self.llm_info['provider']} - {self.llm_info['model']} ({self.llm_info['type']})")
         print(f"📁 UI Inspector: {self.ui_inspector_path}")
         print(f"📝 Session logs: {self.logger.log_file}")
         print(f"📄 Summary: {self.logger.readable_file}")
@@ -859,8 +1003,8 @@ Example responses:
         return f"{col_str}{row_str}"
     
     async def chat_with_gpt(self, user_message: str, ui_state: Optional[Dict] = None) -> str:
-        """Send message to GPT and get response"""
-        start_time = self.performance.start_operation("GPT API call")
+        """Send message to LLM and get response"""
+        start_time = self.performance.start_operation("LLM API call")
         
         try:
             # Build messages for the conversation
@@ -877,26 +1021,22 @@ Example responses:
             # Add user message
             messages.append({"role": "user", "content": user_message})
             
-            # Call GPT API
-            response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
+            # Call LLM API using adapter
+            llm_response = await self.llm_adapter.chat_completion(
                 messages=messages,
                 temperature=0.1,
                 max_tokens=1000
             )
             
-            gpt_response = response.choices[0].message.content
+            # Estimate token usage (rough approximation for local models)
+            tokens_used = len(llm_response.split()) * 1.3  # Rough token estimation
+            self.performance.end_operation("LLM API call", start_time, f"Tokens: {int(tokens_used)}")
             
-            # Track token usage and response time
-            usage = response.usage
-            tokens_used = usage.total_tokens if usage else 0
-            self.performance.end_operation("GPT API call", start_time, f"Tokens: {tokens_used}")
-            
-            return gpt_response
+            return llm_response
             
         except Exception as e:
-            self.performance.end_operation("GPT API call", start_time, f"Error: {str(e)}")
-            return f'{{"action": "wait", "parameters": {{"seconds": 1}}, "reasoning": "GPT API error: {str(e)}"}}'
+            self.performance.end_operation("LLM API call", start_time, f"Error: {str(e)}")
+            return f'{{"action": "wait", "parameters": {{"seconds": 1}}, "reasoning": "LLM API error: {str(e)}"}}'
     
     async def execute_task(self, task: str, max_iterations: int = 20) -> List[Dict]:
         """Execute a complete task using GPT computer use simulation"""

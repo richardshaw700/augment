@@ -16,6 +16,20 @@ from dotenv import load_dotenv
 import logging
 
 # =============================================================================
+# 🤖 LLM CONFIGURATION
+# =============================================================================
+# Available LLM providers
+LLM_PROVIDERS = {
+    "openai": "gpt-4o-mini",           # Fast, cost-effective cloud model
+    "ollama": "phi3:mini",             # Local Phi-3 Mini 3.8B model
+    "ollama_small": "smollm2:1.7b",    # Local SmolLM2 1.7B model
+    "ollama_tiny": "smollm2:360m",     # Local SmolLM2 360M model
+}
+
+# 🎯 SELECT YOUR LLM HERE
+SELECTED_LLM = "openai"  # Change this to switch models: "openai", "ollama", "ollama_small", "ollama_tiny"
+
+# =============================================================================
 # 🚀 MASTER DEBUG CONFIGURATION
 # =============================================================================
 DEBUG = True          # Clean, readable output for main operations
@@ -146,7 +160,12 @@ class AugmentController:
     def __init__(self, debug: bool = DEBUG, max_iterations: int = 20):
         self.debug = debug
         self.max_iterations = max_iterations
-        self.gpt_engine = GPTComputerUse()
+        
+        # Initialize GPT engine with selected LLM
+        llm_provider = SELECTED_LLM
+        llm_model = LLM_PROVIDERS[SELECTED_LLM]
+        self.gpt_engine = GPTComputerUse(llm_provider=llm_provider, llm_model=llm_model)
+        
         self.session_history = []
         self.start_time = datetime.now()
         
@@ -163,6 +182,7 @@ class AugmentController:
         logger.success("Augment Controller Initialized", "INIT")
         logger.debug(f"Debug Mode: {'ON' if debug else 'OFF'}", "INIT")
         logger.debug(f"Max Iterations: {max_iterations}", "INIT")
+        logger.debug(f"Selected LLM: {llm_provider} - {llm_model}", "INIT")
         logger.debug(f"Log File: {logger.get_log_file_path()}", "INIT")
     
     async def execute_task(self, task: str, task_id: Optional[str] = None) -> Dict[str, Any]:
