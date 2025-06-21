@@ -1,0 +1,689 @@
+{
+  "elements" : [
+    {
+      "position" : {
+        "y" : 65.000000000000014,
+        "x" : 1153.75
+      },
+      "type" : "TextContent",
+      "size" : {
+        "height" : 16.000000000000046,
+        "width" : 196.50000000000003
+      },
+      "semanticMeaning" : "Text content: 'Qtsearch or enter website name'",
+      "interactions" : [
+
+      ],
+      "visualText" : "Qtsearch or enter website name",
+      "confidence" : 0.5,
+      "id" : "61B440AA-9576-42E2-98FE-F1CC8F4E4ACA",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Qtsearch or enter website name",
+        "boundingBox" : {
+          "x" : 1055.5,
+          "width" : 196.50000000000003,
+          "y" : 56.999999999999993,
+          "height" : 16.000000000000046
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "size" : {
+        "width" : 21.500000000000028,
+        "height" : 10.000000000000018
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1646.5,
+          "height" : 10.000000000000018,
+          "width" : 21.500000000000028,
+          "y" : 862
+        },
+        "text" : "Edit",
+        "confidence" : 0.5
+      },
+      "position" : {
+        "x" : 1657.25,
+        "y" : 867
+      },
+      "interactions" : [
+
+      ],
+      "id" : "3D09FBE1-553A-4D61-8861-18CAD3EDE9A7",
+      "visualText" : "Edit",
+      "semanticMeaning" : "Text content: 'Edit'"
+    },
+    {
+      "type" : "AXButton",
+      "id" : "6E22C7D0-C4B0-47E6-8F9B-9A7D494AE692",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Edit",
+        "focused" : false,
+        "description" : "customizations"
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click customizations",
+      "position" : {
+        "x" : 1629,
+        "y" : 856
+      },
+      "semanticMeaning" : "customizations",
+      "size" : {
+        "width" : 56,
+        "height" : 24
+      }
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "show sidebar"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "id" : "241A1690-474D-4AFC-BD9B-D70918A218B6",
+      "semanticMeaning" : "show sidebar",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 30,
+        "width" : 35.5
+      },
+      "actionHint" : "Click show sidebar",
+      "position" : {
+        "y" : 50,
+        "x" : 858
+      },
+      "type" : "AXButton"
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : false,
+        "title" : null,
+        "description" : "Go back",
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "id" : "7A108453-8E21-48F1-BEF2-1B4390487AB8",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 45,
+        "x" : 915
+      },
+      "size" : {
+        "width" : 40,
+        "height" : 40
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "Go back",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Go back"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 39,
+        "height" : 40
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Go forward",
+      "id" : "0D5AD126-0ADE-4D22-A0CA-CAD6250C05F1",
+      "type" : "AXButton",
+      "position" : {
+        "y" : 45,
+        "x" : 955
+      },
+      "isClickable" : true,
+      "actionHint" : "Click Go forward",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "role" : "AXButton",
+        "description" : "Go forward",
+        "enabled" : false
+      }
+    },
+    {
+      "actionHint" : "Click Activate WhatFont",
+      "id" : "F7A79188-8C84-4A55-99D3-5502895B0C7E",
+      "position" : {
+        "y" : 50,
+        "x" : 1010
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : null,
+        "description" : "Activate WhatFont",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "type" : "AXButton",
+      "size" : {
+        "height" : 30,
+        "width" : 31
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Activate WhatFont"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Show Search Menu",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Show Search Menu"
+      },
+      "size" : {
+        "width" : 23.5,
+        "height" : 24
+      },
+      "semanticMeaning" : "Show Search Menu",
+      "id" : "54F9FC23-DCD1-4788-8DD4-36D1341BF74E",
+      "actionHint" : "Click Show Search Menu",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1050,
+        "y" : 53.5
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "accessibility" : {
+        "role" : "AXTextField",
+        "title" : null,
+        "enabled" : true,
+        "description" : "smart search field",
+        "focused" : true
+      },
+      "semanticMeaning" : "smart search field",
+      "position" : {
+        "x" : 1070,
+        "y" : 57
+      },
+      "size" : {
+        "width" : 353,
+        "height" : 28
+      },
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ],
+      "isClickable" : false,
+      "id" : "AD58DCD9-EEEC-41FE-BCC6-F901B1E8DB56",
+      "type" : "AXTextField",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 1583,
+        "y" : 39
+      },
+      "size" : {
+        "width" : 37,
+        "height" : 52
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "458DF40F-ED05-4973-9F0A-0E5E9EAE1611",
+      "semanticMeaning" : "Share",
+      "actionHint" : "Click Share",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Share",
+        "enabled" : false,
+        "focused" : false,
+        "title" : null
+      },
+      "isClickable" : true
+    },
+    {
+      "actionHint" : "Click New Tab (icon_button button)",
+      "position" : {
+        "y" : 39,
+        "x" : 1620
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "visualText" : "",
+      "id" : "66E6CF05-9A55-434D-B830-EDF171DBC9DC",
+      "semanticMeaning" : "New Tab with icon visual",
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "New Tab",
+        "focused" : false,
+        "title" : null
+      },
+      "type" : "AXButton",
+      "size" : {
+        "height" : 52,
+        "width" : 36
+      },
+      "confidence" : 0.80000000000000004
+    },
+    {
+      "position" : {
+        "y" : 50,
+        "x" : 1623
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 30,
+        "height" : 30
+      },
+      "isClickable" : true,
+      "actionHint" : "Click new tab",
+      "id" : "BEDFEC0F-1802-4712-926A-E4D85A6A0A65",
+      "type" : "AXButton",
+      "semanticMeaning" : "new tab",
+      "accessibility" : {
+        "description" : "new tab",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "1AB8E04C-7E7A-439C-8BDA-6B676F8BAA4B",
+      "isClickable" : true,
+      "semanticMeaning" : "add",
+      "position" : {
+        "y" : 50,
+        "x" : 1623
+      },
+      "size" : {
+        "width" : 30,
+        "height" : 30
+      },
+      "accessibility" : {
+        "description" : "add",
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click add"
+    },
+    {
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Tab Overview"
+      },
+      "id" : "8F150CE1-23C1-4F6C-8B75-35EC5BAEC09F",
+      "size" : {
+        "height" : 52,
+        "width" : 40
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 39,
+        "x" : 1656
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Tab Overview",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Click Tab Overview"
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Apple",
+      "id" : "017BD6B6-D5E9-40A0-B5CC-C1B67E2E2BFF",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "isClickable" : true,
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "semanticMeaning" : "Menu bar item: Apple",
+      "actionHint" : "Click Apple"
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Safari",
+      "type" : "appMenu",
+      "isClickable" : true,
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Safari",
+      "actionHint" : "Click Safari",
+      "id" : "03744F32-CDCA-4034-8987-EF32C625F497"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "semanticMeaning" : "Menu bar item: File",
+      "id" : "B841978A-8158-44A5-B923-720480899819",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "confidence" : 0.94999999999999996,
+      "visualText" : "File",
+      "actionHint" : "Click File",
+      "isClickable" : true,
+      "type" : "appMenu"
+    },
+    {
+      "actionHint" : "Click Edit",
+      "type" : "appMenu",
+      "confidence" : 0.94999999999999996,
+      "id" : "554733EC-1884-4843-A627-A4B172C8CF10",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Edit",
+      "visualText" : "Edit",
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      }
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "View",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "id" : "CEB1009B-453A-4053-9B37-BB9D18CA0BDF",
+      "isClickable" : true,
+      "actionHint" : "Click View",
+      "semanticMeaning" : "Menu bar item: View",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      }
+    },
+    {
+      "semanticMeaning" : "Menu bar item: History",
+      "visualText" : "History",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "type" : "appMenu",
+      "actionHint" : "Click History",
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "B6A7331C-EA18-4996-A608-C1A8D80CE10F",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "isClickable" : true
+    },
+    {
+      "type" : "appMenu",
+      "id" : "8FDD0BC8-877A-44FC-A74D-18B83C326A70",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "semanticMeaning" : "Menu bar item: Bookmarks",
+      "visualText" : "Bookmarks",
+      "actionHint" : "Click Bookmarks",
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "semanticMeaning" : "Menu bar item: Develop",
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Develop",
+      "id" : "4635F6FD-D97B-4EE4-B83C-87BE39C0580D",
+      "type" : "appMenu",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click Develop",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "isClickable" : true
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "actionHint" : "Click Window",
+      "id" : "C2518964-26A3-4EB3-8A0B-7C274C81D078",
+      "type" : "appMenu",
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Window",
+      "visualText" : "Window"
+    },
+    {
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "id" : "1F41A2F3-73F0-4AC1-BB3F-EE6750A3B662",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "confidence" : 0.94999999999999996,
+      "actionHint" : "Click Help",
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Help",
+      "semanticMeaning" : "Menu bar item: Help"
+    }
+  ],
+  "window" : {
+    "title" : "activwndw: Safari - Start Page",
+    "frame" : {
+      "height" : 860,
+      "y" : 39,
+      "width" : 936,
+      "x" : 768
+    }
+  },
+  "systemContext" : {
+    "timestamp" : "2025-06-21T16:46:28Z",
+    "menuItems" : [
+      {
+        "menuBarPosition" : "M1",
+        "index" : 0,
+        "title" : "Apple",
+        "isSystemWide" : false,
+        "type" : "appMenu"
+      },
+      {
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "index" : 1,
+        "title" : "Safari",
+        "menuBarPosition" : "M2"
+      },
+      {
+        "isSystemWide" : false,
+        "index" : 2,
+        "type" : "appMenu",
+        "title" : "File",
+        "menuBarPosition" : "M3"
+      },
+      {
+        "isSystemWide" : false,
+        "title" : "Edit",
+        "menuBarPosition" : "M4",
+        "type" : "appMenu",
+        "index" : 3
+      },
+      {
+        "menuBarPosition" : "M5",
+        "isSystemWide" : false,
+        "title" : "View",
+        "type" : "appMenu",
+        "index" : 4
+      },
+      {
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "menuBarPosition" : "M6",
+        "title" : "History",
+        "index" : 5
+      },
+      {
+        "isSystemWide" : false,
+        "menuBarPosition" : "M7",
+        "index" : 6,
+        "title" : "Bookmarks",
+        "type" : "appMenu"
+      },
+      {
+        "type" : "appMenu",
+        "title" : "Develop",
+        "index" : 7,
+        "isSystemWide" : false,
+        "menuBarPosition" : "M8"
+      },
+      {
+        "menuBarPosition" : "M9",
+        "index" : 8,
+        "isSystemWide" : false,
+        "title" : "Window",
+        "type" : "appMenu"
+      },
+      {
+        "title" : "Help",
+        "index" : 9,
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "menuBarPosition" : "M10"
+      }
+    ],
+    "activeApplication" : {
+      "bundleIdentifier" : "com.apple.Safari",
+      "name" : "Safari"
+    }
+  },
+  "metadata" : {
+    "performance" : {
+      "memoryUsage" : 69648384,
+      "totalElements" : 32,
+      "screenshotTime" : 0.13882601261138916,
+      "accessibilityTime" : 0.044036984443664551,
+      "ocrTime" : 0.20513606071472168,
+      "fusedElements" : 24,
+      "fusionTime" : 0.091479063034057617
+    },
+    "timestamp" : "2025-06-21T16:46:28Z",
+    "processingTime" : 0.491813063621521
+  }
+}

@@ -42,6 +42,10 @@ class SessionLogger:
         project_root = Path(__file__).parent.parent.parent
         self.log_file = project_root / "src" / "debug_output" / "gpt_session.json"
         self.readable_file = project_root / "src" / "debug_output" / "gpt_session_summary.txt"
+        
+        # Ensure debug output directory exists
+        self.log_file.parent.mkdir(parents=True, exist_ok=True)
+        
         self.session_id = session_id or f"session_{int(time.time())}"
         self.iterations = []
         self.task = ""
@@ -173,6 +177,9 @@ class PerformanceTracker:
         project_root = Path(__file__).parent.parent.parent
         self.log_file = project_root / "src" / "debug_output" / "performance_debug.txt"
         
+        # Ensure debug output directory exists
+        self.log_file.parent.mkdir(parents=True, exist_ok=True)
+    
     def start_operation(self, operation_name: str) -> float:
         """Start timing an operation and return the start time"""
         start_time = time.time()
@@ -209,7 +216,7 @@ class PerformanceTracker:
                 operation_groups[op_type] = []
             operation_groups[op_type].append(op)
         
-        with open("src/debug_output/performance_debug.txt", "w") as f:
+        with open(self.log_file, "w") as f:
             f.write("🚀 PERFORMANCE ANALYSIS\n")
             f.write("=" * 50 + "\n")
             f.write(f"📊 Total Session Time: {total_time:.3f}s\n")
@@ -995,14 +1002,15 @@ Example responses:
             action_type = action_data.get("action", "")
             reasoning = action_data.get("reasoning", "").lower()
             
-            # Check for explicit completion keywords in reasoning
-            completion_keywords = [
-                "task completed successfully", "task is completed", "task completed", 
-                "successfully completed", "finished the task", "accomplished", 
-                "done", "completed", "finished"
+            # Check for explicit completion keywords in reasoning (more specific)
+            # Only trigger on the exact completion format from system prompt
+            completion_patterns = [
+                "task completed successfully -",  # Exact format from system prompt
+                "task is completed -",
+                "task has been completed -"
             ]
             
-            if any(keyword in reasoning for keyword in completion_keywords):
+            if any(pattern in reasoning for pattern in completion_patterns):
                 print("🎉 Task completed successfully! (Explicit completion detected)")
                 completion_reason = "explicit_completion_detected"
                 break

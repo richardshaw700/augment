@@ -1,0 +1,2084 @@
+{
+  "window" : {
+    "frame" : {
+      "width" : 936,
+      "height" : 860,
+      "x" : 768,
+      "y" : 39
+    },
+    "title" : "activwndw: Safari - Apple"
+  },
+  "systemContext" : {
+    "activeApplication" : {
+      "bundleIdentifier" : "com.apple.Safari",
+      "name" : "Safari"
+    },
+    "menuItems" : [
+      {
+        "type" : "appMenu",
+        "isSystemWide" : false,
+        "menuBarPosition" : "M1",
+        "index" : 0,
+        "title" : "Apple"
+      },
+      {
+        "type" : "appMenu",
+        "menuBarPosition" : "M2",
+        "index" : 1,
+        "title" : "Safari",
+        "isSystemWide" : false
+      },
+      {
+        "title" : "File",
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "menuBarPosition" : "M3",
+        "index" : 2
+      },
+      {
+        "title" : "Edit",
+        "menuBarPosition" : "M4",
+        "index" : 3,
+        "type" : "appMenu",
+        "isSystemWide" : false
+      },
+      {
+        "index" : 4,
+        "menuBarPosition" : "M5",
+        "title" : "View",
+        "isSystemWide" : false,
+        "type" : "appMenu"
+      },
+      {
+        "menuBarPosition" : "M6",
+        "type" : "appMenu",
+        "isSystemWide" : false,
+        "index" : 5,
+        "title" : "History"
+      },
+      {
+        "isSystemWide" : false,
+        "menuBarPosition" : "M7",
+        "index" : 6,
+        "title" : "Bookmarks",
+        "type" : "appMenu"
+      },
+      {
+        "title" : "Develop",
+        "type" : "appMenu",
+        "index" : 7,
+        "menuBarPosition" : "M8",
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "title" : "Window",
+        "index" : 8,
+        "isSystemWide" : false,
+        "menuBarPosition" : "M9"
+      },
+      {
+        "isSystemWide" : false,
+        "title" : "Help",
+        "menuBarPosition" : "M10",
+        "type" : "appMenu",
+        "index" : 9
+      }
+    ],
+    "timestamp" : "2025-06-21T16:44:54Z"
+  },
+  "elements" : [
+    {
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "visualText" : "& apple.com",
+      "ocr" : {
+        "text" : "& apple.com",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.999999999999986,
+          "width" : 77.999999999999986,
+          "y" : 59.5,
+          "x" : 1198
+        }
+      },
+      "position" : {
+        "x" : 1237,
+        "y" : 66
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '& apple.com'",
+      "size" : {
+        "width" : 77.999999999999986,
+        "height" : 12.999999999999986
+      },
+      "isClickable" : false,
+      "id" : "2DC95782-BDF0-4620-A27C-CE0587742B88"
+    },
+    {
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "visualText" : "Choose another country or region to see content specific to your location",
+      "position" : {
+        "y" : 118.75000000000001,
+        "x" : 992.5
+      },
+      "confidence" : 0.30000001192092896,
+      "size" : {
+        "width" : 403.99999999999994,
+        "height" : 11.500000000000002
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 113.00000000000001,
+          "width" : 403.99999999999994,
+          "height" : 11.500000000000002,
+          "x" : 790.5
+        },
+        "text" : "Choose another country or region to see content specific to your location",
+        "confidence" : 0.30000001192092896
+      },
+      "id" : "8B3DCF9E-8238-420E-BB04-6DEAD5132751",
+      "semanticMeaning" : "Text content: 'Choose another country or region to see content specific to your location'"
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "AXGroup with text 'and shop online.'",
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "role" : "AXGroup",
+        "description" : null,
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "C9C76D79-2187-4044-A230-A381F41D2631",
+      "visualText" : "and shop online.",
+      "type" : "AXGroup+OCR",
+      "size" : {
+        "height" : 11.000000000000039,
+        "width" : 89.5
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 128.99999999999997,
+          "x" : 790.5,
+          "height" : 11.000000000000039,
+          "width" : 89.5
+        },
+        "text" : "and shop online."
+      },
+      "confidence" : 0.79999999999999993,
+      "position" : {
+        "x" : 835.25,
+        "y" : 134.5
+      }
+    },
+    {
+      "position" : {
+        "x" : 1372.75,
+        "y" : 127.25000000000001
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'Canada (English)'",
+      "id" : "E120A7A8-A566-436B-897E-B20E0BF45AE4",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1306,
+          "height" : 15.499999999999989,
+          "y" : 119.50000000000001,
+          "width" : 133.50000000000006
+        },
+        "text" : "Canada (English)"
+      },
+      "isClickable" : false,
+      "visualText" : "Canada (English)",
+      "size" : {
+        "width" : 133.50000000000006,
+        "height" : 15.499999999999989
+      },
+      "confidence" : 0.5
+    },
+    {
+      "id" : "2FF22626-D709-4D52-B9F2-B34A483F2376",
+      "position" : {
+        "x" : 1607.25,
+        "y" : 126
+      },
+      "confidence" : 0.30000001192092896,
+      "isClickable" : false,
+      "visualText" : "Continue",
+      "semanticMeaning" : "Text content: 'Continue'",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 56.500000000000007,
+        "height" : 10.999999999999943
+      },
+      "ocr" : {
+        "text" : "Continue",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 120.50000000000003,
+          "width" : 56.500000000000007,
+          "height" : 10.999999999999943,
+          "x" : 1579
+        }
+      },
+      "type" : "TextContent"
+    },
+    {
+      "size" : {
+        "width" : 28.500000000000004,
+        "height" : 8.9999999999999964
+      },
+      "confidence" : 0.79999999999999993,
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Store",
+        "boundingBox" : {
+          "x" : 833,
+          "width" : 28.500000000000004,
+          "height" : 8.9999999999999964,
+          "y" : 178.5
+        }
+      },
+      "position" : {
+        "x" : 847.25,
+        "y" : 183
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Store",
+      "id" : "0F8C98FB-12BA-465C-A3C9-E017DAAC1A3C",
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'Store'"
+    },
+    {
+      "id" : "C5BB415D-CCBC-4EF2-BCB5-C3AB1900BE5B",
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false
+      },
+      "visualText" : "iPad",
+      "size" : {
+        "height" : 9.0000000000000924,
+        "width" : 22.999999999999996
+      },
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 942.5,
+          "width" : 22.999999999999996,
+          "height" : 9.0000000000000924,
+          "y" : 177.99999999999994
+        },
+        "text" : "iPad"
+      },
+      "position" : {
+        "y" : 182.5,
+        "x" : 954
+      },
+      "semanticMeaning" : "AXStaticText with text 'iPad'"
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true
+      },
+      "semanticMeaning" : "AXStaticText with text 'iPhone'",
+      "position" : {
+        "x" : 1013,
+        "y" : 182.5
+      },
+      "type" : "AXStaticText+OCR",
+      "confidence" : 0.79999999999999993,
+      "id" : "83CB199A-E2F3-4D2E-8DB3-C40B1E990FE3",
+      "interactions" : [
+
+      ],
+      "visualText" : "iPhone",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "iPhone",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 37,
+          "height" : 9.0000000000000924,
+          "y" : 177.99999999999994,
+          "x" : 994.5
+        }
+      },
+      "size" : {
+        "height" : 9.0000000000000924,
+        "width" : 37
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Watch",
+        "boundingBox" : {
+          "height" : 9.0000000000000924,
+          "width" : 33.999999999999986,
+          "x" : 1061,
+          "y" : 177.99999999999994
+        }
+      },
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXStaticText",
+        "title" : null,
+        "description" : null,
+        "enabled" : true
+      },
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "visualText" : "Watch",
+      "position" : {
+        "y" : 182.5,
+        "x" : 1078
+      },
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "height" : 9.0000000000000924,
+        "width" : 33.999999999999986
+      },
+      "confidence" : 0.79999999999999993,
+      "id" : "3F6749D4-0AB7-4C59-A628-3FF355D88E48",
+      "semanticMeaning" : "AXStaticText with text 'Watch'"
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'Vision'",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 177.99999999999994,
+          "height" : 9.0000000000000924,
+          "x" : 1124.5,
+          "width" : 32.500000000000043
+        },
+        "text" : "Vision",
+        "confidence" : 0.30000001192092896
+      },
+      "type" : "AXStaticText+OCR",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.60000001192092889,
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "title" : null
+      },
+      "position" : {
+        "y" : 182.5,
+        "x" : 1140.75
+      },
+      "id" : "04EF0918-3926-4FA6-80F7-92A50AD80F24",
+      "isClickable" : false,
+      "visualText" : "Vision",
+      "size" : {
+        "height" : 9.0000000000000924,
+        "width" : 32.500000000000043
+      }
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "height" : 9.0000000000000924,
+        "width" : 42.000000000000007
+      },
+      "semanticMeaning" : "AXStaticText with text 'AirPods'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "AirPods",
+        "boundingBox" : {
+          "y" : 177.99999999999994,
+          "height" : 9.0000000000000924,
+          "width" : 42.000000000000007,
+          "x" : 1187
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "visualText" : "AirPods",
+      "isClickable" : false,
+      "position" : {
+        "y" : 182.5,
+        "x" : 1208
+      },
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "role" : "AXStaticText"
+      },
+      "confidence" : 0.60000001192092889,
+      "id" : "A35A8D65-A96B-4156-89CD-3081D0EA5368"
+    },
+    {
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 76.500000000000043,
+        "height" : 9.0000000000000924
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'Entertainment'",
+      "position" : {
+        "x" : 1389.25,
+        "y" : 182.5
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 76.500000000000043,
+          "x" : 1351,
+          "height" : 9.0000000000000924,
+          "y" : 177.99999999999994
+        },
+        "text" : "Entertainment",
+        "confidence" : 0.5
+      },
+      "id" : "0B895D95-E98F-4FBA-9220-E862D453B590",
+      "visualText" : "Entertainment"
+    },
+    {
+      "size" : {
+        "width" : 65.999999999999972,
+        "height" : 9.0000000000000924
+      },
+      "semanticMeaning" : "Text content: 'Accessories'",
+      "position" : {
+        "y" : 182.5,
+        "x" : 1490
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.30000001192092896,
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 65.999999999999972,
+          "y" : 177.99999999999994,
+          "height" : 9.0000000000000924,
+          "x" : 1457
+        },
+        "confidence" : 0.30000001192092896,
+        "text" : "Accessories"
+      },
+      "visualText" : "Accessories",
+      "interactions" : [
+
+      ],
+      "id" : "4FE9F4BA-B6BA-4658-A0C6-8253802B4BFA"
+    },
+    {
+      "ocr" : {
+        "text" : "Support",
+        "boundingBox" : {
+          "width" : 42.99999999999995,
+          "height" : 10.49999999999998,
+          "y" : 178.5,
+          "x" : 1552.5
+        },
+        "confidence" : 0.5
+      },
+      "visualText" : "Support",
+      "confidence" : 0.79999999999999993,
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'Support'",
+      "size" : {
+        "width" : 42.99999999999995,
+        "height" : 10.49999999999998
+      },
+      "id" : "69EFE3D4-6D9E-40CD-B5AF-177C8533E38E",
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : null,
+        "title" : null,
+        "focused" : false,
+        "enabled" : true
+      },
+      "position" : {
+        "y" : 183.75,
+        "x" : 1574
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'MacBook Air'",
+      "position" : {
+        "y" : 292,
+        "x" : 1237.5
+      },
+      "size" : {
+        "width" : 265.00000000000006,
+        "height" : 37.000000000000007
+      },
+      "visualText" : "MacBook Air",
+      "confidence" : 0.30000001192092896,
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "height" : 37.000000000000007,
+          "x" : 1105,
+          "width" : 265.00000000000006,
+          "y" : 273.5
+        },
+        "text" : "MacBook Air"
+      },
+      "id" : "B4F4A5CF-6676-4EE7-8905-63F3991395F1",
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "x" : 1235.5,
+        "y" : 338.5
+      },
+      "semanticMeaning" : "Text content: 'Sky blue color.'",
+      "confidence" : 0.30000001192092896,
+      "size" : {
+        "height" : 20.999999999999961,
+        "width" : 144.99999999999994
+      },
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "visualText" : "Sky blue color.",
+      "ocr" : {
+        "text" : "Sky blue color.",
+        "boundingBox" : {
+          "width" : 144.99999999999994,
+          "x" : 1163,
+          "y" : 328,
+          "height" : 20.999999999999961
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "id" : "5B3F60E4-DD39-442C-B9A9-9035B3FF7114",
+      "type" : "TextContent"
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1235.75,
+        "y" : 366.5
+      },
+      "semanticMeaning" : "Text content: 'Sky high performance with M4.'",
+      "id" : "1A8A449C-6013-48F1-A0C4-68D43B86FA93",
+      "interactions" : [
+
+      ],
+      "visualText" : "Sky high performance with M4.",
+      "size" : {
+        "width" : 314.5,
+        "height" : 21.999999999999886
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1078.5,
+          "y" : 355.50000000000006,
+          "width" : 314.5,
+          "height" : 21.999999999999886
+        },
+        "text" : "Sky high performance with M4.",
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "x" : 1191,
+        "y" : 419.25
+      },
+      "size" : {
+        "width" : 85.000000000000014,
+        "height" : 12.500000000000021
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.500000000000021,
+          "y" : 413,
+          "width" : 85.000000000000014,
+          "x" : 1148.5
+        },
+        "text" : "Learn more"
+      },
+      "confidence" : 0.5,
+      "visualText" : "Learn more",
+      "semanticMeaning" : "Text content: 'Learn more'",
+      "id" : "8184BD69-3273-4629-8100-E42DC2EB561F",
+      "type" : "TextContent"
+    },
+    {
+      "id" : "FFF655E3-1B0F-46AA-A64B-90F2E5692B99",
+      "position" : {
+        "y" : 420.5,
+        "x" : 1310.25
+      },
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXStaticText",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "size" : {
+        "height" : 15.000000000000027,
+        "width" : 27.500000000000007
+      },
+      "confidence" : 0.60000001192092889,
+      "ocr" : {
+        "text" : "Buy",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "height" : 15.000000000000027,
+          "y" : 413,
+          "x" : 1296.5,
+          "width" : 27.500000000000007
+        }
+      },
+      "semanticMeaning" : "AXStaticText with text 'Buy'",
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "interactions" : [
+
+      ],
+      "visualText" : "Buy"
+    },
+    {
+      "id" : "20E78DEE-FDC7-42EC-8BE0-45367B7D8443",
+      "visualText" : "Built for Apple Intelligence.",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 18.999999999999918,
+          "width" : 242.99999999999997,
+          "x" : 1114.5,
+          "y" : 773
+        },
+        "text" : "Built for Apple Intelligence.",
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 18.999999999999918,
+        "width" : 242.99999999999997
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Built for Apple Intelligence.'",
+      "position" : {
+        "x" : 1236,
+        "y" : 782.5
+      }
+    },
+    {
+      "interactions" : [
+        "scroll",
+        "swipe"
+      ],
+      "actionHint" : "button button (button button) (icon_button button)",
+      "type" : "AXScrollArea",
+      "visualText" : "",
+      "position" : {
+        "x" : 768,
+        "y" : 91
+      },
+      "accessibility" : {
+        "description" : null,
+        "title" : null,
+        "role" : "AXScrollArea",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "34362D4E-7E68-472C-954A-96507F5E08E2",
+      "size" : {
+        "width" : 936,
+        "height" : 808
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXScrollArea with button visual with button visual with icon visual",
+      "confidence" : 1
+    },
+    {
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "size" : {
+        "width" : 291,
+        "height" : 54
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "id" : "72F49DB0-4681-418E-B462-9D622B24B02B",
+      "accessibility" : {
+        "title" : " Canada (English) ",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null,
+        "role" : "AXPopUpButton"
+      },
+      "position" : {
+        "x" : 1259,
+        "y" : 105
+      },
+      "type" : "AXPopUpButton",
+      "isClickable" : true,
+      "semanticMeaning" : "AXPopUpButton"
+    },
+    {
+      "accessibility" : {
+        "title" : "Continue",
+        "enabled" : true,
+        "description" : null,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 36
+      },
+      "actionHint" : "Clickable element",
+      "id" : "7836BA9B-1E6A-4512-8E95-F65391A4BE29",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 108,
+        "x" : 1562
+      },
+      "isClickable" : true
+    },
+    {
+      "id" : "46510D50-16F5-45A1-BBD5-7B4170F46265",
+      "actionHint" : "Click Store menu",
+      "semanticMeaning" : "Store menu",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 23,
+        "height" : 44
+      },
+      "isClickable" : true,
+      "position" : {
+        "y" : 161,
+        "x" : 855
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "Store menu",
+        "title" : "Store menu"
+      }
+    },
+    {
+      "id" : "69C0BECC-ABD1-4C70-AC3C-C3499749A62A",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 23,
+        "height" : 44
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Mac menu",
+        "title" : "Mac menu",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "position" : {
+        "x" : 906,
+        "y" : 161
+      },
+      "semanticMeaning" : "Mac menu",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Mac menu"
+    },
+    {
+      "position" : {
+        "x" : 959,
+        "y" : 161
+      },
+      "size" : {
+        "height" : 44,
+        "width" : 23
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click iPad menu",
+      "id" : "58B15958-EE39-4B94-9A15-2DBF54BD5C89",
+      "accessibility" : {
+        "title" : "iPad menu",
+        "description" : "iPad menu",
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "iPad menu"
+    },
+    {
+      "position" : {
+        "y" : 161,
+        "x" : 1025
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click iPhone menu",
+      "size" : {
+        "width" : 23,
+        "height" : 44
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : "iPhone menu",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "iPhone menu"
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "iPhone menu",
+      "confidence" : 0.69999999999999996,
+      "id" : "A1BE09F2-82D8-4E58-9288-41A0F5B08BE8"
+    },
+    {
+      "isClickable" : true,
+      "id" : "AC5D7BF1-93D6-48D5-A9ED-A380DE771776",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Watch menu",
+      "size" : {
+        "height" : 44,
+        "width" : 23
+      },
+      "semanticMeaning" : "Watch menu",
+      "position" : {
+        "x" : 1088,
+        "y" : 161
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "Watch menu",
+        "focused" : false,
+        "title" : "Watch menu",
+        "role" : "AXButton",
+        "enabled" : true
+      }
+    },
+    {
+      "position" : {
+        "y" : 161,
+        "x" : 1151
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Vision menu",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Vision menu",
+      "id" : "9D0065E4-97BD-4EF9-AED7-30D50123F99B",
+      "size" : {
+        "width" : 23,
+        "height" : 44
+      },
+      "accessibility" : {
+        "description" : "Vision menu",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Vision menu",
+        "enabled" : true
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "8FC26B98-D0B6-4856-A7AB-7642C86E71B7",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 161,
+        "x" : 1222
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "size" : {
+        "width" : 23,
+        "height" : 44
+      },
+      "actionHint" : "Click AirPods menu",
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "AirPods menu",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "AirPods menu"
+      },
+      "semanticMeaning" : "AirPods menu"
+    },
+    {
+      "type" : "AXButton",
+      "accessibility" : {
+        "title" : "TV and Home menu",
+        "description" : "TV and Home menu",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "size" : {
+        "width" : 23,
+        "height" : 44
+      },
+      "isClickable" : true,
+      "position" : {
+        "y" : 161,
+        "x" : 1315
+      },
+      "semanticMeaning" : "TV and Home menu",
+      "id" : "3795289F-4F8B-4B56-8E7C-B1BBA34641B6",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click TV and Home menu"
+    },
+    {
+      "size" : {
+        "height" : 44,
+        "width" : 23
+      },
+      "actionHint" : "Click Entertainment menu",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1421,
+        "y" : 161
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Entertainment menu",
+      "id" : "13A0B4FA-2B3E-4D30-8D2C-3507ABEF8E88",
+      "accessibility" : {
+        "title" : "Entertainment menu",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "Entertainment menu"
+      },
+      "type" : "AXButton"
+    },
+    {
+      "semanticMeaning" : "Accessories menu",
+      "actionHint" : "Click Accessories menu",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 44,
+        "width" : 23
+      },
+      "id" : "E0A2E206-3392-4307-A0BD-664C2C924D53",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1516,
+        "y" : 161
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Accessories menu",
+        "title" : "Accessories menu",
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 1589,
+        "y" : 161
+      },
+      "size" : {
+        "height" : 44,
+        "width" : 23
+      },
+      "id" : "F26990C4-67E3-43B4-8CAF-0879D8800E0E",
+      "semanticMeaning" : "Support menu",
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Support menu",
+        "title" : "Support menu"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "actionHint" : "Click Support menu"
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Search apple.com",
+        "title" : "Search apple.com",
+        "enabled" : true,
+        "focused" : false
+      },
+      "semanticMeaning" : "Search apple.com",
+      "id" : "2F1D0C63-D2E4-4B25-B177-5A316070EAD0",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 1616,
+        "y" : 161
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Search apple.com",
+      "size" : {
+        "width" : 32,
+        "height" : 44
+      }
+    },
+    {
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 161,
+        "x" : 1659
+      },
+      "size" : {
+        "width" : 31,
+        "height" : 44
+      },
+      "id" : "A027E66F-AA49-4A26-9FBF-1E0E703C2AE4",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Click Shopping Bag",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "Shopping Bag",
+        "title" : "Shopping Bag",
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "semanticMeaning" : "Shopping Bag"
+    },
+    {
+      "semanticMeaning" : "Show previous TV Series, Ted Lasso",
+      "id" : "E22F9BFC-1DAA-47F2-B01A-6A469B34BB43",
+      "size" : {
+        "width" : 109,
+        "height" : 368
+      },
+      "accessibility" : {
+        "description" : "Show previous TV Series, Ted Lasso",
+        "focused" : false,
+        "title" : "Show previous TV Series, Ted Lasso",
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 899,
+        "x" : 768
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click Show previous TV Series, Ted Lasso"
+    },
+    {
+      "id" : "2416A1F5-41D2-4F11-BCC5-DD1556B128B4",
+      "size" : {
+        "width" : 109,
+        "height" : 368
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Show next TV Series, The Buccaneers",
+      "semanticMeaning" : "Show next TV Series, The Buccaneers",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1595,
+        "y" : 899
+      },
+      "type" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "Show next TV Series, The Buccaneers",
+        "description" : "Show next TV Series, The Buccaneers",
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "id" : "C74D37C3-840D-4284-BC9E-B1F59CDB4795",
+      "semanticMeaning" : "item 1 - stick",
+      "position" : {
+        "x" : 1027,
+        "y" : 899
+      },
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "item 1 - stick",
+        "role" : "AXRadioButton",
+        "title" : "item 1 - stick"
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 114,
+        "height" : 9
+      },
+      "actionHint" : "Click item 1 - stick",
+      "type" : "AXRadioButton",
+      "isClickable" : true
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click item 2 - the buccaneers",
+      "position" : {
+        "y" : 899,
+        "x" : 1049
+      },
+      "size" : {
+        "width" : 114,
+        "height" : 9
+      },
+      "semanticMeaning" : "item 2 - the buccaneers",
+      "type" : "AXRadioButton",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "description" : "item 2 - the buccaneers",
+        "title" : "item 2 - the buccaneers",
+        "role" : "AXRadioButton",
+        "focused" : false,
+        "enabled" : true
+      },
+      "id" : "A629F2F3-1646-48A3-9014-A3BB53A35A7E"
+    },
+    {
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Click item 3 - echo valley",
+      "size" : {
+        "height" : 9,
+        "width" : 114
+      },
+      "semanticMeaning" : "item 3 - echo valley",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 1071,
+        "y" : 899
+      },
+      "id" : "64830E96-98B4-4B7A-9D9A-A51C293D784A",
+      "type" : "AXRadioButton",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "description" : "item 3 - echo valley",
+        "title" : "item 3 - echo valley"
+      }
+    },
+    {
+      "id" : "6D3B4C4C-C509-4681-BBF9-F56B6C106382",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click item 4 - your friends & neighbors",
+      "size" : {
+        "height" : 9,
+        "width" : 114
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "item 4 - your friends & neighbors",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "description" : "item 4 - your friends & neighbors",
+        "focused" : false,
+        "role" : "AXRadioButton",
+        "title" : "item 4 - your friends & neighbors",
+        "enabled" : true
+      },
+      "type" : "AXRadioButton",
+      "position" : {
+        "y" : 899,
+        "x" : 1093
+      }
+    },
+    {
+      "size" : {
+        "height" : 9,
+        "width" : 114
+      },
+      "actionHint" : "Click item 5 - mls season pass",
+      "id" : "6A19DACC-E2A7-4CC1-87AE-28FE9AEE6447",
+      "position" : {
+        "y" : 899,
+        "x" : 1115
+      },
+      "semanticMeaning" : "item 5 - mls season pass",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXRadioButton",
+      "accessibility" : {
+        "description" : "item 5 - mls season pass",
+        "title" : "item 5 - mls season pass",
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "focused" : false
+      },
+      "isClickable" : true
+    },
+    {
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "size" : {
+        "height" : 9,
+        "width" : 114
+      },
+      "semanticMeaning" : "item 6 - murderbot",
+      "type" : "AXRadioButton",
+      "isClickable" : true,
+      "position" : {
+        "y" : 899,
+        "x" : 1137
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click item 6 - murderbot",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "item 6 - murderbot",
+        "role" : "AXRadioButton",
+        "focused" : false,
+        "title" : "item 6 - murderbot"
+      },
+      "id" : "11595081-41E9-45CD-ABC8-3C8FF08FE049"
+    },
+    {
+      "id" : "47B1B973-4C0D-4A48-96DC-1E503600C9D3",
+      "type" : "AXRadioButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "item 7 - fountain of youth",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "description" : "item 7 - fountain of youth",
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "focused" : false,
+        "title" : "item 7 - fountain of youth"
+      },
+      "isClickable" : true,
+      "actionHint" : "Click item 7 - fountain of youth",
+      "position" : {
+        "y" : 899,
+        "x" : 1159
+      },
+      "size" : {
+        "height" : 9,
+        "width" : 114
+      }
+    },
+    {
+      "position" : {
+        "y" : 899,
+        "x" : 1181
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Click item 8 -",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "item 8 -",
+        "enabled" : true,
+        "title" : "item 8 -",
+        "role" : "AXRadioButton"
+      },
+      "isClickable" : true,
+      "id" : "369EB3ED-FAB5-4B58-B54A-FDF05945287F",
+      "semanticMeaning" : "item 8 -",
+      "size" : {
+        "height" : 9,
+        "width" : 114
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXRadioButton"
+    },
+    {
+      "id" : "A071BBAD-F2CC-4C09-B16C-854CD44066B7",
+      "isClickable" : true,
+      "actionHint" : "Click item 9 - the studio",
+      "size" : {
+        "width" : 114,
+        "height" : 9
+      },
+      "semanticMeaning" : "item 9 - the studio",
+      "type" : "AXRadioButton",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "description" : "item 9 - the studio",
+        "focused" : false,
+        "title" : "item 9 - the studio"
+      },
+      "position" : {
+        "y" : 899,
+        "x" : 1203
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "item 10 - ted lasso",
+      "actionHint" : "Click item 10 - ted lasso",
+      "accessibility" : {
+        "description" : "item 10 - ted lasso",
+        "title" : "item 10 - ted lasso",
+        "role" : "AXRadioButton",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "98027BDE-551B-4D91-886B-305DFDFD49F3",
+      "isClickable" : true,
+      "position" : {
+        "x" : 1225,
+        "y" : 899
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXRadioButton",
+      "size" : {
+        "width" : 114,
+        "height" : 9
+      }
+    },
+    {
+      "actionHint" : "Click pause the gallery",
+      "position" : {
+        "y" : 899,
+        "x" : 1664
+      },
+      "size" : {
+        "width" : 24,
+        "height" : 25
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "description" : "pause the gallery",
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "pause the gallery"
+      },
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "pause the gallery",
+      "id" : "DB4F6EC6-B50C-41C7-8497-49119F2605F8"
+    },
+    {
+      "size" : {
+        "height" : 30,
+        "width" : 35.5
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "accessibility" : {
+        "description" : "show sidebar",
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 50,
+        "x" : 858
+      },
+      "actionHint" : "Click show sidebar",
+      "semanticMeaning" : "show sidebar",
+      "confidence" : 0.69999999999999996,
+      "id" : "6881B72F-358A-4E27-8F18-AFD7D1A43DED"
+    },
+    {
+      "position" : {
+        "y" : 45,
+        "x" : 915
+      },
+      "id" : "84266DA4-D2C9-4B63-8ED1-178E129E059C",
+      "isClickable" : true,
+      "size" : {
+        "width" : 40,
+        "height" : 40
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Go back",
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null,
+        "description" : "Go back"
+      },
+      "semanticMeaning" : "Go back"
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Go forward",
+        "enabled" : false,
+        "title" : null,
+        "focused" : false
+      },
+      "id" : "5B3D421F-18D9-4F4D-A581-66F3441E5004",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 39,
+        "height" : 40
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "Go forward",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Go forward",
+      "position" : {
+        "y" : 45,
+        "x" : 955
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Activate WhatFont",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Activate WhatFont",
+      "accessibility" : {
+        "description" : "Activate WhatFont",
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 31,
+        "height" : 30
+      },
+      "position" : {
+        "y" : 50,
+        "x" : 1010
+      },
+      "type" : "AXButton",
+      "id" : "C4CB6CAA-B193-4967-B0C6-6955668D9544"
+    },
+    {
+      "semanticMeaning" : "Page Menu",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "id" : "64BAECCB-6209-473A-9E69-B409A3F2C941",
+      "actionHint" : "Click Page Menu",
+      "position" : {
+        "y" : 54,
+        "x" : 1047
+      },
+      "size" : {
+        "height" : 23,
+        "width" : 30.5
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Page Menu",
+        "enabled" : true,
+        "title" : "Page Menu"
+      }
+    },
+    {
+      "type" : "AXButton",
+      "size" : {
+        "height" : 24,
+        "width" : 24
+      },
+      "actionHint" : "Click Add page to Reading List",
+      "accessibility" : {
+        "title" : "Add page to Reading List",
+        "role" : "AXButton",
+        "description" : "Add page to Reading List",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Add page to Reading List",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 53,
+        "x" : 1069
+      },
+      "id" : "02BD444A-70B9-4373-A46C-76FD1F56EE5F",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "semanticMeaning" : "smart search field showing a secure address",
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ],
+      "id" : "13137A92-44C7-46D8-A695-84DE03538D1E",
+      "size" : {
+        "width" : 324,
+        "height" : 28
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXTextField",
+        "title" : null,
+        "focused" : false,
+        "description" : "smart search field showing a secure address"
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXTextField",
+      "position" : {
+        "x" : 1070,
+        "y" : 57
+      },
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "x" : 1400,
+        "y" : 54.5
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "semanticMeaning" : "Reload this page",
+      "actionHint" : "Click Reload this page",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "Reload this page",
+        "title" : "Reload this page"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 23,
+        "width" : 23.5
+      },
+      "id" : "D3AACC7D-3F80-4327-B243-2B8435848756",
+      "type" : "AXButton"
+    },
+    {
+      "id" : "C2A1F4C4-8A31-4C0D-BD3F-2BE9BDF950B1",
+      "semanticMeaning" : "Share",
+      "actionHint" : "Click Share",
+      "size" : {
+        "width" : 37,
+        "height" : 52
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Share",
+        "title" : null
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1583,
+        "y" : 39
+      }
+    },
+    {
+      "size" : {
+        "width" : 36,
+        "height" : 52
+      },
+      "position" : {
+        "x" : 1620,
+        "y" : 39
+      },
+      "semanticMeaning" : "New Tab",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click New Tab",
+      "accessibility" : {
+        "description" : "New Tab",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : null
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "id" : "0C8B5997-1D2A-497E-9964-DD6071BE2567"
+    },
+    {
+      "id" : "DE8284AE-4B87-4278-9B58-C93690042456",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1623,
+        "y" : 50
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "new tab",
+      "actionHint" : "Click new tab",
+      "isClickable" : true,
+      "size" : {
+        "width" : 30,
+        "height" : 30
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "new tab",
+        "focused" : false,
+        "title" : null
+      }
+    },
+    {
+      "id" : "C984EC95-7058-438B-A223-8781A6A1661C",
+      "semanticMeaning" : "add",
+      "size" : {
+        "width" : 30,
+        "height" : 30
+      },
+      "type" : "AXButton",
+      "position" : {
+        "x" : 1623,
+        "y" : 50
+      },
+      "isClickable" : true,
+      "actionHint" : "Click add",
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : null,
+        "description" : "add",
+        "focused" : false,
+        "enabled" : true
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Tab Overview",
+      "id" : "130703EA-8E6D-46F3-8876-18075E74AE1C",
+      "size" : {
+        "height" : 52,
+        "width" : 40
+      },
+      "semanticMeaning" : "Tab Overview",
+      "position" : {
+        "x" : 1656,
+        "y" : 39
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Tab Overview",
+        "title" : null
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "id" : "878E9D7D-258D-40B4-96BE-FD233E8FE7CC",
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "visualText" : "Apple",
+      "actionHint" : "Click Apple",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "semanticMeaning" : "Menu bar item: Apple",
+      "type" : "appMenu"
+    },
+    {
+      "visualText" : "Safari",
+      "id" : "BDDB35EC-EF8F-4D10-B7D4-2254FB6825FA",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Safari",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "type" : "appMenu",
+      "actionHint" : "Click Safari",
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "actionHint" : "Click File",
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.94999999999999996,
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "id" : "99FEC4EA-31A3-4C86-9545-2BDE88ABC31E",
+      "visualText" : "File",
+      "semanticMeaning" : "Menu bar item: File"
+    },
+    {
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "isClickable" : true,
+      "visualText" : "Edit",
+      "id" : "5968DDDD-A9C8-4026-9F77-E7659866B120",
+      "semanticMeaning" : "Menu bar item: Edit",
+      "actionHint" : "Click Edit",
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: View",
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "visualText" : "View",
+      "actionHint" : "Click View",
+      "id" : "42B2CC1D-E8BC-48B1-B63C-ADEB058589B4",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      }
+    },
+    {
+      "isClickable" : true,
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "confidence" : 0.94999999999999996,
+      "id" : "BB06DB6F-1EEF-4E79-8D7C-2CC941E82724",
+      "semanticMeaning" : "Menu bar item: History",
+      "visualText" : "History",
+      "type" : "appMenu",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click History",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      }
+    },
+    {
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "confidence" : 0.94999999999999996,
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "id" : "CCBD64F7-F029-4CC1-A1CE-07E74AC0B068",
+      "isClickable" : true,
+      "visualText" : "Bookmarks",
+      "semanticMeaning" : "Menu bar item: Bookmarks",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click Bookmarks"
+    },
+    {
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Develop",
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "1CEDADBD-B20F-4DB7-9299-10B25967CDAF",
+      "actionHint" : "Click Develop",
+      "semanticMeaning" : "Menu bar item: Develop"
+    },
+    {
+      "isClickable" : true,
+      "id" : "CA75B166-1300-41EB-AAC6-C42BB9C5C016",
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Window",
+      "semanticMeaning" : "Menu bar item: Window",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "confidence" : 0.94999999999999996,
+      "actionHint" : "Click Window"
+    },
+    {
+      "isClickable" : true,
+      "visualText" : "Help",
+      "id" : "8E0D0681-5A1B-4C31-AF7E-458C65E4B344",
+      "interactions" : [
+        "click"
+      ],
+      "semanticMeaning" : "Menu bar item: Help",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "type" : "appMenu",
+      "confidence" : 0.94999999999999996,
+      "actionHint" : "Click Help",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      }
+    }
+  ],
+  "metadata" : {
+    "timestamp" : "2025-06-21T16:44:54Z",
+    "processingTime" : 0.64813399314880371,
+    "performance" : {
+      "memoryUsage" : 70303744,
+      "totalElements" : 660,
+      "accessibilityTime" : 0.32023298740386963,
+      "ocrTime" : 0.09496307373046875,
+      "fusionTime" : 0.094836950302124023,
+      "fusedElements" : 72,
+      "screenshotTime" : 0.14216995239257812
+    }
+  }
+}
