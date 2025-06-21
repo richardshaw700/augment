@@ -1577,16 +1577,31 @@ Example responses:
                             completion_reason = f"website_navigation_completed_{site}"
                             break
                     else:
-                        # Generic website navigation check
+                        # Universal navigation completion detection
                         if any(word in task_lower for word in ["website", "go to", "visit", "navigate to"]):
-                            # Check if we have a proper webpage loaded (many elements)
-                            elements = current_ui_state.get("elements", [])
-                            if len(elements) > 15 and current_url and current_url not in ["google.com", "new-tab"]:
-                                print(f"🎉 Website navigation completed successfully! (URL: {current_url})")
-                                inject_completion_detected("Website navigation completed successfully")
-                                inject_navigation_success(current_url, "generic_navigation")
-                                completion_reason = "generic_website_navigation_completed"
-                                break
+                            # Check if URL actually changed from previous iteration
+                            if iteration > 1 and len(results) >= 2:
+                                # Get URL from previous iteration
+                                prev_result = results[-2] if len(results) >= 2 else None
+                                prev_ui_state = prev_result.get("ui_state_summary") if prev_result else None
+                                prev_url = ""
+                                
+                                if prev_ui_state and "compressed_ui" in prev_ui_state:
+                                    prev_compressed = prev_ui_state["compressed_ui"]
+                                    prev_parts = prev_compressed.split("|")
+                                    if len(prev_parts) >= 3:
+                                        prev_url = prev_parts[2]
+                                
+                                # Check if URL actually changed to something meaningful
+                                elements = current_ui_state.get("elements", [])
+                                if (current_url != prev_url and 
+                                    current_url not in ["google.com", "new-tab", "", prev_url] and
+                                    len(elements) > 15):
+                                    print(f"🎉 Navigation completed! URL changed: {prev_url} → {current_url}")
+                                    inject_completion_detected(f"URL successfully changed to {current_url}")
+                                    inject_navigation_success(current_url, "url_change_detected")
+                                    completion_reason = "navigation_url_change_completed"
+                                    break
             
             # Application opening completion detection
             if (action_type == "ui_inspect" and iteration > 1 and 
