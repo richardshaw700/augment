@@ -7,6 +7,9 @@ import asyncio
 from typing import Dict, Any, Optional, List, Tuple
 from .base_actions import BaseActions, ActionResult
 
+# Import dynamic prompts system
+from ..gpt_engine.dynamic_prompts import inject_navigation_success, inject_completion_detected
+
 
 class ActionSequences:
     """High-level action sequences for common UI interaction patterns"""
@@ -77,6 +80,12 @@ class ActionSequences:
             # Success - combine all outputs
             total_time = time.time() - start_time
             combined_output = " → ".join([r.output for r in results])
+            
+            # Inject navigation success if this looks like a navigation action
+            if any(domain in text.lower() for domain in ['.com', '.org', '.net', 'http', 'www']):
+                inject_navigation_success(text, "CLICK_TYPE_ENTER")
+            else:
+                inject_completion_detected(f"Text input sequence completed with '{text}'")
             
             return ActionResult(
                 success=True,

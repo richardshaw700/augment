@@ -28,6 +28,17 @@ sys.path.append(str(project_root))
 # Load environment variables
 load_dotenv()
 
+# Import dynamic prompts system
+from .dynamic_prompts import (
+    get_dynamic_prompt_injections,
+    inject_completion_detected,
+    inject_navigation_success,
+    inject_loop_detection,
+    inject_efficiency_tip,
+    inject_browser_context,
+    inject_app_context_guidance
+)
+
 # =============================================================================
 # 🤖 LLM ADAPTER SYSTEM
 # =============================================================================
@@ -524,21 +535,6 @@ COORDINATE SYSTEMS:
 - Application Window: A-A1 to A-AN50 (window content using A- prefix)
 
 IMPORTANT: ALL coordinates MUST use the prefix format (M- for menu, A- for window)
-
-🔍 CRITICAL: MESSAGES APP CONTEXT AWARENESS
-When working with Messages app, ALWAYS check the window header for active chat context:
-- Look for "ACTIVE_CHAT:[Name]" in the window header (e.g., "Messages|762x733|ACTIVE_CHAT:Hitzel Cruz|")
-- This tells you WHO you are currently chatting with
-- Contact names in the sidebar/search are NOT the active chat - they are just search results or contact lists
-- NEVER assume you're in the right chat just because you see a name in the UI
-- If you need to message someone different, you MUST first click on their name in the contacts list to switch chats
-- Only send messages when the ACTIVE_CHAT matches your target recipient
-
-MESSAGES WORKFLOW:
-1. Check ACTIVE_CHAT in window header to see current recipient
-2. If wrong recipient, search for correct contact and click their name
-3. Verify ACTIVE_CHAT changed to correct recipient  
-4. Only then type and send your message
 
 🎯 MASTER GOAL EVALUATION RULE:
 BEFORE EVERY ACTION, you MUST evaluate: "Is the original task already completed?"
@@ -1296,6 +1292,14 @@ Example responses:
                 
                 # Debug log: Save what the GPT actually sees
                 self._log_gpt_ui_input(formatted_ui)
+                
+                # Inject app-specific context guidance based on current app
+                self._inject_app_specific_guidance(ui_state)
+            
+            # Add dynamic prompt injections
+            dynamic_guidance = get_dynamic_prompt_injections(clear_after=True)
+            if dynamic_guidance:
+                messages.append({"role": "system", "content": dynamic_guidance})
             
             # Add user message
             messages.append({"role": "user", "content": user_message})
@@ -1332,6 +1336,7 @@ Example responses:
         consecutive_failures = 0
         max_consecutive_failures = 3
         completion_reason = "max_iterations_reached"
+        start_time = time.time()  # Track total task time
         
         # Reset conversation history for new task
         self.conversation_history = []
@@ -1343,7 +1348,59 @@ Example responses:
             if iteration == 0:
                 task_message = f"Task: {task}\n\nPlease start by inspecting the current UI state to understand what's on screen."
             else:
-                task_message = "Continue with the task. What should be the next action?"
+                # Always remind GPT of the original task to maintain context
+                task_message = f"Continue with the task: {task}\n\nWhat should be the next action?"
+            
+            # Debug: Log the task message being sent to GPT
+            print(f"📋 Task Message: {task_message[:100]}{'...' if len(task_message) > 100 else ''}")
+            
+            # Inject Messages app guidance if this is a Messages task
+            if "messages" in task.lower() and current_ui_state and "compressedOutput" in current_ui_state:
+                compressed_output = current_ui_state["compressedOutput"]
+                
+                # Extract target chat name from task
+                if "to " in task.lower():
+                    task_words = task.lower().split()
+                    to_index = task_words.index("to")
+                    if to_index + 1 < len(task_words):
+                        # Get chat name from task (handle "Mom's Kiddos" format)
+                        target_chat = ""
+                        for i in range(to_index + 1, len(task_words)):
+                            word = task_words[i]
+                            if word in ["in", "that", "says"]:
+                                break
+                            target_chat += word + " "
+                        target_chat = target_chat.strip().replace("'s", "'s")
+                        
+                        # Extract active chat from "To: [Name]" pattern
+                        active_chat = None
+                        if "txt:To: " in compressed_output:
+                            import re
+                            to_match = re.search(r'txt:To: ([^@]+)@', compressed_output)
+                            if to_match:
+                                active_chat = to_match.group(1).strip()
+                        
+                        # Extract available contacts from button patterns
+                        available_contacts = []
+                        if "btn:" in compressed_output:
+                            import re
+                            btn_matches = re.findall(r'btn:([^@]+)@A-[A-Z]+\d+', compressed_output)
+                            for btn_text in btn_matches:
+                                btn_text = btn_text.strip()
+                                if btn_text not in ["Button", "Compose", "Record audio", "info", "Emoji picker", "Apps"] and len(btn_text) > 2:
+                                    available_contacts.append(btn_text)
+                        
+                        # Inject Messages app guidance with context BEFORE GPT makes decision
+                        from .dynamic_prompts import inject_messages_app_guidance
+                        inject_messages_app_guidance(
+                            active_chat=active_chat,
+                            target_recipient=target_chat,
+                            available_contacts=available_contacts,
+                            priority=5  # High priority for this critical issue
+                        )
+                        
+                        # Debug logging
+                        print(f"🔍 MESSAGES CONTEXT: Active='{active_chat}', Target='{target_chat}', Available={available_contacts}")
             
             # Get GPT's next action
             gpt_response = await self.chat_with_gpt(task_message, current_ui_state)
@@ -1368,6 +1425,57 @@ Example responses:
                     completion_reason = "json_parse_failures"
                     break
                 continue
+            
+            # Debug: Check task compliance for type actions
+            if action_data.get("action") == "type":
+                typed_text = action_data.get("parameters", {}).get("text", "")
+                print(f"🔍 Task Compliance Check:")
+                print(f"   Original Task: {task}")
+                print(f"   GPT Typed: {typed_text}")
+                
+                # Check if the typed text matches task requirements
+                if "message" in task.lower() and "says" in task.lower():
+                    # Extract expected message from task
+                    task_lower = task.lower()
+                    if "says \"" in task_lower:
+                        start = task_lower.find("says \"") + 6
+                        end = task_lower.find("\"", start)
+                        if end > start:
+                            expected_message = task[start:end]
+                            if expected_message.lower() not in typed_text.lower():
+                                print(f"⚠️  TASK COMPLIANCE WARNING: Expected message '{expected_message}' not found in typed text '{typed_text}'")
+                            else:
+                                print(f"✅ TASK COMPLIANCE: Message matches expected content")
+                
+                # Simple task compliance check for Messages tasks
+                if "messages" in task.lower() and current_ui_state and "compressedOutput" in current_ui_state:
+                    compressed_output = current_ui_state["compressedOutput"]
+                    
+                    # Extract active chat from "To: [Name]" pattern for logging
+                    active_chat = None
+                    if "txt:To: " in compressed_output:
+                        import re
+                        to_match = re.search(r'txt:To: ([^@]+)@', compressed_output)
+                        if to_match:
+                            active_chat = to_match.group(1).strip()
+                    
+                    # Simple warning if typing to wrong chat
+                    if "to " in task.lower():
+                        task_words = task.lower().split()
+                        to_index = task_words.index("to")
+                        if to_index + 1 < len(task_words):
+                            target_chat = ""
+                            for i in range(to_index + 1, len(task_words)):
+                                word = task_words[i]
+                                if word in ["in", "that", "says"]:
+                                    break
+                                target_chat += word + " "
+                            target_chat = target_chat.strip().replace("'s", "'s")
+                            
+                            if target_chat and active_chat and active_chat.lower() != target_chat.lower():
+                                print(f"⚠️  CHAT SELECTION WARNING: Typing to '{active_chat}' but task requires '{target_chat}'")
+                            elif target_chat and active_chat:
+                                print(f"✅ CHAT SELECTION: Correctly typing to '{target_chat}' chat")
             
             # Execute the action
             result = await self.execute_action(action_data)
@@ -1406,19 +1514,9 @@ Example responses:
             self.conversation_history.append({"role": "user", "content": task_message})
             self.conversation_history.append({"role": "assistant", "content": gpt_response})
             
-            # Add result context with ActionExecutor feedback
+            # Add result context - dynamic prompts will handle specific feedback
             if result.success:
                 context = f"Action succeeded: {result.output}"
-                
-                # Special handling for ActionExecutor intelligent sequences
-                if "COMPLETE SEQUENCE EXECUTED" in result.output:
-                    if "Navigation initiated" in result.output:
-                        context += "\n\n🚨 IMPORTANT: The typing action above included automatic Enter press for navigation. Do NOT press Enter again - the navigation is already in progress. Wait for page to load or inspect UI."
-                    elif "Pressed keys: Return" in result.output:
-                        context += "\n\n🚨 IMPORTANT: The typing action above already included pressing Enter. Do NOT use additional 'key' actions with Return - the sequence is complete."
-                    else:
-                        context += "\n\n✅ IMPORTANT: Complete action sequence was executed. No additional actions needed for this step."
-                        
             else:
                 context = f"Action failed: {result.error}. Try a different approach."
             
@@ -1442,6 +1540,7 @@ Example responses:
             
             if any(pattern in reasoning for pattern in completion_patterns):
                 print("🎉 Task completed successfully! (Explicit completion detected)")
+                inject_completion_detected(f"Task completed: {task}")
                 completion_reason = "explicit_completion_detected"
                 break
             
@@ -1473,6 +1572,8 @@ Example responses:
                     for site in website_indicators:
                         if site in task_lower and site in current_url:
                             print(f"🎉 Successfully navigated to {site} website! (URL: {current_url})")
+                            inject_completion_detected(f"Successfully navigated to {site} website")
+                            inject_navigation_success(current_url, "website_navigation")
                             completion_reason = f"website_navigation_completed_{site}"
                             break
                     else:
@@ -1482,6 +1583,8 @@ Example responses:
                             elements = current_ui_state.get("elements", [])
                             if len(elements) > 15 and current_url and current_url not in ["google.com", "new-tab"]:
                                 print(f"🎉 Website navigation completed successfully! (URL: {current_url})")
+                                inject_completion_detected("Website navigation completed successfully")
+                                inject_navigation_success(current_url, "generic_navigation")
                                 completion_reason = "generic_website_navigation_completed"
                                 break
             
@@ -1500,6 +1603,7 @@ Example responses:
                     for app_name in app_names:
                         if app_name in task_words and app_name in window_title:
                             print(f"🎉 Successfully opened {app_name}!")
+                            inject_completion_detected(f"Successfully opened {app_name}")
                             completion_reason = f"app_opening_completed_{app_name}"
                             break
             
@@ -1507,6 +1611,7 @@ Example responses:
             if (action_type == "ui_inspect" and iteration > 0 and 
                 any(word in task.lower() for word in ["screenshot", "describe", "see", "screen", "show me"])):
                 print("🎉 Task completed successfully! (UI inspection completed)")
+                inject_completion_detected("UI inspection completed - screen content analyzed")
                 completion_reason = "ui_inspection_completed"
                 break
             
@@ -1514,8 +1619,20 @@ Example responses:
             recent_ui_inspects = sum(1 for r in results[-5:] if r["action"]["action"] == "ui_inspect")
             if recent_ui_inspects >= 3 and iteration > 8:
                 print("🎉 Task appears to be completed (multiple UI inspections suggest exploration is done)")
+                inject_loop_detection("ui_inspect", recent_ui_inspects)
+                inject_completion_detected("Task appears completed - extensive exploration done")
                 completion_reason = "exploration_completed"
                 break
+            
+            # Add efficiency tips and loop detection
+            if iteration > 5:
+                inject_efficiency_tip(iteration + 1, time.time() - start_time)
+                
+                # Check for repeated actions
+                if len(results) >= 3:
+                    recent_actions = [r["action"]["action"] for r in results[-3:]]
+                    if len(set(recent_actions)) == 1:  # Same action repeated
+                        inject_loop_detection(recent_actions[0], 3)
             
             # Brief pause between actions - only use dynamic detection for explicit navigation
             action_type = action_data.get("action", "")
@@ -1604,6 +1721,55 @@ Example responses:
         if len(parts) >= 3:
             return parts[2]
         return ""
+
+    def _inject_app_specific_guidance(self, ui_state: Dict[str, Any]):
+        """Inject app-specific guidance based on current UI state."""
+        try:
+            # Get window information
+            window_info = ui_state.get("window", {})
+            window_title = window_info.get("title", "").lower()
+            compressed_output = ui_state.get("compressedOutput", "")
+            
+            # Detect Messages app
+            if "messages" in window_title or compressed_output.startswith("Messages|"):
+                # Extract active chat from compressed output
+                active_chat = None
+                target_recipient = None
+                
+                # Parse the actual format: "txt:To: Cara Davidson@A-X3"
+                if "txt:To: " in compressed_output:
+                    # Find the "To: " pattern and extract the name
+                    import re
+                    to_match = re.search(r'txt:To: ([^@]+)@', compressed_output)
+                    if to_match:
+                        active_chat = to_match.group(1).strip()
+                
+                # Try to determine target recipient from task context or UI
+                # Look for button patterns that might indicate search results
+                search_buttons = re.findall(r'btn:([^@]+)@A-[A-Z]+\d+', compressed_output)
+                available_contacts = [btn for btn in search_buttons if "Mom" in btn or "Kiddos" in btn or "'" in btn]
+                
+                # Create context info
+                context_info = {
+                    "active_chat": active_chat,
+                    "available_contacts": available_contacts
+                }
+                
+                # Add target recipient if we can infer it from available contacts
+                if available_contacts:
+                    context_info["target_recipient"] = available_contacts[0]
+                
+                # Inject Messages app guidance with enhanced context
+                inject_app_context_guidance("messages", context_info)
+                
+            # Can add other app detections here
+            # elif "safari" in window_title:
+            #     inject_app_context_guidance("safari", {"url": current_url})
+            
+        except Exception as e:
+            # Don't let app detection errors break the main flow
+            if self.debug:
+                print(f"Warning: App-specific guidance injection failed: {e}")
 
 
 

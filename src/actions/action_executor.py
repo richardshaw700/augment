@@ -12,6 +12,17 @@ from .base_actions import BaseActions, ActionResult
 from .action_sequences import ActionSequences
 from .context_detector import ContextDetector, ActionStrategy
 
+# Import dynamic prompts system
+from ..gpt_engine.dynamic_prompts import (
+    inject_navigation_success,
+    inject_focus_guidance,
+    inject_completion_detected,
+    inject_strategy_recommendation,
+    inject_form_warning,
+    inject_efficiency_tip,
+    inject_loop_detection
+)
+
 
 class ActionExecutor:
     """
@@ -78,12 +89,30 @@ class ActionExecutor:
                 print(f"   Confidence: {confidence:.2f}")
                 print(f"   Reasoning: {reasoning}")
             
+            # Inject strategy recommendation into dynamic prompts
+            inject_strategy_recommendation(strategy.value, confidence)
+            
+            # Inject focus guidance for smart typing
+            inject_focus_guidance(target_field)
+            
+            # Check for form warnings
+            if context.get("form_type") in ["login", "security", "captcha", "complex"]:
+                inject_form_warning(context["form_type"])
+            
             # Execute based on recommended strategy
             if strategy == ActionStrategy.CLICK_TYPE_ENTER:
                 result = await self._execute_click_type_enter(
                     coordinates, text, target_field, context
                 )
                 self.sequence_usage_stats["click_type_enter"] += 1
+                
+                # Inject navigation success feedback if this was a navigation action
+                if result.success and "Navigation initiated" in result.output:
+                    # Extract URL from text if it looks like a URL
+                    if any(domain in text.lower() for domain in ['.com', '.org', '.net', 'http', 'www']):
+                        inject_navigation_success(text, "CLICK_TYPE_ENTER")
+                    else:
+                        inject_completion_detected(f"Navigation sequence completed with '{text}'")
                 
             elif strategy == ActionStrategy.CLICK_TYPE_ONLY:
                 result = await self._execute_click_type_only(
@@ -103,9 +132,12 @@ class ActionExecutor:
                 )
                 self.sequence_usage_stats["atomic_actions"] += 1
             
+            # Add efficiency tips based on performance
+            execution_time = time.time() - start_time
+            inject_efficiency_tip(self.execution_count, execution_time)
+            
             # Add context metadata to result
             if result.success:
-                execution_time = time.time() - start_time
                 enhanced_output = f"{result.output} | Strategy: {strategy.value} (confidence: {confidence:.2f})"
                 
                 return ActionResult(
