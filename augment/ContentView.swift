@@ -16,7 +16,7 @@ func getCurrentTimestamp() -> String {
     return formatter.string(from: now)
 }
 
-class ClaudeComputerUseManager: ObservableObject {
+class GPTComputerUseManager: ObservableObject {
     @Published var isRunning = false
     @Published var output = ""
     @Published var errorOutput = ""
@@ -29,10 +29,10 @@ class ClaudeComputerUseManager: ObservableObject {
     private var errorSource: DispatchSourceRead?
     
     init() {
-        // Get the project directory path - for development, use a fixed path
+        // Get the project directory path - updated to use new GPT system
         let projectPath = "/Users/richardshaw/augment"
-        self.pythonPath = "\(projectPath)/claude-computer-use-macos/venv/bin/python3"
-        self.scriptPath = "\(projectPath)/claude-computer-use-macos/main.py"
+        self.pythonPath = "\(projectPath)/venv/bin/python3"  // Use virtual environment python
+        self.scriptPath = "\(projectPath)/src/gpt_engine/gpt_computer_use.py"
     }
     
     func executeInstruction(_ instruction: String) {
@@ -45,8 +45,8 @@ class ClaudeComputerUseManager: ObservableObject {
         
         // Print to console when starting
         let timestamp = getCurrentTimestamp()
-        print("\n[\(timestamp)] 🚀 Starting Claude Computer Use")
-        print("[\(timestamp)] 📝 Instruction: \(instruction)")
+        print("\n[\(timestamp)] 🚀 Starting GPT Computer Use")
+        print("[\(timestamp)] 📝 Task: \(instruction)")
         print("[\(timestamp)] 💰 Cost Mode: \(ProcessInfo.processInfo.environment["COST_OPTIMIZATION"] ?? "default")")
         print("[\(timestamp)] ─────────────────────────────────────────────────")
         
@@ -60,14 +60,14 @@ class ClaudeComputerUseManager: ObservableObject {
             task.standardOutput = outputPipe
             task.standardError = errorPipe
             task.executableURL = URL(fileURLWithPath: self.pythonPath)
-            task.arguments = [self.scriptPath, instruction]
+            task.arguments = ["-u", "-m", "gpt_engine.gpt_computer_use", instruction]
             
-            // Set the working directory to the claude-computer-use-macos folder
-            task.currentDirectoryURL = URL(fileURLWithPath: "/Users/richardshaw/augment/claude-computer-use-macos")
+            // Set the working directory to the src folder for module execution
+            task.currentDirectoryURL = URL(fileURLWithPath: "/Users/richardshaw/augment/src")
             
             // Set environment variables
             var environment = ProcessInfo.processInfo.environment
-            environment["PYTHONPATH"] = "/Users/richardshaw/augment/claude-computer-use-macos"
+            environment["PYTHONPATH"] = "/Users/richardshaw/augment/src"
             task.environment = environment
             
             // Store the task reference for stopping
@@ -99,7 +99,7 @@ class ClaudeComputerUseManager: ObservableObject {
                             accumulatedOutput += chunk
                             // Print to console with timestamp
                             let timestamp = getCurrentTimestamp()
-                            print("[\(timestamp)] Claude Output: \(chunk)", terminator: "")
+                            print("[\(timestamp)] GPT Output: \(chunk)", terminator: "")
                             DispatchQueue.main.async {
                                 self.output = accumulatedOutput
                             }
@@ -114,7 +114,7 @@ class ClaudeComputerUseManager: ObservableObject {
                             accumulatedError += errorChunk
                             // Print errors to console with timestamp
                             let timestamp = getCurrentTimestamp()
-                            print("[\(timestamp)] Claude Error: \(errorChunk)", terminator: "")
+                            print("[\(timestamp)] GPT Error: \(errorChunk)", terminator: "")
                             DispatchQueue.main.async {
                                 self.errorOutput = accumulatedError
                             }
@@ -214,7 +214,7 @@ class ClaudeComputerUseManager: ObservableObject {
 }
 
 struct ContentView: View {
-    @StateObject private var claudeManager = ClaudeComputerUseManager()
+    @StateObject private var gptManager = GPTComputerUseManager()
     @State private var instruction = ""
     @State private var selectedTab = 0
     @State private var chatMessages: [ChatMessage] = []
@@ -229,19 +229,19 @@ struct ContentView: View {
                         .imageScale(.large)
                         .foregroundStyle(.tint)
                         .font(.system(size: 40))
-                    Text("Claude Computer Use")
+                    Text("GPT Computer Use")
                         .font(.title)
                         .fontWeight(.bold)
-                    Text(claudeManager.status)
+                    Text(gptManager.status)
                         .font(.caption)
-                        .foregroundColor(claudeManager.isRunning ? .orange : 
-                                       claudeManager.status.contains("Error") ? .red : .green)
+                        .foregroundColor(gptManager.isRunning ? .orange : 
+                                       gptManager.status.contains("Error") ? .red : .green)
                 }
                 .padding()
                 
                 // Input Section
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Enter your instruction for Claude:")
+                    Text("Enter your instruction for GPT:")
                         .font(.headline)
                     
                     TextEditor(text: $instruction)
@@ -256,19 +256,19 @@ struct ContentView: View {
                     
                     HStack {
                         Button(action: {
-                            claudeManager.executeInstruction(instruction)
+                            gptManager.executeInstruction(instruction)
                         }) {
                             HStack {
-                                Image(systemName: claudeManager.isRunning ? "hourglass" : "play.circle")
-                                Text(claudeManager.isRunning ? "Running..." : "Execute")
+                                Image(systemName: gptManager.isRunning ? "hourglass" : "play.circle")
+                                Text(gptManager.isRunning ? "Running..." : "Execute")
                             }
                             .foregroundColor(.white)
                             .padding(.horizontal, 20)
                             .padding(.vertical, 10)
-                            .background(claudeManager.isRunning ? Color.orange : Color.blue)
+                            .background(gptManager.isRunning ? Color.orange : Color.blue)
                             .cornerRadius(8)
                         }
-                        .disabled(instruction.isEmpty || claudeManager.isRunning)
+                        .disabled(instruction.isEmpty || gptManager.isRunning)
                         
                         Spacer()
                     }
@@ -276,7 +276,7 @@ struct ContentView: View {
                 .padding()
                 
                 // Error section (if any)
-                if !claudeManager.errorOutput.isEmpty {
+                if !gptManager.errorOutput.isEmpty {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             Image(systemName: "exclamationmark.triangle")
@@ -288,7 +288,7 @@ struct ContentView: View {
                         }
                         
                         ScrollView {
-                            Text(claudeManager.errorOutput)
+                            Text(gptManager.errorOutput)
                                 .font(.system(.caption, design: .monospaced))
                                 .foregroundColor(.red)
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -314,7 +314,7 @@ struct ContentView: View {
                 // Chat Header
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Claude Assistant")
+                        Text("GPT Assistant")
                             .font(.headline)
                         Text("Real-time computer automation")
                             .font(.caption)
@@ -324,9 +324,9 @@ struct ContentView: View {
                     Spacer()
                     
                     // Emergency Stop Button
-                    if claudeManager.isRunning {
+                    if gptManager.isRunning {
                         Button(action: {
-                            claudeManager.stopExecution()
+                            gptManager.stopExecution()
                         }) {
                             HStack(spacing: 6) {
                                 Image(systemName: "stop.circle.fill")
@@ -352,7 +352,7 @@ struct ContentView: View {
                 .background(Color(NSColor.controlBackgroundColor).opacity(0.5))
                 
                 // Chat Messages
-                ChatView(messages: $chatMessages, content: claudeManager.output)
+                ChatView(messages: $chatMessages, content: gptManager.output)
             }
             .frame(minWidth: 400)
         }
@@ -365,7 +365,7 @@ struct ContentView: View {
         .onAppear {
             // Set some example instructions
             if instruction.isEmpty {
-                instruction = "Open Safari and search for 'Anthropic'"
+                instruction = "Open Safari and show me what's on the screen"
             }
         }
     }
@@ -397,7 +397,7 @@ struct ChatView: View {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
                     if messages.isEmpty && content.isEmpty {
-                        Text("Waiting for Claude to respond...")
+                        Text("Waiting for GPT to respond...")
                             .foregroundColor(.secondary)
                             .italic()
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -452,8 +452,31 @@ struct ChatView: View {
         let newContent = String(rawContent.suffix(rawContent.count - lastProcessedLength))
         lastProcessedLength = rawContent.count
         
-        // Parse new content sections
-        let newSections = newContent.components(separatedBy: "---------------")
+        // Debug: Write chat parsing debug info
+        let debugLogPath = "/Users/richardshaw/augment/src/debug_output/chat_debug.txt"
+        let timestamp = DateFormatter().string(from: Date())
+        let debugContent = """
+        
+        [\(timestamp)] 🔍 DEBUG: Parsing new content (\(newContent.count) chars)
+        📝 Content: \(String(newContent.prefix(200)))...
+        📊 Total messages before: \(messages.count)
+        
+        """
+        
+        if let data = debugContent.data(using: .utf8) {
+            if FileManager.default.fileExists(atPath: debugLogPath) {
+                if let fileHandle = FileHandle(forWritingAtPath: debugLogPath) {
+                    fileHandle.seekToEndOfFile()
+                    fileHandle.write(data)
+                    fileHandle.closeFile()
+                }
+            } else {
+                try? data.write(to: URL(fileURLWithPath: debugLogPath))
+            }
+        }
+        
+        // Split content by lines for GPT format parsing
+        let lines = newContent.components(separatedBy: .newlines)
         
         // Helper function to extract content after timestamp
         func extractContentAfterTimestamp(_ text: String) -> String {
@@ -462,119 +485,164 @@ struct ChatView: View {
             return text.replacingOccurrences(of: timestampPattern, with: "", options: .regularExpression)
         }
         
-        // Process only new sections
-        for section in newSections {
-            let trimmed = section.trimmingCharacters(in: .whitespacesAndNewlines)
+        // Process each line
+        for line in lines {
+            let trimmed = line.trimmingCharacters(in: .whitespacesAndNewlines)
             if trimmed.isEmpty { continue }
             
             // Extract content without timestamp for pattern matching
             let contentWithoutTimestamp = extractContentAfterTimestamp(trimmed)
             
+            // Debug: Log line processing
+            let lineDebug = """
+            🔍 Processing line: '\(String(contentWithoutTimestamp.prefix(100)))'
+            """
+            if let data = lineDebug.data(using: .utf8) {
+                if let fileHandle = FileHandle(forWritingAtPath: debugLogPath) {
+                    fileHandle.seekToEndOfFile()
+                    fileHandle.write(data)
+                    fileHandle.write("\n".data(using: .utf8)!)
+                    fileHandle.closeFile()
+                }
+            }
+            
             // Skip if we've already processed this content
-            if messages.contains(where: { $0.content.contains(String(contentWithoutTimestamp.prefix(50))) }) {
+            if messages.contains(where: { $0.content.contains(String(contentWithoutTimestamp.prefix(30))) }) {
+                let skipDebug = "⏭️ Skipping duplicate content\n"
+                if let data = skipDebug.data(using: .utf8) {
+                    if let fileHandle = FileHandle(forWritingAtPath: debugLogPath) {
+                        fileHandle.seekToEndOfFile()
+                        fileHandle.write(data)
+                        fileHandle.closeFile()
+                    }
+                }
                 continue
             }
             
-            if contentWithoutTimestamp.hasPrefix("Starting Claude") {
-                // System messages
+            // Parse GPT system output format
+            if contentWithoutTimestamp.hasPrefix("🚀 Starting GPT Computer Use") {
+                // System startup message
+                let addDebug = "✅ Adding system startup message\n"
+                if let data = addDebug.data(using: .utf8) {
+                    if let fileHandle = FileHandle(forWritingAtPath: debugLogPath) {
+                        fileHandle.seekToEndOfFile()
+                        fileHandle.write(data)
+                        fileHandle.closeFile()
+                    }
+                }
+                messages.append(ChatMessage(
+                    content: "🚀 GPT Computer Use Started",
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .system
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("📝 Task:") {
+                // Extract and show user task
+                let task = contentWithoutTimestamp.replacingOccurrences(of: "📝 Task: ", with: "")
+                let taskDebug = "✅ Adding user task: \(task)\n"
+                if let data = taskDebug.data(using: .utf8) {
+                    if let fileHandle = FileHandle(forWritingAtPath: debugLogPath) {
+                        fileHandle.seekToEndOfFile()
+                        fileHandle.write(data)
+                        fileHandle.closeFile()
+                    }
+                }
+                messages.append(ChatMessage(
+                    content: task,
+                    isUser: true,
+                    timestamp: Date(),
+                    type: .text
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("🔄 Iteration") {
+                // Iteration counter
                 messages.append(ChatMessage(
                     content: contentWithoutTimestamp,
                     isUser: false,
                     timestamp: Date(),
                     type: .system
                 ))
-            } else if contentWithoutTimestamp.hasPrefix("Instructions provided:") {
-                // User instruction echo
-                let instruction = contentWithoutTimestamp.replacingOccurrences(of: "Instructions provided: ", with: "").trimmingCharacters(in: CharacterSet(charactersIn: "'\""))
-                messages.append(ChatMessage(
-                    content: instruction,
-                    isUser: true,
-                    timestamp: Date(),
-                    type: .text
-                ))
-            } else if contentWithoutTimestamp.hasPrefix("API Response:") {
-                // Parse Claude's responses
-                let responseContent = contentWithoutTimestamp.replacingOccurrences(of: "API Response:", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+            } else if contentWithoutTimestamp.hasPrefix("🤖 GPT Response:") {
+                // GPT's reasoning response
+                let response = contentWithoutTimestamp.replacingOccurrences(of: "🤖 GPT Response: ", with: "")
                 
-                if let data = responseContent.data(using: .utf8),
-                   let jsonArray = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
+                // Try to extract reasoning from JSON response
+                if let data = response.data(using: .utf8),
+                   let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
                     
-                    for item in jsonArray {
-                        if let type = item["type"] as? String {
-                            if type == "text", let text = item["text"] as? String {
-                                messages.append(ChatMessage(
-                                    content: text,
-                                    isUser: false,
-                                    timestamp: Date(),
-                                    type: .text
-                                ))
-                            } else if type == "tool_use", let name = item["name"] as? String {
-                                if let input = item["input"] as? [String: Any] {
-                                    let toolDescription = formatToolUse(name: name, input: input)
-                                    messages.append(ChatMessage(
-                                        content: toolDescription,
-                                        isUser: false,
-                                        timestamp: Date(),
-                                        type: .tool
-                                    ))
-                                }
+                    if let reasoning = jsonObject["reasoning"] as? String {
+                        messages.append(ChatMessage(
+                            content: "💭 " + reasoning,
+                            isUser: false,
+                            timestamp: Date(),
+                            type: .text
+                        ))
+                    }
+                    
+                    if let action = jsonObject["action"] as? String {
+                        let actionIcon = getActionIcon(action)
+                        var actionText = "\(actionIcon) \(action)"
+                        
+                        // Add parameters if available
+                        if let params = jsonObject["parameters"] as? [String: Any] {
+                            let paramStrings = params.compactMap { key, value in
+                                "\(key): \(value)"
+                            }
+                            if !paramStrings.isEmpty {
+                                actionText += " (\(paramStrings.joined(separator: ", ")))"
                             }
                         }
+                        
+                        messages.append(ChatMessage(
+                            content: actionText,
+                            isUser: false,
+                            timestamp: Date(),
+                            type: .tool
+                        ))
                     }
+                } else {
+                    // Fallback: show the raw response if not JSON
+                    messages.append(ChatMessage(
+                        content: "🤖 " + response,
+                        isUser: false,
+                        timestamp: Date(),
+                        type: .text
+                    ))
                 }
-            } else if contentWithoutTimestamp.hasPrefix("### Running bash command:") {
-                // Bash command execution
-                let command = contentWithoutTimestamp.replacingOccurrences(of: "### Running bash command: ", with: "")
+            } else if contentWithoutTimestamp.hasPrefix("✅ Success:") {
+                // Successful action result
+                let result = contentWithoutTimestamp.replacingOccurrences(of: "✅ Success: ", with: "")
                 messages.append(ChatMessage(
-                    content: "💻 Running: \(command)",
+                    content: "✅ " + result,
                     isUser: false,
                     timestamp: Date(),
                     type: .tool
                 ))
-            } else if contentWithoutTimestamp.hasPrefix("### Performing action:") {
-                // Computer action execution
-                let action = contentWithoutTimestamp.replacingOccurrences(of: "### Performing action: ", with: "")
-                let actionIcon = getActionIcon(action)
+            } else if contentWithoutTimestamp.hasPrefix("❌ Error:") {
+                // Error result
+                let error = contentWithoutTimestamp.replacingOccurrences(of: "❌ Error: ", with: "")
                 messages.append(ChatMessage(
-                    content: "\(actionIcon) \(action)",
-                    isUser: false,
-                    timestamp: Date(),
-                    type: .tool
-                ))
-            } else if contentWithoutTimestamp.hasPrefix("> Tool Output") {
-                // Tool output results
-                messages.append(ChatMessage(
-                    content: "✅ " + contentWithoutTimestamp,
-                    isUser: false,
-                    timestamp: Date(),
-                    type: .tool
-                ))
-            } else if contentWithoutTimestamp.hasPrefix("!!! Tool Error") {
-                // Tool errors
-                messages.append(ChatMessage(
-                    content: "❌ " + contentWithoutTimestamp,
+                    content: "❌ " + error,
                     isUser: false,
                     timestamp: Date(),
                     type: .error
                 ))
-            } else if contentWithoutTimestamp.hasPrefix("Took screenshot") {
-                // Screenshot notifications
+            } else if contentWithoutTimestamp.hasPrefix("🎉 Task") {
+                // Task completion
                 messages.append(ChatMessage(
-                    content: "📸 " + contentWithoutTimestamp,
+                    content: contentWithoutTimestamp,
                     isUser: false,
                     timestamp: Date(),
-                    type: .tool
+                    type: .system
                 ))
-            } else if contentWithoutTimestamp.hasPrefix("Assistant:") {
-                // Direct assistant messages
-                let assistantText = contentWithoutTimestamp.replacingOccurrences(of: "Assistant: ", with: "")
+            } else if contentWithoutTimestamp.hasPrefix("📊 Task") {
+                // Task summary
                 messages.append(ChatMessage(
-                    content: assistantText,
+                    content: contentWithoutTimestamp,
                     isUser: false,
                     timestamp: Date(),
-                    type: .text
+                    type: .system
                 ))
-            } else if contentWithoutTimestamp.hasPrefix("Cost optimization:") {
+            } else if contentWithoutTimestamp.hasPrefix("💰 Cost Mode:") {
                 // Cost optimization info
                 messages.append(ChatMessage(
                     content: "⚙️ " + contentWithoutTimestamp,
@@ -582,6 +650,20 @@ struct ChatView: View {
                     timestamp: Date(),
                     type: .system
                 ))
+            }
+        }
+        
+        // Debug: Final summary
+        let summaryDebug = """
+        📊 Total messages after: \(messages.count)
+        ═══════════════════════════════════════
+        
+        """
+        if let data = summaryDebug.data(using: .utf8) {
+            if let fileHandle = FileHandle(forWritingAtPath: debugLogPath) {
+                fileHandle.seekToEndOfFile()
+                fileHandle.write(data)
+                fileHandle.closeFile()
             }
         }
     }
@@ -665,7 +747,7 @@ struct ChatMessageView: View {
             VStack(alignment: .leading, spacing: 4) {
                 // Header
                 HStack {
-                    Text(message.isUser ? "You" : "Claude")
+                    Text(message.isUser ? "You" : "GPT")
                         .font(.headline)
                         .foregroundColor(.primary)
                     

@@ -1,0 +1,44 @@
+# Debug output files
+src/debug_output/
+
+# Build artifacts
+build/
+*.app
+*.dSYM/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+*.xcuserstate
+*.xcuserdatad/
+DerivedData/
+*.hmap
+*.ipa
+
+# Swift Package Manager
+.build/
+Packages/
+Package.pins
+Package.resolved
+
+# Performance profiling
+*.profraw
+default.profraw
+
+# Logs
+*.log
+latest_run_logs.txt
+performance_debug.txt
+gpt_session.json
+gpt_session_summary.txt
+chat_debug.txt 
