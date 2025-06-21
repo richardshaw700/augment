@@ -1,0 +1,3553 @@
+{
+  "metadata" : {
+    "timestamp" : "2025-06-21T22:32:45Z",
+    "processingTime" : 33.360083937644958,
+    "performance" : {
+      "screenshotTime" : 0.13797402381896973,
+      "fusedElements" : 123,
+      "memoryUsage" : 159072256,
+      "fusionTime" : 0.0024440288543701172,
+      "ocrTime" : 0.21506798267364502,
+      "totalElements" : 262,
+      "accessibilityTime" : 0.097674965858459473
+    }
+  },
+  "window" : {
+    "title" : "activwndw: Cursor - latest_run_logs.txt — augment",
+    "frame" : {
+      "width" : 1681,
+      "y" : 39,
+      "x" : 20,
+      "height" : 1017
+    }
+  },
+  "elements" : [
+    {
+      "semanticMeaning" : "Text content: 'P augment'",
+      "position" : {
+        "y" : 56,
+        "x" : 888.25
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 67.500000000000085,
+        "height" : 14.000000000000009
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "P augment",
+        "boundingBox" : {
+          "y" : 48.999999999999993,
+          "height" : 14.000000000000009,
+          "width" : 67.500000000000085,
+          "x" : 854.5
+        }
+      },
+      "visualText" : "P augment",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "id" : "835BC861-FE6E-41B7-A771-4677C4F68292"
+    },
+    {
+      "visualText" : "tg P &9 &°",
+      "ocr" : {
+        "text" : "tg P &9 &°",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 112,
+          "height" : 14.999999999999986,
+          "width" : 110.49999999999999,
+          "y" : 83.999999999999957
+        }
+      },
+      "size" : {
+        "height" : 14.999999999999986,
+        "width" : 110.49999999999999
+      },
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "description" : null,
+        "role" : "AXGroup"
+      },
+      "position" : {
+        "y" : 91.499999999999943,
+        "x" : 167.25
+      },
+      "confidence" : 0.60000001192092889,
+      "id" : "8545A075-D0B2-48FB-BB48-80E2C46A1767",
+      "isClickable" : false,
+      "interactions" : [
+        "right_click"
+      ],
+      "semanticMeaning" : "AXGroup with text 'tg P &9 &°'",
+      "type" : "AXGroup+OCR"
+    },
+    {
+      "size" : {
+        "width" : 67.000000000000028,
+        "height" : 13.499999999999908
+      },
+      "visualText" : "Pé main.py",
+      "id" : "CDC590D9-FB98-46D2-92AF-8CF496D1EB47",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "y" : 92.249999999999986,
+        "x" : 393.5
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 85.500000000000028,
+          "x" : 360,
+          "width" : 67.000000000000028,
+          "height" : 13.499999999999908
+        },
+        "confidence" : 0.5,
+        "text" : "Pé main.py"
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Pé main.py'"
+    },
+    {
+      "id" : "17ED4D04-4A22-4B58-B34B-425CACB10E81",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 92.749999999999986,
+        "x" : 564
+      },
+      "semanticMeaning" : "Text content: 'latest_run_logs. txt X'",
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "latest_run_logs. txt X",
+        "boundingBox" : {
+          "y" : 86.500000000000014,
+          "width" : 128.00000000000003,
+          "height" : 12.499999999999932,
+          "x" : 500
+        }
+      },
+      "size" : {
+        "height" : 12.499999999999932,
+        "width" : 128.00000000000003
+      },
+      "visualText" : "latest_run_logs. txt X",
+      "isClickable" : false,
+      "type" : "TextContent"
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '?é gpt_computer_use.py M'",
+      "type" : "TextContent",
+      "visualText" : "?é gpt_computer_use.py M",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "?é gpt_computer_use.py M",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 650.5,
+          "y" : 85.500000000000028,
+          "width" : 167.5,
+          "height" : 13.499999999999908
+        }
+      },
+      "position" : {
+        "x" : 734.25,
+        "y" : 92.249999999999986
+      },
+      "size" : {
+        "height" : 13.499999999999908,
+        "width" : 167.5
+      },
+      "id" : "A3224A6D-0F87-40A5-9D74-3697574B4521"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "visualText" : "OutputManager.swift M",
+      "semanticMeaning" : "Text content: 'OutputManager.swift M'",
+      "position" : {
+        "y" : 92.749999999999986,
+        "x" : 950.75
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "OutputManager.swift M",
+        "boundingBox" : {
+          "y" : 86.500000000000014,
+          "width" : 141.49999999999989,
+          "x" : 880.00000000000011,
+          "height" : 12.499999999999932
+        }
+      },
+      "id" : "AF4F6710-A081-4B3E-8CCA-8201B4B8C5E5",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 141.49999999999989,
+        "height" : 12.499999999999932
+      }
+    },
+    {
+      "isClickable" : false,
+      "size" : {
+        "width" : 72.000000000000043,
+        "height" : 12.99999999999992
+      },
+      "id" : "67B739D4-E3CF-4D58-A745-F4D89BAD4C79",
+      "type" : "TextContent",
+      "confidence" : 0.30000001192092896,
+      "position" : {
+        "x" : 1099,
+        "y" : 91.000000000000014
+      },
+      "visualText" : "M+ REAI to",
+      "ocr" : {
+        "text" : "M+ REAI to",
+        "boundingBox" : {
+          "width" : 72.000000000000043,
+          "y" : 84.500000000000057,
+          "height" : 12.99999999999992,
+          "x" : 1063
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "semanticMeaning" : "Text content: 'M+ REAI to'",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "size" : {
+        "width" : 161.50000000000014,
+        "height" : 11.999999999999943
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Specify actual model in logs",
+        "boundingBox" : {
+          "y" : 86.500000000000014,
+          "x" : 1198.5,
+          "width" : 161.50000000000014,
+          "height" : 11.999999999999943
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "type" : "TextContent",
+      "confidence" : 0.30000001192092896,
+      "position" : {
+        "x" : 1279.25,
+        "y" : 92.499999999999986
+      },
+      "id" : "2B5982E8-BA7F-4C4D-A3AE-526B9D11135B",
+      "semanticMeaning" : "Text content: 'Specify actual model in logs'",
+      "visualText" : "Specify actual model in logs"
+    },
+    {
+      "id" : "AB731134-6373-446F-8DD1-7D870270C65F",
+      "position" : {
+        "y" : 121.24999999999999,
+        "x" : 500
+      },
+      "ocr" : {
+        "text" : "src > debug_output > E] latest_run_logs.txt",
+        "boundingBox" : {
+          "width" : 271.00000000000006,
+          "x" : 364.5,
+          "y" : 115.00000000000001,
+          "height" : 12.499999999999932
+        },
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'src > debug_output > E] latest_run_logs.txt'",
+      "visualText" : "src > debug_output > E] latest_run_logs.txt",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "size" : {
+        "width" : 271.00000000000006,
+        "height" : 12.499999999999932
+      }
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "y" : 143.75000000000003,
+        "x" : 72
+      },
+      "size" : {
+        "height" : 11.499999999999956,
+        "width" : 70
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "v augment",
+      "confidence" : 0.5,
+      "id" : "18AD9755-E121-4D27-BD14-65DC81205E07",
+      "ocr" : {
+        "text" : "v augment",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 11.499999999999956,
+          "width" : 70,
+          "x" : 37,
+          "y" : 138.00000000000006
+        }
+      },
+      "semanticMeaning" : "Text content: 'v augment'"
+    },
+    {
+      "id" : "A3B2B87F-8C10-488A-9CB2-19ECE6048B4B",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 13.500000000000021,
+        "width" : 450.50000000000006
+      },
+      "position" : {
+        "x" : 1423.25,
+        "y" : 137.25
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: '1. • The system correctly detects it's currently chatting with 'Hitzel Cruz\"'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 130.5,
+          "width" : 450.50000000000006,
+          "x" : 1198,
+          "height" : 13.500000000000021
+        },
+        "text" : "1. • The system correctly detects it's currently chatting with 'Hitzel Cruz\"",
+        "confidence" : 0.5
+      },
+      "visualText" : "1. • The system correctly detects it's currently chatting with 'Hitzel Cruz\"",
+      "isClickable" : false
+    },
+    {
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '2. 11 It also sees \"Mom's Kiddos\" in the search bar ( txtinp: mom' s kiddos ( in'",
+      "size" : {
+        "height" : 13.500000000000021,
+        "width" : 478.49999999999994
+      },
+      "isClickable" : false,
+      "confidence" : 0.30000001192092896,
+      "id" : "C3A16991-B2D9-4B19-AA83-AF88AF42B8A9",
+      "position" : {
+        "x" : 1436.75,
+        "y" : 162.74999999999994
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "2. 11 It also sees \"Mom's Kiddos\" in the search bar ( txtinp: mom' s kiddos ( in",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "width" : 478.49999999999994,
+          "height" : 13.500000000000021,
+          "x" : 1197.5,
+          "y" : 155.99999999999994
+        },
+        "text" : "2. 11 It also sees \"Mom's Kiddos\" in the search bar ( txtinp: mom' s kiddos ( in"
+      }
+    },
+    {
+      "visualText" : "put)@A-C5 IFOCUSEDI )",
+      "ocr" : {
+        "text" : "put)@A-C5 IFOCUSEDI )",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.499999999999932,
+          "x" : 1213,
+          "width" : 132.49999999999997,
+          "y" : 176.50000000000003
+        }
+      },
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 1279.25,
+        "y" : 182.75
+      },
+      "id" : "6B585774-4619-4F25-827C-A045B8B7E90B",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "size" : {
+        "width" : 132.49999999999997,
+        "height" : 12.499999999999932
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'put)@A-C5 IFOCUSEDI )'"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "id" : "8648A00D-BB7C-4395-970C-4CD5541AB85F",
+      "size" : {
+        "width" : 469.00000000000006,
+        "height" : 13.499999999999908
+      },
+      "position" : {
+        "y" : 207.74999999999997,
+        "x" : 1432
+      },
+      "type" : "TextContent",
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 201.00000000000003,
+          "height" : 13.499999999999908,
+          "x" : 1197.5,
+          "width" : 469.00000000000006
+        },
+        "confidence" : 0.30000001192092896,
+        "text" : "3. 111 It sees \"Mom's Kiddos\" as a clickable button in the contacts list ( btn:Mo"
+      },
+      "semanticMeaning" : "Text content: '3. 111 It sees \"Mom's Kiddos\" as a clickable button in the contacts list ( btn:Mo'",
+      "confidence" : 0.30000001192092896,
+      "visualText" : "3. 111 It sees \"Mom's Kiddos\" as a clickable button in the contacts list ( btn:Mo"
+    },
+    {
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 1221.5,
+          "y" : 221.5,
+          "height" : 12.500000000000044,
+          "width" : 110.00000000000011
+        },
+        "text" : "' s Kiddos@A-Dll )"
+      },
+      "confidence" : 0.30000001192092896,
+      "semanticMeaning" : "Text content: '' s Kiddos@A-Dll )'",
+      "interactions" : [
+
+      ],
+      "id" : "6D7D6680-35BC-4F5D-802F-1702E1B24A6A",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 110.00000000000011,
+        "height" : 12.500000000000044
+      },
+      "position" : {
+        "y" : 227.75000000000003,
+        "x" : 1276.5
+      },
+      "visualText" : "' s Kiddos@A-Dll )"
+    },
+    {
+      "id" : "AC1E9B90-01E3-4252-BE0E-A448D2ADD41D",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Preview Content",
+        "boundingBox" : {
+          "y" : 181.00000000000006,
+          "x" : 63,
+          "width" : 98,
+          "height" : 10.499999999999979
+        }
+      },
+      "type" : "TextContent",
+      "position" : {
+        "x" : 112,
+        "y" : 186.25000000000006
+      },
+      "size" : {
+        "width" : 98,
+        "height" : 10.499999999999979
+      },
+      "visualText" : "Preview Content",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Preview Content'",
+      "interactions" : [
+
+      ],
+      "isClickable" : false
+    },
+    {
+      "id" : "B66E9390-1644-4E47-B39E-3C9DFC835C2D",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "augment.entitlements",
+        "boundingBox" : {
+          "height" : 12.500000000000044,
+          "width" : 131,
+          "x" : 62.5,
+          "y" : 202.99999999999997
+        }
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 128,
+        "y" : 209.25
+      },
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 131
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'augment.entitlements'",
+      "interactions" : [
+
+      ],
+      "visualText" : "augment.entitlements"
+    },
+    {
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 109.50000000000001
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "id" : "575BE709-3D07-44B9-B262-AA9673F68A96",
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 231.25000000000006,
+        "x" : 117.25
+      },
+      "ocr" : {
+        "text" : "augmentApp.swift",
+        "boundingBox" : {
+          "y" : 225.00000000000003,
+          "width" : 109.50000000000001,
+          "height" : 12.500000000000044,
+          "x" : 62.5
+        },
+        "confidence" : 0.5
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'augmentApp.swift'",
+      "visualText" : "augmentApp.swift"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "visualText" : "ContentView.swift",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'ContentView.swift'",
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 62.5,
+          "y" : 246.99999999999997,
+          "width" : 108.50000000000001,
+          "height" : 10.500000000000092
+        },
+        "text" : "ContentView.swift"
+      },
+      "position" : {
+        "x" : 116.75,
+        "y" : 252.25000000000003
+      },
+      "id" : "B8E99C10-D8F1-45C0-94FA-7F531BD43D9B",
+      "size" : {
+        "width" : 108.50000000000001,
+        "height" : 10.500000000000092
+      },
+      "isClickable" : false
+    },
+    {
+      "id" : "69BE1C42-BDA3-41B8-BA94-3E8ED27366ED",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 12.499999999999932,
+        "width" : 115.5
+      },
+      "visualText" : "augment.xcodeproj",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.499999999999932,
+          "x" : 54.5,
+          "width" : 115.5,
+          "y" : 269
+        },
+        "text" : "augment.xcodeproj",
+        "confidence" : 0.5
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'augment.xcodeproj'",
+      "position" : {
+        "x" : 112.25,
+        "y" : 275.24999999999994
+      }
+    },
+    {
+      "confidence" : 0.5,
+      "id" : "010CF30A-FEAF-4B98-93F7-0EE8F4140A07",
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 11.999999999999943,
+          "width" : 83.999999999999986,
+          "y" : 291.5,
+          "x" : 54.5
+        },
+        "text" : "augmentTests"
+      },
+      "type" : "TextContent",
+      "visualText" : "augmentTests",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'augmentTests'",
+      "position" : {
+        "x" : 96.5,
+        "y" : 297.5
+      },
+      "size" : {
+        "width" : 83.999999999999986,
+        "height" : 11.999999999999943
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'augmentUITests'",
+      "visualText" : "augmentUITests",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 97.5,
+        "height" : 12.000000000000057
+      },
+      "isClickable" : false,
+      "id" : "6F4D010B-2CC3-4CA8-AE52-16DD48AC9E8F",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 319.5,
+        "x" : 103.25
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 313.5,
+          "width" : 97.5,
+          "height" : 12.000000000000057,
+          "x" : 54.5
+        },
+        "text" : "augmentUITests",
+        "confidence" : 0.5
+      }
+    },
+    {
+      "size" : {
+        "width" : 482.00000000000006,
+        "height" : 12.499999999999932
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'However, I notice that the enhanced context detection l added to show ACTIVE_'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.499999999999932,
+          "x" : 1197,
+          "y" : 249.00000000000003,
+          "width" : 482.00000000000006
+        },
+        "text" : "However, I notice that the enhanced context detection l added to show ACTIVE_"
+      },
+      "visualText" : "However, I notice that the enhanced context detection l added to show ACTIVE_",
+      "id" : "F616F08E-A44C-4A9C-84C4-F6F8F8CAB09B",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1438,
+        "y" : 255.25
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'CHAT: in the window header isn't working yet. Let me check why and fix it. The'",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 475,
+          "y" : 268.5,
+          "height" : 12.499999999999932,
+          "x" : 1196.5
+        },
+        "text" : "CHAT: in the window header isn't working yet. Let me check why and fix it. The",
+        "confidence" : 0.5
+      },
+      "size" : {
+        "width" : 475,
+        "height" : 12.499999999999932
+      },
+      "isClickable" : false,
+      "id" : "799C8F86-F6DA-4A3C-A81E-E4F0812A060D",
+      "position" : {
+        "x" : 1434,
+        "y" : 274.74999999999994
+      },
+      "type" : "TextContent",
+      "visualText" : "CHAT: in the window header isn't working yet. Let me check why and fix it. The",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "id" : "3FF457CC-56A7-4B60-842D-F8B702A75B2D",
+      "size" : {
+        "width" : 480,
+        "height" : 12.499999999999932
+      },
+      "position" : {
+        "x" : 1436.5,
+        "y" : 294.24999999999994
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "issue is that the current compressed output format is still just showing Message",
+        "boundingBox" : {
+          "x" : 1196.5,
+          "y" : 288,
+          "width" : 480,
+          "height" : 12.499999999999932
+        },
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'issue is that the current compressed output format is still just showing Message'",
+      "visualText" : "issue is that the current compressed output format is still just showing Message"
+    },
+    {
+      "semanticMeaning" : "Text content: 's | 762x733 | instead of Messages | 762x733 |ACTIVE_CHAT: Hitzel Cruz |'",
+      "interactions" : [
+
+      ],
+      "id" : "BB6D79D4-BCF6-403A-AE19-CFB656C32FF8",
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "size" : {
+        "width" : 428.99999999999994,
+        "height" : 12.99999999999992
+      },
+      "visualText" : "s | 762x733 | instead of Messages | 762x733 |ACTIVE_CHAT: Hitzel Cruz |",
+      "position" : {
+        "x" : 1411.5,
+        "y" : 313.99999999999994
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "s | 762x733 | instead of Messages | 762x733 |ACTIVE_CHAT: Hitzel Cruz |",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 307.5,
+          "width" : 428.99999999999994,
+          "height" : 12.99999999999992,
+          "x" : 1197
+        }
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 339.25,
+        "x" : 1374
+      },
+      "visualText" : "Let me check the exact text pattern the dropdown is using:",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1197,
+          "y" : 333.00000000000006,
+          "width" : 353.99999999999989,
+          "height" : 12.499999999999932
+        },
+        "text" : "Let me check the exact text pattern the dropdown is using:"
+      },
+      "size" : {
+        "width" : 353.99999999999989,
+        "height" : 12.499999999999932
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Let me check the exact text pattern the dropdown is using:'",
+      "id" : "1B67EB1F-3A31-48C9-964E-5301B0109912",
+      "type" : "TextContent",
+      "isClickable" : false
+    },
+    {
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 56.499999999999993,
+        "height" : 12.500000000000044
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "x" : 82.75,
+        "y" : 363.24999999999994
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 356.99999999999994,
+          "width" : 56.499999999999993,
+          "x" : 54.5,
+          "height" : 12.500000000000044
+        },
+        "text" : "examples"
+      },
+      "interactions" : [
+
+      ],
+      "id" : "D909C3FD-3919-4481-9C64-00D3747629D6",
+      "semanticMeaning" : "Text content: 'examples'",
+      "visualText" : "examples"
+    },
+    {
+      "size" : {
+        "width" : 38.499999999999993,
+        "height" : 12.500000000000044
+      },
+      "type" : "TextContent",
+      "id" : "B14C34A3-928E-4BF4-8E70-D4C8953AF507",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 55,
+          "height" : 12.500000000000044,
+          "width" : 38.499999999999993,
+          "y" : 379
+        },
+        "text" : "legacy",
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'legacy'",
+      "interactions" : [
+
+      ],
+      "visualText" : "legacy",
+      "position" : {
+        "y" : 385.25,
+        "x" : 74.25
+      },
+      "confidence" : 0.5
+    },
+    {
+      "size" : {
+        "width" : 286.00000000000011,
+        "height" : 13.499999999999908
+      },
+      "ocr" : {
+        "text" : "q Grepped codebase for \"To: Hitzel Cruz\" ('.json)",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.499999999999908,
+          "x" : 1196,
+          "width" : 286.00000000000011,
+          "y" : 362.50000000000006
+        }
+      },
+      "position" : {
+        "x" : 1339,
+        "y" : 369.25
+      },
+      "id" : "3F308F6B-70E1-4546-90BF-F7B2E81CE4DD",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'q Grepped codebase for \"To: Hitzel Cruz\" ('.json)'",
+      "visualText" : "q Grepped codebase for \"To: Hitzel Cruz\" ('.json)",
+      "isClickable" : false
+    },
+    {
+      "isClickable" : false,
+      "visualText" : "Perfect! I can see the pattern. The dropdown element has visualText: \"To: H",
+      "position" : {
+        "x" : 1437.25,
+        "y" : 400.74999999999994
+      },
+      "confidence" : 0.5,
+      "id" : "D0B28418-C02C-4E3B-8C50-B2DB0F134992",
+      "semanticMeaning" : "Text content: 'Perfect! I can see the pattern. The dropdown element has visualText: \"To: H'",
+      "size" : {
+        "width" : 480.49999999999994,
+        "height" : 12.499999999999932
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.499999999999932,
+          "y" : 394.5,
+          "width" : 480.49999999999994,
+          "x" : 1197
+        },
+        "text" : "Perfect! I can see the pattern. The dropdown element has visualText: \"To: H",
+        "confidence" : 0.5
+      }
+    },
+    {
+      "id" : "5E6AA1C7-6E24-437E-8472-06940195CD93",
+      "isClickable" : true,
+      "semanticMeaning" : "Text content: 'itzel C ruz\" and the type is AXPopUpButton . Let me f ix the context detection'",
+      "actionHint" : "Clickable element",
+      "confidence" : 0.5,
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "itzel C ruz\" and the type is AXPopUpButton . Let me f ix the context detection",
+      "position" : {
+        "x" : 1433.25,
+        "y" : 420.25
+      },
+      "size" : {
+        "width" : 472.5,
+        "height" : 12.500000000000044
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1197,
+          "height" : 12.500000000000044,
+          "width" : 472.5,
+          "y" : 414
+        },
+        "text" : "itzel C ruz\" and the type is AXPopUpButton . Let me f ix the context detection",
+        "confidence" : 0.5
+      },
+      "type" : "TextContent"
+    },
+    {
+      "isClickable" : false,
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "id" : "7E807F2B-D7C3-4A6E-A9D6-FE13D66BFDF5",
+      "size" : {
+        "width" : 174,
+        "height" : 12.500000000000044
+      },
+      "semanticMeaning" : "Text content: 'code to properly extract this:'",
+      "interactions" : [
+
+      ],
+      "visualText" : "code to properly extract this:",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 433.5,
+          "width" : 174,
+          "height" : 12.500000000000044,
+          "x" : 1196.5
+        },
+        "text" : "code to properly extract this:",
+        "confidence" : 0.5
+      },
+      "position" : {
+        "x" : 1283.5,
+        "y" : 439.75
+      }
+    },
+    {
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "id" : "573DDA9E-449F-4A61-A73C-18B6A9A55929",
+      "position" : {
+        "x" : 105,
+        "y" : 473.5
+      },
+      "type" : "TextContent",
+      "visualText" : "debug_output",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 85,
+        "height" : 11.999999999999943
+      },
+      "semanticMeaning" : "Text content: 'debug_output'",
+      "ocr" : {
+        "text" : "debug_output",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 62.5,
+          "width" : 85,
+          "y" : 467.50000000000006,
+          "height" : 11.999999999999943
+        }
+      }
+    },
+    {
+      "visualText" : "E] chat_debug.txt",
+      "isClickable" : false,
+      "position" : {
+        "y" : 495.24999999999994,
+        "x" : 106.75
+      },
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12.499999999999932,
+        "width" : 109.49999999999999
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "E] chat_debug.txt",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.499999999999932,
+          "y" : 489,
+          "width" : 109.49999999999999,
+          "x" : 52
+        }
+      },
+      "confidence" : 0.5,
+      "id" : "96CA7817-F6CB-450F-805A-EFAC6F43CFC2",
+      "semanticMeaning" : "Text content: 'E] chat_debug.txt'"
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'E] gpt_ui_input.txt'",
+      "id" : "670EE37D-1C14-4467-862D-A8D0DBAE71A6",
+      "position" : {
+        "y" : 517.25,
+        "x" : 108.75
+      },
+      "size" : {
+        "width" : 113.5,
+        "height" : 12.500000000000044
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000044,
+          "width" : 113.5,
+          "y" : 510.99999999999994,
+          "x" : 52
+        },
+        "text" : "E] gpt_ui_input.txt",
+        "confidence" : 0.5
+      },
+      "visualText" : "E] gpt_ui_input.txt",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "interactions" : [
+
+      ],
+      "id" : "A4F91AC5-AA1A-4D67-A042-7669A03F22AD",
+      "type" : "TextContent",
+      "position" : {
+        "y" : 539.25,
+        "x" : 117.5
+      },
+      "semanticMeaning" : "Text content: 'E] latest_run_logs.txt'",
+      "isClickable" : false,
+      "visualText" : "E] latest_run_logs.txt",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000044,
+          "y" : 533,
+          "x" : 52,
+          "width" : 131
+        },
+        "text" : "E] latest_run_logs.txt",
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 131
+      },
+      "confidence" : 0.5
+    },
+    {
+      "isClickable" : false,
+      "size" : {
+        "width" : 160.5,
+        "height" : 12.499999999999932
+      },
+      "visualText" : "E] performance_debug.txt",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "id" : "458B544A-F985-43F7-8BB9-45135BD0BDB0",
+      "position" : {
+        "y" : 561.25,
+        "x" : 132.25
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "E] performance_debug.txt",
+        "boundingBox" : {
+          "x" : 52,
+          "height" : 12.499999999999932,
+          "y" : 555,
+          "width" : 160.5
+        }
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'E] performance_debug.txt'"
+    },
+    {
+      "semanticMeaning" : "Text content: 'gpt_engine'",
+      "position" : {
+        "y" : 583.25,
+        "x" : 96
+      },
+      "id" : "4AE84A6F-B102-4132-AC69-13E8FA15C87C",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 67.000000000000014
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "gpt_engine",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.500000000000044,
+          "x" : 62.5,
+          "y" : 577,
+          "width" : 67.000000000000014
+        },
+        "text" : "gpt_engine"
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 117.75,
+        "y" : 605.25
+      },
+      "id" : "E30A118B-6D77-4BBC-8088-4AA605C7E68D",
+      "size" : {
+        "width" : 64.5,
+        "height" : 12.499999999999932
+      },
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'pycache_'",
+      "visualText" : "pycache_",
+      "ocr" : {
+        "text" : "pycache_",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.499999999999932,
+          "y" : 599,
+          "x" : 85.5,
+          "width" : 64.5
+        }
+      },
+      "type" : "TextContent"
+    },
+    {
+      "visualText" : "gpt_computer_use.cpython-313.pyc",
+      "id" : "7F5B8859-4A9B-4436-8B13-5BE21A63DFF6",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'gpt_computer_use.cpython-313.pyc'",
+      "position" : {
+        "y" : 627.25,
+        "x" : 188.25
+      },
+      "size" : {
+        "width" : 218.5,
+        "height" : 12.500000000000044
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 218.5,
+          "height" : 12.500000000000044,
+          "y" : 621,
+          "x" : 79
+        },
+        "confidence" : 0.5,
+        "text" : "gpt_computer_use.cpython-313.pyc"
+      },
+      "type" : "TextContent"
+    },
+    {
+      "visualText" : "Pé gpt_computer_use.py",
+      "ocr" : {
+        "text" : "Pé gpt_computer_use.py",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.500000000000021,
+          "y" : 642,
+          "width" : 151.99999999999997,
+          "x" : 50
+        }
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "id" : "7045DF9D-3973-469F-A17E-AD8BF3F6CEF1",
+      "type" : "TextContent",
+      "position" : {
+        "y" : 648.75,
+        "x" : 125.99999999999999
+      },
+      "size" : {
+        "width" : 151.99999999999997,
+        "height" : 13.500000000000021
+      },
+      "semanticMeaning" : "Text content: 'Pé gpt_computer_use.py'",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "semanticMeaning" : "Text content: 'ui_inspector'",
+      "id" : "F6A433D3-97C5-4E96-B0A1-69FB045221F8",
+      "size" : {
+        "width" : 74.5,
+        "height" : 12.500000000000044
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 671.25,
+        "x" : 99.75
+      },
+      "confidence" : 0.30000001192092896,
+      "ocr" : {
+        "text" : "ui_inspector",
+        "boundingBox" : {
+          "x" : 62.5,
+          "y" : 665,
+          "width" : 74.5,
+          "height" : 12.500000000000044
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "visualText" : "ui_inspector"
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Pé main.py",
+        "boundingBox" : {
+          "width" : 67,
+          "height" : 13.500000000000021,
+          "x" : 42,
+          "y" : 686
+        }
+      },
+      "size" : {
+        "width" : 67,
+        "height" : 13.500000000000021
+      },
+      "id" : "A7AE17CE-CA68-4E89-AC26-DF3B7AD72A54",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 692.75,
+        "x" : 75.5
+      },
+      "type" : "TextContent",
+      "visualText" : "Pé main.py",
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Pé main.py'"
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "x" : 554.75,
+        "y" : 463.50000000000006
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "TASK EXECUTION ITASK 1 17505445911",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 10.999999999999966,
+          "width" : 242.5,
+          "y" : 458.00000000000006,
+          "x" : 433.5
+        }
+      },
+      "semanticMeaning" : "Text content: 'TASK EXECUTION ITASK 1 17505445911'",
+      "id" : "12EC773C-C23F-42B1-A6F6-8B8C1FB44BAB",
+      "size" : {
+        "height" : 10.999999999999966,
+        "width" : 242.5
+      },
+      "visualText" : "TASK EXECUTION ITASK 1 17505445911"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 1297.5,
+        "y" : 473.75000000000006
+      },
+      "isClickable" : false,
+      "size" : {
+        "height" : 10.499999999999979,
+        "width" : 143.99999999999991
+      },
+      "semanticMeaning" : "Text content: 'OutputManager.swift +3 -3'",
+      "ocr" : {
+        "text" : "OutputManager.swift +3 -3",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 10.499999999999979,
+          "x" : 1225.5,
+          "width" : 143.99999999999991,
+          "y" : 468.50000000000006
+        }
+      },
+      "visualText" : "OutputManager.swift +3 -3",
+      "confidence" : 0.5,
+      "id" : "1B2C39D6-8423-4FE4-A7BA-4F84F5D14823",
+      "type" : "TextContent"
+    },
+    {
+      "position" : {
+        "x" : 1463.5,
+        "y" : 506
+      },
+      "semanticMeaning" : "Text content: 'for element in windowElements I'",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "for element in windowElements I",
+        "boundingBox" : {
+          "height" : 10.999999999999966,
+          "y" : 500.5,
+          "width" : 221.99999999999989,
+          "x" : 1352.5
+        },
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 10.999999999999966,
+        "width" : 221.99999999999989
+      },
+      "id" : "E227CDAD-28F8-4A37-A72C-D690CD953B51",
+      "visualText" : "for element in windowElements I",
+      "confidence" : 0.5
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'element. visualText I'",
+      "position" : {
+        "x" : 1597,
+        "y" : 524
+      },
+      "id" : "2FC0640F-2985-4F72-B21D-C6D5F71CA8D4",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "element. visualText I",
+      "size" : {
+        "height" : 10.999999999999966,
+        "width" : 142.99999999999997
+      },
+      "ocr" : {
+        "text" : "element. visualText I",
+        "boundingBox" : {
+          "y" : 518.5,
+          "x" : 1525.5,
+          "width" : 142.99999999999997,
+          "height" : 10.999999999999966
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "\/\/ Check for \"To: [Name]\" pattern in",
+        "boundingBox" : {
+          "width" : 260.00000000000017,
+          "x" : 1409,
+          "y" : 537,
+          "height" : 11.999999999999943
+        }
+      },
+      "semanticMeaning" : "Text content: '\/\/ Check for \"To: [Name]\" pattern in'",
+      "interactions" : [
+
+      ],
+      "visualText" : "\/\/ Check for \"To: [Name]\" pattern in",
+      "id" : "A130EB6F-6658-4777-AD0F-267ED9124EB4",
+      "isClickable" : false,
+      "position" : {
+        "y" : 543,
+        "x" : 1539
+      },
+      "size" : {
+        "width" : 260.00000000000017,
+        "height" : 11.999999999999943
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'if element. type. contains (\"d ropdown\" ) 6'",
+      "isClickable" : false,
+      "visualText" : "if element. type. contains (\"d ropdown\" ) 6",
+      "id" : "717582DA-D238-42A0-8133-29DD3F9B0837",
+      "position" : {
+        "x" : 1546.25,
+        "y" : 560.75
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 554.5,
+          "width" : 271.50000000000006,
+          "height" : 12.500000000000044,
+          "x" : 1410.5
+        },
+        "text" : "if element. type. contains (\"d ropdown\" ) 6",
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 271.50000000000006
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5
+    },
+    {
+      "size" : {
+        "height" : 12.000000000000057,
+        "width" : 259.5
+      },
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 579,
+        "x" : 1539.25
+      },
+      "visualText" : "\/\/ Check for 'To: [Name]\" pattern in",
+      "id" : "EE4ADE99-F2B0-4758-BF9E-180CD0C9B4AA",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "\/\/ Check for 'To: [Name]\" pattern in",
+        "boundingBox" : {
+          "y" : 573,
+          "x" : 1409.5,
+          "height" : 12.000000000000057,
+          "width" : 259.5
+        },
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: '\/\/ Check for 'To: [Name]\" pattern in'"
+    },
+    {
+      "isClickable" : true,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'if l element. type. contains (\"PopUpButton'",
+      "visualText" : "if l element. type. contains (\"PopUpButton",
+      "confidence" : 0.5,
+      "actionHint" : "Clickable element",
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 271.50000000000006
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000044,
+          "width" : 271.50000000000006,
+          "x" : 1410.5,
+          "y" : 590.5
+        },
+        "confidence" : 0.5,
+        "text" : "if l element. type. contains (\"PopUpButton"
+      },
+      "id" : "89EC86BD-4898-4CF3-9E3B-60CB253024B1",
+      "position" : {
+        "x" : 1546.25,
+        "y" : 596.75
+      }
+    },
+    {
+      "type" : "TextContent",
+      "visualText" : "let recipient",
+      "position" : {
+        "x" : 1485.25,
+        "y" : 615
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "let recipient",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 11.999999999999943,
+          "width" : 91.499999999999943,
+          "y" : 609,
+          "x" : 1439.5
+        }
+      },
+      "isClickable" : false,
+      "id" : "CF5A99FF-5087-4745-BE19-488568DD01AD",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'let recipient'",
+      "size" : {
+        "width" : 91.499999999999943,
+        "height" : 11.999999999999943
+      }
+    },
+    {
+      "id" : "38069C8F-9088-439A-8FFE-DD0F862A3535",
+      "visualText" : "String (visualText.",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'String (visualText.'",
+      "size" : {
+        "width" : 127.49999999999997,
+        "height" : 12.499999999999932
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "String (visualText.",
+        "boundingBox" : {
+          "y" : 608.5,
+          "x" : 1553.5,
+          "width" : 127.49999999999997,
+          "height" : 12.499999999999932
+        },
+        "confidence" : 0.5
+      },
+      "position" : {
+        "y" : 614.75,
+        "x" : 1617.25
+      },
+      "type" : "TextContent",
+      "isClickable" : false
+    },
+    {
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "\"ACTIVE CHAT: X ( rec",
+        "boundingBox" : {
+          "width" : 127.49999999999997,
+          "height" : 11.00000000000008,
+          "y" : 626.5,
+          "x" : 1554.5
+        }
+      },
+      "type" : "TextContent",
+      "id" : "1E57355A-1C56-4E65-BECB-9ADADC6F856C",
+      "semanticMeaning" : "Text content: '\"ACTIVE CHAT: X ( rec'",
+      "visualText" : "\"ACTIVE CHAT: X ( rec",
+      "isClickable" : false,
+      "position" : {
+        "x" : 1618.25,
+        "y" : 632
+      },
+      "size" : {
+        "height" : 11.00000000000008,
+        "width" : 127.49999999999997
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Now let me recompile and test the enhanced context detection:",
+        "boundingBox" : {
+          "width" : 381.99999999999994,
+          "y" : 722,
+          "x" : 1197,
+          "height" : 12.500000000000044
+        }
+      },
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 381.99999999999994
+      },
+      "semanticMeaning" : "Text content: 'Now let me recompile and test the enhanced context detection:'",
+      "visualText" : "Now let me recompile and test the enhanced context detection:",
+      "position" : {
+        "y" : 728.25,
+        "x" : 1388
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "id" : "E3040779-3394-4D6D-ABBD-17CB3A144239",
+      "type" : "TextContent"
+    },
+    {
+      "confidence" : 0.5,
+      "id" : "FD4E4102-95C0-40FE-85AF-170E34006F1B",
+      "size" : {
+        "width" : 39.50000000000005,
+        "height" : 10.999999999999966
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 754.5,
+          "x" : 443,
+          "height" : 10.999999999999966,
+          "width" : 39.50000000000005
+        },
+        "text" : "Output"
+      },
+      "visualText" : "Output",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 462.75,
+        "y" : 760
+      },
+      "semanticMeaning" : "Text content: 'Output'",
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "width" : 87,
+          "height" : 11.500000000000068,
+          "x" : 503.5,
+          "y" : 754.5
+        },
+        "text" : "Debug Console"
+      },
+      "confidence" : 0.30000001192092896,
+      "semanticMeaning" : "Text content: 'Debug Console'",
+      "visualText" : "Debug Console",
+      "size" : {
+        "width" : 87,
+        "height" : 11.500000000000068
+      },
+      "id" : "D35CC2EC-5037-400D-8677-72E4DEFA1832",
+      "position" : {
+        "x" : 547,
+        "y" : 760.25
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "y" : 763,
+        "x" : 1248.75
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "id" : "1535696D-D1EC-4517-BF69-D54C840962D4",
+      "ocr" : {
+        "text" : ") .\/run.sh",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 66.499999999999886,
+          "height" : 10.999999999999966,
+          "x" : 1215.5,
+          "y" : 757.5
+        }
+      },
+      "semanticMeaning" : "Text content: ') .\/run.sh'",
+      "visualText" : ") .\/run.sh",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 10.999999999999966,
+        "width" : 66.499999999999886
+      },
+      "isClickable" : false
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "y" : 781.25,
+        "x" : 83
+      },
+      "semanticMeaning" : "Text content: '.gitignore'",
+      "visualText" : ".gitignore",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 55.999999999999993,
+          "height" : 12.500000000000044,
+          "x" : 55,
+          "y" : 775
+        },
+        "text" : ".gitignore"
+      },
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 55.999999999999993
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "id" : "409B75B0-A01E-484A-8EB4-5E668C74234D"
+    },
+    {
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "Pé debug_coordinates.py",
+      "id" : "4E9F0840-03B2-4DA7-BCD3-BA4A17BFA0B7",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "ocr" : {
+        "text" : "Pé debug_coordinates.py",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 796,
+          "width" : 155.5,
+          "height" : 13.500000000000021,
+          "x" : 34
+        }
+      },
+      "position" : {
+        "x" : 111.75,
+        "y" : 802.75
+      },
+      "semanticMeaning" : "Text content: 'Pé debug_coordinates.py'",
+      "size" : {
+        "width" : 155.5,
+        "height" : 13.500000000000021
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'default.prof raw'",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12.499999999999932,
+        "width" : 91.500000000000014
+      },
+      "position" : {
+        "y" : 825.25,
+        "x" : 100.25
+      },
+      "visualText" : "default.prof raw",
+      "confidence" : 0.5,
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 91.500000000000014,
+          "x" : 54.5,
+          "height" : 12.499999999999932,
+          "y" : 819
+        },
+        "confidence" : 0.5,
+        "text" : "default.prof raw"
+      },
+      "id" : "ED7437EE-6D4F-496B-BC11-978F4961BA0A",
+      "isClickable" : false
+    },
+    {
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 699.25,
+        "y" : 797.25
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Touch \/Users\/ richardshaw\/augment\/build\/Build\/Products\/Debug\/augment. app l in target ' augment'",
+      "id" : "3A00AB01-7FB8-4094-98DF-2759C477BCA5",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 662.50000000000011,
+        "height" : 12.499999999999932
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 368,
+          "y" : 791,
+          "width" : 662.50000000000011,
+          "height" : 12.499999999999932
+        },
+        "text" : "Touch \/Users\/ richardshaw\/augment\/build\/Build\/Products\/Debug\/augment. app l in target ' augment'"
+      },
+      "semanticMeaning" : "Text content: 'Touch \/Users\/ richardshaw\/augment\/build\/Build\/Products\/Debug\/augment. app l in target ' augment''"
+    },
+    {
+      "size" : {
+        "height" : 12.499999999999932,
+        "width" : 163.00000000000003
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "id" : "F0DF8621-2437-4CFC-A3D5-CF9EC0A665FA",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'f rom pro ject ' augment' )'",
+      "visualText" : "f rom pro ject ' augment' )",
+      "ocr" : {
+        "text" : "f rom pro ject ' augment' )",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 369,
+          "y" : 805,
+          "width" : 163.00000000000003,
+          "height" : 12.499999999999932
+        }
+      },
+      "position" : {
+        "y" : 811.25,
+        "x" : 450.5
+      }
+    },
+    {
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'cd \/Users\/richa rdshaw\/augment'",
+      "visualText" : "cd \/Users\/richa rdshaw\/augment",
+      "size" : {
+        "width" : 207.49999999999994,
+        "height" : 11.999999999999943
+      },
+      "type" : "TextContent",
+      "position" : {
+        "x" : 501.75,
+        "y" : 825.5
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 398,
+          "y" : 819.5,
+          "width" : 207.49999999999994,
+          "height" : 11.999999999999943
+        },
+        "text" : "cd \/Users\/richa rdshaw\/augment"
+      },
+      "interactions" : [
+
+      ],
+      "id" : "A2C0A5C0-B304-4191-9BEA-79DD6A135DF5"
+    },
+    {
+      "position" : {
+        "x" : 697,
+        "y" : 839.5
+      },
+      "semanticMeaning" : "Text content: '\/us r\/bin\/touch -c \/Users\/richa rdshaw\/augment\/build\/Build\/Products\/Debug\/augment. app'",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 598.99999999999989,
+        "height" : 11.999999999999943
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 833.5,
+          "width" : 598.99999999999989,
+          "height" : 11.999999999999943,
+          "x" : 397.5
+        },
+        "confidence" : 0.5,
+        "text" : "\/us r\/bin\/touch -c \/Users\/richa rdshaw\/augment\/build\/Build\/Products\/Debug\/augment. app"
+      },
+      "confidence" : 0.5,
+      "id" : "ACA4781B-3493-4BF7-9833-06A70B48552B",
+      "visualText" : "\/us r\/bin\/touch -c \/Users\/richa rdshaw\/augment\/build\/Build\/Products\/Debug\/augment. app"
+    },
+    {
+      "confidence" : 0.5,
+      "size" : {
+        "height" : 10.499999999999979,
+        "width" : 118.99999999999984
+      },
+      "type" : "TextContent",
+      "id" : "A6B2D186-2773-41B3-8A7A-B89F44305BA3",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'O Move to background'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1471.5,
+          "y" : 781.5,
+          "width" : 118.99999999999984,
+          "height" : 10.499999999999979
+        },
+        "text" : "O Move to background"
+      },
+      "visualText" : "O Move to background",
+      "position" : {
+        "y" : 786.75,
+        "x" : 1531
+      }
+    },
+    {
+      "confidence" : 0.30000001192092896,
+      "interactions" : [
+
+      ],
+      "visualText" : "41<J Skip Q",
+      "semanticMeaning" : "Text content: '41<J Skip Q'",
+      "type" : "TextContent",
+      "id" : "3658956C-FBAA-48A2-9FB3-F5BEE46D49DA",
+      "position" : {
+        "x" : 1640,
+        "y" : 786.75
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "41<J Skip Q",
+        "boundingBox" : {
+          "height" : 10.499999999999979,
+          "y" : 781.5,
+          "x" : 1610,
+          "width" : 59.999999999999979
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "size" : {
+        "height" : 10.499999999999979,
+        "width" : 59.999999999999979
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 863,
+          "width" : 109.50000000000001,
+          "height" : 12.499999999999932,
+          "x" : 55
+        },
+        "text" : "package-lock.json"
+      },
+      "confidence" : 0.5,
+      "id" : "DD7EBF60-8C6B-4239-B886-20B93D090CE3",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'package-lock.json'",
+      "size" : {
+        "height" : 12.499999999999932,
+        "width" : 109.50000000000001
+      },
+      "position" : {
+        "x" : 109.75,
+        "y" : 869.25
+      },
+      "visualText" : "package-lock.json",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'package.json'",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 891.25,
+        "x" : 94.25
+      },
+      "visualText" : "package.json",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 78.5,
+        "height" : 12.500000000000044
+      },
+      "id" : "8D35BB9A-F960-49C7-8A01-777E24E83EE5",
+      "ocr" : {
+        "text" : "package.json",
+        "boundingBox" : {
+          "y" : 885,
+          "width" : 78.5,
+          "height" : 12.500000000000044,
+          "x" : 55
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'RegisterWithLaunchServices \/Users\/ richa rdshaw\/augment\/build\/Build\/Products\/Debug\/augment. app'",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "visualText" : "RegisterWithLaunchServices \/Users\/ richa rdshaw\/augment\/build\/Build\/Products\/Debug\/augment. app",
+      "id" : "1CCB05BF-026A-4C39-BA6E-42BC2C083313",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 664.5,
+          "height" : 12.000000000000057,
+          "y" : 861.5,
+          "x" : 368.5
+        },
+        "text" : "RegisterWithLaunchServices \/Users\/ richa rdshaw\/augment\/build\/Build\/Products\/Debug\/augment. app",
+        "confidence" : 0.5
+      },
+      "size" : {
+        "width" : 664.5,
+        "height" : 12.000000000000057
+      },
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 867.5,
+        "x" : 700.75
+      }
+    },
+    {
+      "position" : {
+        "x" : 527,
+        "y" : 881.25
+      },
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 314
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000044,
+          "width" : 314,
+          "x" : 370,
+          "y" : 875
+        },
+        "confidence" : 0.5,
+        "text" : "lin target 'augment' from project 'augment' )"
+      },
+      "semanticMeaning" : "Text content: 'lin target 'augment' from project 'augment' )'",
+      "id" : "18A6D996-4F6B-44FD-849D-5A22221F7B07",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "isClickable" : false,
+      "visualText" : "lin target 'augment' from project 'augment' )"
+    },
+    {
+      "type" : "TextContent",
+      "size" : {
+        "width" : 207.49999999999994,
+        "height" : 12.000000000000057
+      },
+      "position" : {
+        "x" : 501.75,
+        "y" : 895.5
+      },
+      "interactions" : [
+
+      ],
+      "id" : "A099C4AD-6E9A-4EF4-8EBB-90313670A46F",
+      "semanticMeaning" : "Text content: 'cd \/Users\/richa rdshaw\/augment'",
+      "ocr" : {
+        "text" : "cd \/Users\/richa rdshaw\/augment",
+        "boundingBox" : {
+          "x" : 398,
+          "y" : 889.5,
+          "width" : 207.49999999999994,
+          "height" : 12.000000000000057
+        },
+        "confidence" : 0.5
+      },
+      "visualText" : "cd \/Users\/richa rdshaw\/augment",
+      "confidence" : 0.5,
+      "isClickable" : false
+    },
+    {
+      "id" : "6BE80E33-FA95-456A-8C69-045EB1B0AC6F",
+      "position" : {
+        "x" : 718.75,
+        "y" : 909.5
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 642.5,
+        "height" : 12.000000000000057
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "\/System\/Libra ry\/Frameworks\/CoreServices. f ramework\/Versions\/Current\/Frameworks\/LaunchServi",
+        "boundingBox" : {
+          "width" : 642.5,
+          "height" : 12.000000000000057,
+          "y" : 903.5,
+          "x" : 397.5
+        }
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '\/System\/Libra ry\/Frameworks\/CoreServices. f ramework\/Versions\/Current\/Frameworks\/LaunchServi'",
+      "type" : "TextContent",
+      "visualText" : "\/System\/Libra ry\/Frameworks\/CoreServices. f ramework\/Versions\/Current\/Frameworks\/LaunchServi"
+    },
+    {
+      "isClickable" : false,
+      "position" : {
+        "x" : 704.5,
+        "y" : 923.5
+      },
+      "id" : "D35CA7EB-633A-4185-B353-4AFDFF111055",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 671,
+        "height" : 12.000000000000057
+      },
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "ces. f ramework\/Versions\/Current\/Suppo rt\/ls register -f -R -t rusted \/Users\/richa rdshaw\/augment\/b",
+      "semanticMeaning" : "Text content: 'ces. f ramework\/Versions\/Current\/Suppo rt\/ls register -f -R -t rusted \/Users\/richa rdshaw\/augment\/b'",
+      "ocr" : {
+        "text" : "ces. f ramework\/Versions\/Current\/Suppo rt\/ls register -f -R -t rusted \/Users\/richa rdshaw\/augment\/b",
+        "boundingBox" : {
+          "width" : 671,
+          "y" : 917.5,
+          "x" : 369,
+          "height" : 12.000000000000057
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'uild\/Build\/Products\/Debug\/augment. app'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 266,
+          "height" : 12.000000000000057,
+          "x" : 369,
+          "y" : 931.5
+        },
+        "confidence" : 0.5,
+        "text" : "uild\/Build\/Products\/Debug\/augment. app"
+      },
+      "id" : "CD150534-5CFD-4ABC-8ADB-E05944EAA3D7",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 502,
+        "y" : 937.5
+      },
+      "visualText" : "uild\/Build\/Products\/Debug\/augment. app",
+      "isClickable" : false,
+      "size" : {
+        "height" : 12.000000000000057,
+        "width" : 266
+      }
+    },
+    {
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '> Generating'",
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "> Generating",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 10.499999999999979,
+          "x" : 1207,
+          "y" : 893,
+          "width" : 68.499999999999929
+        }
+      },
+      "id" : "D92E449D-0705-49B0-9759-9A02C6E8333F",
+      "position" : {
+        "y" : 898.25,
+        "x" : 1241.25
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "> Generating",
+      "size" : {
+        "height" : 10.499999999999979,
+        "width" : 68.499999999999929
+      }
+    },
+    {
+      "isClickable" : false,
+      "position" : {
+        "y" : 898.75,
+        "x" : 1596.75
+      },
+      "type" : "TextContent",
+      "visualText" : "Stop Accept all 2g£J",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "height" : 10.499999999999979,
+          "width" : 148.49999999999994,
+          "y" : 893.5,
+          "x" : 1522.5
+        },
+        "text" : "Stop Accept all 2g£J"
+      },
+      "semanticMeaning" : "Text content: 'Stop Accept all 2g£J'",
+      "id" : "3AED2172-2F6B-4083-B363-2EDB4EC186E9",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 10.499999999999979,
+        "width" : 148.49999999999994
+      },
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "size" : {
+        "width" : 98,
+        "height" : 12.499999999999932
+      },
+      "semanticMeaning" : "Text content: 'requirements.txt'",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "id" : "F41712BF-45E8-4C8A-AB83-529C7333BC36",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 935.25,
+        "x" : 104
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "requirements.txt",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 55,
+          "width" : 98,
+          "y" : 929,
+          "height" : 12.499999999999932
+        }
+      },
+      "visualText" : "requirements.txt"
+    },
+    {
+      "id" : "70C7C806-E326-4D4C-AD7D-6FB445B65D7D",
+      "visualText" : "Pé test_ollama.py",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Pé test_ollama.py",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 950,
+          "x" : 34,
+          "width" : 108,
+          "height" : 13.500000000000021
+        }
+      },
+      "position" : {
+        "y" : 956.75,
+        "x" : 88
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 13.500000000000021,
+        "width" : 108
+      },
+      "semanticMeaning" : "Text content: 'Pé test_ollama.py'"
+    },
+    {
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'Agent xI'",
+      "id" : "9A7F6DB4-A181-4A82-B87F-E0F1DE46331D",
+      "size" : {
+        "width" : 47.500000000000128,
+        "height" : 10.499999999999979
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "Agent xI",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 47.500000000000128,
+          "y" : 983.5,
+          "x" : 1217,
+          "height" : 10.499999999999979
+        }
+      },
+      "visualText" : "Agent xI",
+      "position" : {
+        "y" : 988.75,
+        "x" : 1240.75
+      },
+      "isClickable" : false
+    },
+    {
+      "size" : {
+        "height" : 11.999999999999943,
+        "width" : 126.5
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 390.5,
+          "width" : 126.5,
+          "height" : 11.999999999999943,
+          "y" : 987.5
+        },
+        "text" : "Launching augment."
+      },
+      "position" : {
+        "x" : 453.75,
+        "y" : 993.5
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "id" : "48463154-A5FC-46B9-8030-2DD136FA34FE",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Launching augment.'",
+      "visualText" : "Launching augment."
+    },
+    {
+      "id" : "7D3C2AA4-596A-4568-94D6-7291A21248DF",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'augment git: (main) x'",
+      "position" : {
+        "y" : 1007.25,
+        "x" : 461.75
+      },
+      "size" : {
+        "width" : 143.5,
+        "height" : 12.499999999999932
+      },
+      "visualText" : "augment git: (main) x",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "augment git: (main) x",
+        "boundingBox" : {
+          "width" : 143.5,
+          "height" : 12.499999999999932,
+          "x" : 390,
+          "y" : 1001
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "visualText" : " main*",
+      "confidence" : 0.60000001192092889,
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "focused" : false,
+        "title" : null
+      },
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "text" : "Sg main",
+        "boundingBox" : {
+          "width" : 42,
+          "y" : 1038,
+          "x" : 61.5,
+          "height" : 14.000000000000009
+        }
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "AXStaticText with text 'Sg main'",
+      "position" : {
+        "x" : 82.5,
+        "y" : 1045
+      },
+      "size" : {
+        "width" : 42,
+        "height" : 14.000000000000009
+      },
+      "isClickable" : false,
+      "id" : "245E12FB-D438-4626-BA9E-CAE7C06A6650",
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "visualText" : "* Tr gb (fy<fLaunchpad ooLo (AlI)o",
+      "id" : "B8BA1EB3-8B4A-4620-B796-91DCD72DBE81",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.500000000000044,
+          "y" : 1039,
+          "width" : 272.5,
+          "x" : 105
+        },
+        "text" : "* Tr gb (fy<fLaunchpad ooLo (AlI)o"
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '* Tr gb (fy<fLaunchpad ooLo (AlI)o'",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 241.25,
+        "y" : 1045.25
+      },
+      "size" : {
+        "width" : 272.5,
+        "height" : 12.500000000000044
+      }
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "size" : {
+        "height" : 12.500000000000044,
+        "width" : 368
+      },
+      "isClickable" : false,
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "description" : "LF",
+        "title" : null,
+        "role" : "AXGroup",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "58D0BA06-736E-4199-9B66-CAE7ADEE1445",
+      "semanticMeaning" : "AXGroup with text 'Ln 24, Col 1 Spaces: 4 UTF-8 LF Plain Text O Prettier'",
+      "visualText" : "Ln 24, Col 1 Spaces: 4 UTF-8 LF Plain Text O Prettier",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 368,
+          "height" : 12.500000000000044,
+          "x" : 1288,
+          "y" : 1039
+        },
+        "confidence" : 0.5,
+        "text" : "Ln 24, Col 1 Spaces: 4 UTF-8 LF Plain Text O Prettier"
+      },
+      "position" : {
+        "x" : 1472,
+        "y" : 1045.25
+      },
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "semanticMeaning" : "Go Back (⌃-)",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "actionHint" : "Click Go Back (⌃-)",
+      "id" : "6CC072D4-C856-4922-B0BA-5DED729AA3CC",
+      "accessibility" : {
+        "description" : "Go Back (⌃-)",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 45,
+        "x" : 578
+      },
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      }
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 45,
+        "x" : 604
+      },
+      "semanticMeaning" : "Go Forward (⌃⇧-)",
+      "isClickable" : true,
+      "id" : "D4052A0B-2561-47E5-8843-5D26BFE82939",
+      "actionHint" : "Click Go Forward (⌃⇧-)",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : false,
+        "title" : null,
+        "focused" : false,
+        "description" : "Go Forward (⌃⇧-)",
+        "role" : "AXButton"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "id" : "4EAF1F60-2A03-4461-88A8-5668717784E0",
+      "size" : {
+        "height" : 22,
+        "width" : 72
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "position" : {
+        "x" : 851,
+        "y" : 45
+      },
+      "semanticMeaning" : "AXButton",
+      "actionHint" : "Clickable element",
+      "type" : "AXButton",
+      "accessibility" : {
+        "title" : "augment",
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Click Toggle Primary Side Bar (⌘B)",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "role" : "AXCheckBox",
+        "title" : null,
+        "focused" : false,
+        "description" : "Toggle Primary Side Bar (⌘B)",
+        "enabled" : true
+      },
+      "id" : "0A9FAAA3-6CB3-4E2B-BE50-41FB609BC159",
+      "semanticMeaning" : "Toggle Primary Side Bar (⌘B)",
+      "isClickable" : true,
+      "type" : "AXCheckBox",
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "position" : {
+        "x" : 1589,
+        "y" : 45
+      }
+    },
+    {
+      "position" : {
+        "x" : 1615,
+        "y" : 45
+      },
+      "actionHint" : "Click Toggle Panel (⌘J)",
+      "accessibility" : {
+        "role" : "AXCheckBox",
+        "title" : null,
+        "enabled" : true,
+        "description" : "Toggle Panel (⌘J)",
+        "focused" : false
+      },
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "Toggle Panel (⌘J)",
+      "id" : "437A8C98-C1E7-4BEC-B60A-67A6B73F18D3",
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true
+    },
+    {
+      "actionHint" : "Click Toggle AI Pane (⌥⌘B)",
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "x" : 1641,
+        "y" : 45
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "enabled" : true,
+        "description" : "Toggle AI Pane (⌥⌘B)",
+        "role" : "AXCheckBox"
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "F4F680C3-3C38-43CC-996D-9C4361201756",
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "Toggle AI Pane (⌥⌘B)"
+    },
+    {
+      "actionHint" : "Click Open Cursor Settings (⇧⌘J)",
+      "position" : {
+        "y" : 45,
+        "x" : 1667
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "semanticMeaning" : "Open Cursor Settings (⇧⌘J)",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXCheckBox",
+      "isClickable" : true,
+      "id" : "8F7EEFDC-BABC-4DA3-A08E-F67777117B3C",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Open Cursor Settings (⇧⌘J)",
+        "role" : "AXCheckBox",
+        "title" : null,
+        "focused" : false
+      },
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      }
+    },
+    {
+      "id" : "FFC15CE4-CE14-4F94-973D-E14822DD43E2",
+      "type" : "AXRadioButton",
+      "size" : {
+        "height" : 22,
+        "width" : 179
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Specify actual model in logs",
+      "isClickable" : true,
+      "position" : {
+        "y" : 81,
+        "x" : 1190
+      },
+      "semanticMeaning" : "Specify actual model in logs",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXRadioButton",
+        "description" : "Specify actual model in logs",
+        "enabled" : true
+      }
+    },
+    {
+      "id" : "672C4D14-1374-4038-9B04-6F55AF64F1BE",
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "semanticMeaning" : "New Chat (⌘N) [⌥] New Tab (⌘T)",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "New Chat (⌘N) [⌥] New Tab (⌘T)"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "position" : {
+        "x" : 1573,
+        "y" : 81
+      },
+      "actionHint" : "Click New Chat (⌘N) [⌥] New Tab (⌘T)",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "id" : "E918A8E8-DF21-4BB2-99A0-65249A4F8169",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Show Background Agents (⌘E)",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "actionHint" : "Click Show Background Agents (⌘E)",
+      "accessibility" : {
+        "description" : "Show Background Agents (⌘E)",
+        "title" : null,
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 1597,
+        "y" : 81
+      }
+    },
+    {
+      "position" : {
+        "x" : 1621,
+        "y" : 81
+      },
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "accessibility" : {
+        "description" : "Show Chat History (⌥⌘')",
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Show Chat History (⌥⌘')",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Show Chat History (⌥⌘')",
+      "type" : "AXButton",
+      "id" : "42B023D7-9926-4D43-9243-25EA8A775FBC"
+    },
+    {
+      "id" : "E94EEE45-F51A-4863-B19D-FCC23F7164E8",
+      "position" : {
+        "x" : 1645,
+        "y" : 81
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "description" : "Close, Export, Settings and More...",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "type" : "AXPopUpButton",
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "actionHint" : "Click Close, Export, Settings and More...",
+      "semanticMeaning" : "Close, Export, Settings and More..."
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Close AI Sidebar",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Close AI Sidebar",
+        "title" : null
+      },
+      "actionHint" : "Click Close AI Sidebar",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1669,
+        "y" : 81
+      },
+      "id" : "C1555259-3BDE-4015-B000-EB83B9D601E8",
+      "isClickable" : true
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 34
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "B44A62C1-875E-40C7-BF98-A3E646EE50B4",
+      "isClickable" : true,
+      "actionHint" : "Click remote",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1034,
+        "x" : 20
+      },
+      "semanticMeaning" : "remote",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "remote",
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true
+      }
+    },
+    {
+      "isClickable" : true,
+      "position" : {
+        "y" : 1034,
+        "x" : 57
+      },
+      "semanticMeaning" : "augment (Git) - main*, Checkout Branch\/Tag...",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "size" : {
+        "height" : 22,
+        "width" : 57
+      },
+      "actionHint" : "Click augment (Git) - main*, Checkout Branch\/Tag...",
+      "id" : "02AFA047-9EE1-4822-9D58-97E2FD45603F",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null,
+        "description" : "augment (Git) - main*, Checkout Branch\/Tag...",
+        "enabled" : true
+      }
+    },
+    {
+      "actionHint" : "Click augment (Git) - Synchronize Changes",
+      "id" : "148F9153-B828-48B8-808C-F5DCDC86E152",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "augment (Git) - Synchronize Changes",
+        "title" : null,
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "position" : {
+        "x" : 113,
+        "y" : 1034
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 21
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "augment (Git) - Synchronize Changes"
+    },
+    {
+      "id" : "55F9F3C9-3C46-4082-BAE5-569737597541",
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Show the GitLens Commit Graph",
+        "title" : null,
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 139,
+        "y" : 1034
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 25,
+        "height" : 22
+      },
+      "semanticMeaning" : "Show the GitLens Commit Graph",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Show the GitLens Commit Graph",
+      "type" : "AXButton"
+    },
+    {
+      "type" : "AXButton",
+      "actionHint" : "Click rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ    &mdash;     [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 \"Settings\")  |  [$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 \"Hide\") --- Launchpad organizes your pull requests into actionable groups to help you focus and keep your team unblocked. It's always accessible using the `GitLens: Open Launchpad` command from the Command Palette. --- [Connect an integration](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D \"Connect an integration\") to get started.",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ    &mdash;     [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 \"Settings\")  |  [$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 \"Hide\") --- Launchpad organizes your pull requests into actionable groups to help you focus and keep your team unblocked. It's always accessible using the `GitLens: Open Launchpad` command from the Command Palette. --- [Connect an integration](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D \"Connect an integration\") to get started.",
+      "id" : "74D386F0-39F3-4483-B11B-E6B887FAF384",
+      "position" : {
+        "y" : 1034,
+        "x" : 169
+      },
+      "size" : {
+        "width" : 104,
+        "height" : 22
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : "rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ    &mdash;     [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 \"Settings\")  |  [$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 \"Hide\") --- Launchpad organizes your pull requests into actionable groups to help you focus and keep your team unblocked. It's always accessible using the `GitLens: Open Launchpad` command from the Command Palette. --- [Connect an integration](command:gitlens.showLaunchpad?%7B%22source%22%3A%22launchpad-indicator%22%7D \"Connect an integration\") to get started.",
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false
+      }
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "description" : "No Problems",
+        "role" : "AXButton"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "C77C5426-DC20-4207-8616-CDC113C0EC3A",
+      "position" : {
+        "y" : 1034,
+        "x" : 279
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 64,
+        "height" : 22
+      },
+      "semanticMeaning" : "No Problems",
+      "actionHint" : "Click No Problems"
+    },
+    {
+      "isClickable" : true,
+      "semanticMeaning" : "No Ports Forwarded",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1034,
+        "x" : 348
+      },
+      "id" : "6B2E9EF7-0E8A-40E7-9707-E33160CCD461",
+      "size" : {
+        "height" : 22,
+        "width" : 36
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click No Ports Forwarded",
+      "type" : "AXButton",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "No Ports Forwarded",
+        "title" : null,
+        "role" : "AXButton",
+        "enabled" : true
+      }
+    },
+    {
+      "size" : {
+        "width" : 24,
+        "height" : 22
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "1DFB3699-0490-4F92-842C-2E746D94938D",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 1667,
+        "y" : 1034
+      },
+      "semanticMeaning" : "Notifications",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Notifications",
+        "title" : null,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "actionHint" : "Click Notifications"
+    },
+    {
+      "id" : "7CFE0A62-E095-46C0-8E8C-48682BF6B666",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "circle-slash Prettier",
+      "actionHint" : "Click circle-slash Prettier",
+      "position" : {
+        "x" : 1592,
+        "y" : 1034
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 69
+      },
+      "accessibility" : {
+        "description" : "circle-slash Prettier",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "semanticMeaning" : "Plain Text",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1521,
+        "y" : 1034
+      },
+      "accessibility" : {
+        "description" : "Plain Text",
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "id" : "DBC7304D-9D87-4E02-A598-A8E599C136C1",
+      "size" : {
+        "height" : 22,
+        "width" : 65
+      },
+      "actionHint" : "Click Plain Text"
+    },
+    {
+      "isClickable" : true,
+      "position" : {
+        "x" : 1439,
+        "y" : 1034
+      },
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "UTF-8"
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "UTF-8",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "1DFA24F7-B039-447F-9312-CEF826861801",
+      "actionHint" : "Click UTF-8",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 47,
+        "height" : 22
+      }
+    },
+    {
+      "position" : {
+        "x" : 1367,
+        "y" : 1034
+      },
+      "id" : "BE56B7BF-3732-4679-837B-6C2EA130E955",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "semanticMeaning" : "Spaces: 4",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "description" : "Spaces: 4",
+        "focused" : false
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 67
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Spaces: 4"
+    },
+    {
+      "actionHint" : "Click Ln 24, Col 1",
+      "position" : {
+        "x" : 1282,
+        "y" : 1034
+      },
+      "isClickable" : true,
+      "size" : {
+        "height" : 22,
+        "width" : 80
+      },
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXButton",
+        "description" : "Ln 24, Col 1",
+        "enabled" : true,
+        "focused" : false
+      },
+      "semanticMeaning" : "Ln 24, Col 1",
+      "id" : "7D9B8555-A57C-45B3-9923-41F10F7C460B",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton"
+    },
+    {
+      "id" : "8B49B07C-8822-46DF-8186-3511ABDFA927",
+      "position" : {
+        "y" : 1034,
+        "x" : 1205
+      },
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Click Cursor Tab",
+      "size" : {
+        "width" : 72,
+        "height" : 22
+      },
+      "semanticMeaning" : "Cursor Tab",
+      "accessibility" : {
+        "description" : "Cursor Tab",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "id" : "601C59DF-C0BF-4837-A773-C14569977E4C",
+      "interactions" : [
+        "click"
+      ],
+      "semanticMeaning" : "Menu bar item: Apple",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "visualText" : "Apple",
+      "actionHint" : "Click Apple",
+      "type" : "appMenu",
+      "isClickable" : true,
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "confidence" : 0.94999999999999996
+    },
+    {
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "semanticMeaning" : "Menu bar item: Cursor",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Cursor",
+      "isClickable" : true,
+      "actionHint" : "Click Cursor",
+      "id" : "18BE9A33-C0EB-4208-A9B4-319E730971C6",
+      "type" : "appMenu"
+    },
+    {
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "type" : "appMenu",
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: File",
+      "visualText" : "File",
+      "actionHint" : "Click File",
+      "isClickable" : true,
+      "id" : "A0FAB18F-8C08-4563-A23D-839DE33BB23A",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      }
+    },
+    {
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "semanticMeaning" : "Menu bar item: Edit",
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "80FE4F27-0763-4323-A9D8-A349A35D732D",
+      "type" : "appMenu",
+      "actionHint" : "Click Edit",
+      "visualText" : "Edit",
+      "isClickable" : true
+    },
+    {
+      "actionHint" : "Click Selection",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "isClickable" : true,
+      "id" : "F6F162FD-747C-4094-889A-E69CACFCFEA4",
+      "confidence" : 0.94999999999999996,
+      "type" : "appMenu",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "semanticMeaning" : "Menu bar item: Selection",
+      "visualText" : "Selection"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "View",
+      "id" : "E8B0225B-EF33-4556-8ED2-7C4384C61C93",
+      "isClickable" : true,
+      "actionHint" : "Click View",
+      "confidence" : 0.94999999999999996,
+      "type" : "appMenu",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "semanticMeaning" : "Menu bar item: View"
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: Go",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "isClickable" : true,
+      "visualText" : "Go",
+      "id" : "BE6F97A4-E8F9-4DA7-955D-7D5BD8BB4E3C",
+      "actionHint" : "Click Go"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Click Run",
+      "type" : "appMenu",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Run",
+      "id" : "B9CFB5B8-F643-4B9F-8C74-603B729E53AF",
+      "semanticMeaning" : "Menu bar item: Run"
+    },
+    {
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "visualText" : "Terminal",
+      "type" : "appMenu",
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Terminal",
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.94999999999999996,
+      "id" : "B76BA24A-8646-4365-A4BB-3116278CF69D",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "actionHint" : "Click Terminal"
+    },
+    {
+      "id" : "D16872A5-FFFB-4E45-8C05-4ABE7D0F1B5A",
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Window",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "type" : "appMenu",
+      "actionHint" : "Click Window",
+      "semanticMeaning" : "Menu bar item: Window",
+      "isClickable" : true
+    }
+  ],
+  "systemContext" : {
+    "activeApplication" : {
+      "bundleIdentifier" : "com.todesktop.230313mzl4w4u92",
+      "name" : "Cursor"
+    },
+    "menuItems" : [
+      {
+        "menuBarPosition" : "M-M1",
+        "title" : "Apple",
+        "index" : 0,
+        "type" : "appMenu",
+        "isSystemWide" : false
+      },
+      {
+        "menuBarPosition" : "M-M2",
+        "index" : 1,
+        "isSystemWide" : false,
+        "title" : "Cursor",
+        "type" : "appMenu"
+      },
+      {
+        "title" : "File",
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M3",
+        "index" : 2,
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M4",
+        "index" : 3,
+        "title" : "Edit",
+        "isSystemWide" : false
+      },
+      {
+        "isSystemWide" : false,
+        "menuBarPosition" : "M-M5",
+        "index" : 4,
+        "title" : "Selection",
+        "type" : "appMenu"
+      },
+      {
+        "menuBarPosition" : "M-M6",
+        "title" : "View",
+        "index" : 5,
+        "type" : "appMenu",
+        "isSystemWide" : false
+      },
+      {
+        "menuBarPosition" : "M-M7",
+        "title" : "Go",
+        "index" : 6,
+        "type" : "appMenu",
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "title" : "Run",
+        "menuBarPosition" : "M-M8",
+        "index" : 7,
+        "isSystemWide" : false
+      },
+      {
+        "menuBarPosition" : "M-M9",
+        "title" : "Terminal",
+        "index" : 8,
+        "isSystemWide" : false,
+        "type" : "appMenu"
+      },
+      {
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M10",
+        "title" : "Window",
+        "index" : 9
+      }
+    ],
+    "timestamp" : "2025-06-21T22:32:45Z"
+  },
+  "compressedOutput" : "Cursor|1681x1017|menu:Apple@M-M1,menu:Cursor@M-M2,menu:File@M-M3,menu:Edit@M-M4,menu:Selectio@M-M5,menu:View@M-M6,menu:Go@M-M7,menu:Run@M-M8,menu:Terminal@M-M9,menu:Window@M-M10,btn:Button (config)@A-E50,btn:remote@A-A50,btn:Cursor Tab (tab)@A-AD50,btn:Ln 24, Col 1@A-AE50,btn:Spaces: 4@A-AG50,btn:UTF-8@A-AI50,btn:Plain Text@A-AK50,btn:Button (tab)@A-AL3,btn:Button (nav)@A-AL4,btn:Button@A-AM3,btn:Button@A-AM50,btn:Close AI Sidebar@A-AN3,btn:Notifications@A-AN50,btn:Button@A-B50,btn:Button@A-C50,btn:Button@A-D50,btn:No Problems@A-G50,btn:No Ports Forwarded (nav)@A-I50,btn:Go Back (⌃-) (nav)@A-N1,btn:Go Forward (⌃⇧-) (nav)@A-O1,btn:augment@A-U1,txt:TextContent@A-AL9,txt:TextContent@A-AN20,txt:TextContent@A-AO28,radio:RadioButton@A-AD3,checkbox:CheckBox@A-AL1,checkbox:Toggle AI Pane (⌥⌘B)@A-AM1,checkbox:CheckBox@A-AN1,txt:TextContent@A-AC40,txt:TextContent@A-AD44,txt:TextContent@A-AE42,txt:TextContent@A-AH14,txt:TextContent@A-AJ13,txt:TextContent@A-AJ18,txt:TextContent@A-AK6,txt:TextContent@A-AL7,txt:TextContent@A-AM11,txt:TextContent@A-AO12,txt:TextContent@A-Q44,txt:TextContent@A-Y38,txt:LF@A-AO50,txt:TextContent@A-AJ35,txt:TextContent@A-AM16,txt:TextContent@A-AK17,txt:TextContent@A-AM26,txt:TextContent@A-M5,txt:TextContent@A-O42,txt:TextContent@A-AH21,txt:TextContent@A-AJ24,txt:TextContent@A-AK25,txt:TextContent@A-AK27,txt:TextContent@A-G30,txt:TextContent@A-K50,txt:TextContent@A-M43,txt:TextContent@A-M45,txt:TextContent@A-N39,txt:TextContent@A-O22,txt:TextContent@A-D26,txt:TextContent@A-D31,txt:TextContent@A-D38,txt:TextContent@A-K39,txt:TextContent@A-T3,txt:TextContent@A-AF8,txt:TextContent@A-AG22,txt:TextContent@A-AG3,txt:O Move to background@A-AL38,txt:TextContent@A-AM25,txt:Stop Accept all 2g£J@A-AN43,txt:TextContent@A-AO30,txt:TextContent@A-E25,txt:tg P &9 &°@A-E3,txt:augment.entitlements@A-E9,txt:TextContent@A-L48,txt:TextContent@A-O3,txt:TextContent@A-Y3,txt:M+ REAI to@A-AA3,txt:> Generating@A-AD43,txt:' s Kiddos@A-Dll )@A-AE10,txt:) .\/run.sh@A-AE36,txt:let recipient@A-AJ29,txt:41<J Skip Q@A-AN38,txt:String (visualText.@A-AO29,txt:augmentTests@A-B14,txt:gpt_engine@A-B28,txt:ui_inspector@A-C32,txt:Pé main.py@A-C33,txt:.gitignore@A-C37,txt:package.json@A-C43,txt:augmentApp.swift@A-D10,txt:ContentView.swift@A-D11,txt:augment.xcodeproj@A-D12,txt:augmentUITests@A-D15,txt:debug_output@A-D22,txt:E] chat_debug.txt@A-D23,txt:E] gpt_ui_input.txt@A-D24,txt:default.prof raw@A-D40,txt:package-lock.json@A-D42,txt:requirements.txt@A-D45,txt:Pé test_ollama.py@A-D46,txt:Preview Content@A-D8,txt:Pé main.py@A-J3,txt:Launching augment.@A-M47,txt:Debug Console@A-N36,txt:Agent xI@A-AD47,txt:legacy@A-B18,txt:examples@A-C17,txt:v augment@A-C6,txt:pycache_@A-D29,txt:Output@A-L36,txt:P augment@A-W2"
+}

@@ -525,6 +525,21 @@ COORDINATE SYSTEMS:
 
 IMPORTANT: ALL coordinates MUST use the prefix format (M- for menu, A- for window)
 
+🔍 CRITICAL: MESSAGES APP CONTEXT AWARENESS
+When working with Messages app, ALWAYS check the window header for active chat context:
+- Look for "ACTIVE_CHAT:[Name]" in the window header (e.g., "Messages|762x733|ACTIVE_CHAT:Hitzel Cruz|")
+- This tells you WHO you are currently chatting with
+- Contact names in the sidebar/search are NOT the active chat - they are just search results or contact lists
+- NEVER assume you're in the right chat just because you see a name in the UI
+- If you need to message someone different, you MUST first click on their name in the contacts list to switch chats
+- Only send messages when the ACTIVE_CHAT matches your target recipient
+
+MESSAGES WORKFLOW:
+1. Check ACTIVE_CHAT in window header to see current recipient
+2. If wrong recipient, search for correct contact and click their name
+3. Verify ACTIVE_CHAT changed to correct recipient  
+4. Only then type and send your message
+
 🎯 MASTER GOAL EVALUATION RULE:
 BEFORE EVERY ACTION, you MUST evaluate: "Is the original task already completed?"
 
