@@ -19,15 +19,28 @@ import logging
 # 🤖 LLM CONFIGURATION
 # =============================================================================
 # Available LLM providers
+# Performance metrics are based on the test "Open safari and go to Apple Website"
 LLM_PROVIDERS = {
-    "openai": "gpt-4o-mini",           # Fast, cost-effective cloud model
-    "ollama": "phi3:mini",             # Local Phi-3 Mini 3.8B model
-    "ollama_small": "smollm2:1.7b",    # Local SmolLM2 1.7B model
-    "ollama_tiny": "smollm2:360m",     # Local SmolLM2 360M model
+    # OpenAI Models
+    "openai_mini": "gpt-4o-mini",          # ✅ Success rate: 100%(1/1) Speed: 1.073s avg
+    "openai_nano": "gpt-4.1-nano",         # ❌ Success rate: 0%(0/3) Speed: 0.679s avg
+    "openai_4o": "gpt-4o",                 # untested
+    "openai_4": "gpt-4",                   # untested
+    "openai_3_5": "gpt-3.5-turbo",        # untested
+    
+    # OpenRouter Models (via OpenAI-compatible API)
+    "liquid_lfm": "liquid/lfm-40b",        # ❌ Success rate: 0%(0/1) Speed: 1.749s avg
+    "gemini_flash": "google/gemini-2.0-flash-001",  # untested
+    "gemini_25_flash": "google/gemini-2.5-flash-preview-05-20",  # ✅ Success rate: 100%(3/3) Speed: 0.930s avg
+    
+    # Local Ollama Models  
+    "ollama": "phi3:mini",                 # untested
+    "ollama_small": "smollm2:1.7b",        # untested
+    "ollama_tiny": "smollm2:360m",         # untested
 }
 
 # 🎯 SELECT YOUR LLM HERE
-SELECTED_LLM = "openai"  # Change this to switch models: "openai", "ollama", "ollama_small", "ollama_tiny"
+SELECTED_LLM = "gemini_25_flash"  # Options: openai_mini, openai_nano, openai_4o, openai_4, openai_3_5, liquid_lfm, gemini_flash, gemini_25_flash, ollama, ollama_small, ollama_tiny
 
 # =============================================================================
 # 🚀 MASTER DEBUG CONFIGURATION
@@ -162,8 +175,18 @@ class AugmentController:
         self.max_iterations = max_iterations
         
         # Initialize GPT engine with selected LLM
-        llm_provider = SELECTED_LLM
         llm_model = LLM_PROVIDERS[SELECTED_LLM]
+        
+        # Determine the correct provider type from the selected LLM
+        if SELECTED_LLM.startswith("openai"):
+            llm_provider = "openai"
+        elif SELECTED_LLM.startswith("ollama"):
+            llm_provider = "ollama"
+        elif SELECTED_LLM.startswith("liquid") or SELECTED_LLM.startswith("gemini"):
+            llm_provider = SELECTED_LLM  # Use the selected LLM key for provider detection
+        else:
+            llm_provider = "openai"  # Default fallback
+        
         self.gpt_engine = GPTComputerUse(llm_provider=llm_provider, llm_model=llm_model)
         
         self.session_history = []
@@ -466,6 +489,22 @@ async def main():
     # Reinitialize logger with updated flags
     global logger
     logger = AugmentLogger(debug=DEBUG, verbose=VERBOSE)
+    
+    # Clean up previous debug files
+    def cleanup_debug_files():
+        """Clean up all debug output files before starting a new session"""
+        debug_dir = project_root / "src" / "debug_output"
+        if debug_dir.exists():
+            for file in debug_dir.glob("*"):
+                if file.is_file() and file.name != ".gitkeep":
+                    try:
+                        file.unlink()
+                        logger.debug(f"Deleted: {file.name}", "CLEANUP")
+                    except Exception as e:
+                        logger.verbose(f"Could not delete {file.name}: {e}", "CLEANUP")
+    
+    # Clean up debug files before starting
+    cleanup_debug_files()
     
     # Check environment
     if not os.getenv('OPENAI_API_KEY'):

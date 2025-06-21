@@ -9,12 +9,28 @@ struct DebugConfig {
 }
 
 // MARK: - App Configuration
-// Change these values to test different applications
+// Dynamic configuration - detects currently active application
 struct AppConfig {
-    // Current configuration - Safari
-    static let bundleID = "com.apple.Safari"
-    static let appName = "Safari"
-    static let displayName = "Safari"
+    static var bundleID: String = ""
+    static var appName: String = ""
+    static var displayName: String = ""
+    
+    static func detectActiveApp() {
+        // Get the frontmost application
+        if let frontApp = NSWorkspace.shared.frontmostApplication {
+            bundleID = frontApp.bundleIdentifier ?? ""
+            appName = frontApp.localizedName ?? ""
+            displayName = frontApp.localizedName ?? ""
+            
+            print("🎯 Detected active app: \(displayName) (\(bundleID))")
+        } else {
+            // Fallback to Safari if detection fails
+            bundleID = "com.apple.Safari"
+            appName = "Safari"
+            displayName = "Safari"
+            print("⚠️  Failed to detect active app, falling back to Safari")
+        }
+    }
     
     // Other popular app configurations (uncomment to use):
     
@@ -75,6 +91,9 @@ class UIInspectorApp {
         print("🚀 UI Inspector - Refactored Architecture")
         print("==========================================")
         
+        // Step 0: Detect active application
+        AppConfig.detectActiveApp()
+        
         // Step 1: App Setup & Window Capture
         print("\n📱 WINDOW SETUP")
         print("================")
@@ -84,22 +103,46 @@ class UIInspectorApp {
         stepTimes.append(("App setup", setupTime))
         
         let windowStart = Date()
-        guard let windowInfo = windowManager.getActiveWindow() else {
-            print("❌ No active window found")
+        var windowInfo = windowManager.getActiveWindow()
+        
+        // Retry logic if window not found
+        if windowInfo == nil {
+            print("❌ No active window found - retrying with forced activation...")
+            
+            // Force activate the target app and try again
+            if let app = NSRunningApplication.runningApplications(withBundleIdentifier: AppConfig.bundleID).first {
+                app.activate(options: [.activateIgnoringOtherApps])
+                Thread.sleep(forTimeInterval: 0.5) // Give it time to activate
+                
+                windowInfo = windowManager.getActiveWindow()
+                if windowInfo != nil {
+                    print("✅ Successfully activated target app and found window")
+                } else {
+                    print("❌ Still failed to get active window after forced activation")
+                    return
+                }
+            } else {
+                print("❌ Target application not running")
+                return
+            }
+        }
+        
+        guard let finalWindowInfo = windowInfo else {
+            print("❌ Failed to get window info")
             return
         }
         
-        guard let screenshot = windowManager.captureWindow(windowInfo) else {
+        guard let screenshot = windowManager.captureWindow(finalWindowInfo) else {
             print("❌ Failed to capture window")
             return
         }
         let windowTime = Date().timeIntervalSince(windowStart)
         stepTimes.append(("Window capture", windowTime))
         
-        print("📐 Target: \(windowInfo.title) (\(Int(windowInfo.frame.width))x\(Int(windowInfo.frame.height)))")
+        print("📐 Target: \(finalWindowInfo.title) (\(Int(finalWindowInfo.frame.width))x\(Int(finalWindowInfo.frame.height)))")
         
         // Step 2: Initialize coordinate system
-        let coordinateSystem = CoordinateSystem(windowFrame: windowInfo.frame)
+        let coordinateSystem = CoordinateSystem(windowFrame: finalWindowInfo.frame)
         
         // Step 3-5: Parallel Detection (Accessibility + OCR + Shape Detection)
         print("\n⚡ PARALLEL DETECTION")
@@ -157,7 +200,7 @@ class UIInspectorApp {
         dispatchGroup.enter()
         detectionQueue.async {
             let taskStart = Date()
-            let elements = self.shapeDetectionEngine.detectUIShapes(in: screenshot, windowFrame: windowInfo.frame, debug: DebugConfig.isEnabled)
+            let elements = self.shapeDetectionEngine.detectUIShapes(in: screenshot, windowFrame: finalWindowInfo.frame, debug: DebugConfig.isEnabled)
             let taskTime = Date().timeIntervalSince(taskStart)
             
             resultsQueue.async {
@@ -194,7 +237,7 @@ class UIInspectorApp {
         print("\n🔗 DATA FUSION")
         print("==============")
         let fusionStart = Date()
-        let correctedOCRElements = correctOCRCoordinates(filteredOCRElements, windowFrame: windowInfo.frame)
+        let correctedOCRElements = correctOCRCoordinates(filteredOCRElements, windowFrame: finalWindowInfo.frame)
         let validatedAccessibilityElements = validateAccessibilityCoordinates(accessibilityElements, coordinateSystem: coordinateSystem)
         
         let fusionEngine = ImprovedFusionEngine(coordinateSystem: coordinateSystem)
@@ -220,7 +263,7 @@ class UIInspectorApp {
             fusedElements: fusedElements,
             visualElements: shapeElements,
             ocrElements: correctedOCRElements,
-            windowFrame: windowInfo.frame
+            windowFrame: finalWindowInfo.frame
         )
         
         // Step 7: Browser Enhancement
@@ -257,7 +300,7 @@ class UIInspectorApp {
         print("\n🗂️ GRID MAPPING")
         print("===============")
         let gridStart = Date()
-        let gridMapper = GridSweepMapper(windowFrame: windowInfo.frame)
+        let gridMapper = GridSweepMapper(windowFrame: finalWindowInfo.frame)
         let gridMappedElements = gridMapper.mapToGrid(finalElements)
         let gridTime = Date().timeIntervalSince(gridStart)
         stepTimes.append(("Grid mapping", gridTime))
@@ -294,15 +337,15 @@ class UIInspectorApp {
         // Step 10: Create complete UI map
         let mapCreationStart = Date()
         let windowContext = WindowContext(
-            windowFrame: windowInfo.frame,
-            windowTitle: windowInfo.title,
-            appName: windowInfo.ownerName,
+            windowFrame: finalWindowInfo.frame,
+            windowTitle: finalWindowInfo.title,
+            appName: finalWindowInfo.ownerName,
             timestamp: Date()
         )
         
         let completeMap = CompleteUIMap(
-            windowTitle: "activwndw: \(windowInfo.ownerName) - \(windowInfo.title)",
-            windowFrame: windowInfo.frame,
+            windowTitle: "activwndw: \(finalWindowInfo.ownerName) - \(finalWindowInfo.title)",
+            windowFrame: finalWindowInfo.frame,
             elements: finalElements,
             systemContext: menuBarContext, // Add menu bar context here
             timestamp: Date(),
@@ -366,7 +409,7 @@ class UIInspectorApp {
         
         // Print coordinate debugging info
         printCoordinateDebugging(
-            windowFrame: windowInfo.frame,
+            windowFrame: finalWindowInfo.frame,
             accessibilityElements: validatedAccessibilityElements,
             ocrElements: correctedOCRElements,
             fusedElements: finalElements,

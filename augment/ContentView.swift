@@ -32,7 +32,7 @@ class GPTComputerUseManager: ObservableObject {
         // Get the project directory path - updated to use new GPT system
         let projectPath = "/Users/richardshaw/augment"
         self.pythonPath = "\(projectPath)/venv/bin/python3"  // Use virtual environment python
-        self.scriptPath = "\(projectPath)/src/gpt_engine/gpt_computer_use.py"
+        self.scriptPath = "\(projectPath)/src/main.py"  // Use main.py which has proper LLM configuration
     }
     
     func executeInstruction(_ instruction: String) {
@@ -60,10 +60,10 @@ class GPTComputerUseManager: ObservableObject {
             task.standardOutput = outputPipe
             task.standardError = errorPipe
             task.executableURL = URL(fileURLWithPath: self.pythonPath)
-            task.arguments = ["-u", "-m", "gpt_engine.gpt_computer_use", instruction]
+            task.arguments = ["-u", self.scriptPath, "--task", instruction]
             
-            // Set the working directory to the src folder for module execution
-            task.currentDirectoryURL = URL(fileURLWithPath: "/Users/richardshaw/augment/src")
+            // Set the working directory to the project root
+            task.currentDirectoryURL = URL(fileURLWithPath: "/Users/richardshaw/augment")
             
             // Set environment variables
             var environment = ProcessInfo.processInfo.environment
@@ -365,7 +365,7 @@ struct ContentView: View {
         .onAppear {
             // Set some example instructions
             if instruction.isEmpty {
-                instruction = "Open Safari and show me what's on the screen"
+                instruction = "Open Safari and go to Apple website"
             }
         }
     }

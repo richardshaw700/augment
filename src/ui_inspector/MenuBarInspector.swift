@@ -7,11 +7,11 @@ class MenuBarInspector {
     // MARK: - Menu Bar Coordinate System
     
     struct MenuBarCoordinates {
-        // Left side: App menus (M1-M10)
-        static let appMenuPositions = ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10"]
+        // Left side: App menus (M-M1 to M-M10)
+        static let appMenuPositions = ["M-M1", "M-M2", "M-M3", "M-M4", "M-M5", "M-M6", "M-M7", "M-M8", "M-M9", "M-M10"]
         
-        // Right side: System items (S1-S10) 
-        static let systemMenuPositions = ["S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9", "S10"]
+        // Right side: System items (M-S1 to M-S10) 
+        static let systemMenuPositions = ["M-S1", "M-S2", "M-S3", "M-S4", "M-S5", "M-S6", "M-S7", "M-S8", "M-S9", "M-S10"]
         
         // Standard menu bar height and positioning
         static let menuBarHeight = 24

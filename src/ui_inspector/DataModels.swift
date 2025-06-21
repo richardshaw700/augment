@@ -194,13 +194,21 @@ struct AdaptiveGridPosition: Hashable, CustomStringConvertible {
     }
     
     // Helper function to create column string from index (0-39)
+    // Skip 'S' column to avoid conflict with system menu coordinates S1-S10
     static func columnString(from index: Int) -> String {
-        if index < 26 {
-            // Single letter: 0=A, 1=B, ..., 25=Z
-            return String(Character(UnicodeScalar(65 + index)!))
+        var adjustedIndex = index
+        
+        // Skip 'S' (index 18) to avoid system menu conflicts
+        if adjustedIndex >= 18 {
+            adjustedIndex += 1  // Skip S, so R->R, S->T, T->U, etc.
+        }
+        
+        if adjustedIndex < 26 {
+            // Single letter: 0=A, 1=B, ..., 17=R, 18=T, 19=U, ..., 25=Z
+            return String(Character(UnicodeScalar(65 + adjustedIndex)!))
         } else {
             // Double letter: 26=AA, 27=AB, ..., 39=AN
-            let secondIndex = index - 26
+            let secondIndex = adjustedIndex - 26
             return "A" + String(Character(UnicodeScalar(65 + secondIndex)!))
         }
     }
@@ -246,10 +254,21 @@ struct GridMappedElement {
         let context = Self.getSemanticContext(originalElement)
         let readablePosition = makePositionReadable(gridPosition)
         
-        if !context.isEmpty {
-            return "\(name) (\(context))@\(readablePosition)"
+        // Add explicit focus indicator for text input elements
+        let focusIndicator: String
+        if originalElement.type.contains("TextField") || originalElement.type.contains("TextArea") || 
+           originalElement.accessibilityData?.role.contains("TextField") == true ||
+           originalElement.accessibilityData?.role.contains("TextArea") == true ||
+           originalElement.accessibilityData?.role.contains("SearchField") == true {
+            focusIndicator = originalElement.accessibilityData?.focused == true ? "[FOCUSED]" : "[UNFOCUSED]"
         } else {
-            return "\(name)@\(readablePosition)"
+            focusIndicator = ""
+        }
+        
+        if !context.isEmpty {
+            return "\(name) (\(context))@A-\(readablePosition)\(focusIndicator)"
+        } else {
+            return "\(name)@A-\(readablePosition)\(focusIndicator)"
         }
     }
     

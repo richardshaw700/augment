@@ -217,7 +217,14 @@ extension UIElement {
         // Enhanced semantic understanding
         self.semanticMeaning = UIElement.inferSemanticMeaning(accessibilityData, ocrData)
         self.actionHint = UIElement.generateActionHint(accessibilityData, ocrData, isClickable)
-        self.visualText = ocrData?.text
+        
+        // Set visualText from accessibility value (for text fields) or OCR text
+        if let accValue = accessibilityData?.value, !accValue.isEmpty {
+            self.visualText = accValue  // Use accessibility value (e.g., URL in address bar)
+        } else {
+            self.visualText = ocrData?.text  // Fallback to OCR text
+        }
+        
         self.interactions = UIElement.generateInteractions(accessibilityData, isClickable)
         self.context = UIElement.generateContext(accessibilityData, ocrData, position)
     }

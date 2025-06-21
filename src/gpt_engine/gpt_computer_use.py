@@ -153,12 +153,58 @@ class OllamaAdapter(LLMAdapter):
             "type": "local"
         }
 
+class OpenRouterAdapter(LLMAdapter):
+    """Adapter for OpenRouter models (like Liquid LFM-40B, Gemini 2.0 Flash)"""
+    
+    def __init__(self, model: str = "liquid/lfm-40b"):
+        self.model = model
+        # Get OPENROUTER_API_KEY from environment
+        import os
+        api_key = os.getenv('OPENROUTER_API_KEY')
+        if not api_key:
+            raise ValueError("OPENROUTER_API_KEY not found in environment variables")
+        
+        from openai import OpenAI
+        self.client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=api_key,
+        )
+    
+    async def chat_completion(self, messages: List[Dict[str, str]], **kwargs) -> str:
+        """Generate a chat completion using OpenRouter"""
+        try:
+            response = self.client.chat.completions.create(
+                extra_headers={
+                    "HTTP-Referer": "https://github.com/richardshaw/augment",  # Site URL for rankings
+                    "X-Title": "Augment - AI Computer Control",  # Site title for rankings
+                },
+                extra_body={},
+                model=self.model,
+                messages=messages,
+                max_tokens=kwargs.get('max_tokens', 1000),
+                temperature=kwargs.get('temperature', 0.1),
+            )
+            
+            return response.choices[0].message.content
+            
+        except Exception as e:
+            raise Exception(f"OpenRouter API error: {str(e)}")
+    
+    def get_model_info(self) -> Dict[str, str]:
+        return {
+            "provider": "OpenRouter",
+            "model": self.model,
+            "type": "cloud"
+        }
+
 def create_llm_adapter(provider: str, model: str) -> LLMAdapter:
     """Factory function to create LLM adapters"""
-    if provider == "openai":
+    if provider.startswith("openai"):
         return OpenAIAdapter(model)
     elif provider.startswith("ollama"):
         return OllamaAdapter(model)
+    elif provider.startswith("liquid") or provider.startswith("gemini"):
+        return OpenRouterAdapter(model)
     else:
         raise ValueError(f"Unknown LLM provider: {provider}")
 
@@ -241,17 +287,15 @@ class SessionLogger:
             return {"error": ui_state.get("error", "Unknown error")}
         
         summary = {}
+        
+        # Include the compressed output that GPT actually sees
+        if "compressedOutput" in ui_state:
+            summary["compressed_ui"] = ui_state["compressedOutput"]
+        
+        # Legacy summary data for compatibility
         if "summary" in ui_state and "clickableElements" in ui_state["summary"]:
             clickable = ui_state["summary"]["clickableElements"]
             summary["clickable_elements_count"] = len(clickable)
-            summary["clickable_elements"] = [
-                {
-                    "type": elem.get("type", "unknown"),
-                    "text": elem.get("visualText", elem.get("semanticMeaning", ""))[:50],
-                    "position": elem.get("position", {})
-                }
-                for elem in clickable[:5]  # First 5 elements
-            ]
         
         if "elements" in ui_state:
             summary["total_elements"] = len(ui_state["elements"])
@@ -439,8 +483,13 @@ class GPTComputerUse:
         # Initialize performance tracker
         self.performance = PerformanceTracker()
         
+        # Initialize the intelligent ActionExecutor system
+        from src.actions import ActionExecutor
+        self.action_executor = ActionExecutor()
+        
         print("🤖 Computer Use initialized")
         print(f"🧠 LLM: {self.llm_info['provider']} - {self.llm_info['model']} ({self.llm_info['type']})")
+        print(f"🎯 ActionExecutor: Intelligent action sequences enabled")
         print(f"📁 UI Inspector: {self.ui_inspector_path}")
         print(f"📝 Session logs: {self.logger.log_file}")
         print(f"📄 Summary: {self.logger.readable_file}")
@@ -449,6 +498,9 @@ class GPTComputerUse:
         # Initialize pyautogui settings
         pyautogui.FAILSAFE = True
         pyautogui.PAUSE = 0.5
+        
+        # Store last UI state for smart focus detection
+        self._last_ui_state = None
     
     def _generate_system_prompt(self) -> str:
         """Generate the system prompt with current applications list"""
@@ -457,17 +509,21 @@ class GPTComputerUse:
 AVAILABLE APPLICATIONS:
 {self.available_apps}
 
+AVAILABLE ACTIONS:
 You have access to these actions:
 - "ui_inspect": Get current UI structure as JSON for the CURRENTLY ACTIVE application only
 - "click": Click at a grid position - use the exact grid positions from ui_inspect data
-- "type": Type text
+- "type": Type text with "field" parameter for smart focus (NEVER click before typing when using "field")
 - "key": Press keyboard keys (e.g., "Return", "cmd+c", "Tab")
 - "bash": Execute terminal commands
 - "wait": Wait for specified seconds
+- IMPORTANT: When using "type" action, the system handles text input focus automatically so do not click first!
 
 COORDINATE SYSTEMS:
-- Menu Bar: M1-M10 (app menus like Apple, Safari, File) and S1-S10 (system items like WiFi, Battery)
-- Application Window: Standard grid positions (A1-AN50) for window content
+- Menu Bar: M-M1 to M-M10 (app menus like Apple, Safari, File) and M-S1 to M-S10 (system items like WiFi, Battery)
+- Application Window: A-A1 to A-AN50 (window content using A- prefix)
+
+IMPORTANT: ALL coordinates MUST use the prefix format (M- for menu, A- for window)
 
 🎯 MASTER GOAL EVALUATION RULE:
 BEFORE EVERY ACTION, you MUST evaluate: "Is the original task already completed?"
@@ -483,13 +539,15 @@ If the task IS COMPLETED, respond with: {{"action": "ui_inspect", "parameters": 
 
 CRITICAL INSTRUCTIONS:
 1. ALWAYS start with "ui_inspect" to see current UI state
-2. Use EXACT grid positions from ui_inspect output (e.g., "M2", "A5", "S3")
-3. Menu bar coordinates (M1-M10, S1-S10) are for menu bar items only
-4. Window coordinates (A1-AN50) are for application content only
-5. Apps must be opened first before you can inspect their UI
-6. For application launching, use "bash" with commands like: open -a 'AppName'
-7. Always provide reasoning for each action
-8. EVALUATE GOAL COMPLETION BEFORE EVERY ACTION - Don't continue if task is done!
+2. Use EXACT grid positions from ui_inspect output (e.g., "M-M2", "A-A5", "M-S3")
+3. Menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10) are for menu bar items only
+4. Window coordinates (A-A1 to A-AN50) are for application content only
+5. ALWAYS use the full prefix format: M-M1, M-S5, A-B15, A-R3 (NEVER use old format like M1, S5, B15, R3)
+6. 💡 FOR TYPING: Use "field" parameter to specify target text field - system handles focus automatically (DO NOT click first)
+7. Apps must be opened first before you can inspect their UI
+8. For application launching, use "bash" with commands like: open -a 'AppName'
+9. Always provide reasoning for each action
+10. EVALUATE GOAL COMPLETION BEFORE EVERY ACTION - Don't continue if task is done!
 
 RESPONSE FORMAT:
 Always respond with valid JSON containing:
@@ -497,9 +555,10 @@ Always respond with valid JSON containing:
 
 Example responses:
 {{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Getting current UI state to understand available elements"}}
-{{"action": "click", "parameters": {{"grid_position": "M3"}}, "reasoning": "Clicking File menu in menu bar"}}
-{{"action": "click", "parameters": {{"grid_position": "B15"}}, "reasoning": "Clicking button in application window"}}
-{{"action": "type", "parameters": {{"text": "hello world"}}, "reasoning": "Typing text into active field"}}
+{{"action": "click", "parameters": {{"grid_position": "M-M3"}}, "reasoning": "Clicking File menu in menu bar"}}
+{{"action": "click", "parameters": {{"grid_position": "A-B15"}}, "reasoning": "Clicking button in application window"}}
+{{"action": "type", "parameters": {{"text": "apple.com", "field": "A-R3"}}, "reasoning": "Typing URL into text field (system will auto-focus if needed)"}}
+{{"action": "type", "parameters": {{"text": "hello world"}}, "reasoning": "Typing text (no specific field, system will auto-detect)"}}
 {{"action": "bash", "parameters": {{"command": "open -a 'Safari'"}}, "reasoning": "Opening Safari application"}}
 {{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Task completed successfully - Safari is open and Apple website is loaded"}}
 """
@@ -518,52 +577,67 @@ Example responses:
     
     def _grid_to_coordinates(self, grid_position: str, window_frame: Dict) -> tuple[int, int]:
         """
-        Convert grid position (e.g., "E5", "M2", "S3") to screen coordinates
-        Handles both menu bar coordinates (M1-M10, S1-S10) and window coordinates (A1-AN50)
+        Convert grid position (e.g., "A-E5", "M-M2", "M-S3") to screen coordinates
+        Handles both menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10) and window coordinates (A-A1 to A-AN50)
         """
         grid_position = grid_position.strip().upper()
         
-        # Handle menu bar coordinates
-        if grid_position.startswith('M') and len(grid_position) <= 3:  # M1-M10
-            try:
-                menu_index = int(grid_position[1:]) - 1  # Convert M1->0, M2->1, etc.
-                if 0 <= menu_index <= 9:
-                    # Menu bar coordinates - approximate positions based on standard menu layout
-                    menu_bar_y = 12  # Middle of 24px menu bar
-                    menu_width = 80  # Approximate width per menu item
-                    menu_x = 20 + (menu_index * menu_width)  # Start at x=20, space items 80px apart
-                    return (menu_x, menu_bar_y)
-            except ValueError:
-                pass
-                
-        elif grid_position.startswith('S') and len(grid_position) <= 3:  # S1-S10
-            try:
-                system_index = int(grid_position[1:]) - 1  # Convert S1->0, S2->1, etc.
-                if 0 <= system_index <= 9:
-                    # System menu coordinates - right side of menu bar
-                    menu_bar_y = 12  # Middle of 24px menu bar
-                    screen_width = 1440  # Assume standard screen width
-                    system_width = 30  # Approximate width per system item
-                    system_x = screen_width - 20 - (system_index * system_width)  # Right-aligned
-                    return (system_x, menu_bar_y)
-            except ValueError:
-                pass
-        
-        # Handle standard window grid coordinates (A1-AN50)
+        # Parse the new format: {GRID_TYPE}-{COORDINATE}
+        if "-" in grid_position:
+            grid_type, coordinate = grid_position.split("-", 1)
         else:
-            # Parse column (A-AN) and row (1-50)
-            if len(grid_position) >= 2:
+            # Fallback for old format without prefix
+            # Determine if it's a menu coordinate (M1-M10, S1-S10) or window coordinate
+            if (grid_position.startswith('M') and len(grid_position) <= 3) or \
+               (grid_position.startswith('S') and len(grid_position) <= 3):
+                grid_type = "M"  # Menu bar
+                coordinate = grid_position
+            else:
+                grid_type = "A"  # Application window
+                coordinate = grid_position
+        
+        # Handle menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10)
+        if grid_type == "M":
+            if coordinate.startswith('M') and len(coordinate) <= 3:  # M1-M10
+                try:
+                    menu_index = int(coordinate[1:]) - 1  # Convert M1->0, M2->1, etc.
+                    if 0 <= menu_index <= 9:
+                        # Menu bar coordinates - approximate positions based on standard menu layout
+                        menu_bar_y = 12  # Middle of 24px menu bar
+                        menu_width = 80  # Approximate width per menu item
+                        menu_x = 20 + (menu_index * menu_width)  # Start at x=20, space items 80px apart
+                        return (menu_x, menu_bar_y)
+                except ValueError:
+                    pass
+                    
+            elif coordinate.startswith('S') and len(coordinate) <= 3:  # S1-S10
+                try:
+                    system_index = int(coordinate[1:]) - 1  # Convert S1->0, S2->1, etc.
+                    if 0 <= system_index <= 9:
+                        # System menu coordinates - right side of menu bar
+                        menu_bar_y = 12  # Middle of 24px menu bar
+                        screen_width = 1440  # Assume standard screen width
+                        system_width = 30  # Approximate width per system item
+                        system_x = screen_width - 20 - (system_index * system_width)  # Right-aligned
+                        return (system_x, menu_bar_y)
+                except ValueError:
+                    pass
+        
+        # Handle standard window grid coordinates (A-A1 to A-AN50)
+        elif grid_type == "A":
+            # Parse column (A-AN) and row (1-50) from coordinate
+            if len(coordinate) >= 2:
                 # Find where numbers start
                 col_end = 0
-                for i, char in enumerate(grid_position):
+                for i, char in enumerate(coordinate):
                     if char.isdigit():
                         col_end = i
                         break
                 
                 if col_end > 0:
                     try:
-                        col_str = grid_position[:col_end]
-                        row_num = int(grid_position[col_end:])
+                        col_str = coordinate[:col_end]
+                        row_num = int(coordinate[col_end:])
                         
                         # Convert column string to index (A=0, B=1, ..., Z=25, AA=26, AB=27, etc.)
                         col_index = 0
@@ -607,6 +681,60 @@ Example responses:
         center_y = window_y + (window_height / 2)
         
         return (int(center_x), int(center_y))
+    
+    def _find_unfocused_text_field(self, compressed_output: str) -> str:
+        """
+        Find the coordinate of an unfocused text field in the compressed output.
+        Returns the coordinate (e.g., "A-R3") if found, None otherwise.
+        """
+        if not compressed_output:
+            return None
+            
+        # Look for text input fields marked as [UNFOCUSED]
+        # Pattern: txtinp:TextField (context)@A-COORDINATE[UNFOCUSED]
+        import re
+        
+        # Match text input fields that are unfocused
+        pattern = r'txtinp:[^@]*@(A-[A-Z]+\d+)\[UNFOCUSED\]'
+        matches = re.findall(pattern, compressed_output)
+        
+        if matches:
+            # Return the first unfocused text field coordinate
+            coordinate = matches[0]
+            print(f"🔍 Found unfocused text field at: {coordinate}")
+            return coordinate
+        
+        # Also check for other input field types
+        pattern = r'(TextField|TextArea|SearchField)[^@]*@(A-[A-Z]+\d+)\[UNFOCUSED\]'
+        matches = re.findall(pattern, compressed_output)
+        
+        if matches:
+            coordinate = matches[0][1]  # Second group is the coordinate
+            print(f"🔍 Found unfocused input field at: {coordinate}")
+            return coordinate
+            
+        return None
+    
+    def _check_field_focus_state(self, compressed_output: str, target_coordinate: str) -> bool:
+        """
+        Check if a specific field coordinate is focused or unfocused.
+        Returns True if focused, False if unfocused.
+        """
+        if not compressed_output or not target_coordinate:
+            return False
+            
+        # Look for the specific coordinate in the compressed output
+        # Check for both [FOCUSED] and [UNFOCUSED] states
+        if f"@{target_coordinate}[FOCUSED]" in compressed_output:
+            print(f"🔍 Field {target_coordinate} is FOCUSED")
+            return True
+        elif f"@{target_coordinate}[UNFOCUSED]" in compressed_output:
+            print(f"🔍 Field {target_coordinate} is UNFOCUSED")
+            return False
+        else:
+            # Field not found or no focus indicator - assume needs focus
+            print(f"🔍 Field {target_coordinate} focus state unknown, assuming unfocused")
+            return False
     
     def refresh_applications_list(self):
         """Refresh the available applications list and update system prompt"""
@@ -790,6 +918,9 @@ Example responses:
             if action == "ui_inspect":
                 ui_state = await self.get_ui_state()
                 
+                # Store UI state for smart focus detection
+                self._last_ui_state = ui_state
+                
                 # Extract UI performance breakdown if available
                 ui_breakdown = ui_state.get('_ui_performance_breakdown', {})
                 details = "UI state captured"
@@ -813,7 +944,7 @@ Example responses:
                         error="Click action requires grid_position parameter"
                     )
                 
-                # Get current UI state to get window frame
+                # Get current UI state to get window frame and validate coordinates
                 ui_state = await self.get_ui_state()
                 if "error" in ui_state:
                     self.performance.end_operation(f"{action} action", start_time, f"UI state error: {ui_state['error']}")
@@ -833,12 +964,21 @@ Example responses:
                         error="No window frame data available for coordinate translation"
                     )
                 
+                # Validate that the target grid position still contains a clickable element
+                if "compressedOutput" in ui_state:
+                    compressed = ui_state["compressedOutput"]
+                    # Check if the grid position still exists in current UI state
+                    if f"@{grid_position}" not in compressed:
+                        print(f"⚠️  Warning: Grid position {grid_position} not found in current UI state")
+                        print(f"📍 Current UI elements: {compressed[:200]}...")
+                        # Still proceed with click but warn about potential coordinate drift
+                
                 # Translate grid position to screen coordinates
                 x, y = self._grid_to_coordinates(grid_position, window_frame)
                 
                 # Perform click
                 pyautogui.click(x, y)
-                await asyncio.sleep(0.5)  # Wait for click to register
+                await asyncio.sleep(1.0)  # Wait for click and focus state to update
                 self.performance.end_operation(f"{action} action", start_time, f"Clicked {grid_position} -> ({x}, {y})")
                 return ActionResult(
                     success=True,
@@ -847,14 +987,124 @@ Example responses:
             
             elif action == "type":
                 text = parameters.get("text", "")
+                target_field = parameters.get("field")  # Optional target field coordinate
+                
+                # Use the intelligent ActionExecutor for type actions
+                if target_field and hasattr(self, '_last_ui_state') and self._last_ui_state:
+                    # Get current UI state and window frame for coordinate translation
+                    window_frame = self._last_ui_state.get("window", {}).get("frame", {})
+                    if window_frame:
+                        try:
+                            # Translate grid position to screen coordinates
+                            x, y = self._grid_to_coordinates(target_field, window_frame)
+                            
+                            # Create UI context for ActionExecutor
+                            ui_context = {
+                                "compressedOutput": self._last_ui_state.get("compressedOutput", ""),
+                                "elements": self._last_ui_state.get("elements", []),
+                                "window": self._last_ui_state.get("window", {})
+                            }
+                            
+                            # Use intelligent ActionExecutor to determine best strategy
+                            print(f"🧠 Using ActionExecutor for intelligent typing strategy")
+                            result = await self.action_executor.execute_intelligent_type(
+                                text=text,
+                                target_field=target_field,
+                                coordinates=(x, y),
+                                ui_state=ui_context
+                            )
+                            
+                            # If ActionExecutor performed navigation, refresh UI state
+                            fresh_ui_state = None
+                            if result.success and "Navigation initiated" in result.output:
+                                print("🔄 ActionExecutor performed navigation - refreshing UI state...")
+                                await asyncio.sleep(2.0)  # Wait for navigation to complete
+                                fresh_ui_state = await self.get_ui_state()
+                                self._last_ui_state = fresh_ui_state
+                                print("✅ UI state refreshed after navigation")
+                            
+                            # Convert ActionExecutor result to GPT result format
+                            performance_details = f"ActionExecutor: {result.output}"
+                            self.performance.end_operation(f"{action} action", start_time, performance_details)
+                            
+                            return ActionResult(
+                                success=result.success,
+                                output=result.output,
+                                error=result.error,
+                                ui_state=fresh_ui_state  # Include fresh UI state if navigation occurred
+                            )
+                            
+                        except Exception as e:
+                            print(f"⚠️ ActionExecutor failed, falling back to legacy: {e}")
+                            # Fall through to legacy implementation
+                
+                # Legacy fallback implementation
+                auto_clicked = False
+                clicked_coordinate = None
+                
+                # Smart focus handling: Check if target field needs to be focused first
+                if target_field and hasattr(self, '_last_ui_state') and self._last_ui_state:
+                    compressed_output = self._last_ui_state.get("compressedOutput", "")
+                    is_focused = self._check_field_focus_state(compressed_output, target_field)
+                    
+                    if not is_focused:
+                        print(f"🎯 Target field {target_field} is unfocused, clicking to focus before typing")
+                        
+                        # Get window frame for coordinate translation
+                        window_frame = self._last_ui_state.get("window", {}).get("frame", {})
+                        if window_frame:
+                            try:
+                                # Translate grid position to screen coordinates and click
+                                x, y = self._grid_to_coordinates(target_field, window_frame)
+                                pyautogui.click(x, y)
+                                await asyncio.sleep(0.2)  # Brief pause for focus to take effect
+                                auto_clicked = True
+                                clicked_coordinate = target_field
+                                print(f"✅ Auto-clicked {target_field} -> ({x}, {y}) to focus text field")
+                            except Exception as e:
+                                print(f"⚠️ Auto-click failed: {e}")
+                    else:
+                        print(f"✅ Target field {target_field} is already focused, typing directly")
+                
+                elif not target_field and hasattr(self, '_last_ui_state') and self._last_ui_state:
+                    # Fallback: Auto-detect unfocused fields (legacy behavior)
+                    compressed_output = self._last_ui_state.get("compressedOutput", "")
+                    unfocused_field_coordinate = self._find_unfocused_text_field(compressed_output)
+                    
+                    if unfocused_field_coordinate:
+                        print(f"🎯 Auto-detected unfocused text field at {unfocused_field_coordinate}, clicking before typing")
+                        
+                        # Get window frame for coordinate translation
+                        window_frame = self._last_ui_state.get("window", {}).get("frame", {})
+                        if window_frame:
+                            try:
+                                # Translate grid position to screen coordinates and click
+                                x, y = self._grid_to_coordinates(unfocused_field_coordinate, window_frame)
+                                pyautogui.click(x, y)
+                                await asyncio.sleep(0.2)  # Brief pause for focus to take effect
+                                auto_clicked = True
+                                clicked_coordinate = unfocused_field_coordinate
+                                print(f"✅ Auto-clicked {unfocused_field_coordinate} -> ({x}, {y}) to focus text field")
+                            except Exception as e:
+                                print(f"⚠️ Auto-click failed: {e}")
                 
                 # Use optimal typing speed for maximum performance
                 await asyncio.to_thread(pyautogui.write, text, interval=0.001)  # Optimal fast interval
                 
-                self.performance.end_operation(f"{action} action", start_time, f"Typed: {len(text)} chars")
+                # Prepare output message
+                if auto_clicked and clicked_coordinate:
+                    output_msg = f"Auto-clicked {clicked_coordinate} then typed: {text}"
+                    performance_details = f"Typed: {len(text)} chars (auto-clicked {clicked_coordinate} first)"
+                else:
+                    output_msg = f"Typed: {text}"
+                    if target_field:
+                        output_msg += f" (into {target_field})"
+                    performance_details = f"Typed: {len(text)} chars"
+                
+                self.performance.end_operation(f"{action} action", start_time, performance_details)
                 return ActionResult(
                     success=True,
-                    output=f"Typed: {text}"
+                    output=output_msg
                 )
             
             elif action == "key":
@@ -914,26 +1164,35 @@ Example responses:
             )
     
     def format_ui_state_for_gpt(self, ui_state: Dict[str, Any]) -> str:
-        """Format UI state data for GPT consumption"""
+        """Format UI state data for GPT consumption using compressed output only"""
         if "error" in ui_state:
             return f"UI Inspector Error: {ui_state['error']}"
         
-        # Extract key information for GPT
+        # Use the compressed output which includes focus indicators
+        if "compressedOutput" in ui_state:
+            compressed = ui_state["compressedOutput"]
+            
+            # Simply return the compressed output with a brief explanation
+            return f"UI Elements (text inputs ending with [FOCUSED] are ready for typing, [UNFOCUSED] must be clicked first):\n{compressed}"
+        
+        # Fallback to old method if no compressed output available
+        return self._format_ui_state_legacy(ui_state)
+    
+    def _format_ui_state_legacy(self, ui_state: Dict[str, Any]) -> str:
+        """Legacy UI state formatting (fallback method)"""
         summary = []
         
         # Get window frame for grid coordinate calculation
         window_frame = ui_state.get("window", {}).get("frame", {})
         window_width = window_frame.get("width", 1000)
         window_height = window_frame.get("height", 800)
-        window_x = window_frame.get("x", 0)
-        window_y = window_frame.get("y", 0)
         
         if "summary" in ui_state:
             summary_data = ui_state["summary"]
             if "clickableElements" in summary_data:
                 clickable = summary_data["clickableElements"]
                 summary.append(f"Found {len(clickable)} clickable elements:")
-                for i, element in enumerate(clickable[:15]):  # Show more elements for better targeting
+                for i, element in enumerate(clickable[:15]):
                     pos = element.get("position", {})
                     x, y = pos.get("x", 0), pos.get("y", 0)
                     text = element.get("visualText", element.get("semanticMeaning", ""))
@@ -948,29 +1207,30 @@ Example responses:
                     else:
                         summary.append(f"  {i+1}. {element_type}@{grid_position}")
         
-        # Add non-clickable text elements for context
-        if "elements" in ui_state:
-            elements = ui_state["elements"]
-            text_elements = [e for e in elements if not e.get("isClickable", False) and e.get("visualText")]
-            if text_elements:
-                summary.append(f"\nText content (for context):")
-                for i, element in enumerate(text_elements[:10]):  # Limit to 10 text elements
-                    pos = element.get("position", {})
-                    x, y = pos.get("x", 0), pos.get("y", 0)
-                    text = element.get("visualText", "")
-                    
-                    # Calculate grid position
-                    grid_position = self._pixel_to_grid(x, y, window_frame)
-                    
-                    if text and text.strip():
-                        summary.append(f"  {i+1}. text@{grid_position}: {text[:30]}")
-        
         if "elements" in ui_state:
             elements = ui_state["elements"]
             summary.append(f"\nTotal UI elements detected: {len(elements)}")
             summary.append(f"Window size: {int(window_width)}x{int(window_height)}")
         
         return "\n".join(summary) if summary else json.dumps(ui_state, indent=2)
+    
+    def _log_gpt_ui_input(self, formatted_ui: str):
+        """Log the exact UI state that gets sent to GPT for debugging"""
+        try:
+            project_root = Path(__file__).parent.parent.parent
+            debug_file = project_root / "src" / "debug_output" / "gpt_ui_input.txt"
+            
+            # Ensure debug output directory exists
+            debug_file.parent.mkdir(parents=True, exist_ok=True)
+            
+            timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
+            with open(debug_file, "a") as f:
+                f.write(f"\n[{timestamp}] GPT UI INPUT:\n")
+                f.write("=" * 50 + "\n")
+                f.write(formatted_ui)
+                f.write("\n" + "=" * 50 + "\n")
+        except Exception as e:
+            print(f"⚠️ Failed to log GPT UI input: {e}")
     
     def _pixel_to_grid(self, x: float, y: float, window_frame: Dict) -> str:
         """Convert pixel coordinates to grid position (A1-AN50)"""
@@ -1004,7 +1264,8 @@ Example responses:
     
     async def chat_with_gpt(self, user_message: str, ui_state: Optional[Dict] = None) -> str:
         """Send message to LLM and get response"""
-        start_time = self.performance.start_operation("LLM API call")
+        model_display_name = f"{self.llm_info['provider']} {self.llm_info['model']}"
+        start_time = self.performance.start_operation(model_display_name)
         
         try:
             # Build messages for the conversation
@@ -1017,6 +1278,9 @@ Example responses:
             if ui_state:
                 formatted_ui = self.format_ui_state_for_gpt(ui_state)
                 messages.append({"role": "system", "content": f"Current UI State:\n{formatted_ui}"})
+                
+                # Debug log: Save what the GPT actually sees
+                self._log_gpt_ui_input(formatted_ui)
             
             # Add user message
             messages.append({"role": "user", "content": user_message})
@@ -1030,12 +1294,12 @@ Example responses:
             
             # Estimate token usage (rough approximation for local models)
             tokens_used = len(llm_response.split()) * 1.3  # Rough token estimation
-            self.performance.end_operation("LLM API call", start_time, f"Tokens: {int(tokens_used)}")
+            self.performance.end_operation(model_display_name, start_time, f"Tokens: {int(tokens_used)}")
             
             return llm_response
             
         except Exception as e:
-            self.performance.end_operation("LLM API call", start_time, f"Error: {str(e)}")
+            self.performance.end_operation(model_display_name, start_time, f"Error: {str(e)}")
             return f'{{"action": "wait", "parameters": {{"seconds": 1}}, "reasoning": "LLM API error: {str(e)}"}}'
     
     async def execute_task(self, task: str, max_iterations: int = 20) -> List[Dict]:
@@ -1114,6 +1378,7 @@ Example responses:
                 consecutive_failures = 0  # Reset failure counter
                 if result.ui_state:
                     current_ui_state = result.ui_state
+                    print("🔄 Updated current UI state with fresh data from action result")
             else:
                 print(f"❌ Error: {result.error}")
                 consecutive_failures += 1
@@ -1126,9 +1391,19 @@ Example responses:
             self.conversation_history.append({"role": "user", "content": task_message})
             self.conversation_history.append({"role": "assistant", "content": gpt_response})
             
-            # Add result context
+            # Add result context with ActionExecutor feedback
             if result.success:
                 context = f"Action succeeded: {result.output}"
+                
+                # Special handling for ActionExecutor intelligent sequences
+                if "COMPLETE SEQUENCE EXECUTED" in result.output:
+                    if "Navigation initiated" in result.output:
+                        context += "\n\n🚨 IMPORTANT: The typing action above included automatic Enter press for navigation. Do NOT press Enter again - the navigation is already in progress. Wait for page to load or inspect UI."
+                    elif "Pressed keys: Return" in result.output:
+                        context += "\n\n🚨 IMPORTANT: The typing action above already included pressing Enter. Do NOT use additional 'key' actions with Return - the sequence is complete."
+                    else:
+                        context += "\n\n✅ IMPORTANT: Complete action sequence was executed. No additional actions needed for this step."
+                        
             else:
                 context = f"Action failed: {result.error}. Try a different approach."
             
@@ -1156,31 +1431,44 @@ Example responses:
                 break
             
             # Enhanced website navigation completion detection
-            if (action_type == "ui_inspect" and iteration > 3 and 
-                current_ui_state and "window" in current_ui_state):
+            # Check completion after navigation actions (key presses that might navigate)
+            if (action_type == "key" and "Return" in action_data.get("parameters", {}).get("keys", "")) or \
+               (action_type == "ui_inspect" and iteration > 3):
                 
-                window_info = current_ui_state.get("window", {})
-                window_title = window_info.get("title", "").lower()
+                # Force UI inspection after navigation to check completion
+                if action_type == "key":
+                    print("🔍 Checking for task completion after navigation...")
+                    current_ui_state = await self.get_ui_state()
                 
-                # Check if task involves going to a specific website
-                task_lower = task.lower()
-                website_indicators = ["apple", "google", "facebook", "youtube", "github", "microsoft"]
-                
-                # Check for specific website completion
-                for site in website_indicators:
-                    if site in task_lower and site in window_title:
-                        print(f"🎉 Successfully navigated to {site} website!")
-                        completion_reason = f"website_navigation_completed_{site}"
-                        break
-                else:
-                    # Generic website navigation check
-                    if any(word in task_lower for word in ["website", "go to", "visit", "navigate to"]):
-                        # Check if we have a proper webpage loaded (many elements)
-                        elements = current_ui_state.get("elements", [])
-                        if len(elements) > 15:  # Indicates a full webpage is loaded
-                            print("🎉 Website navigation completed successfully!")
-                            completion_reason = "generic_website_navigation_completed"
+                if current_ui_state and "compressedOutput" in current_ui_state:
+                    compressed_output = current_ui_state["compressedOutput"]
+                    
+                    # Extract URL from compressed output (format: "Safari|789x671|apple.com|...")
+                    current_url = ""
+                    if "|" in compressed_output:
+                        parts = compressed_output.split("|")
+                        if len(parts) >= 3:
+                            current_url = parts[2].lower()
+                    
+                    # Check if task involves going to a specific website
+                    task_lower = task.lower()
+                    website_indicators = ["apple", "google", "facebook", "youtube", "github", "microsoft"]
+                    
+                    # Check for specific website completion
+                    for site in website_indicators:
+                        if site in task_lower and site in current_url:
+                            print(f"🎉 Successfully navigated to {site} website! (URL: {current_url})")
+                            completion_reason = f"website_navigation_completed_{site}"
                             break
+                    else:
+                        # Generic website navigation check
+                        if any(word in task_lower for word in ["website", "go to", "visit", "navigate to"]):
+                            # Check if we have a proper webpage loaded (many elements)
+                            elements = current_ui_state.get("elements", [])
+                            if len(elements) > 15 and current_url and current_url not in ["google.com", "new-tab"]:
+                                print(f"🎉 Website navigation completed successfully! (URL: {current_url})")
+                                completion_reason = "generic_website_navigation_completed"
+                                break
             
             # Application opening completion detection
             if (action_type == "ui_inspect" and iteration > 1 and 
@@ -1214,8 +1502,23 @@ Example responses:
                 completion_reason = "exploration_completed"
                 break
             
-            # Brief pause between actions
-            await asyncio.sleep(1)
+            # Brief pause between actions - only use dynamic detection for explicit navigation
+            action_type = action_data.get("action", "")
+            
+            # Skip page change detection if task is already completed
+            if completion_reason != "max_iterations_reached":
+                print(f"⚡ Task completed - skipping page change detection")
+                await asyncio.sleep(0.5)  # Quick pause before ending
+            elif action_type == "key" and "Return" in action_data.get("parameters", {}).get("keys", ""):
+                print("⏳ Waiting for page navigation to complete...")
+                initial_state = await self.get_ui_state()
+                if "error" not in initial_state:
+                    await self.wait_for_page_change(initial_state, max_wait=5.0)
+                else:
+                    await asyncio.sleep(2.0)  # Fallback
+            else:
+                # Fast standard delay for all other actions
+                await asyncio.sleep(0.5)
         
         # Log session summary
         successful_actions = sum(1 for r in results if r["result"].success)
@@ -1233,6 +1536,61 @@ Example responses:
         print(f"📝 Session logs saved to: {self.logger.log_file}")
         print(f"📄 Summary saved to: {self.logger.readable_file}")
         return results
+
+    async def wait_for_page_change(self, initial_state: Dict, max_wait: float = 10.0, check_interval: float = 0.3) -> bool:
+        """
+        Wait for page change by monitoring URL and content changes.
+        Returns True if change detected, False if timeout.
+        """
+        start_time = time.time()
+        initial_url = self._extract_url_from_state(initial_state)
+        initial_element_count = len(initial_state.get("elements", []))
+        
+        print(f"🔍 Monitoring for page change from: {initial_url}")
+        
+        # Give the page a moment to start loading before checking
+        await asyncio.sleep(0.8)
+        
+        while (time.time() - start_time) < max_wait:
+            await asyncio.sleep(check_interval)
+            
+            # Get current UI state
+            current_state = await self.get_ui_state()
+            if "error" in current_state:
+                continue
+                
+            current_url = self._extract_url_from_state(current_state)
+            current_element_count = len(current_state.get("elements", []))
+            
+            # Check for URL change (primary indicator)
+            if current_url != initial_url and current_url not in ["page:Safari", "", initial_url]:
+                elapsed = time.time() - start_time
+                print(f"✅ Page change detected: {initial_url} → {current_url} ({elapsed:.1f}s)")
+                return True
+            
+            # Check for significant content change (secondary indicator)
+            element_change_ratio = abs(current_element_count - initial_element_count) / max(initial_element_count, 1)
+            if element_change_ratio > 0.3 and current_element_count > 20:  # 30% change + meaningful content
+                elapsed = time.time() - start_time
+                print(f"✅ Content change detected: {initial_element_count} → {current_element_count} elements ({elapsed:.1f}s)")
+                return True
+        
+        print(f"⏰ Page change timeout after {max_wait}s")
+        return False
+    
+    def _extract_url_from_state(self, ui_state: Dict) -> str:
+        """Extract URL from UI state compressed output"""
+        compressed = ui_state.get("compressedOutput", "")
+        if not compressed:
+            return ""
+        
+        # Extract URL from format: "Safari|width x height|URL|elements..."
+        parts = compressed.split("|")
+        if len(parts) >= 3:
+            return parts[2]
+        return ""
+
+
 
 # Standalone execution for testing
 async def main():

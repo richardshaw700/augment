@@ -1,358 +1,445 @@
 """
-Base Action Executor for Augment
-Handles execution of different types of actions with error handling and logging
+Enhanced Action Executor with intelligent action sequences.
+Integrates base actions, action sequences, and context detection for optimal UI interactions.
 """
 
 import asyncio
-import subprocess
-import pyautogui
-import pyperclip
-from datetime import datetime
-from typing import Dict, Any, Optional
+import time
+from typing import Dict, Any, Optional, Tuple
 from dataclasses import dataclass
-from abc import ABC, abstractmethod
 
-@dataclass
-class ActionResult:
-    """Result of executing an action"""
-    success: bool
-    output: str
-    error: Optional[str] = None
-    execution_time: float = 0.0
-    metadata: Optional[Dict[str, Any]] = None
+from .base_actions import BaseActions, ActionResult
+from .action_sequences import ActionSequences
+from .context_detector import ContextDetector, ActionStrategy
 
-class BaseActionExecutor(ABC):
-    """Base class for action executors"""
+
+class ActionExecutor:
+    """
+    Enhanced action executor that intelligently chooses between atomic actions
+    and action sequences based on UI context analysis.
+    """
     
     def __init__(self, debug: bool = False):
         self.debug = debug
+        
+        # Initialize action system components
+        self.base_actions = BaseActions()
+        self.action_sequences = ActionSequences(self.base_actions)
+        self.context_detector = ContextDetector()
+        
+        # Performance tracking
         self.execution_count = 0
-    
-    @abstractmethod
-    async def execute(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Execute an action and return result"""
-        pass
-    
-    def log(self, message: str, level: str = "INFO"):
-        """Log a message with timestamp"""
-        if self.debug or level in ["ERROR", "WARNING"]:
-            timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
-            print(f"[{timestamp}] [{level}] {message}")
-
-class ActionExecutor(BaseActionExecutor):
-    """
-    Main action executor that handles all supported actions
-    """
-    
-    def __init__(self, debug: bool = False):
-        super().__init__(debug)
-        
-        # Configure pyautogui
-        pyautogui.FAILSAFE = True
-        pyautogui.PAUSE = 0.3  # Slightly faster than GPT engine default
-        
-        # Action handlers
-        self.handlers = {
-            "click": self._handle_click,
-            "type": self._handle_type,
-            "key": self._handle_key,
-            "bash": self._handle_bash,
-            "wait": self._handle_wait,
-            "scroll": self._handle_scroll,
-            "drag": self._handle_drag
+        self.sequence_usage_stats = {
+            "click_type_enter": 0,
+            "click_type_only": 0,
+            "smart_form_fill": 0,
+            "atomic_actions": 0
         }
         
-        self.log("Action Executor initialized")
+        if self.debug:
+            print("🚀 Enhanced Action Executor initialized")
     
-    async def execute(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Execute an action based on the action data"""
-        start_time = datetime.now()
-        action = action_data.get("action", "")
+    async def execute_intelligent_type(
+        self, 
+        text: str, 
+        target_field: str, 
+        coordinates: Tuple[int, int], 
+        ui_state: Dict[str, Any]
+    ) -> ActionResult:
+        """
+        Intelligently execute a type action using context analysis to determine
+        the best action sequence (atomic actions vs sequences).
         
+        Args:
+            text: Text to type
+            target_field: Description of target field (e.g., "TextField (url)")
+            coordinates: Click coordinates for the field
+            ui_state: Current UI state for context analysis
+            
+        Returns:
+            ActionResult with execution details
+        """
+        start_time = time.time()
         self.execution_count += 1
-        self.log(f"Executing action #{self.execution_count}: {action}")
+        
+        if self.debug:
+            print(f"🎯 Executing intelligent type #{self.execution_count}: '{text}' in {target_field}")
         
         try:
-            if action in self.handlers:
-                result = await self.handlers[action](action_data)
-            else:
-                result = ActionResult(
-                    success=False,
-                    output="",
-                    error=f"Unknown action: {action}"
+            # Analyze context to determine optimal strategy
+            context = self.context_detector.analyze_context(ui_state, target_field)
+            strategy = context["recommended_strategy"]
+            confidence = context["confidence"]
+            reasoning = context["reasoning"]
+            
+            if self.debug:
+                print(f"📊 Context Analysis:")
+                print(f"   Strategy: {strategy.value}")
+                print(f"   Confidence: {confidence:.2f}")
+                print(f"   Reasoning: {reasoning}")
+            
+            # Execute based on recommended strategy
+            if strategy == ActionStrategy.CLICK_TYPE_ENTER:
+                result = await self._execute_click_type_enter(
+                    coordinates, text, target_field, context
                 )
+                self.sequence_usage_stats["click_type_enter"] += 1
+                
+            elif strategy == ActionStrategy.CLICK_TYPE_ONLY:
+                result = await self._execute_click_type_only(
+                    coordinates, text, target_field, context
+                )
+                self.sequence_usage_stats["click_type_only"] += 1
+                
+            elif strategy == ActionStrategy.SMART_FORM_FILL:
+                result = await self._execute_smart_form_fill(
+                    coordinates, text, target_field, context
+                )
+                self.sequence_usage_stats["smart_form_fill"] += 1
+                
+            else:  # ATOMIC_ACTIONS
+                result = await self._execute_atomic_actions(
+                    coordinates, text, target_field
+                )
+                self.sequence_usage_stats["atomic_actions"] += 1
             
-            # Add execution time
-            execution_time = (datetime.now() - start_time).total_seconds()
-            result.execution_time = execution_time
-            
-            self.log(f"Action {action} completed in {execution_time:.3f}s")
-            return result
-            
+            # Add context metadata to result
+            if result.success:
+                execution_time = time.time() - start_time
+                enhanced_output = f"{result.output} | Strategy: {strategy.value} (confidence: {confidence:.2f})"
+                
+                return ActionResult(
+                    success=True,
+                    output=enhanced_output,
+                    execution_time=execution_time,
+                    ui_state={"context_analysis": context}
+                )
+            else:
+                return result
+                
         except Exception as e:
-            execution_time = (datetime.now() - start_time).total_seconds()
-            self.log(f"Action {action} failed: {str(e)}", "ERROR")
-            
+            execution_time = time.time() - start_time
             return ActionResult(
                 success=False,
                 output="",
-                error=f"Action execution failed: {str(e)}",
+                error=f"Intelligent type execution failed: {str(e)}",
                 execution_time=execution_time
             )
     
-    async def _handle_click(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Handle click actions"""
-        parameters = action_data.get("parameters", {})
-        coordinate = parameters.get("coordinate", [0, 0])
+    async def _execute_click_type_enter(
+        self, 
+        coordinates: Tuple[int, int], 
+        text: str, 
+        field_description: str,
+        context: Dict[str, Any]
+    ) -> ActionResult:
+        """Execute click+type+enter sequence for navigation/search fields"""
+        if self.debug:
+            print("⚡ Executing click+type+enter sequence")
         
-        if len(coordinate) != 2:
-            return ActionResult(
-                success=False,
-                output="",
-                error="Click requires coordinate [x, y]"
-            )
-        
-        x, y = int(coordinate[0]), int(coordinate[1])
-        
-        # Validate coordinates are within screen bounds
-        screen_width, screen_height = pyautogui.size()
-        if not (0 <= x <= screen_width and 0 <= y <= screen_height):
-            return ActionResult(
-                success=False,
-                output="",
-                error=f"Coordinates ({x}, {y}) outside screen bounds ({screen_width}x{screen_height})"
-            )
-        
-        # Perform click
-        await asyncio.to_thread(pyautogui.click, x, y)
-        
-        return ActionResult(
-            success=True,
-            output=f"Clicked at ({x}, {y})",
-            metadata={"coordinate": [x, y]}
+        return await self.action_sequences.click_type_enter(
+            coordinates, text, field_description
         )
     
-    async def _handle_type(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Handle typing actions using clipboard paste for speed"""
-        parameters = action_data.get("parameters", {})
-        text = parameters.get("text", "")
+    async def _execute_click_type_only(
+        self, 
+        coordinates: Tuple[int, int], 
+        text: str, 
+        field_description: str,
+        context: Dict[str, Any]
+    ) -> ActionResult:
+        """Execute click+type sequence without enter for complex forms"""
+        if self.debug:
+            print("⚡ Executing click+type sequence (no enter)")
         
-        if not text:
-            return ActionResult(
-                success=False,
-                output="",
-                error="Type action requires text parameter"
-            )
+        return await self.action_sequences.click_type_only(
+            coordinates, text, field_description
+        )
+    
+    async def _execute_smart_form_fill(
+        self, 
+        coordinates: Tuple[int, int], 
+        text: str, 
+        field_description: str,
+        context: Dict[str, Any]
+    ) -> ActionResult:
+        """Execute smart form fill with context-aware enter decision"""
+        if self.debug:
+            print("⚡ Executing smart form fill sequence")
         
-        # First try clipboard paste for speed
+        return await self.action_sequences.smart_form_fill(
+            coordinates, text, context, field_description
+        )
+    
+    async def _execute_atomic_actions(
+        self, 
+        coordinates: Tuple[int, int], 
+        text: str, 
+        field_description: str
+    ) -> ActionResult:
+        """Execute individual atomic actions for maximum safety"""
+        if self.debug:
+            print("⚡ Executing atomic actions (safe mode)")
+        
         try:
-            # Store current clipboard content to restore later
-            original_clipboard = pyperclip.paste()
-            self.log(f"Original clipboard content: '{original_clipboard[:50]}...'", "INFO")
+            # Step 1: Click
+            click_result = await self.base_actions.click(coordinates, field_description)
+            if not click_result.success:
+                return click_result
             
-            # Set text to clipboard and paste
-            pyperclip.copy(text)
-            self.log(f"Copied to clipboard: '{text}'", "INFO")
+            # Step 2: Type
+            type_result = await self.base_actions.type_text(text)
+            if not type_result.success:
+                return type_result
             
-            # Verify clipboard content
-            clipboard_content = pyperclip.paste()
-            if clipboard_content != text:
-                raise Exception(f"Clipboard verification failed. Expected: '{text}', Got: '{clipboard_content}'")
-            
-            self.log("Executing paste command (cmd+v)", "INFO")
-            await asyncio.to_thread(pyautogui.hotkey, 'command', 'v')
-            
-            # Small delay to ensure paste completes
-            await asyncio.sleep(0.1)
-            
-            # Restore original clipboard content
-            pyperclip.copy(original_clipboard)
-            self.log("Clipboard restored", "INFO")
+            # Combine results
+            combined_output = f"{click_result.output} → {type_result.output}"
+            total_time = click_result.execution_time + type_result.execution_time
             
             return ActionResult(
                 success=True,
-                output=f"Pasted: {text[:50]}{'...' if len(text) > 50 else ''}",
-                metadata={"text_length": len(text), "method": "clipboard_paste"}
-            )
-            
-        except Exception as clipboard_error:
-            self.log(f"Clipboard paste failed: {clipboard_error}", "INFO")
-            # Fallback to character-by-character typing if clipboard fails
-            try:
-                self.log("Falling back to typing method", "INFO")
-                # Use faster interval for fallback typing
-                await asyncio.to_thread(pyautogui.write, text, interval=0.01)
-                return ActionResult(
-                    success=True,
-                    output=f"Typed (fallback): {text[:50]}{'...' if len(text) > 50 else ''}",
-                    metadata={
-                        "text_length": len(text), 
-                        "method": "fallback_typing",
-                        "clipboard_error": str(clipboard_error)
-                    }
-                )
-            except Exception as typing_error:
-                # If both methods fail, return error
-                return ActionResult(
-                    success=False,
-                    output="",
-                    error=f"Both clipboard paste and typing failed. Clipboard: {str(clipboard_error)}, Typing: {str(typing_error)}"
-                )
-    
-    async def _handle_key(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Handle keyboard key actions"""
-        parameters = action_data.get("parameters", {})
-        keys = parameters.get("keys", "")
-        
-        if not keys:
-            return ActionResult(
-                success=False,
-                output="",
-                error="Key action requires keys parameter"
-            )
-        
-        # Handle key combinations
-        if "+" in keys:
-            key_combo = [k.strip() for k in keys.split("+")]
-            # Map common key names
-            key_mapping = {
-                "cmd": "command",
-                "ctrl": "ctrl", 
-                "alt": "alt",
-                "shift": "shift"
-            }
-            mapped_keys = [key_mapping.get(k.lower(), k) for k in key_combo]
-            await asyncio.to_thread(pyautogui.hotkey, *mapped_keys)
-        else:
-            await asyncio.to_thread(pyautogui.press, keys)
-        
-        return ActionResult(
-            success=True,
-            output=f"Pressed keys: {keys}",
-            metadata={"keys": keys}
-        )
-    
-    async def _handle_bash(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Handle bash command execution"""
-        parameters = action_data.get("parameters", {})
-        command = parameters.get("command", "")
-        
-        if not command:
-            return ActionResult(
-                success=False,
-                output="",
-                error="Bash action requires command parameter"
-            )
-        
-        try:
-            result = await asyncio.create_subprocess_shell(
-                command,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE
-            )
-            
-            stdout, stderr = await result.communicate()
-            
-            return ActionResult(
-                success=result.returncode == 0,
-                output=stdout.decode('utf-8') if stdout else "",
-                error=stderr.decode('utf-8') if stderr and result.returncode != 0 else None,
-                metadata={"return_code": result.returncode, "command": command}
+                output=f"Atomic sequence: {combined_output}",
+                execution_time=total_time
             )
             
         except Exception as e:
             return ActionResult(
                 success=False,
                 output="",
-                error=f"Failed to execute command: {str(e)}"
+                error=f"Atomic actions failed: {str(e)}"
             )
     
-    async def _handle_wait(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Handle wait actions"""
-        parameters = action_data.get("parameters", {})
-        seconds = parameters.get("seconds", 1)
+    async def execute_click(self, coordinates: Tuple[int, int], description: str = "") -> ActionResult:
+        """Execute a simple click action"""
+        self.execution_count += 1
+        return await self.base_actions.click(coordinates, description)
+    
+    async def execute_key(self, keys: str) -> ActionResult:
+        """Execute a key press action"""
+        self.execution_count += 1
+        return await self.base_actions.press_key(keys)
+    
+    async def execute_type(self, text: str) -> ActionResult:
+        """Execute a simple type action"""
+        self.execution_count += 1
+        return await self.base_actions.type_text(text)
+    
+    async def execute_bash(self, command: str, timeout: float = 30.0) -> ActionResult:
+        """Execute a bash command"""
+        import subprocess
+        import time
+        
+        start_time = time.time()
+        self.execution_count += 1
         
         try:
-            seconds = float(seconds)
-            if seconds < 0 or seconds > 60:  # Reasonable bounds
+            result = subprocess.run(
+                command,
+                shell=True,
+                capture_output=True,
+                text=True,
+                timeout=timeout
+            )
+            
+            execution_time = time.time() - start_time
+            
+            if result.returncode == 0:
+                return ActionResult(
+                    success=True,
+                    output=result.stdout.strip(),
+                    execution_time=execution_time
+                )
+            else:
+                return ActionResult(
+                    success=False,
+                    output=result.stdout.strip(),
+                    error=result.stderr.strip(),
+                    execution_time=execution_time
+                )
+                
+        except subprocess.TimeoutExpired:
+            execution_time = time.time() - start_time
+            return ActionResult(
+                success=False,
+                output="",
+                error=f"Command timed out after {timeout}s",
+                execution_time=execution_time
+            )
+        except Exception as e:
+            execution_time = time.time() - start_time
+            return ActionResult(
+                success=False,
+                output="",
+                error=f"Bash execution failed: {str(e)}",
+                execution_time=execution_time
+            )
+    
+    async def execute_wait(self, seconds: float) -> ActionResult:
+        """Execute a wait action"""
+        self.execution_count += 1
+        return await self.base_actions.wait(seconds)
+    
+    async def execute_scroll(self, direction: str, amount: int = 3) -> ActionResult:
+        """Execute a scroll action"""
+        import pyautogui
+        import time
+        
+        start_time = time.time()
+        self.execution_count += 1
+        
+        try:
+            if direction.lower() == "up":
+                await asyncio.to_thread(pyautogui.scroll, amount)
+            elif direction.lower() == "down":
+                await asyncio.to_thread(pyautogui.scroll, -amount)
+            else:
                 return ActionResult(
                     success=False,
                     output="",
-                    error="Wait time must be between 0 and 60 seconds"
+                    error=f"Invalid scroll direction: {direction}. Use 'up' or 'down'"
                 )
             
-            await asyncio.sleep(seconds)
-            
+            execution_time = time.time() - start_time
             return ActionResult(
                 success=True,
-                output=f"Waited {seconds} seconds",
-                metadata={"wait_time": seconds}
+                output=f"Scrolled {direction} by {amount}",
+                execution_time=execution_time
             )
             
-        except (ValueError, TypeError):
+        except Exception as e:
+            execution_time = time.time() - start_time
             return ActionResult(
                 success=False,
                 output="",
-                error="Wait time must be a valid number"
+                error=f"Scroll failed: {str(e)}",
+                execution_time=execution_time
             )
     
-    async def _handle_scroll(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Handle scroll actions"""
-        parameters = action_data.get("parameters", {})
-        clicks = parameters.get("clicks", 3)
-        direction = parameters.get("direction", "down")
+    async def execute_drag(self, start_coords: Tuple[int, int], end_coords: Tuple[int, int]) -> ActionResult:
+        """Execute a drag action"""
+        import pyautogui
+        import time
+        
+        start_time = time.time()
+        self.execution_count += 1
         
         try:
-            clicks = int(clicks)
-            if direction.lower() == "up":
-                clicks = -clicks
+            start_x, start_y = start_coords
+            end_x, end_y = end_coords
             
-            await asyncio.to_thread(pyautogui.scroll, clicks)
+            await asyncio.to_thread(pyautogui.drag, end_x - start_x, end_y - start_y, 
+                                  duration=0.5, button='left')
             
+            execution_time = time.time() - start_time
             return ActionResult(
                 success=True,
-                output=f"Scrolled {abs(clicks)} clicks {direction}",
-                metadata={"clicks": clicks, "direction": direction}
+                output=f"Dragged from ({start_x}, {start_y}) to ({end_x}, {end_y})",
+                execution_time=execution_time
             )
             
-        except (ValueError, TypeError):
+        except Exception as e:
+            execution_time = time.time() - start_time
             return ActionResult(
                 success=False,
                 output="",
-                error="Scroll clicks must be a valid number"
+                error=f"Drag failed: {str(e)}",
+                execution_time=execution_time
             )
     
-    async def _handle_drag(self, action_data: Dict[str, Any]) -> ActionResult:
-        """Handle drag actions"""
+    # Backward compatibility method for the original ActionExecutor interface
+    async def execute(self, action_data: Dict[str, Any]) -> ActionResult:
+        """
+        Execute an action using the original ActionExecutor interface.
+        Provides backward compatibility while adding intelligence where possible.
+        """
+        action = action_data.get("action", "")
         parameters = action_data.get("parameters", {})
-        start_coord = parameters.get("start_coordinate", [])
-        end_coord = parameters.get("end_coordinate", [])
         
-        if len(start_coord) != 2 or len(end_coord) != 2:
+        if self.debug:
+            print(f"🔄 Backward compatibility execution: {action}")
+        
+        # Route to appropriate method based on action type
+        if action == "click":
+            coordinate = parameters.get("coordinate", [0, 0])
+            if len(coordinate) != 2:
+                return ActionResult(
+                    success=False,
+                    output="",
+                    error="Click requires coordinate [x, y]"
+                )
+            return await self.execute_click((coordinate[0], coordinate[1]))
+            
+        elif action == "type":
+            text = parameters.get("text", "")
+            field = parameters.get("field", "")
+            
+            # If field is specified and we have UI state, use intelligent typing
+            if field and hasattr(self, '_last_ui_state') and self._last_ui_state:
+                # Extract coordinates from field coordinate (e.g., "A-R3")
+                # This would need coordinate mapping - for now, fall back to simple type
+                return await self.execute_type(text)
+            else:
+                return await self.execute_type(text)
+                
+        elif action == "key":
+            keys = parameters.get("keys", "")
+            return await self.execute_key(keys)
+            
+        elif action == "bash":
+            command = parameters.get("command", "")
+            timeout = parameters.get("timeout", 30.0)
+            return await self.execute_bash(command, timeout)
+            
+        elif action == "wait":
+            seconds = parameters.get("seconds", 1.0)
+            return await self.execute_wait(seconds)
+            
+        elif action == "scroll":
+            direction = parameters.get("direction", "down")
+            amount = parameters.get("amount", 3)
+            return await self.execute_scroll(direction, amount)
+            
+        elif action == "drag":
+            start = parameters.get("start", [0, 0])
+            end = parameters.get("end", [0, 0])
+            return await self.execute_drag((start[0], start[1]), (end[0], end[1]))
+            
+        else:
             return ActionResult(
                 success=False,
                 output="",
-                error="Drag requires start_coordinate and end_coordinate [x, y]"
+                error=f"Unknown action: {action}"
             )
+    
+    def get_usage_stats(self) -> Dict[str, Any]:
+        """Get statistics about action sequence usage"""
+        total_executions = sum(self.sequence_usage_stats.values())
         
-        x1, y1 = int(start_coord[0]), int(start_coord[1])
-        x2, y2 = int(end_coord[0]), int(end_coord[1])
+        stats = {
+            "total_executions": self.execution_count,
+            "sequence_executions": total_executions,
+            "atomic_executions": self.execution_count - total_executions,
+            "sequence_usage": self.sequence_usage_stats.copy()
+        }
         
-        # Validate coordinates
-        screen_width, screen_height = pyautogui.size()
-        if not all(0 <= x <= screen_width and 0 <= y <= screen_height 
-                  for x, y in [(x1, y1), (x2, y2)]):
-            return ActionResult(
-                success=False,
-                output="",
-                error="Drag coordinates outside screen bounds"
-            )
+        # Calculate percentages
+        if total_executions > 0:
+            for strategy, count in self.sequence_usage_stats.items():
+                percentage = (count / total_executions) * 100
+                stats[f"{strategy}_percentage"] = round(percentage, 1)
         
-        # Perform drag
-        await asyncio.to_thread(pyautogui.drag, x2-x1, y2-y1, 0.5, pyautogui.easeInOutQuad)
+        return stats
+    
+    def print_usage_stats(self):
+        """Print usage statistics for debugging"""
+        stats = self.get_usage_stats()
         
-        return ActionResult(
-            success=True,
-            output=f"Dragged from ({x1}, {y1}) to ({x2}, {y2})",
-            metadata={"start": [x1, y1], "end": [x2, y2]}
-        ) 
+        print("\n📊 Enhanced Action Executor Statistics:")
+        print(f"   Total Executions: {stats['total_executions']}")
+        print(f"   Sequence Executions: {stats['sequence_executions']}")
+        print(f"   Atomic Executions: {stats['atomic_executions']}")
+        
+        print("\n🎯 Sequence Usage:")
+        for strategy, count in stats['sequence_usage'].items():
+            percentage = stats.get(f"{strategy}_percentage", 0)
+            print(f"   {strategy}: {count} ({percentage}%)") 

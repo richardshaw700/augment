@@ -79,6 +79,9 @@ class OutputManager: OutputFormatting {
         // System context
         jsonDict["systemContext"] = data.systemContext
         
+        // Compressed output for GPT consumption (includes focus indicators)
+        jsonDict["compressedOutput"] = toCompressed(data)
+        
         // Metadata
         jsonDict["metadata"] = [
             "timestamp": ISO8601DateFormatter().string(from: data.timestamp),
@@ -117,12 +120,70 @@ class OutputManager: OutputFormatting {
         // Process menu bar elements with menu bar coordinates
         let menuBarCompressed = compressMenuBarElements(menuBarElements)
         
-        // Create window prefix - extract app name from "activwndw: AppName - PageTitle" format
+        // Create window prefix - extract app name and current URL from window title
         let appName: String
+        var currentURL: String = ""
+        
         if data.windowTitle.hasPrefix("activwndw: ") {
             let titleWithoutPrefix = String(data.windowTitle.dropFirst(11)) // Remove "activwndw: "
             if let dashIndex = titleWithoutPrefix.firstIndex(of: "-") {
                 appName = String(titleWithoutPrefix[..<dashIndex]).trimmingCharacters(in: .whitespaces)
+                let pageTitle = String(titleWithoutPrefix[titleWithoutPrefix.index(after: dashIndex)...]).trimmingCharacters(in: .whitespaces)
+                
+                // For browsers, extract URL from address bar text field (primary) or page title (fallback)
+                if appName.lowercased().contains("safari") || appName.lowercased().contains("chrome") || appName.lowercased().contains("firefox") {
+                    // Primary: Look for URL in text field elements (address bar)
+                    for element in windowElements {
+                        if element.type.contains("TextField") || element.type.contains("textField") {
+                            if let visualText = element.visualText,
+                               !visualText.isEmpty,
+                               (visualText.hasPrefix("http://") || visualText.hasPrefix("https://") || 
+                                visualText.contains(".com") || visualText.contains(".org") || visualText.contains(".net")) {
+                                // Clean up the URL (remove protocols for brevity)
+                                var cleanURL = visualText
+                                if cleanURL.hasPrefix("https://") {
+                                    cleanURL = String(cleanURL.dropFirst(8))
+                                } else if cleanURL.hasPrefix("http://") {
+                                    cleanURL = String(cleanURL.dropFirst(7))
+                                }
+                                if cleanURL.hasPrefix("www.") {
+                                    cleanURL = String(cleanURL.dropFirst(4))
+                                }
+                                currentURL = String(cleanURL.prefix(30)) // Limit URL length
+                                break
+                            }
+                        }
+                    }
+                    
+                    // Fallback: Use page title patterns if no URL found
+                    if currentURL.isEmpty && !pageTitle.isEmpty {
+                        let lowercaseTitle = pageTitle.lowercased()
+                        if lowercaseTitle.contains("google") {
+                            currentURL = "google.com"
+                        } else if lowercaseTitle.contains("apple") {
+                            currentURL = "apple.com"
+                        } else if lowercaseTitle.contains("github") {
+                            currentURL = "github.com"
+                        } else if lowercaseTitle.contains("youtube") {
+                            currentURL = "youtube.com"
+                        } else if lowercaseTitle.contains("facebook") {
+                            currentURL = "facebook.com"
+                        } else if lowercaseTitle.contains("twitter") {
+                            currentURL = "twitter.com"
+                        } else if lowercaseTitle.contains("linkedin") {
+                            currentURL = "linkedin.com"
+                        } else if lowercaseTitle.contains("stackoverflow") {
+                            currentURL = "stackoverflow.com"
+                        } else {
+                            currentURL = "page:\(String(pageTitle.prefix(20)))"
+                        }
+                    }
+                    
+                    // Final fallback
+                    if currentURL.isEmpty {
+                        currentURL = "new-tab"
+                    }
+                }
             } else {
                 appName = titleWithoutPrefix
             }
@@ -130,7 +191,9 @@ class OutputManager: OutputFormatting {
             appName = String(data.windowTitle.prefix(8))
         }
         
-        let windowPrefix = "\(appName)|\(String(format: "%.0f", data.windowFrame.width))x\(String(format: "%.0f", data.windowFrame.height))|"
+        // Create window prefix with URL if available
+        let urlPart = currentURL.isEmpty ? "" : "|\(currentURL)"
+        let windowPrefix = "\(appName)|\(String(format: "%.0f", data.windowFrame.width))x\(String(format: "%.0f", data.windowFrame.height))\(urlPart)|"
         
         // Combine menu bar and window elements
         let combinedFormat = menuBarCompressed.isEmpty ? compressed.format : "\(menuBarCompressed),\(compressed.format)"
