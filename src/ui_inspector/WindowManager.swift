@@ -284,13 +284,22 @@ class WindowManager: WindowDetecting {
             app.activate(options: [])
             // print("⚡ Activated existing \(AppConfig.displayName) process")
         } else {
-            // App not running - launch it
-            let success = workspace.launchApplication(withBundleIdentifier: bundleID, options: [], additionalEventParamDescriptor: nil, launchIdentifier: nil)
-            if !success {
-                print("❌ Failed to launch \(AppConfig.displayName)")
+            // App not running - launch it using modern API
+            if let appURL = workspace.urlForApplication(withBundleIdentifier: bundleID) {
+                let configuration = NSWorkspace.OpenConfiguration()
+                configuration.activates = true
+                
+                workspace.openApplication(at: appURL, configuration: configuration) { app, error in
+                    if let error = error {
+                        print("❌ Failed to launch \(AppConfig.displayName): \(error.localizedDescription)")
+                    } else {
+                        // print("🚀 Launched \(AppConfig.displayName) application")
+                    }
+                }
+            } else {
+                print("❌ Could not find application with bundle ID: \(bundleID)")
                 return
             }
-            // print("🚀 Launched \(AppConfig.displayName) application")
         }
         
         // OPTIMIZATION: Smart polling for any app windows

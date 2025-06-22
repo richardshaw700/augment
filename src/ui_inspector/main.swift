@@ -9,26 +9,141 @@ struct DebugConfig {
 }
 
 // MARK: - App Configuration
-// Dynamic configuration - detects currently active application
+// Enhanced dynamic configuration - intelligently detects target application
 struct AppConfig {
     static var bundleID: String = ""
     static var appName: String = ""
     static var displayName: String = ""
     
     static func detectActiveApp() {
-        // Get the frontmost application
+        let runningApps = NSWorkspace.shared.runningApplications
+        
+        // Strategy 1: If frontmost is NOT the notch, use it (but still focus it properly)
         if let frontApp = NSWorkspace.shared.frontmostApplication {
-            bundleID = frontApp.bundleIdentifier ?? ""
-            appName = frontApp.localizedName ?? ""
-            displayName = frontApp.localizedName ?? ""
+            let frontBundleID = frontApp.bundleIdentifier ?? ""
+            if frontBundleID != "com.augment.augment" {
+                setBundleInfo(frontApp)
+                ensureAppIsProperlyFocused(frontApp)
+                return
+            }
+        }
+        
+        // Strategy 2: Notch is frontmost, find the "real" working app
+        print("🔍 Notch detected as frontmost, finding target app...")
+        let targetApp = findBestTargetApp(runningApps)
+        if let app = targetApp {
+            setBundleInfo(app)
+            ensureAppIsProperlyFocused(app)
+            return
+        }
+        
+        // Strategy 3: Fallback to Safari
+        print("⚠️  No suitable target app found, falling back to Safari")
+        fallbackToSafari()
+    }
+    
+    private static func setBundleInfo(_ app: NSRunningApplication) {
+        bundleID = app.bundleIdentifier ?? ""
+        appName = app.localizedName ?? ""
+        displayName = app.localizedName ?? ""
+        print("🎯 Selected target app: \(displayName) (\(bundleID))")
+    }
+    
+    private static func findBestTargetApp(_ apps: [NSRunningApplication]) -> NSRunningApplication? {
+        print("🔍 Finding target app (GPT will choose the best one from available apps list)...")
+        
+        // Simple strategy: Just avoid the notch and pick the most recently active app
+        // GPT gets the full app list and can intelligently choose which app to use
+        let candidateApps = apps.filter { app in
+            guard let bundleID = app.bundleIdentifier else { return false }
+            return bundleID != "com.augment.augment" &&  // Not the notch
+                   !app.isHidden &&                      // Not hidden
+                   app.activationPolicy == .regular       // Regular app (not background service)
+        }
+        
+        // Sort by activity (most recently active first)
+        let sortedApps = candidateApps.sorted { app1, app2 in
+            // Active apps first
+            if app1.isActive && !app2.isActive { return true }
+            if !app1.isActive && app2.isActive { return false }
             
-            print("🎯 Detected active app: \(displayName) (\(bundleID))")
+            // Then by launch time (more recently launched first)
+            let app1LaunchTime = app1.launchDate?.timeIntervalSinceNow ?? -Double.infinity
+            let app2LaunchTime = app2.launchDate?.timeIntervalSinceNow ?? -Double.infinity
+            return app1LaunchTime > app2LaunchTime
+        }
+        
+        if let bestApp = sortedApps.first {
+            print("✅ Selected most recently active app: \(bestApp.localizedName ?? "Unknown") (\(bestApp.bundleIdentifier ?? ""))")
+            print("💡 GPT will choose the optimal app from the available apps list based on task context")
+            return bestApp
+        }
+        
+        print("❌ No suitable apps found")
+        return nil
+    }
+    
+    private static func ensureAppIsProperlyFocused(_ app: NSRunningApplication) {
+        print("🎯 Focusing target app: \(app.localizedName ?? "Unknown")")
+        
+        // Activate the app to bring it to front (but keep notch visible)
+        app.activate(options: [])
+        
+        // Give it more time to come to front and stabilize
+        Thread.sleep(forTimeInterval: 0.8)
+        
+        // Bring specific windows to front if needed
+        bringAppWindowsToFront(app)
+        
+        // Additional wait to ensure window arrangement is complete and UI is stable
+        Thread.sleep(forTimeInterval: 0.5)
+        
+        print("✅ App focusing complete")
+    }
+    
+    private static func bringAppWindowsToFront(_ app: NSRunningApplication) {
+        guard let appName = app.localizedName, !appName.isEmpty else {
+            print("⚠️  Cannot bring windows to front: missing app name")
+            return
+        }
+        
+        print("📱 Arranging windows for \(appName)")
+        
+        // Use AppleScript to bring windows forward without affecting the notch
+        let script = """
+        tell application "\(appName)"
+            try
+                if (count of windows) > 0 then
+                    set index of front window to 1
+                    set visible of front window to true
+                end if
+            on error errMsg
+                -- Silently handle apps that don't support window management
+            end try
+        end tell
+        """
+        
+        if let appleScript = NSAppleScript(source: script) {
+            var error: NSDictionary?
+            appleScript.executeAndReturnError(&error)
+            if let error = error {
+                print("⚠️  Window arrangement note: \(error.description)")
+            } else {
+                print("✅ Windows arranged successfully")
+            }
+        }
+    }
+    
+    private static func fallbackToSafari() {
+        bundleID = "com.apple.Safari"
+        appName = "Safari"
+        displayName = "Safari"
+        
+        // Try to ensure Safari is running and focused
+        if let safariApp = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.Safari").first {
+            ensureAppIsProperlyFocused(safariApp)
         } else {
-            // Fallback to Safari if detection fails
-            bundleID = "com.apple.Safari"
-            appName = "Safari"
-            displayName = "Safari"
-            print("⚠️  Failed to detect active app, falling back to Safari")
+            print("⚠️  Safari not running, will attempt to launch if needed")
         }
     }
     
@@ -111,7 +226,7 @@ class UIInspectorApp {
             
             // Force activate the target app and try again
             if let app = NSRunningApplication.runningApplications(withBundleIdentifier: AppConfig.bundleID).first {
-                app.activate(options: [.activateIgnoringOtherApps])
+                app.activate(options: [])
                 Thread.sleep(forTimeInterval: 0.5) // Give it time to activate
                 
                 windowInfo = windowManager.getActiveWindow()
@@ -336,7 +451,7 @@ class UIInspectorApp {
         
         // Step 10: Create complete UI map
         let mapCreationStart = Date()
-        let windowContext = WindowContext(
+        let _ = WindowContext(
             windowFrame: finalWindowInfo.frame,
             windowTitle: finalWindowInfo.title,
             appName: finalWindowInfo.ownerName,

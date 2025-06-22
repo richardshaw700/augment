@@ -192,7 +192,7 @@ class AugmentController:
         else:
             llm_provider = "openai"  # Default fallback
         
-        self.gpt_engine = GPTComputerUse(llm_provider=llm_provider, llm_model=llm_model)
+        self.gpt_engine = GPTComputerUse(llm_provider=llm_provider, llm_model=llm_model, debug=debug)
         
         # Initialize smart LLM actions system
         from src.actions.action_executor import ActionExecutor
@@ -275,7 +275,7 @@ class AugmentController:
             
             if smart_result.success:
                 logger.success(f"Smart LLM task completed in {task_duration:.2f} seconds", "TASK")
-                
+        
                 # Update stats
                 self.stats["tasks_completed"] += 1
                 self.stats["smart_llm_queries"] += 1
@@ -355,7 +355,7 @@ class AugmentController:
             else:
                 logger.error(f"Hybrid task failed: {smart_result.reasoning}", "TASK")
                 logger.debug(f"Smart LLM failure details - Success: {smart_result.success}, Actions: {len(smart_result.action_results)}", "TASK")
-                
+            
                 # Don't fallback to computer use for hybrid tasks - this causes confusion
                 # Instead, return the failed smart result
                 task_record = {
@@ -401,7 +401,7 @@ class AugmentController:
         
         logger.debug(f"GPT engine returned {len(actions)} actions", "GPT")
         logger.success(f"Task completed in {task_duration:.2f} seconds", "TASK")
-        
+            
         # Count successful actions
         successful_actions = sum(1 for action in actions if action.get("action_result", {}).get("success", False))
         

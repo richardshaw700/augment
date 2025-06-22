@@ -474,13 +474,14 @@ class GPTComputerUse:
     Computer use API functionality with configurable LLM backend
     """
     
-    def __init__(self, llm_provider: str = "openai", llm_model: str = "gpt-4o-mini"):
+    def __init__(self, llm_provider: str = "openai", llm_model: str = "gpt-4o-mini", debug: bool = False):
         # Initialize LLM adapter
         self.llm_adapter = create_llm_adapter(llm_provider, llm_model)
         self.llm_info = self.llm_adapter.get_model_info()
         
         self.ui_inspector_path = project_root / "src" / "ui_inspector" / "compiled_ui_inspector"
         self.conversation_history = []
+        self.debug = debug  # Add missing debug attribute
         
         # Load available applications first (needed for system prompt)
         self.available_apps = self._load_available_applications()
