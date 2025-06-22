@@ -7,12 +7,14 @@ Integrates background LLM queries with the existing action system for intelligen
 import asyncio
 import json
 import time
+import re
 from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass
 from urllib.parse import urlparse
 
 from .action_executor import ActionExecutor
 from .base_actions import ActionResult
+from .background_automation import BackgroundAutomation, BackgroundActionResult
 from src.gpt_engine.background_llm import BackgroundLLMEngine, QueryResult
 from src.gpt_engine.task_classifier import TaskClassifier, TaskClassification, TaskType
 
@@ -39,6 +41,7 @@ class SmartLLMActions:
         # Initialize background systems
         self.task_classifier = TaskClassifier()
         self.background_llm = BackgroundLLMEngine(llm_adapter, max_concurrent_queries=2)
+        self.background_automation = BackgroundAutomation(debug=debug)
         
         # URL mapping for common sites
         self.site_mappings = {
@@ -71,21 +74,28 @@ class SmartLLMActions:
     
     async def execute_smart_task(self, task: str, ui_state: Optional[Dict] = None) -> SmartActionResult:
         """
-        Execute a task using intelligent routing between LLM queries and UI actions
+        Main entry point for smart task execution
         
         Args:
             task: The user's task description
             ui_state: Current UI state for context
             
         Returns:
-            SmartActionResult with combined LLM and action results
+            SmartActionResult with execution results
         """
         start_time = time.time()
         
         if self.debug:
-            print(f"🎯 Executing smart task: '{task}'")
+            print(f"🚀 Smart task executor starting: '{task}'")
         
-        # Step 1: Classify the task
+        # FIRST: Check if this is a messaging task (before classification)
+        # This ensures messaging tasks bypass the classifier entirely
+        if self._is_messaging_task(task):
+            if self.debug:
+                print(f"📱 Detected messaging task, routing to background automation")
+            return await self._handle_messaging_task(task, ui_state, start_time)
+        
+        # SECOND: Only classify non-messaging tasks
         classification = self.task_classifier.classify_task(task)
         
         if self.debug:
@@ -94,7 +104,7 @@ class SmartLLMActions:
             print(f"   Confidence: {classification.confidence:.2f}")
             print(f"   Reasoning: {classification.reasoning}")
         
-        # Step 2: Route based on task type
+        # THIRD: Route based on task type
         if classification.task_type == TaskType.KNOWLEDGE_QUERY:
             return await self._handle_knowledge_query(task, classification, ui_state, start_time)
         
@@ -106,6 +116,143 @@ class SmartLLMActions:
         
         else:  # COMPUTER_USE - delegate to regular action executor
             return await self._delegate_to_action_executor(task, ui_state, start_time)
+    
+    def _is_messaging_task(self, task: str) -> bool:
+        """
+        Check if task is a messaging task that should use background automation
+        
+        Args:
+            task: The user's task description
+            
+        Returns:
+            True if this is a messaging task
+        """
+        task_lower = task.lower().strip()
+        
+        # Explicit messaging keywords
+        messaging_patterns = [
+            r"send (a )?text",
+            r"send (an )?imessage",
+            r"text \w+",  # "text john", "text mom"
+            r"message \w+",  # "message sarah"
+            r"send (a )?message",
+            r"imessage \w+",
+            r"sms \w+"
+        ]
+        
+        for pattern in messaging_patterns:
+            if re.search(pattern, task_lower):
+                return True
+        
+        return False
+    
+    async def _handle_messaging_task(self, task: str, ui_state: Optional[Dict], start_time: float) -> SmartActionResult:
+        """
+        Handle messaging tasks using background automation
+        
+        Args:
+            task: The user's task description
+            ui_state: Current UI state for context
+            start_time: Start time for execution tracking
+            
+        Returns:
+            SmartActionResult with messaging results
+        """
+        if self.debug:
+            print(f"📱 Processing messaging task: '{task}'")
+        
+        # Parse the messaging task
+        message_info = self._parse_messaging_task(task)
+        
+        if not message_info:
+            return SmartActionResult(
+                success=False,
+                action_results=[],
+                execution_time=time.time() - start_time,
+                reasoning="Could not parse recipient and message from task"
+            )
+        
+        recipient = message_info.get("recipient")
+        message_text = message_info.get("message")
+        
+        if not recipient or not message_text:
+            return SmartActionResult(
+                success=False,
+                action_results=[],
+                execution_time=time.time() - start_time,
+                reasoning=f"Missing recipient ({recipient}) or message ({message_text})"
+            )
+        
+        # Use background automation to send the message
+        try:
+            background_result = await self.background_automation.send_message_smart(recipient, message_text)
+            
+            # Convert to SmartActionResult
+            action_result = ActionResult(
+                success=background_result.success,
+                output=background_result.output or f"Message sent to {recipient}",
+                error=background_result.error
+            )
+            
+            return SmartActionResult(
+                success=background_result.success,
+                action_results=[action_result],
+                llm_response=f"Message sent to {recipient}: '{message_text}'",
+                execution_time=time.time() - start_time,
+                reasoning=f"Background messaging to {recipient} completed"
+            )
+            
+        except Exception as e:
+            return SmartActionResult(
+                success=False,
+                action_results=[],
+                execution_time=time.time() - start_time,
+                reasoning=f"Background messaging failed: {str(e)}"
+            )
+    
+    def _parse_messaging_task(self, task: str) -> Optional[Dict[str, str]]:
+        """
+        Parse messaging task to extract recipient and message
+        
+        Args:
+            task: The user's task description
+            
+        Returns:
+            Dict with 'recipient' and 'message' keys, or None if parsing failed
+        """
+        task_lower = task.lower().strip()
+        
+        # Pattern 1: "send a text to John saying I'm running late"
+        # Pattern 2: "send an iMessage to Mom that I'll be home soon"
+        match = re.search(r"send (?:a |an )?(?:text|imessage|message) to (\w+(?:\s+\w+)*) (?:saying|that) (.+)", task_lower)
+        if match:
+            return {
+                "recipient": match.group(1).strip(),
+                "message": match.group(2).strip()
+            }
+        
+        # Pattern 3: "text John that I'm running late"
+        # Pattern 4: "message Sarah saying dinner is ready"
+        match = re.search(r"(?:text|message) (\w+(?:\s+\w+)*) (?:that|saying) (.+)", task_lower)
+        if match:
+            return {
+                "recipient": match.group(1).strip(),
+                "message": match.group(2).strip()
+            }
+        
+        # Pattern 5: "text mom I'll be home soon" (without "that" or "saying")
+        match = re.search(r"text (\w+(?:\s+\w+)*) (.+)", task_lower)
+        if match:
+            recipient = match.group(1).strip()
+            message = match.group(2).strip()
+            # Skip if the "message" looks like it might be another command
+            if not any(word in message for word in ["send", "text", "message", "call"]):
+                return {
+                    "recipient": recipient,
+                    "message": message
+                }
+        
+        return None
     
     async def _handle_knowledge_query(self, task: str, classification: TaskClassification, 
                                     ui_state: Optional[Dict], start_time: float) -> SmartActionResult:
@@ -694,4 +841,225 @@ Original task: {original_task}
             "active_queries": len(self.background_llm.get_active_queries()),
             "queue_size": self.background_llm.get_queue_size(),
             "completed_queries": len(self.background_llm.completed_queries)
-        } 
+        }
+
+    async def execute_background_action(self, task: str, ui_state: Optional[Dict] = None) -> SmartActionResult:
+        """
+        Execute background actions like sending messages, emails without UI interaction
+        
+        Args:
+            task: The user's task description (e.g., "Send a text to John saying I'm running late")
+            ui_state: Current UI state for context
+            
+        Returns:
+            SmartActionResult with background action results
+        """
+        start_time = time.time()
+        
+        if self.debug:
+            print(f"🔄 Executing background action: '{task}'")
+        
+        # Parse the task to extract action type and parameters
+        action_info = self._parse_background_task(task)
+        
+        if not action_info:
+            return SmartActionResult(
+                success=False,
+                action_results=[],
+                execution_time=time.time() - start_time,
+                reasoning="Could not parse background action from task"
+            )
+        
+        action_type = action_info.get("type")
+        params = action_info.get("params", {})
+        
+        # Execute the background action
+        background_result = None
+        
+        try:
+            if action_type == "send_message":
+                background_result = await self.background_automation.send_imessage(
+                    recipient=params.get("recipient"),
+                    message=params.get("message")
+                )
+            elif action_type == "send_email":
+                background_result = await self.background_automation.send_email(
+                    recipient=params.get("recipient"),
+                    subject=params.get("subject", ""),
+                    body=params.get("body", "")
+                )
+            elif action_type == "add_reminder":
+                background_result = await self.background_automation.add_reminder(
+                    title=params.get("title"),
+                    due_date=params.get("due_date")
+                )
+            elif action_type == "add_calendar_event":
+                background_result = await self.background_automation.add_calendar_event(
+                    title=params.get("title"),
+                    start_date=params.get("start_date"),
+                    end_date=params.get("end_date")
+                )
+            elif action_type == "create_note":
+                background_result = await self.background_automation.create_note(
+                    title=params.get("title"),
+                    content=params.get("content")
+                )
+            else:
+                return SmartActionResult(
+                    success=False,
+                    action_results=[],
+                    execution_time=time.time() - start_time,
+                    reasoning=f"Unknown background action type: {action_type}"
+                )
+            
+            # Convert background result to action result
+            action_result = ActionResult(
+                success=background_result.success,
+                output=background_result.output,
+                error=background_result.error
+            )
+            
+            return SmartActionResult(
+                success=background_result.success,
+                action_results=[action_result],
+                execution_time=time.time() - start_time,
+                reasoning=f"Background {action_type} executed"
+            )
+            
+        except Exception as e:
+            error_result = ActionResult(
+                success=False,
+                output="",
+                error=f"Background action failed: {str(e)}"
+            )
+            
+            return SmartActionResult(
+                success=False,
+                action_results=[error_result],
+                execution_time=time.time() - start_time,
+                reasoning=f"Exception during background action: {str(e)}"
+            )
+    
+    def _parse_background_task(self, task: str) -> Optional[Dict[str, Any]]:
+        """
+        Parse a natural language task into background action parameters
+        
+        Args:
+            task: Natural language task description
+            
+        Returns:
+            Dictionary with action type and parameters, or None if unparseable
+        """
+        task_lower = task.lower()
+        
+        # Message sending patterns
+        if any(word in task_lower for word in ["send", "text", "message"]):
+            # Extract recipient and message
+            # Patterns like "send a text to John saying I'm running late"
+            # or "text mom that I'll be home soon"
+            
+            recipient = None
+            message = None
+            
+            # Look for recipient patterns
+            if " to " in task_lower:
+                # "send a text to John saying..."
+                parts = task_lower.split(" to ", 1)
+                if len(parts) > 1:
+                    after_to = parts[1]
+                    if " saying " in after_to:
+                        recipient_part, message_part = after_to.split(" saying ", 1)
+                        recipient = recipient_part.strip()
+                        message = message_part.strip()
+                    elif " that " in after_to:
+                        recipient_part, message_part = after_to.split(" that ", 1)
+                        recipient = recipient_part.strip()
+                        message = message_part.strip()
+            
+            elif "text " in task_lower:
+                # "text mom that..."
+                parts = task_lower.split("text ", 1)
+                if len(parts) > 1:
+                    after_text = parts[1]
+                    if " that " in after_text:
+                        recipient_part, message_part = after_text.split(" that ", 1)
+                        recipient = recipient_part.strip()
+                        message = message_part.strip()
+                    elif " saying " in after_text:
+                        recipient_part, message_part = after_text.split(" saying ", 1)
+                        recipient = recipient_part.strip()
+                        message = message_part.strip()
+            
+            if recipient and message:
+                return {
+                    "type": "send_message",
+                    "params": {
+                        "recipient": recipient,
+                        "message": message
+                    }
+                }
+        
+        # Email patterns
+        elif any(word in task_lower for word in ["email", "send email"]):
+            # Similar parsing for emails
+            if " to " in task_lower and (" about " in task_lower or " saying " in task_lower):
+                parts = task_lower.split(" to ", 1)
+                if len(parts) > 1:
+                    after_to = parts[1]
+                    if " about " in after_to:
+                        recipient_part, subject_part = after_to.split(" about ", 1)
+                        return {
+                            "type": "send_email",
+                            "params": {
+                                "recipient": recipient_part.strip(),
+                                "subject": subject_part.strip(),
+                                "body": subject_part.strip()
+                            }
+                        }
+        
+        # Reminder patterns
+        elif any(word in task_lower for word in ["remind", "reminder"]):
+            # "remind me to call john tomorrow"
+            if " to " in task_lower:
+                parts = task_lower.split(" to ", 1)
+                if len(parts) > 1:
+                    reminder_text = parts[1].strip()
+                    return {
+                        "type": "add_reminder",
+                        "params": {
+                            "title": reminder_text
+                        }
+                    }
+        
+        # Calendar event patterns
+        elif any(word in task_lower for word in ["schedule", "calendar", "meeting"]):
+            # Basic calendar event parsing
+            if " at " in task_lower:
+                parts = task_lower.split(" at ", 1)
+                if len(parts) > 1:
+                    title = parts[0].replace("schedule", "").strip()
+                    time_info = parts[1].strip()
+                    return {
+                        "type": "add_calendar_event",
+                        "params": {
+                            "title": title,
+                            "start_date": time_info  # Would need better date parsing
+                        }
+                    }
+        
+        # Note creation patterns
+        elif any(word in task_lower for word in ["note", "write down", "save"]):
+            # "create a note about meeting notes"
+            if " about " in task_lower:
+                parts = task_lower.split(" about ", 1)
+                if len(parts) > 1:
+                    content = parts[1].strip()
+                    return {
+                        "type": "create_note",
+                        "params": {
+                            "title": f"Note: {content[:50]}...",
+                            "content": content
+                        }
+                    }
+        
+        return None 

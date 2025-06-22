@@ -15,6 +15,7 @@ import argparse
 from dotenv import load_dotenv
 import logging
 import time
+import re
 
 # =============================================================================
 # 🤖 LLM CONFIGURATION
@@ -239,13 +240,19 @@ class AugmentController:
         
         task_start_time = time.time()
         
-        # Step 1: Classify the task
+        # FIRST: Check if this is a messaging task (before classification)
+        # This ensures messaging tasks bypass the classifier entirely
+        if self._is_messaging_task(task):
+            logger.debug("Routing to Smart LLM Actions system (messaging task)", "TASK")
+            return await self._execute_smart_llm_task(task, task_id, None, task_start_time)
+        
+        # SECOND: Classify non-messaging tasks
         classification = self.task_classifier.classify_task(task)
         
         logger.debug(f"Task Classification: {classification.task_type.value} (confidence: {classification.confidence:.2f})", "TASK")
         logger.debug(f"Reasoning: {classification.reasoning}", "TASK")
         
-        # Step 2: Route based on task type
+        # THIRD: Route based on task type and confidence
         if classification.task_type in [TaskType.KNOWLEDGE_QUERY, TaskType.SMART_ACTION] and classification.confidence > 0.6:
             # Use smart LLM actions for knowledge/smart tasks
             logger.debug("Routing to Smart LLM Actions system", "TASK")
@@ -260,6 +267,35 @@ class AugmentController:
             # Use traditional computer use approach
             logger.debug("Routing to Traditional Computer Use system", "TASK")
             return await self._execute_computer_use_task(task, task_id, task_start_time)
+    
+    def _is_messaging_task(self, task: str) -> bool:
+        """
+        Check if task is a messaging task that should use background automation
+        
+        Args:
+            task: The user's task description
+            
+        Returns:
+            True if this is a messaging task
+        """
+        task_lower = task.lower().strip()
+        
+        # Explicit messaging keywords
+        messaging_patterns = [
+            r"send (a )?text",
+            r"send (an )?imessage",
+            r"text \w+",  # "text john", "text mom"
+            r"message \w+",  # "message sarah"
+            r"send (a )?message",
+            r"imessage \w+",
+            r"sms \w+"
+        ]
+        
+        for pattern in messaging_patterns:
+            if re.search(pattern, task_lower):
+                return True
+        
+        return False
     
     async def _execute_smart_llm_task(self, task: str, task_id: str, classification, task_start_time: float) -> Dict[str, Any]:
         """Execute task using smart LLM actions"""
@@ -279,7 +315,9 @@ class AugmentController:
                 # Update stats
                 self.stats["tasks_completed"] += 1
                 self.stats["smart_llm_queries"] += 1
-                if classification.task_type == TaskType.KNOWLEDGE_QUERY:
+                
+                # Only update classification-specific stats if classification exists
+                if classification and classification.task_type == TaskType.KNOWLEDGE_QUERY:
                     self.stats["knowledge_only_tasks"] += 1
                 
                 # Create task record
@@ -287,8 +325,8 @@ class AugmentController:
                     "task_id": task_id,
                     "task": task,
                     "status": "COMPLETED",
-                    "method": "SMART_LLM",
-                    "classification": classification.task_type.value,
+                    "method": "MESSAGING" if classification is None else "SMART_LLM",
+                    "classification": "messaging" if classification is None else classification.task_type.value,
                     "duration": task_duration,
                     "llm_response": smart_result.llm_response,
                     "structured_data": smart_result.structured_data,
@@ -302,14 +340,43 @@ class AugmentController:
             else:
                 logger.error(f"Smart LLM task failed: {smart_result.reasoning}", "TASK")
                 
-                # Fallback to computer use if smart LLM fails
+                # For messaging tasks, don't fallback to computer use
+                if classification is None:
+                    task_record = {
+                        "task_id": task_id,
+                        "task": task,
+                        "status": "FAILED",
+                        "method": "MESSAGING_FAILED",
+                        "duration": task_duration,
+                        "reasoning": smart_result.reasoning,
+                        "error": "Messaging task failed"
+                    }
+                    self.session_history.append(task_record)
+                    return task_record
+                
+                # For non-messaging tasks, fallback to computer use if smart LLM fails
                 logger.debug("Falling back to traditional computer use", "TASK")
                 return await self._execute_computer_use_task(task, task_id, task_start_time)
                 
         except Exception as e:
             logger.error(f"Smart LLM execution error: {str(e)}", "TASK")
             
-            # Fallback to computer use
+            # For messaging tasks, don't fallback to computer use
+            if classification is None:
+                task_duration = time.time() - task_start_time
+                task_record = {
+                    "task_id": task_id,
+                    "task": task,
+                    "status": "ERROR",
+                    "method": "MESSAGING_ERROR",
+                    "duration": task_duration,
+                    "error": str(e),
+                    "reasoning": "Exception occurred during messaging task execution"
+                }
+                self.session_history.append(task_record)
+                return task_record
+            
+            # For non-messaging tasks, fallback to computer use
             logger.debug("Falling back to traditional computer use due to error", "TASK")
             return await self._execute_computer_use_task(task, task_id, task_start_time)
     

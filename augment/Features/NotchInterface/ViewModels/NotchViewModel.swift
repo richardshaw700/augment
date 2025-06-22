@@ -372,16 +372,30 @@ struct GPTResponseParser {
     
     private static func parseGPTResponse(from output: String) -> String? {
         let lines = output.components(separatedBy: .newlines)
-        let gptLines = lines.filter { $0.contains("🤖 GPT Response:") }
+        let responseLines = lines.filter { $0.contains("🤖 GPT Response:") || $0.contains("🤖 OS Response:") }
         
-        guard let lastGptLine = gptLines.last,
-              let jsonStart = lastGptLine.range(of: "{"),
-              let jsonEnd = lastGptLine.range(of: "}", options: .backwards),
-              jsonEnd.upperBound <= lastGptLine.endIndex else {
+        guard let lastResponseLine = responseLines.last else { return nil }
+        
+        let jsonStart: String.Index?
+        let jsonEnd: String.Index?
+        
+        if lastResponseLine.contains("🤖 GPT Response:") {
+            jsonStart = lastResponseLine.range(of: "{")?.lowerBound
+            jsonEnd = lastResponseLine.range(of: "}", options: .backwards)?.upperBound
+        } else if lastResponseLine.contains("🤖 OS Response:") {
+            jsonStart = lastResponseLine.range(of: "{")?.lowerBound
+            jsonEnd = lastResponseLine.range(of: "}", options: .backwards)?.upperBound
+        } else {
             return nil
         }
         
-        let jsonString = String(lastGptLine[jsonStart.lowerBound..<jsonEnd.upperBound])
+        guard let start = jsonStart,
+              let end = jsonEnd,
+              end <= lastResponseLine.endIndex else {
+            return nil
+        }
+        
+        let jsonString = String(lastResponseLine[start..<end])
         
         do {
             guard let jsonData = jsonString.data(using: .utf8),

@@ -63,7 +63,11 @@ class TaskClassifier:
         r"find .* and (add|order|buy|purchase|cart)",
         r"research .* and (create|write|save|email)",
         r"look up .* and (share|send|post)",
-        r"get .* and (compare|analyze|calculate)"
+        r"get .* and (compare|analyze|calculate)",
+        # Navigation + knowledge patterns
+        r"(go to|open|visit) .* and (find|get|search|look)",
+        r"(open|go to|visit) .* (find me|get me|search for)",
+        r"(navigate to|go to) .* and (find|locate|search)"
     ]
     
     def __init__(self):
@@ -146,9 +150,19 @@ class TaskClassifier:
             if keyword in task_lower:
                 score += 0.3
         
-        # URL/Website patterns
+        # Navigation patterns - HIGHEST PRIORITY (matching background_llm.py)
+        # These should not be drowned out by knowledge keywords
+        navigation_keywords = ["open", "go to", "visit", "navigate"]
+        if any(keyword in task_lower for keyword in navigation_keywords):
+            score += 0.8  # Increased from 0.6 to ensure priority
+        
+        # URL/Website patterns - also high priority
         if re.search(r"(open|go to|visit) .* (website|url|\.com|netflix|youtube)", task_lower):
-            score += 0.6
+            score += 0.4  # Additional boost for specific sites
+        
+        # Direct service patterns (e.g., "go to netflix")
+        if re.search(r"(open|go to|visit) (netflix|youtube|amazon|spotify|github|reddit)", task_lower):
+            score += 0.4  # Additional boost for direct service navigation
         
         # Media patterns
         if re.search(r"(play|watch|listen to) .* (on|from)", task_lower):
