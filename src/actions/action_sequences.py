@@ -8,7 +8,7 @@ from typing import Dict, Any, Optional, List, Tuple
 from .base_actions import BaseActions, ActionResult
 
 # Import dynamic prompts system
-from ..gpt_engine.dynamic_prompts import inject_navigation_success, inject_completion_detected
+from src.gpt_engine.dynamic_prompts import inject_navigation_success, inject_completion_detected
 
 
 class ActionSequences:

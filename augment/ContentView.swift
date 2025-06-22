@@ -520,7 +520,8 @@ struct ChatView: View {
             }
             
             // Parse GPT system output format
-            if contentWithoutTimestamp.hasPrefix("🚀 Starting GPT Computer Use") {
+            if contentWithoutTimestamp.hasPrefix("🚀 Starting GPT Computer Use") || 
+               contentWithoutTimestamp.hasPrefix("🤖 Computer Use initialized") {
                 // System startup message
                 let addDebug = "✅ Adding system startup message\n"
                 if let data = addDebug.data(using: .utf8) {
@@ -536,9 +537,11 @@ struct ChatView: View {
                     timestamp: Date(),
                     type: .system
                 ))
-            } else if contentWithoutTimestamp.hasPrefix("📝 Task:") {
+            } else if contentWithoutTimestamp.hasPrefix("📝 Task:") ||
+                      contentWithoutTimestamp.hasPrefix("[TASK] Task:") {
                 // Extract and show user task
-                let task = contentWithoutTimestamp.replacingOccurrences(of: "📝 Task: ", with: "")
+                var task = contentWithoutTimestamp.replacingOccurrences(of: "📝 Task: ", with: "")
+                task = task.replacingOccurrences(of: "[TASK] Task: ", with: "")
                 let taskDebug = "✅ Adding user task: \(task)\n"
                 if let data = taskDebug.data(using: .utf8) {
                     if let fileHandle = FileHandle(forWritingAtPath: debugLogPath) {
@@ -635,12 +638,98 @@ struct ChatView: View {
                     type: .system
                 ))
             } else if contentWithoutTimestamp.hasPrefix("📊 Task") {
-                // Task summary
+                // Task summary or classification
                 messages.append(ChatMessage(
                     content: contentWithoutTimestamp,
                     isUser: false,
                     timestamp: Date(),
                     type: .system
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("[TASK] Task Classification:") {
+                // New Smart LLM task classification
+                let classification = contentWithoutTimestamp.replacingOccurrences(of: "[TASK] Task Classification: ", with: "")
+                messages.append(ChatMessage(
+                    content: "📊 Task Classification: " + classification,
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .system
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("[TASK] Reasoning:") {
+                // Task classification reasoning
+                let reasoning = contentWithoutTimestamp.replacingOccurrences(of: "[TASK] Reasoning: ", with: "")
+                messages.append(ChatMessage(
+                    content: "💭 " + reasoning,
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .text
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("[TASK] Routing to") {
+                // Routing information
+                let routing = contentWithoutTimestamp.replacingOccurrences(of: "[TASK] Routing to ", with: "")
+                messages.append(ChatMessage(
+                    content: "🔄 Routing to " + routing,
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .system
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("🎯 Executing smart task:") {
+                // Smart task execution
+                let task = contentWithoutTimestamp.replacingOccurrences(of: "🎯 Executing smart task: ", with: "")
+                messages.append(ChatMessage(
+                    content: "🎯 " + task,
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .system
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("🔀 Handling hybrid task:") {
+                // Hybrid task handling
+                messages.append(ChatMessage(
+                    content: "🔀 Processing hybrid task...",
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .system
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("📤 Submitted query") {
+                // LLM query submission
+                messages.append(ChatMessage(
+                    content: "📤 Querying LLM for guidance...",
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .tool
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("📥 LLM result received") {
+                // LLM result received
+                messages.append(ChatMessage(
+                    content: "📥 LLM guidance received",
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .tool
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("🌐 Navigating to") {
+                // URL navigation
+                let navigation = contentWithoutTimestamp.replacingOccurrences(of: "🌐 Navigating to ", with: "")
+                messages.append(ChatMessage(
+                    content: "🌐 " + navigation,
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .tool
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("🌐 Smart navigating to:") {
+                // Smart navigation
+                let url = contentWithoutTimestamp.replacingOccurrences(of: "🌐 Smart navigating to: ", with: "")
+                messages.append(ChatMessage(
+                    content: "🌐 Opening: " + url,
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .tool
+                ))
+            } else if contentWithoutTimestamp.hasPrefix("🔄") && contentWithoutTimestamp.contains("recovery") {
+                // Recovery attempts
+                messages.append(ChatMessage(
+                    content: contentWithoutTimestamp,
+                    isUser: false,
+                    timestamp: Date(),
+                    type: .tool
                 ))
             } else if contentWithoutTimestamp.hasPrefix("💰 Cost Mode:") {
                 // Cost optimization info

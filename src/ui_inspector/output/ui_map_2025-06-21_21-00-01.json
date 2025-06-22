@@ -1,0 +1,7105 @@
+{
+  "window" : {
+    "title" : "activwndw: Safari - Amazon.ca : Orijen Large Breed Dog Food",
+    "frame" : {
+      "width" : 1020,
+      "x" : 86,
+      "height" : 945,
+      "y" : 59
+    }
+  },
+  "compressedOutput" : "Safari|1020x945|amazon.ca\/s?k=Orijen+Large+Bre|menu:Apple@M-M1,menu:Safari@M-M2,menu:File@M-M3,menu:Edit@M-M4,menu:View@M-M5,menu:History@M-M6,menu:Bookmark@M-M7,menu:Develop@M-M8,menu:Window@M-M9,menu:Help@M-M10,btn:Button@A-J7,btn:Button@A-I4,btn:Tab Overview (tab)@A-AM2,btn:Button (config)@A-B9,btn:Shortcuts menu@A-D6,btn:Reload this page (nav)@A-AB2,btn:Button@A-AF48,btn:Share (share)@A-AJ1,btn:add@A-AL2,btn:New Tab (tab)@A-AL3,btn:Button (nav)@A-AL31,btn:show sidebar@A-E2,btn:Go back (nav)@A-G2,btn:Go forward (nav)@A-I2,btn:Button (action)@A-I50,btn:Activate WhatFont@A-K2,btn:Page Menu (config)@A-M2,btn:Button@A-M48,btn:Button@A-N1,btn:Button@A-W48,dropdown:All Departments (menu)@A-L6,radio:RadioButton@A-AG4,radio:RadioButton@A-C4,radio:RadioButton@A-N4,scroll:ScrollArea (scrollable)@A-Z24,dropdown:Sort by: (menu)@A-AJ13,btn:to save@A-AB11,link:to save@A-V11,radio:A amazon.ca@A-W2,txtinp:TextField (url)@A-Y2[UNFOCUSED],txtinp:Search Amazon.ca (search)@A-O6[UNFOCUSED],txt:Gift Cards@A-T9,txt:TextContent@A-AC17,txt:Group@A-I13,txt:\/l)@A-AE50,txt:(10.3k)@A-AL27,txt:\/count)@A-R50,txt:TextContent@A-AA34,link:Richard 's Store@A-AH9,link:Returns& Orders@A-AL4,txt:StaticText@A-H11,txt:TextContent@A-AM7,txt:Purina ONE@A-C19,txt:Up to 0.9 kg@A-C23,txt:1 to 1.9 kg@A-E26,txt:2 to 2.9 kg@A-E27,txt:Gift Ideas@A-O11,txt:New Releases@A-R11,txt:TextContent@A-R4,txt:4.4 out of 5 stars.@A-U29,txt:$4.99@A-AL50,txt:TextContent@A-AN9,txt:Beef@A-C30,txt:Bag@A-C46,txt:Price@A-C47,txt:Grocery@A-D17,txt:Chicken@A-D33,txt:Adult@A-D35,txt:Puppy@A-D39,txt:Books@A-E11,txt:Buffalo @A-T18,slider:Minimum price@A-C50,slider:Maximum price@A-F50,txt:***** & Up@A-H42,txt:TextContent@A-AC4,img:rfprime@A-AI29,txt:TextContent@A-AF26,txt:Hello, Richard@A-AG6,txt:Sponsored O@A-AH48,txt:Sort by: Featured V@A-AN13,txt:Delivery@A-C16,txt:Container Type@A-D44,txt:Purina ONE@A-E21,txt:03kg&above@A-F28,txt:All Life Stages@A-F37,txt:Customer Reviews@A-F40,txt:Amazon Resale@A-M11,txt:Subscribed@A-N35,txt:More Meat &...@A-W27,txt:4.4 ****4t (1 k)@A-X28,txt:PROPLA@A-AA43,txt:Results@A-M32,txt:15.4 kg@A-P47,txt:PRO PLAW@A-Q43,txt:13.6 kg@A-Z47",
+  "elements" : [
+    {
+      "semanticMeaning" : "AXRadioButton with text 'A amazon.ca'",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "size" : {
+        "width" : 79.999999999999943,
+        "height" : 12.500000000000025
+      },
+      "position" : {
+        "y" : 85.749999999999972,
+        "x" : 596.5
+      },
+      "visualText" : "A amazon.ca",
+      "isClickable" : true,
+      "id" : "8B1BCF4D-C3E4-4490-A70F-7F5601B05000",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 79.499999999999957,
+          "height" : 12.500000000000025,
+          "x" : 556.5,
+          "width" : 79.999999999999943
+        },
+        "text" : "A amazon.ca",
+        "confidence" : 0.5
+      },
+      "actionHint" : "Clickable element",
+      "confidence" : 0.79999999999999993,
+      "accessibility" : {
+        "focused" : false,
+        "title" : "buy amazon cart - Google Search",
+        "role" : "AXRadioButton",
+        "enabled" : true,
+        "description" : null
+      },
+      "type" : "AXRadioButton+OCR"
+    },
+    {
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "visualText" : "Amazon.com : Orijen Large Breed Do...",
+      "position" : {
+        "y" : 126.24999999999999,
+        "x" : 229.25
+      },
+      "size" : {
+        "height" : 10.500000000000068,
+        "width" : 195.49999999999997
+      },
+      "confidence" : 0.79999999999999993,
+      "semanticMeaning" : "AXButton with text 'Amazon.com : Orijen Large Breed Do...'",
+      "id" : "F214C5CC-F257-4377-B671-96E497E62605",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 120.99999999999996,
+          "x" : 131.5,
+          "width" : 195.49999999999997,
+          "height" : 10.500000000000068
+        },
+        "text" : "Amazon.com : Orijen Large Breed Do...",
+        "confidence" : 0.5
+      },
+      "actionHint" : "Clickable element",
+      "type" : "AXButton+OCR",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : null,
+        "focused" : false,
+        "title" : "Deliver to Richard Ottawa K2G 1Z‌",
+        "enabled" : true
+      }
+    },
+    {
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "visualText" : "Amazon.com: ACANA Singles Limited...",
+      "interactions" : [
+
+      ],
+      "id" : "150DD3DA-C82C-4804-BF25-545DA37361BE",
+      "position" : {
+        "y" : 126.24999999999999,
+        "x" : 485.5
+      },
+      "semanticMeaning" : "Text content: 'Amazon.com: ACANA Singles Limited...'",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 10.500000000000068,
+        "width" : 197.99999999999997
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 386.5,
+          "width" : 197.99999999999997,
+          "y" : 120.99999999999996,
+          "height" : 10.500000000000068
+        },
+        "text" : "Amazon.com: ACANA Singles Limited...",
+        "confidence" : 0.5
+      }
+    },
+    {
+      "ocr" : {
+        "text" : "buy amazon cart - Google Search",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 647,
+          "y" : 120.99999999999996,
+          "width" : 174.49999999999994,
+          "height" : 10.500000000000068
+        }
+      },
+      "interactions" : [
+
+      ],
+      "id" : "EB1D4589-179E-499B-8111-ACE8A96E696B",
+      "isClickable" : false,
+      "visualText" : "buy amazon cart - Google Search",
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 126.24999999999999,
+        "x" : 734.25
+      },
+      "size" : {
+        "width" : 174.49999999999994,
+        "height" : 10.500000000000068
+      },
+      "semanticMeaning" : "Text content: 'buy amazon cart - Google Search'",
+      "type" : "TextContent"
+    },
+    {
+      "size" : {
+        "width" : 213.99999999999991,
+        "height" : 15.999999999999979
+      },
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "semanticMeaning" : "AXLink with text 'Q Amazon.ca : Orijen Large Breed Dog...'",
+      "accessibility" : {
+        "role" : "AXLink",
+        "description" : null,
+        "focused" : false,
+        "title" : "Returns& Orders",
+        "enabled" : true
+      },
+      "interactions" : [
+
+      ],
+      "type" : "AXLink+OCR",
+      "visualText" : "Q Amazon.ca : Orijen Large Breed Dog...",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 876,
+          "height" : 15.999999999999979,
+          "y" : 117.5,
+          "width" : 213.99999999999991
+        },
+        "confidence" : 0.5,
+        "text" : "Q Amazon.ca : Orijen Large Breed Dog..."
+      },
+      "id" : "5F325358-A5DC-42C7-B0CA-793B976F8E87",
+      "position" : {
+        "y" : 125.49999999999999,
+        "x" : 983
+      }
+    },
+    {
+      "position" : {
+        "x" : 219.5,
+        "y" : 169.25000000000006
+      },
+      "isClickable" : true,
+      "confidence" : 0.79999999999999993,
+      "actionHint" : "Clickable element",
+      "id" : "657AE7A4-7B1D-4DDF-9C6E-D5189BC07D69",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton+OCR",
+      "semanticMeaning" : "AXButton with text 'amazon. Qottawa K2G 1Z'",
+      "ocr" : {
+        "text" : "amazon. Qottawa K2G 1Z",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 157.00000000000006,
+          "x" : 94.5,
+          "width" : 250,
+          "height" : 24.499999999999982
+        }
+      },
+      "visualText" : "amazon. Qottawa K2G 1Z",
+      "size" : {
+        "width" : 250,
+        "height" : 24.499999999999982
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Deliver to Richard Ottawa K2G 1Z‌",
+        "focused" : false,
+        "description" : null
+      }
+    },
+    {
+      "id" : "D39AD416-8C67-4FF9-A243-4AAECB46180F",
+      "size" : {
+        "height" : 11.499999999999995,
+        "width" : 73.999999999999957
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "Hello, Richard",
+      "semanticMeaning" : "Text content: 'Hello, Richard'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 845,
+          "height" : 11.499999999999995,
+          "width" : 73.999999999999957,
+          "y" : 156.49999999999997
+        },
+        "text" : "Hello, Richard"
+      },
+      "position" : {
+        "y" : 162.24999999999997,
+        "x" : 882
+      },
+      "type" : "TextContent"
+    },
+    {
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 255.5,
+        "height" : 16.000000000000082
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: '11 EN- Account & Li5ts - & Orders'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 166.49999999999997,
+          "width" : 255.5,
+          "height" : 16.000000000000082,
+          "x" : 779
+        },
+        "text" : "11 EN- Account & Li5ts - & Orders"
+      },
+      "id" : "894DB245-AEE2-496F-987B-C4A05C4F284D",
+      "position" : {
+        "y" : 174.5,
+        "x" : 906.75
+      },
+      "isClickable" : false,
+      "visualText" : "11 EN- Account & Li5ts - & Orders"
+    },
+    {
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 194.50000000000006,
+          "height" : 14.499999999999984,
+          "x" : 419.5,
+          "y" : 162
+        },
+        "text" : "Orijen Large Breed Dog Food",
+        "confidence" : 0.5
+      },
+      "id" : "CD0B8A8A-37D5-4B47-83A1-49F05AB4E8B2",
+      "position" : {
+        "y" : 169.25,
+        "x" : 516.75
+      },
+      "semanticMeaning" : "Text content: 'Orijen Large Breed Dog Food'",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 194.50000000000006,
+        "height" : 14.499999999999984
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Orijen Large Breed Dog Food",
+      "confidence" : 0.5
+    },
+    {
+      "size" : {
+        "width" : 516.5,
+        "height" : 14.00000000000002
+      },
+      "visualText" : "Gift Cards",
+      "accessibility" : {
+        "description" : null,
+        "title" : null,
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "x" : 376.25,
+        "y" : 218.99999999999997
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "All Keep Shopping for Best Sellers Gift Cards Kindle Books Buy Again",
+        "boundingBox" : {
+          "height" : 14.00000000000002,
+          "width" : 516.5,
+          "y" : 211.99999999999997,
+          "x" : 118
+        }
+      },
+      "confidence" : 0.79999999999999993,
+      "id" : "D74F4D34-BA7F-4588-9F38-6626451EB3F7",
+      "semanticMeaning" : "AXStaticText with text 'All Keep Shopping for Best Sellers Gift Cards Kindle Books Buy Again'",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 211.99999999999997,
+          "width" : 220.5,
+          "height" : 14.00000000000002,
+          "x" : 656
+        },
+        "text" : "Browsing History Richard's Store"
+      },
+      "isClickable" : false,
+      "id" : "A1BD0673-E4C5-4F4D-93AB-B7842A92A09B",
+      "type" : "AXLink+OCR",
+      "semanticMeaning" : "AXLink with text 'Browsing History Richard's Store'",
+      "visualText" : "Browsing History Richard's Store",
+      "confidence" : 0.79999999999999993,
+      "accessibility" : {
+        "role" : "AXLink",
+        "description" : null,
+        "title" : "Richard 's Store",
+        "focused" : false,
+        "enabled" : true
+      },
+      "size" : {
+        "height" : 14.00000000000002,
+        "width" : 220.5
+      },
+      "position" : {
+        "x" : 766.25,
+        "y" : 218.99999999999997
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 1022.5,
+        "y" : 218.99999999999997
+      },
+      "confidence" : 0.5,
+      "visualText" : "Prime Day is July 8-11",
+      "id" : "19E27A5E-3EDB-46D6-892F-8891B7026A94",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'Prime Day is July 8-11'",
+      "ocr" : {
+        "text" : "Prime Day is July 8-11",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 143.00000000000006,
+          "x" : 951,
+          "height" : 14.00000000000002,
+          "y" : 211.99999999999997
+        }
+      },
+      "size" : {
+        "width" : 143.00000000000006,
+        "height" : 14.00000000000002
+      },
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "y" : 256.75,
+        "x" : 149.75
+      },
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "height" : 11.500000000000099,
+        "width" : 75.499999999999986
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 112,
+          "width" : 75.499999999999986,
+          "height" : 11.500000000000099,
+          "y" : 250.99999999999994
+        },
+        "confidence" : 0.5,
+        "text" : "Today's Deals"
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "id" : "B265B072-5C91-4224-BEA0-148E6C15C55D",
+      "visualText" : "Books",
+      "confidence" : 0.79999999999999993,
+      "semanticMeaning" : "AXStaticText with text 'Today's Deals'",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "description" : null,
+        "role" : "AXStaticText",
+        "enabled" : true
+      }
+    },
+    {
+      "id" : "5508AEB1-267D-4048-9E0D-0F9050F5EC07",
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "visualText" : "\"Orijen Large Breed Dog Food\"",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 210.5,
+          "width" : 67,
+          "height" : 9.5000000000000355,
+          "y" : 250.99999999999994
+        },
+        "text" : "Outlet Deals"
+      },
+      "confidence" : 0.79999999999999993,
+      "size" : {
+        "height" : 9.5000000000000355,
+        "width" : 67
+      },
+      "position" : {
+        "x" : 244,
+        "y" : 255.74999999999997
+      },
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "AXStaticText with text 'Outlet Deals'"
+    },
+    {
+      "position" : {
+        "y" : 255.74999999999997,
+        "x" : 340.75
+      },
+      "size" : {
+        "width" : 81.500000000000028,
+        "height" : 9.5000000000000355
+      },
+      "visualText" : "Amazon Resale",
+      "id" : "84857D16-016E-46C5-8ECD-23E7DB8E81BF",
+      "semanticMeaning" : "Text content: 'Amazon Resale'",
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Amazon Resale",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 300,
+          "height" : 9.5000000000000355,
+          "y" : 250.99999999999994,
+          "width" : 81.500000000000028
+        }
+      }
+    },
+    {
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "focused" : false,
+        "title" : null,
+        "description" : null,
+        "enabled" : true
+      },
+      "ocr" : {
+        "text" : "Coupons",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "height" : 11.00000000000003,
+          "y" : 251.50000000000003,
+          "x" : 404.5,
+          "width" : 47
+        }
+      },
+      "confidence" : 0.60000001192092889,
+      "size" : {
+        "width" : 47,
+        "height" : 11.00000000000003
+      },
+      "id" : "6333A46F-3495-49DF-A57A-AF35E9C69CBA",
+      "position" : {
+        "y" : 257.00000000000006,
+        "x" : 428
+      },
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Coupons'",
+      "interactions" : [
+
+      ],
+      "visualText" : "Gift Ideas"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "AXStaticText with text 'eBook Deals'",
+      "visualText" : "New Releases",
+      "position" : {
+        "y" : 255.74999999999997,
+        "x" : 507
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "title" : null,
+        "role" : "AXStaticText",
+        "focused" : false
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 250.99999999999994,
+          "height" : 9.5000000000000355,
+          "x" : 474,
+          "width" : 65.999999999999986
+        },
+        "text" : "eBook Deals",
+        "confidence" : 0.5
+      },
+      "isClickable" : false,
+      "id" : "DC02D16F-E807-4744-AF30-231EA9AF91F4",
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "height" : 9.5000000000000355,
+        "width" : 65.999999999999986
+      },
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 563,
+          "height" : 9.5000000000000355,
+          "y" : 250.99999999999994,
+          "width" : 91.500000000000014
+        },
+        "text" : "Subscribe & Save",
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "AXLink with text 'Subscribe & Save'",
+      "accessibility" : {
+        "description" : null,
+        "focused" : false,
+        "title" : "Home",
+        "role" : "AXLink",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "BF2EF32A-B7BF-4052-9F31-9C1B5A960314",
+      "type" : "AXLink+OCR",
+      "confidence" : 0.79999999999999993,
+      "visualText" : "Subscribe & Save",
+      "actionHint" : "Click to save",
+      "position" : {
+        "x" : 608.75,
+        "y" : 255.74999999999997
+      },
+      "size" : {
+        "width" : 91.500000000000014,
+        "height" : 9.5000000000000355
+      }
+    },
+    {
+      "accessibility" : {
+        "role" : "AXGroup",
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "description" : null
+      },
+      "interactions" : [
+        "click",
+        "right_click"
+      ],
+      "visualText" : "Buy More & Save",
+      "type" : "AXGroup+OCR",
+      "position" : {
+        "x" : 723.25,
+        "y" : 257.00000000000006
+      },
+      "ocr" : {
+        "text" : "Buy More & Save",
+        "boundingBox" : {
+          "y" : 251.50000000000003,
+          "width" : 90.499999999999901,
+          "x" : 678,
+          "height" : 11.00000000000003
+        },
+        "confidence" : 0.5
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXGroup with text 'Buy More & Save'",
+      "size" : {
+        "height" : 11.00000000000003,
+        "width" : 90.499999999999901
+      },
+      "id" : "4DACF68B-2EEE-4959-9BBF-F9E17A42B100",
+      "actionHint" : "Click to save",
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "size" : {
+        "height" : 14.00000000000002,
+        "width" : 339
+      },
+      "position" : {
+        "x" : 273,
+        "y" : 293
+      },
+      "confidence" : 0.79999999999999993,
+      "visualText" : "1-48 of 59 results for\"Orijen Large Breed Dog Food\"",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 286,
+          "width" : 339,
+          "height" : 14.00000000000002,
+          "x" : 103.5
+        },
+        "text" : "1-48 of 59 results for\"Orijen Large Breed Dog Food\""
+      },
+      "accessibility" : {
+        "description" : null,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXGroup",
+        "focused" : false
+      },
+      "isClickable" : false,
+      "id" : "4F3BB8BF-1CA1-4F3F-8871-30B50FDD8F8E",
+      "semanticMeaning" : "AXGroup with text '1-48 of 59 results for\"Orijen Large Breed Dog Food\"'",
+      "interactions" : [
+        "right_click"
+      ],
+      "type" : "AXGroup+OCR"
+    },
+    {
+      "semanticMeaning" : "Text content: 'Sort by: Featured V'",
+      "type" : "TextContent",
+      "id" : "8E6C6CED-622E-40CD-8E44-590BA674E6CD",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 106.49999999999996,
+          "y" : 287.5,
+          "height" : 11.00000000000003,
+          "x" : 970.5
+        },
+        "text" : "Sort by: Featured V"
+      },
+      "size" : {
+        "height" : 11.00000000000003,
+        "width" : 106.49999999999996
+      },
+      "visualText" : "Sort by: Featured V",
+      "isClickable" : false,
+      "position" : {
+        "y" : 293,
+        "x" : 1023.75
+      }
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "confidence" : 0.79999999999999993,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 339.50000000000006,
+          "height" : 13.499999999999952,
+          "x" : 107,
+          "width" : 54.000000000000007
+        },
+        "confidence" : 0.5,
+        "text" : "Delivery"
+      },
+      "isClickable" : false,
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXGroup",
+        "focused" : false,
+        "description" : null
+      },
+      "position" : {
+        "x" : 134,
+        "y" : 346.25000000000006
+      },
+      "id" : "03E9DF30-C572-491C-BEBB-C314021E599C",
+      "size" : {
+        "height" : 13.499999999999952,
+        "width" : 54.000000000000007
+      },
+      "visualText" : "Delivery",
+      "semanticMeaning" : "AXGroup with text 'Delivery'",
+      "interactions" : [
+        "right_click"
+      ]
+    },
+    {
+      "id" : "A5D65D41-EAA9-4DA3-8996-D417857D6970",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'High protein & more meat. Satisfy their wild side.'",
+      "position" : {
+        "y" : 356.99999999999994,
+        "x" : 656.5
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 400,
+          "y" : 347.99999999999994,
+          "x" : 456.5,
+          "height" : 18.000000000000043
+        },
+        "confidence" : 0.5,
+        "text" : "High protein & more meat. Satisfy their wild side."
+      },
+      "size" : {
+        "width" : 400,
+        "height" : 18.000000000000043
+      },
+      "visualText" : "High protein & more meat. Satisfy their wild side."
+    },
+    {
+      "position" : {
+        "x" : 155.5,
+        "y" : 373
+      },
+      "confidence" : 0.79999999999999993,
+      "id" : "8E7C6B69-55E2-44EF-B12D-99C906C5151A",
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "visualText" : "Grocery",
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXStaticText"
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 57,
+        "height" : 11.00000000000003
+      },
+      "semanticMeaning" : "AXStaticText with text 'All Prime'",
+      "ocr" : {
+        "text" : "All Prime",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 127,
+          "y" : 367.5,
+          "width" : 57,
+          "height" : 11.00000000000003
+        }
+      }
+    },
+    {
+      "id" : "EF4515AF-37D4-4504-B3C8-2669BE6B8F2C",
+      "interactions" : [
+
+      ],
+      "visualText" : "Buffalo ",
+      "ocr" : {
+        "text" : "Shop Blue Buffalo >",
+        "boundingBox" : {
+          "x" : 455.5,
+          "width" : 105.00000000000003,
+          "y" : 373.99999999999994,
+          "height" : 11.500000000000099
+        },
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 11.500000000000099,
+        "width" : 105.00000000000003
+      },
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "y" : 379.75,
+        "x" : 508
+      },
+      "semanticMeaning" : "AXStaticText with text 'Shop Blue Buffalo >'",
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null
+      }
+    },
+    {
+      "position" : {
+        "y" : 408.99999999999994,
+        "x" : 129.25
+      },
+      "size" : {
+        "width" : 44.5,
+        "height" : 11.00000000000003
+      },
+      "semanticMeaning" : "AXStaticText with text 'Brands'",
+      "id" : "0D6FA3D8-2C8B-4CEC-8345-8B6D7FC3697C",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.79999999999999993,
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "visualText" : "Purina ONE",
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : null,
+        "enabled" : true,
+        "title" : null,
+        "focused" : false
+      },
+      "ocr" : {
+        "text" : "Brands",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 403.49999999999994,
+          "width" : 44.5,
+          "height" : 11.00000000000003,
+          "x" : 107
+        }
+      }
+    },
+    {
+      "position" : {
+        "y" : 437,
+        "x" : 163.75
+      },
+      "size" : {
+        "width" : 71.5,
+        "height" : 11.00000000000003
+      },
+      "visualText" : "Purina ONE",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Purina ONE",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 11.00000000000003,
+          "x" : 128,
+          "y" : 431.5,
+          "width" : 71.5
+        }
+      },
+      "id" : "F02A3CC8-B92C-486C-A74F-CBA281D1DFA1",
+      "semanticMeaning" : "Text content: 'Purina ONE'"
+    },
+    {
+      "ocr" : {
+        "text" : "Weight",
+        "boundingBox" : {
+          "x" : 106,
+          "width" : 47,
+          "height" : 13.500000000000057,
+          "y" : 467.5
+        },
+        "confidence" : 0.5
+      },
+      "id" : "DA02D952-B629-40BE-A438-566EF7B0391A",
+      "size" : {
+        "width" : 47,
+        "height" : 13.500000000000057
+      },
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXStaticText",
+        "description" : null,
+        "title" : null,
+        "enabled" : true
+      },
+      "semanticMeaning" : "AXStaticText with text 'Weight'",
+      "position" : {
+        "x" : 129.5,
+        "y" : 474.25
+      },
+      "visualText" : "Up to 0.9 kg",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "confidence" : 0.79999999999999993,
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 98,
+        "height" : 16.500000000000046
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 106,
+          "height" : 16.500000000000046,
+          "y" : 492.49999999999994,
+          "width" : 98
+        },
+        "text" : "OuptoO.9kg"
+      },
+      "confidence" : 0.79999999999999993,
+      "id" : "BF556926-5940-44F9-9B20-A9C143515267",
+      "isClickable" : false,
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "description" : null
+      },
+      "visualText" : "Up to 0.9 kg",
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "x" : 155,
+        "y" : 500.74999999999994
+      },
+      "semanticMeaning" : "AXStaticText with text 'OuptoO.9kg'"
+    },
+    {
+      "ocr" : {
+        "text" : "01to1.9kg",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 516.5,
+          "x" : 106,
+          "width" : 87.5,
+          "height" : 16.499999999999943
+        }
+      },
+      "position" : {
+        "y" : 524.75,
+        "x" : 149.75
+      },
+      "isClickable" : false,
+      "id" : "87E0F7CD-62DF-43BB-AFF2-31F734B89807",
+      "semanticMeaning" : "AXStaticText with text '01to1.9kg'",
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "description" : null,
+        "role" : "AXStaticText"
+      },
+      "type" : "AXStaticText+OCR",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 16.499999999999943,
+        "width" : 87.5
+      },
+      "confidence" : 0.79999999999999993,
+      "visualText" : "1 to 1.9 kg"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "focused" : false,
+        "description" : null,
+        "title" : null
+      },
+      "position" : {
+        "x" : 149.75,
+        "y" : 548.75
+      },
+      "size" : {
+        "width" : 87.5,
+        "height" : 16.500000000000046
+      },
+      "confidence" : 0.79999999999999993,
+      "interactions" : [
+
+      ],
+      "visualText" : "2 to 2.9 kg",
+      "semanticMeaning" : "AXStaticText with text '02to2.9kg'",
+      "type" : "AXStaticText+OCR",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 106,
+          "width" : 87.5,
+          "height" : 16.500000000000046,
+          "y" : 540.5
+        },
+        "text" : "02to2.9kg",
+        "confidence" : 0.5
+      },
+      "id" : "53B00134-9253-4AA8-A8C2-4492BE275F1D",
+      "isClickable" : false
+    },
+    {
+      "id" : "07F919A0-9119-4C58-AB88-8550E217701D",
+      "position" : {
+        "y" : 572.75,
+        "x" : 157.5
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '03kg&above'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 106,
+          "width" : 103,
+          "height" : 16.500000000000046,
+          "y" : 564.5
+        },
+        "text" : "03kg&above"
+      },
+      "confidence" : 0.5,
+      "visualText" : "03kg&above",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 16.500000000000046,
+        "width" : 103
+      },
+      "type" : "TextContent"
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Blue Buffalo Wilderness",
+        "boundingBox" : {
+          "height" : 11.500000000000099,
+          "x" : 577,
+          "width" : 148.99999999999997,
+          "y" : 531
+        }
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 536.75,
+        "x" : 651.5
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 148.99999999999997,
+        "height" : 11.500000000000099
+      },
+      "id" : "F9411443-2C5F-47A9-9DB0-6985D6893E52",
+      "visualText" : "Blue Buffalo Wilderness",
+      "semanticMeaning" : "Text content: 'Blue Buffalo Wilderness'"
+    },
+    {
+      "visualText" : "More Meat &...",
+      "size" : {
+        "width" : 93.499999999999957,
+        "height" : 10.499999999999963
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 550,
+          "width" : 93.499999999999957,
+          "height" : 10.499999999999963,
+          "x" : 577
+        },
+        "confidence" : 0.5,
+        "text" : "More Meat &..."
+      },
+      "id" : "38D21C4B-E466-4998-949A-EBB22B1E9EA0",
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 623.75,
+        "y" : 555.25
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'More Meat &...'",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : false,
+      "visualText" : "4.4 ****4t (1 k)",
+      "size" : {
+        "height" : 11.499999999999995,
+        "width" : 104.00000000000003
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "id" : "F6544810-8214-4934-8BC3-54693BE9A16C",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 628.5,
+        "y" : 576.25
+      },
+      "semanticMeaning" : "Text content: '4.4 ****4t (1 k)'",
+      "ocr" : {
+        "text" : "4.4 ****4t (1 k)",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 104.00000000000003,
+          "y" : 570.5,
+          "x" : 576.5,
+          "height" : 11.499999999999995
+        }
+      }
+    },
+    {
+      "ocr" : {
+        "text" : "prime",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.000000000000062,
+          "x" : 585.5,
+          "width" : 32.500000000000057,
+          "y" : 589
+        }
+      },
+      "type" : "AXStaticText+OCR",
+      "confidence" : 0.79999999999999993,
+      "visualText" : "4.4 out of 5 stars.",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 601.75,
+        "y" : 595
+      },
+      "id" : "E4A2FF74-99C9-4D8B-9D59-71D641EF75C4",
+      "size" : {
+        "width" : 32.500000000000057,
+        "height" : 12.000000000000062
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'prime'",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXStaticText",
+        "description" : null,
+        "title" : null
+      }
+    },
+    {
+      "type" : "TextContent",
+      "id" : "8626C91B-A40A-46FE-A807-222BD8B5F609",
+      "position" : {
+        "x" : 824.5,
+        "y" : 536.75
+      },
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Blue Buffalo Wilderness'",
+      "visualText" : "Blue Buffalo Wilderness",
+      "size" : {
+        "height" : 11.500000000000099,
+        "width" : 149.00000000000003
+      },
+      "ocr" : {
+        "text" : "Blue Buffalo Wilderness",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 750,
+          "height" : 11.500000000000099,
+          "y" : 531,
+          "width" : 149.00000000000003
+        }
+      }
+    },
+    {
+      "id" : "C3E9AC0D-1D56-4EB3-BA49-BD6D07E49FF0",
+      "confidence" : 0.5,
+      "visualText" : "More Meat &...",
+      "semanticMeaning" : "Text content: 'More Meat &...'",
+      "size" : {
+        "width" : 93.500000000000014,
+        "height" : 10.499999999999963
+      },
+      "position" : {
+        "y" : 555.25,
+        "x" : 796.75
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "More Meat &...",
+        "boundingBox" : {
+          "y" : 550,
+          "height" : 10.499999999999963,
+          "width" : 93.500000000000014,
+          "x" : 750
+        }
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "id" : "5BB61E8B-A9D0-4DB2-8AD1-7D41779B115F",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 11.500000000000099,
+        "width" : 149.00000000000003
+      },
+      "position" : {
+        "y" : 536.75,
+        "x" : 997.5
+      },
+      "semanticMeaning" : "Text content: 'Blue Buffalo Wilderness'",
+      "visualText" : "Blue Buffalo Wilderness",
+      "ocr" : {
+        "text" : "Blue Buffalo Wilderness",
+        "boundingBox" : {
+          "x" : 923,
+          "y" : 531,
+          "width" : 149.00000000000003,
+          "height" : 11.500000000000099
+        },
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent"
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 13.499999999999952,
+          "y" : 549.5,
+          "width" : 152.50000000000003,
+          "x" : 923
+        },
+        "text" : "High Protein Grain Fre...",
+        "confidence" : 0.5
+      },
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 999.25,
+        "y" : 556.25
+      },
+      "confidence" : 0.79999999999999993,
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "description" : null,
+        "focused" : false
+      },
+      "semanticMeaning" : "AXStaticText with text 'High Protein Grain Fre...'",
+      "size" : {
+        "height" : 13.499999999999952,
+        "width" : 152.50000000000003
+      },
+      "visualText" : "(10.3k)",
+      "isClickable" : false,
+      "id" : "3B51B230-34A6-401F-B672-62F16DB4120F"
+    },
+    {
+      "accessibility" : {
+        "description" : "Eligible for Prime.",
+        "enabled" : true,
+        "title" : "Eligible for Prime.",
+        "focused" : false,
+        "role" : "AXImage"
+      },
+      "visualText" : "rfprime",
+      "interactions" : [
+        "right_click"
+      ],
+      "type" : "AXImage+OCR",
+      "position" : {
+        "x" : 943,
+        "y" : 595
+      },
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "size" : {
+        "width" : 42.000000000000078,
+        "height" : 12.000000000000062
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "rfprime",
+        "boundingBox" : {
+          "width" : 42.000000000000078,
+          "x" : 922,
+          "y" : 589,
+          "height" : 12.000000000000062
+        }
+      },
+      "id" : "4FD4D1ED-8DB6-4BD1-867C-3A86B4788898",
+      "semanticMeaning" : "AXImage with text 'rfprime'"
+    },
+    {
+      "position" : {
+        "x" : 770,
+        "y" : 595
+      },
+      "id" : "2D2AC107-FF4C-47F8-BAC0-37CD8DFB62F7",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Eligible for Prime.",
+        "title" : "Eligible for Prime.",
+        "role" : "AXImage"
+      },
+      "ocr" : {
+        "text" : "rfprime",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 41.999999999999964,
+          "height" : 12.000000000000062,
+          "x" : 749,
+          "y" : 589
+        }
+      },
+      "size" : {
+        "width" : 41.999999999999964,
+        "height" : 12.000000000000062
+      },
+      "isClickable" : false,
+      "type" : "AXImage+OCR",
+      "visualText" : "rfprime",
+      "confidence" : 0.79999999999999993,
+      "semanticMeaning" : "AXImage with text 'rfprime'",
+      "interactions" : [
+        "right_click"
+      ]
+    },
+    {
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "description" : null,
+        "role" : "AXStaticText",
+        "focused" : false
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 107,
+          "height" : 11.00000000000003,
+          "y" : 603.5,
+          "width" : 40
+        },
+        "text" : "Flavor",
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 11.00000000000003,
+        "width" : 40
+      },
+      "id" : "75C97204-1178-40FE-BCC0-920B9968CFA9",
+      "position" : {
+        "x" : 127,
+        "y" : 609
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'Flavor'",
+      "type" : "AXStaticText+OCR",
+      "confidence" : 0.79999999999999993,
+      "interactions" : [
+
+      ],
+      "visualText" : "Beef"
+    },
+    {
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 128,
+          "y" : 631,
+          "height" : 11.499999999999995,
+          "width" : 27.499999999999993
+        },
+        "text" : "Beef"
+      },
+      "size" : {
+        "width" : 27.499999999999993,
+        "height" : 11.499999999999995
+      },
+      "semanticMeaning" : "AXStaticText with text 'Beef'",
+      "type" : "AXStaticText+OCR",
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "visualText" : "Beef",
+      "id" : "DC221A16-0C2B-4CDD-AA1D-5D8662A498BD",
+      "position" : {
+        "x" : 141.75,
+        "y" : 636.75
+      },
+      "isClickable" : false,
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true,
+        "description" : null,
+        "focused" : false
+      }
+    },
+    {
+      "confidence" : 0.5,
+      "id" : "3FC505DD-42D9-42DA-A015-137438797FAF",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 628,
+          "width" : 52.000000000000043,
+          "height" : 10.499999999999963,
+          "x" : 1015.5
+        },
+        "text" : "Sponsored"
+      },
+      "isClickable" : false,
+      "position" : {
+        "y" : 633.25,
+        "x" : 1041.5
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Sponsored'",
+      "visualText" : "Sponsored",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 10.499999999999963,
+        "width" : 52.000000000000043
+      }
+    },
+    {
+      "position" : {
+        "y" : 661,
+        "x" : 151.75
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 128,
+          "y" : 655.5,
+          "width" : 47.499999999999993,
+          "height" : 11.00000000000003
+        },
+        "text" : "Chicken"
+      },
+      "confidence" : 0.79999999999999993,
+      "id" : "75A0F85D-E3A9-4B8B-8068-11D3DE6CEDE8",
+      "isClickable" : false,
+      "size" : {
+        "height" : 11.00000000000003,
+        "width" : 47.499999999999993
+      },
+      "semanticMeaning" : "AXStaticText with text 'Chicken'",
+      "visualText" : "Chicken",
+      "type" : "AXStaticText+OCR",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "semanticMeaning" : "Text content: 'Results'",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 388.25,
+        "y" : 652.25
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 65.5,
+        "height" : 15.500000000000014
+      },
+      "interactions" : [
+
+      ],
+      "id" : "1F481941-49C8-4D47-A4FC-FDB1C8484250",
+      "visualText" : "Results",
+      "confidence" : 0.5,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 644.5,
+          "height" : 15.500000000000014,
+          "width" : 65.5,
+          "x" : 355.5
+        },
+        "text" : "Results",
+        "confidence" : 0.5
+      }
+    },
+    {
+      "id" : "DA13A14E-6508-4161-97BA-39F70C334A30",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 320.49999999999994,
+        "height" : 14.00000000000002
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Check each product page for other buying options.",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 320.49999999999994,
+          "x" : 354.5,
+          "height" : 14.00000000000002,
+          "y" : 670.5
+        },
+        "text" : "Check each product page for other buying options.",
+        "confidence" : 0.5
+      },
+      "position" : {
+        "y" : 677.5,
+        "x" : 514.75
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Check each product page for other buying options.'"
+    },
+    {
+      "position" : {
+        "y" : 698.5,
+        "x" : 140.75
+      },
+      "size" : {
+        "width" : 69.5,
+        "height" : 13.000000000000094
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Age Range",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 106,
+          "height" : 13.000000000000094,
+          "width" : 69.5,
+          "y" : 692
+        }
+      },
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXStaticText",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "semanticMeaning" : "AXStaticText with text 'Age Range'",
+      "confidence" : 1,
+      "id" : "244EE16B-A96C-49E8-8648-DF6C9986EAFC",
+      "isClickable" : false,
+      "visualText" : "Adult",
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "semanticMeaning" : "Text content: 'Subscribed'",
+      "visualText" : "Subscribed",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 392.75,
+        "y" : 705
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Subscribed",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 363.5,
+          "height" : 10,
+          "y" : 700,
+          "width" : 58.500000000000021
+        }
+      },
+      "size" : {
+        "width" : 58.500000000000021,
+        "height" : 10
+      },
+      "interactions" : [
+
+      ],
+      "id" : "8DF468A8-0D2C-46BD-9317-688ADFECCEDF"
+    },
+    {
+      "id" : "0383A183-8B9D-4EFD-AB73-3150907EFE4F",
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXStaticText"
+      },
+      "size" : {
+        "width" : 34,
+        "height" : 10.999999999999925
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Adult",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 34,
+          "height" : 10.999999999999925,
+          "y" : 719.5,
+          "x" : 127
+        }
+      },
+      "semanticMeaning" : "AXStaticText with text 'Adult'",
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "y" : 725,
+        "x" : 144
+      },
+      "confidence" : 0.79999999999999993,
+      "visualText" : "Adult"
+    },
+    {
+      "ocr" : {
+        "text" : "All Life Stages",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 127,
+          "width" : 89.999999999999986,
+          "y" : 743,
+          "height" : 14.00000000000002
+        }
+      },
+      "size" : {
+        "height" : 14.00000000000002,
+        "width" : 89.999999999999986
+      },
+      "isClickable" : false,
+      "id" : "E951547B-2D0E-42B2-A827-8E81FDB44D4B",
+      "visualText" : "All Life Stages",
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 750,
+        "x" : 172
+      },
+      "semanticMeaning" : "Text content: 'All Life Stages'",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent"
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'Puppy'",
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Puppy",
+        "boundingBox" : {
+          "x" : 128,
+          "height" : 12.999999999999989,
+          "y" : 768,
+          "width" : 38.999999999999993
+        }
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 38.999999999999993,
+        "height" : 12.999999999999989
+      },
+      "confidence" : 0.79999999999999993,
+      "visualText" : "Puppy",
+      "position" : {
+        "x" : 147.5,
+        "y" : 774.5
+      },
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "title" : null,
+        "focused" : false
+      },
+      "id" : "7F9B1A39-F1E9-445A-B3E0-77C1CFBFD423"
+    },
+    {
+      "semanticMeaning" : "Text content: 'Customer Reviews'",
+      "type" : "TextContent",
+      "visualText" : "Customer Reviews",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.30000001192092896,
+      "size" : {
+        "width" : 119.00000000000001,
+        "height" : 10.999999999999925
+      },
+      "position" : {
+        "y" : 809,
+        "x" : 166
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Customer Reviews",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 803.5,
+          "x" : 106.5,
+          "height" : 10.999999999999925,
+          "width" : 119.00000000000001
+        }
+      },
+      "id" : "D44592F2-BD77-4774-8E12-1C198FB6443B"
+    },
+    {
+      "id" : "C8ACEB28-3AC4-414F-B44A-68CD3B7BDDD1",
+      "isClickable" : false,
+      "visualText" : "***** & Up",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '***** & Up'",
+      "size" : {
+        "width" : 125.99999999999999,
+        "height" : 17.499999999999972
+      },
+      "position" : {
+        "x" : 169.5,
+        "y" : 837.25
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "***** & Up",
+        "boundingBox" : {
+          "width" : 125.99999999999999,
+          "height" : 17.499999999999972,
+          "y" : 828.5,
+          "x" : 106.5
+        }
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5
+    },
+    {
+      "id" : "20943053-E62A-4166-B523-8C808E41A59C",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 106.5,
+          "y" : 870.5,
+          "width" : 99,
+          "height" : 13.500000000000057
+        },
+        "text" : "Container Type",
+        "confidence" : 0.5
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 156,
+        "y" : 877.25
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "visualText" : "Container Type",
+      "size" : {
+        "width" : 99,
+        "height" : 13.500000000000057
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Container Type'"
+    },
+    {
+      "id" : "038C574D-E2AF-41DE-9E2E-C43194436EA8",
+      "size" : {
+        "width" : 45.72737804093191,
+        "height" : 18.991955206590273
+      },
+      "confidence" : 0.79999999999999993,
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "focused" : false,
+        "title" : null,
+        "description" : null,
+        "enabled" : true
+      },
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'OBag'",
+      "position" : {
+        "x" : 127.95752349079676,
+        "y" : 904.49758656197707
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 105.0938344703308,
+          "height" : 18.991955206590273,
+          "y" : 895.00160895868191,
+          "width" : 45.72737804093191
+        },
+        "text" : "OBag",
+        "confidence" : 0.5
+      },
+      "visualText" : "Bag"
+    },
+    {
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 473.75,
+        "y" : 866
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 431,
+          "y" : 860.5,
+          "width" : 85.499999999999986,
+          "height" : 11.00000000000003
+        },
+        "text" : "PRO PLAW"
+      },
+      "size" : {
+        "width" : 85.499999999999986,
+        "height" : 11.00000000000003
+      },
+      "confidence" : 0.30000001192092896,
+      "semanticMeaning" : "Text content: 'PRO PLAW'",
+      "id" : "3DD4CF80-2ACD-4698-8587-E97044A93F28",
+      "visualText" : "PRO PLAW"
+    },
+    {
+      "semanticMeaning" : "Text content: 'PROPLA'",
+      "visualText" : "PROPLA",
+      "size" : {
+        "height" : 11.00000000000003,
+        "width" : 70.499999999999972
+      },
+      "id" : "AA5A18D6-145F-4414-B564-B65F34E19494",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 860.5,
+          "x" : 679,
+          "width" : 70.499999999999972,
+          "height" : 11.00000000000003
+        },
+        "text" : "PROPLA"
+      },
+      "type" : "TextContent",
+      "position" : {
+        "y" : 866,
+        "x" : 714.25
+      },
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '15.4 kg'",
+      "position" : {
+        "x" : 473,
+        "y" : 924.25
+      },
+      "id" : "E4325401-0211-4174-8C05-73A8D5D97018",
+      "size" : {
+        "width" : 39.000000000000028,
+        "height" : 16.500000000000046
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "visualText" : "15.4 kg",
+      "ocr" : {
+        "text" : "15.4 kg",
+        "boundingBox" : {
+          "x" : 453.5,
+          "height" : 16.500000000000046,
+          "y" : 916,
+          "width" : 39.000000000000028
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: '13.6 kg'",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 39.000000000000085,
+          "x" : 701.5,
+          "y" : 916,
+          "height" : 16.500000000000046
+        },
+        "text" : "13.6 kg",
+        "confidence" : 0.5
+      },
+      "visualText" : "13.6 kg",
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 924.25,
+        "x" : 721
+      },
+      "interactions" : [
+
+      ],
+      "id" : "8FEE2151-EC1A-42B5-A192-EC85364C2B44",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 16.500000000000046,
+        "width" : 39.000000000000085
+      },
+      "isClickable" : false
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'Price'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 107,
+          "y" : 934.5,
+          "height" : 11.00000000000003,
+          "width" : 31
+        },
+        "text" : "Price",
+        "confidence" : 0.5
+      },
+      "id" : "848294B6-F05A-4016-A921-049CEDE41CEB",
+      "position" : {
+        "y" : 940,
+        "x" : 122.5
+      },
+      "size" : {
+        "width" : 31,
+        "height" : 11.00000000000003
+      },
+      "visualText" : "Price",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : null,
+        "role" : "AXStaticText",
+        "title" : null
+      },
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "visualText" : "Sponsored O",
+      "id" : "72456835-5233-4744-BACA-EA74E34BFE6C",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 396.75,
+        "y" : 956.75
+      },
+      "semanticMeaning" : "Text content: 'Sponsored O'",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "confidence" : 0.30000001192092896,
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 363.5,
+          "y" : 950.5,
+          "height" : 12.49999999999992,
+          "width" : 66.500000000000043
+        },
+        "text" : "Sponsored O"
+      },
+      "size" : {
+        "height" : 12.49999999999992,
+        "width" : 66.500000000000043
+      }
+    },
+    {
+      "type" : "TextContent",
+      "id" : "CBA28270-5C71-445F-848F-D197870C5D2A",
+      "position" : {
+        "x" : 644.75,
+        "y" : 956.75
+      },
+      "size" : {
+        "height" : 12.49999999999992,
+        "width" : 66.500000000000099
+      },
+      "semanticMeaning" : "Text content: 'Sponsored O'",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "Sponsored O",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "text" : "Sponsored O",
+        "boundingBox" : {
+          "width" : 66.500000000000099,
+          "height" : 12.49999999999992,
+          "x" : 611.5,
+          "y" : 950.5
+        }
+      },
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "isClickable" : false,
+      "visualText" : "Sponsored O",
+      "type" : "TextContent",
+      "ocr" : {
+        "text" : "Sponsored O",
+        "boundingBox" : {
+          "height" : 12.49999999999992,
+          "y" : 950.5,
+          "x" : 859.5,
+          "width" : 66.499999999999986
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "size" : {
+        "height" : 12.49999999999992,
+        "width" : 66.499999999999986
+      },
+      "semanticMeaning" : "Text content: 'Sponsored O'",
+      "position" : {
+        "x" : 892.75,
+        "y" : 956.75
+      },
+      "interactions" : [
+
+      ],
+      "id" : "C66BEA51-8B7A-4827-BE16-EE8A06CE2B77",
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "isClickable" : false,
+      "position" : {
+        "x" : 464.25,
+        "y" : 984.25
+      },
+      "visualText" : "\/count)",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "description" : null,
+        "title" : null,
+        "focused" : false
+      },
+      "id" : "B0BDC961-1FA3-4682-B13F-E69A05A40545",
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Purina Pro PLan Large Breed'",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 15.500000000000014,
+          "x" : 364,
+          "width" : 200.50000000000003,
+          "y" : 976.5
+        },
+        "text" : "Purina Pro PLan Large Breed",
+        "confidence" : 0.5
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 15.500000000000014,
+        "width" : 200.50000000000003
+      },
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "description" : null,
+        "role" : "AXStaticText"
+      },
+      "size" : {
+        "height" : 12.49999999999992,
+        "width" : 213.49999999999991
+      },
+      "visualText" : "\/l)",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "position" : {
+        "y" : 982.75,
+        "x" : 718.75
+      },
+      "semanticMeaning" : "AXStaticText with text 'Purina Pro PLan Sensitive Skin'",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 612,
+          "y" : 976.5,
+          "height" : 12.49999999999992,
+          "width" : 213.49999999999991
+        },
+        "confidence" : 0.5,
+        "text" : "Purina Pro PLan Sensitive Skin"
+      },
+      "id" : "E5B140A8-B154-448E-BFC0-9C8A675E5135"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "x" : 925.75,
+        "y" : 982.75
+      },
+      "isClickable" : false,
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXStaticText"
+      },
+      "visualText" : "$4.99",
+      "ocr" : {
+        "text" : "Hill's Science Diet",
+        "boundingBox" : {
+          "x" : 860,
+          "width" : 131.5,
+          "y" : 976.5,
+          "height" : 12.49999999999992
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "confidence" : 0.60000001192092889,
+      "id" : "4BA7C089-9B43-4916-9F12-1DBFA56960CE",
+      "size" : {
+        "width" : 131.5,
+        "height" : 12.49999999999992
+      },
+      "semanticMeaning" : "AXStaticText with text 'Hill's Science Diet'"
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : null,
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXScrollArea"
+      },
+      "size" : {
+        "width" : 1020,
+        "height" : 865
+      },
+      "type" : "AXScrollArea",
+      "id" : "9DABE268-920B-4397-BDB7-BF7F70B81171",
+      "position" : {
+        "y" : 139,
+        "x" : 86
+      },
+      "confidence" : 1,
+      "actionHint" : "button button (button button) (icon_button button) (icon_button button)",
+      "semanticMeaning" : "AXScrollArea with button visual with button visual with icon visual with icon visual",
+      "interactions" : [
+        "scroll",
+        "swipe"
+      ],
+      "visualText" : ""
+    },
+    {
+      "semanticMeaning" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : null,
+        "title" : "Shortcuts menu",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXButton",
+      "position" : {
+        "x" : 86,
+        "y" : 151
+      },
+      "size" : {
+        "width" : 119,
+        "height" : 33
+      },
+      "actionHint" : "Clickable element",
+      "isClickable" : true,
+      "id" : "A49D2FF1-CD4D-4564-8395-F3B079AF6167",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "isClickable" : true,
+      "type" : "AXPopUpButton",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Clickable element",
+      "position" : {
+        "y" : 149,
+        "x" : 359
+      },
+      "visualText" : "All Departments",
+      "semanticMeaning" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 270,
+        "height" : 35
+      },
+      "accessibility" : {
+        "title" : "Select the department you want to search in",
+        "role" : "AXPopUpButton",
+        "description" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "66361AB2-A3EB-463B-93D9-C60972740A4C"
+    },
+    {
+      "id" : "D8D8310F-2051-4CC1-8350-9C687143FB63",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXTextField",
+        "description" : "Search Amazon.ca",
+        "title" : "Search Amazon.ca"
+      },
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ],
+      "visualText" : "Orijen Large Breed Dog Food",
+      "type" : "AXTextField",
+      "semanticMeaning" : "Search Amazon.ca",
+      "size" : {
+        "height" : 38,
+        "width" : 304
+      },
+      "position" : {
+        "x" : 410,
+        "y" : 150
+      },
+      "isClickable" : false
+    },
+    {
+      "actionHint" : "Click Open All Categories Menu",
+      "size" : {
+        "height" : 39,
+        "width" : 59
+      },
+      "semanticMeaning" : "Open All Categories Menu",
+      "type" : "AXButton",
+      "position" : {
+        "y" : 199,
+        "x" : 87
+      },
+      "id" : "1752EAFF-6D4D-4CAB-9E75-F4416DD31C4D",
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Open All Categories Menu",
+        "enabled" : true,
+        "title" : "Open All Categories Menu",
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "size" : {
+        "width" : 132,
+        "height" : 20
+      },
+      "actionHint" : "Click Sort by:",
+      "semanticMeaning" : "Sort by:",
+      "visualText" : "Featured",
+      "accessibility" : {
+        "description" : "Sort by:",
+        "role" : "AXPopUpButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Sort by:"
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "id" : "38F2E1B0-D08E-48D3-935D-FBA72B9094FE",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 958,
+        "y" : 280
+      },
+      "type" : "AXPopUpButton"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "actionHint" : "Click Leave feedback on sponsored ad",
+      "size" : {
+        "width" : 71,
+        "height" : 25
+      },
+      "isClickable" : true,
+      "id" : "7A2BADEB-D6F7-4519-8D8E-C89692EA3E5C",
+      "accessibility" : {
+        "title" : "Leave feedback on sponsored ad",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Leave feedback on sponsored ad"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Leave feedback on sponsored ad",
+      "position" : {
+        "x" : 1014,
+        "y" : 620
+      }
+    },
+    {
+      "type" : "AXButton",
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXButton",
+        "title" : "View Sponsored information or leave ad feedback",
+        "enabled" : true,
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 67,
+        "height" : 14
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXButton",
+      "isClickable" : true,
+      "id" : "E0C0BCE6-1B4B-48E6-B0B7-A2F56D62831F",
+      "position" : {
+        "x" : 363,
+        "y" : 949
+      },
+      "actionHint" : "Clickable element"
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "accessibility" : {
+        "title" : "4.5 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "id" : "7F40C5DD-D371-4721-935F-651AB5D86489",
+      "actionHint" : "Click 4.5 out of 5 stars, rating details"
+    },
+    {
+      "actionHint" : "Click Add to cart",
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "title" : "Add to cart"
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "id" : "AB6163EB-BA23-4FF3-B4A7-FB44DA825586",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      }
+    },
+    {
+      "id" : "EA367C33-F4B9-43E9-AA70-4A3B1BDA08BA",
+      "isClickable" : true,
+      "position" : {
+        "x" : 611,
+        "y" : 949
+      },
+      "size" : {
+        "height" : 14,
+        "width" : 67
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "semanticMeaning" : "AXButton",
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : null,
+        "title" : "View Sponsored information or leave ad feedback",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : "4.5 out of 5 stars, rating details",
+        "description" : "4.5 out of 5 stars, rating details",
+        "enabled" : true
+      },
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "1AC5FD94-FC86-4837-9ABA-07A03ED47DF5",
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "4.5 out of 5 stars, rating details"
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      },
+      "isClickable" : true,
+      "id" : "1E403BF6-1B1D-4242-8F05-A678AE9D0533",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true
+      }
+    },
+    {
+      "semanticMeaning" : "AXButton",
+      "actionHint" : "Clickable element",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "id" : "607B2F20-1F62-4C85-9EE4-E1859C9E8EA1",
+      "accessibility" : {
+        "focused" : false,
+        "description" : null,
+        "role" : "AXButton",
+        "title" : "View Sponsored information or leave ad feedback",
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 859,
+        "y" : 949
+      },
+      "isClickable" : true,
+      "size" : {
+        "height" : 14,
+        "width" : 67
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXButton",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "id" : "D357CDDC-FD29-49CB-8710-DF4D737CEACB",
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "description" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true
+      }
+    },
+    {
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "id" : "50FBDE10-11C4-42FA-9C65-D47BC879B2FB",
+      "accessibility" : {
+        "description" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Add to cart",
+        "role" : "AXButton"
+      },
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "isClickable" : true
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 363
+      },
+      "size" : {
+        "width" : 67,
+        "height" : 14
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXButton",
+      "type" : "AXButton",
+      "id" : "78E14E6C-8989-4D71-A1EA-A7682C9954A4",
+      "isClickable" : true,
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : null,
+        "title" : "View Sponsored information or leave ad feedback",
+        "focused" : false
+      }
+    },
+    {
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "4.5 out of 5 stars, rating details",
+        "title" : "4.5 out of 5 stars, rating details"
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "id" : "A27BCD40-640D-4335-9C61-720C9136CE73",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "description" : "Add to cart"
+      },
+      "id" : "92E8AB12-3348-40F8-8A3F-DB27686B1FB0",
+      "type" : "AXButton",
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "4.5 out of 5 stars, rating details",
+        "description" : "4.5 out of 5 stars, rating details"
+      },
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "isClickable" : true,
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "id" : "5592F6E8-1CEF-4F6B-B2D3-8E1E4F9E0A5D",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "id" : "0246357F-88EE-4F2B-BBB4-026921D23460",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart",
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "id" : "60A10418-CD71-4350-9C9F-DC5322233BFA",
+      "isClickable" : true,
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      },
+      "accessibility" : {
+        "description" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "title" : "4.5 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "type" : "AXButton",
+      "accessibility" : {
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "isClickable" : true,
+      "id" : "E9540982-EBCD-4B2E-8EEB-59A7F2B92D13",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      }
+    },
+    {
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "id" : "E3E29E72-C7DF-4CE4-B75D-DAD57DF5BC7B",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "4.5 out of 5 stars, rating details",
+        "focused" : false,
+        "title" : "4.5 out of 5 stars, rating details"
+      },
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "4.4 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "4.4 out of 5 stars, rating details"
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "id" : "7CDF0654-2941-45B8-AD13-5D9C6F8993EF",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      }
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click Add to cart",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "id" : "7436D959-C5D1-41FE-B286-B0876EAEB4BF"
+    },
+    {
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "accessibility" : {
+        "description" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "4.5 out of 5 stars, rating details"
+      },
+      "isClickable" : true,
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "id" : "ED17303D-CFD8-428B-ABC6-7D39A6F64059",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "id" : "2E993285-AD03-4872-A2C1-28D45862B602",
+      "semanticMeaning" : "Add to cart",
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "accessibility" : {
+        "description" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Add to cart",
+        "role" : "AXButton"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.3 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : "4.3 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "4.3 out of 5 stars, rating details"
+      },
+      "semanticMeaning" : "4.3 out of 5 stars, rating details",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "id" : "1FC186FB-6B97-4D50-A200-2EF476D16FE3"
+    },
+    {
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "actionHint" : "Click Add to cart",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "D6742285-1326-483D-B328-FC81D6A199BD",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "accessibility" : {
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "type" : "AXButton"
+    },
+    {
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "id" : "AC8E9C4F-8863-489C-85CC-972E5A0A8A6F",
+      "type" : "AXButton",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "4.4 out of 5 stars, rating details",
+        "focused" : false,
+        "title" : "4.4 out of 5 stars, rating details"
+      }
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "Add to cart",
+        "description" : "Add to cart",
+        "focused" : false,
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "id" : "8BB3D304-A5CC-482E-ABF2-87FE85843659"
+    },
+    {
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "isClickable" : true,
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "id" : "977CCD14-C672-43B3-A745-B2A065B35721",
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "accessibility" : {
+        "description" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "4.5 out of 5 stars, rating details"
+      },
+      "type" : "AXButton",
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      }
+    },
+    {
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "id" : "AE5897AE-DDEA-4DF3-AB90-98C42A735335",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "description" : "Add to cart"
+      },
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "type" : "AXButton",
+      "isClickable" : true
+    },
+    {
+      "type" : "AXButton",
+      "id" : "210D1EA3-822B-4984-9545-D303314883B9",
+      "isClickable" : true,
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true
+      },
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details"
+    },
+    {
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : "Add to cart",
+        "focused" : false,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "id" : "C0D5DC53-FB1B-4BB6-9B50-26B4754AD7A9",
+      "isClickable" : true
+    },
+    {
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "isClickable" : true,
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      },
+      "type" : "AXButton",
+      "id" : "B839AE8D-8242-4F4C-A444-10DA5AFAC8F9",
+      "accessibility" : {
+        "description" : "4.4 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : "4.4 out of 5 stars, rating details",
+        "enabled" : true
+      }
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "accessibility" : {
+        "description" : "Add to cart",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Add to cart"
+      },
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "id" : "5C31AE38-B922-4F72-92ED-27C8EB37F60D",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      }
+    },
+    {
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "4.5 out of 5 stars, rating details",
+        "focused" : false,
+        "description" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton"
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "id" : "4D1AA1B7-85B9-4576-B616-05D26B3C2CFF",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      }
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click Add to cart",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : "Add to cart",
+        "focused" : false,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "id" : "32B36858-E385-4B27-8B90-72FFC4ECBE4C",
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      }
+    },
+    {
+      "actionHint" : "Click 4.3 out of 5 stars, rating details",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "4.3 out of 5 stars, rating details",
+        "focused" : false,
+        "description" : "4.3 out of 5 stars, rating details"
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "4F999190-6F66-4CBB-A2D6-618F73CC85FA",
+      "isClickable" : true,
+      "semanticMeaning" : "4.3 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 872,
+        "y" : 1004
+      }
+    },
+    {
+      "type" : "AXButton",
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : "4.6 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "id" : "E37CE17B-EBBB-489A-A326-F631E1833487"
+    },
+    {
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "isClickable" : true,
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "id" : "B74AFC3B-A46C-4D08-A8CE-A11AC40A58FF",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "4.6 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true
+      }
+    },
+    {
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Add to cart"
+      },
+      "id" : "8510200E-5B03-4251-BA95-40E98BD7E5D3"
+    },
+    {
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "title" : "4.6 out of 5 stars, rating details",
+        "description" : "4.6 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "E355A9C7-642B-4E9E-95EA-743A56F742D8"
+    },
+    {
+      "semanticMeaning" : "Add to cart",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "7FEFA281-C7B4-4732-9544-1769AFD86145",
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "description" : "Add to cart",
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Add to cart"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "accessibility" : {
+        "title" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "4.6 out of 5 stars, rating details"
+      },
+      "isClickable" : true,
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "id" : "7A7870EF-FD2B-43A0-812D-2B4020275A8B",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton"
+    },
+    {
+      "id" : "FB2109A0-1788-4037-B453-23116B915CAE",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : "Add to cart"
+      },
+      "type" : "AXButton",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true,
+        "description" : "4.6 out of 5 stars, rating details"
+      },
+      "type" : "AXButton",
+      "id" : "FFBFDC6F-017C-4469-BE85-76C45467C539",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "isClickable" : true,
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      }
+    },
+    {
+      "type" : "AXButton",
+      "isClickable" : true,
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "title" : "Add to cart",
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "focused" : false
+      },
+      "id" : "AC0B1DE1-B51A-4A9E-B308-9E5D0107B009",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "size" : {
+        "height" : 14,
+        "width" : 67
+      },
+      "actionHint" : "Clickable element",
+      "type" : "AXButton",
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "View Sponsored information or leave ad feedback",
+        "focused" : false,
+        "description" : null
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 859,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "id" : "38E98383-2CFA-4DD7-8D29-8E0E9557E3F7"
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "accessibility" : {
+        "title" : "4.4 out of 5 stars, rating details",
+        "description" : "4.4 out of 5 stars, rating details",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "C560845A-BCC3-477C-AFC5-EC896DF6B94C",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "actionHint" : "Click 4.4 out of 5 stars, rating details"
+    },
+    {
+      "id" : "06175178-5D65-4B92-9CD0-466BECA056DB",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "Add to cart"
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "semanticMeaning" : "Add to cart"
+    },
+    {
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 14,
+        "width" : 67
+      },
+      "isClickable" : true,
+      "id" : "F55CD075-A8E8-4CCF-984D-BFD8051C2E05",
+      "semanticMeaning" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 363
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXButton",
+        "title" : "View Sponsored information or leave ad feedback",
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "isClickable" : true,
+      "id" : "3EED2127-7E82-4FE0-B40D-4953E5A54439",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "id" : "100A704C-4593-4EC9-B4E7-46279282DCDD",
+      "semanticMeaning" : "Add to cart",
+      "accessibility" : {
+        "title" : "Add to cart",
+        "enabled" : true,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "isClickable" : true,
+      "actionHint" : "Click Add to cart",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      }
+    },
+    {
+      "actionHint" : "Clickable element",
+      "semanticMeaning" : "AXButton",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 611,
+        "y" : 1004
+      },
+      "id" : "B950FB2A-C033-478D-A9A8-9E14E2CD80D7",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 67,
+        "height" : 14
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "View Sponsored information or leave ad feedback",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "semanticMeaning" : "4.7 out of 5 stars, rating details",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "B95EF600-1783-40C9-A8C1-995917C9106B",
+      "isClickable" : true,
+      "actionHint" : "Click 4.7 out of 5 stars, rating details",
+      "accessibility" : {
+        "description" : "4.7 out of 5 stars, rating details",
+        "title" : "4.7 out of 5 stars, rating details",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "actionHint" : "Click Add to cart",
+      "id" : "791C4EC8-9CE8-4873-83D7-314A3CABB4EE",
+      "accessibility" : {
+        "description" : "Add to cart",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "Add to cart",
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 859,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "size" : {
+        "width" : 67,
+        "height" : 14
+      },
+      "id" : "9AA62626-3390-4D07-A518-12A77D95F57F",
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : null,
+        "title" : "View Sponsored information or leave ad feedback",
+        "focused" : false
+      }
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "title" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "description" : "4.5 out of 5 stars, rating details"
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      },
+      "id" : "FE9FB3CC-B527-4C5C-BDFD-ED1BD8A171A5",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "id" : "4E502E12-ED51-4F8E-A153-D3375AD370E4",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Add to cart",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Add to cart",
+        "title" : "Add to cart"
+      }
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "id" : "AF0DDCE0-2962-487F-A3FB-A874B0127478",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "title" : "4.6 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "4.6 out of 5 stars, rating details",
+        "enabled" : true
+      },
+      "type" : "AXButton"
+    },
+    {
+      "id" : "43510B27-B9C7-42ED-AC16-566B7798AF26",
+      "semanticMeaning" : "Add to cart",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Add to cart"
+      }
+    },
+    {
+      "isClickable" : true,
+      "id" : "72F736CB-88BA-4519-8CC6-2B806C43D566",
+      "accessibility" : {
+        "title" : "4.4 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "4.4 out of 5 stars, rating details"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Add to cart",
+      "type" : "AXButton",
+      "id" : "CA43058F-627A-471E-B1A2-70B33BD28211",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Add to cart"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart"
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "id" : "7B4A2E39-EAB2-4837-8781-F9C702921BA0",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : "4.4 out of 5 stars, rating details",
+        "title" : "4.4 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "type" : "AXButton"
+    },
+    {
+      "id" : "EFCF1CE3-C831-4ECB-A174-C8CDF3DCA669",
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : "Add to cart",
+        "enabled" : true,
+        "description" : "Add to cart"
+      },
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      }
+    },
+    {
+      "isClickable" : true,
+      "id" : "132ED54E-CBF2-4E04-8606-78C70259C7C3",
+      "type" : "AXButton",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "title" : "4.6 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details",
+        "enabled" : true
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "C695DABE-62FF-4DE8-97EB-51F2C8938D2F",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      }
+    },
+    {
+      "accessibility" : {
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "4.6 out of 5 stars, rating details"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "isClickable" : true,
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "type" : "AXButton",
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      },
+      "id" : "02E1BE54-25B9-4772-9C31-5186412BC2C9"
+    },
+    {
+      "id" : "4819DB80-080D-4772-B3EE-277C39B18B19",
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      }
+    },
+    {
+      "id" : "0BF3FDD6-A97E-4415-89BA-A9D8B8503005",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false
+      },
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Add to cart",
+        "description" : "Add to cart"
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "id" : "E0912B81-53AE-4DAA-B70A-8D01EE71E2E0"
+    },
+    {
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "id" : "7280A973-CE2A-4019-BD1C-895ABE89597B",
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true,
+        "description" : "4.6 out of 5 stars, rating details",
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 364
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "id" : "CBF3A885-C06E-4581-805A-25DF3BC92091",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "id" : "2DE400F2-86D3-461B-BFD8-063607E566AB",
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "4.5 out of 5 stars, rating details",
+        "enabled" : true,
+        "title" : "4.5 out of 5 stars, rating details",
+        "focused" : false,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "accessibility" : {
+        "title" : "Add to cart",
+        "focused" : false,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "id" : "45A0CF98-82F9-45FE-907D-33328FE0251F"
+    },
+    {
+      "id" : "85E8FA9B-8E4D-4E49-B6AF-F3140B8037F0",
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "accessibility" : {
+        "title" : "4.5 out of 5 stars, rating details",
+        "enabled" : true,
+        "description" : "4.5 out of 5 stars, rating details",
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "type" : "AXButton"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "id" : "46433BA3-D343-4723-807A-BFD2F0C876E2",
+      "isClickable" : true,
+      "semanticMeaning" : "Add to cart",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "id" : "C3AC747C-AF30-415D-B3E1-9586C0395E44",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "4.4 out of 5 stars, rating details",
+        "description" : "4.4 out of 5 stars, rating details"
+      },
+      "isClickable" : true,
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1004,
+        "x" : 364
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "Add to cart"
+      },
+      "semanticMeaning" : "Add to cart",
+      "id" : "AE01FBE1-BB44-4702-8BB4-068977221520",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "id" : "2013F379-03FD-49C6-9C8A-1DE688868156",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : "4.5 out of 5 stars, rating details",
+        "description" : "4.5 out of 5 stars, rating details",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      },
+      "type" : "AXButton",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "id" : "95BAD933-0A52-4152-B923-8DBA75AA469B",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "4.4 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "4.4 out of 5 stars, rating details"
+      },
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "isClickable" : true
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "id" : "57D0E122-6474-4B2E-BC05-1105C8BB4672",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : "Add to cart",
+        "enabled" : true,
+        "description" : "Add to cart"
+      }
+    },
+    {
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "id" : "B9DAA1CD-F7AE-44C3-8671-C2B0BB09F725",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "title" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details"
+      },
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "isClickable" : true
+    },
+    {
+      "type" : "AXButton",
+      "id" : "0E2A323A-CD1F-4682-8A66-9C6C223E0A53",
+      "isClickable" : true,
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "4.4 out of 5 stars, rating details",
+        "title" : "4.4 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false
+      },
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      }
+    },
+    {
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "709D3163-4BDA-42FA-AE4C-8D41C59E8C3D",
+      "isClickable" : true,
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      }
+    },
+    {
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "id" : "E06B6F58-1AA5-425A-A97C-375B637C235F",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "description" : "4.6 out of 5 stars, rating details"
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "actionHint" : "Click Add to cart",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "id" : "AE9C1AFE-0EC3-469F-8E90-8E4B629EC4C1",
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "accessibility" : {
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Add to cart"
+      },
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart"
+    },
+    {
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "type" : "AXButton",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "title" : "4.6 out of 5 stars, rating details"
+      },
+      "id" : "AEFA0DAA-1C3D-4C76-A4E4-C884DF62D69B"
+    },
+    {
+      "semanticMeaning" : "Add to cart",
+      "id" : "AD868242-B455-44D3-AA05-1706EA3E67E8",
+      "actionHint" : "Click Add to cart",
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : "Add to cart",
+        "focused" : false,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 364
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "5.0 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 5.0 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "accessibility" : {
+        "focused" : false,
+        "title" : "5.0 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "description" : "5.0 out of 5 stars, rating details",
+        "enabled" : true
+      },
+      "id" : "64DBAED7-12DF-49BD-B159-E679CE225B12",
+      "isClickable" : true
+    },
+    {
+      "accessibility" : {
+        "title" : "Add to cart",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Add to cart"
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "semanticMeaning" : "Add to cart",
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "15591DFE-01F0-4237-AAFE-82B23C6B3A38",
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "actionHint" : "Click 4.3 out of 5 stars, rating details",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "semanticMeaning" : "4.3 out of 5 stars, rating details",
+      "id" : "AB5FBFED-9B35-4A87-8FA9-36593AED5B3F",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "4.3 out of 5 stars, rating details",
+        "title" : "4.3 out of 5 stars, rating details",
+        "role" : "AXButton"
+      },
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      }
+    },
+    {
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "id" : "86CA26FB-661F-4101-A637-6C0C365C9F53",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Add to cart"
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "semanticMeaning" : "Add to cart"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "isClickable" : true,
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "id" : "C6A5CB04-82B1-4A95-997B-1649908C2FA2",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details",
+        "title" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "enabled" : true
+      }
+    },
+    {
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "id" : "C307DE8F-E583-49BF-A0BD-0D8054AE1FDE",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : "4.6 out of 5 stars, rating details",
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "4.6 out of 5 stars, rating details"
+      },
+      "position" : {
+        "x" : 628,
+        "y" : 1004
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "id" : "485DEC5A-4434-4CF5-8BB1-83DEF81FE111",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton"
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "Add to cart"
+      },
+      "type" : "AXButton",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "B83E3061-0EFF-4006-99B2-325E7A8585D9",
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "type" : "AXButton",
+      "id" : "58552A62-6897-4E1E-BF20-BDAA9D6B90BF",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : "4.4 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "4.4 out of 5 stars, rating details"
+      }
+    },
+    {
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "id" : "2EDCF7BD-5C89-4FF7-A9EF-4D72EC46F895",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "id" : "02CE56CE-C3E4-4088-A510-29122FB7F1AF",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "4.6 out of 5 stars, rating details",
+        "description" : "4.6 out of 5 stars, rating details"
+      },
+      "type" : "AXButton",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      }
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "enabled" : true,
+        "title" : "Add to cart",
+        "focused" : false
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 364
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "2AEB1AC6-5E0D-43B7-8E9C-885786A1DB6E",
+      "semanticMeaning" : "Add to cart",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "actionHint" : "Click Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "4.6 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "title" : "4.6 out of 5 stars, rating details"
+      },
+      "id" : "8B7097A4-B780-4DC0-999F-0EECEC9A6ADC"
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Add to cart",
+        "description" : "Add to cart",
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "id" : "61023B83-FD44-44AF-A22E-E8BC7B509A01",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "position" : {
+        "x" : 876,
+        "y" : 1004
+      },
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "id" : "1F1E4FCD-2A06-4D11-862F-148B6C9ACDA4",
+      "accessibility" : {
+        "title" : "4.5 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "4.5 out of 5 stars, rating details"
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "4.5 out of 5 stars, rating details"
+    },
+    {
+      "id" : "24ACEFD2-1786-4632-B87E-C12468480509",
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "semanticMeaning" : "Add to cart",
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "focused" : false
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "id" : "DA7D3CF9-3315-41AF-AAC5-8B447ADA3C89",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "title" : "4.5 out of 5 stars, rating details"
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXButton",
+      "actionHint" : "Click Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "6A5FD63B-F338-4536-99A2-D50FE473BEC9",
+      "semanticMeaning" : "Add to cart",
+      "isClickable" : true,
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "Add to cart",
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Add to cart"
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "isClickable" : true,
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "accessibility" : {
+        "description" : "4.4 out of 5 stars, rating details",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "4.4 out of 5 stars, rating details",
+        "role" : "AXButton"
+      },
+      "id" : "1D167AE2-7D8C-41DB-9AF9-5B8ACBCE08C4",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "Add to cart",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "5B7AFF61-B9A1-4A52-9C02-6D0294D6DF7C",
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "accessibility" : {
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Add to cart"
+      },
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      }
+    },
+    {
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "4.4 out of 5 stars, rating details",
+        "title" : "4.4 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "id" : "DD6F61D1-1BE0-4660-96F3-01CD7792E41A"
+    },
+    {
+      "type" : "AXButton",
+      "id" : "3E87AB30-B1FF-4421-8CB2-67E4EE9D4D38",
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "semanticMeaning" : "Add to cart",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "focused" : false,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "id" : "27212969-5DCE-4A3E-AB02-DC307E4C7BC0",
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "title" : "4.6 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "description" : "4.6 out of 5 stars, rating details"
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "isClickable" : true
+    },
+    {
+      "accessibility" : {
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Add to cart",
+        "role" : "AXButton"
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "D49A9D57-1B02-481B-AAD7-5E077054B381",
+      "semanticMeaning" : "Add to cart",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : "4.4 out of 5 stars, rating details",
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "4.4 out of 5 stars, rating details"
+      },
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "confidence" : 0.69999999999999996,
+      "id" : "A15C62CC-115A-4A26-BA33-6B4C86A41F17",
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      }
+    },
+    {
+      "id" : "B3B09808-69DC-4D8A-9D42-96ECF5BEF112",
+      "isClickable" : true,
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "semanticMeaning" : "Add to cart",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      },
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Add to cart",
+        "description" : "Add to cart"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "id" : "B8FA9493-98BE-4286-B653-8CA4E2B9DE27",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "accessibility" : {
+        "description" : "4.4 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "4.4 out of 5 stars, rating details"
+      }
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "5A9F0302-2948-45E0-A956-6164EC3C3E84",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart",
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "actionHint" : "Click Add to cart"
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "4.5 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "4.5 out of 5 stars, rating details"
+      },
+      "id" : "CEE52360-B960-4ECF-BBCC-C6D418B172F5",
+      "position" : {
+        "y" : 1004,
+        "x" : 380
+      },
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart",
+      "accessibility" : {
+        "description" : "Add to cart",
+        "title" : "Add to cart",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "id" : "149FF229-7923-4092-9E64-06CD9AB6ABB0",
+      "type" : "AXButton",
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "x" : 364,
+        "y" : 1004
+      },
+      "isClickable" : true
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "3.7 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false,
+        "title" : "3.7 out of 5 stars, rating details"
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "isClickable" : true,
+      "id" : "57D9D515-2BF9-4835-B982-72F818749471",
+      "semanticMeaning" : "3.7 out of 5 stars, rating details",
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click 3.7 out of 5 stars, rating details"
+    },
+    {
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "type" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Add to cart",
+        "focused" : false,
+        "title" : "Add to cart",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 612,
+        "y" : 1004
+      },
+      "id" : "9DFF732B-116F-4D3B-98D1-86CD5D518C51",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXButton",
+      "size" : {
+        "width" : 67,
+        "height" : 14
+      },
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : null,
+        "title" : "View Sponsored information or leave ad feedback"
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 859
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "4E56D001-11AF-479C-919A-BB65F475FF09"
+    },
+    {
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "4.4 out of 5 stars, rating details",
+        "enabled" : true,
+        "description" : "4.4 out of 5 stars, rating details"
+      },
+      "id" : "733586E1-DF77-4633-ACBA-B4DA2B7194DD"
+    },
+    {
+      "id" : "29CC67A4-2F39-4567-9E9E-FF2568D4C80B",
+      "type" : "AXButton",
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "position" : {
+        "y" : 1004,
+        "x" : 860
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "Add to cart",
+        "focused" : false,
+        "description" : "Add to cart"
+      },
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "semanticMeaning" : "AXButton",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "View Sponsored information or leave ad feedback",
+        "description" : null,
+        "focused" : false
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 363
+      },
+      "size" : {
+        "height" : 14,
+        "width" : 67
+      },
+      "actionHint" : "Clickable element",
+      "id" : "F0ACD830-59EB-48FD-B423-F482AF40612B",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton"
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "4.5 out of 5 stars, rating details",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "4.5 out of 5 stars, rating details",
+        "title" : "4.5 out of 5 stars, rating details",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.5 out of 5 stars, rating details",
+      "position" : {
+        "x" : 380,
+        "y" : 1004
+      },
+      "id" : "79B34436-FCA1-4B5F-B961-1F786E0EFA50",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      }
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 364
+      },
+      "actionHint" : "Click Add to cart",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "Add to cart",
+        "role" : "AXButton",
+        "title" : "Add to cart",
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Add to cart",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "id" : "E61546A7-AA12-4C10-ADA0-C7BE587363E9"
+    },
+    {
+      "size" : {
+        "height" : 14,
+        "width" : 67
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 611
+      },
+      "semanticMeaning" : "AXButton",
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : null,
+        "title" : "View Sponsored information or leave ad feedback"
+      },
+      "id" : "E3336F30-2750-48B4-B5EA-905130E069AF",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "isClickable" : true,
+      "semanticMeaning" : "4.6 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "actionHint" : "Click 4.6 out of 5 stars, rating details",
+      "accessibility" : {
+        "description" : "4.6 out of 5 stars, rating details",
+        "title" : "4.6 out of 5 stars, rating details",
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 628
+      },
+      "id" : "AE2EA95D-80DE-430A-AF0B-3D7A1856FA53",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Add to cart",
+      "actionHint" : "Click Add to cart",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "F3E3AB2B-7996-4A68-9218-CB16CC75A960",
+      "type" : "AXButton",
+      "size" : {
+        "height" : 31,
+        "width" : 90
+      },
+      "accessibility" : {
+        "title" : "Add to cart",
+        "focused" : false,
+        "description" : "Add to cart",
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "position" : {
+        "y" : 1004,
+        "x" : 612
+      }
+    },
+    {
+      "type" : "AXButton",
+      "isClickable" : true,
+      "size" : {
+        "width" : 67,
+        "height" : 14
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 1004,
+        "x" : 859
+      },
+      "id" : "B31BFB9E-1316-4A5A-9314-3D6B8872F611",
+      "semanticMeaning" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Clickable element",
+      "accessibility" : {
+        "title" : "View Sponsored information or leave ad feedback",
+        "description" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "type" : "AXButton",
+      "position" : {
+        "y" : 1004,
+        "x" : 876
+      },
+      "size" : {
+        "height" : 25,
+        "width" : 78
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : "4.4 out of 5 stars, rating details",
+        "focused" : false,
+        "description" : "4.4 out of 5 stars, rating details",
+        "enabled" : true
+      },
+      "id" : "A39FD521-6BE8-46EF-B5A5-35AD756B99F1",
+      "isClickable" : true
+    },
+    {
+      "type" : "AXButton",
+      "actionHint" : "Click Add to cart",
+      "id" : "252869EF-7C6C-4AF9-A69F-3416F07E7A19",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 860,
+        "y" : 1004
+      },
+      "semanticMeaning" : "Add to cart",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : "Add to cart",
+        "description" : "Add to cart",
+        "focused" : false
+      },
+      "size" : {
+        "width" : 90,
+        "height" : 31
+      },
+      "isClickable" : true
+    },
+    {
+      "id" : "BD620628-69B4-4CE2-A5AF-E6C41B9617E9",
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "4.4 out of 5 stars, rating details",
+        "title" : "4.4 out of 5 stars, rating details",
+        "enabled" : true,
+        "focused" : false
+      },
+      "semanticMeaning" : "4.4 out of 5 stars, rating details",
+      "position" : {
+        "y" : 1004,
+        "x" : 872
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click 4.4 out of 5 stars, rating details",
+      "size" : {
+        "width" : 78,
+        "height" : 25
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton"
+    },
+    {
+      "accessibility" : {
+        "enabled" : false,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : null,
+        "title" : "Previous"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "position" : {
+        "x" : 579,
+        "y" : 1004
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "size" : {
+        "width" : 95,
+        "height" : 49
+      },
+      "semanticMeaning" : "AXButton",
+      "actionHint" : "Clickable element",
+      "id" : "DCC370BA-9DB3-4D5A-B435-1AD8182668DF"
+    },
+    {
+      "size" : {
+        "height" : 49,
+        "width" : 48
+      },
+      "semanticMeaning" : "Page 1",
+      "position" : {
+        "x" : 674,
+        "y" : 1004
+      },
+      "actionHint" : "Click Page 1",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : "Page 1",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Page 1",
+        "role" : "AXButton"
+      },
+      "id" : "E711079B-30DA-4122-8841-718271A58328",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "id" : "7E001B57-8C4F-41DC-B88F-049C7C07FD8A",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 48,
+        "height" : 49
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Go to page 2",
+      "position" : {
+        "y" : 1004,
+        "x" : 722
+      },
+      "actionHint" : "Click Go to page 2",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "title" : "Go to page 2",
+        "role" : "AXButton",
+        "description" : "Go to page 2"
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Go to next page, page 2",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 49,
+        "width" : 95
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Go to next page, page 2",
+      "accessibility" : {
+        "title" : "Go to next page, page 2",
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Go to next page, page 2",
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "position" : {
+        "x" : 770,
+        "y" : 1004
+      },
+      "id" : "4D256D26-3637-47E8-9CAB-C82BE2DAC6E1"
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 354
+      },
+      "id" : "958B491C-AF75-48E3-9100-E5D0465E0940",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "size" : {
+        "width" : 70,
+        "height" : 25
+      },
+      "actionHint" : "Click Leave feedback on sponsored ad",
+      "semanticMeaning" : "Leave feedback on sponsored ad",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Leave feedback on sponsored ad",
+        "description" : "Leave feedback on sponsored ad",
+        "enabled" : true,
+        "role" : "AXButton"
+      }
+    },
+    {
+      "position" : {
+        "x" : 1012,
+        "y" : 1004
+      },
+      "semanticMeaning" : "Leave feedback on Sponsored ad",
+      "id" : "DCE2C345-C22B-4025-8905-7999F6264BB8",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Leave feedback on Sponsored ad",
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Leave feedback on Sponsored ad",
+        "role" : "AXButton",
+        "description" : "Leave feedback on Sponsored ad",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "size" : {
+        "width" : 74,
+        "height" : 18
+      }
+    },
+    {
+      "id" : "4F54A8C3-8061-4A49-A411-6F26C9EFD995",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 106,
+        "y" : 994
+      },
+      "type" : "AXSlider",
+      "size" : {
+        "width" : 176,
+        "height" : 28
+      },
+      "accessibility" : {
+        "description" : "Minimum price",
+        "title" : "Minimum price",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXSlider"
+      },
+      "semanticMeaning" : "Minimum price",
+      "isClickable" : false,
+      "interactions" : [
+        "drag",
+        "arrow_keys"
+      ]
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Maximum price",
+      "position" : {
+        "x" : 106,
+        "y" : 994
+      },
+      "id" : "FE196030-7B04-4FAC-BAD1-47FF078D2E10",
+      "type" : "AXSlider",
+      "size" : {
+        "height" : 28,
+        "width" : 176
+      },
+      "isClickable" : false,
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "Maximum price",
+        "description" : "Maximum price",
+        "role" : "AXSlider",
+        "focused" : false
+      },
+      "interactions" : [
+        "drag",
+        "arrow_keys"
+      ]
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 43,
+        "height" : 30
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "12B3B298-CB61-4CD5-8BEC-F51F2ABAC2AC",
+      "semanticMeaning" : "Go - Submit price range",
+      "actionHint" : "Click Go - Submit price range",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Go - Submit price range",
+        "title" : "Go - Submit price range",
+        "focused" : false,
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "position" : {
+        "x" : 291,
+        "y" : 993
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "position" : {
+        "x" : 106,
+        "y" : 1004
+      },
+      "size" : {
+        "width" : 75,
+        "height" : 24
+      },
+      "id" : "DF6A2B8E-57F1-4FE5-A935-E3468CF080AF",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "See more, Seller",
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "See more, Seller",
+        "title" : "See more, Seller",
+        "focused" : false,
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click See more, Seller",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : false,
+      "type" : "AXScrollArea",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 146,
+        "y" : 1004
+      },
+      "id" : "6BDC0402-63BE-4365-A970-30BF0E635EC0",
+      "semanticMeaning" : "AXScrollArea",
+      "size" : {
+        "width" : 160,
+        "height" : 600
+      },
+      "interactions" : [
+        "scroll",
+        "swipe"
+      ],
+      "accessibility" : {
+        "role" : "AXScrollArea",
+        "description" : null,
+        "focused" : false,
+        "enabled" : true,
+        "title" : null
+      }
+    },
+    {
+      "semanticMeaning" : "Leave feedback on Sponsored ad",
+      "actionHint" : "Click Leave feedback on Sponsored ad",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "7104F7DA-1A51-4196-9521-EC6D7CF7C27D",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Leave feedback on Sponsored ad",
+        "title" : "Leave feedback on Sponsored ad"
+      },
+      "position" : {
+        "x" : 232,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 74,
+        "height" : 17
+      },
+      "type" : "AXButton"
+    },
+    {
+      "position" : {
+        "y" : 1004,
+        "x" : 146
+      },
+      "size" : {
+        "width" : 160,
+        "height" : 600
+      },
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXScrollArea",
+        "enabled" : true,
+        "description" : null,
+        "focused" : false
+      },
+      "id" : "A6D0E4E0-CE89-4787-A181-28E50E5123F8",
+      "type" : "AXScrollArea",
+      "isClickable" : false,
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "scroll",
+        "swipe"
+      ],
+      "semanticMeaning" : "AXScrollArea"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "size" : {
+        "width" : 74,
+        "height" : 17
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Leave feedback on Sponsored ad",
+      "actionHint" : "Click Leave feedback on Sponsored ad",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "Leave feedback on Sponsored ad",
+        "title" : "Leave feedback on Sponsored ad",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 232,
+        "y" : 1004
+      },
+      "id" : "1D4C1A00-E4F4-4DFC-B452-0F8F9B5FF92E"
+    },
+    {
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Back to top",
+      "size" : {
+        "height" : 50,
+        "width" : 1020
+      },
+      "id" : "57EA14AD-B615-4B4E-B30F-E73AA7FEDB74",
+      "position" : {
+        "x" : 86,
+        "y" : 1004
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : "Back to top",
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : "Back to top"
+      },
+      "semanticMeaning" : "Back to top",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "semanticMeaning" : "Choose a country\/region for shopping. The current selection is Canada.",
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "description" : "Choose a country\/region for shopping. The current selection is Canada.",
+        "title" : "Choose a country\/region for shopping. The current selection is Canada."
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 34,
+        "width" : 107
+      },
+      "id" : "2900A3C6-52E9-42DD-9B98-A945895B8B5F",
+      "position" : {
+        "y" : 1004,
+        "x" : 692
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click Choose a country\/region for shopping. The current selection is Canada."
+    },
+    {
+      "id" : "9F1AA479-3AE3-41D8-BCF4-669DFF483964",
+      "actionHint" : "Click show sidebar",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "show sidebar",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "show sidebar",
+        "enabled" : true
+      },
+      "size" : {
+        "height" : 30,
+        "width" : 35.5
+      },
+      "isClickable" : true,
+      "position" : {
+        "y" : 70,
+        "x" : 176
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "size" : {
+        "height" : 40,
+        "width" : 40
+      },
+      "semanticMeaning" : "Go back",
+      "isClickable" : true,
+      "actionHint" : "Click Go back",
+      "id" : "F2DB27BA-572A-4787-9556-65B649560619",
+      "position" : {
+        "y" : 65,
+        "x" : 233
+      },
+      "accessibility" : {
+        "description" : "Go back",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : false
+      }
+    },
+    {
+      "size" : {
+        "width" : 39,
+        "height" : 40
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "position" : {
+        "y" : 65,
+        "x" : 273
+      },
+      "semanticMeaning" : "Go forward",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Go forward",
+      "id" : "71589667-C199-421C-A3AF-ED2DC25C7F0E",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : false,
+        "description" : "Go forward",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null
+      }
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "height" : 30,
+        "width" : 31
+      },
+      "semanticMeaning" : "Activate WhatFont",
+      "position" : {
+        "y" : 70,
+        "x" : 352.5
+      },
+      "id" : "4DB7ECA3-1743-4B52-83F0-9188B8B4D752",
+      "type" : "AXButton",
+      "actionHint" : "Click Activate WhatFont",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Activate WhatFont",
+        "title" : null,
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "actionHint" : "Click Page Menu",
+      "id" : "2AF4BE8E-53F7-4BF5-9C53-B3C94072CF91",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Page Menu",
+        "title" : "Page Menu"
+      },
+      "size" : {
+        "width" : 30.5,
+        "height" : 23
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Page Menu",
+      "position" : {
+        "y" : 74,
+        "x" : 389.5
+      }
+    },
+    {
+      "position" : {
+        "x" : 411.5,
+        "y" : 73
+      },
+      "id" : "9502EB58-55B8-466F-805F-DD2CAD6ABEBD",
+      "size" : {
+        "width" : 24,
+        "height" : 24
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click Add page to Reading List",
+      "semanticMeaning" : "Add page to Reading List",
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Add page to Reading List",
+        "role" : "AXButton",
+        "description" : "Add page to Reading List",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : false,
+      "id" : "0B1281CB-5698-4102-AFBC-4C025240C481",
+      "visualText" : "https:\/\/www.amazon.ca\/s?k=Orijen+Large+Breed+Dog+Food",
+      "semanticMeaning" : "smart search field showing a secure address",
+      "accessibility" : {
+        "role" : "AXTextField",
+        "description" : "smart search field showing a secure address",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXTextField",
+      "position" : {
+        "y" : 77,
+        "x" : 412.5
+      },
+      "size" : {
+        "width" : 359,
+        "height" : 28
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ]
+    },
+    {
+      "actionHint" : "Click Reload this page",
+      "semanticMeaning" : "Reload this page",
+      "id" : "294BCC46-5FC3-4A93-8A86-9599BB26358C",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 23.5,
+        "height" : 23
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Reload this page",
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "Reload this page"
+      },
+      "position" : {
+        "x" : 777.5,
+        "y" : 74.5
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "position" : {
+        "y" : 59,
+        "x" : 985
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "Share",
+      "id" : "F6AA4CB7-780A-467D-A229-F75DDE54EFBD",
+      "actionHint" : "Click Share",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Share",
+        "title" : null,
+        "focused" : false,
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 37,
+        "height" : 52
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "semanticMeaning" : "New Tab",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "description" : "New Tab"
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 36,
+        "height" : 52
+      },
+      "id" : "A84B6FB1-EEE0-4956-85FB-32A9DA872ABC",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 59,
+        "x" : 1022
+      },
+      "actionHint" : "Click New Tab",
+      "isClickable" : true
+    },
+    {
+      "semanticMeaning" : "new tab",
+      "position" : {
+        "x" : 1025,
+        "y" : 70
+      },
+      "id" : "0311FE86-1C60-4F5B-A3F4-28E7503124BE",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 30,
+        "height" : 30
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "new tab",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "actionHint" : "Click new tab",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "add",
+        "title" : null,
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click add",
+      "size" : {
+        "height" : 30,
+        "width" : 30
+      },
+      "isClickable" : true,
+      "position" : {
+        "y" : 70,
+        "x" : 1025
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "0E08C8CC-87D4-4BE3-BA14-A90D4E15A06C",
+      "semanticMeaning" : "add",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "isClickable" : true,
+      "id" : "E13A322B-7A4A-44C4-BFFE-1AE065981F6D",
+      "position" : {
+        "x" : 1058,
+        "y" : 59
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 52,
+        "width" : 40
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Tab Overview",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "role" : "AXButton",
+        "description" : "Tab Overview",
+        "enabled" : true
+      },
+      "actionHint" : "Click Tab Overview"
+    },
+    {
+      "position" : {
+        "y" : 111,
+        "x" : 86
+      },
+      "id" : "C572CCD0-4344-40E2-816F-578EBE1CC33E",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXRadioButton",
+      "size" : {
+        "width" : 256,
+        "height" : 28
+      },
+      "isClickable" : true,
+      "type" : "AXRadioButton",
+      "accessibility" : {
+        "role" : "AXRadioButton",
+        "enabled" : true,
+        "title" : "Amazon.com : Orijen Large Breed Dog Food",
+        "description" : null,
+        "focused" : false
+      }
+    },
+    {
+      "id" : "9B79A17B-EF87-40D6-9EB8-A1446A8B4B82",
+      "size" : {
+        "height" : 28,
+        "width" : 256
+      },
+      "position" : {
+        "x" : 340,
+        "y" : 111
+      },
+      "semanticMeaning" : "AXRadioButton",
+      "actionHint" : "Clickable element",
+      "type" : "AXRadioButton",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "role" : "AXRadioButton",
+        "description" : null,
+        "enabled" : true,
+        "title" : "Amazon.com: ACANA Singles Limited Ingredient Dry Dog Food, Grain Free, High Protein, Lamb & Apple, 25lb + Treats : Pet Supplies",
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "isClickable" : true
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element",
+      "id" : "3995C8A2-FFDA-4CE5-96FA-CC419D2E202F",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "y" : 111,
+        "x" : 851
+      },
+      "semanticMeaning" : "AXRadioButton",
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "title" : "Amazon.ca : Orijen Large Breed Dog Food",
+        "focused" : false
+      },
+      "type" : "AXRadioButton",
+      "size" : {
+        "width" : 256,
+        "height" : 28
+      }
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Apple",
+      "isClickable" : true,
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "visualText" : "Apple",
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "id" : "38729CF4-1373-4AA8-9DF3-4232B9C3977C",
+      "actionHint" : "Click Apple",
+      "confidence" : 0.94999999999999996
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "isClickable" : true,
+      "type" : "appMenu",
+      "interactions" : [
+        "click"
+      ],
+      "id" : "6F3D1B8F-EA6E-4B5E-9098-716B7B1516BD",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "semanticMeaning" : "Menu bar item: Safari",
+      "actionHint" : "Click Safari",
+      "visualText" : "Safari"
+    },
+    {
+      "type" : "appMenu",
+      "id" : "BE266CA3-8B74-48F9-ACED-4153621F34CD",
+      "visualText" : "File",
+      "semanticMeaning" : "Menu bar item: File",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click File"
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Edit",
+      "type" : "appMenu",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Edit",
+      "confidence" : 0.94999999999999996,
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "id" : "DF69DC32-9482-4A08-B5BC-66A00ED274A4",
+      "isClickable" : true,
+      "actionHint" : "Click Edit"
+    },
+    {
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "isClickable" : true,
+      "actionHint" : "Click View",
+      "confidence" : 0.94999999999999996,
+      "type" : "appMenu",
+      "visualText" : "View",
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "id" : "42149E6F-96E2-4E19-A588-945E4429FACD",
+      "semanticMeaning" : "Menu bar item: View"
+    },
+    {
+      "actionHint" : "Click History",
+      "visualText" : "History",
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: History",
+      "id" : "AE8D7C57-6A9E-4B02-A1ED-D4E49E100025",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "interactions" : [
+        "click"
+      ],
+      "type" : "appMenu",
+      "isClickable" : true,
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      }
+    },
+    {
+      "type" : "appMenu",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Bookmarks",
+      "actionHint" : "Click Bookmarks",
+      "semanticMeaning" : "Menu bar item: Bookmarks",
+      "isClickable" : true,
+      "id" : "B3082FC6-5470-4175-8C99-A91CE7736F09"
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Develop",
+      "id" : "012D943C-F5A9-4166-A367-596654152024",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click Develop",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "confidence" : 0.94999999999999996,
+      "isClickable" : true,
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "visualText" : "Develop",
+      "type" : "appMenu"
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Window",
+      "actionHint" : "Click Window",
+      "confidence" : 0.94999999999999996,
+      "isClickable" : true,
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Window",
+      "id" : "841D4820-D61E-4C5F-9AE1-B4F9D6D150EC",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      }
+    },
+    {
+      "type" : "appMenu",
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "id" : "F6B3A236-AD69-42ED-AB76-E3F748E9F37C",
+      "semanticMeaning" : "Menu bar item: Help",
+      "actionHint" : "Click Help",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "visualText" : "Help"
+    }
+  ],
+  "systemContext" : {
+    "activeApplication" : {
+      "name" : "Safari",
+      "bundleIdentifier" : "com.apple.Safari"
+    },
+    "menuItems" : [
+      {
+        "isSystemWide" : false,
+        "index" : 0,
+        "menuBarPosition" : "M-M1",
+        "title" : "Apple",
+        "type" : "appMenu"
+      },
+      {
+        "index" : 1,
+        "isSystemWide" : false,
+        "title" : "Safari",
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M2"
+      },
+      {
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M3",
+        "title" : "File",
+        "index" : 2
+      },
+      {
+        "index" : 3,
+        "isSystemWide" : false,
+        "title" : "Edit",
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M4"
+      },
+      {
+        "isSystemWide" : false,
+        "title" : "View",
+        "menuBarPosition" : "M-M5",
+        "type" : "appMenu",
+        "index" : 4
+      },
+      {
+        "isSystemWide" : false,
+        "index" : 5,
+        "menuBarPosition" : "M-M6",
+        "type" : "appMenu",
+        "title" : "History"
+      },
+      {
+        "index" : 6,
+        "menuBarPosition" : "M-M7",
+        "title" : "Bookmarks",
+        "type" : "appMenu",
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "index" : 7,
+        "isSystemWide" : false,
+        "title" : "Develop",
+        "menuBarPosition" : "M-M8"
+      },
+      {
+        "isSystemWide" : false,
+        "index" : 8,
+        "menuBarPosition" : "M-M9",
+        "type" : "appMenu",
+        "title" : "Window"
+      },
+      {
+        "title" : "Help",
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M10",
+        "index" : 9,
+        "isSystemWide" : false
+      }
+    ],
+    "timestamp" : "2025-06-22T01:00:01Z"
+  },
+  "metadata" : {
+    "timestamp" : "2025-06-22T01:00:01Z",
+    "processingTime" : 3.6357909440994263,
+    "performance" : {
+      "fusionTime" : 0.090582013130187988,
+      "screenshotTime" : 0.13976502418518066,
+      "fusedElements" : 247,
+      "accessibilityTime" : 1.0614030361175537,
+      "memoryUsage" : 117604352,
+      "ocrTime" : 0.12465202808380127,
+      "totalElements" : 2544
+    }
+  }
+}

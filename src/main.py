@@ -14,6 +14,7 @@ from typing import Dict, List, Any, Optional
 import argparse
 from dotenv import load_dotenv
 import logging
+import time
 
 # =============================================================================
 # 🤖 LLM CONFIGURATION
@@ -54,6 +55,8 @@ sys.path.append(str(project_root))
 sys.path.append(str(project_root / "src"))
 
 from gpt_engine.gpt_computer_use import GPTComputerUse, ActionResult
+from src.actions.smart_llm_actions import SmartLLMActions, SmartActionResult
+from src.gpt_engine.task_classifier import TaskClassifier, TaskType
 
 # Load environment
 load_dotenv()
@@ -182,12 +185,26 @@ class AugmentController:
             llm_provider = "openai"
         elif SELECTED_LLM.startswith("ollama"):
             llm_provider = "ollama"
-        elif SELECTED_LLM.startswith("liquid") or SELECTED_LLM.startswith("gemini"):
-            llm_provider = SELECTED_LLM  # Use the selected LLM key for provider detection
+        elif SELECTED_LLM.startswith("liquid"):
+            llm_provider = "liquid"
+        elif SELECTED_LLM.startswith("gemini"):
+            llm_provider = "gemini"
         else:
             llm_provider = "openai"  # Default fallback
         
         self.gpt_engine = GPTComputerUse(llm_provider=llm_provider, llm_model=llm_model)
+        
+        # Initialize smart LLM actions system
+        from src.actions.action_executor import ActionExecutor
+        action_executor = ActionExecutor(debug=debug)
+        self.smart_llm_actions = SmartLLMActions(
+            action_executor=action_executor,
+            llm_adapter=self.gpt_engine.llm_adapter,
+            debug=debug
+        )
+        
+        # Initialize task classifier
+        self.task_classifier = TaskClassifier()
         
         self.session_history = []
         self.start_time = datetime.now()
@@ -198,88 +215,214 @@ class AugmentController:
             "actions_executed": 0,
             "ui_inspections": 0,
             "errors": 0,
-            "total_cost_estimate": 0.0
+            "smart_llm_queries": 0,
+            "knowledge_only_tasks": 0
         }
         
         logger.section("AUGMENT CONTROLLER INITIALIZATION")
         logger.success("Augment Controller Initialized", "INIT")
-        logger.debug(f"Debug Mode: {'ON' if debug else 'OFF'}", "INIT")
-        logger.debug(f"Max Iterations: {max_iterations}", "INIT")
+        logger.debug(f"Debug Mode: {'ON' if self.debug else 'OFF'}", "INIT")
+        logger.debug(f"Max Iterations: {self.max_iterations}", "INIT")
         logger.debug(f"Selected LLM: {llm_provider} - {llm_model}", "INIT")
         logger.debug(f"Log File: {logger.get_log_file_path()}", "INIT")
     
     async def execute_task(self, task: str, task_id: Optional[str] = None) -> Dict[str, Any]:
         """
-        Execute a task with full coordination between all components
+        Execute a task with intelligent routing between smart LLM actions and computer use
         """
-        if not task_id:
-            task_id = f"task_{len(self.session_history) + 1}_{int(datetime.now().timestamp())}"
         
-        task_start = datetime.now()
+        if task_id is None:
+            task_id = f"task_{len(self.session_history) + 1}_{int(time.time())}"
         
-        logger.section(f"TASK EXECUTION [{task_id}]")
-        logger.info(f"Task: {task}", "TASK")
-        logger.debug(f"Started at: {task_start.strftime('%H:%M:%S')}", "TASK")
-        logger.verbose(f"Max iterations: {self.max_iterations}", "TASK")
+        logger.section(f"TASK EXECUTION [{task_id.upper()}]")
+        logger.debug(f"Task: {task}", "TASK")
         
-        # Initialize task tracking
+        task_start_time = time.time()
+        
+        # Step 1: Classify the task
+        classification = self.task_classifier.classify_task(task)
+        
+        logger.debug(f"Task Classification: {classification.task_type.value} (confidence: {classification.confidence:.2f})", "TASK")
+        logger.debug(f"Reasoning: {classification.reasoning}", "TASK")
+        
+        # Step 2: Route based on task type
+        if classification.task_type in [TaskType.KNOWLEDGE_QUERY, TaskType.SMART_ACTION] and classification.confidence > 0.6:
+            # Use smart LLM actions for knowledge/smart tasks
+            logger.debug("Routing to Smart LLM Actions system", "TASK")
+            return await self._execute_smart_llm_task(task, task_id, classification, task_start_time)
+        
+        elif classification.task_type == TaskType.HYBRID and classification.confidence > 0.7:
+            # Use hybrid approach
+            logger.debug("Routing to Hybrid LLM+Computer Use system", "TASK")
+            return await self._execute_hybrid_task(task, task_id, classification, task_start_time)
+        
+        else:
+            # Use traditional computer use approach
+            logger.debug("Routing to Traditional Computer Use system", "TASK")
+            return await self._execute_computer_use_task(task, task_id, task_start_time)
+    
+    async def _execute_smart_llm_task(self, task: str, task_id: str, classification, task_start_time: float) -> Dict[str, Any]:
+        """Execute task using smart LLM actions"""
+        
+        try:
+            # Start smart LLM system if not already running
+            await self.smart_llm_actions.start()
+            
+            # Execute smart task
+            smart_result = await self.smart_llm_actions.execute_smart_task(task)
+            
+            task_duration = time.time() - task_start_time
+            
+            if smart_result.success:
+                logger.success(f"Smart LLM task completed in {task_duration:.2f} seconds", "TASK")
+                
+                # Update stats
+                self.stats["tasks_completed"] += 1
+                self.stats["smart_llm_queries"] += 1
+                if classification.task_type == TaskType.KNOWLEDGE_QUERY:
+                    self.stats["knowledge_only_tasks"] += 1
+                
+                # Create task record
+                task_record = {
+                    "task_id": task_id,
+                    "task": task,
+                    "status": "COMPLETED",
+                    "method": "SMART_LLM",
+                    "classification": classification.task_type.value,
+                    "duration": task_duration,
+                    "llm_response": smart_result.llm_response,
+                    "structured_data": smart_result.structured_data,
+                    "actions_executed": len(smart_result.action_results),
+                    "reasoning": smart_result.reasoning
+                }
+                
+                self.session_history.append(task_record)
+                return task_record
+                
+            else:
+                logger.error(f"Smart LLM task failed: {smart_result.reasoning}", "TASK")
+                
+                # Fallback to computer use if smart LLM fails
+                logger.debug("Falling back to traditional computer use", "TASK")
+                return await self._execute_computer_use_task(task, task_id, task_start_time)
+                
+        except Exception as e:
+            logger.error(f"Smart LLM execution error: {str(e)}", "TASK")
+            
+            # Fallback to computer use
+            logger.debug("Falling back to traditional computer use due to error", "TASK")
+            return await self._execute_computer_use_task(task, task_id, task_start_time)
+    
+    async def _execute_hybrid_task(self, task: str, task_id: str, classification, task_start_time: float) -> Dict[str, Any]:
+        """Execute hybrid task using Smart LLM Actions system"""
+        
+        try:
+            # Start smart LLM system
+            await self.smart_llm_actions.start()
+            
+            # Execute hybrid task using Smart LLM Actions system
+            # This will internally route to _handle_hybrid_task which combines LLM + UI actions
+            smart_result = await self.smart_llm_actions.execute_smart_task(task)
+            
+            task_duration = time.time() - task_start_time
+            
+            if smart_result.success:
+                logger.success(f"Hybrid task completed in {task_duration:.2f} seconds", "TASK")
+                logger.debug(f"Smart LLM Response: {smart_result.llm_response[:200] if smart_result.llm_response else 'None'}...", "TASK")
+                logger.debug(f"Actions executed: {len(smart_result.action_results)}", "TASK")
+                
+                # Update stats
+                self.stats["tasks_completed"] += 1
+                self.stats["smart_llm_queries"] += 1
+                self.stats["actions_executed"] += len(smart_result.action_results)
+                
+                # Create task record
+                task_record = {
+                    "task_id": task_id,
+                    "task": task,
+                    "status": "COMPLETED",
+                    "method": "HYBRID",
+                    "duration": task_duration,
+                    "llm_response": smart_result.llm_response,
+                    "structured_data": smart_result.structured_data,
+                    "actions_executed": len(smart_result.action_results),
+                    "reasoning": smart_result.reasoning
+                }
+                
+                self.session_history.append(task_record)
+                return task_record
+                
+            else:
+                logger.error(f"Hybrid task failed: {smart_result.reasoning}", "TASK")
+                logger.debug(f"Smart LLM failure details - Success: {smart_result.success}, Actions: {len(smart_result.action_results)}", "TASK")
+                
+                # Don't fallback to computer use for hybrid tasks - this causes confusion
+                # Instead, return the failed smart result
+                task_record = {
+                    "task_id": task_id,
+                    "task": task,
+                    "status": "FAILED",
+                    "method": "HYBRID_FAILED",
+                    "duration": task_duration,
+                    "reasoning": smart_result.reasoning,
+                    "error": "Smart LLM system failed to process hybrid task"
+                }
+                
+                self.session_history.append(task_record)
+                return task_record
+                
+        except Exception as e:
+            logger.error(f"Hybrid execution error: {str(e)}", "TASK")
+            
+            # Return error result instead of falling back to computer use
+            task_duration = time.time() - task_start_time
+            task_record = {
+                "task_id": task_id,
+                "task": task,
+                "status": "ERROR",
+                "method": "HYBRID_ERROR",
+                "duration": task_duration,
+                "error": str(e),
+                "reasoning": "Exception occurred during hybrid task execution"
+            }
+            
+            self.session_history.append(task_record)
+            return task_record
+    
+    async def _execute_computer_use_task(self, task: str, task_id: str, task_start_time: float) -> Dict[str, Any]:
+        """Execute task using traditional computer use approach"""
+        
+        logger.debug("Starting GPT engine for task execution", "GPT")
+        
+        # Use existing GPT computer use system
+        actions = await self.gpt_engine.execute_task(task, max_iterations=self.max_iterations)
+        
+        task_duration = time.time() - task_start_time
+        
+        logger.debug(f"GPT engine returned {len(actions)} actions", "GPT")
+        logger.success(f"Task completed in {task_duration:.2f} seconds", "TASK")
+        
+        # Count successful actions
+        successful_actions = sum(1 for action in actions if action.get("action_result", {}).get("success", False))
+        
+        # Update stats
+        self.stats["tasks_completed"] += 1
+        self.stats["actions_executed"] += len(actions)
+        
+        # Create task record
         task_record = {
             "task_id": task_id,
             "task": task,
-            "start_time": task_start.isoformat(),
-            "actions": [],
-            "status": "running",
-            "error": None,
-            "performance": {}
+            "status": "COMPLETED",
+            "method": "COMPUTER_USE",
+            "duration": task_duration,
+            "actions_executed": len(actions),
+            "successful_actions": successful_actions,
+            "success_rate": (successful_actions / len(actions) * 100) if actions else 0
         }
         
-        try:
-            logger.debug("Initializing GPT engine for task execution", "GPT")
-            
-            # Execute task using GPT engine
-            logger.verbose("Calling GPT engine execute_task method", "GPT")
-            results = await self.gpt_engine.execute_task(task, self.max_iterations)
-            
-            logger.debug(f"GPT engine returned {len(results) if results else 0} actions", "GPT")
-            
-            # Process results
-            task_record["actions"] = results
-            task_record["status"] = "completed" if results else "failed"
-            
-            # Update statistics
-            self.stats["tasks_completed"] += 1
-            self.stats["actions_executed"] += len(results) if results else 0
-            self.stats["ui_inspections"] += sum(1 for r in results if r["action"]["action"] == "ui_inspect") if results else 0
-            
-            logger.verbose(f"Updated stats - tasks: {self.stats['tasks_completed']}, actions: {self.stats['actions_executed']}", "STATS")
-            
-            # Calculate performance metrics
-            task_end = datetime.now()
-            task_duration = (task_end - task_start).total_seconds()
-            
-            task_record["end_time"] = task_end.isoformat()
-            task_record["duration"] = task_duration
-            task_record["performance"] = {
-                "duration_seconds": task_duration,
-                "actions_per_second": len(results) / task_duration if task_duration > 0 and results else 0,
-                "success_rate": sum(1 for r in results if r["result"].success) / len(results) if results else 0
-            }
-            
-            logger.debug(f"Task completed in {task_duration:.2f} seconds", "TASK")
-            
-            # Display results
-            self._display_task_results(task_record)
-            
-        except Exception as e:
-            task_record["status"] = "error"
-            task_record["error"] = str(e)
-            self.stats["errors"] += 1
-            logger.error(f"Task failed with error: {str(e)}", "TASK")
-            logger.verbose(f"Full error traceback: {e}", "ERROR")
-        
-        # Add to session history
         self.session_history.append(task_record)
-        logger.debug(f"Task record added to session history (total: {len(self.session_history)})", "SESSION")
+        self._display_task_results(task_record)
         
         return task_record
     
