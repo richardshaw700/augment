@@ -79,6 +79,9 @@ class NotchViewModel: ObservableObject {
     }
     
     func onCollapsedAreaTapped() {
+        // Always make the window key first to ensure focus
+        makeWindowKey()
+        
         if !isExpanded {
             toggleExpanded()
         }
@@ -88,6 +91,7 @@ class NotchViewModel: ObservableObject {
     private func setupNotchInterface() {
         createNotchWindow()
         setupGlobalMouseTracking()
+        setupWindowFocusObserver()
     }
     
     private func setupBindings() {
@@ -165,6 +169,38 @@ class NotchViewModel: ObservableObject {
     private func setupGlobalMouseTracking() {
         mouseMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { [weak self] event in
             self?.handleGlobalMouseMove(event)
+        }
+    }
+    
+    private func setupWindowFocusObserver() {
+        NotificationCenter.default.addObserver(
+            forName: NSWindow.didBecomeKeyNotification,
+            object: notchWindow,
+            queue: .main
+        ) { [weak self] _ in
+            self?.handleWindowDidBecomeKey()
+        }
+        
+        NotificationCenter.default.addObserver(
+            forName: NSWindow.didResignKeyNotification,
+            object: notchWindow,
+            queue: .main
+        ) { [weak self] _ in
+            self?.handleWindowDidResignKey()
+        }
+    }
+    
+    private func handleWindowDidBecomeKey() {
+        // Auto-expand when window becomes focused and is currently collapsed
+        if !isExpanded {
+            toggleExpanded()
+        }
+    }
+    
+    private func handleWindowDidResignKey() {
+        // Auto-collapse when window loses focus, but only if expanded and input is empty
+        if isExpanded && instruction.isEmpty {
+            toggleExpanded()
         }
     }
     
@@ -258,6 +294,7 @@ class NotchViewModel: ObservableObject {
         if let monitor = mouseMonitor {
             NSEvent.removeMonitor(monitor)
         }
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
