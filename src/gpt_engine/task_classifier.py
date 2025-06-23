@@ -67,7 +67,11 @@ class TaskClassifier:
         # Navigation + knowledge patterns
         r"(go to|open|visit) .* and (find|get|search|look)",
         r"(open|go to|visit) .* (find me|get me|search for)",
-        r"(navigate to|go to) .* and (find|locate|search)"
+        r"(navigate to|go to) .* and (find|locate|search)",
+        # App-based messaging patterns (navigation + UI automation)
+        r"(go to|open|launch|visit) .* (app|application) and (send|message|type|write)",
+        r"(go to|open|launch|visit) .* and (send|message|type|write)",
+        r"(open|launch) .* and (send|message|chat|communicate)"
     ]
     
     def __init__(self):

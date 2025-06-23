@@ -276,21 +276,27 @@ class AugmentController:
             task: The user's task description
             
         Returns:
-            True if this is a messaging task
+            True if this is a messaging task (SMS, iMessage, etc.)
         """
         task_lower = task.lower().strip()
         
-        # Explicit messaging keywords
+        # FIRST: Exclude app-based messaging - these should use computer automation
+        app_keywords = ["chatgpt", "slack", "discord", "whatsapp", "telegram", "app"]
+        if any(keyword in task_lower for keyword in app_keywords):
+            return False
+        
+        # SECOND: Only detect traditional messaging (SMS, iMessage, etc.)
         messaging_patterns = [
             r"send (a )?text",
             r"send (an )?imessage",
             r"text \w+",  # "text john", "text mom"
             r"message \w+",  # "message sarah"
-            r"send (a )?message",
             r"imessage \w+",
-            r"sms \w+"
+            r"sms \w+",
+            r"send (a )?message"  # Generic messaging (only if no app context)
         ]
         
+        # Check for traditional messaging patterns
         for pattern in messaging_patterns:
             if re.search(pattern, task_lower):
                 return True

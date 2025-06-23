@@ -8,12 +8,16 @@ class NotchViewModel: ObservableObject {
     @Published var isExpanded = true
     @Published var instruction = ""
     @Published var isTextFieldFocused = false
+    @Published var showingWorkflowRecorder = false
     
     private var notchWindow: NSWindow?
     private var mouseMonitor: Any?
     private let gptService: GPTService
     private let logger: FileLogger
     private var cancellables = Set<AnyCancellable>()
+    
+    // Workflow recording
+    @Published var workflowRecorder = WorkflowRecordingManager()
     
     init(gptService: GPTService = GPTService(), logger: FileLogger = .shared) {
         self.gptService = gptService
@@ -199,7 +203,8 @@ class NotchViewModel: ObservableObject {
     
     private func handleWindowDidResignKey() {
         // Auto-collapse when window loses focus, but only if expanded and input is empty
-        if isExpanded && instruction.isEmpty {
+        // Don't collapse during workflow recording
+        if isExpanded && instruction.isEmpty && !workflowRecorder.isRecording {
             toggleExpanded()
         }
     }

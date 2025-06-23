@@ -149,11 +149,29 @@ You are an AI assistant that helps break down complex tasks into actionable step
 
 User Task: {task}
 
+CRITICAL MAC APP DETECTION: If the user mentions "on my mac" or requests a specific app, this is a MAC APPLICATION request, NOT a web browser task.
+
+For example:
+- "Open ChatGPT on my mac" = ChatGPT Mac app (NOT Safari to chatgpt.com)
+- "Open Spotify on my mac" = Spotify Mac app (NOT Safari to spotify.com) 
+- "Launch Discord on my mac" = Discord Mac app (NOT web version)
+
+For Mac apps, provide:
+- The actual Mac application name (e.g., "ChatGPT", "Spotify", "Discord")
+- Bundle identifier if known (e.g., com.openai.chat, com.spotify.client)
+- Use AppleScript to launch: tell application "AppName" to activate
+
 Please create an action plan with:
 1. **Step-by-step Plan**: Ordered list of actions
-2. **Prerequisites**: What needs to be ready first
+2. **Prerequisites**: What needs to be ready first  
 3. **Tools/Apps Needed**: Software or services required
 4. **Estimated Time**: How long each step takes
+5. **Mac App Instructions**: If applicable, specific Mac app launch commands
+
+For Mac apps, include these fields:
+- **app_name**: The exact name of the Mac application
+- **bundle_identifier**: App bundle ID if known (e.g., com.openai.chat)
+- **launch_method**: How to launch (applescript, system command, etc.)
 
 Format as JSON:
 {{
@@ -163,7 +181,12 @@ Format as JSON:
     ],
     "prerequisites": ["...", "..."],
     "tools_needed": ["...", "..."],
-    "total_estimated_time": "..."
+    "total_estimated_time": "...",
+    "mac_app_info": {{
+        "app_name": "...",
+        "bundle_identifier": "...",
+        "launch_method": "applescript"
+    }}
 }}
 """,
             
@@ -299,6 +322,14 @@ Format as JSON:
             # Parse response
             structured_data, urls, actions = self._parse_response(response, query.query_type)
             
+            # Debug: Print raw response for Mac app queries
+            if query.query_type == QueryType.ACTION_PLANNING:
+                print(f"🔍 DEBUG - ACTION_PLANNING Response:")
+                print(f"   Raw response: {response}")
+                print(f"   Structured data: {structured_data}")
+                print(f"   URLs: {urls}")
+                print(f"   Actions: {actions}")
+            
             # Create result
             result = QueryResult(
                 query_id=query.query_id,
@@ -340,7 +371,14 @@ Format as JSON:
         """Determine the type of background query needed"""
         task_lower = task.lower()
         
-        # URL/Navigation tasks (highest priority)
+        # Mac app detection (highest priority - before URL generation)
+        mac_app_indicators = ["on my mac", "mac app", "application", "app on", "open the", "launch the"]
+        if any(indicator in task_lower for indicator in mac_app_indicators):
+            # Check if this is explicitly requesting a Mac app vs web
+            if "on my mac" in task_lower or "mac app" in task_lower:
+                return QueryType.ACTION_PLANNING
+        
+        # URL/Navigation tasks (high priority - but after Mac app detection)
         if any(word in task_lower for word in ["open", "go to", "visit", "navigate", "website"]):
             return QueryType.URL_GENERATION
         
@@ -373,9 +411,29 @@ Format as JSON:
     def _parse_response(self, response: str, query_type: QueryType) -> tuple[Optional[Dict], Optional[List[str]], Optional[List[str]]]:
         """Parse LLM response and extract structured data"""
         try:
-            # Try to parse as JSON first
-            if response.strip().startswith('{'):
-                data = json.loads(response)
+            # Try to parse as JSON first - handle markdown code blocks
+            json_text = response.strip()
+            if json_text.startswith('```json'):
+                # Extract JSON from markdown code block
+                json_start = json_text.find('{')
+                json_end = json_text.rfind('}') + 1
+                if json_start != -1 and json_end > json_start:
+                    json_text = json_text[json_start:json_end]
+            elif json_text.startswith('```'):
+                # Handle generic code blocks
+                lines = json_text.split('\n')
+                json_lines = []
+                in_json = False
+                for line in lines:
+                    if line.strip().startswith('{') or in_json:
+                        in_json = True
+                        json_lines.append(line)
+                        if line.strip().endswith('}') and line.strip().count('}') >= line.strip().count('{'):
+                            break
+                json_text = '\n'.join(json_lines)
+            
+            if json_text.strip().startswith('{'):
+                data = json.loads(json_text)
                 
                 # Extract URLs and clean them
                 urls = []
@@ -406,6 +464,10 @@ Format as JSON:
                     actions.extend(data['direct_actions']['actions'])
                 if 'steps' in data:
                     actions.extend([step['action'] for step in data['steps']])
+                
+                # For ACTION_PLANNING with Mac app info, add launch action
+                if query_type == QueryType.ACTION_PLANNING and 'mac_app_info' in data:
+                    actions.append('launch_mac_app')
                 
                 return data, urls, actions
                 

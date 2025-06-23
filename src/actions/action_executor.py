@@ -407,7 +407,7 @@ class ActionExecutor:
             
             # If field is specified and we have UI state, use intelligent typing
             if field and hasattr(self, '_last_ui_state') and self._last_ui_state:
-                # Extract coordinates from field coordinate (e.g., "A-R3")
+                # Extract coordinates from field coordinate (e.g., "A-18:3")
                 # This would need coordinate mapping - for now, fall back to simple type
                 return await self.execute_type(text)
             else:
@@ -463,15 +463,122 @@ class ActionExecutor:
         return stats
     
     def print_usage_stats(self):
-        """Print usage statistics for debugging"""
-        stats = self.get_usage_stats()
+        """Print detailed usage statistics"""
+        print("\n📊 Action Executor Usage Statistics:")
+        print("=" * 40)
+        print(f"Total executions: {self.execution_count}")
+        print("\nSequence Usage:")
+        for action_type, count in self.sequence_usage_stats.items():
+            percentage = (count / max(self.execution_count, 1)) * 100
+            print(f"  {action_type}: {count} ({percentage:.1f}%)")
+        print("=" * 40)
+    
+    def inspect_ui(self) -> ActionResult:
+        """Run UI inspection and return parsed results"""
+        import subprocess
+        import json
+        import time
+        from pathlib import Path
         
-        print("\n📊 Enhanced Action Executor Statistics:")
-        print(f"   Total Executions: {stats['total_executions']}")
-        print(f"   Sequence Executions: {stats['sequence_executions']}")
-        print(f"   Atomic Executions: {stats['atomic_executions']}")
+        start_time = time.time()
         
-        print("\n🎯 Sequence Usage:")
-        for strategy, count in stats['sequence_usage'].items():
-            percentage = stats.get(f"{strategy}_percentage", 0)
-            print(f"   {strategy}: {count} ({percentage}%)") 
+        try:
+            # Get the UI inspector path
+            current_dir = Path(__file__).parent.parent  # Go up to src/
+            ui_inspector_path = current_dir / "ui_inspector" / "compiled_ui_inspector"
+            
+            if not ui_inspector_path.exists():
+                return ActionResult(
+                    success=False,
+                    error=f"UI inspector not found at {ui_inspector_path}",
+                    execution_time=time.time() - start_time
+                )
+            
+            # Run the UI inspector with a reasonable timeout
+            result = subprocess.run(
+                [str(ui_inspector_path)],
+                capture_output=True,
+                text=True,
+                timeout=5  # Reduced timeout to 5 seconds
+            )
+            
+            if result.returncode != 0:
+                return ActionResult(
+                    success=False,
+                    error=f"UI inspector failed with code {result.returncode}: {result.stderr}",
+                    execution_time=time.time() - start_time
+                )
+            
+            # Parse the JSON output
+            try:
+                output = result.stdout
+                
+                # Find the JSON part - it ends with JSON_OUTPUT_END
+                if "JSON_OUTPUT_END" in output:
+                    json_part = output.split("JSON_OUTPUT_END")[0]
+                    json_start = json_part.find('{')
+                    if json_start != -1:
+                        json_str = json_part[json_start:].strip()
+                        ui_data = json.loads(json_str)
+                    else:
+                        return ActionResult(
+                            success=False,
+                            error="Could not find JSON start in UI inspector output",
+                            execution_time=time.time() - start_time
+                        )
+                else:
+                    # Fallback: try to parse the entire output as JSON
+                    ui_data = json.loads(output)
+                
+                # Process elements for easier access
+                elements = ui_data.get("elements", [])
+                processed_elements = []
+                
+                for element in elements:
+                    processed_element = {
+                        "role": element.get("accessibility", {}).get("role", element.get("type", "unknown")),
+                        "text": element.get("visualText", "") or element.get("text", ""),
+                        "position": {
+                            "x": element.get("position", {}).get("x", 0),
+                            "y": element.get("position", {}).get("y", 0),
+                            "width": element.get("size", {}).get("width", 0),
+                            "height": element.get("size", {}).get("height", 0)
+                        },
+                        "grid_position": element.get("gridPosition", ""),
+                        "isClickable": element.get("isClickable", False),
+                        "confidence": element.get("confidence", 0.0),
+                        "accessibility_description": element.get("accessibility", {}).get("description", ""),
+                        "app": element.get("app", "")
+                    }
+                    processed_elements.append(processed_element)
+                
+                return ActionResult(
+                    success=True,
+                    output="UI inspection completed",
+                    ui_state={
+                        "elements": processed_elements,
+                        "window_info": ui_data.get("window_info", {}),
+                        "element_count": len(processed_elements)
+                    },
+                    execution_time=time.time() - start_time
+                )
+                
+            except json.JSONDecodeError as e:
+                return ActionResult(
+                    success=False,
+                    error=f"Failed to parse UI inspector JSON: {str(e)}",
+                    execution_time=time.time() - start_time
+                )
+                
+        except subprocess.TimeoutExpired:
+            return ActionResult(
+                success=False,
+                error="UI inspector timed out after 5 seconds",
+                execution_time=time.time() - start_time
+            )
+        except Exception as e:
+            return ActionResult(
+                success=False,
+                error=f"UI inspection failed: {str(e)}",
+                execution_time=time.time() - start_time
+            ) 

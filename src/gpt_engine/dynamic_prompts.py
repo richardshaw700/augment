@@ -114,7 +114,7 @@ class ContextInjections:
         """Generate Messages app specific guidance."""
         base_guidance = """🔍 CRITICAL: MESSAGES APP CONTEXT AWARENESS
 When working with Messages app, ALWAYS check the window header for active chat context:
-- Look for "To: [Name]" in the UI elements (e.g., "txt:To: Cara Davidson@A-X3")
+- Look for "To: [Name]" in the UI elements (e.g., "txt:To: Cara Davidson@A-24:3")
 - This tells you WHO you are currently chatting with
 - Contact names in the sidebar/search are NOT the active chat - they are just search results or contact lists
 - NEVER assume you're in the right chat just because you see a name in the UI
@@ -124,13 +124,13 @@ When working with Messages app, ALWAYS check the window header for active chat c
 ⚠️ CRITICAL MISTAKE TO AVOID:
 - Searching for a contact shows results but DOES NOT switch to that chat
 - You MUST click the contact button/name after searching to actually enter their chat
-- Seeing "btn:Mom's Kiddos@A-B11" means it's a clickable button - CLICK IT to switch chats
+- Seeing "btn:Mom's Kiddos@A-2:11" means it's a clickable button - CLICK IT to switch chats
 - Do NOT type messages until you've clicked the contact and verified "To: [Name]" changed
 
 MESSAGES WORKFLOW:
 1. Check "To: [Name]" in UI elements to see current recipient
 2. If wrong recipient, search for correct contact 
-3. CLICK the contact's button/name from search results (e.g., "btn:Mom's Kiddos@A-B11")
+3. CLICK the contact's button/name from search results (e.g., "btn:Mom's Kiddos@A-2:11")
 4. Verify "To: [Name]" changed to correct recipient  
 5. Only then type and send your message"""
         

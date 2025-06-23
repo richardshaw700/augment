@@ -125,21 +125,27 @@ class SmartLLMActions:
             task: The user's task description
             
         Returns:
-            True if this is a messaging task
+            True if this is a messaging task (SMS, iMessage, etc.)
         """
         task_lower = task.lower().strip()
         
-        # Explicit messaging keywords
+        # FIRST: Exclude app-based messaging - these should use computer automation
+        app_keywords = ["chatgpt", "slack", "discord", "whatsapp", "telegram", "app"]
+        if any(keyword in task_lower for keyword in app_keywords):
+            return False
+        
+        # SECOND: Only detect traditional messaging (SMS, iMessage, etc.)
         messaging_patterns = [
             r"send (a )?text",
-            r"send (an )?imessage",
+            r"send (an )?imessage", 
             r"text \w+",  # "text john", "text mom"
             r"message \w+",  # "message sarah"
-            r"send (a )?message",
             r"imessage \w+",
-            r"sms \w+"
+            r"sms \w+",
+            r"send (a )?message"  # Generic messaging (only if no app context)
         ]
         
+        # Check for traditional messaging patterns
         for pattern in messaging_patterns:
             if re.search(pattern, task_lower):
                 return True
@@ -174,6 +180,7 @@ class SmartLLMActions:
         
         recipient = message_info.get("recipient")
         message_text = message_info.get("message")
+        is_app_context = message_info.get("app_context", False)
         
         if not recipient or not message_text:
             return SmartActionResult(
@@ -183,7 +190,16 @@ class SmartLLMActions:
                 reasoning=f"Missing recipient ({recipient}) or message ({message_text})"
             )
         
-        # Use background automation to send the message
+        # Handle app-based messaging differently
+        if is_app_context:
+            if self.debug:
+                print(f"🎯 App-based messaging detected: {recipient} -> '{message_text}'")
+                print(f"🔄 Delegating to action executor for UI automation")
+            
+            # Delegate app-based messaging to the action executor for UI automation
+            return await self._delegate_to_action_executor(task, ui_state, start_time)
+        
+        # Use background automation for traditional messaging (SMS, iMessage, etc.)
         try:
             background_result = await self.background_automation.send_message_smart(recipient, message_text)
             
@@ -250,6 +266,31 @@ class SmartLLMActions:
                 return {
                     "recipient": recipient,
                     "message": message
+                }
+        
+        # Pattern 6: App-based messaging - "Go to ChatGPT app and send a message saying Hello"
+        # Pattern 7: "Open WhatsApp and send a message saying I'm here"
+        match = re.search(r"(?:go to|open|launch|use) (\w+(?:\s+\w+)*?) (?:app )?.*?send (?:a )?message saying (.+)", task_lower)
+        if match:
+            app_name = match.group(1).strip()
+            message = match.group(2).strip()
+            return {
+                "recipient": app_name,  # Use app name as recipient context
+                "message": message,
+                "app_context": True  # Flag to indicate this is app-based messaging
+            }
+        
+        # Pattern 8: Simpler app messaging - "ChatGPT send message Hello"
+        match = re.search(r"(\w+(?:\s+\w+)*) send message [\"']?(.+?)[\"']?$", task_lower)
+        if match:
+            app_name = match.group(1).strip()
+            message = match.group(2).strip()
+            # Only match if it looks like an app name
+            if any(keyword in app_name for keyword in ["gpt", "chat", "whatsapp", "telegram", "slack", "discord"]):
+                return {
+                    "recipient": app_name,
+                    "message": message,
+                    "app_context": True
                 }
         
         return None
@@ -395,8 +436,32 @@ class SmartLLMActions:
                         if self.debug:
                             print(f"🔧 Recovery added {len(recovery_result)} additional actions")
                 
-                # Step 3: Execute any suggested actions from LLM
-                if llm_result.suggested_actions:
+                # Step 3: Check for Mac app launch (priority over other actions)
+                if (llm_result.structured_data and 
+                    "mac_app_info" in llm_result.structured_data and
+                    llm_result.structured_data["mac_app_info"]):
+                    
+                    if self.debug:
+                        print(f"🖥️  Mac app launch detected")
+                    
+                    # Execute Mac app launch
+                    mac_app_action = await self._convert_llm_action_to_ui_action(
+                        "launch_mac_app", llm_result.structured_data, ui_state
+                    )
+                    if mac_app_action:
+                        action_results.append(mac_app_action)
+                        
+                        # If Mac app launch succeeded, continue with computer use for the rest of the task
+                        if mac_app_action.success:
+                            if self.debug:
+                                print(f"✅ Mac app launched successfully, continuing with task automation")
+                            
+                            continuation_result = await self._continue_with_computer_use(task, action_results)
+                            if continuation_result:
+                                action_results.extend(continuation_result)
+                
+                # Step 3: Execute any other suggested actions from LLM  
+                elif llm_result.suggested_actions:
                     if self.debug:
                         print(f"⚡ Executing {len(llm_result.suggested_actions)} suggested actions")
                     
@@ -435,7 +500,17 @@ class SmartLLMActions:
                 reasoning = "No actionable items found in LLM response"
             elif not has_successful_actions:
                 failed_count = len([r for r in action_results if not r.success])
-                reasoning = f"All {failed_count} navigation attempts failed. URLs may be invalid or pages not found."
+                
+                # Check if this was a Mac app launch failure
+                has_mac_app_info = (llm_result.structured_data and 
+                                  "mac_app_info" in llm_result.structured_data and
+                                  llm_result.structured_data["mac_app_info"])
+                
+                if has_mac_app_info:
+                    app_name = llm_result.structured_data["mac_app_info"].get("app_name", "unknown app")
+                    reasoning = f"Mac app launch failed: Could not launch {app_name}. App may not be installed or accessible."
+                else:
+                    reasoning = f"All {failed_count} navigation attempts failed. URLs may be invalid or pages not found."
             else:
                 successful_count = len([r for r in action_results if r.success])
                 failed_count = len([r for r in action_results if not r.success])
@@ -601,7 +676,56 @@ class SmartLLMActions:
                                              ui_state: Optional[Dict]) -> Optional[ActionResult]:
         """Convert an LLM-suggested action into actual UI actions"""
         
-        if action == "add_to_cart":
+        if action == "launch_mac_app" or action == "open_mac_app":
+            # Handle Mac app launching
+            if structured_data and "mac_app_info" in structured_data:
+                app_info = structured_data["mac_app_info"]
+                app_name = app_info.get("app_name", "")
+                bundle_id = app_info.get("bundle_identifier", "")
+                
+                if app_name:
+                    # Use standard Mac app launching with 'open -a' command
+                    launch_command = f"open -a '{app_name}'"
+                    if self.debug:
+                        print(f"🚀 Launching Mac app: {app_name}")
+                        print(f"   Command: {launch_command}")
+                    
+                    try:
+                        result = await self.action_executor.execute_bash(launch_command)
+                        
+                        if self.debug:
+                            print(f"   Launch result: Success={result.success}, Output='{result.output}', Error='{result.error}'")
+                        
+                        return result
+                    except Exception as e:
+                        if self.debug:
+                            print(f"   Launch exception: {str(e)}")
+                        return ActionResult(
+                            success=False,
+                            output="",
+                            error=f"Failed to launch Mac app {app_name}: {str(e)}"
+                        )
+                elif bundle_id:
+                    # Use bundle identifier
+                    try:
+                        result = await self.action_executor.execute_bash(
+                            f'open -b {bundle_id}'
+                        )
+                        return result
+                    except Exception as e:
+                        return ActionResult(
+                            success=False,
+                            output="",
+                            error=f"Failed to launch Mac app with bundle ID {bundle_id}: {str(e)}"
+                        )
+            
+            return ActionResult(
+                success=False,
+                output="",
+                error="Mac app launch requested but no app information provided"
+            )
+        
+        elif action == "add_to_cart":
             # This would need UI parsing to find "Add to Cart" buttons
             # For now, return a placeholder
             return ActionResult(
@@ -753,22 +877,96 @@ Focus on getting to a working page first, then we can search from there.
         
         task_lower = task.lower()
         
-        # Shopping and e-commerce tasks that need continued interaction
+        # Check if we have navigation but task isn't complete
+        has_navigation = llm_result and llm_result.urls
+        if not has_navigation:
+            return False
+        
+        # Categories of tasks that need continued interaction after navigation
+        
+        # 1. Shopping and e-commerce tasks
         shopping_keywords = [
             "add to cart", "buy", "purchase", "order", "shop", "find and add",
             "add it to", "put in cart", "checkout", "select", "choose"
         ]
-        
-        # Check if task involves shopping/purchasing actions
         needs_shopping = any(keyword in task_lower for keyword in shopping_keywords)
         
-        # Check if we have navigation but task isn't complete
-        has_navigation = llm_result and llm_result.urls
+        # 2. Search and discovery tasks on content platforms
+        content_search_keywords = [
+            "find", "search for", "look for", "browse", "discover", "show me",
+            "get me", "recommend", "suggest", "what's good"
+        ]
+        content_platforms = [
+            "netflix", "youtube", "spotify", "amazon prime", "hulu", "disney+",
+            "apple music", "soundcloud", "twitch", "reddit", "pinterest"
+        ]
+        needs_content_search = (
+            any(keyword in task_lower for keyword in content_search_keywords) and
+            any(platform in task_lower for platform in content_platforms)
+        )
         
-        if self.debug and needs_shopping:
-            print(f"🛒 Shopping task detected - will continue with computer use automation")
+        # 3. Social media interaction tasks
+        social_keywords = [
+            "post", "share", "comment", "like", "follow", "message", "dm",
+            "tweet", "upload", "publish", "send"
+        ]
+        social_platforms = [
+            "twitter", "facebook", "instagram", "linkedin", "tiktok", "snapchat",
+            "discord", "slack", "whatsapp", "chatgpt", "chat gpt", "openai"
+        ]
+        needs_social_interaction = (
+            any(keyword in task_lower for keyword in social_keywords) and
+            any(platform in task_lower for platform in social_platforms)
+        )
         
-        return needs_shopping and has_navigation
+        # 4. Form filling and account management
+        form_keywords = [
+            "fill out", "complete", "submit", "register", "sign up", "apply",
+            "create account", "update profile", "change settings"
+        ]
+        needs_form_interaction = any(keyword in task_lower for keyword in form_keywords)
+        
+        # 5. Data extraction and research tasks
+        research_keywords = [
+            "extract", "copy", "save", "download", "get the", "collect",
+            "gather information", "research", "compare", "analyze"
+        ]
+        needs_research_interaction = any(keyword in task_lower for keyword in research_keywords)
+        
+        # 6. Navigation with specific goals (beyond just opening a page)
+        action_verbs = [
+            "click", "select", "choose", "pick", "open", "view", "watch",
+            "read", "play", "listen", "start", "begin", "continue"
+        ]
+        # If task has "go to X and [action]" pattern, it needs continued automation
+        has_navigation_plus_action = (
+            ("go to" in task_lower or "open" in task_lower or "visit" in task_lower) and
+            " and " in task_lower and
+            any(verb in task_lower.split(" and ", 1)[1] for verb in action_verbs)
+        )
+        
+        # Determine if continuation is needed
+        needs_continuation = (
+            needs_shopping or 
+            needs_content_search or 
+            needs_social_interaction or 
+            needs_form_interaction or 
+            needs_research_interaction or
+            has_navigation_plus_action
+        )
+        
+        if self.debug and needs_continuation:
+            reasons = []
+            if needs_shopping: reasons.append("shopping")
+            if needs_content_search: reasons.append("content search")
+            if needs_social_interaction: reasons.append("social interaction")
+            if needs_form_interaction: reasons.append("form filling")
+            if needs_research_interaction: reasons.append("research/extraction")
+            if has_navigation_plus_action: reasons.append("navigation + action")
+            
+            print(f"🔄 Task needs continued automation - Categories: {', '.join(reasons)}")
+        
+        return needs_continuation
     
     async def _continue_with_computer_use(self, original_task: str, navigation_results: List[ActionResult]) -> List[ActionResult]:
         """Continue task execution using traditional computer use system after navigation"""
@@ -785,15 +983,19 @@ Focus on getting to a working page first, then we can search from there.
             
             # Create a modified task that acknowledges we've already navigated
             modified_task = f"""
-I have already navigated to the relevant website(s) for this task: {original_task}
+I have already navigated to the relevant website for this task: {original_task}
 
-The browser should now be showing search results or product pages. Please continue from here to:
-1. Look at the current page content
-2. Find the best product that matches the requirements
-3. Add the selected item to the cart
-4. Complete the shopping task
+The browser should now be showing the website. Please continue from here to complete the original task:
+
+IMPORTANT: The task is NOT complete just because the website loaded. You must:
+1. Look at the current page content carefully
+2. Navigate through the site as needed (select profiles, search, browse, etc.)
+3. Complete ALL parts of the original task
+4. Only declare completion when the FULL original task is accomplished
 
 Original task: {original_task}
+
+Do not stop until the original task is fully completed!
 """
             
             if self.debug:

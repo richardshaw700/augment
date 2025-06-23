@@ -163,7 +163,7 @@ struct AdaptiveGridPosition: Hashable, CustomStringConvertible {
     }
     
     var description: String {
-        return "\(columnString)\(row)"
+        return "\(columnIndex + 1):\(row)"
     }
     
     var columnIndex: Int {

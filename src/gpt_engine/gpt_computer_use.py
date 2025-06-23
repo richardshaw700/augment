@@ -533,7 +533,7 @@ You have access to these actions:
 
 COORDINATE SYSTEMS:
 - Menu Bar: M-M1 to M-M10 (app menus like Apple, Safari, File) and M-S1 to M-S10 (system items like WiFi, Battery)
-- Application Window: A-A1 to A-AN50 (window content using A- prefix)
+- Application Window: A-1:1 to A-40:50 (window content using A- prefix with column:row format)
 
 IMPORTANT: ALL coordinates MUST use the prefix format (M- for menu, A- for window)
 
@@ -551,10 +551,10 @@ If the task IS COMPLETED, respond with: {{"action": "ui_inspect", "parameters": 
 
 CRITICAL INSTRUCTIONS:
 1. ALWAYS start with "ui_inspect" to see current UI state
-2. Use EXACT grid positions from ui_inspect output (e.g., "M-M2", "A-A5", "M-S3")
+2. Use EXACT grid positions from ui_inspect output (e.g., "M-M2", "A-1:5", "M-S3")
 3. Menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10) are for menu bar items only
-4. Window coordinates (A-A1 to A-AN50) are for application content only
-5. ALWAYS use the full prefix format: M-M1, M-S5, A-B15, A-R3 (NEVER use old format like M1, S5, B15, R3)
+4. Window coordinates (A-1:1 to A-40:50) are for application content only
+5. ALWAYS use the full prefix format: M-M1, M-S5, A-2:15, A-18:3 (NEVER use old format like M1, S5, B15, R3)
 6. 💡 FOR TYPING: Use "field" parameter to specify target text field - system handles focus automatically (DO NOT click first)
 7. Apps must be opened first before you can inspect their UI
 8. For application launching, use "bash" with commands like: open -a 'AppName'
@@ -568,8 +568,8 @@ Always respond with valid JSON containing:
 Example responses:
 {{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Getting current UI state to understand available elements"}}
 {{"action": "click", "parameters": {{"grid_position": "M-M3"}}, "reasoning": "Clicking File menu in menu bar"}}
-{{"action": "click", "parameters": {{"grid_position": "A-B15"}}, "reasoning": "Clicking button in application window"}}
-{{"action": "type", "parameters": {{"text": "apple.com", "field": "A-R3"}}, "reasoning": "Typing URL into text field (system will auto-focus if needed)"}}
+{{"action": "click", "parameters": {{"grid_position": "A-2:15"}}, "reasoning": "Clicking button in application window"}}
+{{"action": "type", "parameters": {{"text": "apple.com", "field": "A-18:3"}}, "reasoning": "Typing URL into text field (system will auto-focus if needed)"}}
 {{"action": "type", "parameters": {{"text": "hello world"}}, "reasoning": "Typing text (no specific field, system will auto-detect)"}}
 {{"action": "bash", "parameters": {{"command": "open -a 'Safari'"}}, "reasoning": "Opening Safari application"}}
 {{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Task completed successfully - Safari is open and Apple website is loaded"}}
@@ -589,8 +589,8 @@ Example responses:
     
     def _grid_to_coordinates(self, grid_position: str, window_frame: Dict) -> tuple[int, int]:
         """
-        Convert grid position (e.g., "A-E5", "M-M2", "M-S3") to screen coordinates
-        Handles both menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10) and window coordinates (A-A1 to A-AN50)
+        Convert grid position (e.g., "A-12:6", "M-M2", "M-S3") to screen coordinates
+        Handles both menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10) and window coordinates (A-1:1 to A-40:50)
         """
         grid_position = grid_position.strip().upper()
         
@@ -635,53 +635,41 @@ Example responses:
                 except ValueError:
                     pass
         
-        # Handle standard window grid coordinates (A-A1 to A-AN50)
+        # Handle standard window grid coordinates (A-1:1 to A-40:50)
         elif grid_type == "A":
-            # Parse column (A-AN) and row (1-50) from coordinate
-            if len(coordinate) >= 2:
-                # Find where numbers start
-                col_end = 0
-                for i, char in enumerate(coordinate):
-                    if char.isdigit():
-                        col_end = i
-                        break
-                
-                if col_end > 0:
-                    try:
-                        col_str = coordinate[:col_end]
-                        row_num = int(coordinate[col_end:])
-                        
-                        # Convert column string to index (A=0, B=1, ..., Z=25, AA=26, AB=27, etc.)
-                        col_index = 0
-                        for char in col_str:
-                            col_index = col_index * 26 + (ord(char) - ord('A') + 1)
-                        col_index -= 1  # Convert to 0-based index
-                        
-                        # Convert row to 0-based index
-                        row_index = row_num - 1
-                        
-                        # Calculate screen coordinates using window frame
-                        window_x = window_frame.get('x', 0)
-                        window_y = window_frame.get('y', 0)
-                        window_width = window_frame.get('width', 1000)
-                        window_height = window_frame.get('height', 800)
-                        
-                        # Grid dimensions (40 columns x 50 rows)
-                        grid_cols = 40
-                        grid_rows = 50
-                        
-                        # Calculate cell size
-                        cell_width = window_width / grid_cols
-                        cell_height = window_height / grid_rows
-                        
-                        # Calculate center of grid cell
-                        x = window_x + (col_index * cell_width) + (cell_width / 2)
-                        y = window_y + (row_index * cell_height) + (cell_height / 2)
-                        
-                        return (int(x), int(y))
-                        
-                    except (ValueError, IndexError):
-                        pass
+            # Parse numeric column and row from coordinate (format: "12:6")
+            if ":" in coordinate:
+                try:
+                    col_str, row_str = coordinate.split(":", 1)
+                    col_num = int(col_str)
+                    row_num = int(row_str)
+                    
+                    # Convert to 0-based indices
+                    col_index = col_num - 1  # Convert 1-based to 0-based
+                    row_index = row_num - 1  # Convert 1-based to 0-based
+                    
+                    # Calculate screen coordinates using window frame
+                    window_x = window_frame.get('x', 0)
+                    window_y = window_frame.get('y', 0)
+                    window_width = window_frame.get('width', 1000)
+                    window_height = window_frame.get('height', 800)
+                    
+                    # Grid dimensions (40 columns x 50 rows)
+                    grid_cols = 40
+                    grid_rows = 50
+                    
+                    # Calculate cell size
+                    cell_width = window_width / grid_cols
+                    cell_height = window_height / grid_rows
+                    
+                    # Calculate center of grid cell
+                    x = window_x + (col_index * cell_width) + (cell_width / 2)
+                    y = window_y + (row_index * cell_height) + (cell_height / 2)
+                    
+                    return (int(x), int(y))
+                    
+                except (ValueError, IndexError):
+                    pass
         
         # Fallback - return center of window
         window_x = window_frame.get('x', 0)
@@ -697,17 +685,17 @@ Example responses:
     def _find_unfocused_text_field(self, compressed_output: str) -> str:
         """
         Find the coordinate of an unfocused text field in the compressed output.
-        Returns the coordinate (e.g., "A-R3") if found, None otherwise.
+        Returns the coordinate (e.g., "A-18:3") if found, None otherwise.
         """
         if not compressed_output:
             return None
             
         # Look for text input fields marked as [UNFOCUSED]
-        # Pattern: txtinp:TextField (context)@A-COORDINATE[UNFOCUSED]
+        # Pattern: txtinp:TextField (context)@A-12:6[UNFOCUSED]
         import re
         
         # Match text input fields that are unfocused
-        pattern = r'txtinp:[^@]*@(A-[A-Z]+\d+)\[UNFOCUSED\]'
+        pattern = r'txtinp:[^@]*@(A-\d+:\d+)\[UNFOCUSED\]'
         matches = re.findall(pattern, compressed_output)
         
         if matches:
@@ -717,7 +705,7 @@ Example responses:
             return coordinate
         
         # Also check for other input field types
-        pattern = r'(TextField|TextArea|SearchField)[^@]*@(A-[A-Z]+\d+)\[UNFOCUSED\]'
+        pattern = r'(TextField|TextArea|SearchField)[^@]*@(A-\d+:\d+)\[UNFOCUSED\]'
         matches = re.findall(pattern, compressed_output)
         
         if matches:
@@ -1262,17 +1250,11 @@ Example responses:
         col_index = min(39, max(0, int(rel_x / window_width * grid_cols)))
         row_index = min(49, max(0, int(rel_y / window_height * grid_rows)))
         
-        # Convert to grid coordinate string
-        if col_index < 26:
-            # A-Z (0-25)
-            col_str = chr(ord('A') + col_index)
-        else:
-            # AA-AN (26-39)
-            col_str = 'A' + chr(ord('A') + (col_index - 26))
+        # Convert to numeric grid coordinate string (1-based)
+        col_num = col_index + 1  # Convert to 1-based column numbering
+        row_num = row_index + 1  # Convert to 1-based row numbering
         
-        row_str = str(row_index + 1)  # 1-based row numbering
-        
-        return f"{col_str}{row_str}"
+        return f"{col_num}:{row_num}"
     
     async def chat_with_gpt(self, user_message: str, ui_state: Optional[Dict] = None) -> str:
         """Send message to LLM and get response"""
@@ -1385,7 +1367,7 @@ Example responses:
                         available_contacts = []
                         if "btn:" in compressed_output:
                             import re
-                            btn_matches = re.findall(r'btn:([^@]+)@A-[A-Z]+\d+', compressed_output)
+                            btn_matches = re.findall(r'btn:([^@]+)@A-\d+:\d+', compressed_output)
                             for btn_text in btn_matches:
                                 btn_text = btn_text.strip()
                                 if btn_text not in ["Button", "Compose", "Record audio", "info", "Emoji picker", "Apps"] and len(btn_text) > 2:
@@ -1752,7 +1734,7 @@ Example responses:
                 active_chat = None
                 target_recipient = None
                 
-                # Parse the actual format: "txt:To: Cara Davidson@A-X3"
+                # Parse the actual format: "txt:To: Cara Davidson@A-24:3"
                 if "txt:To: " in compressed_output:
                     # Find the "To: " pattern and extract the name
                     import re
@@ -1762,7 +1744,7 @@ Example responses:
                 
                 # Try to determine target recipient from task context or UI
                 # Look for button patterns that might indicate search results
-                search_buttons = re.findall(r'btn:([^@]+)@A-[A-Z]+\d+', compressed_output)
+                search_buttons = re.findall(r'btn:([^@]+)@A-\d+:\d+', compressed_output)
                 available_contacts = [btn for btn in search_buttons if "Mom" in btn or "Kiddos" in btn or "'" in btn]
                 
                 # Create context info

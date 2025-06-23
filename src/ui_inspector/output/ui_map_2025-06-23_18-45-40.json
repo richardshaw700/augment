@@ -1,0 +1,2971 @@
+{
+  "metadata" : {
+    "timestamp" : "2025-06-23T22:45:40Z",
+    "processingTime" : 11.077095985412598,
+    "performance" : {
+      "memoryUsage" : 32440320,
+      "fusedElements" : 102,
+      "totalElements" : 244,
+      "ocrTime" : 0.18934798240661621,
+      "accessibilityTime" : 0.17590796947479248,
+      "screenshotTime" : 0.21194791793823242,
+      "fusionTime" : 0.002164006233215332
+    }
+  },
+  "elements" : [
+    {
+      "semanticMeaning" : "Text content: '-> O o SearchCheddar'",
+      "type" : "TextContent",
+      "visualText" : "-> O o SearchCheddar",
+      "id" : "0E20B1BE-329F-45DB-8656-239ED98E3CD0",
+      "position" : {
+        "x" : 326.5,
+        "y" : 188
+      },
+      "isClickable" : false,
+      "size" : {
+        "height" : 17.999999999999979,
+        "width" : 186
+      },
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "-> O o SearchCheddar",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 233.5,
+          "y" : 179,
+          "width" : 186,
+          "height" : 17.999999999999979
+        }
+      }
+    },
+    {
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXGroup",
+        "title" : null,
+        "description" : null
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXGroup with text 'Ched...'",
+      "visualText" : "Ched...",
+      "id" : "AC134C54-1A23-42D5-A7A5-5B5815DF3A36",
+      "type" : "AXGroup+OCR",
+      "position" : {
+        "y" : 232.75000000000003,
+        "x" : 200.25
+      },
+      "size" : {
+        "height" : 13.499999999999957,
+        "width" : 55.500000000000007
+      },
+      "ocr" : {
+        "text" : "Ched...",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 226.00000000000006,
+          "x" : 172.5,
+          "width" : 55.500000000000007,
+          "height" : 13.499999999999957
+        }
+      },
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "position" : {
+        "y" : 232.75000000000003,
+        "x" : 432.5
+      },
+      "semanticMeaning" : "Text content: 'richard'",
+      "id" : "D84C730B-9F2F-4CA5-AE91-90686974F510",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "richard",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.499999999999957,
+          "y" : 226.00000000000006,
+          "x" : 405,
+          "width" : 55.000000000000028
+        }
+      },
+      "size" : {
+        "width" : 55.000000000000028,
+        "height" : 13.499999999999957
+      },
+      "visualText" : "richard",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "interactions" : [
+        "right_click"
+      ],
+      "type" : "AXGroup+OCR",
+      "id" : "E6353EF4-832D-45EE-94FF-1C69875D3DB5",
+      "accessibility" : {
+        "role" : "AXGroup",
+        "focused" : false,
+        "title" : null,
+        "description" : null,
+        "enabled" : true
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 208.5,
+        "y" : 270.75
+      },
+      "confidence" : 0.79999999999999993,
+      "semanticMeaning" : "AXGroup with text '# design'",
+      "visualText" : "# design",
+      "ocr" : {
+        "text" : "# design",
+        "boundingBox" : {
+          "x" : 175.5,
+          "width" : 66,
+          "height" : 14.499999999999986,
+          "y" : 263.5
+        },
+        "confidence" : 0.5
+      },
+      "size" : {
+        "height" : 14.499999999999986,
+        "width" : 66
+      }
+    },
+    {
+      "id" : "EE94A227-82F8-4396-BFBF-3E1E5F06DA0C",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'engineering'",
+      "visualText" : "engineering",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 200.5,
+          "y" : 292,
+          "width" : 76.5,
+          "height" : 13.999999999999972
+        },
+        "text" : "engineering",
+        "confidence" : 0.5
+      },
+      "position" : {
+        "x" : 238.75,
+        "y" : 299
+      },
+      "type" : "TextContent",
+      "size" : {
+        "height" : 13.999999999999972,
+        "width" : 76.5
+      },
+      "confidence" : 0.5
+    },
+    {
+      "confidence" : 0.5,
+      "id" : "B954E382-D6D0-4ACB-9979-DE58E7B735BB",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 14.499999999999986,
+        "width" : 71.500000000000028
+      },
+      "semanticMeaning" : "Text content: '# general'",
+      "isClickable" : false,
+      "visualText" : "# general",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "# general",
+        "boundingBox" : {
+          "y" : 319.5,
+          "width" : 71.500000000000028,
+          "x" : 175.5,
+          "height" : 14.499999999999986
+        }
+      },
+      "position" : {
+        "y" : 326.75,
+        "x" : 211.25
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "visualText" : "# gpt",
+      "size" : {
+        "width" : 46,
+        "height" : 14.499999999999986
+      },
+      "position" : {
+        "x" : 198.5,
+        "y" : 354.75
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "id" : "A32E8B3E-B5BD-435A-BC16-C10F6E48D24A",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "# gpt",
+        "boundingBox" : {
+          "y" : 347.5,
+          "height" : 14.499999999999986,
+          "width" : 46,
+          "x" : 175.5
+        }
+      },
+      "semanticMeaning" : "Text content: '# gpt'",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "confidence" : 0.5,
+      "visualText" : "marketing",
+      "semanticMeaning" : "Text content: 'marketing'",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 233.25,
+        "y" : 383
+      },
+      "type" : "TextContent",
+      "id" : "A8789740-61F6-4F73-B36A-4B8CCE3A7E34",
+      "size" : {
+        "width" : 64.500000000000014,
+        "height" : 13.999999999999972
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 13.999999999999972,
+          "x" : 201,
+          "y" : 376,
+          "width" : 64.500000000000014
+        },
+        "text" : "marketing",
+        "confidence" : 0.5
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 277.5,
+        "x" : 425.5
+      },
+      "semanticMeaning" : "Text content: 'Messages'",
+      "id" : "DA6DF793-E509-4786-83E8-17BA87DBE82D",
+      "confidence" : 0.5,
+      "visualText" : "Messages",
+      "ocr" : {
+        "text" : "Messages",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 11.999999999999918,
+          "y" : 271.50000000000006,
+          "width" : 55.000000000000028,
+          "x" : 398
+        }
+      },
+      "isClickable" : false,
+      "size" : {
+        "height" : 11.999999999999918,
+        "width" : 55.000000000000028
+      },
+      "type" : "TextContent"
+    },
+    {
+      "id" : "914FA957-603B-4E2E-A67A-CA0C4988C9C6",
+      "size" : {
+        "height" : 14.000000000000071,
+        "width" : 84.499999999999972
+      },
+      "visualText" : "Add canvas",
+      "position" : {
+        "x" : 516.75,
+        "y" : 276.00000000000006
+      },
+      "confidence" : 0.79999999999999993,
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "ocr" : {
+        "text" : "i? Add canvas",
+        "boundingBox" : {
+          "x" : 474.5,
+          "y" : 269,
+          "width" : 84.499999999999972,
+          "height" : 14.000000000000071
+        },
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "AXStaticText with text 'i? Add canvas'",
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "focused" : false,
+        "description" : null
+      }
+    },
+    {
+      "id" : "10D3646F-484D-4B5A-B0D5-1C24BAAF66F9",
+      "position" : {
+        "y" : 276.25000000000006,
+        "x" : 613
+      },
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "description" : null,
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "confidence" : 0.60000001192092889,
+      "isClickable" : false,
+      "size" : {
+        "width" : 24.999999999999972,
+        "height" : 9.499999999999952
+      },
+      "semanticMeaning" : "AXStaticText with text 'Files'",
+      "interactions" : [
+
+      ],
+      "visualText" : "Files",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 271.50000000000006,
+          "height" : 9.499999999999952,
+          "x" : 600.5,
+          "width" : 24.999999999999972
+        },
+        "text" : "Files"
+      }
+    },
+    {
+      "interactions" : [
+        "right_click"
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Tuesday, June 17th",
+        "boundingBox" : {
+          "y" : 323,
+          "width" : 109.50000000000003,
+          "x" : 551.5,
+          "height" : 12.499999999999932
+        }
+      },
+      "confidence" : 0.79999999999999993,
+      "type" : "AXGroup+OCR",
+      "position" : {
+        "x" : 606.25,
+        "y" : 329.24999999999994
+      },
+      "size" : {
+        "width" : 109.50000000000003,
+        "height" : 12.499999999999932
+      },
+      "accessibility" : {
+        "role" : "AXGroup",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "description" : null
+      },
+      "semanticMeaning" : "AXGroup with text 'Tuesday, June 17th'",
+      "visualText" : "Tuesday, June 17th",
+      "id" : "CB23F0E9-1D5A-42BD-B618-F27D7CBB5F6F",
+      "isClickable" : false
+    },
+    {
+      "id" : "7B0A7771-04DA-4083-AB8E-CF941CF7EB9F",
+      "position" : {
+        "y" : 364.24999999999994,
+        "x" : 467
+      },
+      "visualText" : "richard 1:34 PM",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 358.49999999999994,
+          "width" : 98.999999999999972,
+          "height" : 11.500000000000005,
+          "x" : 417.5
+        },
+        "text" : "richard 1:34 PM"
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "size" : {
+        "height" : 11.500000000000005,
+        "width" : 98.999999999999972
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'richard 1:34 PM'"
+    },
+    {
+      "size" : {
+        "height" : 13.499999999999957,
+        "width" : 326.5
+      },
+      "id" : "973522D8-C282-4468-8894-09169AF3B6F9",
+      "interactions" : [
+
+      ],
+      "visualText" : "Reasons why Verdex is a hidden SaaS opportunity:",
+      "semanticMeaning" : "Text content: 'Reasons why Verdex is a hidden SaaS opportunity:'",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 581.75,
+        "y" : 387.75000000000006
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 381.00000000000006,
+          "width" : 326.5,
+          "height" : 13.499999999999957,
+          "x" : 418.5
+        },
+        "confidence" : 0.5,
+        "text" : "Reasons why Verdex is a hidden SaaS opportunity:"
+      }
+    },
+    {
+      "confidence" : 0.60000001192092889,
+      "semanticMeaning" : "AXGroup with text 'Activity'",
+      "position" : {
+        "y" : 403,
+        "x" : 117
+      },
+      "id" : "4D3B2F8D-2BDA-4EA0-96E3-3CD720025B53",
+      "interactions" : [
+        "right_click"
+      ],
+      "size" : {
+        "width" : 37.999999999999993,
+        "height" : 9.9999999999999645
+      },
+      "visualText" : "Activity",
+      "type" : "AXGroup+OCR",
+      "accessibility" : {
+        "description" : null,
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "role" : "AXGroup"
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 9.9999999999999645,
+          "y" : 398,
+          "x" : 98,
+          "width" : 37.999999999999993
+        },
+        "confidence" : 0.30000001192092896,
+        "text" : "Activity"
+      },
+      "isClickable" : false
+    },
+    {
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'operations'",
+      "position" : {
+        "x" : 235,
+        "y" : 411.25
+      },
+      "isClickable" : false,
+      "id" : "141DB027-B78A-4093-A0B9-1EC54D4B2476",
+      "size" : {
+        "height" : 12.500000000000032,
+        "width" : 69
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "operations",
+        "boundingBox" : {
+          "width" : 69,
+          "y" : 405,
+          "height" : 12.500000000000032,
+          "x" : 200.5
+        }
+      },
+      "visualText" : "operations",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "id" : "933758D2-3F3F-4757-9345-501BFA471641",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 235.99999999999997,
+        "height" : 13.999999999999972
+      },
+      "confidence" : 0.5,
+      "visualText" : "l. The knowledge gap has collapsed.",
+      "position" : {
+        "y" : 418.00000000000006,
+        "x" : 536.5
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 235.99999999999997,
+          "x" : 418.5,
+          "y" : 411.00000000000006,
+          "height" : 13.999999999999972
+        },
+        "text" : "l. The knowledge gap has collapsed.",
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'l. The knowledge gap has collapsed.'"
+    },
+    {
+      "type" : "TextContent",
+      "id" : "05A54F1D-FB28-4B67-BBC3-731888F4BE8C",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 13.999999999999972,
+          "width" : 428.5,
+          "y" : 433.00000000000006,
+          "x" : 417
+        },
+        "text" : "A year ago, you needed IO+ years in ESG or supply chain to know",
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "position" : {
+        "x" : 631.25,
+        "y" : 440.00000000000006
+      },
+      "size" : {
+        "width" : 428.5,
+        "height" : 13.999999999999972
+      },
+      "semanticMeaning" : "Text content: 'A year ago, you needed IO+ years in ESG or supply chain to know'",
+      "visualText" : "A year ago, you needed IO+ years in ESG or supply chain to know"
+    },
+    {
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "id" : "C2E3B05B-047D-441F-B54D-F8EF5DF8BF36",
+      "position" : {
+        "y" : 462,
+        "x" : 606.25
+      },
+      "size" : {
+        "width" : 377.5,
+        "height" : 13.999999999999972
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 13.999999999999972,
+          "x" : 417.5,
+          "y" : 455,
+          "width" : 377.5
+        },
+        "text" : "what to build. Now you can just ask GPT. I spent 40 hours",
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'what to build. Now you can just ask GPT. I spent 40 hours'",
+      "isClickable" : false,
+      "visualText" : "what to build. Now you can just ask GPT. I spent 40 hours"
+    },
+    {
+      "size" : {
+        "width" : 332.5,
+        "height" : 13.999999999999972
+      },
+      "type" : "TextContent",
+      "id" : "D4BE633C-474B-44EF-B97E-28AD4CA003FB",
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "interrogating it. I know exactly what data is needed",
+      "semanticMeaning" : "Text content: 'interrogating it. I know exactly what data is needed'",
+      "position" : {
+        "x" : 584.25,
+        "y" : 484
+      },
+      "ocr" : {
+        "text" : "interrogating it. I know exactly what data is needed",
+        "boundingBox" : {
+          "y" : 477,
+          "height" : 13.999999999999972,
+          "width" : 332.5,
+          "x" : 418
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 10.999999999999993,
+        "width" : 72.999999999999986
+      },
+      "type" : "TextContent",
+      "position" : {
+        "y" : 482.5,
+        "x" : 808
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 771.5,
+          "y" : 477,
+          "width" : 72.999999999999986,
+          "height" : 10.999999999999993
+        },
+        "text" : "and who to"
+      },
+      "isClickable" : false,
+      "id" : "A6320327-ACAA-488F-BE76-0E093C095832",
+      "visualText" : "and who to",
+      "semanticMeaning" : "Text content: 'and who to'"
+    },
+    {
+      "position" : {
+        "y" : 506,
+        "x" : 453
+      },
+      "semanticMeaning" : "Text content: 'get it from.'",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 71.000000000000014,
+        "height" : 13.999999999999972
+      },
+      "id" : "038A6B68-E9ED-4BA4-8CE1-FFD574A85F75",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 71.000000000000014,
+          "x" : 417.5,
+          "height" : 13.999999999999972,
+          "y" : 499
+        },
+        "text" : "get it from.",
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "visualText" : "get it from."
+    },
+    {
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "id" : "321F3C99-E165-4352-A61B-3CEF346DC2A0",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: '# product-feedback'",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 141,
+          "y" : 431.5,
+          "x" : 175.5,
+          "height" : 14.000000000000071
+        },
+        "text" : "# product-feedback",
+        "confidence" : 0.5
+      },
+      "isClickable" : false,
+      "size" : {
+        "height" : 14.000000000000071,
+        "width" : 141
+      },
+      "visualText" : "# product-feedback",
+      "position" : {
+        "x" : 246,
+        "y" : 438.50000000000006
+      }
+    },
+    {
+      "id" : "1F9123B0-403E-4343-8B55-3484579FA240",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'reddit-bot'",
+      "size" : {
+        "width" : 65.500000000000028,
+        "height" : 11.000000000000092
+      },
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "reddit-bot",
+        "boundingBox" : {
+          "y" : 459.99999999999994,
+          "height" : 11.000000000000092,
+          "x" : 201,
+          "width" : 65.500000000000028
+        }
+      },
+      "visualText" : "reddit-bot",
+      "position" : {
+        "x" : 233.75,
+        "y" : 465.5
+      },
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "size" : {
+        "width" : 57.5,
+        "height" : 12.500000000000032
+      },
+      "visualText" : "# tasks",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '# tasks'",
+      "position" : {
+        "y" : 493.75,
+        "x" : 204.25
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "# tasks",
+        "boundingBox" : {
+          "width" : 57.5,
+          "y" : 487.5,
+          "height" : 12.500000000000032,
+          "x" : 175.5
+        }
+      },
+      "id" : "3F1EF561-591D-4899-B54E-16C25B420F98",
+      "confidence" : 0.5
+    },
+    {
+      "position" : {
+        "x" : 200.25,
+        "y" : 521.75
+      },
+      "semanticMeaning" : "Text content: '# test'",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 12.500000000000032,
+        "width" : 49.500000000000007
+      },
+      "id" : "FCB169F1-60F8-4ADD-8582-C3ABFEFFC4A6",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "# test",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 175.5,
+          "y" : 515.5,
+          "height" : 12.500000000000032,
+          "width" : 49.500000000000007
+        }
+      },
+      "isClickable" : false,
+      "visualText" : "# test"
+    },
+    {
+      "semanticMeaning" : "Text content: '2. Satellite data seems \"too hard\":'",
+      "position" : {
+        "x" : 527,
+        "y" : 534.25
+      },
+      "ocr" : {
+        "text" : "2. Satellite data seems \"too hard\":",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 528.5,
+          "height" : 11.499999999999904,
+          "width" : 219.00000000000003,
+          "x" : 417.5
+        }
+      },
+      "isClickable" : false,
+      "visualText" : "2. Satellite data seems \"too hard\":",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 219.00000000000003,
+        "height" : 11.499999999999904
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "id" : "A3BF0D18-86DA-440E-8E22-3BD839465B43"
+    },
+    {
+      "semanticMeaning" : "Text content: 'Most SaaS builders bounce at the word \"geospatial.\" But satellite'",
+      "position" : {
+        "x" : 628.25,
+        "y" : 557.74999999999989
+      },
+      "size" : {
+        "width" : 419.50000000000006,
+        "height" : 14.499999999999885
+      },
+      "visualText" : "Most SaaS builders bounce at the word \"geospatial.\" But satellite",
+      "confidence" : 0.5,
+      "id" : "AA4A76F2-8D17-4644-8B00-4D1BA0714B98",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Most SaaS builders bounce at the word \"geospatial.\" But satellite",
+        "boundingBox" : {
+          "x" : 418.5,
+          "y" : 550.5,
+          "width" : 419.50000000000006,
+          "height" : 14.499999999999885
+        },
+        "confidence" : 0.5
+      },
+      "isClickable" : false
+    },
+    {
+      "semanticMeaning" : "Text content: 'APls and vector overlays are now easy. This perceived difficulty'",
+      "visualText" : "APls and vector overlays are now easy. This perceived difficulty",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 573,
+          "height" : 13.500000000000059,
+          "x" : 417,
+          "width" : 412.99999999999994
+        },
+        "confidence" : 0.5,
+        "text" : "APls and vector overlays are now easy. This perceived difficulty"
+      },
+      "position" : {
+        "y" : 579.75,
+        "x" : 623.5
+      },
+      "id" : "B46B024F-8D60-4394-B4CF-0D10DB72C236",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 13.500000000000059,
+        "width" : 412.99999999999994
+      },
+      "isClickable" : false
+    },
+    {
+      "id" : "4AEFE5E1-074F-44D1-8626-B7FC678668FD",
+      "position" : {
+        "y" : 602,
+        "x" : 541.25
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'filters out most builders from starting.'",
+      "size" : {
+        "height" : 14.000000000000071,
+        "width" : 247.5
+      },
+      "visualText" : "filters out most builders from starting.",
+      "ocr" : {
+        "text" : "filters out most builders from starting.",
+        "boundingBox" : {
+          "width" : 247.5,
+          "height" : 14.000000000000071,
+          "y" : 595,
+          "x" : 417.5
+        },
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "visualText" : "webhooks-feedback",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 200.5,
+          "width" : 132.50000000000003,
+          "y" : 544,
+          "height" : 11.000000000000092
+        },
+        "text" : "webhooks-feedback"
+      },
+      "id" : "14C2BDB0-C5EF-47B9-8BC3-D40194500218",
+      "size" : {
+        "width" : 132.50000000000003,
+        "height" : 11.000000000000092
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'webhooks-feedback'",
+      "position" : {
+        "y" : 549.5,
+        "x" : 266.75
+      },
+      "type" : "TextContent"
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "webhooks-mixpanel",
+        "boundingBox" : {
+          "height" : 13.500000000000059,
+          "width" : 130.50000000000003,
+          "y" : 572,
+          "x" : 200.5
+        }
+      },
+      "position" : {
+        "y" : 578.75,
+        "x" : 265.75
+      },
+      "type" : "TextContent",
+      "id" : "63062052-B14D-45D1-9455-A0FAD73F17B7",
+      "confidence" : 0.5,
+      "size" : {
+        "height" : 13.500000000000059,
+        "width" : 130.50000000000003
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'webhooks-mixpanel'",
+      "isClickable" : false,
+      "visualText" : "webhooks-mixpanel"
+    },
+    {
+      "confidence" : 0.79999999999999993,
+      "interactions" : [
+        "right_click"
+      ],
+      "size" : {
+        "height" : 10.499999999999979,
+        "width" : 48.999999999999993
+      },
+      "accessibility" : {
+        "description" : null,
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXGroup"
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 601.5,
+          "x" : 92.5,
+          "width" : 48.999999999999993,
+          "height" : 10.499999999999979
+        },
+        "text" : "Templates"
+      },
+      "position" : {
+        "x" : 117,
+        "y" : 606.75
+      },
+      "isClickable" : false,
+      "type" : "AXGroup+OCR",
+      "visualText" : "Templates",
+      "semanticMeaning" : "AXGroup with text 'Templates'",
+      "id" : "53D8A17B-3D19-43B6-ABBA-A4CD40CDD1F4"
+    },
+    {
+      "size" : {
+        "width" : 66.5,
+        "height" : 10.999999999999892
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 66.5,
+          "y" : 600,
+          "x" : 200.5,
+          "height" : 10.999999999999892
+        },
+        "confidence" : 0.30000001192092896,
+        "text" : "webhooks"
+      },
+      "confidence" : 0.30000001192092896,
+      "visualText" : "webhooks",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'webhooks'",
+      "position" : {
+        "y" : 605.5,
+        "x" : 233.75
+      },
+      "id" : "C15CFBF5-5147-41F5-A885-B46BE5794FDE",
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "size" : {
+        "width" : 87.999999999999972,
+        "height" : 10.999999999999993
+      },
+      "isClickable" : false,
+      "position" : {
+        "y" : 633.5,
+        "x" : 244
+      },
+      "semanticMeaning" : "Text content: 'Add channels'",
+      "visualText" : "Add channels",
+      "interactions" : [
+
+      ],
+      "id" : "07EE664E-284E-4D93-B436-D1E695415C88",
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Add channels",
+        "boundingBox" : {
+          "y" : 628,
+          "width" : 87.999999999999972,
+          "x" : 200,
+          "height" : 10.999999999999993
+        }
+      }
+    },
+    {
+      "visualText" : "3. Competitors are overpriced:",
+      "ocr" : {
+        "text" : "3. Competitors are overpriced:",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.499999999999957,
+          "x" : 417.5,
+          "y" : 625,
+          "width" : 198.5
+        }
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '3. Competitors are overpriced:'",
+      "id" : "2B60731D-AFE6-4E27-8838-1512EF6419C9",
+      "position" : {
+        "x" : 516.75,
+        "y" : 631.75
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 198.5,
+        "height" : 13.499999999999957
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Because of (l) and (2), current players take advantage of",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 365.5,
+          "height" : 14.499999999999986,
+          "y" : 646.5,
+          "x" : 418.5
+        }
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 365.5,
+        "height" : 14.499999999999986
+      },
+      "type" : "TextContent",
+      "position" : {
+        "y" : 653.75,
+        "x" : 601.25
+      },
+      "confidence" : 0.5,
+      "visualText" : "Because of (l) and (2), current players take advantage of",
+      "id" : "E7BB7B34-2B2E-46DB-8C49-21785F75D03B",
+      "semanticMeaning" : "Text content: 'Because of (l) and (2), current players take advantage of'"
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "y" : 676,
+        "x" : 632.75
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "customers and sell at a 5,000% markup for an overkill white-glove",
+      "size" : {
+        "height" : 13.999999999999972,
+        "width" : 430.50000000000011
+      },
+      "semanticMeaning" : "Text content: 'customers and sell at a 5,000% markup for an overkill white-glove'",
+      "ocr" : {
+        "text" : "customers and sell at a 5,000% markup for an overkill white-glove",
+        "boundingBox" : {
+          "y" : 669,
+          "width" : 430.50000000000011,
+          "height" : 13.999999999999972,
+          "x" : 417.5
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "id" : "CEA27ACB-B549-4441-B4C8-10560A7F53DB",
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "type" : "TextContent",
+      "id" : "99766784-6891-4D48-BC81-4531DFB16F7D",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 697.75,
+        "x" : 454.5
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "experience.",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.500000000000059,
+          "y" : 691,
+          "width" : 74,
+          "x" : 417.5
+        }
+      },
+      "semanticMeaning" : "Text content: 'experience.'",
+      "visualText" : "experience.",
+      "size" : {
+        "height" : 13.500000000000059,
+        "width" : 74
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'Direct mes...'",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Direct mes...",
+        "boundingBox" : {
+          "height" : 10.999999999999993,
+          "x" : 201.5,
+          "width" : 80,
+          "y" : 666
+        },
+        "confidence" : 0.5
+      },
+      "id" : "EBF8FCCD-BBA2-47D0-A82F-AFD9F24F9E40",
+      "position" : {
+        "y" : 671.5,
+        "x" : 241.5
+      },
+      "visualText" : "Direct mes...",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 80,
+        "height" : 10.999999999999993
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5
+    },
+    {
+      "visualText" : "Austin Westbury",
+      "ocr" : {
+        "text" : "Austin Westbury",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 110.49999999999999,
+          "height" : 13.500000000000059,
+          "x" : 200,
+          "y" : 694
+        }
+      },
+      "position" : {
+        "x" : 255.25,
+        "y" : 700.75
+      },
+      "id" : "5A9B96D9-0910-441A-8973-FD24471A87FB",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 13.500000000000059,
+        "width" : 110.49999999999999
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Austin Westbury'"
+    },
+    {
+      "size" : {
+        "width" : 156,
+        "height" : 18.499999999999993
+      },
+      "id" : "79797716-C722-432C-B7DF-0369A2B87393",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "f Austin Westbury, ...",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 717,
+          "width" : 156,
+          "height" : 18.499999999999993,
+          "x" : 172
+        }
+      },
+      "position" : {
+        "x" : 250,
+        "y" : 726.25
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'f Austin Westbury, ...'",
+      "visualText" : "f Austin Westbury, ...",
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "x" : 200.75,
+        "y" : 754.75
+      },
+      "interactions" : [
+
+      ],
+      "id" : "4DDDA913-A81F-47AF-9920-9AC2700464B5",
+      "confidence" : 0.5,
+      "visualText" : "P, Cara",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 19.500000000000018,
+        "width" : 57.5
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "P, Cara",
+        "boundingBox" : {
+          "y" : 745,
+          "x" : 172,
+          "width" : 57.5,
+          "height" : 19.500000000000018
+        }
+      },
+      "semanticMeaning" : "Text content: 'P, Cara'"
+    },
+    {
+      "id" : "3D9B5442-0E0A-4C89-81AB-86572DF0C72A",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 10.999999999999993,
+        "width" : 71.000000000000014
+      },
+      "ocr" : {
+        "text" : "Hitzel Cruz",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 778,
+          "width" : 71.000000000000014,
+          "height" : 10.999999999999993,
+          "x" : 201.5
+        }
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "y" : 783.5,
+        "x" : 237
+      },
+      "confidence" : 0.30000001192092896,
+      "semanticMeaning" : "Text content: 'Hitzel Cruz'",
+      "visualText" : "Hitzel Cruz"
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 73.999999999999957,
+          "x" : 417,
+          "height" : 13.500000000000059,
+          "y" : 721
+        },
+        "text" : "4. Al-proof:",
+        "confidence" : 0.5
+      },
+      "type" : "TextContent",
+      "size" : {
+        "height" : 13.500000000000059,
+        "width" : 73.999999999999957
+      },
+      "semanticMeaning" : "Text content: '4. Al-proof:'",
+      "isClickable" : false,
+      "visualText" : "4. Al-proof:",
+      "id" : "93893AE7-7DFA-4555-BB62-719A37379348",
+      "position" : {
+        "x" : 454,
+        "y" : 727.75
+      },
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "interactions" : [
+
+      ],
+      "id" : "32D860A7-4B26-4282-B4BE-053070005BDC",
+      "isClickable" : false,
+      "position" : {
+        "x" : 627.25,
+        "y" : 749.5
+      },
+      "ocr" : {
+        "text" : "Commodity import customers are clueless with tech. They won't",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "width" : 419.5,
+          "x" : 417.5,
+          "y" : 742.5,
+          "height" : 14.000000000000071
+        }
+      },
+      "type" : "TextContent",
+      "confidence" : 0.30000001192092896,
+      "semanticMeaning" : "Text content: 'Commodity import customers are clueless with tech. They won't'",
+      "visualText" : "Commodity import customers are clueless with tech. They won't",
+      "size" : {
+        "height" : 14.000000000000071,
+        "width" : 419.5
+      }
+    },
+    {
+      "size" : {
+        "width" : 385.5,
+        "height" : 13.999999999999972
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'be building their own solution 10 years from now even if Al'",
+      "interactions" : [
+
+      ],
+      "id" : "7502C384-0B7C-48FF-9A40-993F0FF59E31",
+      "confidence" : 0.30000001192092896,
+      "visualText" : "be building their own solution 10 years from now even if Al",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "text" : "be building their own solution 10 years from now even if Al",
+        "boundingBox" : {
+          "y" : 765,
+          "width" : 385.5,
+          "height" : 13.999999999999972,
+          "x" : 418
+        }
+      },
+      "position" : {
+        "x" : 610.75,
+        "y" : 772
+      }
+    },
+    {
+      "size" : {
+        "height" : 13.499999999999957,
+        "width" : 134.99999999999997
+      },
+      "position" : {
+        "y" : 793.75,
+        "x" : 485.5
+      },
+      "id" : "CBCB7118-D01F-40AE-BFB4-16A26CF64730",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'makes it dead simple'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 134.99999999999997,
+          "y" : 787,
+          "x" : 418,
+          "height" : 13.499999999999957
+        },
+        "confidence" : 0.5,
+        "text" : "makes it dead simple"
+      },
+      "isClickable" : false,
+      "visualText" : "makes it dead simple",
+      "confidence" : 0.5
+    },
+    {
+      "id" : "C0DA1493-4424-4D74-9050-98C7A52902C0",
+      "confidence" : 0.30000001192092896,
+      "visualText" : "j• richard you",
+      "isClickable" : false,
+      "position" : {
+        "y" : 813.5,
+        "x" : 227
+      },
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 177,
+          "y" : 806,
+          "width" : 99.999999999999972,
+          "height" : 14.999999999999998
+        },
+        "text" : "j• richard you",
+        "confidence" : 0.30000001192092896
+      },
+      "semanticMeaning" : "Text content: 'j• richard you'",
+      "size" : {
+        "width" : 99.999999999999972,
+        "height" : 14.999999999999998
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.500000000000059,
+          "y" : 834,
+          "width" : 83.5,
+          "x" : 201.5
+        },
+        "text" : "Invite people"
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 243.25,
+        "y" : 840.75
+      },
+      "confidence" : 0.5,
+      "size" : {
+        "height" : 13.500000000000059,
+        "width" : 83.5
+      },
+      "id" : "54BDBE52-8EE1-4B7C-8973-C95F040CD8C0",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Invite people'",
+      "visualText" : "Invite people"
+    },
+    {
+      "isClickable" : false,
+      "position" : {
+        "x" : 606.5,
+        "y" : 836.5
+      },
+      "id" : "4D29756B-C62B-4F5F-AE27-6444EEF3D065",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Today",
+        "boundingBox" : {
+          "width" : 34,
+          "height" : 12.000000000000018,
+          "x" : 589.5,
+          "y" : 830.5
+        }
+      },
+      "size" : {
+        "height" : 12.000000000000018,
+        "width" : 34
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'Today'",
+      "visualText" : "Today",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Clickable element",
+      "size" : {
+        "width" : 32.999999999999993,
+        "height" : 13.500000000000059
+      },
+      "position" : {
+        "x" : 216.5,
+        "y" : 878.75
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 32.999999999999993,
+          "height" : 13.500000000000059,
+          "y" : 872,
+          "x" : 200
+        },
+        "confidence" : 0.5,
+        "text" : "Apps"
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "visualText" : "Apps",
+      "id" : "AFA09036-6C6B-4F91-AE03-81B56F934C79",
+      "type" : "AXPopUpButton+OCR",
+      "semanticMeaning" : "AXPopUpButton with text 'Apps'",
+      "confidence" : 0.79999999999999993,
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "title" : "Apps",
+        "enabled" : true,
+        "description" : null,
+        "focused" : false
+      }
+    },
+    {
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 467,
+        "y" : 871.25
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "size" : {
+        "width" : 98.999999999999972,
+        "height" : 11.500000000000005
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'richard 6:43 PM'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 98.999999999999972,
+          "x" : 417.5,
+          "height" : 11.500000000000005,
+          "y" : 865.5
+        },
+        "text" : "richard 6:43 PM"
+      },
+      "visualText" : "richard 6:43 PM",
+      "id" : "14E90FE0-FD9E-4B2D-B726-19D453FCE2AC"
+    },
+    {
+      "position" : {
+        "x" : 506,
+        "y" : 895
+      },
+      "confidence" : 0.30000001192092896,
+      "size" : {
+        "height" : 13.999999999999972,
+        "width" : 174.99999999999997
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Hello this is a test message",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Hello this is a test message'",
+      "ocr" : {
+        "text" : "Hello this is a test message",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 418.5,
+          "y" : 888,
+          "height" : 13.999999999999972,
+          "width" : 174.99999999999997
+        }
+      },
+      "id" : "980CC1D5-20E4-4774-B25D-389D7B4B50E8"
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '-. Slackbot'",
+      "interactions" : [
+
+      ],
+      "id" : "5755D8C6-4A74-4BEA-B852-41E763219C9D",
+      "visualText" : "-. Slackbot",
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 905.5,
+        "x" : 217
+      },
+      "size" : {
+        "width" : 77.000000000000028,
+        "height" : 10.999999999999993
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 900,
+          "height" : 10.999999999999993,
+          "x" : 178.5,
+          "width" : 77.000000000000028
+        },
+        "text" : "-. Slackbot",
+        "confidence" : 0.5
+      }
+    },
+    {
+      "visualText" : "Q Augment",
+      "size" : {
+        "height" : 19.000000000000004,
+        "width" : 88
+      },
+      "id" : "3508F79D-5D5D-4F8B-B48C-B34C409B74B3",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Q Augment'",
+      "position" : {
+        "x" : 216,
+        "y" : 932.5
+      },
+      "ocr" : {
+        "text" : "Q Augment",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 923,
+          "width" : 88,
+          "x" : 172,
+          "height" : 19.000000000000004
+        }
+      }
+    },
+    {
+      "visualText" : "Donut",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 10.999999999999993,
+        "width" : 40
+      },
+      "position" : {
+        "y" : 961.5,
+        "x" : 221.5
+      },
+      "id" : "37BC0B9D-0F31-4B9E-B86F-06D8A2C9179F",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Donut'",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 40,
+          "x" : 201.5,
+          "y" : 956,
+          "height" : 10.999999999999993
+        },
+        "confidence" : 0.5,
+        "text" : "Donut"
+      }
+    },
+    {
+      "visualText" : "<\/> <l>",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '<\/> <l>'",
+      "ocr" : {
+        "text" : "<\/> <l>",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 628,
+          "height" : 13.499999999999957,
+          "y" : 937.5,
+          "width" : 43.499999999999957
+        }
+      },
+      "type" : "TextContent",
+      "id" : "8C473D79-4882-4E9A-935C-2E3785C82E70",
+      "position" : {
+        "y" : 944.25,
+        "x" : 649.75
+      },
+      "size" : {
+        "height" : 13.499999999999957,
+        "width" : 43.499999999999957
+      },
+      "confidence" : 0.5,
+      "isClickable" : false
+    },
+    {
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 70.499999999999986,
+        "height" : 14.000000000000071
+      },
+      "position" : {
+        "y" : 991,
+        "x" : 236.75
+      },
+      "isClickable" : false,
+      "id" : "B6A1F510-974A-4CF0-9ECC-E21D2D79DA20",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Integromat'",
+      "visualText" : "Integromat",
+      "ocr" : {
+        "text" : "Integromat",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 14.000000000000071,
+          "x" : 201.5,
+          "y" : 984,
+          "width" : 70.499999999999986
+        }
+      }
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "y" : 1017.75,
+        "x" : 217
+      },
+      "semanticMeaning" : "Text content: 'X Mixpanel'",
+      "visualText" : "X Mixpanel",
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 1010,
+          "width" : 85,
+          "x" : 174.5,
+          "height" : 15.500000000000011
+        },
+        "text" : "X Mixpanel"
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 85,
+        "height" : 15.500000000000011
+      },
+      "id" : "8E2089F2-C169-4BC6-A8B4-506386422179",
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "visualText" : "RedditComments",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 11.000000000000092,
+          "width" : 111.5,
+          "x" : 201.5,
+          "y" : 1040
+        },
+        "text" : "RedditComments",
+        "confidence" : 0.5
+      },
+      "isClickable" : false,
+      "id" : "1C8BD37C-4C1B-4A3A-A83F-0CB24E498A35",
+      "semanticMeaning" : "Text content: 'RedditComments'",
+      "position" : {
+        "y" : 1045.5,
+        "x" : 257.25
+      },
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 111.5,
+        "height" : 11.000000000000092
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "id" : "0ACA2C6F-C73F-4803-A2E6-F3975CC4A919",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 13.999999999999972,
+          "x" : 386,
+          "y" : 979,
+          "width" : 132.5
+        },
+        "text" : "Jot something down"
+      },
+      "type" : "TextContent",
+      "size" : {
+        "width" : 132.5,
+        "height" : 13.999999999999972
+      },
+      "semanticMeaning" : "Text content: 'Jot something down'",
+      "isClickable" : false,
+      "position" : {
+        "x" : 452.25,
+        "y" : 986
+      },
+      "visualText" : "Jot something down",
+      "confidence" : 0.5
+    },
+    {
+      "size" : {
+        "width" : 26,
+        "height" : 26
+      },
+      "type" : "AXCheckBox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "x" : 99,
+        "y" : 175
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : "Show Workspace Switcher",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXCheckBox"
+      },
+      "actionHint" : "Click Show Workspace Switcher",
+      "semanticMeaning" : "Show Workspace Switcher",
+      "id" : "EC7893F8-79C3-4FC7-8D73-8A93D0C7C86D",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 175,
+        "x" : 195
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 26,
+        "width" : 27
+      },
+      "accessibility" : {
+        "description" : "Back in history",
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "isClickable" : true,
+      "id" : "E36F81A7-3B0B-48CB-9E7D-D877A68A5A3B",
+      "actionHint" : "Click Back in history",
+      "semanticMeaning" : "Back in history"
+    },
+    {
+      "position" : {
+        "x" : 227,
+        "y" : 175
+      },
+      "accessibility" : {
+        "enabled" : false,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "Forward in history",
+        "title" : null
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "size" : {
+        "width" : 27,
+        "height" : 26
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "C7A85E6D-9D44-4844-B75D-67D97975DE97",
+      "actionHint" : "Click Forward in history",
+      "semanticMeaning" : "Forward in history",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "semanticMeaning" : "Show history",
+      "type" : "AXPopUpButton",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Click Show history",
+      "position" : {
+        "y" : 175,
+        "x" : 259
+      },
+      "id" : "C3A5FFCF-AC85-4345-B162-F2B923A83353",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "Show history",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXPopUpButton"
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 27,
+        "height" : 26
+      }
+    },
+    {
+      "position" : {
+        "y" : 174,
+        "x" : 298
+      },
+      "actionHint" : "Click Search",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Search",
+      "accessibility" : {
+        "description" : "Search",
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "role" : "AXButton"
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "9949C74B-4736-482E-A1F4-0D1EF3C787EB",
+      "size" : {
+        "width" : 337,
+        "height" : 28
+      }
+    },
+    {
+      "size" : {
+        "width" : 28,
+        "height" : 28
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "AI assistant",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null
+      },
+      "semanticMeaning" : "AI assistant",
+      "confidence" : 0.69999999999999996,
+      "id" : "8978B5DD-CCBE-4E6D-9C40-A2A079C69E45",
+      "isClickable" : true,
+      "actionHint" : "Click AI assistant",
+      "type" : "AXButton",
+      "position" : {
+        "x" : 803,
+        "y" : 174
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "5B1AD643-73C0-445E-8A42-20356F66ABED",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 839,
+        "y" : 175
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "Help",
+      "actionHint" : "Click Help",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "description" : "Help",
+        "role" : "AXButton"
+      },
+      "size" : {
+        "width" : 26,
+        "height" : 26
+      }
+    },
+    {
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "title" : "Cheddar",
+        "focused" : false,
+        "role" : "AXRadioButton"
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "29703165-B160-40DE-9617-127AF8DE3462",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXRadioButton",
+      "semanticMeaning" : "AXRadioButton",
+      "position" : {
+        "y" : 274,
+        "x" : 36
+      },
+      "actionHint" : "Clickable element"
+    },
+    {
+      "position" : {
+        "x" : 36,
+        "y" : 326
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "semanticMeaning" : "Add workspaces",
+      "id" : "A5B1D1F3-A1B5-4430-8FB2-59D35D1F0EF7",
+      "actionHint" : "Click Add workspaces",
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "description" : "Add workspaces",
+        "enabled" : true,
+        "role" : "AXPopUpButton"
+      },
+      "isClickable" : true,
+      "type" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click Home (button button)",
+      "semanticMeaning" : "Home with button visual",
+      "type" : "AXRadioButton",
+      "size" : {
+        "height" : 68,
+        "width" : 52
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXRadioButton",
+        "title" : null,
+        "enabled" : true,
+        "description" : "Home"
+      },
+      "position" : {
+        "x" : 91,
+        "y" : 212
+      },
+      "visualText" : "",
+      "confidence" : 1,
+      "id" : "B0F7D00D-CF5E-41FB-BF7C-E25672A12D52"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 91,
+        "y" : 280
+      },
+      "semanticMeaning" : "DMs",
+      "actionHint" : "Click DMs",
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "role" : "AXRadioButton",
+        "description" : "DMs"
+      },
+      "type" : "AXRadioButton",
+      "id" : "0F656CF8-419D-4967-A3B1-FB5A829CB34F",
+      "size" : {
+        "width" : 52,
+        "height" : 68
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ]
+    },
+    {
+      "id" : "CFF74292-0486-4E1D-A700-DA9B32B1ADDB",
+      "semanticMeaning" : "Activity",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "type" : "AXRadioButton",
+      "position" : {
+        "y" : 348,
+        "x" : 91
+      },
+      "actionHint" : "Click Activity",
+      "accessibility" : {
+        "role" : "AXRadioButton",
+        "description" : "Activity",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "size" : {
+        "height" : 68,
+        "width" : 52
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "id" : "EB972DF9-AA61-4678-B1B0-6296035E1350",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "role" : "AXRadioButton",
+        "title" : null,
+        "description" : "Files",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXRadioButton",
+      "position" : {
+        "x" : 91,
+        "y" : 416
+      },
+      "size" : {
+        "width" : 52,
+        "height" : 68
+      },
+      "semanticMeaning" : "Files",
+      "actionHint" : "Click Files",
+      "isClickable" : true
+    },
+    {
+      "id" : "1728C6AB-B5AE-44A1-B0D3-65B4B5EC525C",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "title" : null,
+        "description" : "Later",
+        "focused" : false,
+        "role" : "AXRadioButton",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "actionHint" : "Click Later",
+      "position" : {
+        "y" : 484,
+        "x" : 91
+      },
+      "size" : {
+        "width" : 52,
+        "height" : 68
+      },
+      "type" : "AXRadioButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "Later"
+    },
+    {
+      "type" : "AXRadioButton",
+      "size" : {
+        "width" : 52,
+        "height" : 68
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 552,
+        "x" : 91
+      },
+      "semanticMeaning" : "Templates",
+      "actionHint" : "Click Templates",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "description" : "Templates",
+        "focused" : false,
+        "role" : "AXRadioButton",
+        "enabled" : true,
+        "title" : null
+      },
+      "isClickable" : true,
+      "id" : "61899479-8A74-43E5-9C31-CFCC772A53B1"
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 52,
+        "height" : 68
+      },
+      "semanticMeaning" : "Automations",
+      "position" : {
+        "x" : 91,
+        "y" : 620
+      },
+      "type" : "AXRadioButton",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "id" : "C0056930-3287-40B3-B87A-791C481746BF",
+      "actionHint" : "Click Automations",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXRadioButton",
+        "description" : "Automations"
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 52,
+        "height" : 68
+      },
+      "isClickable" : true,
+      "type" : "AXRadioButton",
+      "position" : {
+        "y" : 688,
+        "x" : 91
+      },
+      "semanticMeaning" : "More…",
+      "accessibility" : {
+        "description" : "More…",
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Click More…",
+      "id" : "BDCFA853-5898-4A71-B6D8-4E23CA5EAB43"
+    },
+    {
+      "actionHint" : "Click Admin",
+      "size" : {
+        "width" : 52,
+        "height" : 68
+      },
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXRadioButton",
+        "title" : null,
+        "description" : "Admin",
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 91,
+        "y" : 777
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "EF190F7A-D072-4A62-A031-BADC4C06B656",
+      "isClickable" : true,
+      "type" : "AXRadioButton",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "semanticMeaning" : "Admin"
+    },
+    {
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXPopUpButton",
+        "description" : "Cheddar Actions",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "168D8E93-C69C-45AC-8017-8B5B44D001DF",
+      "isClickable" : true,
+      "size" : {
+        "height" : 30,
+        "width" : 101
+      },
+      "position" : {
+        "y" : 218,
+        "x" : 164
+      },
+      "semanticMeaning" : "Cheddar Actions",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXPopUpButton",
+      "actionHint" : "Click Cheddar Actions"
+    },
+    {
+      "isClickable" : true,
+      "id" : "B89E37E0-CA93-4099-96DA-411490FF003E",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXPopUpButton",
+      "size" : {
+        "width" : 36,
+        "height" : 36
+      },
+      "actionHint" : "Click Manage my sidebar",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXPopUpButton",
+        "title" : null,
+        "description" : "Manage my sidebar",
+        "focused" : false
+      },
+      "position" : {
+        "x" : 269,
+        "y" : 215
+      },
+      "semanticMeaning" : "Manage my sidebar",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ]
+    },
+    {
+      "actionHint" : "Click New message",
+      "id" : "26CEA2A6-C267-4128-B3E2-0DD8E0125B45",
+      "size" : {
+        "width" : 36,
+        "height" : 36
+      },
+      "semanticMeaning" : "New message",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "New message",
+        "title" : null,
+        "focused" : false
+      },
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 215,
+        "x" : 309
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "id" : "0EEB7588-6E22-4A59-A2E5-AC68CF650A01",
+      "isClickable" : true,
+      "size" : {
+        "width" : 201,
+        "height" : 28
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXRow",
+      "semanticMeaning" : "Direct Messages",
+      "position" : {
+        "y" : 657,
+        "x" : 152
+      },
+      "actionHint" : "Click Direct Messages",
+      "interactions" : [
+        "click"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXRow",
+        "title" : null,
+        "description" : "Direct Messages"
+      }
+    },
+    {
+      "type" : "AXPopUpButton",
+      "semanticMeaning" : "AXPopUpButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXPopUpButton",
+        "focused" : false,
+        "description" : null,
+        "title" : "Direct messages"
+      },
+      "id" : "34FE2913-02D9-4AE7-97CE-42E1029DD802",
+      "position" : {
+        "y" : 657,
+        "x" : 195
+      },
+      "size" : {
+        "width" : 92,
+        "height" : 28
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Clickable element"
+    },
+    {
+      "id" : "4C4DA41B-6511-4722-8340-095BC5D8BA52",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click Apps",
+      "position" : {
+        "y" : 863,
+        "x" : 152
+      },
+      "accessibility" : {
+        "role" : "AXRow",
+        "title" : null,
+        "description" : "Apps",
+        "enabled" : true,
+        "focused" : false
+      },
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "semanticMeaning" : "Apps",
+      "type" : "AXRow",
+      "size" : {
+        "width" : 201,
+        "height" : 28
+      }
+    },
+    {
+      "id" : "49380F0B-F770-42B3-A0EB-4D58158F299F",
+      "confidence" : 0.69999999999999996,
+      "visualText" : "3",
+      "position" : {
+        "x" : 152,
+        "y" : 208
+      },
+      "size" : {
+        "width" : 1,
+        "height" : 1
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "description" : "Sidebar width",
+        "role" : "AXSlider",
+        "focused" : false
+      },
+      "semanticMeaning" : "Sidebar width",
+      "interactions" : [
+        "drag",
+        "arrow_keys"
+      ],
+      "isClickable" : false,
+      "type" : "AXSlider"
+    },
+    {
+      "id" : "80EE8E20-EE85-48D6-8075-5C7E77DE3390",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "description" : "richard",
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : null
+      },
+      "type" : "AXButton",
+      "size" : {
+        "width" : 101,
+        "height" : 30
+      },
+      "semanticMeaning" : "richard",
+      "position" : {
+        "x" : 369,
+        "y" : 218
+      },
+      "actionHint" : "Click richard"
+    },
+    {
+      "actionHint" : "Clickable element",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "id" : "16710B8E-6699-483E-BE94-09F0F54874CD",
+      "accessibility" : {
+        "title" : "Messages",
+        "enabled" : true,
+        "description" : null,
+        "role" : "AXRadioButton",
+        "focused" : false
+      },
+      "semanticMeaning" : "AXRadioButton",
+      "type" : "AXRadioButton",
+      "position" : {
+        "x" : 369,
+        "y" : 257
+      },
+      "size" : {
+        "height" : 38,
+        "width" : 93
+      },
+      "isClickable" : true
+    },
+    {
+      "accessibility" : {
+        "title" : "Add canvas",
+        "description" : null,
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "AXRadioButton",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "y" : 257,
+        "x" : 465
+      },
+      "size" : {
+        "width" : 103,
+        "height" : 38
+      },
+      "type" : "AXRadioButton",
+      "actionHint" : "Clickable element",
+      "id" : "9157A591-84B5-4F8A-B239-B1CFD0927933"
+    },
+    {
+      "semanticMeaning" : "AXRadioButton",
+      "id" : "9119957B-A8B8-4E5B-9490-11AA8B4382FA",
+      "size" : {
+        "height" : 38,
+        "width" : 63
+      },
+      "type" : "AXRadioButton",
+      "actionHint" : "Clickable element",
+      "position" : {
+        "y" : 257,
+        "x" : 571
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "description" : null,
+        "role" : "AXRadioButton",
+        "title" : "Files",
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "toggle"
+      ]
+    },
+    {
+      "type" : "AXPopUpButton",
+      "position" : {
+        "x" : 638,
+        "y" : 257
+      },
+      "size" : {
+        "height" : 38,
+        "width" : 38
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Add and Edit Channel Tabs",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXPopUpButton",
+        "description" : "Add and Edit Channel Tabs"
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "confidence" : 0.69999999999999996,
+      "id" : "89CA5A12-06A7-4C1B-B0D6-4EB047E68FB9",
+      "actionHint" : "Click Add and Edit Channel Tabs"
+    },
+    {
+      "size" : {
+        "width" : 36,
+        "height" : 36
+      },
+      "semanticMeaning" : "Create new",
+      "actionHint" : "Click Create new",
+      "id" : "3A90BA7E-7C2C-4BFA-BEDC-044925EC0AFD",
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXPopUpButton",
+      "position" : {
+        "y" : 960,
+        "x" : 99
+      },
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : "Create new"
+      },
+      "isClickable" : true
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "User: richard",
+      "position" : {
+        "y" : 1012,
+        "x" : 99
+      },
+      "size" : {
+        "width" : 36,
+        "height" : 36
+      },
+      "type" : "AXPopUpButton",
+      "id" : "50FF52D5-EE19-433B-A8EC-320DCE90E0AA",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "User: richard",
+        "role" : "AXPopUpButton",
+        "title" : null,
+        "focused" : false
+      },
+      "actionHint" : "Click User: richard"
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Apple",
+      "type" : "appMenu",
+      "id" : "14ADB1E3-F934-4A3A-AA73-B684AD40C66B",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Apple",
+      "actionHint" : "Click Apple",
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "isClickable" : true
+    },
+    {
+      "visualText" : "Slack",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click Slack",
+      "id" : "DAA4FF61-7A91-4EE6-BC22-313ACE43FF77",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "semanticMeaning" : "Menu bar item: Slack",
+      "type" : "appMenu",
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996
+    },
+    {
+      "visualText" : "File",
+      "actionHint" : "Click File",
+      "type" : "appMenu",
+      "isClickable" : true,
+      "id" : "1A15D4EE-5DD4-4714-A5BC-9453EA8F0A37",
+      "confidence" : 0.94999999999999996,
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "interactions" : [
+        "click"
+      ],
+      "semanticMeaning" : "Menu bar item: File"
+    },
+    {
+      "actionHint" : "Click Edit",
+      "id" : "52CE073F-C7F3-46EB-864B-DC9D1929F8CF",
+      "visualText" : "Edit",
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Edit",
+      "type" : "appMenu",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "visualText" : "View",
+      "semanticMeaning" : "Menu bar item: View",
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "8F7DBEA1-28B1-4085-8887-AD4D3DEA86E6",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "type" : "appMenu",
+      "actionHint" : "Click View",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      }
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Go",
+      "actionHint" : "Click Go",
+      "visualText" : "Go",
+      "type" : "appMenu",
+      "id" : "89020A90-B7E2-4672-B0FC-4FA78D5FA907"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.94999999999999996,
+      "id" : "D1FF4442-0F8D-489D-B7DC-9211BE009C9C",
+      "actionHint" : "Click Window",
+      "visualText" : "Window",
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Window"
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "actionHint" : "Click Help",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "visualText" : "Help",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "isClickable" : true,
+      "id" : "8AFF5FAF-EE89-4F87-A0D3-50A736275E8E",
+      "semanticMeaning" : "Menu bar item: Help",
+      "interactions" : [
+        "click"
+      ],
+      "type" : "appMenu"
+    }
+  ],
+  "compressedOutput" : "Slack|851x904|menu:Apple@M-M1,menu:Slack@M-M2,menu:File@M-M3,menu:Edit@M-M4,menu:View@M-M5,menu:Go@M-M6,menu:Window@M-M7,menu:Help@M-M8,btn:Search (action)@A-24:2,btn:richard@A-21:4,btn:Forward in history (nav)@A-11:2,btn:New message@A-15:4,btn:AI assistant@A-38:2,btn:Help@A-40:2,btn:Back in history (nav)@A-9:2,btn:Direct Messages@A-8:28,btn:Apps@A-8:40,dropdown:Direct messages (menu)@A-10:28,radio:Messages@A-18:6,radio:Add canvas@A-23:7,radio:Files@A-27:7,radio:Activity@A-5:12,radio:Files@A-5:15,radio:Later@A-5:21,radio:Templates@A-5:24,radio:Automations@A-5:26,radio:More…@A-5:30,radio:Admin@A-5:35,radio:Home (button button)@A-5:4,radio:DMs@A-5:8,dropdown:Cheddar Actions (menu)@A-9:4,dropdown:Apps (menu)@A-10:40,dropdown:Show history (menu)@A-12:2,dropdown:Manage my sidebar (menu)@A-13:4,dropdown:Add workspaces (menu)@A-2:10,radio:Cheddar@A-2:7,dropdown:PopUpButton (menu)@A-30:6,checkbox:CheckBox@A-5:2,dropdown:Create new (menu)@A-5:45,dropdown:User: richard (menu)@A-5:48,txt:TextContent@A-30:34,txt:TextContent@A-33:24,txt:TextContent@A-33:29,txt:TextContent@A-37:33,txt:TextContent@A-39:22,txt:TextContent@A-39:28,txt:TextContent@A-41:16,txt:TextContent@A-41:17,txt:TextContent@A-28:18,txt:TextContent@A-35:25,txt:TextContent@A-40:13,txt:Add canvas@A-25:7,txt:TextContent@A-27:27,txt:TextContent@A-30:21,txt:TextContent@A-32:15,txt:TextContent@A-18:32,txt:-> O o SearchCheddar@A-23:3,txt:TextContent@A-24:41,txt:Files@A-29:7,txt:makes it dead simple@A-24:35,txt:Tuesday, June 17th@A-30:10,txt:# design@A-10:7,txt:reddit-bot@A-11:17,txt:j• richard you@A-11:37,txt:Ched...@A-11:5,txt:operations@A-12:14,txt:# product-feedback@A-12:16,txt:Direct mes...@A-12:29,txt:Hitzel Cruz@A-12:35,txt:-. Slackbot@A-12:42,txt:Invite people@A-13:38,txt:Integromat@A-13:46,txt:X Mixpanel@A-13:48,txt:RedditComments@A-13:49,txt:engineering@A-13:8,txt:webhooks-mixpanel@A-14:24,txt:Add channels@A-14:27,txt:Austin Westbury@A-14:30,txt:webhooks-feedback@A-16:22,txt:get it from.@A-22:20,txt:experience.@A-22:30,txt:4. Al-proof:@A-22:32,txt:richard 1:34 PM@A-24:12,txt:richard 6:43 PM@A-24:40,txt:Jot something down@A-24:46,txt:and who to@A-39:18,txt:Activity@A-6:14,txt:Templates@A-6:25,txt:# general@A-10:10,txt:# gpt@A-10:11,txt:# tasks@A-10:19,txt:# test@A-10:20,txt:P, Cara@A-10:33,txt:webhooks@A-11:25,txt:Q Augment@A-11:43,txt:Donut@A-11:45,txt:marketing@A-12:13,txt:Messages@A-20:7,txt:Today@A-29:38,txt:<\/> <l>@A-31:44",
+  "window" : {
+    "title" : "activwndw: Slack - richard (DM) - Cheddar - Slack",
+    "frame" : {
+      "y" : 168,
+      "x" : 22,
+      "width" : 851,
+      "height" : 904
+    }
+  },
+  "systemContext" : {
+    "menuItems" : [
+      {
+        "type" : "appMenu",
+        "title" : "Apple",
+        "isSystemWide" : false,
+        "menuBarPosition" : "M-M1",
+        "index" : 0
+      },
+      {
+        "title" : "Slack",
+        "type" : "appMenu",
+        "isSystemWide" : false,
+        "menuBarPosition" : "M-M2",
+        "index" : 1
+      },
+      {
+        "menuBarPosition" : "M-M3",
+        "index" : 2,
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "title" : "File"
+      },
+      {
+        "index" : 3,
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M4",
+        "title" : "Edit"
+      },
+      {
+        "title" : "View",
+        "menuBarPosition" : "M-M5",
+        "index" : 4,
+        "isSystemWide" : false,
+        "type" : "appMenu"
+      },
+      {
+        "title" : "Go",
+        "isSystemWide" : false,
+        "menuBarPosition" : "M-M6",
+        "type" : "appMenu",
+        "index" : 5
+      },
+      {
+        "index" : 6,
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M7",
+        "isSystemWide" : false,
+        "title" : "Window"
+      },
+      {
+        "type" : "appMenu",
+        "index" : 7,
+        "isSystemWide" : false,
+        "title" : "Help",
+        "menuBarPosition" : "M-M8"
+      }
+    ],
+    "timestamp" : "2025-06-23T22:45:40Z",
+    "activeApplication" : {
+      "bundleIdentifier" : "com.tinyspeck.slackmacgap",
+      "name" : "Slack"
+    }
+  }
+}

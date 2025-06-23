@@ -1,0 +1,1798 @@
+{
+  "window" : {
+    "title" : "activwndw: Messages - Richard Shaw",
+    "frame" : {
+      "height" : 733,
+      "x" : 933,
+      "y" : 139,
+      "width" : 762
+    }
+  },
+  "compressedOutput" : "Messages|762x733|menu:Apple@M-M1,menu:Messages@M-M2,menu:File@M-M3,menu:Edit@M-M4,menu:View@M-M5,menu:Conversa@M-M6,menu:Format@M-M7,menu:Window@M-M8,menu:Help@M-M9,btn:Compose@A-16:1,btn:Apps@A-18:48,btn:info@A-39:3,btn:Emoji picker@A-39:48,dropdown:PopUpButton (menu)@A-22:2,txtinp:Hi (text)@A-34:48[FOCUSED],txtinp:Search (search)@A-4:5[UNFOCUSED],txt:TextContent@A-18:37,txt:TextContent@A-12:26,txt:TextContent@A-12:36,txt:TextContent@A-16:32,txt:TextContent@A-41:18,txt:TextContent@A-41:38,txt:TextContent@A-36:26,txt:TextContent@A-37:22,txt:TextContent@A-39:24,txt:TextContent@A-39:33,txt:TextContent@A-40:29,txt:TextContent@A-41:42,txt:TextContent@A-9:27,txt:TextContent@A-16:33,txt:You unsent a message@A-13:45,txt:TextContent@A-14:18,txt:Another test message@A-38:31,txt:TextContent@A-41:36,txt:Cara Davidson@A-10:12,txt:HouseGroup@A-10:48,txt:Attachment: 1 Photo@A-12:14,txt:To: Richard Shaw@A-23:3,txt:Messages app@A-33:39,txt:Hello@A-39:10,txt:Hello@A-39:13,txt:Hello@A-39:15,txt:Hello@A-39:5,txt:Hello@A-39:8,txt:Delivered@A-40:43,txt:Cara & Mom@A-7:17,txt:Julia Shaw@A-7:30,txt:Hitzel Cruz@A-7:39,txt:dinner is ready@A-8:50,txt:Parker Place@A-9:35,txt:Sorry, butt call@A-9:41,txt:Richard Shaw@A-9:8,txt:Yesterday@A-17:39,txt:Yesterday@A-17:44,txt:Yesterday@A-17:48,txt:test!@A-29:19,txt:Q Search@A-5:6,txt:Sent@A-6:23,txt:Mom@A-6:44",
+  "systemContext" : {
+    "activeApplication" : {
+      "name" : "Messages",
+      "bundleIdentifier" : "com.apple.MobileSMS"
+    },
+    "menuItems" : [
+      {
+        "title" : "Apple",
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M1",
+        "isSystemWide" : false,
+        "index" : 0
+      },
+      {
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M2",
+        "title" : "Messages",
+        "isSystemWide" : false,
+        "index" : 1
+      },
+      {
+        "index" : 2,
+        "title" : "File",
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M3",
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "title" : "Edit",
+        "index" : 3,
+        "menuBarPosition" : "M-M4",
+        "isSystemWide" : false
+      },
+      {
+        "type" : "appMenu",
+        "index" : 4,
+        "title" : "View",
+        "menuBarPosition" : "M-M5",
+        "isSystemWide" : false
+      },
+      {
+        "title" : "Conversation",
+        "isSystemWide" : false,
+        "index" : 5,
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M6"
+      },
+      {
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M7",
+        "index" : 6,
+        "isSystemWide" : false,
+        "title" : "Format"
+      },
+      {
+        "type" : "appMenu",
+        "isSystemWide" : false,
+        "title" : "Window",
+        "menuBarPosition" : "M-M8",
+        "index" : 7
+      },
+      {
+        "type" : "appMenu",
+        "menuBarPosition" : "M-M9",
+        "index" : 8,
+        "title" : "Help",
+        "isSystemWide" : false
+      }
+    ],
+    "timestamp" : "2025-06-23T22:44:24Z"
+  },
+  "metadata" : {
+    "timestamp" : "2025-06-23T22:44:24Z",
+    "processingTime" : 1.9102330207824707,
+    "performance" : {
+      "totalElements" : 119,
+      "fusedElements" : 61,
+      "ocrTime" : 0.11881399154663086,
+      "memoryUsage" : 57868288,
+      "accessibilityTime" : 0.20885002613067627,
+      "fusionTime" : 0.00051999092102050781,
+      "screenshotTime" : 0.13321805000305176
+    }
+  },
+  "elements" : [
+    {
+      "semanticMeaning" : "Text content: 'To: Richard Shaw'",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "id" : "79E7C930-252D-4B08-9FC8-C4F6E211FAA9",
+      "visualText" : "To: Richard Shaw",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 160,
+          "x" : 1274.5,
+          "width" : 104.99999999999999,
+          "height" : 10.500000000000037
+        },
+        "text" : "To: Richard Shaw"
+      },
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1327,
+        "y" : 165.25000000000003
+      },
+      "size" : {
+        "height" : 10.500000000000037,
+        "width" : 104.99999999999999
+      },
+      "isClickable" : false
+    },
+    {
+      "id" : "1F1571F1-2E6A-40E6-8364-AED320042CF9",
+      "position" : {
+        "x" : 982.25,
+        "y" : 205.75
+      },
+      "semanticMeaning" : "Text content: 'Q Search'",
+      "size" : {
+        "width" : 61.5,
+        "height" : 12.500000000000011
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000011,
+          "width" : 61.5,
+          "x" : 951.5,
+          "y" : 199.5
+        },
+        "text" : "Q Search",
+        "confidence" : 0.5
+      },
+      "visualText" : "Q Search",
+      "confidence" : 0.5
+    },
+    {
+      "semanticMeaning" : "AXGroup with text 'Hello'",
+      "type" : "AXGroup+OCR",
+      "confidence" : 0.60000001192092889,
+      "interactions" : [
+        "right_click"
+      ],
+      "isClickable" : false,
+      "visualText" : "Hello",
+      "position" : {
+        "y" : 204,
+        "x" : 1654.75
+      },
+      "accessibility" : {
+        "description" : "Your iMessage, Hello, 18:06",
+        "focused" : false,
+        "title" : null,
+        "role" : "AXGroup",
+        "enabled" : true
+      },
+      "ocr" : {
+        "text" : "Hello",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "height" : 10.000000000000025,
+          "y" : 199,
+          "width" : 29.499999999999975,
+          "x" : 1640
+        }
+      },
+      "id" : "62631828-6124-40FE-B338-E9BC265B0238",
+      "size" : {
+        "height" : 10.000000000000025,
+        "width" : 29.499999999999975
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 1050.25,
+        "y" : 244.49999999999997
+      },
+      "visualText" : "Richard Shaw",
+      "id" : "5BA99237-E257-4BCA-A4F1-1149FE0ED090",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Richard Shaw'",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 84.5,
+        "height" : 10.99999999999997
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Richard Shaw",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 239,
+          "x" : 1008,
+          "width" : 84.5,
+          "height" : 10.99999999999997
+        }
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "text" : "Hello",
+        "boundingBox" : {
+          "y" : 236,
+          "x" : 1640,
+          "height" : 10.000000000000025,
+          "width" : 29.499999999999975
+        }
+      },
+      "confidence" : 0.60000001192092889,
+      "interactions" : [
+        "right_click"
+      ],
+      "id" : "459E51EC-60C3-42E7-82B8-F0215F6A4FFE",
+      "type" : "AXGroup+OCR",
+      "semanticMeaning" : "AXGroup with text 'Hello'",
+      "isClickable" : false,
+      "size" : {
+        "height" : 10.000000000000025,
+        "width" : 29.499999999999975
+      },
+      "accessibility" : {
+        "title" : null,
+        "description" : "Your iMessage, Hello, 18:07",
+        "focused" : false,
+        "role" : "AXGroup",
+        "enabled" : true
+      },
+      "visualText" : "Hello",
+      "position" : {
+        "x" : 1654.75,
+        "y" : 241
+      }
+    },
+    {
+      "id" : "960711B4-695F-4851-B96A-318B376ABB54",
+      "interactions" : [
+        "right_click"
+      ],
+      "position" : {
+        "y" : 278,
+        "x" : 1654.75
+      },
+      "visualText" : "Hello",
+      "confidence" : 0.60000001192092889,
+      "semanticMeaning" : "AXGroup with text 'Hello'",
+      "type" : "AXGroup+OCR",
+      "isClickable" : false,
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 29.499999999999975
+      },
+      "accessibility" : {
+        "role" : "AXGroup",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "Your iMessage, Hello, 18:08",
+        "title" : null
+      },
+      "ocr" : {
+        "text" : "Hello",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 273,
+          "width" : 29.499999999999975,
+          "height" : 9.9999999999999432,
+          "x" : 1640
+        }
+      }
+    },
+    {
+      "size" : {
+        "height" : 10.500000000000037,
+        "width" : 89.999999999999986
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 305,
+          "width" : 89.999999999999986,
+          "height" : 10.500000000000037,
+          "x" : 1007.5
+        },
+        "text" : "Cara Davidson"
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Cara Davidson'",
+      "position" : {
+        "x" : 1052.5,
+        "y" : 310.25
+      },
+      "visualText" : "Cara Davidson",
+      "id" : "121E016D-CA62-4125-95BA-C49BBD1151DC"
+    },
+    {
+      "id" : "A8155624-3631-4F1D-AC01-0AC34659A4C3",
+      "position" : {
+        "y" : 326.49999999999994,
+        "x" : 1064.25
+      },
+      "size" : {
+        "width" : 113.5,
+        "height" : 8.9999999999999165
+      },
+      "visualText" : "Attachment: 1 Photo",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Attachment: 1 Photo'",
+      "ocr" : {
+        "text" : "Attachment: 1 Photo",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1007.5,
+          "y" : 322,
+          "width" : 113.5,
+          "height" : 8.9999999999999165
+        }
+      },
+      "confidence" : 0.5
+    },
+    {
+      "isClickable" : false,
+      "size" : {
+        "width" : 29.499999999999975,
+        "height" : 9.9999999999999432
+      },
+      "confidence" : 0.60000001192092889,
+      "type" : "AXGroup+OCR",
+      "semanticMeaning" : "AXGroup with text 'Hello'",
+      "position" : {
+        "y" : 315,
+        "x" : 1654.75
+      },
+      "interactions" : [
+        "right_click"
+      ],
+      "visualText" : "Hello",
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXGroup",
+        "description" : "Your iMessage, Hello, 18:10",
+        "enabled" : true,
+        "focused" : false
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 9.9999999999999432,
+          "y" : 310,
+          "x" : 1640,
+          "width" : 29.499999999999975
+        },
+        "text" : "Hello",
+        "confidence" : 0.30000001192092896
+      },
+      "id" : "99D38AA7-A255-47B7-9C63-DCCF6F6D6721"
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 29.499999999999975
+      },
+      "confidence" : 0.60000001192092889,
+      "semanticMeaning" : "AXGroup with text 'Hello'",
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "Your iMessage, Hello, 18:12",
+        "title" : null,
+        "role" : "AXGroup",
+        "focused" : false
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 29.499999999999975,
+          "height" : 9.9999999999999432,
+          "y" : 347.00000000000006,
+          "x" : 1640
+        },
+        "text" : "Hello",
+        "confidence" : 0.30000001192092896
+      },
+      "id" : "E3FC50AD-54B6-4B98-BD45-81AD7757903E",
+      "position" : {
+        "y" : 352,
+        "x" : 1654.75
+      },
+      "isClickable" : false,
+      "visualText" : "Hello"
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 371.00000000000006,
+          "height" : 9.9999999999999432,
+          "x" : 1007.5,
+          "width" : 75.5
+        },
+        "text" : "Cara & Mom"
+      },
+      "visualText" : "Cara & Mom",
+      "position" : {
+        "x" : 1045.25,
+        "y" : 376
+      },
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 75.5
+      },
+      "semanticMeaning" : "Text content: 'Cara & Mom'",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "id" : "ED3473E9-2BB9-4307-81A0-1483D22F3C05",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "id" : "D24E21A9-2217-4E82-ADA7-5DB29B82B5DD",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Location: Marked Location",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 147.5,
+          "x" : 1008,
+          "y" : 387.5,
+          "height" : 8.9999999999999982
+        }
+      },
+      "visualText" : "Location: Marked Location",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1081.75,
+        "y" : 392
+      },
+      "semanticMeaning" : "Text content: 'Location: Marked Location'",
+      "isClickable" : false,
+      "size" : {
+        "width" : 147.5,
+        "height" : 8.9999999999999982
+      }
+    },
+    {
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "Hello! My name is Richard. This is a",
+      "semanticMeaning" : "Text content: 'Hello! My name is Richard. This is a'",
+      "id" : "C8304D4E-5BBF-462F-8893-F4F6B4E1461F",
+      "position" : {
+        "x" : 1559.5,
+        "y" : 389.75
+      },
+      "size" : {
+        "width" : 212.00000000000003,
+        "height" : 12.500000000000011
+      },
+      "ocr" : {
+        "text" : "Hello! My name is Richard. This is a",
+        "boundingBox" : {
+          "height" : 12.500000000000011,
+          "width" : 212.00000000000003,
+          "x" : 1453.5,
+          "y" : 383.5
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "type" : "TextContent",
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "interactions" : [
+
+      ],
+      "id" : "D1F6AA06-E338-416A-8971-B9AB6623516A",
+      "size" : {
+        "height" : 9.5000000000000107,
+        "width" : 26.000000000000011
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 1465.5,
+        "y" : 404.75
+      },
+      "semanticMeaning" : "Text content: 'test!'",
+      "type" : "TextContent",
+      "visualText" : "test!",
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "test!",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1452.5,
+          "y" : 400,
+          "width" : 26.000000000000011,
+          "height" : 9.5000000000000107
+        }
+      }
+    },
+    {
+      "type" : "TextContent",
+      "id" : "8BDF0E19-9528-425E-8862-00EAF8731283",
+      "visualText" : "Sent",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 25.000000000000004,
+        "height" : 9.5000000000000107
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Sent'",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 457.75,
+        "x" : 1020
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Sent",
+        "boundingBox" : {
+          "width" : 25.000000000000004,
+          "y" : 453,
+          "x" : 1007.5,
+          "height" : 9.5000000000000107
+        }
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'Hello this is a test message!'",
+      "ocr" : {
+        "text" : "Hello this is a test message!",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 1501.5,
+          "width" : 167.49999999999997,
+          "height" : 12.499999999999929,
+          "y" : 437.00000000000006
+        }
+      },
+      "size" : {
+        "width" : 167.49999999999997,
+        "height" : 12.499999999999929
+      },
+      "interactions" : [
+
+      ],
+      "id" : "E311F111-0760-4E40-9E4D-38EE37AFCDEB",
+      "type" : "TextContent",
+      "position" : {
+        "y" : 443.25,
+        "x" : 1585.25
+      },
+      "isClickable" : false,
+      "confidence" : 0.30000001192092896,
+      "visualText" : "Hello this is a test message!"
+    },
+    {
+      "id" : "021B5A8A-941B-4931-B41A-620C6E830450",
+      "visualText" : "Hello this is a test message!",
+      "type" : "TextContent",
+      "confidence" : 0.30000001192092896,
+      "size" : {
+        "width" : 167.49999999999997,
+        "height" : 12.499999999999929
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "text" : "Hello this is a test message!",
+        "boundingBox" : {
+          "width" : 167.49999999999997,
+          "y" : 474.00000000000006,
+          "height" : 12.499999999999929,
+          "x" : 1501.5
+        }
+      },
+      "semanticMeaning" : "Text content: 'Hello this is a test message!'",
+      "position" : {
+        "y" : 480.25,
+        "x" : 1585.25
+      }
+    },
+    {
+      "id" : "C404D493-53FC-4A75-965C-D2A925DC2519",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 223.50000000000003,
+        "height" : 12.499999999999929
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.499999999999929,
+          "width" : 223.50000000000003,
+          "y" : 501.50000000000006,
+          "x" : 1008
+        },
+        "text" : "Robyn, Peter, Cara, Mom, Jul... 11:11",
+        "confidence" : 0.5
+      },
+      "visualText" : "Robyn, Peter, Cara, Mom, Jul... 11:11",
+      "position" : {
+        "x" : 1119.75,
+        "y" : 507.75
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Robyn, Peter, Cara, Mom, Jul... 11:11'",
+      "type" : "TextContent"
+    },
+    {
+      "size" : {
+        "width" : 144,
+        "height" : 18.500000000000007
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "y" : 520.75,
+        "x" : 1043
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "visualText" : "Q e Jen loved an image",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 511.5,
+          "x" : 971,
+          "width" : 144,
+          "height" : 18.500000000000007
+        },
+        "text" : "Q e Jen loved an image",
+        "confidence" : 0.5
+      },
+      "id" : "BEE0B730-1E3B-42E7-B481-AC329BAC26F2",
+      "semanticMeaning" : "Text content: 'Q e Jen loved an image'"
+    },
+    {
+      "size" : {
+        "width" : 167.49999999999997,
+        "height" : 12.499999999999929
+      },
+      "position" : {
+        "y" : 510.25,
+        "x" : 1585.25
+      },
+      "semanticMeaning" : "Text content: 'Hello this is a test message!'",
+      "isClickable" : false,
+      "id" : "68E60233-EA09-4AED-919F-15B3FD7BC407",
+      "type" : "TextContent",
+      "confidence" : 0.30000001192092896,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1501.5,
+          "width" : 167.49999999999997,
+          "height" : 12.499999999999929,
+          "y" : 504.00000000000006
+        },
+        "text" : "Hello this is a test message!",
+        "confidence" : 0.30000001192092896
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Hello this is a test message!"
+    },
+    {
+      "ocr" : {
+        "text" : "Hello this is a test message!",
+        "boundingBox" : {
+          "x" : 1498,
+          "width" : 167.49999999999997,
+          "height" : 12.500000000000011,
+          "y" : 541
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "visualText" : "Hello this is a test message!",
+      "position" : {
+        "x" : 1581.75,
+        "y" : 547.25
+      },
+      "confidence" : 0.30000001192092896,
+      "interactions" : [
+
+      ],
+      "id" : "E3F17BB5-F695-44DF-A61F-781566CC058B",
+      "size" : {
+        "width" : 167.49999999999997,
+        "height" : 12.500000000000011
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Hello this is a test message!'"
+    },
+    {
+      "confidence" : 0.30000001192092896,
+      "id" : "A8CBB26E-E8E1-4F5E-AEF3-B92EC9E60EF5",
+      "size" : {
+        "width" : 66.5,
+        "height" : 10.499999999999957
+      },
+      "semanticMeaning" : "Text content: 'Julia Shaw'",
+      "visualText" : "Julia Shaw",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 567,
+          "height" : 10.499999999999957,
+          "width" : 66.5,
+          "x" : 1007.5
+        },
+        "text" : "Julia Shaw"
+      },
+      "position" : {
+        "x" : 1040.75,
+        "y" : 572.25
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'And from Sept 2-6. And then the hotel I'",
+      "position" : {
+        "x" : 1118.25,
+        "y" : 590
+      },
+      "id" : "3A2E08DF-7ECE-4914-9751-41B704439698",
+      "visualText" : "And from Sept 2-6. And then the hotel I",
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "And from Sept 2-6. And then the hotel I",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1007.5,
+          "height" : 10.99999999999997,
+          "y" : 584.5,
+          "width" : 221.49999999999997
+        }
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "size" : {
+        "width" : 221.49999999999997,
+        "height" : 10.99999999999997
+      }
+    },
+    {
+      "size" : {
+        "height" : 11.000000000000052,
+        "width" : 169.50000000000003
+      },
+      "semanticMeaning" : "Text content: '\/ sent u in Barcelona the 6-11'",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 603.5,
+        "x" : 1077.75
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "id" : "9728FBEE-ABF4-49DD-8A17-F907015A6FA1",
+      "confidence" : 0.5,
+      "visualText" : "\/ sent u in Barcelona the 6-11",
+      "ocr" : {
+        "text" : "\/ sent u in Barcelona the 6-11",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 598,
+          "x" : 993,
+          "width" : 169.50000000000003,
+          "height" : 11.000000000000052
+        }
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Another test message",
+        "boundingBox" : {
+          "width" : 131.49999999999997,
+          "y" : 571,
+          "x" : 1537.5,
+          "height" : 12.500000000000011
+        }
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "id" : "45E4E210-FA0C-4312-B80E-CC1934152940",
+      "size" : {
+        "width" : 131.49999999999997,
+        "height" : 12.500000000000011
+      },
+      "visualText" : "Another test message",
+      "position" : {
+        "y" : 577.25,
+        "x" : 1603.25
+      },
+      "semanticMeaning" : "Text content: 'Another test message'",
+      "isClickable" : false
+    },
+    {
+      "id" : "6C48B73A-8790-43F8-9E14-E4B0A53C834E",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "visualText" : "Hello this is a test message!",
+      "position" : {
+        "x" : 1585.25,
+        "y" : 614.25
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Hello this is a test message!",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 608,
+          "height" : 12.500000000000011,
+          "width" : 167.49999999999997,
+          "x" : 1501.5
+        }
+      },
+      "size" : {
+        "height" : 12.500000000000011,
+        "width" : 167.49999999999997
+      },
+      "semanticMeaning" : "Text content: 'Hello this is a test message!'",
+      "confidence" : 0.30000001192092896
+    },
+    {
+      "ocr" : {
+        "text" : "Parker Place",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 632.5,
+          "width" : 77.499999999999986,
+          "x" : 1008,
+          "height" : 10.000000000000025
+        }
+      },
+      "position" : {
+        "x" : 1046.75,
+        "y" : 637.5
+      },
+      "size" : {
+        "width" : 77.499999999999986,
+        "height" : 10.000000000000025
+      },
+      "id" : "3C32646E-710D-4076-965D-22D89CD5E40A",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "visualText" : "Parker Place",
+      "semanticMeaning" : "Text content: 'Parker Place'"
+    },
+    {
+      "semanticMeaning" : "Text content: 'Haha yea, last minute hopped over here'",
+      "size" : {
+        "height" : 11.499999999999984,
+        "width" : 222.5
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1119.25,
+        "y" : 655.75
+      },
+      "ocr" : {
+        "text" : "Haha yea, last minute hopped over here",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 222.5,
+          "x" : 1008,
+          "height" : 11.499999999999984,
+          "y" : 650
+        }
+      },
+      "id" : "DBEFA4AB-B668-4705-A4B2-13126EE2A8A8",
+      "visualText" : "Haha yea, last minute hopped over here"
+    },
+    {
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'instead of spending the weekdays in H...'",
+      "id" : "80E48687-E293-4C01-AE8D-0172ADDA6834",
+      "ocr" : {
+        "text" : "instead of spending the weekdays in H...",
+        "boundingBox" : {
+          "x" : 1007.5,
+          "width" : 219.99999999999997,
+          "height" : 11.500000000000064,
+          "y" : 665
+        },
+        "confidence" : 0.5
+      },
+      "size" : {
+        "width" : 219.99999999999997,
+        "height" : 11.500000000000064
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "visualText" : "instead of spending the weekdays in H...",
+      "isClickable" : false,
+      "position" : {
+        "y" : 670.75,
+        "x" : 1117.5
+      }
+    },
+    {
+      "size" : {
+        "height" : 12.500000000000011,
+        "width" : 132.99999999999997
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'This is a test message'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "This is a test message",
+        "boundingBox" : {
+          "x" : 1536,
+          "y" : 645,
+          "width" : 132.99999999999997,
+          "height" : 12.500000000000011
+        }
+      },
+      "position" : {
+        "x" : 1602.5,
+        "y" : 651.25
+      },
+      "interactions" : [
+
+      ],
+      "id" : "9B5FAEE6-CFE1-4577-BBD0-7A38D16A8FB1",
+      "visualText" : "This is a test message"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12.500000000000011,
+        "width" : 178.00000000000006
+      },
+      "id" : "E246E058-8587-4688-B78D-D1C6743B1C5F",
+      "confidence" : 0.30000001192092896,
+      "position" : {
+        "x" : 1576.5,
+        "y" : 687.75
+      },
+      "visualText" : "Hello this is a test message in",
+      "semanticMeaning" : "Text content: 'Hello this is a test message in'",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000011,
+          "width" : 178.00000000000006,
+          "y" : 681.5,
+          "x" : 1487.5
+        },
+        "text" : "Hello this is a test message in",
+        "confidence" : 0.30000001192092896
+      }
+    },
+    {
+      "id" : "86317B31-BDD2-40C9-88E6-414DFB375FE8",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "size" : {
+        "width" : 85.999999999999986,
+        "height" : 11.999999999999996
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 698,
+          "x" : 1487.5,
+          "width" : 85.999999999999986,
+          "height" : 11.999999999999996
+        },
+        "text" : "Messages app"
+      },
+      "visualText" : "Messages app",
+      "semanticMeaning" : "Text content: 'Messages app'",
+      "position" : {
+        "x" : 1530.5,
+        "y" : 704
+      },
+      "isClickable" : false,
+      "confidence" : 0.5
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.30000001192092896,
+      "semanticMeaning" : "Text content: 'Hitzel Cruz'",
+      "id" : "92D81C59-6205-4A7B-BE21-81D919483BA3",
+      "visualText" : "Hitzel Cruz",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 1042,
+        "y" : 703.25
+      },
+      "size" : {
+        "width" : 67.999999999999986,
+        "height" : 10.500000000000037
+      },
+      "ocr" : {
+        "text" : "Hitzel Cruz",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "x" : 1008,
+          "y" : 698,
+          "width" : 67.999999999999986,
+          "height" : 10.500000000000037
+        }
+      }
+    },
+    {
+      "position" : {
+        "x" : 1048,
+        "y" : 720.75
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Sorry, butt call'",
+      "visualText" : "Sorry, butt call",
+      "ocr" : {
+        "text" : "Sorry, butt call",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 81,
+          "height" : 11.499999999999984,
+          "x" : 1007.5,
+          "y" : 715
+        }
+      },
+      "id" : "C52E6C49-5B71-44D9-8F52-D8F28A6DA071",
+      "size" : {
+        "height" : 11.499999999999984,
+        "width" : 81
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "size" : {
+        "width" : 55.000000000000014,
+        "height" : 11.499999999999984
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Yesterday'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 55.000000000000014,
+          "height" : 11.499999999999984,
+          "x" : 1177.5,
+          "y" : 699
+        },
+        "confidence" : 0.5,
+        "text" : "Yesterday"
+      },
+      "id" : "4290879C-F53D-4BB8-AEC2-21A0B5988589",
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 1205,
+        "y" : 704.75
+      },
+      "visualText" : "Yesterday",
+      "type" : "TextContent"
+    },
+    {
+      "confidence" : 0.5,
+      "visualText" : "Hello this is a test message",
+      "type" : "TextContent",
+      "id" : "D8B78A77-043E-4AC2-87E0-DB91529C1B17",
+      "ocr" : {
+        "text" : "Hello this is a test message",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 735,
+          "width" : 163.49999999999997,
+          "height" : 12.500000000000011,
+          "x" : 1505.5
+        }
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 1587.25,
+        "y" : 741.25
+      },
+      "semanticMeaning" : "Text content: 'Hello this is a test message'",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 163.49999999999997,
+        "height" : 12.500000000000011
+      }
+    },
+    {
+      "id" : "F5077179-AD10-408E-9525-ED061B9D41FF",
+      "type" : "TextContent",
+      "confidence" : 0.30000001192092896,
+      "interactions" : [
+
+      ],
+      "visualText" : "Mom",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 9.5000000000000107,
+          "x" : 1008,
+          "y" : 764,
+          "width" : 29.499999999999986
+        },
+        "text" : "Mom",
+        "confidence" : 0.30000001192092896
+      },
+      "semanticMeaning" : "Text content: 'Mom'",
+      "position" : {
+        "y" : 768.75,
+        "x" : 1022.75
+      },
+      "isClickable" : false,
+      "size" : {
+        "height" : 9.5000000000000107,
+        "width" : 29.499999999999986
+      }
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 781,
+          "width" : 125.5,
+          "height" : 10.99999999999997,
+          "x" : 1007.5
+        },
+        "text" : "You unsent a message",
+        "confidence" : 0.5
+      },
+      "position" : {
+        "x" : 1070.25,
+        "y" : 786.5
+      },
+      "id" : "FFDE801E-173B-4144-BC41-02F0AECDAE93",
+      "size" : {
+        "height" : 10.99999999999997,
+        "width" : 125.5
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "visualText" : "You unsent a message",
+      "semanticMeaning" : "Text content: 'You unsent a message'"
+    },
+    {
+      "id" : "6BBFBC71-3C76-482D-8D29-C986BF4DDEF5",
+      "position" : {
+        "y" : 770.25,
+        "x" : 1205
+      },
+      "size" : {
+        "width" : 55.000000000000014,
+        "height" : 11.500000000000064
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 764.5,
+          "width" : 55.000000000000014,
+          "x" : 1177.5,
+          "height" : 11.500000000000064
+        },
+        "text" : "Yesterday",
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'Yesterday'",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "visualText" : "Yesterday"
+    },
+    {
+      "visualText" : "Delivered",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXHeading",
+        "title" : null,
+        "focused" : false,
+        "description" : "Delivered"
+      },
+      "interactions" : [
+
+      ],
+      "type" : "AXHeading+OCR",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1633,
+          "height" : 7.4999999999999574,
+          "y" : 761,
+          "width" : 45.000000000000007
+        },
+        "confidence" : 0.5,
+        "text" : "Delivered"
+      },
+      "position" : {
+        "x" : 1655.5,
+        "y" : 764.75
+      },
+      "id" : "2EE1F668-F082-4811-AA27-8109AD60C692",
+      "semanticMeaning" : "AXHeading with text 'Delivered'",
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "size" : {
+        "height" : 7.4999999999999574,
+        "width" : 45.000000000000007
+      }
+    },
+    {
+      "visualText" : "HouseGroup",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "type" : "TextContent",
+      "size" : {
+        "width" : 77.499999999999986,
+        "height" : 11.999999999999996
+      },
+      "id" : "CE3FB882-401F-43C1-B595-0FA390528FEA",
+      "confidence" : 0.5,
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1008,
+          "width" : 77.499999999999986,
+          "y" : 829.5,
+          "height" : 11.999999999999996
+        },
+        "text" : "HouseGroup"
+      },
+      "position" : {
+        "y" : 835.5,
+        "x" : 1046.75
+      },
+      "semanticMeaning" : "Text content: 'HouseGroup'"
+    },
+    {
+      "id" : "F58915E3-2511-47F0-A23F-0DD0784E7FC9",
+      "semanticMeaning" : "Text content: 'dinner is ready'",
+      "size" : {
+        "width" : 82.5,
+        "height" : 11.499999999999984
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "position" : {
+        "y" : 851.75,
+        "x" : 1048.75
+      },
+      "ocr" : {
+        "text" : "dinner is ready",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 846,
+          "x" : 1007.5,
+          "height" : 11.499999999999984,
+          "width" : 82.5
+        }
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "dinner is ready"
+    },
+    {
+      "ocr" : {
+        "text" : "Yesterday",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1177.5,
+          "width" : 55.000000000000014,
+          "y" : 830,
+          "height" : 11.499999999999984
+        }
+      },
+      "type" : "TextContent",
+      "size" : {
+        "height" : 11.499999999999984,
+        "width" : 55.000000000000014
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "position" : {
+        "y" : 835.75,
+        "x" : 1205
+      },
+      "visualText" : "Yesterday",
+      "id" : "E17FA21E-5E80-42D5-984D-E2940AA11693",
+      "semanticMeaning" : "Text content: 'Yesterday'",
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "x" : 943,
+        "y" : 191
+      },
+      "isClickable" : false,
+      "confidence" : 0.69999999999999996,
+      "id" : "ED94619C-0A7A-451F-A27E-2F6B86D28581",
+      "size" : {
+        "width" : 300,
+        "height" : 30
+      },
+      "semanticMeaning" : "Search",
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXTextField",
+        "description" : "Search",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXTextField",
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ]
+    },
+    {
+      "id" : "81C97226-C1E3-4DBD-9687-9D29B28934B0",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 22,
+        "width" : 103
+      },
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXPopUpButton",
+        "enabled" : true,
+        "description" : "Richard Shaw, shaw.richard@icloud.com",
+        "focused" : false
+      },
+      "type" : "AXPopUpButton",
+      "position" : {
+        "y" : 154,
+        "x" : 1293.5
+      },
+      "semanticMeaning" : "Richard Shaw, shaw.richard@icloud.com",
+      "actionHint" : "Click Richard Shaw, shaw.richard@icloud.com"
+    },
+    {
+      "isClickable" : true,
+      "semanticMeaning" : "Apps",
+      "size" : {
+        "width" : 24,
+        "height" : 24
+      },
+      "position" : {
+        "x" : 1270,
+        "y" : 830.5
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "Apps",
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "D55F30D5-FD30-4AB7-9DBD-E935B43A2381",
+      "type" : "AXButton",
+      "actionHint" : "Click Apps"
+    },
+    {
+      "type" : "AXTextField",
+      "position" : {
+        "y" : 828,
+        "x" : 1316
+      },
+      "confidence" : 0.69999999999999996,
+      "visualText" : "Hi",
+      "accessibility" : {
+        "role" : "AXTextField",
+        "title" : null,
+        "enabled" : true,
+        "focused" : true,
+        "description" : "Message"
+      },
+      "id" : "41826B83-93CD-4DC9-A896-06BFBBD012A0",
+      "interactions" : [
+        "type",
+        "select_all",
+        "copy",
+        "paste"
+      ],
+      "isClickable" : false,
+      "semanticMeaning" : "Message",
+      "size" : {
+        "height" : 28,
+        "width" : 320
+      }
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 1657,
+        "y" : 831
+      },
+      "size" : {
+        "width" : 23,
+        "height" : 23
+      },
+      "actionHint" : "Click Emoji picker",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "Emoji picker",
+        "title" : null
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "Emoji picker",
+      "id" : "6D06464D-2FEA-40FC-BAF6-144221646F74"
+    },
+    {
+      "actionHint" : "Click Compose",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 139,
+        "x" : 1206
+      },
+      "id" : "36E3568B-2CF7-484E-9D23-A409FD179057",
+      "type" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "Compose",
+        "title" : null,
+        "focused" : false,
+        "enabled" : true
+      },
+      "semanticMeaning" : "Compose",
+      "size" : {
+        "width" : 39,
+        "height" : 52
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "actionHint" : "Click info",
+      "semanticMeaning" : "info",
+      "size" : {
+        "width" : 38,
+        "height" : 52
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "info",
+        "enabled" : true
+      },
+      "id" : "17540EB5-6802-4388-A204-8425BD88CE59",
+      "position" : {
+        "y" : 139,
+        "x" : 1649
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "id" : "3B198511-2AC8-4A4C-903A-17F2714DDEBF",
+      "actionHint" : "icon_button",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "icon",
+      "size" : {
+        "width" : 39.009246826171875,
+        "height" : 28.984562337398529
+      },
+      "position" : {
+        "x" : 1894.4924468994141,
+        "y" : 670.70844304561615
+      },
+      "type" : "Shape_irregular",
+      "confidence" : 0.80000000000000004
+    },
+    {
+      "confidence" : 0.80000000000000004,
+      "type" : "Shape_irregular",
+      "id" : "5A9F3457-B6E2-417F-99CB-6A01C08FA71A",
+      "semanticMeaning" : "icon",
+      "actionHint" : "icon_button",
+      "interactions" : [
+
+      ],
+      "isClickable" : true,
+      "size" : {
+        "height" : 34.417515739798546,
+        "width" : 22.129463195800781
+      },
+      "position" : {
+        "y" : 408.3592171818018,
+        "x" : 1902.8756561279297
+      }
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Apple",
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "interactions" : [
+        "click"
+      ],
+      "id" : "4349523A-EE40-4E18-8F91-A8DE642F13BC",
+      "visualText" : "Apple",
+      "confidence" : 0.94999999999999996,
+      "actionHint" : "Click Apple",
+      "isClickable" : true
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "visualText" : "Messages",
+      "actionHint" : "Click Messages",
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Messages",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "type" : "appMenu",
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "id" : "29A35AA1-D444-4F38-B9D5-4719AAFF8A18",
+      "confidence" : 0.94999999999999996
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click File",
+      "visualText" : "File",
+      "id" : "72CE73E0-F6A2-48F0-931D-06613E5D119D",
+      "semanticMeaning" : "Menu bar item: File",
+      "isClickable" : true,
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "type" : "appMenu"
+    },
+    {
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: Edit",
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "id" : "217BDBC4-467C-43F3-A09D-3C5A5F740EC4",
+      "actionHint" : "Click Edit",
+      "visualText" : "Edit"
+    },
+    {
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click View",
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "id" : "F31439B3-50BF-44D5-B1E8-C799B9A6091B",
+      "semanticMeaning" : "Menu bar item: View",
+      "visualText" : "View"
+    },
+    {
+      "type" : "appMenu",
+      "id" : "BACDFC14-325A-4535-A6E8-EEFDC462EC06",
+      "semanticMeaning" : "Menu bar item: Conversation",
+      "visualText" : "Conversation",
+      "confidence" : 0.94999999999999996,
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click Conversation",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      }
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Format",
+      "visualText" : "Format",
+      "isClickable" : true,
+      "actionHint" : "Click Format",
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "width" : 60,
+        "height" : 24
+      },
+      "type" : "appMenu",
+      "id" : "C4B69124-8063-4DD2-A4FE-618723EF5E62",
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      }
+    },
+    {
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "id" : "35B9C78D-674F-40CF-8468-BC4EE49D9553",
+      "visualText" : "Window",
+      "interactions" : [
+        "click"
+      ],
+      "type" : "appMenu",
+      "position" : {
+        "x" : 0,
+        "y" : 0
+      },
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "semanticMeaning" : "Menu bar item: Window",
+      "actionHint" : "Click Window"
+    },
+    {
+      "position" : {
+        "y" : 0,
+        "x" : 0
+      },
+      "type" : "appMenu",
+      "id" : "E22F998E-3345-48DF-93F9-1EF9A1E3CEA9",
+      "size" : {
+        "height" : 24,
+        "width" : 60
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: Help",
+      "visualText" : "Help",
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.94999999999999996,
+      "actionHint" : "Click Help"
+    }
+  ]
+}

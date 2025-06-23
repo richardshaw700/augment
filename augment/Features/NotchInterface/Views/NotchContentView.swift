@@ -6,6 +6,7 @@ struct NotchContentView: View {
     @ObservedObject var interface: NotchViewModel
     @State private var instruction = ""
     @FocusState private var isTextFieldFocused: Bool
+    @State private var recordingButtonPressed = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -56,9 +57,10 @@ struct NotchContentView: View {
                             VStack(spacing: 8) {
                                 // Main input area
                                 HStack(spacing: 8) {
-                                    TextField("What would you like me to do?", text: $instruction)
+                                    TextField(interface.workflowRecorder.isRecording ? "Recording workflow..." : "What would you like me to do?", text: $instruction)
                                         .textFieldStyle(.roundedBorder)
                                         .focused($isTextFieldFocused)
+                                        .disabled(interface.workflowRecorder.isRecording)
                                         .onSubmit {
                                             interface.onTextFieldSubmitted()
                                         }
@@ -68,6 +70,46 @@ struct NotchContentView: View {
                                         .onChange(of: instruction) { newValue in
                                             interface.instruction = newValue
                                         }
+                                    
+                                    // Workflow recording button
+                                    Button(action: {
+                                        // Immediate visual feedback
+                                        recordingButtonPressed.toggle()
+                                        
+                                        // Force immediate UI refresh
+                                        withAnimation(.none) {
+                                            if interface.workflowRecorder.isRecording {
+                                                interface.workflowRecorder.stopRecording()
+                                            } else {
+                                                interface.workflowRecorder.startRecording(workflowName: "Workflow")
+                                            }
+                                        }
+                                        
+                                        // Reset button press state after a brief moment
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                            recordingButtonPressed = false
+                                        }
+                                    }) {
+                                        HStack(spacing: 4) {
+                                            Image(systemName: interface.workflowRecorder.recordingState.icon)
+                                                .foregroundColor(interface.workflowRecorder.recordingState.color)
+                                                .font(.caption)
+                                            Text(interface.workflowRecorder.recordingState.displayName)
+                                                .font(.caption)
+                                        }
+                                        .padding(.horizontal, 6)
+                                        .padding(.vertical, 2)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .fill(interface.workflowRecorder.recordingState.color.opacity(recordingButtonPressed ? 0.3 : 0.1))
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 4)
+                                                        .stroke(interface.workflowRecorder.recordingState.color.opacity(recordingButtonPressed ? 0.6 : 0.3), lineWidth: 1)
+                                                )
+                                        )
+                                        .scaleEffect(recordingButtonPressed ? 0.95 : 1.0)
+                                    }
+                                    .buttonStyle(.plain)
                                     
                                     if interface.gptManager.isRunning {
                                         Button(action: {
@@ -87,7 +129,7 @@ struct NotchContentView: View {
                                                 .font(.title2)
                                         }
                                         .buttonStyle(.plain)
-                                        .disabled(instruction.isEmpty)
+                                        .disabled(instruction.isEmpty || interface.workflowRecorder.isRecording)
                                     }
                                     
                                     Button {
@@ -100,11 +142,11 @@ struct NotchContentView: View {
                                     .buttonStyle(.plain)
                                 }
                                 
-                                // Streaming action display
+                                // Streaming action display or workflow recording feedback
                                 HStack {
-                                    Text(interface.currentStreamingText)
+                                    Text(interface.workflowRecorder.recordingState == .error || interface.workflowRecorder.isRecording ? interface.workflowRecorder.feedbackMessage : interface.currentStreamingText)
                                         .font(.system(size: 12))
-                                        .foregroundColor(.white)
+                                        .foregroundColor(interface.workflowRecorder.recordingState == .error ? .red : .white)
                                         .lineLimit(2)
                                         .truncationMode(.tail)
                                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -113,6 +155,18 @@ struct NotchContentView: View {
                                         ProgressView()
                                             .scaleEffect(0.6)
                                             .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                    } else if interface.workflowRecorder.isRecording {
+                                        // Show recording indicator
+                                        HStack(spacing: 4) {
+                                            Text("\(interface.workflowRecorder.stepsRecorded)")
+                                                .font(.caption)
+                                                .foregroundColor(.white.opacity(0.8))
+                                            Circle()
+                                                .fill(Color.red)
+                                                .frame(width: 8, height: 8)
+                                                .scaleEffect(1.2)
+                                                .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: interface.workflowRecorder.isRecording)
+                                        }
                                     }
                                 }
                                 .frame(height: 30)
