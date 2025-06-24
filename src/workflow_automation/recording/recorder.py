@@ -112,7 +112,7 @@ class WorkflowRecorder:
         # 4. Generate and save action blueprint separately
         action_blueprint = generate_action_blueprint_only(events_for_summary)
         if action_blueprint:
-            self._save_action_blueprint(action_blueprint)
+            self._save_action_blueprint(action_blueprint, session.session_id)
 
         # 5. Clean up
         self.logger.close()
@@ -320,11 +320,12 @@ class WorkflowRecorder:
             # Clear buffer regardless of success or failure
             self.keyboard_buffer = []
 
-    def _save_action_blueprint(self, action_steps: list):
-        """Save action blueprint to separate numbered file in action_blueprints folder."""
+    def _save_action_blueprint(self, action_steps: list, session_id: str):
+        """Save action blueprint to both action_blueprints folder (numbered) and output folder (timestamped)."""
         try:
-            # Create the action_blueprints directory
             project_root = Path(__file__).parent.parent.parent
+            
+            # 1. Save to action_blueprints directory (numbered)
             blueprints_dir = project_root / "workflow_automation" / "action_blueprints"
             blueprints_dir.mkdir(parents=True, exist_ok=True)
             
@@ -347,15 +348,29 @@ class WorkflowRecorder:
             # Determine next number (highest + 1, or 1 if no valid files exist)
             next_number = max(existing_numbers) + 1 if existing_numbers else 1
             
-            # Create the blueprint file
+            # Create the numbered blueprint file
             blueprint_file = blueprints_dir / f"blueprint_{next_number}.txt"
             
-            # Write the action steps
+            # Write the action steps to numbered file
             with open(blueprint_file, 'w') as f:
                 for i, action in enumerate(action_steps, 1):
                     f.write(f"{i}. {action}\n")
             
             print(f"📋 Action blueprint saved: {blueprint_file}")
+            
+            # 2. Save to output directory (timestamped)
+            output_dir = project_root / "workflow_automation" / "output"
+            output_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Create timestamped blueprint file
+            timestamped_blueprint_file = output_dir / f"action_blueprint_{session_id}.txt"
+            
+            # Write the action steps to timestamped file
+            with open(timestamped_blueprint_file, 'w') as f:
+                for i, action in enumerate(action_steps, 1):
+                    f.write(f"{i}. {action}\n")
+            
+            print(f"📋 Action blueprint also saved: {timestamped_blueprint_file}")
             
         except Exception as e:
             print(f"⚠️ Failed to save action blueprint: {e}")

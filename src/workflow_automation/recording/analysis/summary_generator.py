@@ -247,9 +247,7 @@ def _format_event_group(event_group: List[Dict], group_number: int) -> str:
     first_event = event_group[0]
     event_type = first_event.get("type")  # Use 'type' from session manager
     
-    # Skip UI inspection events entirely
-    if event_type == "ui_inspected":
-        return ""
+    # UI inspection events are shown in timeline but not in blueprint
     
     start_time = datetime.fromtimestamp(first_event.get("timestamp", 0)).strftime('%H:%M:%S')
     app_name = first_event.get("app_name", "Unknown App")  # Direct access from session manager
@@ -341,14 +339,10 @@ def _generate_action_blueprint(events: List[Dict]) -> str:
         if event_type == "mouse_click":
             # Extract target element from enriched description
             target = _extract_click_target(first_event)
-            # Include all clicks - even unnamed elements can be important for automation
-            # The LLM can figure out what to click based on coordinates and context
-            if target and target.strip():
+            # Only include clicks with meaningful targets - skip unnamed elements
+            if target and target.strip() and not _is_unnamed_element(target):
                 action_steps.append(f"ACTION: CLICK | target={target} | app={app_name}")
-            else:
-                # Fallback to coordinates for unnamed elements
-                coords = first_event.get("coordinates", (0, 0))
-                action_steps.append(f"ACTION: CLICK | target=coords:{coords} | app={app_name}")
+            # Skip unnamed elements entirely from the action blueprint
         
         elif event_type == "keyboard":
             # Handle different keyboard event types
@@ -378,8 +372,10 @@ def _generate_action_blueprint(events: List[Dict]) -> str:
                     total_magnitude = _calculate_scroll_magnitude(delta[0], delta[1])
                     action_steps.append(f"ACTION: SCROLL | direction={direction}({total_magnitude}u) | app={app_name}")
                 else:
-                    # Single scroll event with delta
-                    action_steps.append(f"ACTION: SCROLL | delta={delta} | app={app_name}")
+                    # Single scroll event with delta and direction
+                    direction = _determine_scroll_direction(delta[0], delta[1])
+                    magnitude = _calculate_scroll_magnitude(delta[0], delta[1])
+                    action_steps.append(f"ACTION: SCROLL | delta={delta} direction={direction}({magnitude}u) | app={app_name}")
         
         elif event_type == "ui_inspected":
             # Skip UI inspection actions in blueprint - they're internal
@@ -409,14 +405,10 @@ def generate_action_blueprint_only(events: List[Dict]) -> List[str]:
         if event_type == "mouse_click":
             # Extract target element from enriched description
             target = _extract_click_target(first_event)
-            # Include all clicks - even unnamed elements can be important for automation
-            # The LLM can figure out what to click based on coordinates and context
-            if target and target.strip():
+            # Only include clicks with meaningful targets - skip unnamed elements
+            if target and target.strip() and not _is_unnamed_element(target):
                 action_steps.append(f"ACTION: CLICK | target={target} | app={app_name}")
-            else:
-                # Fallback to coordinates for unnamed elements
-                coords = first_event.get("coordinates", (0, 0))
-                action_steps.append(f"ACTION: CLICK | target=coords:{coords} | app={app_name}")
+            # Skip unnamed elements entirely from the action blueprint
         
         elif event_type == "keyboard":
             # Handle different keyboard event types
@@ -446,14 +438,25 @@ def generate_action_blueprint_only(events: List[Dict]) -> List[str]:
                     total_magnitude = _calculate_scroll_magnitude(delta[0], delta[1])
                     action_steps.append(f"ACTION: SCROLL | direction={direction}({total_magnitude}u) | app={app_name}")
                 else:
-                    # Single scroll event with delta
-                    action_steps.append(f"ACTION: SCROLL | delta={delta} | app={app_name}")
+                    # Single scroll event with delta and direction
+                    direction = _determine_scroll_direction(delta[0], delta[1])
+                    magnitude = _calculate_scroll_magnitude(delta[0], delta[1])
+                    action_steps.append(f"ACTION: SCROLL | delta={delta} direction={direction}({magnitude}u) | app={app_name}")
         
         elif event_type == "ui_inspected":
             # Skip UI inspection actions in blueprint - they're internal
             continue
     
     return action_steps
+
+def _is_unnamed_element(target: str) -> bool:
+    """Check if a click target represents an unnamed element that should be skipped."""
+    unnamed_patterns = [
+        "unnamed_element",
+        "element_in_",
+        "an unnamed element"
+    ]
+    return any(pattern in target.lower() for pattern in unnamed_patterns)
 
 def _extract_click_target(event: Dict) -> str:
     """Extract the target element from a click event."""
