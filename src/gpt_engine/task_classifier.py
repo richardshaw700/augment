@@ -15,6 +15,7 @@ class TaskType(Enum):
     SMART_ACTION = "smart_action"                # Knowledge + simple action
     HYBRID = "hybrid"                           # Knowledge + complex UI actions
     COMPUTER_USE = "computer_use"               # Pure UI automation
+    ACTION_BLUEPRINT = "action_blueprint"        # Execute recorded workflow blueprint
     
 class TaskPriority(Enum):
     """Priority levels for task execution"""
@@ -81,7 +82,11 @@ class TaskClassifier:
         """Main classification method"""
         task_lower = task.lower().strip()
         
-        # Check for hybrid patterns first
+        # Check for ACTION_BLUEPRINT pattern first (highest priority)
+        if self._is_action_blueprint_task(task_lower):
+            return self._create_action_blueprint_classification(task)
+        
+        # Check for hybrid patterns
         hybrid_match = self._check_hybrid_patterns(task_lower)
         if hybrid_match:
             return self._create_hybrid_classification(task, hybrid_match)
@@ -114,6 +119,20 @@ class TaskClassifier:
         })
         
         return classification
+    
+    def _is_action_blueprint_task(self, task_lower: str) -> bool:
+        """Check if task is requesting ACTION_BLUEPRINT execution"""
+        blueprint_indicators = [
+            "execute blueprint",
+            "run blueprint", 
+            "follow blueprint",
+            "action blueprint",
+            "workflow blueprint",
+            "run workflow",
+            "execute workflow"
+        ]
+        
+        return any(indicator in task_lower for indicator in blueprint_indicators)
     
     def _check_hybrid_patterns(self, task_lower: str) -> Optional[str]:
         """Check if task matches hybrid patterns"""
@@ -200,6 +219,16 @@ class TaskClassifier:
             score += 0.6
         
         return min(score, 1.0)
+    
+    def _create_action_blueprint_classification(self, task: str) -> TaskClassification:
+        """Create classification for ACTION_BLUEPRINT tasks"""
+        return TaskClassification(
+            task_type=TaskType.ACTION_BLUEPRINT,
+            priority=TaskPriority.SEQUENTIAL,
+            confidence=0.9,
+            reasoning="Task requests execution of a recorded workflow blueprint. Will inject blueprint guidance and execute steps sequentially.",
+            suggested_actions=["execute_blueprint_steps"]
+        )
     
     def _create_hybrid_classification(self, task: str, pattern: str) -> TaskClassification:
         """Create classification for hybrid tasks"""

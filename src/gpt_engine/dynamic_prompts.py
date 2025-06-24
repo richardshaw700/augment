@@ -236,6 +236,34 @@ def inject_messages_app_guidance(active_chat: str = None, target_recipient: str 
     dynamic_prompt_manager.add_injection('messages_app_guidance', content, priority)
 
 
+def inject_action_blueprint_guidance(blueprint_steps: list, priority: int = 5):
+    """Quick function to inject ACTION_BLUEPRINT execution guidance."""
+    content = f"""🎯 ACTION BLUEPRINT EXECUTION MODE:
+Execute the following recorded workflow steps one by one by finding the relevant targets in the current UI state.
+
+BLUEPRINT STEPS:
+{chr(10).join(f"{i}. {step}" for i, step in enumerate(blueprint_steps, 1))}
+
+EXECUTION STRATEGY:
+When given ACTION BLUEPRINT steps, execute them by finding the relevant targets in the current UI state.
+
+Example: ACTION: CLICK | target=txt:iMessage | app=Messages
+LLM Reasoning: "I see txt:iMessage@A-23:49 in the UI, so I'll click A-23:49"
+
+If there are no direct matches, figure out what to do next by semantically understanding what the step is supposed to accomplish.
+
+Example: ACTION: CLICK | target=Cara | app=Messages  
+LLM Reasoning: "No direct match for 'Cara' in the current Messages UI. This is likely a contact name, so I should search for 'Cara' in the search bar first."
+
+IMPORTANT: 
+- Find exact targets in compressed UI when possible (e.g., txt:iMessage@A-23:49)
+- If exact target not found, use semantic reasoning to accomplish the goal
+- Execute steps sequentially - complete each step before moving to the next
+- Use ui_inspect first to understand current state
+- Adapt to UI changes while maintaining the workflow intent"""
+    
+    dynamic_prompt_manager.add_injection('action_blueprint_guidance', content, priority)
+
 def inject_app_context_guidance(app_name: str, context_info: Dict[str, Any] = None, priority: int = 3):
     """Quick function to inject app-specific context guidance."""
     if app_name.lower() == "messages":

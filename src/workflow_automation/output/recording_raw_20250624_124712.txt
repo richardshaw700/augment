@@ -1,0 +1,4966 @@
+
+================================================================================
+WORKFLOW RECORDING SESSION LOG
+================================================================================
+Session ID: session_20250624_124712
+Workflow Name: DefaultWorkflow
+Start Time: 2025-06-24 12:47:12
+Log File: recording_raw_20250624_124712.txt
+Summary File: recording_summary_20250624_124712.txt
+================================================================================
+
+
+[12:47:12.860] SESSION_START: Recording session started
+Data:
+{
+  "session_id": "session_20250624_124712",
+  "start_time": 1750783632.860208,
+  "end_time": null,
+  "duration": 0.00021600723266601562,
+  "steps": [],
+  "metadata": {
+    "workflow_name": "DefaultWorkflow"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:13.991] SYSTEM_EVENT: Mouse left click at (1035, 235)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783633.963003,
+  "description": "Mouse left click at (1035, 235)",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "coordinates": [
+      1035,
+      235
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:16.815] WORKFLOW_STEP: Clicked on txt:Richard Shaw@A-8:8 in Messages
+Data:
+{
+  "step_id": 1,
+  "event_type": "mouse_click",
+  "timestamp": 1750783633.963003,
+  "description": "Clicked on txt:Richard Shaw@A-8:8 in Messages",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "Messages",
+      "coordinates": [
+        1035,
+        235
+      ],
+      "button": "left"
+    },
+    "target_element": {
+      "description": "txt:Richard Shaw@A-8:8"
+    },
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:16.818] SYSTEM_EVENT: Mouse left click at (994, 247)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783636.8162692,
+  "description": "Mouse left click at (994, 247)",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "coordinates": [
+      994,
+      247
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:16.818] WORKFLOW_STEP: Clicked on txt:Richard Shaw@A-8:8 in Messages
+Data:
+{
+  "step_id": 2,
+  "event_type": "mouse_click",
+  "timestamp": 1750783636.8162692,
+  "description": "Clicked on txt:Richard Shaw@A-8:8 in Messages",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "Messages",
+      "coordinates": [
+        994,
+        247
+      ],
+      "button": "left",
+      "processed_info": {
+        "description": "Clicked on txt:Richard Shaw@A-8:8 in Messages",
+        "target_element": {
+          "description": "txt:Richard Shaw@A-8:8"
+        }
+      }
+    },
+    "target_element": {
+      "description": "txt:Richard Shaw@A-8:8"
+    },
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:17.383] SYSTEM_EVENT: Mouse left click at (1321, 841)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783637.377656,
+  "description": "Mouse left click at (1321, 841)",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "coordinates": [
+      1321,
+      841
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:17.384] WORKFLOW_STEP: Clicked on txt:iMessage@A-23:49 in Messages
+Data:
+{
+  "step_id": 3,
+  "event_type": "mouse_click",
+  "timestamp": 1750783637.377656,
+  "description": "Clicked on txt:iMessage@A-23:49 in Messages",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "Messages",
+      "coordinates": [
+        1321,
+        841
+      ],
+      "button": "left",
+      "processed_info": {
+        "description": "Clicked on txt:iMessage@A-23:49 in Messages",
+        "target_element": {
+          "description": "txt:iMessage@A-23:49"
+        }
+      }
+    },
+    "target_element": {
+      "description": "txt:iMessage@A-23:49"
+    },
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:19.280] SYSTEM_EVENT: Key press: 'H'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783639.276691,
+  "description": "Key press: 'H'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 4,
+    "key_char": "H"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:19.477] SYSTEM_EVENT: Key press: 'e'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783639.4770508,
+  "description": "Key press: 'e'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 14,
+    "key_char": "e"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:19.620] SYSTEM_EVENT: Key press: 'l'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783639.620252,
+  "description": "Key press: 'l'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 37,
+    "key_char": "l"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:20.016] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783640.016184,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:20.172] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783640.1722932,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:20.400] SYSTEM_EVENT: Key press: '!'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783640.399369,
+  "description": "Key press: '!'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 18,
+    "key_char": "!"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:21.056] SYSTEM_EVENT: Key press: 'delete'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783641.056321,
+  "description": "Key press: 'delete'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 51,
+    "key_char": "delete"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:21.202] SYSTEM_EVENT: Key press: 'delete'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783641.202333,
+  "description": "Key press: 'delete'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 51,
+    "key_char": "delete"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:21.353] SYSTEM_EVENT: Key press: 'delete'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783641.3527071,
+  "description": "Key press: 'delete'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 51,
+    "key_char": "delete"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:21.580] SYSTEM_EVENT: Key press: 'l'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783641.5792909,
+  "description": "Key press: 'l'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 37,
+    "key_char": "l"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:21.927] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783641.927089,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:22.076] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783642.075427,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:22.529] SYSTEM_EVENT: Key press: 'delete'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783642.529323,
+  "description": "Key press: 'delete'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 51,
+    "key_char": "delete"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:22.784] SYSTEM_EVENT: Key press: '!'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783642.7843132,
+  "description": "Key press: '!'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 18,
+    "key_char": "!"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:22.973] SYSTEM_EVENT: Key press: '!'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783642.972148,
+  "description": "Key press: '!'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 18,
+    "key_char": "!"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:23.365] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783643.364526,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:23.728] SYSTEM_EVENT: Key press: 'I'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783643.728294,
+  "description": "Key press: 'I'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 34,
+    "key_char": "I"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:23.898] SYSTEM_EVENT: Key press: '''
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783643.898037,
+  "description": "Key press: '''",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 39,
+    "key_char": "'"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.068] SYSTEM_EVENT: Key press: 'm'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.068002,
+  "description": "Key press: 'm'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 46,
+    "key_char": "m"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.141] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.1406112,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.236] SYSTEM_EVENT: Key press: 'g'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.236207,
+  "description": "Key press: 'g'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 5,
+    "key_char": "g"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.313] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.313204,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.349] SYSTEM_EVENT: Key press: 'i'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.348586,
+  "description": "Key press: 'i'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 34,
+    "key_char": "i"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.388] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.388096,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.440] SYSTEM_EVENT: Key press: 'g'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.440185,
+  "description": "Key press: 'g'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 5,
+    "key_char": "g"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.505] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.505263,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.627] SYSTEM_EVENT: Key press: 't'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.6263838,
+  "description": "Key press: 't'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 17,
+    "key_char": "t"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.667] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.666545,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.731] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.730477,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:24.933] SYSTEM_EVENT: Key press: 'b'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783644.932945,
+  "description": "Key press: 'b'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 11,
+    "key_char": "b"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.028] SYSTEM_EVENT: Key press: 'u'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.027664,
+  "description": "Key press: 'u'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 32,
+    "key_char": "u"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.190] SYSTEM_EVENT: Key press: 'y'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.1901891,
+  "description": "Key press: 'y'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 16,
+    "key_char": "y"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.357] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.356905,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.502] SYSTEM_EVENT: Key press: 's'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.501806,
+  "description": "Key press: 's'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 1,
+    "key_char": "s"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.569] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.5689678,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.634] SYSTEM_EVENT: Key press: 'm'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.634187,
+  "description": "Key press: 'm'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 46,
+    "key_char": "m"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.742] SYSTEM_EVENT: Key press: 'e'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.741733,
+  "description": "Key press: 'e'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 14,
+    "key_char": "e"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.854] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.853635,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:25.964] SYSTEM_EVENT: Key press: 'd'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783645.963902,
+  "description": "Key press: 'd'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 2,
+    "key_char": "d"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.043] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.042948,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.157] SYSTEM_EVENT: Key press: 'g'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.156759,
+  "description": "Key press: 'g'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 5,
+    "key_char": "g"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.248] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.247746,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.546] SYSTEM_EVENT: Key press: 'f'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.5461109,
+  "description": "Key press: 'f'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 3,
+    "key_char": "f"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.636] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.636124,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.758] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.757793,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.855] SYSTEM_EVENT: Key press: 'd'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.8547368,
+  "description": "Key press: 'd'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 2,
+    "key_char": "d"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:26.975] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783646.9746351,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:27.120] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783647.1198819,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:27.224] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783647.2239308,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:27.256] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783647.2563682,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:27.500] SYSTEM_EVENT: Key press: 'M'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783647.500318,
+  "description": "Key press: 'M'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 46,
+    "key_char": "M"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:27.650] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783647.64968,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:27.900] SYSTEM_EVENT: Key press: 'delete'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783647.899991,
+  "description": "Key press: 'delete'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 51,
+    "key_char": "delete"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:28.020] SYSTEM_EVENT: Key press: 'delete'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783648.0200021,
+  "description": "Key press: 'delete'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 51,
+    "key_char": "delete"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:28.243] SYSTEM_EVENT: Key press: 'A'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783648.243178,
+  "description": "Key press: 'A'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 0,
+    "key_char": "A"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:28.351] SYSTEM_EVENT: Key press: 'm'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783648.351203,
+  "description": "Key press: 'm'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 46,
+    "key_char": "m"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:28.419] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783648.419181,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:28.592] SYSTEM_EVENT: Key press: 'z'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783648.592244,
+  "description": "Key press: 'z'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 6,
+    "key_char": "z"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:28.653] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783648.65193,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:28.695] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783648.6948879,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:29.114] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783649.11336,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:29.251] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783649.250897,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:29.332] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783649.3316832,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:29.418] SYSTEM_EVENT: Key press: 'w'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783649.4182029,
+  "description": "Key press: 'w'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 13,
+    "key_char": "w"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:29.656] SYSTEM_EVENT: Key press: '.'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783649.656251,
+  "description": "Key press: '.'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 47,
+    "key_char": "."
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:29.688] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783649.687871,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:30.930] SYSTEM_EVENT: Key press: 'I'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783650.930209,
+  "description": "Key press: 'I'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 34,
+    "key_char": "I"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:31.083] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783651.082753,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:31.508] SYSTEM_EVENT: Key press: 't'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783651.507951,
+  "description": "Key press: 't'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 17,
+    "key_char": "t"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:31.543] SYSTEM_EVENT: Key press: 'h'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783651.543019,
+  "description": "Key press: 'h'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 4,
+    "key_char": "h"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:31.614] SYSTEM_EVENT: Key press: 'i'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783651.6147032,
+  "description": "Key press: 'i'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 34,
+    "key_char": "i"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:31.712] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783651.7123442,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:31.808] SYSTEM_EVENT: Key press: 'k'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783651.807935,
+  "description": "Key press: 'k'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 40,
+    "key_char": "k"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:31.845] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783651.844554,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:32.024] SYSTEM_EVENT: Key press: 'P'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783652.023526,
+  "description": "Key press: 'P'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 35,
+    "key_char": "P"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:32.176] SYSTEM_EVENT: Key press: 'u'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783652.176188,
+  "description": "Key press: 'u'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 32,
+    "key_char": "u"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:32.240] SYSTEM_EVENT: Key press: 'r'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783652.2396832,
+  "description": "Key press: 'r'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 15,
+    "key_char": "r"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:32.379] SYSTEM_EVENT: Key press: 'i'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783652.378693,
+  "description": "Key press: 'i'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 34,
+    "key_char": "i"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:32.439] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783652.4391072,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:32.537] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783652.536927,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:32.621] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783652.6215732,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:33.413] SYSTEM_EVENT: Key press: 'return'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783653.4121869,
+  "description": "Key press: 'return'",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "key_code": 36,
+    "key_char": "return"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:33.415] WORKFLOW_STEP: Typed 'Heloo!⌫⌫⌫loo⌫!! I'm going to buy some dog food on Ma⌫⌫Amazon now. I think Purina ' in Messages
+Data:
+{
+  "step_id": 4,
+  "event_type": "keyboard",
+  "timestamp": 1750783639.276691,
+  "description": "Typed 'Heloo!\u232b\u232b\u232bloo\u232b!! I'm going to buy some dog food on Ma\u232b\u232bAmazon now. I think Purina ' in Messages",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "typed_text": "Heloo!\u232b\u232b\u232bloo\u232b!! I'm going to buy some dog food on Ma\u232b\u232bAmazon now. I think Purina ",
+    "raw_events": [
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783639.276691,
+        "description": "Key press: 'H'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 4,
+          "key_char": "H"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783639.4770508,
+        "description": "Key press: 'e'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 14,
+          "key_char": "e"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783639.620252,
+        "description": "Key press: 'l'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 37,
+          "key_char": "l"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783640.016184,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783640.1722932,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783640.399369,
+        "description": "Key press: '!'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 18,
+          "key_char": "!"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783641.056321,
+        "description": "Key press: 'delete'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 51,
+          "key_char": "delete"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783641.202333,
+        "description": "Key press: 'delete'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 51,
+          "key_char": "delete"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783641.3527071,
+        "description": "Key press: 'delete'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 51,
+          "key_char": "delete"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783641.5792909,
+        "description": "Key press: 'l'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 37,
+          "key_char": "l"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783641.927089,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783642.075427,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783642.529323,
+        "description": "Key press: 'delete'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 51,
+          "key_char": "delete"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783642.7843132,
+        "description": "Key press: '!'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 18,
+          "key_char": "!"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783642.972148,
+        "description": "Key press: '!'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 18,
+          "key_char": "!"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783643.364526,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783643.728294,
+        "description": "Key press: 'I'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 34,
+          "key_char": "I"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783643.898037,
+        "description": "Key press: '''",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 39,
+          "key_char": "'"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.068002,
+        "description": "Key press: 'm'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 46,
+          "key_char": "m"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.1406112,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.236207,
+        "description": "Key press: 'g'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 5,
+          "key_char": "g"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.313204,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.348586,
+        "description": "Key press: 'i'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 34,
+          "key_char": "i"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.388096,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.440185,
+        "description": "Key press: 'g'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 5,
+          "key_char": "g"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.505263,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.6263838,
+        "description": "Key press: 't'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 17,
+          "key_char": "t"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.666545,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.730477,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783644.932945,
+        "description": "Key press: 'b'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 11,
+          "key_char": "b"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.027664,
+        "description": "Key press: 'u'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 32,
+          "key_char": "u"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.1901891,
+        "description": "Key press: 'y'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 16,
+          "key_char": "y"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.356905,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.501806,
+        "description": "Key press: 's'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 1,
+          "key_char": "s"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.5689678,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.634187,
+        "description": "Key press: 'm'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 46,
+          "key_char": "m"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.741733,
+        "description": "Key press: 'e'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 14,
+          "key_char": "e"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.853635,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783645.963902,
+        "description": "Key press: 'd'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 2,
+          "key_char": "d"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.042948,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.156759,
+        "description": "Key press: 'g'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 5,
+          "key_char": "g"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.247746,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.5461109,
+        "description": "Key press: 'f'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 3,
+          "key_char": "f"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.636124,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.757793,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.8547368,
+        "description": "Key press: 'd'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 2,
+          "key_char": "d"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783646.9746351,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783647.1198819,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783647.2239308,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783647.2563682,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783647.500318,
+        "description": "Key press: 'M'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 46,
+          "key_char": "M"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783647.64968,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783647.899991,
+        "description": "Key press: 'delete'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 51,
+          "key_char": "delete"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783648.0200021,
+        "description": "Key press: 'delete'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 51,
+          "key_char": "delete"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783648.243178,
+        "description": "Key press: 'A'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 0,
+          "key_char": "A"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783648.351203,
+        "description": "Key press: 'm'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 46,
+          "key_char": "m"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783648.419181,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783648.592244,
+        "description": "Key press: 'z'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 6,
+          "key_char": "z"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783648.65193,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783648.6948879,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783649.11336,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783649.250897,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783649.3316832,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783649.4182029,
+        "description": "Key press: 'w'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 13,
+          "key_char": "w"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783649.656251,
+        "description": "Key press: '.'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 47,
+          "key_char": "."
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783649.687871,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783650.930209,
+        "description": "Key press: 'I'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 34,
+          "key_char": "I"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783651.082753,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783651.507951,
+        "description": "Key press: 't'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 17,
+          "key_char": "t"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783651.543019,
+        "description": "Key press: 'h'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 4,
+          "key_char": "h"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783651.6147032,
+        "description": "Key press: 'i'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 34,
+          "key_char": "i"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783651.7123442,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783651.807935,
+        "description": "Key press: 'k'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 40,
+          "key_char": "k"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783651.844554,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783652.023526,
+        "description": "Key press: 'P'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 35,
+          "key_char": "P"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783652.176188,
+        "description": "Key press: 'u'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 32,
+          "key_char": "u"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783652.2396832,
+        "description": "Key press: 'r'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 15,
+          "key_char": "r"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783652.378693,
+        "description": "Key press: 'i'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 34,
+          "key_char": "i"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783652.4391072,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783652.536927,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783652.6215732,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      }
+    ]
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:33.518] WORKFLOW_STEP: Typed '⏎' in Messages
+Data:
+{
+  "step_id": 5,
+  "event_type": "keyboard",
+  "timestamp": 1750783653.4121869,
+  "description": "Typed '\u23ce' in Messages",
+  "action_type": null,
+  "data": {
+    "app_name": "Messages",
+    "typed_text": "\u23ce",
+    "raw_events": [
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783653.4121869,
+        "description": "Key press: 'return'",
+        "action_type": null,
+        "data": {
+          "app_name": "Messages",
+          "key_code": 36,
+          "key_char": "return"
+        }
+      }
+    ]
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:34.497] SYSTEM_EVENT: Mouse left click at (495, 384)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783654.4943528,
+  "description": "Mouse left click at (495, 384)",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "coordinates": [
+      495,
+      384
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:36.423] WORKFLOW_STEP: Clicked on an unnamed element in Safari at (495, 384)
+Data:
+{
+  "step_id": 6,
+  "event_type": "mouse_click",
+  "timestamp": 1750783654.4943528,
+  "description": "Clicked on an unnamed element in Safari at (495, 384)",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "Safari",
+      "coordinates": [
+        495,
+        384
+      ],
+      "button": "left"
+    },
+    "target_element": null,
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:36.431] SYSTEM_EVENT: Mouse left click at (655, 173)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783656.428183,
+  "description": "Mouse left click at (655, 173)",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "coordinates": [
+      655,
+      173
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:36.431] WORKFLOW_STEP: Clicked on txt:& google.com@A-22:2 in Safari
+Data:
+{
+  "step_id": 7,
+  "event_type": "mouse_click",
+  "timestamp": 1750783656.428183,
+  "description": "Clicked on txt:& google.com@A-22:2 in Safari",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "Safari",
+      "coordinates": [
+        655,
+        173
+      ],
+      "button": "left",
+      "processed_info": {
+        "description": "Clicked on txt:& google.com@A-22:2 in Safari",
+        "target_element": {
+          "description": "txt:& google.com@A-22:2"
+        }
+      }
+    },
+    "target_element": {
+      "description": "txt:& google.com@A-22:2"
+    },
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:38.272] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783658.2711911,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:38.455] SYSTEM_EVENT: Key press: 'm'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783658.454428,
+  "description": "Key press: 'm'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 46,
+    "key_char": "m"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:38.615] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783658.615208,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:38.836] SYSTEM_EVENT: Key press: 'z'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783658.835784,
+  "description": "Key press: 'z'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 6,
+    "key_char": "z"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:38.999] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783658.997992,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:39.074] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783659.073531,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:39.693] SYSTEM_EVENT: Key press: '.'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783659.693351,
+  "description": "Key press: '.'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 47,
+    "key_char": "."
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:39.913] SYSTEM_EVENT: Key press: 'c'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783659.912755,
+  "description": "Key press: 'c'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 8,
+    "key_char": "c"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:40.188] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783660.1877089,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:44.404] SYSTEM_EVENT: Key press: 'delete'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783664.403589,
+  "description": "Key press: 'delete'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 51,
+    "key_char": "delete"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:45.262] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783665.261805,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:46.755] SYSTEM_EVENT: Key press: 'return'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783666.754642,
+  "description": "Key press: 'return'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 36,
+    "key_char": "return"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:46.756] WORKFLOW_STEP: Typed 'amazon.ca⌫a' in Safari
+Data:
+{
+  "step_id": 8,
+  "event_type": "keyboard",
+  "timestamp": 1750783658.2711911,
+  "description": "Typed 'amazon.ca\u232ba' in Safari",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "typed_text": "amazon.ca\u232ba",
+    "raw_events": [
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783658.2711911,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783658.454428,
+        "description": "Key press: 'm'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 46,
+          "key_char": "m"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783658.615208,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783658.835784,
+        "description": "Key press: 'z'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 6,
+          "key_char": "z"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783658.997992,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783659.073531,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783659.693351,
+        "description": "Key press: '.'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 47,
+          "key_char": "."
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783659.912755,
+        "description": "Key press: 'c'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 8,
+          "key_char": "c"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783660.1877089,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783664.403589,
+        "description": "Key press: 'delete'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 51,
+          "key_char": "delete"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783665.261805,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      }
+    ]
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:46.858] WORKFLOW_STEP: Typed '⏎' in Safari
+Data:
+{
+  "step_id": 9,
+  "event_type": "keyboard",
+  "timestamp": 1750783666.754642,
+  "description": "Typed '\u23ce' in Safari",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "typed_text": "\u23ce",
+    "raw_events": [
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783666.754642,
+        "description": "Key press: 'return'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 36,
+          "key_char": "return"
+        }
+      }
+    ]
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:48.282] SYSTEM_EVENT: Mouse left click at (477, 231)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783668.278251,
+  "description": "Mouse left click at (477, 231)",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "coordinates": [
+      477,
+      231
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:48.283] WORKFLOW_STEP: Clicked on btn:Page Menu (config)@A-13:3 in Safari
+Data:
+{
+  "step_id": 10,
+  "event_type": "mouse_click",
+  "timestamp": 1750783668.278251,
+  "description": "Clicked on btn:Page Menu (config)@A-13:3 in Safari",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "Safari",
+      "coordinates": [
+        477,
+        231
+      ],
+      "button": "left",
+      "processed_info": {
+        "description": "Clicked on btn:Page Menu (config)@A-13:3 in Safari",
+        "target_element": {
+          "description": "btn:Page Menu (config)@A-13:3"
+        }
+      }
+    },
+    "target_element": {
+      "description": "btn:Page Menu (config)@A-13:3"
+    },
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:49.812] SYSTEM_EVENT: Key press: 'p'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783669.81202,
+  "description": "Key press: 'p'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 35,
+    "key_char": "p"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:49.990] SYSTEM_EVENT: Key press: 'u'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783669.990369,
+  "description": "Key press: 'u'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 32,
+    "key_char": "u"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.118] SYSTEM_EVENT: Key press: 'r'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.1180558,
+  "description": "Key press: 'r'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 15,
+    "key_char": "r"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.206] SYSTEM_EVENT: Key press: 'i'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.206091,
+  "description": "Key press: 'i'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 34,
+    "key_char": "i"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.254] SYSTEM_EVENT: Key press: 'n'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.2541409,
+  "description": "Key press: 'n'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 45,
+    "key_char": "n"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.382] SYSTEM_EVENT: Key press: 'a'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.381909,
+  "description": "Key press: 'a'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 0,
+    "key_char": "a"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.557] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.5566561,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.683] SYSTEM_EVENT: Key press: 'd'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.683251,
+  "description": "Key press: 'd'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 2,
+    "key_char": "d"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.759] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.759103,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.875] SYSTEM_EVENT: Key press: 'g'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.8750122,
+  "description": "Key press: 'g'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 5,
+    "key_char": "g"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:50.985] SYSTEM_EVENT: Key press: 'space'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783670.985255,
+  "description": "Key press: 'space'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 49,
+    "key_char": "space"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:51.115] SYSTEM_EVENT: Key press: 'f'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783671.114537,
+  "description": "Key press: 'f'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 3,
+    "key_char": "f"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:51.218] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783671.217977,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:51.336] SYSTEM_EVENT: Key press: 'o'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783671.3355489,
+  "description": "Key press: 'o'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 31,
+    "key_char": "o"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:51.478] SYSTEM_EVENT: Key press: 'd'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783671.477754,
+  "description": "Key press: 'd'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 2,
+    "key_char": "d"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:52.438] SYSTEM_EVENT: Key press: 'return'
+Data:
+{
+  "event_type": "keyboard",
+  "timestamp": 1750783672.4380958,
+  "description": "Key press: 'return'",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "key_code": 36,
+    "key_char": "return"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:52.440] WORKFLOW_STEP: Typed 'purina dog food' in Safari
+Data:
+{
+  "step_id": 11,
+  "event_type": "keyboard",
+  "timestamp": 1750783669.81202,
+  "description": "Typed 'purina dog food' in Safari",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "typed_text": "purina dog food",
+    "raw_events": [
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783669.81202,
+        "description": "Key press: 'p'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 35,
+          "key_char": "p"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783669.990369,
+        "description": "Key press: 'u'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 32,
+          "key_char": "u"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.1180558,
+        "description": "Key press: 'r'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 15,
+          "key_char": "r"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.206091,
+        "description": "Key press: 'i'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 34,
+          "key_char": "i"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.2541409,
+        "description": "Key press: 'n'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 45,
+          "key_char": "n"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.381909,
+        "description": "Key press: 'a'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 0,
+          "key_char": "a"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.5566561,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.683251,
+        "description": "Key press: 'd'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 2,
+          "key_char": "d"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.759103,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.8750122,
+        "description": "Key press: 'g'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 5,
+          "key_char": "g"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783670.985255,
+        "description": "Key press: 'space'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 49,
+          "key_char": "space"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783671.114537,
+        "description": "Key press: 'f'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 3,
+          "key_char": "f"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783671.217977,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783671.3355489,
+        "description": "Key press: 'o'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 31,
+          "key_char": "o"
+        }
+      },
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783671.477754,
+        "description": "Key press: 'd'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 2,
+          "key_char": "d"
+        }
+      }
+    ]
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:52.545] WORKFLOW_STEP: Typed '⏎' in Safari
+Data:
+{
+  "step_id": 12,
+  "event_type": "keyboard",
+  "timestamp": 1750783672.4380958,
+  "description": "Typed '\u23ce' in Safari",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "typed_text": "\u23ce",
+    "raw_events": [
+      {
+        "event_type": "keyboard",
+        "timestamp": 1750783672.4380958,
+        "description": "Key press: 'return'",
+        "action_type": null,
+        "data": {
+          "app_name": "Safari",
+          "key_code": 36,
+          "key_char": "return"
+        }
+      }
+    ]
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:55.831] SYSTEM_EVENT: Mouse left click at (514, 792)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783675.827809,
+  "description": "Mouse left click at (514, 792)",
+  "action_type": null,
+  "data": {
+    "app_name": "Safari",
+    "coordinates": [
+      514,
+      792
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:55.832] WORKFLOW_STEP: Clicked on an unnamed element in Safari at (514, 792)
+Data:
+{
+  "step_id": 13,
+  "event_type": "mouse_click",
+  "timestamp": 1750783675.827809,
+  "description": "Clicked on an unnamed element in Safari at (514, 792)",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "Safari",
+      "coordinates": [
+        514,
+        792
+      ],
+      "button": "left",
+      "processed_info": {
+        "description": "Clicked on an unnamed element in Safari at (514, 792)",
+        "target_element": null
+      }
+    },
+    "target_element": null,
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:57.566] SYSTEM_EVENT: Mouse left click at (996, 86)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1750783677.561704,
+  "description": "Mouse left click at (996, 86)",
+  "action_type": null,
+  "data": {
+    "app_name": "augment",
+    "coordinates": [
+      996,
+      86
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------
+
+[12:47:57.567] WORKFLOW_STEP: Clicked on an unnamed element in augment at (996, 86)
+Data:
+{
+  "step_id": 14,
+  "event_type": "mouse_click",
+  "timestamp": 1750783677.561704,
+  "description": "Clicked on an unnamed element in augment at (996, 86)",
+  "action_type": "ui_click",
+  "data": {
+    "event_data": {
+      "app_name": "augment",
+      "coordinates": [
+        996,
+        86
+      ],
+      "button": "left",
+      "processed_info": {
+        "description": "Clicked on an unnamed element in augment at (996, 86)",
+        "target_element": null
+      }
+    },
+    "target_element": null,
+    "window_info": {}
+  },
+  "intent": null,
+  "confidence": 0.0,
+  "success": true,
+  "error_message": null
+}
+--------------------------------------------------------------------------------
+
+[12:47:57.663] SESSION_END: Recording session ended
+Data:
+{
+  "session_id": "session_20250624_124712",
+  "start_time": 1750783632.860208,
+  "end_time": 1750783677.66379,
+  "duration": 44.803581953048706,
+  "steps": [
+    {
+      "step_id": 1,
+      "event_type": "mouse_click",
+      "timestamp": 1750783633.963003,
+      "description": "Clicked on txt:Richard Shaw@A-8:8 in Messages",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "Messages",
+          "coordinates": [
+            1035,
+            235
+          ],
+          "button": "left"
+        },
+        "target_element": {
+          "description": "txt:Richard Shaw@A-8:8"
+        },
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 2,
+      "event_type": "mouse_click",
+      "timestamp": 1750783636.8162692,
+      "description": "Clicked on txt:Richard Shaw@A-8:8 in Messages",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "Messages",
+          "coordinates": [
+            994,
+            247
+          ],
+          "button": "left",
+          "processed_info": {
+            "description": "Clicked on txt:Richard Shaw@A-8:8 in Messages",
+            "target_element": {
+              "description": "txt:Richard Shaw@A-8:8"
+            }
+          }
+        },
+        "target_element": {
+          "description": "txt:Richard Shaw@A-8:8"
+        },
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 3,
+      "event_type": "mouse_click",
+      "timestamp": 1750783637.377656,
+      "description": "Clicked on txt:iMessage@A-23:49 in Messages",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "Messages",
+          "coordinates": [
+            1321,
+            841
+          ],
+          "button": "left",
+          "processed_info": {
+            "description": "Clicked on txt:iMessage@A-23:49 in Messages",
+            "target_element": {
+              "description": "txt:iMessage@A-23:49"
+            }
+          }
+        },
+        "target_element": {
+          "description": "txt:iMessage@A-23:49"
+        },
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 4,
+      "event_type": "keyboard",
+      "timestamp": 1750783639.276691,
+      "description": "Typed 'Heloo!\u232b\u232b\u232bloo\u232b!! I'm going to buy some dog food on Ma\u232b\u232bAmazon now. I think Purina ' in Messages",
+      "action_type": null,
+      "data": {
+        "app_name": "Messages",
+        "typed_text": "Heloo!\u232b\u232b\u232bloo\u232b!! I'm going to buy some dog food on Ma\u232b\u232bAmazon now. I think Purina ",
+        "raw_events": [
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783639.276691,
+            "description": "Key press: 'H'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 4,
+              "key_char": "H"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783639.4770508,
+            "description": "Key press: 'e'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 14,
+              "key_char": "e"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783639.620252,
+            "description": "Key press: 'l'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 37,
+              "key_char": "l"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783640.016184,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783640.1722932,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783640.399369,
+            "description": "Key press: '!'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 18,
+              "key_char": "!"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783641.056321,
+            "description": "Key press: 'delete'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 51,
+              "key_char": "delete"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783641.202333,
+            "description": "Key press: 'delete'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 51,
+              "key_char": "delete"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783641.3527071,
+            "description": "Key press: 'delete'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 51,
+              "key_char": "delete"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783641.5792909,
+            "description": "Key press: 'l'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 37,
+              "key_char": "l"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783641.927089,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783642.075427,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783642.529323,
+            "description": "Key press: 'delete'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 51,
+              "key_char": "delete"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783642.7843132,
+            "description": "Key press: '!'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 18,
+              "key_char": "!"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783642.972148,
+            "description": "Key press: '!'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 18,
+              "key_char": "!"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783643.364526,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783643.728294,
+            "description": "Key press: 'I'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 34,
+              "key_char": "I"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783643.898037,
+            "description": "Key press: '''",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 39,
+              "key_char": "'"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.068002,
+            "description": "Key press: 'm'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 46,
+              "key_char": "m"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.1406112,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.236207,
+            "description": "Key press: 'g'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 5,
+              "key_char": "g"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.313204,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.348586,
+            "description": "Key press: 'i'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 34,
+              "key_char": "i"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.388096,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.440185,
+            "description": "Key press: 'g'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 5,
+              "key_char": "g"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.505263,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.6263838,
+            "description": "Key press: 't'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 17,
+              "key_char": "t"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.666545,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.730477,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783644.932945,
+            "description": "Key press: 'b'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 11,
+              "key_char": "b"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.027664,
+            "description": "Key press: 'u'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 32,
+              "key_char": "u"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.1901891,
+            "description": "Key press: 'y'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 16,
+              "key_char": "y"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.356905,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.501806,
+            "description": "Key press: 's'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 1,
+              "key_char": "s"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.5689678,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.634187,
+            "description": "Key press: 'm'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 46,
+              "key_char": "m"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.741733,
+            "description": "Key press: 'e'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 14,
+              "key_char": "e"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.853635,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783645.963902,
+            "description": "Key press: 'd'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 2,
+              "key_char": "d"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.042948,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.156759,
+            "description": "Key press: 'g'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 5,
+              "key_char": "g"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.247746,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.5461109,
+            "description": "Key press: 'f'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 3,
+              "key_char": "f"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.636124,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.757793,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.8547368,
+            "description": "Key press: 'd'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 2,
+              "key_char": "d"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783646.9746351,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783647.1198819,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783647.2239308,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783647.2563682,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783647.500318,
+            "description": "Key press: 'M'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 46,
+              "key_char": "M"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783647.64968,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783647.899991,
+            "description": "Key press: 'delete'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 51,
+              "key_char": "delete"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783648.0200021,
+            "description": "Key press: 'delete'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 51,
+              "key_char": "delete"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783648.243178,
+            "description": "Key press: 'A'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 0,
+              "key_char": "A"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783648.351203,
+            "description": "Key press: 'm'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 46,
+              "key_char": "m"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783648.419181,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783648.592244,
+            "description": "Key press: 'z'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 6,
+              "key_char": "z"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783648.65193,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783648.6948879,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783649.11336,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783649.250897,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783649.3316832,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783649.4182029,
+            "description": "Key press: 'w'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 13,
+              "key_char": "w"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783649.656251,
+            "description": "Key press: '.'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 47,
+              "key_char": "."
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783649.687871,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783650.930209,
+            "description": "Key press: 'I'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 34,
+              "key_char": "I"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783651.082753,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783651.507951,
+            "description": "Key press: 't'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 17,
+              "key_char": "t"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783651.543019,
+            "description": "Key press: 'h'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 4,
+              "key_char": "h"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783651.6147032,
+            "description": "Key press: 'i'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 34,
+              "key_char": "i"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783651.7123442,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783651.807935,
+            "description": "Key press: 'k'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 40,
+              "key_char": "k"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783651.844554,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783652.023526,
+            "description": "Key press: 'P'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 35,
+              "key_char": "P"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783652.176188,
+            "description": "Key press: 'u'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 32,
+              "key_char": "u"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783652.2396832,
+            "description": "Key press: 'r'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 15,
+              "key_char": "r"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783652.378693,
+            "description": "Key press: 'i'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 34,
+              "key_char": "i"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783652.4391072,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783652.536927,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783652.6215732,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          }
+        ]
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 5,
+      "event_type": "keyboard",
+      "timestamp": 1750783653.4121869,
+      "description": "Typed '\u23ce' in Messages",
+      "action_type": null,
+      "data": {
+        "app_name": "Messages",
+        "typed_text": "\u23ce",
+        "raw_events": [
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783653.4121869,
+            "description": "Key press: 'return'",
+            "action_type": null,
+            "data": {
+              "app_name": "Messages",
+              "key_code": 36,
+              "key_char": "return"
+            }
+          }
+        ]
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 6,
+      "event_type": "mouse_click",
+      "timestamp": 1750783654.4943528,
+      "description": "Clicked on an unnamed element in Safari at (495, 384)",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "Safari",
+          "coordinates": [
+            495,
+            384
+          ],
+          "button": "left"
+        },
+        "target_element": null,
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 7,
+      "event_type": "mouse_click",
+      "timestamp": 1750783656.428183,
+      "description": "Clicked on txt:& google.com@A-22:2 in Safari",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "Safari",
+          "coordinates": [
+            655,
+            173
+          ],
+          "button": "left",
+          "processed_info": {
+            "description": "Clicked on txt:& google.com@A-22:2 in Safari",
+            "target_element": {
+              "description": "txt:& google.com@A-22:2"
+            }
+          }
+        },
+        "target_element": {
+          "description": "txt:& google.com@A-22:2"
+        },
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 8,
+      "event_type": "keyboard",
+      "timestamp": 1750783658.2711911,
+      "description": "Typed 'amazon.ca\u232ba' in Safari",
+      "action_type": null,
+      "data": {
+        "app_name": "Safari",
+        "typed_text": "amazon.ca\u232ba",
+        "raw_events": [
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783658.2711911,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783658.454428,
+            "description": "Key press: 'm'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 46,
+              "key_char": "m"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783658.615208,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783658.835784,
+            "description": "Key press: 'z'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 6,
+              "key_char": "z"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783658.997992,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783659.073531,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783659.693351,
+            "description": "Key press: '.'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 47,
+              "key_char": "."
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783659.912755,
+            "description": "Key press: 'c'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 8,
+              "key_char": "c"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783660.1877089,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783664.403589,
+            "description": "Key press: 'delete'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 51,
+              "key_char": "delete"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783665.261805,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          }
+        ]
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 9,
+      "event_type": "keyboard",
+      "timestamp": 1750783666.754642,
+      "description": "Typed '\u23ce' in Safari",
+      "action_type": null,
+      "data": {
+        "app_name": "Safari",
+        "typed_text": "\u23ce",
+        "raw_events": [
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783666.754642,
+            "description": "Key press: 'return'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 36,
+              "key_char": "return"
+            }
+          }
+        ]
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 10,
+      "event_type": "mouse_click",
+      "timestamp": 1750783668.278251,
+      "description": "Clicked on btn:Page Menu (config)@A-13:3 in Safari",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "Safari",
+          "coordinates": [
+            477,
+            231
+          ],
+          "button": "left",
+          "processed_info": {
+            "description": "Clicked on btn:Page Menu (config)@A-13:3 in Safari",
+            "target_element": {
+              "description": "btn:Page Menu (config)@A-13:3"
+            }
+          }
+        },
+        "target_element": {
+          "description": "btn:Page Menu (config)@A-13:3"
+        },
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 11,
+      "event_type": "keyboard",
+      "timestamp": 1750783669.81202,
+      "description": "Typed 'purina dog food' in Safari",
+      "action_type": null,
+      "data": {
+        "app_name": "Safari",
+        "typed_text": "purina dog food",
+        "raw_events": [
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783669.81202,
+            "description": "Key press: 'p'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 35,
+              "key_char": "p"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783669.990369,
+            "description": "Key press: 'u'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 32,
+              "key_char": "u"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.1180558,
+            "description": "Key press: 'r'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 15,
+              "key_char": "r"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.206091,
+            "description": "Key press: 'i'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 34,
+              "key_char": "i"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.2541409,
+            "description": "Key press: 'n'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 45,
+              "key_char": "n"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.381909,
+            "description": "Key press: 'a'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 0,
+              "key_char": "a"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.5566561,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.683251,
+            "description": "Key press: 'd'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 2,
+              "key_char": "d"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.759103,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.8750122,
+            "description": "Key press: 'g'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 5,
+              "key_char": "g"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783670.985255,
+            "description": "Key press: 'space'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 49,
+              "key_char": "space"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783671.114537,
+            "description": "Key press: 'f'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 3,
+              "key_char": "f"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783671.217977,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783671.3355489,
+            "description": "Key press: 'o'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 31,
+              "key_char": "o"
+            }
+          },
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783671.477754,
+            "description": "Key press: 'd'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 2,
+              "key_char": "d"
+            }
+          }
+        ]
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 12,
+      "event_type": "keyboard",
+      "timestamp": 1750783672.4380958,
+      "description": "Typed '\u23ce' in Safari",
+      "action_type": null,
+      "data": {
+        "app_name": "Safari",
+        "typed_text": "\u23ce",
+        "raw_events": [
+          {
+            "event_type": "keyboard",
+            "timestamp": 1750783672.4380958,
+            "description": "Key press: 'return'",
+            "action_type": null,
+            "data": {
+              "app_name": "Safari",
+              "key_code": 36,
+              "key_char": "return"
+            }
+          }
+        ]
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 13,
+      "event_type": "mouse_click",
+      "timestamp": 1750783675.827809,
+      "description": "Clicked on an unnamed element in Safari at (514, 792)",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "Safari",
+          "coordinates": [
+            514,
+            792
+          ],
+          "button": "left",
+          "processed_info": {
+            "description": "Clicked on an unnamed element in Safari at (514, 792)",
+            "target_element": null
+          }
+        },
+        "target_element": null,
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    },
+    {
+      "step_id": 14,
+      "event_type": "mouse_click",
+      "timestamp": 1750783677.561704,
+      "description": "Clicked on an unnamed element in augment at (996, 86)",
+      "action_type": "ui_click",
+      "data": {
+        "event_data": {
+          "app_name": "augment",
+          "coordinates": [
+            996,
+            86
+          ],
+          "button": "left",
+          "processed_info": {
+            "description": "Clicked on an unnamed element in augment at (996, 86)",
+            "target_element": null
+          }
+        },
+        "target_element": null,
+        "window_info": {}
+      },
+      "intent": null,
+      "confidence": 0.0,
+      "success": true,
+      "error_message": null
+    }
+  ],
+  "metadata": {
+    "workflow_name": "DefaultWorkflow"
+  }
+}
+--------------------------------------------------------------------------------

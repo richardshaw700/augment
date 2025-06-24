@@ -1,0 +1,14 @@
+1. ACTION: CLICK | target=unnamed_element | app=Messages
+2. ACTION: CLICK | target=txt:Richard | app=Messages
+3. ACTION: CLICK | target=txt:iMessage | app=Messages
+4. ACTION: TYPE | text=Hello!! I'm going to buy some dog food on Amazon now. I think Purina  | app=Messages
+5. ACTION: PRESS_ENTER | app=Messages
+6. ACTION: CLICK | target=unnamed_element | app=Safari
+7. ACTION: CLICK | target=txt:& | app=Safari
+8. ACTION: TYPE | text=amazon.ca | app=Safari
+9. ACTION: PRESS_ENTER | app=Safari
+10. ACTION: CLICK | target=btn:Page | app=Safari
+11. ACTION: TYPE | text=purina dog food | app=Safari
+12. ACTION: PRESS_ENTER | app=Safari
+13. ACTION: CLICK | target=element_in_Safari_at_514, 792 | app=Safari
+14. ACTION: CLICK | target=element_in_augment_at_996, 86 | app=augment

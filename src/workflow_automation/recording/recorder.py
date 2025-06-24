@@ -5,14 +5,18 @@ which connects all the components of the recording system.
 """
 
 import time
+import os
+from pathlib import Path
 from .models import RecorderState, SystemEvent, EventType
 from .session import SessionManager
 from .events.monitor import EventMonitor
 from .events.permissions import check_accessibility_permissions
 from .analysis.ui_inspector import UIInspector, UIInspectorError
 from .analysis.event_processor import EventProcessor, ProcessedEventResult
-from .analysis.summary_generator import generate_summary
+from .analysis.summary_generator import generate_summary, generate_action_blueprint_only
 from .utilities.logger import WorkflowLogger
+from .context.inspector import ContextInspector
+from .context.contextualizer import Contextualizer
 
 class WorkflowRecorder:
     """
@@ -29,7 +33,12 @@ class WorkflowRecorder:
         self.event_monitor = EventMonitor(self._handle_system_event)
         self.ui_inspector = UIInspector()
         self.event_processor = EventProcessor()
+        self.context_inspector = ContextInspector()
         self.logger = None
+        self.contextualizer = Contextualizer()
+        
+        # Context inspection tracking
+        self.last_inspected_app: str = ""
         
         # Keyboard event buffering for grouping
         self.keyboard_buffer = []
@@ -89,21 +98,27 @@ class WorkflowRecorder:
         self.logger.log("SESSION_END", "Recording session ended", session.to_dict())
 
         # 3. Generate and write summary with all the now-processed steps
+        events_for_summary = self.session_manager.get_raw_events_for_summary()
         summary = generate_summary(
             session_id=session.session_id,
             workflow_name=self.workflow_name,
             start_time=session.start_time,
-            events=self.session_manager.get_raw_events_for_summary(),
+            events=events_for_summary,
             steps=self.logger.step_count,
             errors=self.logger.error_count
         )
         self.logger.write_summary(summary)
+        
+        # 4. Generate and save action blueprint separately
+        action_blueprint = generate_action_blueprint_only(events_for_summary)
+        if action_blueprint:
+            self._save_action_blueprint(action_blueprint)
 
-        # 4. Clean up
+        # 5. Clean up
         self.logger.close()
         self.logger = None
         self.state = RecorderState.STOPPED
-        print("✅ WorkflowRecorder: Recording stopped and summary generated.")
+        print("✅ WorkflowRecorder: Recording stopped, summary generated, and blueprint saved.")
         return True
 
     def _handle_system_event(self, event: SystemEvent):
@@ -118,7 +133,45 @@ class WorkflowRecorder:
         self.logger.log("SYSTEM_EVENT", event.description, event.to_dict())
         self.session_manager.add_raw_event(event)
 
+        # Context-aware UI inspection
+        app_name = event.data.get("app_name")
+        
+        # Handle UI_INSPECTED events first to update the map
+        if event.event_type == EventType.UI_INSPECTED:
+            compressed_ui = event.data.get("compressed_ui")
+            if compressed_ui:
+                self.contextualizer.update_ui_map(compressed_ui)
+            return # This event is for context only, do not process further
+
+        if app_name and app_name != self.last_inspected_app and app_name.lower() != "augment":
+            print(f"🔄 App changed to {app_name}, running UI inspection...")
+            
+            # Run the inspection - it now returns a dictionary
+            ui_map = self.context_inspector.run_inspection()
+            
+            # Immediately update the contextualizer with the new UI map
+            if ui_map:
+                self.contextualizer.update_ui_map(ui_map)
+                compressed_ui = ui_map.get("compressedOutput", "")
+            else:
+                # If inspection fails, use an error string for the log
+                compressed_ui = "[UI INSPECTION FAILED]"
+
+            # Create a new SystemEvent for the UI inspection
+            ui_inspected_event = SystemEvent(
+                timestamp=time.time(),
+                event_type=EventType.UI_INSPECTED,
+                data={"app_name": app_name, "compressed_ui": compressed_ui},
+                description=f"UI context captured for {app_name}"
+            )
+            # Add this event to the session so it appears in the logs/summary
+            self.session_manager.add_raw_event(ui_inspected_event)
+            self.last_inspected_app = app_name
+
         try:
+            # Always initialize clicked_element to ensure it's defined in all code paths.
+            clicked_element = None
+
             # Handle keyboard events with buffering for grouping
             if event.event_type == EventType.KEYBOARD:
                 self._handle_keyboard_event(event)
@@ -127,21 +180,25 @@ class WorkflowRecorder:
             # For non-keyboard events, flush any pending keyboard buffer first
             self._flush_keyboard_buffer()
             
-            # Filter out spurious scroll events (delta = 0)
+            # Filter out spurious scroll events
             if event.event_type == EventType.MOUSE_SCROLL:
                 scroll_delta = event.data.get("scroll_delta", (0, 0))
                 if scroll_delta == (0, 0):
-                    return  # Skip empty scroll events
+                    return
             
-            # 1. Determine if we need fresh UI state (only for clicks and app changes)
-            ui_state = {}
-            # TEMPORARILY DISABLED UI INSPECTION - focus on input logging only
-            # if self._should_capture_ui_state(event):
-            #     ui_state = self.ui_inspector.capture_ui_state()
-            #     self.logger.log("UI_STATE", "UI state captured", {"element_count": len(ui_state.get("elements", []))})
+            # Find clicked element if it's a click event
+            if event.event_type == EventType.MOUSE_CLICK:
+                coords = event.data.get("coordinates")
+                if coords:
+                    clicked_element = self.contextualizer.find_element_at_coordinates(coords[0], coords[1])
 
-            # 2. Process the event. This now handles one event at a time.
-            processed_result = self.event_processor.process_event(event, ui_state)
+            # 1. Determine if we need fresh UI state
+            ui_state = {}
+
+            # 2. Process the event.
+            processed_result = self.event_processor.process_event(
+                event, ui_state, clicked_element=clicked_element
+            )
             
             if processed_result:
                 # 3. Add the step to the session and log it
@@ -150,10 +207,6 @@ class WorkflowRecorder:
                 self.session_manager.enrich_last_event_with_step(step)
                 self.logger.log("WORKFLOW_STEP", processed_result.enriched_description, step.to_dict())
 
-        except UIInspectorError as e:
-            error_message = f"Failed to inspect UI: {e}"
-            print(f"❌ {error_message}")
-            self.logger.log("ERROR", "UI_INSPECTION_FAILED", {"error": error_message})
         except Exception as e:
             error_message = f"An unexpected error occurred in event handler: {e}"
             print(f"❌ {error_message}")
@@ -187,28 +240,31 @@ class WorkflowRecorder:
     def _handle_keyboard_event(self, event: SystemEvent):
         """Handle keyboard events with buffering for grouping consecutive keystrokes."""
         current_time = time.time()
+        current_app = event.data.get("app_name")
+        key_char = event.data.get("key_char", "")
         
-        # Check if this continues a typing sequence
+        # Check if this continues a typing sequence (same app, not a special key)
         if (self.keyboard_buffer and 
-            current_time - self.last_keyboard_time < self.keyboard_timeout and
-            self.keyboard_buffer[-1].data.get("app_name") == event.data.get("app_name")):
-            # Add to existing buffer
+            self.keyboard_buffer[-1].data.get("app_name") == current_app and
+            key_char not in ["return", "tab", "escape"]):
+            # Add to existing buffer - no timeout constraint for continuous typing
             self.keyboard_buffer.append(event)
         else:
-            # Flush existing buffer if it exists
+            # Flush existing buffer if it exists (app change or special key)
             self._flush_keyboard_buffer()
             # Start new buffer
             self.keyboard_buffer = [event]
         
         self.last_keyboard_time = current_time
         
-        # Set up a timer to flush the buffer if no more keys come
-        import threading
-        threading.Timer(self.keyboard_timeout, self._flush_keyboard_buffer_if_old).start()
+        # Only set up timer for special keys (return, tab, escape) to flush immediately
+        if key_char in ["return", "tab", "escape"]:
+            import threading
+            threading.Timer(0.1, self._flush_keyboard_buffer_if_old).start()
     
     def _flush_keyboard_buffer_if_old(self):
-        """Flush keyboard buffer if the last keystroke was longer than timeout ago."""
-        if self.keyboard_buffer and time.time() - self.last_keyboard_time >= self.keyboard_timeout:
+        """Flush keyboard buffer immediately (used for special keys)."""
+        if self.keyboard_buffer:
             self._flush_keyboard_buffer()
     
     def _flush_keyboard_buffer(self):
@@ -217,7 +273,8 @@ class WorkflowRecorder:
             return
         
         try:
-            # Create grouped keyboard step
+            # The keyboard buffer should be processed into a single step.
+            # We can create a synthetic "processed_result" here for logging.
             first_event = self.keyboard_buffer[0]
             app_name = first_event.data.get("app_name", "Unknown App")
             
@@ -225,49 +282,84 @@ class WorkflowRecorder:
             typed_chars = []
             for event in self.keyboard_buffer:
                 key_char = event.data.get("key_char", "")
-                # Convert special keys to display characters
-                if key_char == "space":
-                    typed_chars.append(" ")
-                elif key_char == "return":
-                    typed_chars.append("⏎")
-                elif key_char == "tab":
-                    typed_chars.append("⇥")
-                elif key_char == "delete":
-                    typed_chars.append("⌫")
-                elif key_char == "escape":
-                    typed_chars.append("⎋")
-                else:
-                    typed_chars.append(key_char)
+                if key_char == "space": typed_chars.append(" ")
+                elif key_char == "return": typed_chars.append("⏎")
+                elif key_char == "tab": typed_chars.append("⇥")
+                elif key_char == "delete": typed_chars.append("⌫")
+                elif key_char == "escape": typed_chars.append("⎋")
+                else: typed_chars.append(key_char)
             
             typed_text = "".join(typed_chars)
             
-            # Create grouped workflow step
+            description = f"Typed '{typed_text}' in {app_name}"
+            
+            # Create a workflow step directly
             from .models import WorkflowStep
             step = WorkflowStep(
                 step_id=0,  # Will be set by session manager
                 event_type=EventType.KEYBOARD,
                 timestamp=first_event.timestamp,
-                description=f"Typed '{typed_text}' in {app_name}",
+                description=description,
                 data={
-                    "event_data": {
-                        "app_name": app_name,
-                        "typed_text": typed_text,
-                        "key_count": len(self.keyboard_buffer)
-                    },
-                    "target_element": None,
-                    "window_info": {}
-                },
-                action_type="keyboard_type"
+                    "app_name": app_name,
+                    "typed_text": typed_text,
+                    "raw_events": [e.to_dict() for e in self.keyboard_buffer]
+                }
             )
             
-            # Add the step to session and log it
+            # Add step to the session and log it
             self.session_manager.add_step(step)
-            self.session_manager.enrich_last_event_with_step(step)
-            self.logger.log("WORKFLOW_STEP", step.description, step.to_dict())
-            
-            # Clear the buffer
+            # We don't enrich the last event here because there are many events.
+            self.logger.log("WORKFLOW_STEP", description, step.to_dict())
+
+        except Exception as e:
+            error_message = f"An unexpected error occurred in keyboard buffer flush: {e}"
+            print(f"❌ {error_message}")
+            self.logger.log("ERROR", "KEYBOARD_FLUSH_ERROR", {"error": error_message})
+        finally:
+            # Clear buffer regardless of success or failure
             self.keyboard_buffer = []
+
+    def _save_action_blueprint(self, action_steps: list):
+        """Save action blueprint to separate numbered file in action_blueprints folder."""
+        try:
+            # Create the action_blueprints directory
+            project_root = Path(__file__).parent.parent.parent
+            blueprints_dir = project_root / "workflow_automation" / "action_blueprints"
+            blueprints_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Find highest existing number and add one
+            existing_files = list(blueprints_dir.glob("blueprint_*.txt"))
+            existing_numbers = []
+            
+            for file in existing_files:
+                try:
+                    # Extract number from filename like "blueprint_5.txt"
+                    filename = file.stem  # Gets "blueprint_5" from "blueprint_5.txt"
+                    if filename.startswith("blueprint_"):
+                        number_str = filename[10:]  # Remove "blueprint_" prefix
+                        number = int(number_str)
+                        existing_numbers.append(number)
+                except (ValueError, IndexError):
+                    # Skip files that don't match the expected pattern
+                    continue
+            
+            # Determine next number (highest + 1, or 1 if no valid files exist)
+            next_number = max(existing_numbers) + 1 if existing_numbers else 1
+            
+            # Create the blueprint file
+            blueprint_file = blueprints_dir / f"blueprint_{next_number}.txt"
+            
+            # Write the action steps
+            with open(blueprint_file, 'w') as f:
+                for i, action in enumerate(action_steps, 1):
+                    f.write(f"{i}. {action}\n")
+            
+            print(f"📋 Action blueprint saved: {blueprint_file}")
             
         except Exception as e:
-            print(f"❌ Error processing keyboard buffer: {e}")
-            self.keyboard_buffer = [] 
+            print(f"⚠️ Failed to save action blueprint: {e}")
+
+    def get_state(self):
+        """Returns the current state of the recorder."""
+        return self.state 

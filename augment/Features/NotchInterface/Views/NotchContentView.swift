@@ -55,6 +55,42 @@ struct NotchContentView: View {
                         )
                         .overlay(
                             VStack(spacing: 8) {
+                                // Workflows header and buttons
+                                VStack(spacing: 6) {
+                                    HStack {
+                                        Text("Workflows")
+                                            .font(.caption)
+                                            .foregroundColor(.white.opacity(0.7))
+                                        Spacer()
+                                    }
+                                    
+                                    // 6 numbered workflow buttons in a single horizontal row
+                                    HStack(spacing: 6) {
+                                        ForEach(1...6, id: \.self) { number in
+                                            Button(action: {
+                                                interface.instruction = "Execute blueprint \(number)"
+                                                interface.executeInstruction()
+                                            }) {
+                                                Text("\(number)")
+                                                    .font(.caption)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: 24, height: 20)
+                                                    .background(
+                                                        RoundedRectangle(cornerRadius: 4)
+                                                            .fill(.white.opacity(0.1))
+                                                            .overlay(
+                                                                RoundedRectangle(cornerRadius: 4)
+                                                                    .stroke(.white.opacity(0.3), lineWidth: 1)
+                                                            )
+                                                    )
+                                            }
+                                            .buttonStyle(.plain)
+                                            .disabled(interface.gptManager.isRunning || interface.workflowRecorder.isRecording)
+                                        }
+                                        Spacer()
+                                    }
+                                }
+                                
                                 // Main input area
                                 HStack(spacing: 8) {
                                     TextField(interface.workflowRecorder.isRecording ? "Recording workflow..." : "What would you like me to do?", text: $instruction)

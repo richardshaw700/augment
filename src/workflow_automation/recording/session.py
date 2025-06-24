@@ -69,17 +69,22 @@ class SessionManager:
         """
         summary_events = []
         for event in self.raw_events:
-            processed_info = event.data.get("processed_info", {})
-            target_element = processed_info.get("target_element")
-
-            summary_events.append({
+            # Create a base dictionary with event type and timestamp
+            summary_event = {
                 "type": event.event_type.value,
                 "timestamp": event.timestamp,
-                "description": processed_info.get("description", event.description),
-                "coordinates": event.data.get("coordinates"),
-                "app_name": event.data.get("app_name"),
-                "key_char": event.data.get("key_char"),
-                "scroll_delta": event.data.get("scroll_delta"),
-                "element_info": target_element or {}
-            })
+            }
+
+            # Copy all keys from the event's data dictionary to the summary event
+            # This is more robust and will include app_name, coordinates, key_char, 
+            # scroll_delta, and our new 'compressed_ui' without having to name them.
+            summary_event.update(event.data)
+
+            # Handle the processed_info separately for enrichment
+            processed_info = event.data.get("processed_info", {})
+            summary_event["description"] = processed_info.get("description", event.description)
+            summary_event["element_info"] = processed_info.get("target_element", {})
+
+            summary_events.append(summary_event)
+            
         return summary_events 

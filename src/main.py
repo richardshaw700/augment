@@ -58,6 +58,8 @@ sys.path.append(str(project_root / "src"))
 from gpt_engine.gpt_computer_use import GPTComputerUse, ActionResult
 from src.actions.smart_llm_actions import SmartLLMActions, SmartActionResult
 from src.gpt_engine.task_classifier import TaskClassifier, TaskType
+from src.gpt_engine.blueprint_loader import load_blueprint, get_available_blueprints, get_blueprint_summary
+from src.gpt_engine.dynamic_prompts import inject_action_blueprint_guidance
 
 # Load environment
 load_dotenv()
@@ -253,7 +255,12 @@ class AugmentController:
         logger.debug(f"Reasoning: {classification.reasoning}", "TASK")
         
         # THIRD: Route based on task type and confidence
-        if classification.task_type in [TaskType.KNOWLEDGE_QUERY, TaskType.SMART_ACTION] and classification.confidence > 0.6:
+        if classification.task_type == TaskType.ACTION_BLUEPRINT:
+            # Execute recorded workflow blueprint
+            logger.debug("Routing to Action Blueprint execution", "TASK")
+            return await self._execute_action_blueprint_task(task, task_id, task_start_time)
+        
+        elif classification.task_type in [TaskType.KNOWLEDGE_QUERY, TaskType.SMART_ACTION] and classification.confidence > 0.6:
             # Use smart LLM actions for knowledge/smart tasks
             logger.debug("Routing to Smart LLM Actions system", "TASK")
             return await self._execute_smart_llm_task(task, task_id, classification, task_start_time)
@@ -302,6 +309,114 @@ class AugmentController:
                 return True
         
         return False
+    
+    async def _execute_action_blueprint_task(self, task: str, task_id: str, task_start_time: float) -> Dict[str, Any]:
+        """Execute a recorded workflow blueprint"""
+        
+        try:
+            # Extract blueprint number from task
+            blueprint_number = self._extract_blueprint_number(task)
+            if blueprint_number is None:
+                logger.error("Could not extract blueprint number from task", "BLUEPRINT")
+                return {
+                    "task_id": task_id,
+                    "success": False,
+                    "error": "Invalid blueprint number in task",
+                    "execution_time": time.time() - task_start_time
+                }
+            
+            # Load the blueprint
+            logger.debug(f"Loading blueprint {blueprint_number}", "BLUEPRINT")
+            blueprint_steps = load_blueprint(blueprint_number)
+            
+            if not blueprint_steps:
+                logger.error(f"Blueprint {blueprint_number} not found or empty", "BLUEPRINT")
+                return {
+                    "task_id": task_id,
+                    "success": False,
+                    "error": f"Blueprint {blueprint_number} not found",
+                    "execution_time": time.time() - task_start_time
+                }
+            
+            logger.success(f"Loaded blueprint {blueprint_number} with {len(blueprint_steps)} steps", "BLUEPRINT")
+            
+            # Inject blueprint guidance into dynamic prompts
+            inject_action_blueprint_guidance(blueprint_steps, priority=5)
+            
+            # Create a task for GPT Computer Use that includes the blueprint
+            blueprint_task = f"Execute this ACTION BLUEPRINT step by step:\n" + "\n".join(f"{i}. {step}" for i, step in enumerate(blueprint_steps, 1))
+            
+            logger.debug("Executing blueprint via GPT Computer Use", "BLUEPRINT")
+            
+            # Execute using GPT Computer Use with blueprint guidance
+            results = await self.gpt_engine.execute_task(blueprint_task, max_iterations=len(blueprint_steps) + 5)
+            
+            # Process results
+            successful_actions = sum(1 for r in results if r["result"].success)
+            
+            logger.success(f"Blueprint execution completed: {successful_actions}/{len(results)} actions successful", "BLUEPRINT")
+            
+            self.stats["tasks_completed"] += 1
+            self.stats["actions_executed"] += len(results)
+            
+            return {
+                "task_id": task_id,
+                "success": successful_actions > 0,
+                "blueprint_number": blueprint_number,
+                "blueprint_steps": blueprint_steps,
+                "results": results,
+                "successful_actions": successful_actions,
+                "total_actions": len(results),
+                "execution_time": time.time() - task_start_time,
+                "task_type": "ACTION_BLUEPRINT"
+            }
+            
+        except Exception as e:
+            logger.error(f"Blueprint execution failed: {str(e)}", "BLUEPRINT")
+            self.stats["errors"] += 1
+            
+            return {
+                "task_id": task_id,
+                "success": False,
+                "error": str(e),
+                "execution_time": time.time() - task_start_time,
+                "task_type": "ACTION_BLUEPRINT"
+            }
+    
+    def _extract_blueprint_number(self, task: str) -> Optional[int]:
+        """Extract blueprint number from task string"""
+        # Look for patterns like "blueprint 2", "run blueprint 5", "execute workflow 3"
+        patterns = [
+            r"blueprint\s+(\d+)",
+            r"workflow\s+(\d+)",
+            r"run\s+(\d+)",
+            r"execute\s+(\d+)",
+            r"#(\d+)"
+        ]
+        
+        task_lower = task.lower()
+        for pattern in patterns:
+            match = re.search(pattern, task_lower)
+            if match:
+                return int(match.group(1))
+        
+        return None
+    
+    async def execute_blueprint(self, blueprint_number: int) -> Dict[str, Any]:
+        """Convenience method to execute a blueprint by number"""
+        task = f"Execute blueprint {blueprint_number}"
+        return await self.execute_task(task)
+    
+    def get_available_blueprints(self) -> Dict[int, str]:
+        """Get list of available blueprints with summaries"""
+        available = get_available_blueprints()
+        result = {}
+        
+        for number, file_path in available.items():
+            summary = get_blueprint_summary(number)
+            result[number] = summary or "Unknown workflow"
+        
+        return result
     
     async def _execute_smart_llm_task(self, task: str, task_id: str, classification, task_start_time: float) -> Dict[str, Any]:
         """Execute task using smart LLM actions"""
@@ -692,6 +807,7 @@ async def main():
     parser.add_argument("--max-iterations", type=int, default=20, help="Maximum iterations per task")
     parser.add_argument("--task", type=str, help="Execute a single task and exit")
     parser.add_argument("--batch", type=str, help="Execute tasks from JSON file")
+    parser.add_argument("--list-blueprints", action="store_true", help="List available action blueprints and exit")
     
     args = parser.parse_args()
     
@@ -740,6 +856,27 @@ async def main():
             logger.section("SINGLE TASK MODE")
             await controller.execute_task(args.task)
             controller.display_session_stats()
+        
+        elif args.list_blueprints:
+            # List blueprints mode
+            logger.section("AVAILABLE ACTION BLUEPRINTS")
+            available_blueprints = controller.get_available_blueprints()
+            
+            if not available_blueprints:
+                logger.info("No action blueprints found.", "BLUEPRINTS")
+                logger.info("Create blueprints in src/workflow_automation/action_blueprints/", "BLUEPRINTS")
+                return
+            
+            logger.info(f"Found {len(available_blueprints)} blueprint(s):", "BLUEPRINTS")
+            
+            for number in sorted(available_blueprints.keys()):
+                summary = available_blueprints[number]
+                logger.info(f"  {number}. {summary}", "BLUEPRINTS")
+            
+            logger.info("", "BLUEPRINTS")
+            logger.info("Usage examples:", "BLUEPRINTS")
+            logger.info("  python3 src/main.py --task 'Execute blueprint 2'", "BLUEPRINTS")
+            logger.info("  python3 src/main.py --task 'Run workflow 3'", "BLUEPRINTS")
         
         elif args.batch:
             # Batch mode

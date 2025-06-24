@@ -23,7 +23,7 @@ struct AppConstants {
             static let baseWidth: CGFloat = 200
             static let expandedWidthPadding: CGFloat = 280
             static let collapsedWidthPadding: CGFloat = 80
-            static let expandedHeightExtension: CGFloat = 80
+            static let expandedHeightExtension: CGFloat = 112
             static let collapsedHeightExtension: CGFloat = 2
             static let hoverWidthIncrease: CGFloat = 16
             static let hoverHeightIncrease: CGFloat = 2

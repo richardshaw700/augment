@@ -1,0 +1,48 @@
+
+================================================================================
+SESSION SUMMARY
+================================================================================
+Workflow Name: DefaultWorkflow
+Session ID: session_20250624_124712
+Session Duration: 44.80 seconds
+Total System Events: 120
+Total Workflow Steps: 14
+Total Errors: 0
+Success Rate: 100.0%
+End Time: 2025-06-24 12:47:57
+================================================================================
+
+EVENT TIMELINE
+--------------------------------------------------------------------------------
+[12:47:13] Step 1: Clicked on an unnamed element in Messages at (1035, 235)
+[12:47:16] Step 2: Clicked on txt:Richard Shaw@A-8:8 in Messages at (994, 247)
+[12:47:17] Step 3: Clicked on txt:iMessage@A-23:49 in Messages at (1321, 841)
+[12:47:19] Step 4: Typed 'Hello!! I'm going to buy some dog food on Amazon now. I think Purina ' in Messages
+[12:47:33] Step 5: Pressed Enter in Messages
+[12:47:34] Step 6: Clicked on an unnamed element in Safari at (495, 384)
+[12:47:36] Step 7: Clicked on txt:& google.com@A-22:2 in Safari at (655, 173)
+[12:47:38] Step 8: Typed 'amazon.ca' in Safari
+[12:47:46] Step 9: Pressed Enter in Safari
+[12:47:48] Step 10: Clicked on btn:Page Menu (config)@A-13:3 in Safari at (477, 231)
+[12:47:49] Step 11: Typed 'purina dog food' in Safari
+[12:47:52] Step 12: Pressed Enter in Safari
+[12:47:55] Step 13: Clicked on an unnamed element in Safari at (514, 792)
+[12:47:57] Step 14: Clicked on an unnamed element in augment at (996, 86)
+
+
+ACTION BLUEPRINT
+--------------------------------------------------------------------------------
+1. ACTION: CLICK | target=unnamed_element | app=Messages
+2. ACTION: CLICK | target=txt:Richard | app=Messages
+3. ACTION: CLICK | target=txt:iMessage | app=Messages
+4. ACTION: TYPE | text=Hello!! I'm going to buy some dog food on Amazon now. I think Purina  | app=Messages
+5. ACTION: PRESS_ENTER | app=Messages
+6. ACTION: CLICK | target=unnamed_element | app=Safari
+7. ACTION: CLICK | target=txt:& | app=Safari
+8. ACTION: TYPE | text=amazon.ca | app=Safari
+9. ACTION: PRESS_ENTER | app=Safari
+10. ACTION: CLICK | target=btn:Page | app=Safari
+11. ACTION: TYPE | text=purina dog food | app=Safari
+12. ACTION: PRESS_ENTER | app=Safari
+13. ACTION: CLICK | target=element_in_Safari_at_514, 792 | app=Safari
+14. ACTION: CLICK | target=element_in_augment_at_996, 86 | app=augment

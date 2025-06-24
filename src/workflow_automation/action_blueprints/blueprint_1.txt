@@ -1,0 +1,11 @@
+1. ACTION: CLICK | target=unnamed_element | app=Messages
+2. ACTION: CLICK | target=txt:Richard | app=Messages
+3. ACTION: CLICK | target=txt:iMessage | app=Messages
+4. ACTION: TYPE | text=Hello! Im going to buy some dog food now on Amazon in Safari | app=Messages
+5. ACTION: PRESS_ENTER | app=Messages
+6. ACTION: CLICK | target=unnamed_element | app=Safari
+7. ACTION: CLICK | target=txt:TextContent | app=Safari
+8. ACTION: TYPE | text=mazon. | app=Messages
+9. ACTION: CLICK | target=unnamed_element | app=Safari
+10. ACTION: TYPE | text=og food | app=Messages
+11. ACTION: CLICK | target=element_in_augment_at_1000, 83 | app=augment

@@ -25,6 +25,7 @@ class EventType(Enum):
     KEY_PRESS = "key_press"
     KEYBOARD = "keyboard"
     APP_SWITCH = "app_switch"
+    UI_INSPECTED = "ui_inspected"
     UNKNOWN = "unknown"
 
 @dataclass

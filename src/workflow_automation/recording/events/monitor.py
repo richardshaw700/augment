@@ -33,6 +33,10 @@ class EventMonitor:
         self.run_loop_source = None
         self.monitor_thread = None
         self.run_loop_ref = None
+        self.modifier_flags = 0  # Track current modifier key state
+        
+        # Sticky app detection to fix keyboard/scroll attribution
+        self.last_clicked_app = None
 
     def start(self):
         """Starts monitoring system events in a separate thread."""
@@ -64,7 +68,8 @@ class EventMonitor:
             Quartz.CGEventMaskBit(Quartz.kCGEventLeftMouseDown) |
             Quartz.CGEventMaskBit(Quartz.kCGEventRightMouseDown) |
             Quartz.CGEventMaskBit(Quartz.kCGEventKeyDown) |
-            Quartz.CGEventMaskBit(Quartz.kCGEventScrollWheel),
+            Quartz.CGEventMaskBit(Quartz.kCGEventScrollWheel) |
+            Quartz.CGEventMaskBit(Quartz.kCGEventFlagsChanged),
             self._event_callback,
             None
         )
@@ -111,12 +116,21 @@ class EventMonitor:
             
             # For clicks, try coordinate-based detection first, fallback to frontmost app
             click_app_name = self._get_app_at_coordinates(int(location.x), int(location.y))
+            frontmost_app = get_frontmost_app_name()  # Get frontmost for comparison
+            
             if click_app_name and click_app_name not in ['Window Server', 'Dock', 'SystemUIServer']:
                 app_name = click_app_name
+                print(f"🖱️ CLICK EVENT DEBUG: Using coordinate detection: {app_name} | Frontmost app was: {frontmost_app}")
             else:
                 # Fallback: add delay and check frontmost app
                 time.sleep(0.1)
                 app_name = get_frontmost_app_name()
+                print(f"🖱️ CLICK EVENT DEBUG: Coordinate detection failed, using frontmost app: {app_name}")
+                print(f"   Failed coordinate detection result: {click_app_name}")
+            
+            # Update sticky app tracking for subsequent keyboard/scroll events
+            self.last_clicked_app = app_name
+            print(f"📌 STICKY APP: Updated last clicked app to {app_name}")
             
             data = {
                 "app_name": app_name,
@@ -128,16 +142,28 @@ class EventMonitor:
         elif event_type_code == Quartz.kCGEventKeyDown:
             event_type = EventType.KEYBOARD
             key_code = Quartz.CGEventGetIntegerValueField(event, Quartz.kCGKeyboardEventKeycode)
-            key_char = self._key_code_to_char(key_code)
+            key_char = self._key_code_to_char(key_code, self.modifier_flags)
             
-            # For keyboard events, use current frontmost app
-            app_name = get_frontmost_app_name()
+            # For keyboard events, use sticky app detection
+            frontmost_app = get_frontmost_app_name()
+            if self.last_clicked_app:
+                app_name = self.last_clicked_app
+                print(f"⌨️ KEYBOARD EVENT DEBUG: Key '{key_char}' -> Using sticky app: {app_name} | Frontmost was: {frontmost_app}")
+            else:
+                app_name = frontmost_app
+                print(f"⌨️ KEYBOARD EVENT DEBUG: Key '{key_char}' -> No sticky app, using frontmost: {app_name}")
+            
             data = {
                 "app_name": app_name,
                 "key_code": key_code,
                 "key_char": key_char
             }
             description = f"Key press: '{key_char}'"
+
+        elif event_type_code == Quartz.kCGEventFlagsChanged:
+            # Update modifier flags but don't create a SystemEvent for modifier-only changes
+            self.modifier_flags = Quartz.CGEventGetFlags(event)
+            return None
 
         elif event_type_code == Quartz.kCGEventScrollWheel:
             event_type = EventType.MOUSE_SCROLL
@@ -148,8 +174,15 @@ class EventMonitor:
             if abs(delta_x) < 2 and abs(delta_y) < 2:
                 return None  # Skip noise scroll events
             
-            # For scroll events, use current frontmost app
-            app_name = get_frontmost_app_name()
+            # For scroll events, use sticky app detection
+            frontmost_app = get_frontmost_app_name()
+            if self.last_clicked_app:
+                app_name = self.last_clicked_app
+                print(f"🖱️ SCROLL EVENT DEBUG: Delta ({delta_x}, {delta_y}) -> Using sticky app: {app_name} | Frontmost was: {frontmost_app}")
+            else:
+                app_name = frontmost_app
+                print(f"🖱️ SCROLL EVENT DEBUG: Delta ({delta_x}, {delta_y}) -> No sticky app, using frontmost: {app_name}")
+            
             data = {
                 "app_name": app_name,
                 "scroll_delta": (delta_x, delta_y)
@@ -203,8 +236,12 @@ class EventMonitor:
                     layer = window.get('kCGWindowLayer', 0)
                     windows_at_point.append((owner_name, layer))
             
-            # Debug output
+            # Enhanced debug output showing full window stack
             print(f"📱 Windows at ({x}, {y}): {windows_at_point}")
+            print(f"🔍 Full window stack analysis:")
+            for i, (owner_name, layer) in enumerate(windows_at_point):
+                status = "SELECTED" if i == 0 and owner_name not in ['Window Server', 'Dock', 'SystemUIServer', 'Screenshot'] else "SKIPPED"
+                print(f"   {i+1}. {owner_name} (layer {layer}) - {status}")
             
             # Filter and return the best app, skipping system windows
             for owner_name, layer in windows_at_point:
@@ -229,8 +266,13 @@ class EventMonitor:
             print(f"❌ Error getting app at coordinates ({x}, {y}): {e}")
             return None
 
-    def _key_code_to_char(self, key_code: int) -> str:
+    def _key_code_to_char(self, key_code: int, modifier_flags: int = 0) -> str:
         """Converts a key code to a character using a simple mapping for US keyboards."""
+        
+        # Check if shift key is pressed
+        shift_pressed = bool(modifier_flags & Quartz.kCGEventFlagMaskShift)
+        
+        # Base key mappings
         KEY_MAP = {
             0: 'a', 1: 's', 2: 'd', 3: 'f', 4: 'h', 5: 'g', 6: 'z', 7: 'x', 8: 'c', 9: 'v',
             11: 'b', 12: 'q', 13: 'w', 14: 'e', 15: 'r', 16: 'y', 17: 't',
@@ -240,4 +282,22 @@ class EventMonitor:
             44: '/', 45: 'n', 46: 'm', 47: '.', 48: 'tab', 49: 'space', 50: '`', 51: 'delete',
             53: 'escape',
         }
-        return KEY_MAP.get(key_code, f"[keyCode_{key_code}]")
+        
+        # Shifted key mappings for numbers and symbols
+        SHIFT_MAP = {
+            18: '!', 19: '@', 20: '#', 21: '$', 22: '^', 23: '%', 24: '+', 25: '(', 26: '&',
+            27: '_', 28: '*', 29: ')', 30: '}', 33: '{', 39: '"', 41: ':', 42: '|', 43: '<',
+            44: '?', 47: '>', 50: '~',
+        }
+        
+        base_char = KEY_MAP.get(key_code, f"[keyCode_{key_code}]")
+        
+        if shift_pressed:
+            # Handle shifted symbols
+            if key_code in SHIFT_MAP:
+                return SHIFT_MAP[key_code]
+            # Handle shifted letters (convert to uppercase)
+            elif base_char.isalpha() and len(base_char) == 1:
+                return base_char.upper()
+        
+        return base_char
