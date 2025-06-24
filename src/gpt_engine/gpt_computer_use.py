@@ -571,6 +571,8 @@ Example responses:
 {{"action": "click", "parameters": {{"grid_position": "A-2:15"}}, "reasoning": "Clicking button in application window"}}
 {{"action": "type", "parameters": {{"text": "apple.com", "field": "A-18:3"}}, "reasoning": "Typing URL into text field (system will auto-focus if needed)"}}
 {{"action": "type", "parameters": {{"text": "hello world"}}, "reasoning": "Typing text (no specific field, system will auto-detect)"}}
+{{"action": "scroll", "parameters": {{"direction": "down", "amount": 5}}, "reasoning": "Scrolling down to see more content"}}
+{{"action": "scroll", "parameters": {{"direction": "right", "amount": 3}}, "reasoning": "Scrolling right to see more content"}}
 {{"action": "bash", "parameters": {{"command": "open -a 'Safari'"}}, "reasoning": "Opening Safari application"}}
 {{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Task completed successfully - Safari is open and Apple website is loaded"}}
 """
@@ -1146,6 +1148,15 @@ Example responses:
                     success=True,
                     output=f"Waited {seconds} seconds"
                 )
+            
+            elif action == "scroll":
+                direction = parameters.get("direction", "down")
+                amount = parameters.get("amount", 3)
+                
+                # Use the ActionExecutor's scroll method
+                result = await self.action_executor.execute_scroll(direction, amount)
+                self.performance.end_operation(f"{action} action", start_time, f"Scrolled {direction} by {amount}")
+                return result
             
             else:
                 self.performance.end_operation(f"{action} action", start_time, f"Unknown action: {action}")

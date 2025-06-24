@@ -312,7 +312,7 @@ class ActionExecutor:
         return await self.base_actions.wait(seconds)
     
     async def execute_scroll(self, direction: str, amount: int = 3) -> ActionResult:
-        """Execute a scroll action"""
+        """Execute a scroll action supporting all four directions with automatic cursor centering"""
         import pyautogui
         import time
         
@@ -320,21 +320,40 @@ class ActionExecutor:
         self.execution_count += 1
         
         try:
-            if direction.lower() == "up":
-                await asyncio.to_thread(pyautogui.scroll, amount)
-            elif direction.lower() == "down":
-                await asyncio.to_thread(pyautogui.scroll, -amount)
-            else:
+            direction_lower = direction.lower()
+            
+            # Validate direction first
+            if direction_lower not in ["up", "down", "left", "right"]:
                 return ActionResult(
                     success=False,
                     output="",
-                    error=f"Invalid scroll direction: {direction}. Use 'up' or 'down'"
+                    error=f"Invalid scroll direction: {direction}. Use 'up', 'down', 'left', or 'right'"
                 )
+            
+            # Get screen size and center cursor on active window
+            screen_width, screen_height = await asyncio.to_thread(pyautogui.size)
+            center_x, center_y = screen_width // 2, screen_height // 2
+            
+            # Move cursor to center of screen (active window area)
+            await asyncio.to_thread(pyautogui.moveTo, center_x, center_y)
+            
+            # Small delay to ensure cursor position is registered
+            await asyncio.sleep(0.1)
+            
+            # Execute scroll action
+            if direction_lower == "up":
+                await asyncio.to_thread(pyautogui.scroll, amount)
+            elif direction_lower == "down":
+                await asyncio.to_thread(pyautogui.scroll, -amount)
+            elif direction_lower == "left":
+                await asyncio.to_thread(pyautogui.hscroll, -amount)
+            elif direction_lower == "right":
+                await asyncio.to_thread(pyautogui.hscroll, amount)
             
             execution_time = time.time() - start_time
             return ActionResult(
                 success=True,
-                output=f"Scrolled {direction} by {amount}",
+                output=f"Scrolled {direction} by {amount} (cursor auto-centered)",
                 execution_time=execution_time
             )
             
