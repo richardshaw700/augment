@@ -180,10 +180,13 @@ struct NotchContentView: View {
                                 
                                 // Streaming action display or workflow recording feedback
                                 HStack {
-                                    Text(interface.workflowRecorder.recordingState == .error || interface.workflowRecorder.isRecording ? interface.workflowRecorder.feedbackMessage : interface.currentStreamingText)
+                                    let displayText = interface.workflowRecorder.recordingState == .error || interface.workflowRecorder.isRecording ? interface.workflowRecorder.feedbackMessage : interface.currentStreamingText
+                                    let isError = interface.workflowRecorder.recordingState == .error || displayText.contains("Error:")
+                                    
+                                    Text(displayText)
                                         .font(.system(size: 12))
-                                        .foregroundColor(interface.workflowRecorder.recordingState == .error ? .red : .white)
-                                        .lineLimit(2)
+                                        .foregroundColor(isError ? .red : .white)
+                                        .lineLimit(isError ? 4 : 2)  // More lines for errors
                                         .truncationMode(.tail)
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                     

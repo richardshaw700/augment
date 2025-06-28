@@ -78,8 +78,10 @@ struct AppConstants {
     struct Debug {
         static let timestampFormat = "HH:mm:ss.SSS"
         static let contentPreviewLength = 200
-        static let errorPreviewLength = 50
+        static let errorPreviewLength = 200
         static let linePreviewLength = 100
         static let contentMatchLength = 30
+        static let fullErrorLogPath = "\(Paths.debugOutputDirectory)/error_details.txt"
+        static let pythonErrorLogPath = "\(Paths.debugOutputDirectory)/python_errors.txt"
     }
 }

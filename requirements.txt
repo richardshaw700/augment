@@ -2,4 +2,9 @@ openai>=1.0.0
 python-dotenv>=1.0.0
 pyautogui>=0.9.54
 pyperclip>=1.8.2
-asyncio 
+requests
+urllib3<2.0  # Pin to v1.x for LibreSSL compatibility on macOS
+pyobjc-core
+pyobjc-framework-Cocoa
+pyobjc-framework-ApplicationServices
+pyobjc-framework-Quartz

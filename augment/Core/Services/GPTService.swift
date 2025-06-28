@@ -167,6 +167,10 @@ class GPTService: ObservableObject {
             if !errorData.isEmpty, let errorChunk = String(data: errorData, encoding: .utf8) {
                 accumulatedError += errorChunk
                 self.logger.log("GPT Error: \(errorChunk.trimmingCharacters(in: .whitespacesAndNewlines))")
+                
+                // Write Python errors to debug output as well
+                self.writePythonErrorToDebugOutput(errorChunk)
+                
                 DispatchQueue.main.async {
                     self.errorOutput = accumulatedError
                 }
@@ -205,6 +209,9 @@ class GPTService: ObservableObject {
             let finalErrorData = errorHandle.readDataToEndOfFile()
             if !finalErrorData.isEmpty, let finalErrorChunk = String(data: finalErrorData, encoding: .utf8) {
                 accumulatedError += finalErrorChunk
+                
+                // Write final Python errors to debug output as well
+                self.writePythonErrorToDebugOutput(finalErrorChunk)
             }
             
             DispatchQueue.main.async {
@@ -228,11 +235,84 @@ class GPTService: ObservableObject {
     }
     
     private func handleError(_ error: AppError) {
-        logger.logError(error.localizedDescription)
+        let fullErrorMessage = error.localizedDescription
+        logger.logError(fullErrorMessage)
+        
+        // Write full error details to debug_output
+        writeFullErrorToDebugOutput(fullErrorMessage)
+        
         DispatchQueue.main.async {
-            self.errorOutput = error.localizedDescription
+            self.errorOutput = fullErrorMessage
             self.isRunning = false
             self.status = "Error"
+        }
+    }
+    
+    private func writeFullErrorToDebugOutput(_ errorMessage: String) {
+        let timestamp = DateFormatter().string(from: Date())
+        let fullErrorEntry = """
+        =====================================
+        ERROR LOGGED AT: \(timestamp)
+        =====================================
+        \(errorMessage)
+        =====================================
+        
+        """
+        
+        // Ensure debug output directory exists
+        let debugDir = AppConstants.Paths.debugOutputDirectory
+        do {
+            try FileManager.default.createDirectory(atPath: debugDir, withIntermediateDirectories: true, attributes: nil)
+            
+            // Write to error details file
+            let errorLogPath = AppConstants.Debug.fullErrorLogPath
+            if let errorData = fullErrorEntry.data(using: .utf8) {
+                if FileManager.default.fileExists(atPath: errorLogPath) {
+                    if let fileHandle = FileHandle(forWritingAtPath: errorLogPath) {
+                        fileHandle.seekToEndOfFile()
+                        fileHandle.write(errorData)
+                        fileHandle.closeFile()
+                    }
+                } else {
+                    FileManager.default.createFile(atPath: errorLogPath, contents: errorData, attributes: nil)
+                }
+            }
+        } catch {
+            logger.logError("Failed to write error to debug output: \(error.localizedDescription)")
+        }
+    }
+    
+    private func writePythonErrorToDebugOutput(_ errorMessage: String) {
+        let timestamp = DateFormatter().string(from: Date())
+        let pythonErrorEntry = """
+        =====================================
+        PYTHON ERROR LOGGED AT: \(timestamp)
+        =====================================
+        \(errorMessage)
+        =====================================
+        
+        """
+        
+        // Ensure debug output directory exists
+        let debugDir = AppConstants.Paths.debugOutputDirectory
+        do {
+            try FileManager.default.createDirectory(atPath: debugDir, withIntermediateDirectories: true, attributes: nil)
+            
+            // Write to Python error details file
+            let pythonErrorLogPath = AppConstants.Debug.pythonErrorLogPath
+            if let pythonErrorData = pythonErrorEntry.data(using: .utf8) {
+                if FileManager.default.fileExists(atPath: pythonErrorLogPath) {
+                    if let fileHandle = FileHandle(forWritingAtPath: pythonErrorLogPath) {
+                        fileHandle.seekToEndOfFile()
+                        fileHandle.write(pythonErrorData)
+                        fileHandle.closeFile()
+                    }
+                } else {
+                    FileManager.default.createFile(atPath: pythonErrorLogPath, contents: pythonErrorData, attributes: nil)
+                }
+            }
+        } catch {
+            logger.logError("Failed to write Python error to debug output: \(error.localizedDescription)")
         }
     }
     

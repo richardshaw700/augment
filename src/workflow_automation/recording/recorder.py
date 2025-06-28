@@ -10,7 +10,7 @@ from pathlib import Path
 from .models import RecorderState, SystemEvent, EventType
 from .session import SessionManager
 from .events.monitor import EventMonitor
-from .events.permissions import check_accessibility_permissions
+from .events.permissions import check_all_permissions
 from .analysis.ui_inspector import UIInspector, UIInspectorError
 from .analysis.event_processor import EventProcessor, ProcessedEventResult
 from .analysis.summary_generator import generate_summary, generate_action_blueprint_only
@@ -57,10 +57,14 @@ class WorkflowRecorder:
         print("🎬 WorkflowRecorder: Attempting to start recording...")
         
         # 1. Check for necessary permissions
-        if not check_accessibility_permissions():
-            print("❌ WorkflowRecorder: Accessibility permissions are not granted.")
-            print("   Please grant permissions in System Settings > Privacy & Security > Accessibility.")
+        permissions_ok, error_message = check_all_permissions()
+        if not permissions_ok:
+            print(f"❌ WorkflowRecorder: {error_message}")
+            print("   Please grant permissions in System Settings > Privacy & Security.")
+            print("   Required: Accessibility (Input Monitoring) and Screen Recording")
             return False
+        
+        print("✅ WorkflowRecorder: All permissions verified")
         
         # 2. Start a new session and initialize logger
         self.session_manager.start_session()

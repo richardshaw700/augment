@@ -49,13 +49,15 @@ class BackgroundAutomation:
             # Assume it's a raw phone number, format it
             phone_number = recipient
         
-        applescript = f'''
+        # Fix for f-string backslash issue using .format()
+        escaped_message = message.replace('"', '\\"')
+        applescript = '''
         tell application "Messages"
             set targetService to id of 1st account whose service type = iMessage
-            set targetBuddy to participant "{phone_number}" of account id targetService
-            send "{message.replace('"', '\\"')}" to targetBuddy
+            set targetBuddy to participant "{}" of account id targetService
+            send "{}" to targetBuddy
         end tell
-        '''
+        '''.format(phone_number, escaped_message)
         
         return await self._execute_applescript(applescript, f"Sending iMessage to {recipient}")
     
@@ -70,20 +72,22 @@ class BackgroundAutomation:
         Returns:
             BackgroundActionResult with success status
         """
-        applescript = f'''
+        # Fix for f-string backslash issue using .format()
+        escaped_message = message.replace('"', '\\"')
+        applescript = '''
         tell application "Messages"
             try
                 set targetService to id of 1st service whose service type = SMS
-                set targetBuddy to participant "{recipient}" of service id targetService
-                send "{message.replace('"', '\\"')}" to targetBuddy
+                set targetBuddy to participant "{}" of service id targetService
+                send "{}" to targetBuddy
             on error
                 -- Fallback to iMessage if SMS service not available
                 set targetService to id of 1st account whose service type = iMessage
-                set targetBuddy to participant "{recipient}" of account id targetService
-                send "{message.replace('"', '\\"')}" to targetBuddy
+                set targetBuddy to participant "{}" of account id targetService
+                send "{}" to targetBuddy
             end try
         end tell
-        '''
+        '''.format(recipient, escaped_message, recipient, escaped_message)
         
         return await self._execute_applescript(applescript, f"Sending SMS to {recipient}")
     
@@ -103,19 +107,21 @@ class BackgroundAutomation:
         """
         cc_part = f'set cc to "{cc}"' if cc else ""
         
-        applescript = f'''
+        # Fix for f-string backslash issue using .format()
+        escaped_body = body.replace('"', '\\"')
+        applescript = '''
         tell application "Mail"
-            set theMessage to make new outgoing message with properties {{subject:"{subject}", content:"{body.replace('"', '\\"')}"}}
+            set theMessage to make new outgoing message with properties {{subject:"{}", content:"{}"}}
             tell theMessage
-                make new to recipient at end of to recipients with properties {{address:"{recipient}"}}
-                {cc_part}
+                make new to recipient at end of to recipients with properties {{address:"{}"}}
+                {}
                 if cc is not "" then
                     make new cc recipient at end of cc recipients with properties {{address:cc}}
                 end if
                 send
             end tell
         end tell
-        '''
+        '''.format(subject, escaped_body, recipient, cc_part)
         
         return await self._execute_applescript(applescript, f"Sending email to {recipient}")
     
@@ -133,15 +139,13 @@ class BackgroundAutomation:
             BackgroundActionResult with success status
         """
         end_part = f'end date:date "{end_date}",' if end_date else ""
-        
-        applescript = f'''
-        tell application "Calendar"
-            tell calendar "Calendar"
-                make new event with properties {{summary:"{title}", start date:date "{start_date}", {end_part}}}
-            end tell
-        end tell
-        '''
-        
+        applescript = (
+            'tell application "Calendar"\n'
+            '    tell calendar "Calendar"\n'
+            '        make new event with properties {{summary:"{}", start date:date "{}", {}}}\n'
+            '    end tell\n'
+            'end tell\n'
+        ).format(title, start_date, end_part)
         return await self._execute_applescript(applescript, f"Adding calendar event: {title}")
     
     async def add_reminder(self, title: str, due_date: Optional[str] = None) -> BackgroundActionResult:
@@ -156,15 +160,13 @@ class BackgroundAutomation:
             BackgroundActionResult with success status
         """
         due_part = f'due date:date "{due_date}",' if due_date else ""
-        
-        applescript = f'''
-        tell application "Reminders"
-            tell list "Reminders"
-                make new reminder with properties {{name:"{title}", {due_part}}}
-            end tell
-        end tell
-        '''
-        
+        applescript = (
+            'tell application "Reminders"\n'
+            '    tell list "Reminders"\n'
+            '        make new reminder with properties {{name:"{}", {}}}\n'
+            '    end tell\n'
+            'end tell\n'
+        ).format(title, due_part)
         return await self._execute_applescript(applescript, f"Adding reminder: {title}")
     
     async def execute_shell_command(self, command: str) -> BackgroundActionResult:
@@ -215,15 +217,17 @@ class BackgroundAutomation:
         Returns:
             BackgroundActionResult with success status
         """
-        applescript = f'''
+        # Fix for f-string backslash issue using .format()
+        escaped_content = content.replace('"', '\\"')
+        applescript = '''
         tell application "Notes"
             tell account "iCloud"
                 tell folder "Notes"
-                    make new note with properties {{name:"{title}", body:"{content.replace('"', '\\"')}"}}
+                    make new note with properties {{name:"{}", body:"{}"}}
                 end tell
             end tell
         end tell
-        '''
+        '''.format(title, escaped_content)
         
         return await self._execute_applescript(applescript, f"Creating note: {title}")
     
@@ -287,9 +291,9 @@ class BackgroundAutomation:
         Returns:
             BackgroundActionResult with contact info in output field
         """
-        applescript = f'''
+        applescript = '''
         tell application "Contacts"
-            set matchingPeople to people whose name contains "{name}"
+            set matchingPeople to people whose name contains "{}"
             if (count of matchingPeople) > 0 then
                 set firstPerson to item 1 of matchingPeople
                 set contactInfo to ""
@@ -315,7 +319,7 @@ class BackgroundAutomation:
                 return "ERROR: Contact not found: " & name
             end if
         end tell
-        '''
+        '''.format(name)
         
         return await self._execute_applescript(applescript, f"Looking up contact: {name}")
     
@@ -364,7 +368,7 @@ class BackgroundAutomation:
         Returns:
             BackgroundActionResult with chat ID in output field
         """
-        applescript = f'''
+        applescript = '''
         tell application "Messages"
             set matchingChats to {{}}
             
@@ -372,7 +376,7 @@ class BackgroundAutomation:
             repeat with aChat in chats
                 try
                     set chatName to name of aChat
-                    if chatName contains "{chat_name}" then
+                    if chatName contains "{}" then
                         set end of matchingChats to id of aChat
                         exit repeat
                     end if
@@ -382,10 +386,10 @@ class BackgroundAutomation:
             if (count of matchingChats) > 0 then
                 return item 1 of matchingChats
             else
-                return "ERROR: Group chat not found: " & "{chat_name}"
+                return "ERROR: Group chat not found: " & "{}"
             end if
         end tell
-        '''
+        '''.format(chat_name, chat_name)
         
         return await self._execute_applescript(applescript, f"Looking up group chat: {chat_name}")
     
@@ -420,12 +424,13 @@ class BackgroundAutomation:
             )
         
         # Send message to the group chat using its ID
-        applescript = f'''
+        escaped_message = message.replace('"', '\\"')
+        applescript = '''
         tell application "Messages"
-            set targetChat to chat id "{chat_id}"
-            send "{message.replace('"', '\\"')}" to targetChat
+            set targetChat to chat id "{}"
+            send "{}" to targetChat
         end tell
-        '''
+        '''.format(chat_id, escaped_message)
         
         return await self._execute_applescript(applescript, f"Sending message to group chat: {chat_name}")
     

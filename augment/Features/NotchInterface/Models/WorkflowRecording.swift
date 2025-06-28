@@ -180,7 +180,9 @@ class WorkflowRecordingManager: ObservableObject {
                 } else if trimmedLine.contains("❌") || trimmedLine.contains("Error") {
                     if !trimmedLine.contains("DEBUG") { // Ignore debug messages
                         self.recordingState = .error
-                        self.feedbackMessage = "Recording error - check terminal"
+                        // Show the actual error message instead of generic message
+                        let errorMessage = trimmedLine.replacingOccurrences(of: "❌", with: "").trimmingCharacters(in: .whitespaces)
+                        self.feedbackMessage = errorMessage.isEmpty ? "Recording error occurred" : errorMessage
                         self.isRecording = false
                     }
                 } else if trimmedLine.contains("✅") && trimmedLine.contains("started") {
