@@ -28,6 +28,7 @@ class LLMCommunicator:
         communicator.ui_formatter = core.ui_formatter
         communicator.context_manager = core.context_manager
         communicator.performance = core.performance
+        communicator.prompt_history = core.prompt_history
         return communicator
     
     async def get_decision(self, user_message: str, ui_state: Optional[Dict] = None) -> str:
@@ -46,6 +47,9 @@ class LLMCommunicator:
                 max_tokens=1000
             )
             
+            # Log the complete conversation to prompt history
+            self.prompt_history.log_prompt_and_response(messages, llm_response)
+            
             # Log performance
             tokens_used = len(llm_response.split()) * 1.3
             self.performance.end_operation(model_display_name, start_time, f"Tokens: {int(tokens_used)}")
@@ -53,6 +57,10 @@ class LLMCommunicator:
             return llm_response
             
         except Exception as e:
+            # Log the API error with the prompt that caused it
+            messages = self._build_messages(user_message, ui_state)
+            self.prompt_history.log_api_error(messages, str(e))
+            
             self.performance.end_operation(model_display_name, start_time, f"Error: {str(e)}")
             return f'{{"action": "wait", "parameters": {{"seconds": 1}}, "reasoning": "LLM API error: {str(e)}"}}'
     

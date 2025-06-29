@@ -56,12 +56,7 @@ class AgentOrchestrator:
         return await self.communicator.get_decision(user_message, ui_state)
     
     async def execute_task(self, task: str, max_iterations: int = 20) -> List[Dict]:
-        """
-        MAIN WORKFLOW - Expanded orchestration with existing methods:
-        
-        Shows more granular steps while using the actual methods available
-        in the specialized modules.
-        """
+
         # === SETUP PHASE ===
         print("🚀 Starting Agent Computer Use")
         print(f"📝 Task: {task}")
@@ -69,7 +64,11 @@ class AgentOrchestrator:
         
         session = self.monitor.setup_task(task, max_iterations)
         
+        # ==========================
+        # ==========================
         # === MAIN EXECUTION LOOP ===
+        # ==========================
+        # ==========================
         while not session.is_complete():
             print(f"\n🔄 Iteration {session.iteration + 1}/{max_iterations}")
             
@@ -79,7 +78,7 @@ class AgentOrchestrator:
             # 2. Inject Context-Specific Guidance
             self.communicator.context_manager.inject_messages_guidance_for_task(task, session.current_ui_state)
             
-            # 3. Get LLM Decision (with full prompting flow)
+            # 3. Get LLM Decision
             llm_response = await self.communicator.get_decision(task_message, session.current_ui_state)
             print(f"🤖 Agent Response: {llm_response}")
             

@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 
 from .adapters import create_llm_adapter
 from .actions import UIActionExecutor, SystemActionExecutor
-from .session import SessionLogger, PerformanceTracker, ConversationManager
+from .session import SessionLogger, PerformanceTracker, ConversationManager, PromptHistoryLogger
 from .ui import UIFormatter, UIStateManager
 from .workflow import CompletionDetector, ContextManager
 from .prompts import PromptLoader
@@ -49,6 +49,7 @@ class AgentCore:
         self.logger = SessionLogger()
         self.performance = PerformanceTracker()
         self.conversation = ConversationManager()
+        self.prompt_history = PromptHistoryLogger()
         
         # Initialize UI management (the "eyes")
         self.ui_formatter = UIFormatter()
@@ -90,4 +91,5 @@ class AgentCore:
         print(f"📁 UI Inspector: {self.paths['ui_inspector']}")
         print(f"📝 Session logs: {self.logger.log_file}")
         print(f"📄 Summary: {self.logger.readable_file}")
-        print(f"⏱️  Performance logs: {self.performance.log_file}") 
+        print(f"⏱️  Performance logs: {self.performance.log_file}")
+        print(f"💬 Prompt history: {self.prompt_history.get_log_file_path()}") 

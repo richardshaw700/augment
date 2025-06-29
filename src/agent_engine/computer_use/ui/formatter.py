@@ -14,7 +14,7 @@ class UIFormatter:
     """Formats UI state data for LLM consumption"""
     
     def __init__(self):
-        # Set up debug logging path
+        # Set up debug logging path - now handled by PromptHistoryLogger
         project_root = Path(__file__).parent.parent.parent.parent.parent
         self.debug_file = project_root / "src" / "debug_output" / "agent_ui_input.txt"
         
@@ -32,9 +32,6 @@ class UIFormatter:
             
             # Simply return the compressed output with a brief explanation
             formatted_ui = f"UI Elements (text inputs ending with [FOCUSED] are ready for typing, [UNFOCUSED] must be clicked first):\n{compressed}"
-            
-            # Debug log: Save what the Agent actually sees
-            self._log_llm_ui_input(formatted_ui)
             
             return formatted_ui
         
@@ -76,15 +73,3 @@ class UIFormatter:
             summary.append(f"Window size: {int(window_width)}x{int(window_height)}")
         
         return "\n".join(summary) if summary else json.dumps(ui_state, indent=2)
-    
-    def _log_llm_ui_input(self, formatted_ui: str):
-        """Log the exact UI state that gets sent to LLM for debugging"""
-        try:
-            timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
-            with open(self.debug_file, "a") as f:
-                f.write(f"\n[{timestamp}] AGENT UI INPUT:\n")
-                f.write("=" * 50 + "\n")
-                f.write(formatted_ui)
-                f.write("\n" + "=" * 50 + "\n")
-        except Exception as e:
-            print(f"⚠️ Failed to log Agent UI input: {e}")
