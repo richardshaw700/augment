@@ -1,0 +1,17 @@
+COORDINATE SYSTEMS:
+UI elements use format: |WIDTHxHEIGHT@X:Y where:
+- WIDTH x HEIGHT = element size in pixels (e.g., 138x28)
+- X:Y = center point coordinates as percentages (e.g., 15:29)
+- X = percentage along width (15 = 15% from left edge)
+- Y = percentage along height (29 = 29% from top edge)
+
+Examples:
+- |138x28@15:29 = 138px wide, 28px tall, center at 15% width, 29% height
+- |300x30@24:11 = 300px wide, 30px tall, center at 24% width, 11% height
+
+IMPORTANT COORDINATE DETAILS:
+- ALL coordinates represent CENTER POINTS of elements (optimal for clicking)
+- Menu coordinates are ABSOLUTE pixels (e.g., @27:19 = pixel position 27,19)
+- Window coordinates are PERCENTAGES (e.g., @24:11 = 24% width, 11% height)
+- Use ONLY the coordinate part for clicking (e.g., "24:11" from |300x30@24:11)
+- NO PREFIXES: Use coordinates exactly as shown (24:11, not A-24:11)

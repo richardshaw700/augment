@@ -63,7 +63,7 @@ class Contextualizer:
     def _coordinates_to_grid(self, x: int, y: int) -> Optional[str]:
         """
         Converts absolute screen coordinates to percentage coordinates (e.g., "24:11").
-        This is the reverse of the logic in gpt_computer_use.py.
+        This is the reverse of the coordinate logic in the agent computer use system.
         """
         if not self.window_frame:
             print("  [CTX-ERROR] No window frame data available. Cannot map coordinates.")

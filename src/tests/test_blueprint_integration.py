@@ -12,8 +12,8 @@ sys.path.append(str(project_root))
 sys.path.append(str(project_root / "src"))
 
 import asyncio
-from src.gpt_engine.task_classifier import TaskClassifier, TaskType
-from src.gpt_engine.blueprint_loader import get_available_blueprints, get_blueprint_summary
+from src.agent_engine.task_classifier import TaskClassifier, TaskType
+from src.agent_engine.blueprint_loader import get_available_blueprints, get_blueprint_summary
 
 def test_blueprint_classification():
     """Test that blueprint tasks are classified correctly"""

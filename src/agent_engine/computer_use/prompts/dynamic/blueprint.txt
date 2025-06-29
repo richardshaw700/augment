@@ -1,0 +1,23 @@
+🎯 ACTION BLUEPRINT EXECUTION MODE:
+Execute the following recorded workflow steps one by one by finding the relevant targets in the current UI state.
+
+BLUEPRINT STEPS:
+{blueprint_steps}
+
+EXECUTION STRATEGY:
+When given ACTION BLUEPRINT steps, execute them by finding the relevant targets in the current UI state.
+
+Example: ACTION: CLICK | target=txt:iMessage | app=Messages
+LLM Reasoning: "I see txt:iMessage@23:49 in the UI, so I'll click 23:49"
+
+If there are no direct matches, figure out what to do next by semantically understanding what the step is supposed to accomplish.
+
+Example: ACTION: CLICK | target=Cara | app=Messages  
+LLM Reasoning: "No direct match for 'Cara' in the current Messages UI. This is likely a contact name, so I should search for 'Cara' in the search bar first."
+
+IMPORTANT: 
+- Find exact targets in compressed UI when possible (e.g., txt:iMessage@23:49)
+- If exact target not found, use semantic reasoning to accomplish the goal
+- Execute steps sequentially - complete each step before moving to the next
+- Use ui_inspect first to understand current state
+- Adapt to UI changes while maintaining the workflow intent

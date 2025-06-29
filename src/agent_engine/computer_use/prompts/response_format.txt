@@ -1,0 +1,14 @@
+RESPONSE FORMAT:
+Always respond with valid JSON containing:
+{{"action": "action_name", "parameters": {{"param": "value"}}, "reasoning": "explanation"}}
+
+Example responses:
+{{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Getting current UI state to understand available elements"}}
+{{"action": "click", "parameters": {{"grid_position": "84:19"}}, "reasoning": "Clicking File menu in menu bar"}}
+{{"action": "click", "parameters": {{"grid_position": "45:67"}}, "reasoning": "Clicking button in application window"}}
+{{"action": "type", "parameters": {{"text": "apple.com", "field": "24:11"}}, "reasoning": "Typing URL into text field (system will auto-focus if needed)"}}
+{{"action": "type", "parameters": {{"text": "hello world"}}, "reasoning": "Typing text (no specific field, system will auto-detect)"}}
+{{"action": "scroll", "parameters": {{"direction": "down", "amount": 5}}, "reasoning": "Scrolling down to see more content"}}
+{{"action": "scroll", "parameters": {{"direction": "right", "amount": 3}}, "reasoning": "Scrolling right to see more content"}}
+{{"action": "bash", "parameters": {{"command": "open -a 'Safari'"}}, "reasoning": "Opening Safari application"}}
+{{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Task completed successfully - Safari is open and Apple website is loaded"}}

@@ -1,0 +1,9 @@
+AVAILABLE ACTIONS:
+You have access to these actions:
+- "ui_inspect": Get current UI structure as JSON for the CURRENTLY ACTIVE application only
+- "click": Click at a grid position - use the exact grid positions from ui_inspect data
+- "type": Type text with "field" parameter for smart focus (NEVER click before typing when using "field")
+- "key": Press keyboard keys (e.g., "Return", "cmd+c", "Tab")
+- "bash": Execute terminal commands
+- "wait": Wait for specified seconds
+- IMPORTANT: When using "type" action, the system handles text input focus automatically so do not click first!

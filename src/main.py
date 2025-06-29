@@ -65,11 +65,12 @@ project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 sys.path.append(str(project_root / "src"))
 
-from gpt_engine.gpt_computer_use import GPTComputerUse, ActionResult
+from agent_engine.computer_use import AgentOrchestrator
+from agent_engine.computer_use.actions.base import ActionResult
 from src.actions.smart_llm_actions import SmartLLMActions, SmartActionResult
-from src.gpt_engine.task_classifier import TaskClassifier, TaskType
-from src.gpt_engine.blueprint_loader import load_blueprint, get_available_blueprints, get_blueprint_summary
-from src.gpt_engine.dynamic_prompts import inject_action_blueprint_guidance
+from src.agent_engine.task_classifier import TaskClassifier, TaskType
+from src.agent_engine.blueprint_loader import load_blueprint, get_available_blueprints, get_blueprint_summary
+from src.agent_engine.dynamic_prompts import inject_action_blueprint_guidance
 
 # Load environment
 load_dotenv()
@@ -206,14 +207,14 @@ class AugmentController:
         else:
             llm_provider = "openai"  # Default fallback
         
-        self.gpt_engine = GPTComputerUse(llm_provider=llm_provider, llm_model=llm_model, debug=debug)
+        self.agent_orchestrator = AgentOrchestrator(llm_provider=llm_provider, llm_model=llm_model, debug=debug)
         
         # Initialize smart LLM actions system
         from src.actions.action_executor import ActionExecutor
         action_executor = ActionExecutor(debug=debug)
         self.smart_llm_actions = SmartLLMActions(
             action_executor=action_executor,
-            llm_adapter=self.gpt_engine.llm_adapter,
+            llm_adapter=self.agent_orchestrator.llm_adapter,
             debug=debug
         )
         
@@ -371,13 +372,13 @@ class AugmentController:
             # Inject blueprint guidance into dynamic prompts
             inject_action_blueprint_guidance(blueprint_steps, priority=5)
             
-            # Create a task for GPT Computer Use that includes the blueprint
+            # Create a task for Agent Orchestrator that includes the blueprint
             blueprint_task = f"Execute this ACTION BLUEPRINT step by step:\n" + "\n".join(f"{i}. {step}" for i, step in enumerate(blueprint_steps, 1))
             
-            logger.debug("Executing blueprint via GPT Computer Use", "BLUEPRINT")
+            logger.debug("Executing blueprint via Agent Orchestrator", "BLUEPRINT")
             
-            # Execute using GPT Computer Use with blueprint guidance
-            results = await self.gpt_engine.execute_task(blueprint_task, max_iterations=len(blueprint_steps) + 5)
+            # Execute using Agent Orchestrator with blueprint guidance
+            results = await self.agent_orchestrator.execute_task(blueprint_task, max_iterations=len(blueprint_steps) + 5)
             
             # Process results
             successful_actions = sum(1 for r in results if r["result"].success)
@@ -606,16 +607,16 @@ class AugmentController:
             return task_record
     
     async def _execute_computer_use_task(self, task: str, task_id: str, task_start_time: float) -> Dict[str, Any]:
-        """Execute task using traditional computer use approach"""
+        """Execute task using Agent Orchestrator approach"""
         
-        logger.debug("Starting GPT engine for task execution", "GPT")
+        logger.debug("Starting Agent Orchestrator for task execution", "AGENT")
         
-        # Use existing GPT computer use system
-        actions = await self.gpt_engine.execute_task(task, max_iterations=self.max_iterations)
+        # Use Agent Orchestrator system
+        actions = await self.agent_orchestrator.execute_task(task, max_iterations=self.max_iterations)
         
         task_duration = time.time() - task_start_time
         
-        logger.debug(f"GPT engine returned {len(actions)} actions", "GPT")
+        logger.debug(f"Agent Orchestrator returned {len(actions)} actions", "AGENT")
         logger.success(f"Task completed in {task_duration:.2f} seconds", "TASK")
             
         # Count successful actions
@@ -630,7 +631,7 @@ class AugmentController:
             "task_id": task_id,
             "task": task,
             "status": "COMPLETED",
-            "method": "COMPUTER_USE",
+            "method": "AGENT_ORCHESTRATOR",
             "duration": task_duration,
             "actions_executed": len(actions),
             "successful_actions": successful_actions,

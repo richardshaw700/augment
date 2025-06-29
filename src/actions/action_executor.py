@@ -13,7 +13,7 @@ from .action_sequences import ActionSequences
 from .context_detector import ContextDetector, ActionStrategy
 
 # Import dynamic prompts system
-from ..gpt_engine.dynamic_prompts import (
+from ..agent_engine.dynamic_prompts import (
     inject_navigation_success,
     inject_focus_guidance,
     inject_completion_detected,

@@ -15,8 +15,8 @@ from urllib.parse import urlparse
 from .action_executor import ActionExecutor
 from .base_actions import ActionResult
 from .background_automation import BackgroundAutomation, BackgroundActionResult
-from src.gpt_engine.background_llm import BackgroundLLMEngine, QueryResult
-from src.gpt_engine.task_classifier import TaskClassifier, TaskClassification, TaskType
+from src.agent_engine.background_llm import BackgroundLLMEngine, QueryResult
+from src.agent_engine.task_classifier import TaskClassifier, TaskClassification, TaskType
 
 @dataclass
 class SmartActionResult:
@@ -754,10 +754,10 @@ class SmartLLMActions:
         
         try:
             # Import here to avoid circular imports
-            from src.gpt_engine.gpt_computer_use import GPTComputerUse
+            from src.agent_engine.computer_use import AgentOrchestrator
             
-            # Create a temporary GPTComputerUse instance to get UI state
-            temp_computer_use = GPTComputerUse()
+            # Create a temporary AgentOrchestrator instance to get UI state
+            temp_computer_use = AgentOrchestrator()
             ui_state = await temp_computer_use.get_ui_state()
             
             if "error" in ui_state:
@@ -976,10 +976,10 @@ Focus on getting to a working page first, then we can search from there.
                 print(f"🤖 Handing off to computer use system for detailed interaction")
             
             # Import here to avoid circular imports
-            from src.gpt_engine.gpt_computer_use import GPTComputerUse
+            from src.agent_engine.computer_use import AgentOrchestrator
             
             # Create a GPT Computer Use instance with proper parameters
-            computer_use = GPTComputerUse(llm_provider="openai", llm_model="gpt-4o-mini")
+            computer_use = AgentOrchestrator(llm_provider="openai", llm_model="gpt-4o-mini")
             
             # Create a modified task that acknowledges we've already navigated
             modified_task = f"""

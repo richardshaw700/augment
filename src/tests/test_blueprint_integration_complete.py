@@ -12,9 +12,9 @@ project_root = Path(__file__).parent.parent.parent
 sys.path.append(str(project_root))
 sys.path.append(str(project_root / "src"))
 
-from src.gpt_engine.task_classifier import TaskClassifier, TaskType
-from src.gpt_engine.blueprint_loader import load_blueprint, get_available_blueprints, get_blueprint_summary
-from src.gpt_engine.dynamic_prompts import inject_action_blueprint_guidance
+from src.agent_engine.task_classifier import TaskClassifier, TaskType
+from src.agent_engine.blueprint_loader import load_blueprint, get_available_blueprints, get_blueprint_summary
+from src.agent_engine.dynamic_prompts import inject_action_blueprint_guidance
 
 def test_step_1_task_classification():
     """Test Step 1: ACTION_BLUEPRINT task type in task_classifier.py"""
@@ -104,7 +104,7 @@ def test_complete_integration():
     if blueprint_steps:
         print(f"4. Blueprint loader loads {len(blueprint_steps)} steps")
         print(f"5. Dynamic prompts inject blueprint guidance")
-        print(f"6. GPT Computer Use executes with existing infrastructure")
+        print(f"6. Agent Computer Use executes with existing infrastructure")
         print("\n✅ COMPLETE INTEGRATION WORKING!")
         
         print(f"\n📋 Blueprint {blueprint_number} Summary:")

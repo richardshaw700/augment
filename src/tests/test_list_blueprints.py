@@ -11,7 +11,7 @@ project_root = Path(__file__).parent.parent.parent
 sys.path.append(str(project_root))
 sys.path.append(str(project_root / "src"))
 
-from src.gpt_engine.blueprint_loader import get_available_blueprints, get_blueprint_summary
+from src.agent_engine.blueprint_loader import get_available_blueprints, get_blueprint_summary
 
 def test_list_blueprints_functionality():
     """Test the blueprint listing functionality that would be used by --list-blueprints"""
