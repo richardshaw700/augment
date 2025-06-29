@@ -26,7 +26,7 @@ def test_summary_generation():
             "timestamp": 1750782228.0,
             "app_name": "Messages",
             "coordinates": (983, 248),
-            "description": "Clicked on txt:iMessage@A-25:49 in Messages"
+            "description": "Clicked on txt:iMessage@25:49 in Messages"
         },
         {
             "type": "keyboard",

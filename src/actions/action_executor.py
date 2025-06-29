@@ -426,7 +426,7 @@ class ActionExecutor:
             
             # If field is specified and we have UI state, use intelligent typing
             if field and hasattr(self, '_last_ui_state') and self._last_ui_state:
-                # Extract coordinates from field coordinate (e.g., "A-18:3")
+                # Extract coordinates from field coordinate (e.g., "18:3")
                 # This would need coordinate mapping - for now, fall back to simple type
                 return await self.execute_type(text)
             else:

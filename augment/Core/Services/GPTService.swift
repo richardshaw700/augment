@@ -37,7 +37,7 @@ class GPTService: ObservableObject {
             self.isRunning = true
             self.status = "Starting..."
             self.output = ""
-            self.errorOutput = ""
+            self.errorOutput = "" // Clear any previous error messages
         }
         
         logExecutionStart(instruction)
@@ -165,10 +165,22 @@ class GPTService: ObservableObject {
         errorSource?.setEventHandler {
             let errorData = errorHandle.availableData
             if !errorData.isEmpty, let errorChunk = String(data: errorData, encoding: .utf8) {
-                accumulatedError += errorChunk
-                self.logger.log("GPT Error: \(errorChunk.trimmingCharacters(in: .whitespacesAndNewlines))")
-                DispatchQueue.main.async {
-                    self.errorOutput = accumulatedError
+                // Filter out known warnings that shouldn't be treated as errors
+                let isWarning = errorChunk.contains("NotOpenSSLWarning") || 
+                               errorChunk.contains("urllib3") ||
+                               errorChunk.contains("warnings.warn") ||
+                               errorChunk.lowercased().contains("warning:")
+                
+                if isWarning {
+                    // Log warnings but don't add to error output that shows in UI
+                    self.logger.log("GPT Warning: \(errorChunk.trimmingCharacters(in: .whitespacesAndNewlines))")
+                } else {
+                    // Only treat actual errors as errors
+                    accumulatedError += errorChunk
+                    self.logger.log("GPT Error: \(errorChunk.trimmingCharacters(in: .whitespacesAndNewlines))")
+                    DispatchQueue.main.async {
+                        self.errorOutput = accumulatedError
+                    }
                 }
             }
         }
@@ -204,7 +216,15 @@ class GPTService: ObservableObject {
         errorSource?.setCancelHandler {
             let finalErrorData = errorHandle.readDataToEndOfFile()
             if !finalErrorData.isEmpty, let finalErrorChunk = String(data: finalErrorData, encoding: .utf8) {
-                accumulatedError += finalErrorChunk
+                // Apply the same warning filtering to final error data
+                let isWarning = finalErrorChunk.contains("NotOpenSSLWarning") || 
+                               finalErrorChunk.contains("urllib3") ||
+                               finalErrorChunk.contains("warnings.warn") ||
+                               finalErrorChunk.lowercased().contains("warning:")
+                
+                if !isWarning {
+                    accumulatedError += finalErrorChunk
+                }
             }
             
             DispatchQueue.main.async {

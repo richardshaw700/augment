@@ -1,0 +1,43 @@
+
+================================================================================
+WORKFLOW RECORDING SESSION LOG
+================================================================================
+Session ID: session_20250629_004017
+Workflow Name: DefaultWorkflow
+Start Time: 2025-06-29 00:40:17
+Log File: recording_raw_20250629_004017.txt
+Summary File: recording_summary_20250629_004017.txt
+================================================================================
+
+
+[00:40:17.044] SESSION_START: Recording session started
+Data:
+{
+  "session_id": "session_20250629_004017",
+  "start_time": 1751172017.044336,
+  "end_time": null,
+  "duration": 0.0005741119384765625,
+  "steps": [],
+  "metadata": {
+    "workflow_name": "DefaultWorkflow"
+  }
+}
+--------------------------------------------------------------------------------
+
+[00:41:12.138] SYSTEM_EVENT: Mouse left click at (1636, 926)
+Data:
+{
+  "event_type": "mouse_click",
+  "timestamp": 1751172072.091094,
+  "description": "Mouse left click at (1636, 926)",
+  "action_type": null,
+  "data": {
+    "app_name": "Cursor",
+    "coordinates": [
+      1636,
+      926
+    ],
+    "button": "left"
+  }
+}
+--------------------------------------------------------------------------------

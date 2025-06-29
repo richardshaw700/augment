@@ -5,11 +5,9 @@ import AppKit
 
 class CoordinateSystem: CoordinateMapping {
     private let windowFrame: CGRect
-    private let gridMapper: AdaptiveDensityMapper
     
     init(windowFrame: CGRect) {
         self.windowFrame = windowFrame
-        self.gridMapper = AdaptiveDensityMapper(windowFrame: windowFrame)
     }
     
     // MARK: - Coordinate Normalization
@@ -26,41 +24,7 @@ class CoordinateSystem: CoordinateMapping {
         return NormalizedPoint(normalizedX, normalizedY)
     }
     
-    func toGrid(_ point: NormalizedPoint) -> AdaptiveGridPosition {
-        // Convert normalized coordinates to grid position
-        let colIndex = min(39, max(0, Int(point.x * Double(UniversalGrid.COLUMNS))))
-        let rowIndex = min(49, max(0, Int(point.y * Double(UniversalGrid.ROWS))))
-        
-        let columnString = AdaptiveGridPosition.columnString(from: colIndex)
-        let row = rowIndex + 1
-        
-        return AdaptiveGridPosition(columnString, row)
-    }
-    
-    // MARK: - Grid Mapping
-    
-    func gridPosition(for point: CGPoint) -> AdaptiveGridPosition {
-        let normalized = normalize(point)
-        return toGrid(normalized)
-    }
-    
-    func pixelPosition(for gridPos: AdaptiveGridPosition) -> CGPoint {
-        let x = windowFrame.origin.x + (CGFloat(gridPos.columnIndex) * gridMapper.cellWidth) + (gridMapper.cellWidth / 2)
-        let y = windowFrame.origin.y + (CGFloat(gridPos.rowIndex) * gridMapper.cellHeight) + (gridMapper.cellHeight / 2)
-        
-        return CGPoint(x: x, y: y)
-    }
-    
-    func cellBounds(for gridPos: AdaptiveGridPosition) -> CGRect {
-        // Use the same coordinate system as toGrid() - consistent with normalized approach
-        let cellWidth = windowFrame.width / CGFloat(UniversalGrid.COLUMNS)
-        let cellHeight = windowFrame.height / CGFloat(UniversalGrid.ROWS)
-        
-        let x = windowFrame.origin.x + (CGFloat(gridPos.columnIndex) * cellWidth)
-        let y = windowFrame.origin.y + (CGFloat(gridPos.rowIndex) * cellHeight)
-        
-        return CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
-    }
+    // MARK: - Grid Mapping (REMOVED - using percentage coordinates)
     
     // MARK: - Coordinate Validation
     
@@ -146,12 +110,11 @@ class CoordinateSystem: CoordinateMapping {
     
     func debugCoordinateInfo(for point: CGPoint) -> [String: Any] {
         let normalized = normalize(point)
-        let gridPos = gridPosition(for: point)
         
         return [
             "absolute": ["x": point.x, "y": point.y],
             "normalized": ["x": normalized.x, "y": normalized.y],
-            "grid": gridPos.description,
+            "percentage": ["x": Int(normalized.x * 100), "y": Int(normalized.y * 100)],
             "windowFrame": [
                 "x": windowFrame.origin.x,
                 "y": windowFrame.origin.y,
@@ -162,55 +125,91 @@ class CoordinateSystem: CoordinateMapping {
     }
 }
 
-// MARK: - Adaptive Density Mapper
+// MARK: - Data Correction Extension
 
-class AdaptiveDensityMapper {
-    let windowSize: CGSize
-    let windowOrigin: CGPoint
-    let cellWidth: CGFloat
-    let cellHeight: CGFloat
-    
-    init(windowFrame: CGRect) {
-        self.windowSize = windowFrame.size
-        self.windowOrigin = windowFrame.origin
-        
-        self.cellWidth = windowSize.width / CGFloat(UniversalGrid.COLUMNS)
-        self.cellHeight = windowSize.height / CGFloat(UniversalGrid.ROWS)
+extension CoordinateSystem {
+    /// Correct OCR coordinates from Vision framework to window-relative coordinates
+    func correctOCRCoordinates(_ ocrElements: [OCRData], windowFrame: CGRect) -> [OCRData] {
+        return ocrElements.map { ocrData in
+            // Convert Vision's normalized coordinates to window-relative coordinates
+            let bbox = ocrData.boundingBox
+            
+            // Vision coordinates: (0,0) at bottom-left, normalized
+            // Convert to: window-relative absolute coordinates with (0,0) at top-left
+            let absoluteX = windowFrame.origin.x + (bbox.origin.x * windowFrame.width)
+            let absoluteY = windowFrame.origin.y + ((1.0 - bbox.origin.y - bbox.height) * windowFrame.height)
+            let absoluteWidth = bbox.width * windowFrame.width
+            let absoluteHeight = bbox.height * windowFrame.height
+            
+            let correctedBounds = CGRect(
+                x: absoluteX,
+                y: absoluteY,
+                width: absoluteWidth,
+                height: absoluteHeight
+            )
+            
+            return OCRData(
+                text: ocrData.text,
+                confidence: ocrData.confidence,
+                boundingBox: correctedBounds
+            )
+        }
     }
     
-    func gridPosition(for point: CGPoint) -> AdaptiveGridPosition {
-        let relativeX = point.x - windowOrigin.x
-        let relativeY = point.y - windowOrigin.y
-        
-        let colIndex = min(39, max(0, Int(relativeX / cellWidth)))
-        let rowIndex = min(49, max(0, Int(relativeY / cellHeight)))
-        
-        let columnString = AdaptiveGridPosition.columnString(from: colIndex)
-        let row = rowIndex + 1
-        
-        return AdaptiveGridPosition(columnString, row)
+    /// Validate and correct accessibility coordinates
+    func validateAccessibilityCoordinates(_ elements: [AccessibilityData]) -> [AccessibilityData] {
+        return elements.map { element in
+            validateAccessibilityCoordinates(element)
+        }
     }
     
-    func pixelPosition(for gridPos: AdaptiveGridPosition) -> CGPoint {
-        let x = windowOrigin.x + (CGFloat(gridPos.columnIndex) * cellWidth) + (cellWidth / 2)
-        let y = windowOrigin.y + (CGFloat(gridPos.rowIndex) * cellHeight) + (cellHeight / 2)
+    /// Convert menu bar items to UI elements with proper coordinates
+    func convertMenuBarItemsToUIElements(_ menuItems: [[String: Any]]) -> [UIElement] {
+        var elements: [UIElement] = []
         
-        return CGPoint(x: x, y: y)
-    }
-    
-    func cellBounds(for gridPos: AdaptiveGridPosition) -> CGRect {
-        let x = windowOrigin.x + (CGFloat(gridPos.columnIndex) * cellWidth)
-        let y = windowOrigin.y + (CGFloat(gridPos.rowIndex) * cellHeight)
+        for item in menuItems {
+            guard let title = item["title"] as? String,
+                  let menuBarPosition = item["menuBarPosition"] as? String,
+                  let actualPosition = item["actualPosition"] as? [String: Double],
+                  let actualSize = item["actualSize"] as? [String: Double],
+                  let x = actualPosition["x"],
+                  let y = actualPosition["y"],
+                  let width = actualSize["width"],
+                  let height = actualSize["height"] else {
+                print("⚠️ Skipping menu item '\(item["title"] ?? "unknown")' - missing real position/size data")
+                continue
+            }
+            
+            let type = item["type"] as? String ?? "menu"
+            let elementType = (type == "systemMenu") ? "systemMenu" : "appMenu"
+            let isSystemWide = item["isSystemWide"] as? Bool ?? false
+            
+            let element = UIElement(
+                id: UUID().uuidString,
+                type: elementType,
+                position: CGPoint(x: CGFloat(x), y: CGFloat(y)),
+                size: CGSize(width: CGFloat(width), height: CGFloat(height)),
+                accessibilityData: nil,
+                ocrData: nil,
+                isClickable: true,
+                confidence: 0.95, // High confidence for menu items
+                semanticMeaning: "Menu bar item: \(title)",
+                actionHint: "Click \(title)",
+                visualText: title,
+                interactions: ["click"],
+                context: UIElement.ElementContext(
+                    purpose: isSystemWide ? "System Control" : "App Navigation",
+                    region: "MenuBar",
+                    navigationPath: "MenuBar[\(menuBarPosition)] > \(title)",
+                    availableActions: ["click"]
+                )
+            )
+            
+            elements.append(element)
+        }
         
-        return CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
+        return elements
     }
-    
-    var gridDensity: GridDensityMetrics {
-        return GridDensityMetrics(
-            cellWidth: cellWidth,
-            cellHeight: cellHeight,
-            pixelsPerCell: cellWidth * cellHeight,
-            windowSize: windowSize
-        )
-    }
-} 
+}
+
+// MARK: - Adaptive Density Mapper (REMOVED - using percentage coordinates) 

@@ -50,6 +50,16 @@ SELECTED_LLM = "gemini_25_flash"  # Options: openai_mini, openai_nano, openai_4o
 DEBUG = True          # Clean, readable output for main operations
 VERBOSE = False       # Detailed drilling down for deep debugging
 
+# =============================================================================
+# 🎛️ EXECUTION MODE TOGGLES
+# =============================================================================
+# Control which execution modes are enabled/disabled
+ENABLE_SMART_ACTION = False      # Knowledge + simple actions (navigate to URLs, etc.)
+ENABLE_HYBRID = False            # Knowledge + complex UI automation combined
+ENABLE_KNOWLEDGE_QUERY = False   # Pure information requests via background LLM
+
+# When modes are disabled, tasks will fall back to traditional computer use
+
 # Add project paths
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
@@ -162,7 +172,8 @@ class AugmentLogger:
             with open(self.log_file, 'a') as f:
                 f.write(message + "\n")
         except Exception as e:
-            print(f"Warning: Failed to write to log file: {e}")
+            # Prevent infinite loops by not logging file write errors to avoid recursion
+            pass
     
     def get_log_file_path(self) -> str:
         """Get the path to the log file"""
@@ -260,19 +271,36 @@ class AugmentController:
             logger.debug("Routing to Action Blueprint execution", "TASK")
             return await self._execute_action_blueprint_task(task, task_id, task_start_time)
         
-        elif classification.task_type in [TaskType.KNOWLEDGE_QUERY, TaskType.SMART_ACTION] and classification.confidence > 0.6:
-            # Use smart LLM actions for knowledge/smart tasks
-            logger.debug("Routing to Smart LLM Actions system", "TASK")
+        elif (classification.task_type == TaskType.KNOWLEDGE_QUERY and ENABLE_KNOWLEDGE_QUERY and classification.confidence > 0.6):
+            # Use background LLM for pure knowledge queries
+            logger.debug("Routing to Smart LLM Actions system (Knowledge Query)", "TASK")
             return await self._execute_smart_llm_task(task, task_id, classification, task_start_time)
         
-        elif classification.task_type == TaskType.HYBRID and classification.confidence > 0.7:
-            # Use hybrid approach
+        elif (classification.task_type == TaskType.SMART_ACTION and ENABLE_SMART_ACTION and classification.confidence > 0.6):
+            # Use smart LLM actions for knowledge + simple actions
+            logger.debug("Routing to Smart LLM Actions system (Smart Action)", "TASK")
+            return await self._execute_smart_llm_task(task, task_id, classification, task_start_time)
+        
+        elif (classification.task_type == TaskType.HYBRID and ENABLE_HYBRID and classification.confidence > 0.7):
+            # Use hybrid approach for knowledge + complex UI automation
             logger.debug("Routing to Hybrid LLM+Computer Use system", "TASK")
             return await self._execute_hybrid_task(task, task_id, classification, task_start_time)
         
         else:
-            # Use traditional computer use approach
-            logger.debug("Routing to Traditional Computer Use system", "TASK")
+            # Use traditional computer use approach (fallback when modes are disabled or confidence is low)
+            disabled_modes = []
+            if not ENABLE_KNOWLEDGE_QUERY and classification.task_type == TaskType.KNOWLEDGE_QUERY:
+                disabled_modes.append("KNOWLEDGE_QUERY")
+            if not ENABLE_SMART_ACTION and classification.task_type == TaskType.SMART_ACTION:
+                disabled_modes.append("SMART_ACTION")
+            if not ENABLE_HYBRID and classification.task_type == TaskType.HYBRID:
+                disabled_modes.append("HYBRID")
+            
+            if disabled_modes:
+                logger.debug(f"Disabled mode(s) {disabled_modes} - falling back to Traditional Computer Use system", "TASK")
+            else:
+                logger.debug("Routing to Traditional Computer Use system (low confidence or unmatched type)", "TASK")
+            
             return await self._execute_computer_use_task(task, task_id, task_start_time)
     
     def _is_messaging_task(self, task: str) -> bool:
@@ -772,11 +800,26 @@ class AugmentController:
             except EOFError:
                 logger.info("Goodbye!", "INTERACTIVE")
                 break
+            except OSError as e:
+                # Handle I/O errors specifically to prevent infinite loops
+                if e.errno == 5:  # Input/output error
+                    print(f"[ERROR] I/O Error detected: {str(e)}")
+                    print("This may be due to system resource issues. Please try restarting the application.")
+                    break
+                else:
+                    logger.error(f"OS Error: {str(e)}", "ERROR")
             except Exception as e:
-                logger.error(f"Unexpected error: {str(e)}", "ERROR")
-                if self.debug:
-                    import traceback
-                    logger.verbose(f"Full traceback: {traceback.format_exc()}", "ERROR")
+                # Limit error logging to prevent infinite loops
+                error_str = str(e)
+                if "Input/output error" not in error_str:
+                    logger.error(f"Unexpected error: {error_str}", "ERROR")
+                    if self.debug:
+                        import traceback
+                        logger.verbose(f"Full traceback: {traceback.format_exc()}", "ERROR")
+                else:
+                    print(f"[ERROR] Repeated I/O error detected: {error_str}")
+                    print("Breaking loop to prevent infinite logging.")
+                    break
     
     def _display_history(self):
         """Display task history"""

@@ -1,0 +1,10 @@
+Collecting requests
+  Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.9/site-packages (from requests) (3.10)
+Collecting urllib3<3,>=1.21.1
+  Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.9/site-packages (from requests) (2025.6.15)
+Collecting charset_normalizer<4,>=2
+  Using cached charset_normalizer-3.4.2-cp39-cp39-macosx_10_9_universal2.whl (201 kB)
+Installing collected packages: urllib3, charset-normalizer, requests
+Successfully installed charset-normalizer-3.4.2 requests-2.32.4 urllib3-2.5.0

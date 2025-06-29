@@ -28,7 +28,7 @@ def test_blueprint_cleanup():
         },
         {
             "type": "mouse_click", 
-            "description": "Clicked on iMessage@A-24:49 in Messages",
+            "description": "Clicked on iMessage@24:49 in Messages",
             "app_name": "Messages",
             "timestamp": 1234567892
         },
@@ -106,13 +106,13 @@ def test_blueprint_cleanup():
         },
         {
             "type": "mouse_click",
-            "description": "Clicked on txt:Q Search@A-4:6 in Messages",
+            "description": "Clicked on txt:Q Search@4:6 in Messages",
             "app_name": "Messages", 
             "timestamp": 1234567906
         },
         {
             "type": "mouse_click",
-            "description": "Clicked on iMessage@A-24:49 in Messages",
+            "description": "Clicked on iMessage@24:49 in Messages",
             "app_name": "Messages",
             "timestamp": 1234567907
         },

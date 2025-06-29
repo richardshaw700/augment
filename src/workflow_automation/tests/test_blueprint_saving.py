@@ -22,7 +22,7 @@ def test_blueprint_saving():
     mock_events = [
         {
             "type": "mouse_click",
-            "description": "Clicked on txt:iMessage@A-23:49 in Messages",
+            "description": "Clicked on txt:iMessage@23:49 in Messages",
             "app_name": "Messages",
             "timestamp": 1234567890
         },

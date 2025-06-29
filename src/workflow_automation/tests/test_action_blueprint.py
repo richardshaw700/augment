@@ -31,7 +31,7 @@ def test_action_blueprint():
         },
         {
             "type": "mouse_click",
-            "description": "Clicked on txt:iMessage@A-23:49 in Messages",
+            "description": "Clicked on txt:iMessage@23:49 in Messages",
             "app_name": "Messages", 
             "timestamp": 1234567894,
             "coordinates": [1423, 841]

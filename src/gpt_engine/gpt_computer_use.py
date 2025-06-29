@@ -532,10 +532,22 @@ You have access to these actions:
 - IMPORTANT: When using "type" action, the system handles text input focus automatically so do not click first!
 
 COORDINATE SYSTEMS:
-- Menu Bar: M-M1 to M-M10 (app menus like Apple, Safari, File) and M-S1 to M-S10 (system items like WiFi, Battery)
-- Application Window: A-1:1 to A-40:50 (window content using A- prefix with column:row format)
+UI elements use format: |WIDTHxHEIGHT@X:Y where:
+- WIDTH x HEIGHT = element size in pixels (e.g., 138x28)
+- X:Y = center point coordinates as percentages (e.g., 15:29)
+- X = percentage along width (15 = 15% from left edge)
+- Y = percentage along height (29 = 29% from top edge)
 
-IMPORTANT: ALL coordinates MUST use the prefix format (M- for menu, A- for window)
+Examples:
+- |138x28@15:29 = 138px wide, 28px tall, center at 15% width, 29% height
+- |300x30@24:11 = 300px wide, 30px tall, center at 24% width, 11% height
+
+IMPORTANT COORDINATE DETAILS:
+- ALL coordinates represent CENTER POINTS of elements (optimal for clicking)
+- Menu coordinates are ABSOLUTE pixels (e.g., @27:19 = pixel position 27,19)
+- Window coordinates are PERCENTAGES (e.g., @24:11 = 24% width, 11% height)
+- Use ONLY the coordinate part for clicking (e.g., "24:11" from |300x30@24:11)
+- NO PREFIXES: Use coordinates exactly as shown (24:11, not A-24:11)
 
 🎯 MASTER GOAL EVALUATION RULE:
 BEFORE EVERY ACTION, you MUST evaluate: "Is the original task already completed?"
@@ -551,10 +563,10 @@ If the task IS COMPLETED, respond with: {{"action": "ui_inspect", "parameters": 
 
 CRITICAL INSTRUCTIONS:
 1. ALWAYS start with "ui_inspect" to see current UI state
-2. Use EXACT grid positions from ui_inspect output (e.g., "M-M2", "A-1:5", "M-S3")
-3. Menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10) are for menu bar items only
-4. Window coordinates (A-1:1 to A-40:50) are for application content only
-5. ALWAYS use the full prefix format: M-M1, M-S5, A-2:15, A-18:3 (NEVER use old format like M1, S5, B15, R3)
+2. Use EXACT coordinates from ui_inspect output (e.g., "66:21", "15:29", "74:94")
+3. All coordinates are PERCENTAGES of window dimensions (e.g., "66:21" = 66% from left, 21% from top)
+4. Coordinates come from UI format like "458x28@66:21" where @66:21 is the position you should use
+5. NO PREFIXES: Use coordinates exactly as shown (66:21, not A-66:21 or M-66:21)
 6. 💡 FOR TYPING: Use "field" parameter to specify target text field - system handles focus automatically (DO NOT click first)
 7. Apps must be opened first before you can inspect their UI
 8. For application launching, use "bash" with commands like: open -a 'AppName'
@@ -567,9 +579,9 @@ Always respond with valid JSON containing:
 
 Example responses:
 {{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Getting current UI state to understand available elements"}}
-{{"action": "click", "parameters": {{"grid_position": "M-M3"}}, "reasoning": "Clicking File menu in menu bar"}}
-{{"action": "click", "parameters": {{"grid_position": "A-2:15"}}, "reasoning": "Clicking button in application window"}}
-{{"action": "type", "parameters": {{"text": "apple.com", "field": "A-18:3"}}, "reasoning": "Typing URL into text field (system will auto-focus if needed)"}}
+{{"action": "click", "parameters": {{"grid_position": "84:19"}}, "reasoning": "Clicking File menu in menu bar"}}
+{{"action": "click", "parameters": {{"grid_position": "45:67"}}, "reasoning": "Clicking button in application window"}}
+{{"action": "type", "parameters": {{"text": "apple.com", "field": "24:11"}}, "reasoning": "Typing URL into text field (system will auto-focus if needed)"}}
 {{"action": "type", "parameters": {{"text": "hello world"}}, "reasoning": "Typing text (no specific field, system will auto-detect)"}}
 {{"action": "scroll", "parameters": {{"direction": "down", "amount": 5}}, "reasoning": "Scrolling down to see more content"}}
 {{"action": "scroll", "parameters": {{"direction": "right", "amount": 3}}, "reasoning": "Scrolling right to see more content"}}
@@ -591,93 +603,43 @@ Example responses:
     
     def _grid_to_coordinates(self, grid_position: str, window_frame: Dict) -> tuple[int, int]:
         """
-        Convert grid position (e.g., "A-12:6", "M-M2", "M-S3") to screen coordinates
-        Handles both menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10) and window coordinates (A-1:1 to A-40:50)
+        Convert coordinate position (e.g., "66:21", "15:29") to screen coordinates (CENTER POINTS)
+        
+        COORDINATE SYSTEM: X:Y where X and Y are percentages
+        - X = percentage along width (66 = 66% from left edge)  
+        - Y = percentage along height (21 = 21% from top edge)
+        
+        Returns center point coordinates for optimal clicking accuracy.
         """
-        grid_position = grid_position.strip().upper()
+        grid_position = grid_position.strip()
         
-        # Parse the new format: {GRID_TYPE}-{COORDINATE}
-        if "-" in grid_position:
-            grid_type, coordinate = grid_position.split("-", 1)
-        else:
-            # Fallback for old format without prefix
-            # Determine if it's a menu coordinate (M1-M10, S1-S10) or window coordinate
-            if (grid_position.startswith('M') and len(grid_position) <= 3) or \
-               (grid_position.startswith('S') and len(grid_position) <= 3):
-                grid_type = "M"  # Menu bar
-                coordinate = grid_position
-            else:
-                grid_type = "A"  # Application window
-                coordinate = grid_position
-        
-        # Handle menu bar coordinates (M-M1 to M-M10, M-S1 to M-S10)
-        if grid_type == "M":
-            if coordinate.startswith('M') and len(coordinate) <= 3:  # M1-M10
-                try:
-                    menu_index = int(coordinate[1:]) - 1  # Convert M1->0, M2->1, etc.
-                    if 0 <= menu_index <= 9:
-                        # Menu bar coordinates - approximate positions based on standard menu layout
-                        menu_bar_y = 12  # Middle of 24px menu bar
-                        menu_width = 80  # Approximate width per menu item
-                        menu_x = 20 + (menu_index * menu_width)  # Start at x=20, space items 80px apart
-                        return (menu_x, menu_bar_y)
-                except ValueError:
-                    pass
-                    
-            elif coordinate.startswith('S') and len(coordinate) <= 3:  # S1-S10
-                try:
-                    system_index = int(coordinate[1:]) - 1  # Convert S1->0, S2->1, etc.
-                    if 0 <= system_index <= 9:
-                        # System menu coordinates - right side of menu bar
-                        menu_bar_y = 12  # Middle of 24px menu bar
-                        screen_width = 1440  # Assume standard screen width
-                        system_width = 30  # Approximate width per system item
-                        system_x = screen_width - 20 - (system_index * system_width)  # Right-aligned
-                        return (system_x, menu_bar_y)
-                except ValueError:
-                    pass
-        
-        # Handle standard window grid coordinates (A-1:1 to A-40:50)
-        elif grid_type == "A":
-            # Parse numeric column and row from coordinate (format: "12:6")
-            if ":" in coordinate:
-                try:
-                    col_str, row_str = coordinate.split(":", 1)
-                    col_num = int(col_str)
-                    row_num = int(row_str)
-                    
-                    # Convert to 0-based indices
-                    col_index = col_num - 1  # Convert 1-based to 0-based
-                    row_index = row_num - 1  # Convert 1-based to 0-based
-                    
-                    # Calculate screen coordinates using window frame
-                    window_x = window_frame.get('x', 0)
-                    window_y = window_frame.get('y', 0)
-                    window_width = window_frame.get('width', 1000)
-                    window_height = window_frame.get('height', 800)
-                    
-                    # Grid dimensions (40 columns x 50 rows)
-                    grid_cols = 40
-                    grid_rows = 50
-                    
-                    # Calculate cell size
-                    cell_width = window_width / grid_cols
-                    cell_height = window_height / grid_rows
-                    
-                    # Calculate center of grid cell
-                    x = window_x + (col_index * cell_width) + (cell_width / 2)
-                    y = window_y + (row_index * cell_height) + (cell_height / 2)
-                    
-                    return (int(x), int(y))
-                    
-                except (ValueError, IndexError):
-                    pass
+        # Handle the coordinate format: X:Y where X and Y are percentages
+        if ":" in grid_position:
+            try:
+                x_percent, y_percent = map(int, grid_position.split(":"))
+                
+                # Get window dimensions
+                window_x = window_frame.get('x', 0)
+                window_y = window_frame.get('y', 0)
+                window_width = window_frame.get('width', 1440)
+                window_height = window_frame.get('height', 900)
+                
+                # Convert percentage coordinates to screen coordinates
+                # X and Y are percentages of the window dimensions
+                x = window_x + (x_percent * window_width / 100)
+                y = window_y + (y_percent * window_height / 100)
+                
+                print(f"🎯 Coordinate conversion: {grid_position} -> window({window_x},{window_y},{window_width}x{window_height}) -> screen({int(x)},{int(y)})")
+                
+                return (int(x), int(y))
+            except ValueError:
+                pass
         
         # Fallback - return center of window
         window_x = window_frame.get('x', 0)
         window_y = window_frame.get('y', 0)
-        window_width = window_frame.get('width', 1000)
-        window_height = window_frame.get('height', 800)
+        window_width = window_frame.get('width', 1440)
+        window_height = window_frame.get('height', 900)
         
         center_x = window_x + (window_width / 2)
         center_y = window_y + (window_height / 2)
@@ -687,17 +649,17 @@ Example responses:
     def _find_unfocused_text_field(self, compressed_output: str) -> str:
         """
         Find the coordinate of an unfocused text field in the compressed output.
-        Returns the coordinate (e.g., "A-18:3") if found, None otherwise.
+        Returns the coordinate (e.g., "24:11") if found, None otherwise.
         """
         if not compressed_output:
             return None
             
         # Look for text input fields marked as [UNFOCUSED]
-        # Pattern: txtinp:TextField (context)@A-12:6[UNFOCUSED]
+        # Pattern: txtinp:TextField (context)|300x30@24:11[UNFOCUSED]
         import re
         
         # Match text input fields that are unfocused
-        pattern = r'txtinp:[^@]*@(A-\d+:\d+)\[UNFOCUSED\]'
+        pattern = r'txtinp:[^@]*@(\d+:\d+)\[UNFOCUSED\]'
         matches = re.findall(pattern, compressed_output)
         
         if matches:
@@ -707,7 +669,7 @@ Example responses:
             return coordinate
         
         # Also check for other input field types
-        pattern = r'(TextField|TextArea|SearchField)[^@]*@(A-\d+:\d+)\[UNFOCUSED\]'
+        pattern = r'(TextField|TextArea|SearchField)[^@]*@(\d+:\d+)\[UNFOCUSED\]'
         matches = re.findall(pattern, compressed_output)
         
         if matches:
@@ -1244,28 +1206,21 @@ Example responses:
             print(f"⚠️ Failed to log GPT UI input: {e}")
     
     def _pixel_to_grid(self, x: float, y: float, window_frame: Dict) -> str:
-        """Convert pixel coordinates to grid position (A1-AN50)"""
+        """Convert pixel coordinates (CENTER POINTS) to percentage coordinates (X:Y)"""
         window_x = window_frame.get("x", 0)
         window_y = window_frame.get("y", 0)
-        window_width = window_frame.get("width", 1000)
-        window_height = window_frame.get("height", 800)
+        window_width = window_frame.get("width", 1440)
+        window_height = window_frame.get("height", 900)
         
         # Convert to window-relative coordinates
         rel_x = x - window_x
         rel_y = y - window_y
         
-        # Calculate grid position (40 columns x 50 rows)
-        grid_cols = 40
-        grid_rows = 50
+        # Convert to percentages (0-100)
+        x_percent = min(100, max(0, int(rel_x / window_width * 100)))
+        y_percent = min(100, max(0, int(rel_y / window_height * 100)))
         
-        col_index = min(39, max(0, int(rel_x / window_width * grid_cols)))
-        row_index = min(49, max(0, int(rel_y / window_height * grid_rows)))
-        
-        # Convert to numeric grid coordinate string (1-based)
-        col_num = col_index + 1  # Convert to 1-based column numbering
-        row_num = row_index + 1  # Convert to 1-based row numbering
-        
-        return f"{col_num}:{row_num}"
+        return f"{x_percent}:{y_percent}"
     
     async def chat_with_gpt(self, user_message: str, ui_state: Optional[Dict] = None) -> str:
         """Send message to LLM and get response"""
@@ -1378,7 +1333,7 @@ Example responses:
                         available_contacts = []
                         if "btn:" in compressed_output:
                             import re
-                            btn_matches = re.findall(r'btn:([^@]+)@A-\d+:\d+', compressed_output)
+                            btn_matches = re.findall(r'btn:([^@]+)@\d+:\d+', compressed_output)
                             for btn_text in btn_matches:
                                 btn_text = btn_text.strip()
                                 if btn_text not in ["Button", "Compose", "Record audio", "info", "Emoji picker", "Apps"] and len(btn_text) > 2:
@@ -1538,119 +1493,28 @@ Example responses:
                 completion_reason = "explicit_completion_detected"
                 break
             
-            # Enhanced website navigation completion detection
-            # Check completion after navigation actions (key presses that might navigate)
-            if (action_type == "key" and "Return" in action_data.get("parameters", {}).get("keys", "")) or \
-               (action_type == "ui_inspect" and iteration > 3):
-                
-                # Force UI inspection after navigation to check completion
-                if action_type == "key":
-                    print("🔍 Checking for task completion after navigation...")
-                    current_ui_state = await self.get_ui_state()
-                
-                if current_ui_state and "compressedOutput" in current_ui_state:
-                    compressed_output = current_ui_state["compressedOutput"]
-                    
-                    # Extract URL from compressed output (format: "Safari|789x671|apple.com|...")
-                    current_url = ""
-                    if "|" in compressed_output:
-                        parts = compressed_output.split("|")
-                        if len(parts) >= 3:
-                            current_url = parts[2].lower()
-                    
-                    # Check if task involves going to a specific website
-                    task_lower = task.lower()
-                    website_indicators = ["apple", "google", "facebook", "youtube", "github", "microsoft"]
-                    
-                    # Check for specific website completion
-                    for site in website_indicators:
-                        if site in task_lower and site in current_url:
-                            print(f"🎉 Successfully navigated to {site} website! (URL: {current_url})")
-                            inject_completion_detected(f"Successfully navigated to {site} website")
-                            inject_navigation_success(current_url, "website_navigation")
-                            completion_reason = f"website_navigation_completed_{site}"
-                            break
-                    else:
-                        # Universal navigation completion detection
-                        if any(word in task_lower for word in ["website", "go to", "visit", "navigate to"]):
-                            # Check if URL actually changed from previous iteration
-                            if iteration > 1 and len(results) >= 2:
-                                # Get URL from previous iteration
-                                prev_result = results[-2] if len(results) >= 2 else None
-                                prev_ui_state = prev_result.get("ui_state_summary") if prev_result else None
-                                prev_url = ""
-                                
-                                if prev_ui_state and "compressed_ui" in prev_ui_state:
-                                    prev_compressed = prev_ui_state["compressed_ui"]
-                                    prev_parts = prev_compressed.split("|")
-                                    if len(prev_parts) >= 3:
-                                        prev_url = prev_parts[2]
-                                
-                                # Check if URL actually changed to something meaningful
-                                elements = current_ui_state.get("elements", [])
-                                if (current_url != prev_url and 
-                                    current_url not in ["google.com", "new-tab", "", prev_url] and
-                                    len(elements) > 15):
-                                    print(f"🎉 Navigation completed! URL changed: {prev_url} → {current_url}")
-                                    inject_completion_detected(f"URL successfully changed to {current_url}")
-                                    inject_navigation_success(current_url, "url_change_detected")
-                                    completion_reason = "navigation_url_change_completed"
-                                    break
-            
-            # Application opening completion detection
-            if (action_type == "ui_inspect" and iteration > 1 and 
-                any(word in task.lower() for word in ["open", "launch", "start"]) and
-                not any(word in task.lower() for word in ["website", "go to", "visit"])):
-                
-                # Check if the requested app is now active
-                if current_ui_state and "window" in current_ui_state:
-                    window_title = current_ui_state.get("window", {}).get("title", "").lower()
-                    task_words = task.lower().split()
-                    
-                    # Check if any app name from task appears in window title
-                    app_names = ["safari", "chrome", "firefox", "finder", "terminal", "cursor", "vscode", "xcode"]
-                    for app_name in app_names:
-                        if app_name in task_words and app_name in window_title:
-                            print(f"🎉 Successfully opened {app_name}!")
-                            inject_completion_detected(f"Successfully opened {app_name}")
-                            completion_reason = f"app_opening_completed_{app_name}"
-                            break
-            
-            # Screenshot/inspection task completion
-            if (action_type == "ui_inspect" and iteration > 0 and 
-                any(word in task.lower() for word in ["screenshot", "describe", "see", "screen", "show me"])):
-                print("🎉 Task completed successfully! (UI inspection completed)")
-                inject_completion_detected("UI inspection completed - screen content analyzed")
-                completion_reason = "ui_inspection_completed"
-                break
-            
-            # Prevent infinite loops - if we've done many ui_inspects recently, probably done
-            recent_ui_inspects = sum(1 for r in results[-5:] if r["action"]["action"] == "ui_inspect")
-            if recent_ui_inspects >= 3 and iteration > 8:
-                print("🎉 Task appears to be completed (multiple UI inspections suggest exploration is done)")
-                inject_loop_detection("ui_inspect", recent_ui_inspects)
-                inject_completion_detected("Task appears completed - extensive exploration done")
-                completion_reason = "exploration_completed"
-                break
-            
-            # Add efficiency tips and loop detection
+            # Safety mechanisms: Add efficiency tips and loop detection (warnings only - no auto-completion)
             if iteration > 5:
                 inject_efficiency_tip(iteration + 1, time.time() - start_time)
-                
-                # Check for repeated actions
-                if len(results) >= 3:
-                    recent_actions = [r["action"]["action"] for r in results[-3:]]
-                    if len(set(recent_actions)) == 1:  # Same action repeated
-                        inject_loop_detection(recent_actions[0], 3)
             
-            # Brief pause between actions - only use dynamic detection for explicit navigation
+            # Safety: Check for repeated actions (loop detection - warnings only)
+            if len(results) >= 3:
+                recent_actions = [r["action"]["action"] for r in results[-3:]]
+                if len(set(recent_actions)) == 1:  # Same action repeated
+                    inject_loop_detection(recent_actions[0], 3)
+                    print(f"⚠️ Warning: Repeated action detected ({recent_actions[0]}) - consider different approach")
+            
+            # Safety: Excessive UI inspections warning (but don't auto-complete)
+            recent_ui_inspects = sum(1 for r in results[-5:] if r["action"]["action"] == "ui_inspect")
+            if recent_ui_inspects >= 4 and iteration > 8:
+                inject_loop_detection("ui_inspect", recent_ui_inspects)
+                print(f"⚠️ Warning: {recent_ui_inspects} recent UI inspections - task may be stuck in exploration loop")
+            
+            # Brief pause between actions - adaptive timing based on action type
             action_type = action_data.get("action", "")
             
-            # Skip page change detection if task is already completed
-            if completion_reason != "max_iterations_reached":
-                print(f"⚡ Task completed - skipping page change detection")
-                await asyncio.sleep(0.5)  # Quick pause before ending
-            elif action_type == "key" and "Return" in action_data.get("parameters", {}).get("keys", ""):
+            # Smart timing: Wait for page loads after navigation, quick pause for other actions
+            if action_type == "key" and "Return" in action_data.get("parameters", {}).get("keys", ""):
                 print("⏳ Waiting for page navigation to complete...")
                 initial_state = await self.get_ui_state()
                 if "error" not in initial_state:
@@ -1658,7 +1522,7 @@ Example responses:
                 else:
                     await asyncio.sleep(2.0)  # Fallback
             else:
-                # Fast standard delay for all other actions
+                # Standard delay for all other actions
                 await asyncio.sleep(0.5)
         
         # Log session summary
@@ -1745,7 +1609,7 @@ Example responses:
                 active_chat = None
                 target_recipient = None
                 
-                # Parse the actual format: "txt:To: Cara Davidson@A-24:3"
+                # Parse the actual format: "txt:To: Cara Davidson@24:3"
                 if "txt:To: " in compressed_output:
                     # Find the "To: " pattern and extract the name
                     import re
@@ -1755,7 +1619,7 @@ Example responses:
                 
                 # Try to determine target recipient from task context or UI
                 # Look for button patterns that might indicate search results
-                search_buttons = re.findall(r'btn:([^@]+)@A-\d+:\d+', compressed_output)
+                search_buttons = re.findall(r'btn:([^@]+)@\d+:\d+', compressed_output)
                 available_contacts = [btn for btn in search_buttons if "Mom" in btn or "Kiddos" in btn or "'" in btn]
                 
                 # Create context info

@@ -114,7 +114,7 @@ class ContextInjections:
         """Generate Messages app specific guidance."""
         base_guidance = """🔍 CRITICAL: MESSAGES APP CONTEXT AWARENESS
 When working with Messages app, ALWAYS check the window header for active chat context:
-- Look for "To: [Name]" in the UI elements (e.g., "txt:To: Cara Davidson@A-24:3")
+- Look for "To: [Name]" in the UI elements (e.g., "txt:To: Cara Davidson@24:3")
 - This tells you WHO you are currently chatting with
 - Contact names in the sidebar/search are NOT the active chat - they are just search results or contact lists
 - NEVER assume you're in the right chat just because you see a name in the UI
@@ -124,13 +124,13 @@ When working with Messages app, ALWAYS check the window header for active chat c
 ⚠️ CRITICAL MISTAKE TO AVOID:
 - Searching for a contact shows results but DOES NOT switch to that chat
 - You MUST click the contact button/name after searching to actually enter their chat
-- Seeing "btn:Mom's Kiddos@A-2:11" means it's a clickable button - CLICK IT to switch chats
+- Seeing "btn:Mom's Kiddos@2:11" means it's a clickable button - CLICK IT to switch chats
 - Do NOT type messages until you've clicked the contact and verified "To: [Name]" changed
 
 MESSAGES WORKFLOW:
 1. Check "To: [Name]" in UI elements to see current recipient
 2. If wrong recipient, search for correct contact 
-3. CLICK the contact's button/name from search results (e.g., "btn:Mom's Kiddos@A-2:11")
+3. CLICK the contact's button/name from search results (e.g., "btn:Mom's Kiddos@2:11")
 4. Verify "To: [Name]" changed to correct recipient  
 5. Only then type and send your message"""
         
@@ -248,7 +248,7 @@ EXECUTION STRATEGY:
 When given ACTION BLUEPRINT steps, execute them by finding the relevant targets in the current UI state.
 
 Example: ACTION: CLICK | target=txt:iMessage | app=Messages
-LLM Reasoning: "I see txt:iMessage@A-23:49 in the UI, so I'll click A-23:49"
+LLM Reasoning: "I see txt:iMessage@23:49 in the UI, so I'll click 23:49"
 
 If there are no direct matches, figure out what to do next by semantically understanding what the step is supposed to accomplish.
 
@@ -256,7 +256,7 @@ Example: ACTION: CLICK | target=Cara | app=Messages
 LLM Reasoning: "No direct match for 'Cara' in the current Messages UI. This is likely a contact name, so I should search for 'Cara' in the search bar first."
 
 IMPORTANT: 
-- Find exact targets in compressed UI when possible (e.g., txt:iMessage@A-23:49)
+- Find exact targets in compressed UI when possible (e.g., txt:iMessage@23:49)
 - If exact target not found, use semantic reasoning to accomplish the goal
 - Execute steps sequentially - complete each step before moving to the next
 - Use ui_inspect first to understand current state

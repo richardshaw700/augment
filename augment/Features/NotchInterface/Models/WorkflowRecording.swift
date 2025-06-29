@@ -87,12 +87,29 @@ class WorkflowRecordingManager: ObservableObject {
         do {
             let scriptPath = getScriptPath()
             
+            // Log the attempt for debugging
+            print("🔍 Swift: Attempting to start Python recorder")
+            print("🔍 Swift: Script path: \(scriptPath)")
+            print("🔍 Swift: Project root: \(getProjectRoot())")
+            
             pythonProcess = Process()
             outputPipe = Pipe()
             
             // Use the virtual environment Python
             let projectRoot = getProjectRoot()
-            pythonProcess?.executableURL = URL(fileURLWithPath: "\(projectRoot)/venv/bin/python")
+            let pythonPath = "\(projectRoot)/venv/bin/python"
+            
+            // Log Python path for debugging
+            print("🔍 Swift: Python path: \(pythonPath)")
+            
+            // Check if Python executable exists
+            if !FileManager.default.fileExists(atPath: pythonPath) {
+                let errorMsg = "Python executable not found at: \(pythonPath)"
+                print("❌ Swift: \(errorMsg)")
+                throw NSError(domain: "WorkflowRecorder", code: 1, userInfo: [NSLocalizedDescriptionKey: errorMsg])
+            }
+            
+            pythonProcess?.executableURL = URL(fileURLWithPath: pythonPath)
             pythonProcess?.arguments = [
                 scriptPath,
                 "start"
@@ -105,17 +122,38 @@ class WorkflowRecordingManager: ObservableObject {
             pythonProcess?.standardOutput = outputPipe
             pythonProcess?.standardError = outputPipe
             
-            // Monitor output
+            // Monitor output with error handling
             if let outputPipe = outputPipe {
                 outputPipe.fileHandleForReading.readabilityHandler = { [weak self] handle in
-                    let data = handle.availableData
-                    if !data.isEmpty {
-                        let output = String(data: data, encoding: .utf8) ?? ""
-                        self?.processOutput(output)
+                    do {
+                        let data = handle.availableData
+                        if !data.isEmpty {
+                            let output = String(data: data, encoding: .utf8) ?? ""
+                            print("🔍 Swift: Python output: \(output)")
+                            self?.processOutput(output)
+                        }
+                    } catch {
+                        // Handle I/O errors gracefully to prevent UI error display
+                        let errorMsg = "I/O error in workflow recorder: \(error.localizedDescription)"
+                        print("❌ Swift: \(errorMsg)")
+                        
+                        // Log to Swift crash log file
+                        self?.logError(errorMsg)
+                        
+                        DispatchQueue.main.async {
+                            if let self = self, self.isRecording {
+                                self.recordingState = .error
+                                self.feedbackMessage = "Recording connection lost"
+                                self.isRecording = false
+                            }
+                        }
+                        // Clear the handler to prevent further errors
+                        handle.readabilityHandler = nil
                     }
                 }
             }
             
+            print("🔍 Swift: Starting Python process...")
             try pythonProcess?.run()
             
             DispatchQueue.main.async {
@@ -123,15 +161,31 @@ class WorkflowRecordingManager: ObservableObject {
             }
             
         } catch {
+            let errorMsg = "Error starting recorder: \(error.localizedDescription)"
+            print("❌ Swift: \(errorMsg)")
+            
+            // Log to Swift crash log file
+            logError(errorMsg)
+            
             DispatchQueue.main.async {
                 self.recordingState = .error
-                self.feedbackMessage = "Error starting recorder: \(error.localizedDescription)"
+                self.feedbackMessage = errorMsg
                 self.isRecording = false
             }
         }
     }
     
     private func stopPythonRecorder() {
+        // Close output handler first to prevent I/O errors
+        if let outputPipe = outputPipe {
+            outputPipe.fileHandleForReading.readabilityHandler = nil
+            do {
+                try outputPipe.fileHandleForReading.close()
+            } catch {
+                // Ignore close errors as the pipe may already be closed
+            }
+        }
+        
         // Send stop command to the Python process
         if let process = pythonProcess, process.isRunning {
             // Send SIGTERM to gracefully stop the recording
@@ -145,9 +199,6 @@ class WorkflowRecordingManager: ObservableObject {
                 }
             }
         }
-        
-        // Close output handler
-        outputPipe?.fileHandleForReading.readabilityHandler = nil
         
         pythonProcess = nil
         outputPipe = nil
@@ -251,6 +302,26 @@ class WorkflowRecordingManager: ObservableObject {
         print("   3. Click the '+' button")
         print("   4. Add the Augment app")
         print("   5. Try recording again")
+    }
+    
+    // Add logging method
+    private func logError(_ message: String) {
+        // Create crash log file if it doesn't exist
+        let crashLogPath = "/Users/richardshaw/augment/src/debug_output/swift_crash_logs.txt"
+        let timestamp = DateFormatter().string(from: Date())
+        let logEntry = "[\(timestamp)] WORKFLOW_RECORDER_ERROR: \(message)\n"
+        
+        if let data = logEntry.data(using: .utf8) {
+            if FileManager.default.fileExists(atPath: crashLogPath) {
+                if let fileHandle = FileHandle(forWritingAtPath: crashLogPath) {
+                    fileHandle.seekToEndOfFile()
+                    fileHandle.write(data)
+                    fileHandle.closeFile()
+                }
+            } else {
+                try? data.write(to: URL(fileURLWithPath: crashLogPath))
+            }
+        }
     }
 }
 

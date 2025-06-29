@@ -6,7 +6,7 @@ class UIInspectorFileManager {
     private let outputDirectory: String
     private let maxFiles: Int
     
-    init(outputDirectory: String = "output", maxFiles: Int = 10) {
+    init(outputDirectory: String = "output", maxFiles: Int = 20) {
         // Get the directory where the executable is located
         let executablePath = CommandLine.arguments[0]
         let executableDir = URL(fileURLWithPath: executablePath).deletingLastPathComponent().path
@@ -30,24 +30,42 @@ class UIInspectorFileManager {
         }
     }
     
-    func generateFilePaths(timestamp: String) -> (jsonPath: String, compressedPath: String) {
-        let jsonPath = "\(outputDirectory)/ui_map_\(timestamp).json"
+    func generateFilePaths(timestamp: String) -> (rawPath: String, cleanedPath: String, compressedPath: String) {
+        let rawPath = "\(outputDirectory)/ui_raw_\(timestamp).json"
+        let cleanedPath = "\(outputDirectory)/ui_cleaned_\(timestamp).json"
         let compressedPath = "\(outputDirectory)/ui_compressed_\(timestamp).txt"
-        return (jsonPath, compressedPath)
+        return (rawPath, cleanedPath, compressedPath)
     }
     
-    func saveFiles(jsonData: Data, compressedFormat: String, timestamp: String) throws -> (jsonPath: String, compressedPath: String) {
+    func saveFiles(jsonData: Data, compressedFormat: String, timestamp: String) throws -> (rawPath: String, cleanedPath: String, compressedPath: String) {
         let paths = generateFilePaths(timestamp: timestamp)
         
-        // Write files
+        // Write raw JSON file
+        try jsonData.write(to: URL(fileURLWithPath: paths.rawPath))
+        
+        // Generate and write cleaned JSON file
+        let cleanedData = try generateCleanedJSON(from: jsonData)
+        try cleanedData.write(to: URL(fileURLWithPath: paths.cleanedPath))
+        
+        // Use the passed-in compressed format (from OutputManager.toCompressed)
         try compressedFormat.write(to: URL(fileURLWithPath: paths.compressedPath), atomically: false, encoding: String.Encoding.utf8)
-        try jsonData.write(to: URL(fileURLWithPath: paths.jsonPath))
         
         // Clean up old files after successful write
         cleanupOldFiles()
         
         return paths
     }
+    
+    // DEPRECATED: Moved to DataCleaningService.generateCleanedJSON
+    // This method is kept for backward compatibility only
+    func generateCleanedJSON(from rawData: Data) throws -> Data {
+        return try DataCleaningService.generateCleanedJSON(from: rawData)
+    }
+    
+    // DEPRECATED: Use CompressionService.generateCompressedFormat instead
+    // This method is kept for backward compatibility but should not be used
+    
+    // DEPRECATED: These methods have been moved to DataCleaningService
     
     private func cleanupOldFiles() {
         let fileManager = FileManager.default
@@ -56,13 +74,25 @@ class UIInspectorFileManager {
             // Get all files in output directory
             let files = try fileManager.contentsOfDirectory(atPath: outputDirectory)
             
-            // Filter for our output files (JSON and compressed)
+            // Filter for our output files (raw, cleaned, compressed, and logs)
             let outputFiles = files.filter { file in
-                file.hasPrefix("ui_map_") && file.hasSuffix(".json") ||
-                file.hasPrefix("ui_compressed_") && file.hasSuffix(".txt")
+                (file.hasPrefix("ui_raw_") && file.hasSuffix(".json")) ||
+                (file.hasPrefix("ui_cleaned_") && file.hasSuffix(".json")) ||
+                (file.hasPrefix("ui_compressed_") && file.hasSuffix(".txt")) ||
+                // Legacy support for old ui_map_ files
+                (file.hasPrefix("ui_map_") && file.hasSuffix(".json"))
             }
             
-            // If we have more than maxFiles, remove the oldest ones
+            // Keep performance logs and other system files
+            let systemFiles = files.filter { file in
+                file == "latest_performance_logs.txt" ||
+                file == "latest_run_logs.txt" ||
+                file.hasSuffix(".log")
+            }
+            
+            print("📁 Output directory status: \(outputFiles.count) files, \(systemFiles.count) system files")
+            
+            // If we exceed the limit, remove oldest files
             if outputFiles.count > maxFiles {
                 // Get file creation dates
                 var fileInfos: [(name: String, date: Date)] = []
@@ -81,20 +111,32 @@ class UIInspectorFileManager {
                 // Calculate how many to remove
                 let filesToRemove = outputFiles.count - maxFiles
                 
+                print("🧹 Cleanup needed: removing \(filesToRemove) oldest files (keeping \(maxFiles) most recent)")
+                
                 // Remove oldest files
-                for i in 0..<filesToRemove {
+                var removedCount = 0
+                for i in 0..<min(filesToRemove, fileInfos.count) {
                     let fileToRemove = fileInfos[i].name
                     let filePath = "\(outputDirectory)/\(fileToRemove)"
                     
                     do {
                         try fileManager.removeItem(atPath: filePath)
-                        print("🗑️  Removed old file: \(fileToRemove)")
+                        removedCount += 1
+                        if removedCount <= 3 { // Show first few removals
+                            print("  🗑️  Removed: \(fileToRemove)")
+                        }
                     } catch {
-                        print("⚠️  Failed to remove old file \(fileToRemove): \(error)")
+                        print("  ⚠️  Failed to remove \(fileToRemove): \(error)")
                     }
                 }
                 
-                print("🧹 Cleanup complete: kept \(maxFiles) most recent files")
+                if removedCount > 3 {
+                    print("  🗑️  ... and \(removedCount - 3) more files")
+                }
+                
+                print("✅ Cleanup complete: \(removedCount) files removed, \(outputFiles.count - removedCount) files kept")
+            } else {
+                print("✅ No cleanup needed: \(outputFiles.count)/\(maxFiles) files")
             }
             
         } catch {
@@ -112,8 +154,11 @@ class UIInspectorFileManager {
         do {
             let files = try fileManager.contentsOfDirectory(atPath: outputDirectory)
             let outputFiles = files.filter { file in
-                file.hasPrefix("ui_map_") && file.hasSuffix(".json") ||
-                file.hasPrefix("ui_compressed_") && file.hasSuffix(".txt")
+                (file.hasPrefix("ui_raw_") && file.hasSuffix(".json")) ||
+                (file.hasPrefix("ui_cleaned_") && file.hasSuffix(".json")) ||
+                (file.hasPrefix("ui_compressed_") && file.hasSuffix(".txt")) ||
+                // Legacy support
+                (file.hasPrefix("ui_map_") && file.hasSuffix(".json"))
             }
             return outputFiles.count
         } catch {
@@ -128,8 +173,11 @@ class UIInspectorFileManager {
         do {
             let files = try fileManager.contentsOfDirectory(atPath: outputDirectory)
             let outputFiles = files.filter { file in
-                file.hasPrefix("ui_map_") && file.hasSuffix(".json") ||
-                file.hasPrefix("ui_compressed_") && file.hasSuffix(".txt")
+                (file.hasPrefix("ui_raw_") && file.hasSuffix(".json")) ||
+                (file.hasPrefix("ui_cleaned_") && file.hasSuffix(".json")) ||
+                (file.hasPrefix("ui_compressed_") && file.hasSuffix(".txt")) ||
+                // Legacy support
+                (file.hasPrefix("ui_map_") && file.hasSuffix(".json"))
             }
             
             // Get file creation dates and sort
@@ -153,4 +201,6 @@ class UIInspectorFileManager {
             return []
         }
     }
+    
+    // DEPRECATED: Text merging methods moved to DataCleaningService
 } 

@@ -7,7 +7,7 @@ import ApplicationServices
 class WindowManager: WindowDetecting {
     private static var cachedImage: NSImage?
     private static var lastCacheTime: Date?
-    private static let cacheTimeout: TimeInterval = 2.0 // Extended cache for better performance
+    private static let cacheTimeout: TimeInterval = 0.0 // Disabled caching for real-time computer use
     private static var lastWindowFrame: CGRect?
     
     // NEW: Performance monitoring
@@ -21,12 +21,20 @@ class WindowManager: WindowDetecting {
     private static var totalFullScreenTime: TimeInterval = 0
     
     func getActiveWindow() -> WindowInfo? {
-        return getAppWindow()
+        let startTime = Date()
+        let result = getAppWindow()
+        let duration = Date().timeIntervalSince(startTime)
+        print("  🔍 getActiveWindow(): \(String(format: "%.3f", duration))s")
+        return result
     }
     
     func captureWindow(_ window: WindowInfo) -> NSImage? {
+        let startTime = Date()
         Self.captureAttempts += 1
-        return captureWindowBoundsOptimized(window.frame)
+        let result = captureWindowBoundsOptimized(window.frame)
+        let duration = Date().timeIntervalSince(startTime)
+        print("  📸 captureWindow(): \(String(format: "%.3f", duration))s")
+        return result
     }
     
     // MARK: - Window Detection
@@ -74,6 +82,8 @@ class WindowManager: WindowDetecting {
     // MARK: - Optimized Screenshot Capture
     
     private func captureWindowBoundsOptimized(_ windowFrame: CGRect) -> NSImage? {
+        let overallStart = Date()
+        
         // Advanced cache check with frame validation
         let now = Date()
         if let cachedImage = Self.cachedImage,
@@ -82,26 +92,65 @@ class WindowManager: WindowDetecting {
            now.timeIntervalSince(lastCache) < Self.cacheTimeout,
            lastFrame == windowFrame {
             Self.cacheHits += 1
+            print("    💾 Cache hit: 0.000s")
             return cachedImage
         }
         
-        // Strategy 1: Fast temp file capture (most reliable for window regions)
+        // Strategy 1: Fast temp file capture (most reliable method)
+        let strategy1Start = Date()
         if let image = captureWindowWithTempFileOptimized(windowFrame) {
+            let strategy1Time = Date().timeIntervalSince(strategy1Start)
+            print("    📁 Strategy 1 (temp file): \(String(format: "%.3f", strategy1Time))s - SUCCESS")
             updateCache(image: image, frame: windowFrame, time: now)
             return image
         }
+        let strategy1Time = Date().timeIntervalSince(strategy1Start)
+        print("    ❌ Strategy 1 (temp file): \(String(format: "%.3f", strategy1Time))s - FAILED")
         
-        // Strategy 2: Full-screen in-memory capture as fallback
+        // Strategy 2: Full-screen temp file fallback
         Self.fallbackCount += 1
-        if let image = captureFullScreenInMemory() {
+        let strategy2Start = Date()
+        if let image = captureFullScreenTempFile() {
+            let strategy2Time = Date().timeIntervalSince(strategy2Start)
+            print("    🆘 Strategy 2 (fallback): \(String(format: "%.3f", strategy2Time))s - SUCCESS")
             updateCache(image: image, frame: windowFrame, time: now)
             return image
         }
+        let strategy2Time = Date().timeIntervalSince(strategy2Start)
+        print("    ❌ Strategy 2 (fallback): \(String(format: "%.3f", strategy2Time))s - FAILED")
         
-        // Strategy 3: Full-screen temp file (last resort)
-        if let image = captureFullScreenTempFile() {
-            updateCache(image: image, frame: windowFrame, time: now)
-            return image
+        let overallTime = Date().timeIntervalSince(overallStart)
+        print("    💥 All strategies failed in \(String(format: "%.3f", overallTime))s")
+        return nil
+    }
+    
+    // NEW: Ultra-fast in-memory capture with optimizations
+    private func captureFullScreenInMemoryOptimized() -> NSImage? {
+        let startTime = Date()
+        let task = Process()
+        task.launchPath = "/usr/sbin/screencapture"
+        
+        // Ultra-fast arguments: -x (no sound), -t jpg (faster than png), -m (main display only)
+        task.arguments = ["-x", "-t", "jpg", "-m", "-"]
+        task.standardError = Pipe() // Suppress errors
+        
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        
+        do {
+            try task.run()
+            let data = pipe.fileHandleForReading.readDataToEndOfFile()
+            task.waitUntilExit()
+            
+            if task.terminationStatus == 0 && !data.isEmpty {
+                Self.inMemorySuccesses += 1
+                let image = NSImage(data: data)
+                let captureTime = Date().timeIntervalSince(startTime)
+                Self.totalInMemoryTime += captureTime
+                return image
+            }
+        } catch {
+            // Fast fail - don't spend time on error handling
         }
         
         return nil
@@ -121,8 +170,8 @@ class WindowManager: WindowDetecting {
         let w = Int(windowFrame.size.width)
         let h = Int(windowFrame.size.height)
         
-        // Optimized arguments: -x (no sound), -t jpg (faster), -R (region)
-        task.arguments = ["-x", "-t", "jpg", "-R", "\(x),\(y),\(w),\(h)", tempPath]
+        // Ultra-optimized arguments: -x (no sound), -t jpg (fastest), -R (region), -C (no cursor)
+        task.arguments = ["-x", "-C", "-t", "jpg", "-R", "\(x),\(y),\(w),\(h)", tempPath]
         task.standardError = Pipe() // Suppress error output
         task.standardOutput = Pipe() // Suppress stdout
         
@@ -133,8 +182,10 @@ class WindowManager: WindowDetecting {
             if task.terminationStatus == 0,
                let image = NSImage(contentsOfFile: tempPath) {
                 
-                // Immediate cleanup
-                try? FileManager.default.removeItem(atPath: tempPath)
+                // Immediate cleanup - don't wait
+                DispatchQueue.global(qos: .utility).async {
+                    try? FileManager.default.removeItem(atPath: tempPath)
+                }
                 Self.tempFileSuccesses += 1
                 let captureTime = Date().timeIntervalSince(startTime)
                 Self.totalTempFileTime += captureTime
@@ -303,7 +354,7 @@ class WindowManager: WindowDetecting {
         }
         
         // OPTIMIZATION: Smart polling for any app windows
-        waitForAppWindow(bundleIdentifier: bundleID, appName: appName, maxWait: Config.defaultWindowTimeout)
+        waitForAppWindow(bundleIdentifier: bundleID, appName: appName, maxWait: PerformanceConfig.defaultWindowTimeout)
     }
     
     private func waitForAppWindow(bundleIdentifier: String, appName: String, maxWait: TimeInterval) {
@@ -315,7 +366,7 @@ class WindowManager: WindowDetecting {
                 print("⚡ \(appName) window ready in \(String(format: "%.3f", actualWait))s")
                 return
             }
-            Thread.sleep(forTimeInterval: Config.gridSweepPollingInterval) // Poll every 50ms
+            Thread.sleep(forTimeInterval: PerformanceConfig.gridSweepPollingInterval) // Poll every 10ms
         }
         
         let actualWait = Date().timeIntervalSince(startTime)
@@ -353,4 +404,6 @@ class WindowManager: WindowDetecting {
         
         return !appWindows.isEmpty
     }
-} 
+}
+
+// MARK: - App Lifecycle Management Extension (Browser-specific methods removed for security)

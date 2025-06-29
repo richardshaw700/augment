@@ -22,7 +22,7 @@ def test_varied_actions():
     mock_events = [
         {
             "type": "mouse_click",
-            "description": "Clicked on btn:Compose@A-16:2 in Messages",
+            "description": "Clicked on btn:Compose@16:2 in Messages",
             "app_name": "Messages",
             "timestamp": 1234567890
         },
@@ -106,7 +106,7 @@ def test_varied_actions():
         },
         {
             "type": "mouse_click",
-            "description": "Clicked on txt:Q Search@A-4:6 in Messages",
+            "description": "Clicked on txt:Q Search@4:6 in Messages",
             "app_name": "Messages",
             "timestamp": 1234567904
         },

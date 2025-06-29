@@ -7,12 +7,6 @@ class MenuBarInspector {
     // MARK: - Menu Bar Coordinate System
     
     struct MenuBarCoordinates {
-        // Left side: App menus (M-M1 to M-M10)
-        static let appMenuPositions = ["M-M1", "M-M2", "M-M3", "M-M4", "M-M5", "M-M6", "M-M7", "M-M8", "M-M9", "M-M10"]
-        
-        // Right side: System items (M-S1 to M-S10) 
-        static let systemMenuPositions = ["M-S1", "M-S2", "M-S3", "M-S4", "M-S5", "M-S6", "M-S7", "M-S8", "M-S9", "M-S10"]
-        
         // Standard menu bar height and positioning
         static let menuBarHeight = 24
         static let menuBarY = 0  // Always at top of screen
@@ -30,21 +24,16 @@ class MenuBarInspector {
                 "bundleIdentifier": frontmostApp.bundleIdentifier ?? "unknown"
             ]
             
-            // Get menu bar items using multiple approaches
+            // Get menu bar items using accessibility API only
             var allMenuItems: [[String: Any]] = []
             
-            // Approach 1: Get app-specific menu items
+            // Get app-specific menu items
             let appMenuItems = getAppMenuItems(for: frontmostApp)
             allMenuItems.append(contentsOf: appMenuItems)
             
-            // Approach 2: Get system menu bar items (right side)
+            // Get system menu bar items (right side)
             let systemMenuItems = getSystemMenuBarItems()
             allMenuItems.append(contentsOf: systemMenuItems)
-            
-            // Approach 3: Fallback - get predictable menu structure
-            if allMenuItems.isEmpty {
-                allMenuItems = getMenuBarItemsFallback(for: frontmostApp)
-            }
             
             menuBarInfo["menuItems"] = allMenuItems
         }
@@ -74,22 +63,45 @@ class MenuBarInspector {
                 
                 // Get main menu items (Apple, App, File, Edit, View, etc.)
                 for (index, child) in children.enumerated() {
-                    if index >= MenuBarCoordinates.appMenuPositions.count { break }
+                    if index >= 10 { break } // Limit to first 10 menu items
                     
                     var titleRef: CFTypeRef?
                     if AXUIElementCopyAttributeValue(child, kAXTitleAttribute as CFString, &titleRef) == .success,
                        let title = titleRef as? String,
                        !title.isEmpty {
                         
-                        let menuPosition = MenuBarCoordinates.appMenuPositions[index]
+                        // Try to get actual position and size from accessibility API
+                        var frameRef: CFTypeRef?
                         
-                        menuItems.append([
-                            "title": title,
-                            "type": "appMenu",
-                            "menuBarPosition": menuPosition,
-                            "index": index,
-                            "isSystemWide": false
-                        ])
+                        // Only proceed if we can get real position and size data
+                        var positionRef: CFTypeRef?
+                        var sizeRef: CFTypeRef?
+                        
+                        if AXUIElementCopyAttributeValue(child, kAXPositionAttribute as CFString, &positionRef) == .success,
+                           let positionValue = positionRef,
+                           AXUIElementCopyAttributeValue(child, kAXSizeAttribute as CFString, &sizeRef) == .success,
+                           let sizeValue = sizeRef {
+                            var position = CGPoint.zero
+                            var size = CGSize.zero
+                            
+                            if AXValueGetValue(positionValue as! AXValue, .cgPoint, &position) &&
+                               AXValueGetValue(sizeValue as! AXValue, .cgSize, &size) {
+                                print("📍 Menu '\(title)': position=\(position), size=\(size)")
+                                
+                                menuItems.append([
+                                    "title": title,
+                                    "type": "appMenu",
+                                    "index": index,
+                                    "isSystemWide": false,
+                                    "actualPosition": ["x": Double(position.x), "y": Double(position.y)],
+                                    "actualSize": ["width": Double(size.width), "height": Double(size.height)]
+                                ])
+                            } else {
+                                print("⚠️ Could not extract position/size values for menu '\(title)'")
+                            }
+                        } else {
+                            print("⚠️ No position/size attributes available for menu '\(title)' - skipping")
+                        }
                     }
                 }
             }
@@ -112,7 +124,7 @@ class MenuBarInspector {
            let menuExtras = menuExtrasRef as? [AXUIElement] {
             
             for (index, extra) in menuExtras.enumerated() {
-                if index >= MenuBarCoordinates.systemMenuPositions.count { break }
+                if index >= 10 { break } // Limit to first 10 system menu items
                 
                 var titleRef: CFTypeRef?
                 var descriptionRef: CFTypeRef?
@@ -124,76 +136,14 @@ class MenuBarInspector {
                     ? (descriptionRef as? String) : nil
                 
                 let displayName = title ?? description ?? "System\(index + 1)"
-                let menuPosition = MenuBarCoordinates.systemMenuPositions[index]
                 
                 menuItems.append([
                     "title": displayName,
                     "type": "systemMenu",
-                    "menuBarPosition": menuPosition,
                     "index": index,
                     "isSystemWide": true
                 ])
             }
-        }
-        
-        return menuItems
-    }
-    
-    // MARK: - Fallback Menu Detection
-    
-    private static func getMenuBarItemsFallback(for app: NSRunningApplication) -> [[String: Any]] {
-        var menuItems: [[String: Any]] = []
-        
-        // Predictable menu structure for macOS apps
-        let appName = app.localizedName ?? "App"
-        let standardMenus = [
-            ("Apple", "appMenu"),           // M1 - Always Apple menu
-            (appName, "appMenu"),          // M2 - App name
-            ("File", "appMenu"),           // M3 - File menu
-            ("Edit", "appMenu"),           // M4 - Edit menu  
-            ("View", "appMenu"),           // M5 - View menu
-            ("Window", "appMenu"),         // M6 - Window menu
-            ("Help", "appMenu")            // M7 - Help menu
-        ]
-        
-        for (index, (menuTitle, menuType)) in standardMenus.enumerated() {
-            if index >= MenuBarCoordinates.appMenuPositions.count { break }
-            
-            let menuPosition = MenuBarCoordinates.appMenuPositions[index]
-            
-            menuItems.append([
-                "title": menuTitle,
-                "type": menuType,
-                "menuBarPosition": menuPosition,
-                "index": index,
-                "isSystemWide": false,
-                "isFallback": true
-            ])
-        }
-        
-        // Add common system menu items (right side)
-        let systemItems = [
-            ("WiFi", "systemMenu"),        // S1
-            ("Bluetooth", "systemMenu"),   // S2  
-            ("Battery", "systemMenu"),     // S3
-            ("Sound", "systemMenu"),       // S4
-            ("Clock", "systemMenu"),       // S5
-            ("Control Center", "systemMenu") // S6
-        ]
-        
-        for (index, (itemTitle, itemType)) in systemItems.enumerated() {
-            if index >= MenuBarCoordinates.systemMenuPositions.count { break }
-            
-            let menuPosition = MenuBarCoordinates.systemMenuPositions[index]
-            
-            menuItems.append([
-                "title": itemTitle,
-                "type": itemType,
-                "menuBarPosition": menuPosition,
-                "index": index,
-                "isSystemWide": true,
-                "isFallback": true
-            ])
         }
         
         return menuItems

@@ -62,7 +62,7 @@ class Contextualizer:
 
     def _coordinates_to_grid(self, x: int, y: int) -> Optional[str]:
         """
-        Converts absolute screen coordinates to a grid cell string (e.g., "A-12:6").
+        Converts absolute screen coordinates to percentage coordinates (e.g., "24:11").
         This is the reverse of the logic in gpt_computer_use.py.
         """
         if not self.window_frame:
@@ -71,15 +71,6 @@ class Contextualizer:
             
         print(f"  [CTX-TRACE] Attempting to map coordinates ({x}, {y})")
         print(f"  [CTX-TRACE] Using window frame: {self.window_frame}")
-
-        # Grid dimensions are hardcoded to 40x50 as in the generation script
-        grid_cols = 40
-        grid_rows = 50
-
-        # Calculate cell size
-        cell_width = self.window_frame['width'] / grid_cols
-        cell_height = self.window_frame['height'] / grid_rows
-        print(f"  [CTX-TRACE] Calculated cell size: width={cell_width:.2f}, height={cell_height:.2f}")
 
         # The coordinates from the event monitor are for the entire screen.
         # We need to convert screen coordinates to window-relative coordinates.
@@ -99,65 +90,65 @@ class Contextualizer:
         relative_y = y - window_y
         print(f"  [CTX-TRACE] Window-relative coordinates: ({relative_x}, {relative_y})")
         
-        # Handle edge cases where coordinates might be negative or cell size is zero
-        if cell_width <= 0 or cell_height <= 0:
-            print(f"  [CTX-ERROR] Invalid cell size: width={cell_width}, height={cell_height}")
+        # Handle edge cases where window dimensions might be zero
+        if window_width <= 0 or window_height <= 0:
+            print(f"  [CTX-ERROR] Invalid window dimensions: width={window_width}, height={window_height}")
             return None
             
         if relative_x < 0 or relative_y < 0:
             print(f"  [CTX-WARN] Negative relative coordinates: ({relative_x}, {relative_y})")
         
-        col_index = int(relative_x / cell_width)
-        row_index = int(relative_y / cell_height)
-        print(f"  [CTX-TRACE] Calculated grid indices (0-based): col={col_index}, row={row_index}")
+        # Convert to percentages (0-100)
+        x_percent = int((relative_x / window_width) * 100)
+        y_percent = int((relative_y / window_height) * 100)
         
-        # Clamp values to be within the grid bounds
-        original_col, original_row = col_index, row_index
-        col_index = max(0, min(col_index, grid_cols - 1))
-        row_index = max(0, min(row_index, grid_rows - 1))
+        # Clamp values to be within 0-100 range
+        original_x_percent, original_y_percent = x_percent, y_percent
+        x_percent = max(0, min(x_percent, 100))
+        y_percent = max(0, min(y_percent, 100))
         
-        if original_col != col_index or original_row != row_index:
-            print(f"  [CTX-TRACE] Clamped indices: ({original_col}, {original_row}) -> ({col_index}, {row_index})")
+        if original_x_percent != x_percent or original_y_percent != y_percent:
+            print(f"  [CTX-TRACE] Clamped percentages: ({original_x_percent}, {original_y_percent}) -> ({x_percent}, {y_percent})")
 
-        # Convert to 1-based grid string
-        grid_id = f"A-{col_index + 1}:{row_index + 1}"
-        print(f"  [CTX-TRACE] Final Grid ID: {grid_id}")
-        return grid_id
+        # Convert to percentage coordinate string
+        coord_id = f"{x_percent}:{y_percent}"
+        print(f"  [CTX-TRACE] Final Coordinate ID: {coord_id}")
+        return coord_id
 
     def find_element_at_coordinates(self, x: int, y: int) -> Optional[str]:
         """
         Finds the full element description for a given (x, y) coordinate.
         """
         print(f"\n[CTX-TRACE] Finding element at ({x}, {y})...")
-        grid_id = self._coordinates_to_grid(x, y)
-        if grid_id:
-            print(f"  [CTX-TRACE] Lookup using Grid ID: '{grid_id}'. Map size: {len(self.element_map)} elements.")
+        coord_id = self._coordinates_to_grid(x, y)
+        if coord_id:
+            print(f"  [CTX-TRACE] Lookup using Coordinate ID: '{coord_id}'. Map size: {len(self.element_map)} elements.")
             
-            # Debug: Show some sample grid IDs from the map
+            # Debug: Show some sample coordinate IDs from the map
             if self.element_map:
                 sample_keys = list(self.element_map.keys())[:5]
-                print(f"  [CTX-DEBUG] Sample grid IDs in map: {sample_keys}")
+                print(f"  [CTX-DEBUG] Sample coordinate IDs in map: {sample_keys}")
             
-            element = self.element_map.get(grid_id)
+            element = self.element_map.get(coord_id)
             if element:
                 print(f"  [CTX-SUCCESS] Found exact element: '{element}'")
                 return element
             else:
-                print(f"  [CTX-INFO] No exact element found for Grid ID '{grid_id}' - trying nearest neighbor...")
-                print(f"  [CTX-INFO] Note: Element might have been deduplicated by GridMapper - this is normal behavior")
+                print(f"  [CTX-INFO] No exact element found for Coordinate ID '{coord_id}' - trying nearest neighbor...")
+                print(f"  [CTX-INFO] Note: Element might have been deduplicated by compression - this is normal behavior")
                 
                 # Try to find nearby elements and return the closest one
-                target_col, target_row = grid_id.split('-')[1].split(':')
-                target_col, target_row = int(target_col), int(target_row)
+                target_x, target_y = coord_id.split(':')
+                target_x, target_y = int(target_x), int(target_y)
                 nearby_elements = []
                 
                 for key in self.element_map.keys():
-                    if key.startswith('A-'):
+                    if ':' in key:
                         try:
-                            col, row = key.split('-')[1].split(':')
-                            col, row = int(col), int(row)
-                            distance = abs(col - target_col) + abs(row - target_row)
-                            if distance <= 5:  # Increased search radius due to deduplication
+                            x_percent, y_percent = key.split(':')
+                            x_percent, y_percent = int(x_percent), int(y_percent)
+                            distance = abs(x_percent - target_x) + abs(y_percent - target_y)
+                            if distance <= 10:  # Search within 10% radius
                                 nearby_elements.append((key, distance, self.element_map[key]))
                         except:
                             continue
@@ -166,16 +157,16 @@ class Contextualizer:
                     nearby_elements.sort(key=lambda x: x[1])
                     closest_key, closest_distance, closest_element = nearby_elements[0]
                     
-                    # Be more lenient with distance due to deduplication
-                    if closest_distance <= 4:
-                        print(f"  [CTX-SUCCESS] Found nearest element (deduplication-aware): '{closest_element}' at {closest_key} (distance: {closest_distance})")
+                    # Be more lenient with distance due to compression
+                    if closest_distance <= 8:
+                        print(f"  [CTX-SUCCESS] Found nearest element (compression-aware): '{closest_element}' at {closest_key} (distance: {closest_distance}%)")
                         return closest_element
                     else:
-                        print(f"  [CTX-DEBUG] Closest element: {closest_key} (distance: {closest_distance}) - potentially deduplicated")
+                        print(f"  [CTX-DEBUG] Closest element: {closest_key} (distance: {closest_distance}%) - potentially compressed")
                         closest = nearby_elements[:3]
-                        print(f"  [CTX-DEBUG] Nearby elements: {[f'{key} (dist={dist})' for key, dist, _ in closest]}")
+                        print(f"  [CTX-DEBUG] Nearby elements: {[f'{key} (dist={dist}%)' for key, dist, _ in closest]}")
                 else:
-                    print(f"  [CTX-DEBUG] No nearby elements found within 5 grid cells")
-                    print(f"  [CTX-DEBUG] This may indicate the element was deduplicated by the GridMapper")
+                    print(f"  [CTX-DEBUG] No nearby elements found within 10% radius")
+                    print(f"  [CTX-DEBUG] This may indicate the element was compressed or deduplicated")
         
         return None 

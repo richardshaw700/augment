@@ -463,12 +463,12 @@ def _extract_click_target(event: Dict) -> str:
     # Try enriched description first
     enriched_description = event.get("description", "")
     if enriched_description and "Clicked on" in enriched_description:
-        # Parse format: "Clicked on txt:iMessage@A-23:49 in Messages"
+        # Parse format: "Clicked on txt:iMessage@23:49 in Messages"
         target_match = re.search(r'Clicked on ([^@\s]+(?::[^@\s]*)?)', enriched_description)
         if target_match:
             target = target_match.group(1)
             # Clean up target (remove grid coordinates and focus states)
-            target = re.sub(r'@.*$', '', target)  # Remove @A-23:49
+            target = re.sub(r'@.*$', '', target)  # Remove @23:49
             target = re.sub(r'\[.*\]', '', target)  # Remove [FOCUSED]
             
             # Handle specific problematic cases

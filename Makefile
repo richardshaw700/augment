@@ -40,11 +40,12 @@ quick-build:
 build-ui-inspector:
 	@echo "🔧 Building Swift UI inspector..."
 	@cd $(UI_INSPECTOR_DIR) && swiftc -O -o compiled_ui_inspector \
-		main.swift AccessibilityEngine.swift OCREngine.swift WindowManager.swift \
-		DataModels.swift ShapeDetectionEngine.swift BrowserInspector.swift \
-		CoordinateSystem.swift FusionEngine.swift GridMapper.swift \
-		CompressionEngine.swift OutputManager.swift PerformanceMonitor.swift \
-		MenuBarInspector.swift FileManager.swift
+		_UIInspectOrchestrator.swift AccessibilityEngine.swift OCREngine.swift WindowManager.swift \
+		DataModels.swift CoordinateSystem.swift OutputManager.swift \
+		PerformanceMonitor.swift MenuBarInspector.swift FileManager.swift \
+		ParallelDetectionCoordinator.swift AppDetectionService.swift \
+		Configuration.swift DataCleaningService.swift CompressionService.swift \
+		fusion_engine/*.swift shape_detection_engine/*.swift
 	@echo "✅ UI inspector built successfully"
 
 # Test the UI inspector standalone

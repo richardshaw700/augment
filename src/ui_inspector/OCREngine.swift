@@ -6,12 +6,16 @@ import AppKit
 
 class OCREngine: TextRecognition {
     func extractText(from image: NSImage) -> [OCRData] {
+        return extractText(from: image, useAccurateMode: false)
+    }
+    
+    func extractText(from image: NSImage, useAccurateMode: Bool = false) -> [OCRData] {
         guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
             print("❌ Failed to get CGImage from NSImage")
             return []
         }
         
-        return performOCR(on: cgImage)
+        return performOCR(on: cgImage, useAccurateMode: useAccurateMode)
     }
     
     // MARK: - OCR Processing
@@ -39,7 +43,7 @@ class OCREngine: TextRecognition {
         return results
     }
     
-    private func performOCR(on cgImage: CGImage) -> [OCRData] {
+    private func performOCR(on cgImage: CGImage, useAccurateMode: Bool = false) -> [OCRData] {
         var ocrResults: [OCRData] = []
         let semaphore = DispatchSemaphore(value: 0)
         
@@ -60,7 +64,7 @@ class OCREngine: TextRecognition {
         }
         
         // Configure OCR request for optimal performance
-        configureOCRRequest(request)
+        configureOCRRequest(request, useAccurateMode: useAccurateMode)
         
         // Perform OCR with background queue to avoid blocking main thread
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
@@ -77,11 +81,16 @@ class OCREngine: TextRecognition {
         return ocrResults
     }
     
-    private func configureOCRRequest(_ request: VNRecognizeTextRequest) {
-        // Optimize for speed - use fast recognition for better performance
-        request.recognitionLevel = .fast
-        request.usesLanguageCorrection = false // Disable for speed
-        request.minimumTextHeight = 0.01 // Slightly higher threshold for speed
+    private func configureOCRRequest(_ request: VNRecognizeTextRequest, useAccurateMode: Bool = false) {
+        // Use fast recognition for better performance (3x faster than .accurate)
+        // When useAccurateMode is enabled, use accurate mode for better text detection
+        if useAccurateMode {
+            request.recognitionLevel = .accurate  // Slower but more thorough
+        } else {
+            request.recognitionLevel = .fast      // 3x faster
+        }
+        request.usesLanguageCorrection = true // Enable for better accuracy
+        request.minimumTextHeight = Float(PerformanceConfig.minTextHeight) // Use config value for small UI text
         
         // Limit to primary language only for speed
         request.recognitionLanguages = ["en-US"]
@@ -92,31 +101,26 @@ class OCREngine: TextRecognition {
         // Set custom words to nil to avoid processing overhead
         request.customWords = []
         
-        // OCR configured for optimal speed while maintaining usable accuracy
+        // OCR configured for optimal accuracy while maintaining reasonable performance
     }
     
     private func processOCRObservationsOptimized(_ observations: [VNRecognizedTextObservation]) -> [OCRData] {
-        // Performance optimization: Vectorized batch processing
-        let minConfidence = Float(Config.minElementConfidence)
+        // Simplified: just return what OCR finds above confidence threshold
+        let minConfidence = Float(PerformanceConfig.minElementConfidence)
         
-        // Pre-allocate result array with estimated capacity
         var ocrElements: [OCRData] = []
-        ocrElements.reserveCapacity(observations.count / 2) // Estimate ~50% pass filter
+        ocrElements.reserveCapacity(observations.count)
         
-        // Batch process observations with vectorized operations
         for observation in observations {
             guard let topCandidate = observation.topCandidates(1).first else {
                 continue
             }
             
             let confidence = topCandidate.confidence
-            let text = topCandidate.string
+            let text = topCandidate.string.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            // Ultra-fast vectorized filtering: combine all checks in single pass
-            guard confidence > minConfidence &&
-                  text.count > 1 &&
-                  !text.isEmpty &&
-                  hasValidTextContent(text) else {
+            // Only filter by confidence and non-empty text
+            guard confidence > minConfidence && !text.isEmpty else {
                 continue
             }
             
@@ -130,24 +134,7 @@ class OCREngine: TextRecognition {
         return ocrElements
     }
     
-    private func hasValidTextContent(_ text: String) -> Bool {
-        // Vectorized text validation - single pass through characters
-        var hasLetter = false
-        var charCount = 0
-        
-        for char in text {
-            charCount += 1
-            if char.isLetter {
-                hasLetter = true
-                break // Early termination on first letter found
-            }
-            if charCount > 10 { // Don't check extremely long strings
-                break
-            }
-        }
-        
-        return hasLetter
-    }
+
     
     // Keep original method for debugging when needed
     private func processOCRObservations(_ observations: [VNRecognizedTextObservation]) -> [OCRData] {
@@ -170,10 +157,10 @@ class OCREngine: TextRecognition {
             }
             
             // Filter out low-confidence or empty text
-            guard confidence > Float(Config.minElementConfidence),
+            guard confidence > Float(PerformanceConfig.minElementConfidence),
                   !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 if text.count > 2 {
-                    print("     ❌ Filtered out: confidence \(confidence) < \(Config.minElementConfidence)")
+                    print("     ❌ Filtered out: confidence \(confidence) < \(PerformanceConfig.minElementConfidence)")
                 }
                 continue
             }
@@ -212,33 +199,8 @@ class OCREngine: TextRecognition {
     }
     
     func filterTextElements(_ elements: [OCRData]) -> [OCRData] {
-        let minConfidence = Float(Config.minElementConfidence)
-        
-        return elements.filter { element in
-            // Fast confidence check first
-            guard element.confidence > minConfidence else { return false }
-            
-            let text = element.text
-            
-            // Fast length check
-            guard text.count > 1 else { return false }
-            
-            // Check for letters without expensive string operations
-            var hasLetter = false
-            var isAllNumeric = true
-            
-            for char in text {
-                if char.isLetter {
-                    hasLetter = true
-                    isAllNumeric = false
-                } else if !char.isNumber && !char.isWhitespace {
-                    isAllNumeric = false
-                }
-            }
-            
-            // Must have at least one letter and not be purely numeric
-            return hasLetter && !isAllNumeric
-        }
+        // Simplified: no additional filtering beyond what OCR processing already did
+        return elements
     }
     
     // MARK: - Coordinate Helpers

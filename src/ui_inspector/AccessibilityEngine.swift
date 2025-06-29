@@ -28,7 +28,7 @@ class AccessibilityEngine: AccessibilityScanning {
         // Check cache first
         let now = Date()
         if let lastCache = Self.lastCacheTime,
-           now.timeIntervalSince(lastCache) < Config.cacheTimeout,
+           now.timeIntervalSince(lastCache) < PerformanceConfig.cacheTimeout,
            !Self.cachedWindowData.isEmpty {
             
             let cachedData = Self.cachedWindowData
@@ -149,16 +149,89 @@ class AccessibilityEngine: AccessibilityScanning {
         var allElements: [AccessibilityData] = []
         var processedElements: Set<String> = []
         
+        // First, try to capture window controls and system UI elements
+        extractWindowControls(from: window, allElements: &allElements, processedElements: &processedElements)
+        
         // Recursively traverse the accessibility tree with increased depth for containers
         traverseAccessibilityTree(
             element: window,
             allElements: &allElements,
             processedElements: &processedElements,
             depth: 0,
-            maxDepth: 20  // Increased from 10 to 20 for deeper browser/list traversal
+            maxDepth: 25  // Increased from 20 to 25 for even deeper traversal
         )
         
         return allElements
+    }
+    
+    private func extractWindowControls(from window: AXUIElement, allElements: inout [AccessibilityData], processedElements: inout Set<String>) {
+        // Try to find window control buttons (close, minimize, zoom)
+        let windowControlAttributes = [
+            kAXCloseButtonAttribute as CFString,
+            kAXMinimizeButtonAttribute as CFString,
+            kAXZoomButtonAttribute as CFString,
+            kAXToolbarButtonAttribute as CFString
+        ]
+        
+        for attribute in windowControlAttributes {
+            var controlRef: CFTypeRef?
+            if AXUIElementCopyAttributeValue(window, attribute, &controlRef) == .success,
+               let controlElement = controlRef {
+                
+                let axElement = controlElement as! AXUIElement
+                let elementPtr = Unmanaged.passUnretained(axElement).toOpaque()
+                let elementId = String(describing: elementPtr)
+                
+                if !processedElements.contains(elementId),
+                   let accessibilityData = createAccessibilityData(from: axElement) {
+                    allElements.append(accessibilityData)
+                    processedElements.insert(elementId)
+                    print("🔍 DEBUG: Found window control: \(accessibilityData.role)")
+                }
+            }
+        }
+        
+        // Alternative approach: Search for window controls by traversing top-level elements
+        extractWindowControlsBySearch(from: window, allElements: &allElements, processedElements: &processedElements)
+    }
+    
+    private func extractWindowControlsBySearch(from window: AXUIElement, allElements: inout [AccessibilityData], processedElements: inout Set<String>) {
+        // Get all immediate children of the window
+        var childrenRef: CFTypeRef?
+        guard AXUIElementCopyAttributeValue(window, kAXChildrenAttribute as CFString, &childrenRef) == .success,
+              let children = childrenRef as? [AXUIElement] else {
+            return
+        }
+        
+        for child in children {
+            // Look for window control buttons in the top area
+            if let accessibilityData = createAccessibilityData(from: child),
+               let position = accessibilityData.position,
+               position.y < 50 { // Window controls are typically in the top 50 pixels
+                
+                let role = accessibilityData.role
+                let description = accessibilityData.description?.lowercased() ?? ""
+                let title = accessibilityData.title?.lowercased() ?? ""
+                
+                // Check if this looks like a window control
+                let isWindowControl = role.contains("Button") && (
+                    description.contains("close") || description.contains("minimize") || description.contains("zoom") ||
+                    title.contains("close") || title.contains("minimize") || title.contains("zoom") ||
+                    position.x < 100 // Window controls are typically on the left side
+                )
+                
+                if isWindowControl {
+                    let elementPtr = Unmanaged.passUnretained(child).toOpaque()
+                    let elementId = String(describing: elementPtr)
+                    
+                    if !processedElements.contains(elementId) {
+                        allElements.append(accessibilityData)
+                        processedElements.insert(elementId)
+                        print("🔍 DEBUG: Found window control by search: \(accessibilityData.role) - \(description)")
+                    }
+                }
+            }
+        }
     }
     
     private func traverseAccessibilityTree(
@@ -227,6 +300,10 @@ class AccessibilityEngine: AccessibilityScanning {
         let subrole = getStringAttribute(element, kAXSubroleAttribute as CFString)
         let value = getStringAttribute(element, kAXValueAttribute as CFString)
         
+        // Extract additional attributes that might help identify window controls
+        let roleDescription = getStringAttribute(element, kAXRoleDescriptionAttribute as CFString)
+        let identifier = getStringAttribute(element, kAXIdentifierAttribute as CFString)
+        
         // Extract boolean attributes
         let enabled = getBoolAttribute(element, kAXEnabledAttribute as CFString) ?? true
         let focused = getBoolAttribute(element, kAXFocusedAttribute as CFString) ?? false
@@ -240,9 +317,20 @@ class AccessibilityEngine: AccessibilityScanning {
         let parent = getParentInfo(element)
         let children = getChildrenInfo(element)
         
-        return AccessibilityData(
+        // Enhanced description for window control buttons
+        let enhancedDescription = enhanceWindowControlDescription(
             role: role,
             description: description,
+            title: title,
+            roleDescription: roleDescription,
+            identifier: identifier,
+            position: position,
+            size: size
+        )
+        
+        return AccessibilityData(
+            role: role,
+            description: enhancedDescription ?? description,
             title: title,
             help: help,
             enabled: enabled,
@@ -347,7 +435,8 @@ class AccessibilityEngine: AccessibilityScanning {
     // MARK: - Container Handling
     
     private func isContainerRole(_ role: String) -> Bool {
-        return ["AXBrowser", "AXList", "AXScrollArea", "AXTable", "AXOutline", "AXWebArea", "AXGroup"].contains(role)
+        return ["AXBrowser", "AXList", "AXScrollArea", "AXTable", "AXOutline", "AXWebArea", "AXGroup", 
+                "AXSplitGroup", "AXTabGroup", "AXToolbar", "AXWindow", "AXDrawer", "AXSheet"].contains(role)
     }
     
     // MARK: - Enhanced Input Field Detection
@@ -457,5 +546,28 @@ class AccessibilityEngine: AccessibilityScanning {
         }
         
         return identifier
+    }
+    
+    private func enhanceWindowControlDescription(
+        role: String,
+        description: String?,
+        title: String?,
+        roleDescription: String?,
+        identifier: String?,
+        position: CGPoint?,
+        size: CGSize?
+    ) -> String? {
+        // Return the best available description from the accessibility attributes
+        // Priority: roleDescription > identifier > description > title
+        if let roleDescription = roleDescription, !roleDescription.isEmpty {
+            return roleDescription
+        }
+        
+        if let identifier = identifier, !identifier.isEmpty {
+            return identifier
+        }
+        
+        // If we still don't have a good description, return the original
+        return description
     }
 } 

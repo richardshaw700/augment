@@ -49,11 +49,12 @@ class BackgroundAutomation:
             # Assume it's a raw phone number, format it
             phone_number = recipient
         
+        escaped_message = message.replace('"', '\\"')
         applescript = f'''
         tell application "Messages"
             set targetService to id of 1st account whose service type = iMessage
             set targetBuddy to participant "{phone_number}" of account id targetService
-            send "{message.replace('"', '\\"')}" to targetBuddy
+            send "{escaped_message}" to targetBuddy
         end tell
         '''
         
@@ -70,17 +71,18 @@ class BackgroundAutomation:
         Returns:
             BackgroundActionResult with success status
         """
+        escaped_message = message.replace('"', '\\"')
         applescript = f'''
         tell application "Messages"
             try
                 set targetService to id of 1st service whose service type = SMS
                 set targetBuddy to participant "{recipient}" of service id targetService
-                send "{message.replace('"', '\\"')}" to targetBuddy
+                send "{escaped_message}" to targetBuddy
             on error
                 -- Fallback to iMessage if SMS service not available
                 set targetService to id of 1st account whose service type = iMessage
                 set targetBuddy to participant "{recipient}" of account id targetService
-                send "{message.replace('"', '\\"')}" to targetBuddy
+                send "{escaped_message}" to targetBuddy
             end try
         end tell
         '''
@@ -102,10 +104,11 @@ class BackgroundAutomation:
             BackgroundActionResult with success status
         """
         cc_part = f'set cc to "{cc}"' if cc else ""
+        escaped_body = body.replace('"', '\\"')
         
         applescript = f'''
         tell application "Mail"
-            set theMessage to make new outgoing message with properties {{subject:"{subject}", content:"{body.replace('"', '\\"')}"}}
+            set theMessage to make new outgoing message with properties {{subject:"{subject}", content:"{escaped_body}"}}
             tell theMessage
                 make new to recipient at end of to recipients with properties {{address:"{recipient}"}}
                 {cc_part}
@@ -215,11 +218,12 @@ class BackgroundAutomation:
         Returns:
             BackgroundActionResult with success status
         """
+        escaped_content = content.replace('"', '\\"')
         applescript = f'''
         tell application "Notes"
             tell account "iCloud"
                 tell folder "Notes"
-                    make new note with properties {{name:"{title}", body:"{content.replace('"', '\\"')}"}}
+                    make new note with properties {{name:"{title}", body:"{escaped_content}"}}
                 end tell
             end tell
         end tell
@@ -420,10 +424,11 @@ class BackgroundAutomation:
             )
         
         # Send message to the group chat using its ID
+        escaped_message = message.replace('"', '\\"')
         applescript = f'''
         tell application "Messages"
             set targetChat to chat id "{chat_id}"
-            send "{message.replace('"', '\\"')}" to targetChat
+            send "{escaped_message}" to targetChat
         end tell
         '''
         
