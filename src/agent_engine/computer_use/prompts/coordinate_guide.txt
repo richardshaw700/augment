@@ -14,4 +14,3 @@ IMPORTANT COORDINATE DETAILS:
 - Menu coordinates are ABSOLUTE pixels (e.g., @27:19 = pixel position 27,19)
 - Window coordinates are PERCENTAGES (e.g., @24:11 = 24% width, 11% height)
 - Use ONLY the coordinate part for clicking (e.g., "24:11" from |300x30@24:11)
-- NO PREFIXES: Use coordinates exactly as shown (24:11, not A-24:11)

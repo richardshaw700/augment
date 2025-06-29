@@ -18,8 +18,6 @@ from .monitoring import SessionMonitor
 
 class AgentOrchestrator:
     """
-    Pure orchestration - reads like pseudocode
-    
     Workflow:
     1. Initialize all modules  
     2. Execute task: ask → act → check → repeat

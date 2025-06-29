@@ -1,0 +1,182 @@
+Cursor | 1664x1026
+
+APP WINDOW
+txt:Pé communication.py M X|164x14@24:5
+txt:Pé core.py M|80x14@33:5
+txt:11|11x11@46:5
+txt:El£OOO>O to|144x16@42:5
+txt:class LLMCommunicator: async def get next_decision I sel f, session)|330x30@29:10
+txt:67|13x10@17:11
+txt:421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468 Non, 'Build all dynamic content for injection into system prom def _build_dynamic_content (self, ui_state: Optional IDictl dynamic_pa rts 11 self.ui formatter.format ui state for Ill messages. append ({" role": f ormatted ui if ui state: # Add UI state if available 'system" 'content": f"Cu rrent dynamic_pa rts. append ( f"Cu rrent UI State: Inlformatted_ui sel f . context manager. in j ect_app_specif ic_guidance ( ui st,|495x856@36:53
+txt:Thought for 12s, searched, and read monitoring.py and logger.py|366x11@86:9
+txt:Dict Istr, Anyl|98x13@44:11
+txt:btn: Element | 72x22@73: 98 btn: Element | 116x22@67: 98|172x30@58:11
+txt:agent_engine|82x13@5:12
+txt:computer_use actions|86x25@5:15
+txt:monitoring.py +1 -1|105x10@78:13
+txt:71 72 73 74 75 76 77 78 79 80 81|14x190@17:23
+txt:# Inject context guidance sel f . context manager. in j ect messages_guidance_f or task( sess|426x30@36:15
+txt:Task: test master prompt with dynamic injectic|330x12@62:15
+txt:sel f . logger. log_iteration ( iteration-session. iteration, user message-task_message, systemJ)rompt-self . core. system prompt, systemJrompt- ' IDynamic System Prompt Z Im response-j son. dumps (decision ) , action data-decision, action result-result, See|338x138@88:21
+txt:adapters|52x13@5:18
+txt:prompts pycache_ dynamic [] blueprint.txt [] completion.txt [] eff iciency.txt [] focus.txt|105x141@6:26
+txt:# Get LLM response Ilm response await self . get decision (task_message, sessl print ( f"19 Agent Response: 111m responsel" )|419x47@35:21
+txt:Please start by inspecting the current UI stat|329x12@62:19
+txt:'action":|58x10@55:22
+txt:'ui inspect"|82x12@60:22
+txt:'parameters": 11, rf|146x12@68:22
+txt:# Parse response return self ._parse_Ilm response ( Ilm response)|323x29@32:28
+txt:Action succeeded: UI state captured|252x12@60:26
+txt:Continue with the task: test master prompt wit|330x12@62:29
+txt:def _build messages (self, user message: str, ui_state: Optional 'Build message list for LLM" messages [{" role": 'system" 'content": self . system promp 'Build message list for LLM with dynamic system prompt" # Build dynamic content dynamic_content sel f ._build_dynamic_content ( ui state)|454x103@35:36
+txt:tFa Thought for 1 second|138x12@78:31
+txt:What should be the next action7|223x10@59:33
+txt:[] loop_detection.txt|127x13@7:35
+txt:[] messages.txt [] navigation.txt init .py [] actionJuide.txt [] coordinate_guide.txt [] goal_evaluation.txt Pé loader.py [] response_format.txt|144x165@7:45
+txt:[] system.txt session|80x32@5:55
+txt:82 83 84 85 86 87 88 89 90 91 92 93|14x207@17:47
+txt:Step 6: Test the refactored system again|319x17@83:36
+txt:112: 54: 01. 1681 RESPONSE FR(M LLM:|233x11@61:38
+txt:) python3 s rc/main. py prompt with dynamic in jection" -task 'test master -debug|291x30@83:41
+txt:Output|34x9@97:40
+txt:'action":|58x10@55:41
+txt:'click"|45x10@59:41
+txt:'parameters": I'grid_posit|182x13@67:42
+txt:# Build system prompt with dynamic content system prompt with_dynamic sel f . core. prompt loader. load_s avai lable_applications-sel f . core. available_apps, dynamicJ)rompt=dynamic_content|426x66@36:47
+txt:ht be relevant to the task. Clicking on it to inspect it¢ [12:54:0] •• Executing: click The task is to test mast( ws a file named 'communication.py M, which might be rele) ent. Coo rdinate conversion: 23: 5 -> windowl 46, 39, 1664x1026,, V Success: Clicked at grid position 23.5 -> (428, 90)|395x82@86:48
+txt:112.54: 04.6181 PROMPT TO LLM:|204x11@60:48
+txt:You are an AI assistant that can control a co|325x10@62:54
+txt:messages messages. extendt]self . conversation. get history( ) ) [{" role": ' system" 'content": system prompt w aEN %Y|412x33@35:56
+txt:Iteration 3/20 2025-06-29 12: 54: 04, 001 IINFOI HThP Request: POST https i I O OK" Agent Response: I'action": but the UI state didn't change, which means the file pi 'ui inspect" 'pa rameters" I need to re-inspect the UI to confirm the current stat( aster prompt with dynamic injection, so I need to find wl|394x96@87:58
+txt:AVAILABLE APPS apps (29) |Alterlwearedevx. alter) , Ast ro(matteosF|330x30@62:58
+txt:utils|25x10@4:60
+txt:# Add UI state messages. append ( {" role": return messages|171x48@28:62
+txt:94 95 96 97 98 99 100 101 102 103|20x171@17:70
+txt:'user"|38x10@35:62
+txt:workflow|53x10@5:63
+txt:'content": user messagely|176x13@43:62
+txt:AVAILABLE ACTIONS: You have access to these actions: 'ui inspect": Get current UI structure as J< 'click": Click at a grid position use the "type": Type text with 'field" parameter for 'key": Press keyboard keys le.g. 'Return" 'bash": Execute terminal commands "wait": Wait for specified seconds To open applications, use 'bash" with commar|330x156@62:70
+txt:init .py Pé _agent_orCheStratOr.py Pé communication.py Pé core.py Pé execution.py Pé monitoring.py M+ README.md|161x142@7:71
+txt:[12:54:0] * Executing: ui inspect means the file probably didn't open or it's already the I clicked on 'commui the current state and determine the next step. The goal I need to find where the prompt is defined and how it's|392x55@87:67
+txt:D Move to background|119x10@89:73
+txt:Skip|22x10@96:73
+txt:104 105 106 107 108 109|20x100@17:85
+txt:COORDINATE SYSTEMS: UI elements use format: |WIDTHXHEIGHT@X:Y wher WIDTH x HEIGHT element size in pixels (e.c center point coordinates as percentagf 1596 f rom If percentage along width 115 percentage along height (29 2996 f rom t|330x102@62:85
+txt:# Add dynamic guidance dynamic_guidance get_dynamic_prompt inj ections ( clear afte if dynamic_guidance: messages. append ({" role":|426x66@36:89
+txt:'system"|53x12@37:92
+txt:< 415 >|49x10@38:94
+txt:'content": dynamic_g|139x12@44:92
+txt:Examples: |138x28@ Review nextfile > Je, 28px tall, centf | 300x30@24: 11 Jvkjpx wide. 30px tall. centf|329x48@62:94
+txt:claude-4-sonnet -|97x9@83:93
+txt:110 111|20x27@17:94
+txt:216|23x10@26:94
+txt:Reject Accept|82x10@32:94
+txt:messages. appendl{" role":|171x12@28:97
+txt:'user"|38x10@35:97
+txt:'content": user messagel)|174x12@43:97
+txt:P augment|67x14@51:1
+txt:tg P &9 &°|110x15@6:5
+txt:[] prompt_history.txt X|148x13@54:5
+txt:Improve clarity in agent orchestrator|209x12@80:5
+txt:v AUGMENT|72x9@2:7
+txt:src > agent_engine > computer_use > Pé communication.py|368x14@27:7
+txt:16|13x9@17:9
+txt:src > debug_output > E] prompt_history.txt|269x13@57:8
+txt:v src|35x8@2:10
+txt:420|21x10@50:10
+txt:469|21x10@50:96
+txt:Pé background_llm.py|136x14@5:80
+txt:Pé blueprint_loader.py|137x13@5:82
+txt:Pé dynamic_prompts.py|147x14@6:84
+txt:Pé main.py|67x13@3:86
+txt:Pé task_classif ier.py|124x14@5:88
+txt:|72x10@76:84
+txt:Stop|23x10@89:84
+txt:Accept all|75x10@95:84
+txt:Add Context|64x9@77:87
+txt:> NOTEPADS|74x10@2:92
+txt:.Agent xL.-|61x10@76:93
+txt:> OUTLINE|62x10@2:94
+txt:> TIMELINE|66x10@2:96
+txt:|42x14@3:98
+txt:Start a new chat for better results.|238x9@91:96
+txt:* (£s<fLaunchpad 00￿0 (IAI)o|272x13@13:98
+txt:|558x14@80:98
+btn:close button|16x16@1:1
+btn:minimize button|16x16@2:1
+btn:full screen button|16x16@3:1
+btn:button|22x22@33:1
+btn:button|22x22@35:1
+btn:button|72x22@51:1
+btn:checkbox|22x22@93:1
+btn:checkbox|22x22@95:1
+btn:checkbox|22x22@97:1
+btn:checkbox|22x22@98:1
+btn:button|263x22@7:7
+btn:outline row|263x22@7:9
+btn:outline row|263x22@7:11
+btn:outline row|263x22@7:13
+btn:outline row|263x22@7:15
+btn:outline row|263x22@7:18
+btn:outline row|263x22@7:20
+btn:outline row|263x22@7:22
+btn:outline row|263x22@7:24
+btn:outline row|263x22@7:26
+btn:outline row|263x22@7:28
+btn:outline row|263x22@7:30
+btn:outline row|263x22@7:33
+btn:outline row|263x22@7:35
+btn:outline row|263x22@7:37
+btn:outline row|263x22@7:39
+btn:outline row|263x22@7:41
+btn:outline row|263x22@7:43
+btn:outline row|263x22@7:45
+btn:outline row|263x22@7:48
+btn:outline row|263x22@7:50
+btn:outline row|263x22@7:52
+btn:outline row|263x22@7:54
+btn:outline row|263x22@7:56
+btn:outline row|263x22@7:58
+btn:outline row|263x22@7:60
+btn:outline row|263x22@7:63
+btn:outline row|263x22@7:65
+btn:outline row|263x22@7:67
+btn:outline row|263x22@7:69
+btn:outline row|263x22@7:71
+btn:outline row|263x22@7:73
+btn:outline row|263x22@7:75
+btn:outline row|263x22@7:78
+btn:outline row|263x22@7:80
+btn:outline row|263x22@7:82
+btn:outline row|263x22@7:84
+btn:outline row|263x22@7:86
+btn:outline row|263x22@7:88
+btn:outline row|263x22@7:90
+btn:outline row|263x22@7:14
+btn:outline row|263x22@7:12
+btn:outline row|263x22@7:10
+btn:button|263x22@7:92
+btn:button|263x22@7:94
+btn:button|263x22@7:96
+btn:tab|227x22@80:5
+btn:button|22x22@92:5
+btn:button|22x22@94:5
+btn:button|22x22@95:5
+btn:pop up button|22x22@97:5
+btn:button|22x22@98:5
+btn:button|34x22@1:98
+btn:button|57x22@3:98
+btn:button|21x22@6:98
+btn:button|25x22@7:98
+btn:button|104x22@12:98
+btn:button|64x22@17:98
+btn:button|36x22@20:98
+btn:button|24x22@98:98
+btn:button|69x22@95:98
+btn:button|50x22@91:98
+btn:button|24x22@89:98
+btn:button|47x22@86:98
+btn:button|66x22@82:98
+btn:button|87x22@77:98
+btn:button|73x22@72:98
+btn:button|117x22@66:98

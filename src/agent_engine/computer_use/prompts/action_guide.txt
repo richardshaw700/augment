@@ -6,4 +6,4 @@ You have access to these actions:
 - "key": Press keyboard keys (e.g., "Return", "cmd+c", "Tab")
 - "bash": Execute terminal commands
 - "wait": Wait for specified seconds
-- IMPORTANT: When using "type" action, the system handles text input focus automatically so do not click first!
+- To open applications, use "bash" with commands like: open -a 'AppName'

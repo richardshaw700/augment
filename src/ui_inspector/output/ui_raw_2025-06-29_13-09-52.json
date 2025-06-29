@@ -1,0 +1,7606 @@
+{
+  "compressedOutput" : "Cursor | 1664x1026\n\nAPP WINDOW\ntxt:P augment|67x14@51:1\ntxt:tg P &9 &°|110x15@6:5\ntxt:)mpt_history.txt|95x13@18:5\ntxt:Pé communication.py M|145x14@28:5\ntxt:Pé _agent_orchestrator.py M|176x14@40:5\ntxt:Pé _prompt_orchestrator.py U X|203x14@54:5\ntxt:11|11x11@69:5\ntxt:Pé monitoring. El to|137x15@66:5\ntxt:Improve clarity in agent orchestrator|209x12@80:5\ntxt:Improve clarity in agent orchestrator|399x12@86:7\ntxt:Mac: augment richa rdshaw$|173x12@79:9\ntxt:v AUGMENT|72x9@2:7\ntxt:src > agent_engine > computer_use > prompts > Pé _prompt_orchestrator.py|474x14@31:7\ntxt:v src|35x8@2:10\ntxt:actions|43x10@3:12\ntxt:Prompt Orchest rator|136x12@23:11\ntxt:Cent ralized prompt assembly and management|302x12@38:11\ntxt:tk Thought for 1 second|138x13@78:13\ntxt:v agent_engine|99x13@4:14\ntxt:pycache_|64x12@5:16\ntxt:computer_use|86x11@5:18\ntxt:pycache_|64x13@6:20\ntxt:actions|43x10@4:23\ntxt:This module handles ALL prompt assembly logic in one place:|424x12@32:15\ntxt:System prompt building with dynamic content|309x12@29:16\ntxt:Task message f o rmatting|165x12@25:18\ntxt:Conversation f o rmatting|164x12@25:20\ntxt:Context inj ection|122x12@24:22\ntxt:Message list assembly|152x12@25:23\ntxt:_prompt_orchestrator.py +1 -1|164x10@80:16\ntxt:impo rt j son|77x12@76:19\ntxt:from typing import Dict, List, Anyi Optional|316x12@84:20\ntxt:f rom . loader impo rt PromptLoader|230x12@81:22\ntxt:from|27x10@75:24\ntxt:. dynamic_prompts import get_dynamic_prompt in j ecti|359x12@88:24\ntxt:f rom s rc. agent_engine. dynamic_prompts impo rt get dynamic|403x13@86:26\ntxt:adapters|52x13@5:25\ntxt:prompts|49x11@5:27\ntxt:pycache_|64x13@6:29\ntxt:dynamic|50x13@5:31\ntxt:init .py|50x13@6:33\ntxt:Pé _prompt_orchestrator.py|170x13@7:35\ntxt:[] actionJuide.txt|115x13@6:38\ntxt:[] coordinate_guide.txt|142x13@7:40\ntxt:[] goal_evaluation.txt|132x13@6:42\ntxt:Pé loader.py|76x13@5:44\ntxt:[] response_format.txt|140x13@7:46\ntxt:[] system.txt|80x12@5:48\ntxt:session|44x10@4:50\ntxt:10|13x10@17:25\ntxt:11|13x9@17:27\ntxt:12|12x9@17:29\ntxt:13|12x10@17:30\ntxt:14|13x9@17:32\ntxt:impo rt j son|78x12@22:29\ntxt:from typing import Dict, List, Anyi Optional|317x12@29:30\ntxt:f rom . loader impo rt PromptLoader|230x12@26:32\ntxt:from|28x10@20:34\ntxt:. dynamic_prompts import get dynamic_prompt in jections|380x12@33:34\ntxt:f rom s rc. agent_engine. dynamic_prompts import get dynamic_prompt inj ections|532x12@35:36\ntxt:class PromptOrchestrator:|178x12@79:31\ntxt:15|12x10@17:36\ntxt:16|13x9@17:37\ntxt:17|12x9@17:39\ntxt:18|13x10@17:41\ntxt:19|13x10@17:43\ntxt:20|14x10@17:44\ntxt:21|14x9@17:46\ntxt:22|13x9@17:48\ntxt:23|13x10@17:50\ntxt:24|14x9@17:51\ntxt:25|13x9@17:53\ntxt:26|14x9@17:55\ntxt:27|13x9@17:57\ntxt:28|14x10@17:58\ntxt:29|14x9@17:60\ntxt:30|14x10@17:62\ntxt:31|14x9@17:64\ntxt:32|13x10@17:65\ntxt:33|13x9@17:67\ntxt:34|14x10@17:69\ntxt:35|13x9@17:71\ntxt:36|14x10@17:72\ntxt:37|13x10@17:74\ntxt:38|14x10@17:76\ntxt:39|14x10@17:78\ntxt:40|14x9@17:79\ntxt:41|14x9@17:81\ntxt:42|13x9@17:83\ntxt:43|13x10@17:85\ntxt:44|14x9@17:86\ntxt:45|13x10@17:88\ntxt:46|14x9@17:90\ntxt:47|13x9@17:92\ntxt:48|14x10@17:94\ntxt:49|14x10@17:95\ntxt:|14x8@17:97\ntxt:* (£s<fLaunchpad 00￿0 (IAI)o|272x13@13:98\ntxt:Thought for 2 seconds|127x11@78:35\ntxt:Reject 3eN Accept %Y|112x10@67:37\ntxt:) python3 s rc\/main. py|147x12@79:38\ntxt:-task 'test|78x10@87:38\ntxt:cent ralized prompt orchest ration\"|236x12@82:40\ntxt:-debug|42x12@77:42\ntxt:Output|34x10@97:38\ntxt:class PromptOrchest rator:|178x12@25:41\ntxt:'Cent ralized orchest rator f or all prompt assembly operations\"|435x12@35:43\ntxt:113:09:50.7831 IMAINI Vl Task session created|311x11@84:44\ntxt:def|21x10@22:46\ntxt:init ( sel f, prompt loader: PromptLoader) .|300x13@33:46\ntxt:sel f . prompt loader|129x12@27:48\ntxt:prompt loader|92x12@35:48\ntxt:Task Execution|98x10@79:48\ntxt:def build_complete messages I sel f,|236x12@28:51\ntxt:task message: str,|126x12@36:53\ntxt:conversation_history: List IDict Istr, strl I ,|308x12@42:55\ntxt:ui_state: Optional IDictl|170x13@37:57\ntxt:None,|34x11@45:57\ntxt:avai lable_apps: str|137x12@36:59\ntxt:ui formatter4lone,|126x11@36:60\ntxt:context manager-None)|148x12@37:62\ntxt:Starting Agent Computer Use|188x12@82:51\ntxt:Task: test centralized prompt orchestration|300x12@85:53\ntxt:utils|25x10@4:55\ntxt:Sta rting Agent O rchest rato r|188x12@82:55\ntxt:Task: test cent ralized p rompt o rchest ration|300x12@85:57\ntxt:workflow|53x10@5:57\ntxt:init .py|51x13@5:59\ntxt:Pé _agent_orCheStratOr.py|161x13@7:61\ntxt:Pé communication.py|131x14@6:63\ntxt:Pé core.py|66x13@4:65\ntxt:Pé execution.py|96x14@5:68\ntxt:Pé monitoring.py|103x13@5:70\ntxt:M+ README.md|95x10@5:72\ntxt:Iteration 1\/20|97x10@79:61\ntxt:2025-06-29 13: 09: 51, 645 IINFOI HThP Request: POST https i I|394x13@87:62\ntxt:0 OK\"|33x10@76:63\ntxt:• Agent Response: I'action\":|200x13@81:65\ntxt:'ui inspect\"|79x12@90:65\ntxt:'pa rameters\"|79x12@96:65\ntxt:understand the current state and identify any relevant I|387x12@87:66\ntxt:[13:09:5] w Executing: ui inspect|234x13@82:68\ntxt:Sta rting by inspect:|135x12@94:68\ntxt:ify any relevant elements for the task.|270x12@83:69\ntxt:List IDict Istr, strl I|141x12@47:62\ntxt:Build complete message list for LLM|252x12@30:66\ntxt:SINGLE SOURCE OF TRUTH|158x10@44:65\ntxt:This is the ONLY method that should assemble final messages for the LLM.|518x12@38:69\ntxt:All other components should route through here.|336x12@33:71\ntxt:Pé background_llm.py|136x14@5:74\ntxt:Pé blueprint_loader.py|137x14@5:76\ntxt:Pé dynamic_prompts.py|147x14@6:78\ntxt:Pé main.py|67x14@3:80\ntxt:Pé task_classif ier.py|124x14@5:83\ntxt:D Move to background|119x10@89:73\ntxt:Skip|22x10@96:73\ntxt:# l. Build dynamic content|188x12@28:74\ntxt:dynamic_content|107x12@26:76\ntxt:sel f ._build_dynamic_content (|200x13@37:76\ntxt:ui_state-ui state,|126x11@28:78\ntxt:ui formatter-ui f ormatter,|184x11@30:80\ntxt:context manager-context manager|223x11@31:81\ntxt:|78x10@76:84\ntxt:Stop|23x10@90:84\ntxt:Accept|29x10@95:84\ntxt:config|36x13@3:87\ntxt:core|26x7@3:89\ntxt:# 2. Build complete system prompt|238x12@30:87\ntxt:system prompt|92x11@26:88\ntxt:self . prompt loader. load_system prompt (|272x13@38:88\ntxt:avai lable_applications-available_apps,|272x12@33:90\ntxt:dynamicJ)rompt-dynamic_content|215x12@31:92\ntxt:Add Context|64x9@77:87\ntxt:> NOTEPADS|74x10@2:92\ntxt:.Agent xL.-|61x10@76:93\ntxt:> OUTLINE|62x10@2:94\ntxt:claude-4-sonnet -|97x9@83:93\ntxt:Reject file Accept file >EéJ|176x11@47:94\ntxt:> TIMELINE|66x10@2:96\ntxt:|42x14@3:98\ntxt:Start a new chat for better results.|238x9@91:96\ntxt:* _?. A.E.Epmh7p f7nal mp.E.Eanp T7.Et|231x8@30:97\nbtn:Cursor Tab Ln 117, Col 59 Spaces: 4 UTF-8 LF Python O Prettier|446x13@83:98\nbtn:Element|16x16@1:1\nbtn:Element|16x16@2:1\nbtn:Element|16x16@3:1\nbtn:Element|22x22@33:1\nbtn:Element|22x22@35:1\nbtn:Element|72x22@51:1\nbtn:Element|22x22@93:1\nbtn:Element|22x22@95:1\nbtn:Element|22x22@97:1\nbtn:Element|22x22@98:1\nbtn:Element|263x22@7:7\nbtn:Element|263x22@7:10\nbtn:Element|263x22@7:12\nbtn:Element|263x22@7:14\nbtn:Element|263x22@7:16\nbtn:Element|263x22@7:18\nbtn:Element|263x22@7:20\nbtn:Element|263x22@7:23\nbtn:Element|263x22@7:25\nbtn:Element|263x22@7:27\nbtn:Element|263x22@7:29\nbtn:Element|263x22@7:31\nbtn:Element|263x22@7:33\nbtn:Element|263x22@7:35\nbtn:Element|263x22@7:38\nbtn:Element|263x22@7:40\nbtn:Element|263x22@7:42\nbtn:Element|263x22@7:44\nbtn:Element|263x22@7:46\nbtn:Element|263x22@7:48\nbtn:Element|263x22@7:50\nbtn:Element|263x22@7:53\nbtn:Element|263x22@7:55\nbtn:Element|263x22@7:57\nbtn:Element|263x22@7:59\nbtn:Element|263x22@7:61\nbtn:Element|263x22@7:63\nbtn:Element|263x22@7:65\nbtn:Element|263x22@7:68\nbtn:Element|263x22@7:70\nbtn:Element|263x22@7:72\nbtn:Element|263x22@7:74\nbtn:Element|263x22@7:76\nbtn:Element|263x22@7:78\nbtn:Element|263x22@7:80\nbtn:Element|263x22@7:83\nbtn:Element|263x22@7:85\nbtn:Element|263x22@7:87\nbtn:Element|263x22@7:89\nbtn:Element|263x22@7:91\nbtn:Element|263x22@7:92\nbtn:Element|263x22@7:94\nbtn:Element|263x22@7:96\nbtn:Element|227x22@80:5\nbtn:Element|22x22@92:5\nbtn:Element|22x22@94:5\nbtn:Element|22x22@95:5\nbtn:Element|22x22@97:5\nbtn:Element|22x22@98:5\nbtn:Element|34x22@1:98\nbtn:Element|57x22@3:98\nbtn:Element|21x22@6:98\nbtn:Element|25x22@7:98\nbtn:Element|104x22@12:98\nbtn:Element|64x22@17:98\nbtn:Element|36x22@20:98\nbtn:Element|24x22@98:98\nbtn:Element|69x22@95:98\nbtn:Element|50x22@91:98\nbtn:Element|24x22@89:98\nbtn:Element|47x22@86:98\nbtn:Element|66x22@82:98\nbtn:Element|94x22@77:98",
+  "metadata" : {
+    "processingTime" : 0.84702301025390625,
+    "timestamp" : "2025-06-29T17:09:52Z",
+    "performance" : {
+      "fusedElements" : 256,
+      "accessibilityTime" : 0.17154300212860107,
+      "screenshotTime" : 0.14614498615264893,
+      "fusionTime" : 0.015202045440673828,
+      "totalElements" : 518,
+      "ocrTime" : 0.61705803871154785,
+      "memoryUsage" : 124715008
+    }
+  },
+  "systemContext" : {
+    "menuItems" : [
+      {
+        "isSystemWide" : false,
+        "actualSize" : {
+          "height" : 38,
+          "width" : 34
+        },
+        "actualPosition" : {
+          "x" : 10,
+          "y" : 0
+        },
+        "index" : 0,
+        "title" : "Apple",
+        "type" : "appMenu"
+      },
+      {
+        "actualPosition" : {
+          "x" : 44,
+          "y" : 0
+        },
+        "type" : "appMenu",
+        "index" : 1,
+        "isSystemWide" : false,
+        "title" : "Cursor",
+        "actualSize" : {
+          "height" : 38,
+          "width" : 64
+        }
+      },
+      {
+        "title" : "File",
+        "type" : "appMenu",
+        "actualSize" : {
+          "width" : 42,
+          "height" : 38
+        },
+        "isSystemWide" : false,
+        "actualPosition" : {
+          "x" : 108,
+          "y" : 0
+        },
+        "index" : 2
+      },
+      {
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "actualSize" : {
+          "width" : 44,
+          "height" : 38
+        },
+        "actualPosition" : {
+          "x" : 150,
+          "y" : 0
+        },
+        "title" : "Edit",
+        "index" : 3
+      },
+      {
+        "isSystemWide" : false,
+        "index" : 4,
+        "title" : "Selection",
+        "type" : "appMenu",
+        "actualPosition" : {
+          "x" : 194,
+          "y" : 0
+        },
+        "actualSize" : {
+          "height" : 38,
+          "width" : 77
+        }
+      },
+      {
+        "index" : 5,
+        "title" : "View",
+        "actualSize" : {
+          "height" : 38,
+          "width" : 50
+        },
+        "type" : "appMenu",
+        "isSystemWide" : false,
+        "actualPosition" : {
+          "x" : 271,
+          "y" : 0
+        }
+      },
+      {
+        "index" : 6,
+        "isSystemWide" : false,
+        "title" : "Go",
+        "actualSize" : {
+          "height" : 38,
+          "width" : 38
+        },
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 321
+        },
+        "type" : "appMenu"
+      },
+      {
+        "actualSize" : {
+          "width" : 44,
+          "height" : 38
+        },
+        "type" : "appMenu",
+        "actualPosition" : {
+          "x" : 359,
+          "y" : 0
+        },
+        "index" : 7,
+        "title" : "Run",
+        "isSystemWide" : false
+      },
+      {
+        "actualPosition" : {
+          "x" : 403,
+          "y" : 0
+        },
+        "actualSize" : {
+          "height" : 38,
+          "width" : 72
+        },
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "index" : 8,
+        "title" : "Terminal"
+      },
+      {
+        "title" : "Window",
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "actualPosition" : {
+          "x" : 475,
+          "y" : 0
+        },
+        "actualSize" : {
+          "height" : 38,
+          "width" : 69
+        },
+        "index" : 9
+      }
+    ],
+    "timestamp" : "2025-06-29T17:09:52Z",
+    "activeApplication" : {
+      "bundleIdentifier" : "com.todesktop.230313mzl4w4u92",
+      "name" : "Cursor"
+    }
+  },
+  "elements" : [
+    {
+      "semanticMeaning" : "AXToolbar with text 'P augment'",
+      "position" : {
+        "x" : 872,
+        "y" : 49.000000000000057
+      },
+      "visualText" : "P augment",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXToolbar",
+        "description" : "toolbar"
+      },
+      "confidence" : 1,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 872,
+          "y" : 49.000000000000057,
+          "width" : 67.499999999999915,
+          "height" : 13.999999999999943
+        },
+        "text" : "P augment",
+        "confidence" : 1
+      },
+      "isClickable" : false,
+      "type" : "AXToolbar+OCR",
+      "size" : {
+        "width" : 67.499999999999915,
+        "height" : 13.999999999999943
+      },
+      "interactions" : [
+
+      ],
+      "id" : "1EA7C2D1-9DCA-48F8-B751-A11A6F2029F5"
+    },
+    {
+      "confidence" : 0.79999999999999993,
+      "size" : {
+        "height" : 14.999999999999972,
+        "width" : 110.5
+      },
+      "semanticMeaning" : "AXGroup with text 'tg P &9 &°'",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "role" : "AXGroup",
+        "description" : "group",
+        "enabled" : true
+      },
+      "position" : {
+        "x" : 105.5,
+        "y" : 84.000000000000028
+      },
+      "visualText" : "tg P &9 &°",
+      "interactions" : [
+        "right_click"
+      ],
+      "ocr" : {
+        "text" : "tg P &9 &°",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 84.000000000000028,
+          "height" : 14.999999999999972,
+          "width" : 110.5,
+          "x" : 105.5
+        }
+      },
+      "type" : "AXGroup+OCR",
+      "isClickable" : false,
+      "id" : "9D70E92B-614F-405E-B406-E08C4DD814A5"
+    },
+    {
+      "position" : {
+        "x" : 309,
+        "y" : 86.499999999999986
+      },
+      "semanticMeaning" : "AXGroup with text ')mpt_history.txt'",
+      "id" : "0767A622-74AA-49AA-B9EB-F050CD5AF9B8",
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 95.000000000000028
+      },
+      "isClickable" : false,
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "description" : "group",
+        "role" : "AXGroup",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "confidence" : 0.79999999999999993,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 86.499999999999986,
+          "x" : 309,
+          "width" : 95.000000000000028,
+          "height" : 12.500000000000014
+        },
+        "text" : ")mpt_history.txt",
+        "confidence" : 0.5
+      },
+      "type" : "AXGroup+OCR",
+      "visualText" : ")mpt_history.txt"
+    },
+    {
+      "position" : {
+        "y" : 85.499999999999957,
+        "x" : 445.5
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "Pé communication.py M",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 445.5,
+          "y" : 85.499999999999957,
+          "height" : 13.500000000000043,
+          "width" : 145.49999999999997
+        }
+      },
+      "visualText" : "Pé communication.py M",
+      "size" : {
+        "width" : 145.49999999999997,
+        "height" : 13.500000000000043
+      },
+      "semanticMeaning" : "Text content: 'Pé communication.py M'",
+      "id" : "DEDB74D1-4444-4C36-9D08-052C85BD20D7",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Pé _agent_orchestrator.py M",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 633,
+          "y" : 85.499999999999957,
+          "width" : 176.00000000000003,
+          "height" : 13.500000000000043
+        }
+      },
+      "visualText" : "Pé _agent_orchestrator.py M",
+      "type" : "TextContent",
+      "position" : {
+        "y" : 85.499999999999957,
+        "x" : 633
+      },
+      "id" : "7E6F4DCF-40E6-458F-8FD3-BBBF38604507",
+      "size" : {
+        "width" : 176.00000000000003,
+        "height" : 13.500000000000043
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'Pé _agent_orchestrator.py M'"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "visualText" : "Pé _prompt_orchestrator.py U X",
+      "ocr" : {
+        "text" : "Pé _prompt_orchestrator.py U X",
+        "boundingBox" : {
+          "x" : 850.5,
+          "width" : 203.49999999999989,
+          "y" : 85.499999999999957,
+          "height" : 13.500000000000043
+        },
+        "confidence" : 1
+      },
+      "id" : "33E9A661-75F3-4F88-8F35-A8FF6FBB2434",
+      "confidence" : 1,
+      "position" : {
+        "x" : 850.5,
+        "y" : 85.499999999999957
+      },
+      "size" : {
+        "width" : 203.49999999999989,
+        "height" : 13.500000000000043
+      },
+      "semanticMeaning" : "Text content: 'Pé _prompt_orchestrator.py U X'",
+      "isClickable" : false
+    },
+    {
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1202,
+          "width" : 11.000000000000099,
+          "height" : 11.000000000000085,
+          "y" : 85.499999999999957
+        },
+        "text" : "11",
+        "confidence" : 0.5
+      },
+      "position" : {
+        "x" : 1202,
+        "y" : 85.499999999999957
+      },
+      "isClickable" : false,
+      "visualText" : "11",
+      "size" : {
+        "height" : 11.000000000000085,
+        "width" : 11.000000000000099
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '11'",
+      "id" : "4FEDA74C-1E13-40FC-9ED7-473B8CBA8164"
+    },
+    {
+      "size" : {
+        "height" : 14.999999999999972,
+        "width" : 137.49999999999986
+      },
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 84.500000000000043,
+        "x" : 1076.5
+      },
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Pé monitoring. El to'",
+      "id" : "A284E51E-2F80-4587-8308-C4BC1E5A7284",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "visualText" : "Pé monitoring. El to",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1076.5,
+          "y" : 84.500000000000043,
+          "width" : 137.49999999999986,
+          "height" : 14.999999999999972
+        },
+        "confidence" : 0.5,
+        "text" : "Pé monitoring. El to"
+      }
+    },
+    {
+      "confidence" : 1,
+      "visualText" : "Improve clarity in agent orchestrator",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 86.499999999999986,
+          "x" : 1278,
+          "width" : 209.49999999999997,
+          "height" : 12
+        },
+        "confidence" : 1,
+        "text" : "Improve clarity in agent orchestrator"
+      },
+      "id" : "9B0C496B-9BDA-40FC-87A9-8E48F0516655",
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "x" : 1278,
+        "y" : 86.499999999999986
+      },
+      "size" : {
+        "height" : 12,
+        "width" : 209.49999999999997
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "title" : null,
+        "focused" : false,
+        "enabled" : true,
+        "description" : "text"
+      },
+      "semanticMeaning" : "AXStaticText with text 'Improve clarity in agent orchestrator'"
+    },
+    {
+      "position" : {
+        "x" : 1284,
+        "y" : 109.99999999999997
+      },
+      "ocr" : {
+        "text" : "ModuleNotFoundError: No module named ' src. agent_engine. I",
+        "boundingBox" : {
+          "width" : 399,
+          "y" : 109.99999999999997,
+          "height" : 12,
+          "x" : 1284
+        },
+        "confidence" : 1
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'ModuleNotFoundError: No module named ' src. agent_engine. I'",
+      "size" : {
+        "height" : 12,
+        "width" : 399
+      },
+      "id" : "A91FD029-16F0-4F6E-AE2D-EAA224EB50D2",
+      "confidence" : 1,
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : "text",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Improve clarity in agent orchestrator",
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "size" : {
+        "height" : 12,
+        "width" : 173
+      },
+      "confidence" : 1,
+      "position" : {
+        "y" : 128.00000000000003,
+        "x" : 1284
+      },
+      "visualText" : "Mac: augment richa rdshaw$",
+      "ocr" : {
+        "text" : "Mac: augment richa rdshaw$",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1284,
+          "y" : 128.00000000000003,
+          "width" : 173,
+          "height" : 12
+        }
+      },
+      "interactions" : [
+
+      ],
+      "id" : "A5764D02-DA4A-462C-B108-80C7F4113282",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Mac: augment richa rdshaw$'"
+    },
+    {
+      "confidence" : 1,
+      "visualText" : "v AUGMENT",
+      "accessibility" : {
+        "description" : "group",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXGroup"
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 51,
+          "y" : 116.00000000000003,
+          "width" : 72,
+          "height" : 8.5000000000000142
+        },
+        "text" : "v AUGMENT",
+        "confidence" : 1
+      },
+      "id" : "6D3A39E0-C2D3-47DF-BA66-38C809B7E6A9",
+      "type" : "AXGroup+OCR",
+      "position" : {
+        "x" : 51,
+        "y" : 116.00000000000003
+      },
+      "semanticMeaning" : "AXGroup with text 'v AUGMENT'",
+      "size" : {
+        "height" : 8.5000000000000142,
+        "width" : 72
+      },
+      "interactions" : [
+        "right_click"
+      ]
+    },
+    {
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "src > agent_engine > computer_use > prompts > Pé _prompt_orchestrator.py",
+        "boundingBox" : {
+          "x" : 325.5,
+          "y" : 113.99999999999997,
+          "width" : 474,
+          "height" : 13.500000000000043
+        },
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "AXList with text 'src > agent_engine > computer_use > prompts > Pé _prompt_orchestrator.py'",
+      "visualText" : "src > agent_engine > computer_use > prompts > Pé _prompt_orchestrator.py",
+      "type" : "AXList+OCR",
+      "id" : "D955A586-1D22-4FAD-8C3A-A04899F2313F",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXList",
+        "description" : "content list",
+        "enabled" : true,
+        "title" : null
+      },
+      "size" : {
+        "width" : 474,
+        "height" : 13.500000000000043
+      },
+      "confidence" : 1,
+      "position" : {
+        "x" : 325.5,
+        "y" : 113.99999999999997
+      }
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "confidence" : 0.79999999999999993,
+      "position" : {
+        "x" : 63,
+        "y" : 139.5
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXGroup with text 'v src'",
+      "size" : {
+        "height" : 8,
+        "width" : 35
+      },
+      "visualText" : "v src",
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXGroup",
+        "description" : "group",
+        "focused" : false,
+        "enabled" : true
+      },
+      "interactions" : [
+        "right_click"
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 8,
+          "y" : 139.5,
+          "width" : 35,
+          "x" : 63
+        },
+        "text" : "v src"
+      },
+      "id" : "2654F7BF-0017-4AD7-8CC5-402EBBFEFD2A"
+    },
+    {
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 88.5,
+          "height" : 9.9999999999999432,
+          "width" : 43,
+          "y" : 160.00000000000003
+        },
+        "text" : "actions"
+      },
+      "id" : "3B0F316C-CE93-4BD6-A7BD-31CBBD7E8021",
+      "visualText" : "actions",
+      "position" : {
+        "x" : 88.5,
+        "y" : 160.00000000000003
+      },
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 43
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'actions'",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "confidence" : 1,
+      "visualText" : "Prompt Orchest rator",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12,
+        "width" : 136.00000000000003
+      },
+      "semanticMeaning" : "Text content: 'Prompt Orchest rator'",
+      "position" : {
+        "y" : 152.50000000000006,
+        "x" : 376
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 152.50000000000006,
+          "x" : 376,
+          "width" : 136.00000000000003,
+          "height" : 12
+        },
+        "text" : "Prompt Orchest rator"
+      },
+      "id" : "3BF33A01-02C7-4D50-9BCB-3F2F56D12BA8"
+    },
+    {
+      "isClickable" : false,
+      "id" : "86978CED-62E4-46FE-8848-4CB0706D3E08",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 534.5,
+        "y" : 152.50000000000006
+      },
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12,
+        "width" : 301.99999999999994
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'Cent ralized prompt assembly and management'",
+      "visualText" : "Cent ralized prompt assembly and management",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 301.99999999999994,
+          "x" : 534.5,
+          "height" : 12,
+          "y" : 152.50000000000006
+        },
+        "text" : "Cent ralized prompt assembly and management"
+      }
+    },
+    {
+      "size" : {
+        "width" : 137.99999999999997,
+        "height" : 12.500000000000014
+      },
+      "interactions" : [
+
+      ],
+      "id" : "68DED2D2-3E8B-499D-AC7E-19E004EC20BD",
+      "semanticMeaning" : "Text content: 'tk Thought for 1 second'",
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000014,
+          "width" : 137.99999999999997,
+          "y" : 167,
+          "x" : 1275.5
+        },
+        "text" : "tk Thought for 1 second",
+        "confidence" : 1
+      },
+      "confidence" : 1,
+      "visualText" : "tk Thought for 1 second",
+      "isClickable" : false,
+      "position" : {
+        "y" : 167,
+        "x" : 1275.5
+      }
+    },
+    {
+      "interactions" : [
+        "right_click"
+      ],
+      "id" : "A98FB660-5D3D-43CD-9F70-BBD0E5B5F136",
+      "type" : "AXGroup+OCR",
+      "position" : {
+        "y" : 181.99999999999997,
+        "x" : 71
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "AXGroup with text 'v agent_engine'",
+      "accessibility" : {
+        "description" : "group",
+        "title" : null,
+        "role" : "AXGroup",
+        "enabled" : true,
+        "focused" : false
+      },
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 99
+      },
+      "ocr" : {
+        "text" : "v agent_engine",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 71,
+          "height" : 12.500000000000014,
+          "y" : 181.99999999999997,
+          "width" : 99
+        }
+      },
+      "isClickable" : false,
+      "visualText" : "v agent_engine"
+    },
+    {
+      "isClickable" : false,
+      "id" : "1982F677-9908-4C3A-BFB3-6139EF7F54FF",
+      "confidence" : 0.5,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 204.00000000000003,
+          "width" : 64.5,
+          "x" : 111.5,
+          "height" : 12
+        },
+        "text" : "pycache_",
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'pycache_'",
+      "size" : {
+        "width" : 64.5,
+        "height" : 12
+      },
+      "visualText" : "pycache_",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 111.5,
+        "y" : 204.00000000000003
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 11.499999999999986,
+          "y" : 227,
+          "x" : 96.5,
+          "width" : 85.5
+        },
+        "confidence" : 1,
+        "text" : "computer_use"
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'computer_use'",
+      "position" : {
+        "y" : 227,
+        "x" : 96.5
+      },
+      "visualText" : "computer_use",
+      "id" : "12A18C21-2DD5-4BAD-A236-D62612E571AC",
+      "size" : {
+        "width" : 85.5,
+        "height" : 11.499999999999986
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 248.00000000000003,
+          "height" : 12.500000000000014,
+          "width" : 64.499999999999986,
+          "x" : 119.5
+        },
+        "text" : "pycache_",
+        "confidence" : 0.5
+      },
+      "id" : "0F51BF0A-B82D-40DC-811D-6CD56103147F",
+      "visualText" : "pycache_",
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 64.499999999999986
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'pycache_'",
+      "position" : {
+        "x" : 119.5,
+        "y" : 248.00000000000003
+      }
+    },
+    {
+      "type" : "TextContent",
+      "id" : "D8D4815A-2557-4155-B61A-CEEA38B00308",
+      "position" : {
+        "x" : 104.5,
+        "y" : 270
+      },
+      "size" : {
+        "width" : 43,
+        "height" : 10.000000000000057
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'actions'",
+      "interactions" : [
+
+      ],
+      "visualText" : "actions",
+      "ocr" : {
+        "text" : "actions",
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 10.000000000000057,
+          "width" : 43,
+          "y" : 270,
+          "x" : 104.5
+        }
+      },
+      "confidence" : 1
+    },
+    {
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'This module handles ALL prompt assembly logic in one place:'",
+      "isClickable" : false,
+      "position" : {
+        "x" : 375,
+        "y" : 188.50000000000003
+      },
+      "visualText" : "This module handles ALL prompt assembly logic in one place:",
+      "confidence" : 1,
+      "size" : {
+        "height" : 12,
+        "width" : 423.50000000000006
+      },
+      "id" : "7658A504-AD0D-43AB-AECB-8556FEFA4CEF",
+      "type" : "TextContent",
+      "ocr" : {
+        "text" : "This module handles ALL prompt assembly logic in one place:",
+        "boundingBox" : {
+          "width" : 423.50000000000006,
+          "height" : 12,
+          "x" : 375,
+          "y" : 188.50000000000003
+        },
+        "confidence" : 1
+      }
+    },
+    {
+      "size" : {
+        "height" : 12,
+        "width" : 309.00000000000006
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "id" : "88165DF7-89F5-40BE-BBDC-2932929AD4ED",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "System prompt building with dynamic content",
+        "boundingBox" : {
+          "x" : 390,
+          "y" : 206.49999999999997,
+          "width" : 309.00000000000006,
+          "height" : 12
+        },
+        "confidence" : 1
+      },
+      "semanticMeaning" : "Text content: 'System prompt building with dynamic content'",
+      "position" : {
+        "y" : 206.49999999999997,
+        "x" : 390
+      },
+      "visualText" : "System prompt building with dynamic content",
+      "type" : "TextContent"
+    },
+    {
+      "visualText" : "Task message f o rmatting",
+      "id" : "647D41FB-08E7-4EE9-BAE6-088C8685C7E1",
+      "position" : {
+        "y" : 224.50000000000003,
+        "x" : 389.5
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Task message f o rmatting'",
+      "ocr" : {
+        "text" : "Task message f o rmatting",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 224.50000000000003,
+          "width" : 164.99999999999997,
+          "height" : 12,
+          "x" : 389.5
+        }
+      },
+      "isClickable" : false,
+      "size" : {
+        "height" : 12,
+        "width" : 164.99999999999997
+      },
+      "type" : "TextContent",
+      "confidence" : 1
+    },
+    {
+      "semanticMeaning" : "Text content: 'Conversation f o rmatting'",
+      "id" : "812F5258-501E-4E85-AA94-CB08FE6DDE74",
+      "size" : {
+        "width" : 164.5,
+        "height" : 12
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 390,
+          "y" : 242.49999999999997,
+          "height" : 12,
+          "width" : 164.5
+        },
+        "confidence" : 1,
+        "text" : "Conversation f o rmatting"
+      },
+      "type" : "TextContent",
+      "position" : {
+        "y" : 242.49999999999997,
+        "x" : 390
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "Conversation f o rmatting"
+    },
+    {
+      "visualText" : "Context inj ection",
+      "semanticMeaning" : "Text content: 'Context inj ection'",
+      "position" : {
+        "x" : 390,
+        "y" : 260.5
+      },
+      "type" : "TextContent",
+      "confidence" : 1,
+      "id" : "0ABEFAB2-8AD3-4EA2-ADDE-04EB827A8B44",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 121.5,
+          "x" : 390,
+          "y" : 260.5,
+          "height" : 12
+        },
+        "text" : "Context inj ection",
+        "confidence" : 1
+      },
+      "size" : {
+        "height" : 12,
+        "width" : 121.5
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'Message list assembly'",
+      "visualText" : "Message list assembly",
+      "size" : {
+        "width" : 151.50000000000003,
+        "height" : 12
+      },
+      "ocr" : {
+        "text" : "Message list assembly",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 278.5,
+          "height" : 12,
+          "x" : 389.5,
+          "width" : 151.50000000000003
+        }
+      },
+      "position" : {
+        "y" : 278.5,
+        "x" : 389.5
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "id" : "2E055F3F-4FF4-4CE2-B8C4-D334405D27DB",
+      "isClickable" : false
+    },
+    {
+      "confidence" : 1,
+      "type" : "TextContent",
+      "visualText" : "_prompt_orchestrator.py +1 -1",
+      "id" : "2757AEF1-3F28-458D-A45C-F8B2885F8D18",
+      "size" : {
+        "width" : 163.99999999999997,
+        "height" : 10.499999999999957
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 10.499999999999957,
+          "width" : 163.99999999999997,
+          "x" : 1304,
+          "y" : 201.50000000000006
+        },
+        "text" : "_prompt_orchestrator.py +1 -1",
+        "confidence" : 1
+      },
+      "semanticMeaning" : "Text content: '_prompt_orchestrator.py +1 -1'",
+      "position" : {
+        "y" : 201.50000000000006,
+        "x" : 1304
+      },
+      "isClickable" : false
+    },
+    {
+      "semanticMeaning" : "Text content: 'impo rt j son'",
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "visualText" : "impo rt j son",
+      "size" : {
+        "width" : 77.499999999999886,
+        "height" : 12.000000000000114
+      },
+      "position" : {
+        "y" : 228.99999999999994,
+        "x" : 1287
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1287,
+          "y" : 228.99999999999994,
+          "height" : 12.000000000000114,
+          "width" : 77.499999999999886
+        },
+        "confidence" : 1,
+        "text" : "impo rt j son"
+      },
+      "id" : "FB091D11-07BA-44EA-B62F-59BA4E18300B"
+    },
+    {
+      "size" : {
+        "width" : 316.49999999999989,
+        "height" : 12
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'from typing import Dict, List, Anyi Optional'",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 247,
+          "width" : 316.49999999999989,
+          "x" : 1287,
+          "height" : 12
+        },
+        "confidence" : 1,
+        "text" : "from typing import Dict, List, Anyi Optional"
+      },
+      "id" : "998B57A9-7F32-4286-9C91-73CD915AE88A",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "visualText" : "from typing import Dict, List, Anyi Optional",
+      "position" : {
+        "x" : 1287,
+        "y" : 247
+      },
+      "isClickable" : false
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 1287,
+        "y" : 265.00000000000006
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'f rom . loader impo rt PromptLoader'",
+      "type" : "TextContent",
+      "id" : "A78023CA-84A7-4038-A720-DD48A18D4B15",
+      "size" : {
+        "width" : 230,
+        "height" : 11.999999999999886
+      },
+      "confidence" : 1,
+      "visualText" : "f rom . loader impo rt PromptLoader",
+      "ocr" : {
+        "text" : "f rom . loader impo rt PromptLoader",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 265.00000000000006,
+          "height" : 11.999999999999886,
+          "width" : 230,
+          "x" : 1287
+        }
+      }
+    },
+    {
+      "confidence" : 1,
+      "id" : "9B3C262E-65BF-4DFB-895F-921A0553ECC9",
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 27.499999999999972
+      },
+      "semanticMeaning" : "Text content: 'from'",
+      "visualText" : "from",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "from",
+        "boundingBox" : {
+          "width" : 27.499999999999972,
+          "height" : 9.9999999999999432,
+          "x" : 1287,
+          "y" : 283
+        }
+      },
+      "position" : {
+        "y" : 283,
+        "x" : 1287
+      },
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "type" : "TextContent"
+    },
+    {
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12,
+          "x" : 1331.5,
+          "y" : 283,
+          "width" : 359
+        },
+        "text" : ". dynamic_prompts import get_dynamic_prompt in j ecti",
+        "confidence" : 1
+      },
+      "id" : "74170C05-1562-4DC7-A485-42BFCB7C992F",
+      "semanticMeaning" : "Text content: '. dynamic_prompts import get_dynamic_prompt in j ecti'",
+      "visualText" : ". dynamic_prompts import get_dynamic_prompt in j ecti",
+      "size" : {
+        "width" : 359,
+        "height" : 12
+      },
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 283,
+        "x" : 1331.5
+      },
+      "confidence" : 1,
+      "isClickable" : false
+    },
+    {
+      "id" : "811474DA-1893-40E1-8CB6-94215C2734A9",
+      "isClickable" : false,
+      "confidence" : 1,
+      "position" : {
+        "x" : 1287,
+        "y" : 300.99999999999994
+      },
+      "semanticMeaning" : "Text content: 'f rom s rc. agent_engine. dynamic_prompts impo rt get dynamic'",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12.500000000000128,
+        "width" : 403
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 403,
+          "x" : 1287,
+          "height" : 12.500000000000128,
+          "y" : 300.99999999999994
+        },
+        "text" : "f rom s rc. agent_engine. dynamic_prompts impo rt get dynamic",
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "f rom s rc. agent_engine. dynamic_prompts impo rt get dynamic"
+    },
+    {
+      "confidence" : 1,
+      "type" : "TextContent",
+      "isClickable" : false,
+      "visualText" : "adapters",
+      "id" : "6C104685-B453-4971-95B9-2D0AA22D237F",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 52.5,
+        "height" : 12.500000000000014
+      },
+      "position" : {
+        "x" : 104.5,
+        "y" : 292
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 52.5,
+          "x" : 104.5,
+          "y" : 292,
+          "height" : 12.500000000000014
+        },
+        "text" : "adapters",
+        "confidence" : 1
+      },
+      "semanticMeaning" : "Text content: 'adapters'"
+    },
+    {
+      "id" : "EBD971EC-32D1-4FB8-8C60-590A14BC4142",
+      "semanticMeaning" : "Text content: 'prompts'",
+      "isClickable" : false,
+      "position" : {
+        "y" : 315,
+        "x" : 105
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "prompts",
+      "ocr" : {
+        "text" : "prompts",
+        "boundingBox" : {
+          "x" : 105,
+          "y" : 315,
+          "width" : 49.000000000000014,
+          "height" : 11.499999999999986
+        },
+        "confidence" : 1
+      },
+      "size" : {
+        "width" : 49.000000000000014,
+        "height" : 11.499999999999986
+      },
+      "confidence" : 1,
+      "type" : "TextContent"
+    },
+    {
+      "visualText" : "pycache_",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 336,
+          "height" : 12.500000000000014,
+          "width" : 64.499999999999986,
+          "x" : 127.5
+        },
+        "confidence" : 0.5,
+        "text" : "pycache_"
+      },
+      "id" : "40249A0D-DF9E-48BF-983E-43FE7AA506D7",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'pycache_'",
+      "isClickable" : false,
+      "position" : {
+        "x" : 127.5,
+        "y" : 336
+      },
+      "type" : "TextContent",
+      "size" : {
+        "width" : 64.499999999999986,
+        "height" : 12.500000000000014
+      },
+      "confidence" : 0.5
+    },
+    {
+      "isClickable" : false,
+      "visualText" : "dynamic",
+      "position" : {
+        "x" : 112.5,
+        "y" : 357.99999999999994
+      },
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "id" : "26FB07A6-430B-42E4-8E0A-35BB0170F8EA",
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 12.500000000000128,
+          "width" : 50.000000000000007,
+          "x" : 112.5,
+          "y" : 357.99999999999994
+        },
+        "text" : "dynamic"
+      },
+      "size" : {
+        "height" : 12.500000000000128,
+        "width" : 50.000000000000007
+      },
+      "semanticMeaning" : "Text content: 'dynamic'"
+    },
+    {
+      "confidence" : 0.30000001192092896,
+      "interactions" : [
+
+      ],
+      "visualText" : "init .py",
+      "ocr" : {
+        "text" : "init .py",
+        "boundingBox" : {
+          "y" : 380,
+          "width" : 50.499999999999993,
+          "height" : 12.500000000000014,
+          "x" : 127
+        },
+        "confidence" : 0.30000001192092896
+      },
+      "semanticMeaning" : "Text content: 'init .py'",
+      "position" : {
+        "x" : 127,
+        "y" : 380
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 50.499999999999993,
+        "height" : 12.500000000000014
+      },
+      "id" : "A06C1E3F-16E9-4FF4-882A-CED9AF967FAF",
+      "type" : "TextContent"
+    },
+    {
+      "confidence" : 1,
+      "visualText" : "Pé _prompt_orchestrator.py",
+      "semanticMeaning" : "Text content: 'Pé _prompt_orchestrator.py'",
+      "size" : {
+        "width" : 170.5,
+        "height" : 13.499999999999929
+      },
+      "id" : "670BBEA0-C35F-4D6C-84AE-57B611097DB6",
+      "position" : {
+        "y" : 401.00000000000006,
+        "x" : 92
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Pé _prompt_orchestrator.py",
+        "boundingBox" : {
+          "height" : 13.499999999999929,
+          "x" : 92,
+          "width" : 170.5,
+          "y" : 401.00000000000006
+        }
+      },
+      "type" : "TextContent"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 94,
+          "width" : 115.49999999999999,
+          "height" : 12.500000000000014,
+          "y" : 424
+        },
+        "text" : "[] actionJuide.txt"
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '[] actionJuide.txt'",
+      "id" : "A4AAAF05-C89D-4905-8CE7-170FE7E9F361",
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 115.49999999999999
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 94,
+        "y" : 424
+      },
+      "confidence" : 0.5,
+      "visualText" : "[] actionJuide.txt"
+    },
+    {
+      "id" : "5BDE407B-0455-45E5-8516-7D664058FD6F",
+      "position" : {
+        "x" : 94,
+        "y" : 445.99999999999994
+      },
+      "visualText" : "[] coordinate_guide.txt",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '[] coordinate_guide.txt'",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "[] coordinate_guide.txt",
+        "boundingBox" : {
+          "height" : 12.500000000000128,
+          "width" : 142.49999999999997,
+          "y" : 445.99999999999994,
+          "x" : 94
+        },
+        "confidence" : 1
+      },
+      "confidence" : 1,
+      "size" : {
+        "width" : 142.49999999999997,
+        "height" : 12.500000000000128
+      },
+      "type" : "TextContent"
+    },
+    {
+      "id" : "4BB8968F-8160-4D1A-8D93-58BF0AEB38BF",
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: '[] goal_evaluation.txt'",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "visualText" : "[] goal_evaluation.txt",
+      "position" : {
+        "x" : 94,
+        "y" : 468
+      },
+      "size" : {
+        "width" : 132,
+        "height" : 12.500000000000014
+      },
+      "ocr" : {
+        "text" : "[] goal_evaluation.txt",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12.500000000000014,
+          "width" : 132,
+          "x" : 94,
+          "y" : 468
+        }
+      },
+      "isClickable" : false
+    },
+    {
+      "id" : "374B319B-B135-4E60-8BCE-0835785173CF",
+      "position" : {
+        "y" : 489.00000000000006,
+        "x" : 92
+      },
+      "type" : "TextContent",
+      "size" : {
+        "width" : 75.500000000000014,
+        "height" : 13.499999999999929
+      },
+      "confidence" : 0.5,
+      "visualText" : "Pé loader.py",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Pé loader.py",
+        "boundingBox" : {
+          "height" : 13.499999999999929,
+          "x" : 92,
+          "y" : 489.00000000000006,
+          "width" : 75.500000000000014
+        }
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Pé loader.py'",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 140
+      },
+      "visualText" : "[] response_format.txt",
+      "isClickable" : false,
+      "position" : {
+        "y" : 512,
+        "x" : 94
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: '[] response_format.txt'",
+      "id" : "C906100E-9396-41D5-BCA7-E6022CCA374E",
+      "ocr" : {
+        "text" : "[] response_format.txt",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 94,
+          "height" : 12.500000000000014,
+          "y" : 512,
+          "width" : 140
+        }
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent"
+    },
+    {
+      "confidence" : 0.5,
+      "position" : {
+        "x" : 94,
+        "y" : 535
+      },
+      "type" : "TextContent",
+      "id" : "DAFFAAA8-B79C-497F-93D8-8A2DA7CBB6E1",
+      "isClickable" : false,
+      "visualText" : "[] system.txt",
+      "size" : {
+        "height" : 11.500000000000099,
+        "width" : 80.5
+      },
+      "semanticMeaning" : "Text content: '[] system.txt'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 11.500000000000099,
+          "width" : 80.5,
+          "x" : 94,
+          "y" : 535
+        },
+        "text" : "[] system.txt"
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "position" : {
+        "y" : 556,
+        "x" : 104.5
+      },
+      "size" : {
+        "height" : 10.499999999999957,
+        "width" : 44.5
+      },
+      "visualText" : "session",
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 556,
+          "x" : 104.5,
+          "height" : 10.499999999999957,
+          "width" : 44.5
+        },
+        "text" : "session"
+      },
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'session'",
+      "type" : "TextContent",
+      "id" : "C506BB9B-0112-47A7-9717-8FB5FE4C857E"
+    },
+    {
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '10'",
+      "id" : "E4CFC8EB-6607-4E0E-8236-080ACD12E483",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "position" : {
+        "y" : 297.00000000000006,
+        "x" : 335.5
+      },
+      "confidence" : 0.5,
+      "visualText" : "10",
+      "ocr" : {
+        "text" : "10",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 13,
+          "x" : 335.5,
+          "y" : 297.00000000000006,
+          "height" : 9.5000000000000426
+        }
+      }
+    },
+    {
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "11",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 9.0000000000000284,
+          "x" : 335.5,
+          "y" : 315,
+          "width" : 13
+        },
+        "text" : "11"
+      },
+      "semanticMeaning" : "Text content: '11'",
+      "size" : {
+        "width" : 13,
+        "height" : 9.0000000000000284
+      },
+      "id" : "560C8325-C212-45EE-BD27-17624347A26C",
+      "position" : {
+        "y" : 315,
+        "x" : 335.5
+      },
+      "type" : "TextContent"
+    },
+    {
+      "ocr" : {
+        "text" : "12",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 332.99999999999994,
+          "height" : 9.0000000000000284,
+          "x" : 335.5,
+          "width" : 12.499999999999979
+        }
+      },
+      "id" : "4A63A7D1-C6A1-474C-BE6D-FBF1675BAE39",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "size" : {
+        "width" : 12.499999999999979,
+        "height" : 9.0000000000000284
+      },
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '12'",
+      "visualText" : "12",
+      "position" : {
+        "y" : 332.99999999999994,
+        "x" : 335.5
+      }
+    },
+    {
+      "isClickable" : false,
+      "id" : "54D5C2E7-BC76-4ED3-8762-A86E6506CAE9",
+      "position" : {
+        "y" : 351,
+        "x" : 335.5
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: '13'",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 12.499999999999979,
+        "height" : 9.5000000000000426
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 9.5000000000000426,
+          "width" : 12.499999999999979,
+          "y" : 351,
+          "x" : 335.5
+        },
+        "text" : "13",
+        "confidence" : 1
+      },
+      "visualText" : "13"
+    },
+    {
+      "position" : {
+        "y" : 369.00000000000006,
+        "x" : 335.5
+      },
+      "semanticMeaning" : "Text content: '14'",
+      "type" : "TextContent",
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "visualText" : "14",
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13
+      },
+      "isClickable" : false,
+      "id" : "7213CE6A-33D4-420A-999F-E3A1AE479FCB",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 335.5,
+          "y" : 369.00000000000006,
+          "height" : 9.0000000000000284,
+          "width" : 13
+        },
+        "text" : "14"
+      }
+    },
+    {
+      "id" : "A80D6F13-1A99-42EC-A611-593BF8FCB1D9",
+      "type" : "TextContent",
+      "confidence" : 1,
+      "visualText" : "impo rt j son",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 376,
+          "width" : 77.500000000000028,
+          "y" : 332.5,
+          "height" : 12
+        },
+        "text" : "impo rt j son",
+        "confidence" : 1
+      },
+      "semanticMeaning" : "Text content: 'impo rt j son'",
+      "position" : {
+        "x" : 376,
+        "y" : 332.5
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 77.500000000000028,
+        "height" : 12
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'from typing import Dict, List, Anyi Optional'",
+      "id" : "97E359AD-FE11-47FB-9315-F98104146408",
+      "confidence" : 1,
+      "size" : {
+        "height" : 12.000000000000114,
+        "width" : 316.50000000000006
+      },
+      "visualText" : "from typing import Dict, List, Anyi Optional",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 316.50000000000006,
+          "x" : 376,
+          "height" : 12.000000000000114,
+          "y" : 350.49999999999994
+        },
+        "text" : "from typing import Dict, List, Anyi Optional"
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 376,
+        "y" : 350.49999999999994
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'f rom . loader impo rt PromptLoader'",
+      "position" : {
+        "y" : 368.5,
+        "x" : 376
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "visualText" : "f rom . loader impo rt PromptLoader",
+      "size" : {
+        "height" : 12,
+        "width" : 230.00000000000006
+      },
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 376,
+          "height" : 12,
+          "y" : 368.5,
+          "width" : 230.00000000000006
+        },
+        "text" : "f rom . loader impo rt PromptLoader"
+      },
+      "isClickable" : false,
+      "id" : "CD30C4CE-5B06-477D-AE27-E9E2F04A4383"
+    },
+    {
+      "id" : "BA0F08FC-F194-4D5A-A98B-6DC0237FB07D",
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 27.500000000000018
+      },
+      "semanticMeaning" : "Text content: 'from'",
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "from",
+        "boundingBox" : {
+          "y" : 386.50000000000006,
+          "x" : 376,
+          "width" : 27.500000000000018,
+          "height" : 9.9999999999999432
+        }
+      },
+      "visualText" : "from",
+      "position" : {
+        "x" : 376,
+        "y" : 386.50000000000006
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "position" : {
+        "x" : 420.5,
+        "y" : 386.50000000000006
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '. dynamic_prompts import get dynamic_prompt in jections'",
+      "visualText" : ". dynamic_prompts import get dynamic_prompt in jections",
+      "size" : {
+        "width" : 379.5,
+        "height" : 11.999999999999886
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : ". dynamic_prompts import get dynamic_prompt in jections",
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 11.999999999999886,
+          "y" : 386.50000000000006,
+          "width" : 379.5,
+          "x" : 420.5
+        }
+      },
+      "id" : "968507F9-0697-4905-B646-AE687DB6FAB9"
+    },
+    {
+      "isClickable" : false,
+      "position" : {
+        "x" : 376,
+        "y" : 404.5
+      },
+      "confidence" : 1,
+      "size" : {
+        "height" : 12,
+        "width" : 532.49999999999989
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "f rom s rc. agent_engine. dynamic_prompts import get dynamic_prompt inj ections",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 404.5,
+          "width" : 532.49999999999989,
+          "height" : 12,
+          "x" : 376
+        }
+      },
+      "id" : "58498E0D-9FB9-40CF-925E-3CACB703F902",
+      "semanticMeaning" : "Text content: 'f rom s rc. agent_engine. dynamic_prompts import get dynamic_prompt inj ections'",
+      "visualText" : "f rom s rc. agent_engine. dynamic_prompts import get dynamic_prompt inj ections"
+    },
+    {
+      "confidence" : 1,
+      "id" : "2517BCEA-94F9-4A7E-82DE-EA603756F6D1",
+      "semanticMeaning" : "Text content: 'class PromptOrchestrator:'",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1286.5,
+        "y" : 355
+      },
+      "ocr" : {
+        "text" : "class PromptOrchestrator:",
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 12,
+          "width" : 177.50000000000009,
+          "y" : 355,
+          "x" : 1286.5
+        }
+      },
+      "visualText" : "class PromptOrchestrator:",
+      "size" : {
+        "width" : 177.50000000000009,
+        "height" : 12
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "semanticMeaning" : "Text content: '15'",
+      "size" : {
+        "width" : 12.499999999999979,
+        "height" : 9.5000000000000426
+      },
+      "position" : {
+        "y" : 404.99999999999994,
+        "x" : 335.5
+      },
+      "id" : "731B134E-20C6-466A-9C22-D73F3FCFFA2B",
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 12.499999999999979,
+          "y" : 404.99999999999994,
+          "height" : 9.5000000000000426,
+          "x" : 335.5
+        },
+        "confidence" : 1,
+        "text" : "15"
+      },
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "visualText" : "15",
+      "confidence" : 1
+    },
+    {
+      "visualText" : "16",
+      "position" : {
+        "y" : 423,
+        "x" : 335.5
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 423,
+          "height" : 9.0000000000000284,
+          "width" : 13,
+          "x" : 335.5
+        },
+        "confidence" : 1,
+        "text" : "16"
+      },
+      "confidence" : 1,
+      "id" : "0C30DED6-98FA-4971-85AE-21E502FC4C60",
+      "semanticMeaning" : "Text content: '16'",
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13
+      },
+      "type" : "TextContent"
+    },
+    {
+      "semanticMeaning" : "Text content: '17'",
+      "type" : "TextContent",
+      "id" : "0F4374CC-D282-4D99-94EB-D71E765A234D",
+      "visualText" : "17",
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 12.499999999999979
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "17",
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 9.0000000000000284,
+          "width" : 12.499999999999979,
+          "y" : 441.00000000000006,
+          "x" : 335.5
+        }
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "position" : {
+        "x" : 335.5,
+        "y" : 441.00000000000006
+      }
+    },
+    {
+      "id" : "3894FE20-E8F4-42C4-BC68-9E0C460B9CF9",
+      "position" : {
+        "y" : 459,
+        "x" : 335.5
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "size" : {
+        "width" : 13,
+        "height" : 9.5000000000000426
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '18'",
+      "ocr" : {
+        "text" : "18",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 459,
+          "width" : 13,
+          "height" : 9.5000000000000426,
+          "x" : 335.5
+        }
+      },
+      "isClickable" : false,
+      "visualText" : "18"
+    },
+    {
+      "type" : "TextContent",
+      "visualText" : "19",
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13
+      },
+      "semanticMeaning" : "Text content: '19'",
+      "confidence" : 1,
+      "id" : "8B391F43-2288-4B4F-BB66-EF37EA93125B",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 335.5,
+          "y" : 476.99999999999994,
+          "height" : 9.5000000000000426,
+          "width" : 13
+        },
+        "text" : "19",
+        "confidence" : 1
+      },
+      "position" : {
+        "y" : 476.99999999999994,
+        "x" : 335.5
+      },
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "y" : 495,
+        "x" : 335
+      },
+      "semanticMeaning" : "Text content: '20'",
+      "interactions" : [
+
+      ],
+      "id" : "87BAC286-D464-4541-B127-37404D21A7F6",
+      "isClickable" : false,
+      "visualText" : "20",
+      "confidence" : 1,
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13.500000000000021
+      },
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "20",
+        "boundingBox" : {
+          "width" : 13.500000000000021,
+          "y" : 495,
+          "height" : 9.5000000000000426,
+          "x" : 335
+        }
+      }
+    },
+    {
+      "visualText" : "21",
+      "position" : {
+        "x" : 335,
+        "y" : 513
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13.500000000000021
+      },
+      "id" : "1B69081A-D350-407F-A9F9-E85E972BED61",
+      "isClickable" : false,
+      "confidence" : 1,
+      "ocr" : {
+        "text" : "21",
+        "boundingBox" : {
+          "y" : 513,
+          "height" : 9.0000000000000284,
+          "x" : 335,
+          "width" : 13.500000000000021
+        },
+        "confidence" : 1
+      },
+      "semanticMeaning" : "Text content: '21'"
+    },
+    {
+      "size" : {
+        "width" : 13,
+        "height" : 9.0000000000000284
+      },
+      "position" : {
+        "x" : 335,
+        "y" : 531
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "visualText" : "22",
+      "semanticMeaning" : "Text content: '22'",
+      "id" : "AD4BE440-B7A6-4E5A-807F-946285B3B3F8",
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 13,
+          "x" : 335,
+          "height" : 9.0000000000000284,
+          "y" : 531
+        },
+        "text" : "22",
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "visualText" : "23",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 335,
+          "width" : 13,
+          "y" : 548.99999999999989,
+          "height" : 9.5000000000000426
+        },
+        "text" : "23",
+        "confidence" : 1
+      },
+      "position" : {
+        "x" : 335,
+        "y" : 548.99999999999989
+      },
+      "isClickable" : false,
+      "id" : "DC5FB912-4CFC-435B-9DC6-8EA0D6EB0972",
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13
+      },
+      "semanticMeaning" : "Text content: '23'"
+    },
+    {
+      "type" : "TextContent",
+      "confidence" : 1,
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13.500000000000021
+      },
+      "semanticMeaning" : "Text content: '24'",
+      "position" : {
+        "y" : 567,
+        "x" : 335
+      },
+      "ocr" : {
+        "text" : "24",
+        "boundingBox" : {
+          "width" : 13.500000000000021,
+          "x" : 335,
+          "y" : 567,
+          "height" : 9.0000000000000284
+        },
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "24",
+      "id" : "9237A08B-E90D-4740-ADB6-CCAE1ACF9103",
+      "isClickable" : false
+    },
+    {
+      "confidence" : 1,
+      "size" : {
+        "width" : 13,
+        "height" : 9.4999999999999289
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '25'",
+      "visualText" : "25",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 585,
+        "x" : 335
+      },
+      "isClickable" : false,
+      "id" : "80FF1954-7A5C-461D-9E3C-5566E65E4703",
+      "ocr" : {
+        "text" : "25",
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 9.4999999999999289,
+          "x" : 335,
+          "y" : 585,
+          "width" : 13
+        }
+      }
+    },
+    {
+      "size" : {
+        "width" : 13.500000000000021,
+        "height" : 9.0000000000000284
+      },
+      "id" : "C93518E3-42C5-4E03-934A-B8DEEFBD406A",
+      "confidence" : 1,
+      "position" : {
+        "y" : 603,
+        "x" : 335
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '26'",
+      "interactions" : [
+
+      ],
+      "visualText" : "26",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 335,
+          "y" : 603,
+          "width" : 13.500000000000021,
+          "height" : 9.0000000000000284
+        },
+        "text" : "26",
+        "confidence" : 1
+      }
+    },
+    {
+      "id" : "31BB3AF7-1762-405A-9B61-98098D9D056A",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 621,
+          "height" : 9.0000000000000284,
+          "x" : 335,
+          "width" : 13
+        },
+        "text" : "27",
+        "confidence" : 1
+      },
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13
+      },
+      "semanticMeaning" : "Text content: '27'",
+      "visualText" : "27",
+      "isClickable" : false,
+      "position" : {
+        "y" : 621,
+        "x" : 335
+      },
+      "confidence" : 1
+    },
+    {
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "28",
+        "boundingBox" : {
+          "y" : 639,
+          "x" : 335,
+          "height" : 9.5000000000000426,
+          "width" : 13.500000000000021
+        }
+      },
+      "isClickable" : false,
+      "id" : "C34D6603-A672-4065-83B4-7E5A5EE027DC",
+      "semanticMeaning" : "Text content: '28'",
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13.500000000000021
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "28",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 335,
+        "y" : 639
+      }
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 9.4999999999999289,
+          "x" : 335,
+          "y" : 657,
+          "width" : 13.500000000000021
+        },
+        "text" : "29",
+        "confidence" : 1
+      },
+      "id" : "5AF43FDD-EFBA-48AF-B7D3-A580BC2CE7A1",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '29'",
+      "size" : {
+        "height" : 9.4999999999999289,
+        "width" : 13.500000000000021
+      },
+      "visualText" : "29",
+      "isClickable" : false,
+      "confidence" : 1,
+      "type" : "TextContent",
+      "position" : {
+        "x" : 335,
+        "y" : 657
+      }
+    },
+    {
+      "visualText" : "30",
+      "id" : "9C4DBA66-FF3A-4B50-A590-44D569718FB7",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '30'",
+      "position" : {
+        "x" : 335,
+        "y" : 675
+      },
+      "ocr" : {
+        "text" : "30",
+        "boundingBox" : {
+          "y" : 675,
+          "width" : 13.500000000000021,
+          "height" : 9.5000000000000426,
+          "x" : 335
+        },
+        "confidence" : 1
+      },
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13.500000000000021
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "type" : "TextContent"
+    },
+    {
+      "visualText" : "31",
+      "isClickable" : false,
+      "size" : {
+        "width" : 13.500000000000021,
+        "height" : 9.4999999999999289
+      },
+      "position" : {
+        "x" : 335,
+        "y" : 693
+      },
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "31",
+        "boundingBox" : {
+          "height" : 9.4999999999999289,
+          "y" : 693,
+          "width" : 13.500000000000021,
+          "x" : 335
+        }
+      },
+      "semanticMeaning" : "Text content: '31'",
+      "type" : "TextContent",
+      "id" : "D6C70893-0FFA-42DD-B1F1-2E33E5A527BD",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "ocr" : {
+        "text" : "32",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 335,
+          "height" : 9.5000000000000426,
+          "width" : 13,
+          "y" : 711
+        }
+      },
+      "id" : "2FCEAA54-9BBE-4BB7-B64A-6CC077C4B6B4",
+      "position" : {
+        "y" : 711,
+        "x" : 335
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '32'",
+      "visualText" : "32",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 13,
+        "height" : 9.5000000000000426
+      },
+      "type" : "TextContent"
+    },
+    {
+      "semanticMeaning" : "Text content: '33'",
+      "isClickable" : false,
+      "confidence" : 1,
+      "ocr" : {
+        "text" : "33",
+        "boundingBox" : {
+          "height" : 9.4999999999999289,
+          "x" : 335,
+          "y" : 729,
+          "width" : 13
+        },
+        "confidence" : 1
+      },
+      "size" : {
+        "height" : 9.4999999999999289,
+        "width" : 13
+      },
+      "position" : {
+        "y" : 729,
+        "x" : 335
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "id" : "0A1DC179-6454-421E-A360-A29C1D412536",
+      "visualText" : "33"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "id" : "C85EA44E-22D7-416D-AC86-451AD365087A",
+      "isClickable" : false,
+      "position" : {
+        "x" : 335,
+        "y" : 747
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: '34'",
+      "visualText" : "34",
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 335,
+          "y" : 747,
+          "height" : 9.5000000000000426,
+          "width" : 13.500000000000021
+        },
+        "text" : "34",
+        "confidence" : 1
+      },
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13.500000000000021
+      }
+    },
+    {
+      "id" : "CC7475F9-646B-4FC6-A56D-7DCA73088E2D",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 13,
+        "height" : 9.4999999999999289
+      },
+      "visualText" : "35",
+      "type" : "TextContent",
+      "ocr" : {
+        "text" : "35",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 765,
+          "width" : 13,
+          "x" : 335,
+          "height" : 9.4999999999999289
+        }
+      },
+      "position" : {
+        "x" : 335,
+        "y" : 765
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '35'",
+      "confidence" : 1
+    },
+    {
+      "id" : "11C59A44-1EA5-4DF8-893C-8256447FB39F",
+      "size" : {
+        "width" : 13.500000000000021,
+        "height" : 9.5000000000000426
+      },
+      "position" : {
+        "y" : 783,
+        "x" : 335
+      },
+      "semanticMeaning" : "Text content: '36'",
+      "ocr" : {
+        "text" : "36",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 13.500000000000021,
+          "height" : 9.5000000000000426,
+          "y" : 783,
+          "x" : 335
+        }
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "visualText" : "36"
+    },
+    {
+      "type" : "TextContent",
+      "confidence" : 1,
+      "visualText" : "37",
+      "position" : {
+        "x" : 335,
+        "y" : 801
+      },
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13
+      },
+      "ocr" : {
+        "text" : "37",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 13,
+          "x" : 335,
+          "y" : 801,
+          "height" : 9.5000000000000426
+        }
+      },
+      "isClickable" : false,
+      "id" : "C842B51C-BF74-4939-9A45-19BF2E231F0C",
+      "semanticMeaning" : "Text content: '37'",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: '38'",
+      "visualText" : "38",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 335,
+          "y" : 819,
+          "width" : 13.500000000000021,
+          "height" : 9.5000000000000426
+        },
+        "text" : "38",
+        "confidence" : 1
+      },
+      "id" : "D3C173EF-E75F-4DBC-AD8D-E439B7129B7A",
+      "position" : {
+        "x" : 335,
+        "y" : 819
+      },
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13.500000000000021
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "position" : {
+        "x" : 335,
+        "y" : 837
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '39'",
+      "visualText" : "39",
+      "id" : "61E6BE00-71EE-4D2B-83E0-80FF2F8AE635",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 13.500000000000021,
+        "height" : 9.5000000000000426
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 335,
+          "height" : 9.5000000000000426,
+          "y" : 837,
+          "width" : 13.500000000000021
+        },
+        "text" : "39"
+      }
+    },
+    {
+      "id" : "92A42A92-552B-48DF-96A0-ECBEA21E7EA7",
+      "confidence" : 1,
+      "isClickable" : false,
+      "position" : {
+        "x" : 335,
+        "y" : 855
+      },
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13.500000000000021
+      },
+      "semanticMeaning" : "Text content: '40'",
+      "visualText" : "40",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 855,
+          "x" : 335,
+          "height" : 9.0000000000000284,
+          "width" : 13.500000000000021
+        },
+        "confidence" : 1,
+        "text" : "40"
+      }
+    },
+    {
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: '41'",
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13.500000000000021
+      },
+      "position" : {
+        "y" : 873,
+        "x" : 335
+      },
+      "confidence" : 1,
+      "id" : "DE0B41D6-6477-4EB1-9517-90BEA453EE74",
+      "isClickable" : false,
+      "visualText" : "41",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "41",
+        "boundingBox" : {
+          "height" : 9.0000000000000284,
+          "x" : 335,
+          "y" : 873,
+          "width" : 13.500000000000021
+        }
+      }
+    },
+    {
+      "size" : {
+        "width" : 13,
+        "height" : 9.0000000000000284
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "visualText" : "42",
+      "id" : "B8CA4AC1-9252-4079-A247-7DCCF17800E7",
+      "semanticMeaning" : "Text content: '42'",
+      "position" : {
+        "y" : 891,
+        "x" : 335
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 335,
+          "height" : 9.0000000000000284,
+          "y" : 891,
+          "width" : 13
+        },
+        "text" : "42"
+      },
+      "isClickable" : false,
+      "type" : "TextContent"
+    },
+    {
+      "confidence" : 1,
+      "ocr" : {
+        "text" : "43",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 335,
+          "y" : 909,
+          "width" : 13,
+          "height" : 9.5000000000000426
+        }
+      },
+      "semanticMeaning" : "Text content: '43'",
+      "position" : {
+        "x" : 335,
+        "y" : 909
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 13,
+        "height" : 9.5000000000000426
+      },
+      "visualText" : "43",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "id" : "746ED7F4-A97B-4587-B667-8BCE4E0CA39E"
+    },
+    {
+      "semanticMeaning" : "Text content: '44'",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "id" : "CFBD1170-8F57-4CAC-9BD8-B07BAFD44E23",
+      "confidence" : 1,
+      "visualText" : "44",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13.500000000000021
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "44",
+        "boundingBox" : {
+          "height" : 9.0000000000000284,
+          "x" : 335,
+          "y" : 927,
+          "width" : 13.500000000000021
+        }
+      },
+      "position" : {
+        "x" : 335,
+        "y" : 927
+      }
+    },
+    {
+      "id" : "D256F6BC-6014-4884-8136-1C3F76A75C08",
+      "semanticMeaning" : "Text content: '45'",
+      "confidence" : 1,
+      "ocr" : {
+        "text" : "45",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 335,
+          "y" : 945,
+          "width" : 13,
+          "height" : 9.5000000000000426
+        }
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 13,
+        "height" : 9.5000000000000426
+      },
+      "visualText" : "45",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 335,
+        "y" : 945
+      },
+      "isClickable" : false
+    },
+    {
+      "isClickable" : false,
+      "size" : {
+        "width" : 13.500000000000021,
+        "height" : 9.0000000000000284
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '46'",
+      "id" : "9C3DDD1F-515A-4814-96AE-BD05F1B19168",
+      "visualText" : "46",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 335,
+          "y" : 963,
+          "width" : 13.500000000000021,
+          "height" : 9.0000000000000284
+        },
+        "text" : "46",
+        "confidence" : 1
+      },
+      "position" : {
+        "y" : 963,
+        "x" : 335
+      },
+      "confidence" : 1,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 9.0000000000000284,
+          "width" : 13,
+          "y" : 981,
+          "x" : 335
+        },
+        "confidence" : 1,
+        "text" : "47"
+      },
+      "id" : "81BEA84B-298D-4EF3-8E7D-B028A9CDA92E",
+      "visualText" : "47",
+      "size" : {
+        "height" : 9.0000000000000284,
+        "width" : 13
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: '47'",
+      "position" : {
+        "y" : 981,
+        "x" : 335
+      }
+    },
+    {
+      "type" : "TextContent",
+      "confidence" : 1,
+      "visualText" : "48",
+      "position" : {
+        "y" : 999,
+        "x" : 335
+      },
+      "isClickable" : false,
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13.500000000000021
+      },
+      "semanticMeaning" : "Text content: '48'",
+      "ocr" : {
+        "text" : "48",
+        "boundingBox" : {
+          "height" : 9.5000000000000426,
+          "y" : 999,
+          "width" : 13.500000000000021,
+          "x" : 335
+        },
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ],
+      "id" : "1C4CD663-0D16-48B0-91F9-394DEADB98AE"
+    },
+    {
+      "type" : "TextContent",
+      "confidence" : 1,
+      "position" : {
+        "x" : 335,
+        "y" : 1017
+      },
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 13.500000000000021
+      },
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "49",
+        "boundingBox" : {
+          "x" : 335,
+          "width" : 13.500000000000021,
+          "y" : 1017,
+          "height" : 9.5000000000000426
+        }
+      },
+      "semanticMeaning" : "Text content: '49'",
+      "visualText" : "49",
+      "id" : "75435ABA-4F5D-4550-9841-5ADC9419181C"
+    },
+    {
+      "position" : {
+        "y" : 1035,
+        "x" : 335
+      },
+      "id" : "06B91121-F297-43BF-8A9C-033E7EC78C5A",
+      "size" : {
+        "width" : 13.500000000000021,
+        "height" : 8
+      },
+      "confidence" : 1,
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "title" : null,
+        "description" : "text",
+        "focused" : false,
+        "enabled" : true
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text '.50'",
+      "visualText" : "",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 1035,
+          "height" : 8,
+          "x" : 335,
+          "width" : 13.500000000000021
+        },
+        "text" : ".50"
+      },
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "id" : "743106EA-1BE4-4DBD-A42E-F17586DB86F2",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXGroup",
+        "enabled" : true,
+        "description" : "group"
+      },
+      "visualText" : "* (£s<fLaunchpad 00￿0 (IAI)o",
+      "type" : "AXGroup+OCR",
+      "interactions" : [
+        "right_click"
+      ],
+      "position" : {
+        "x" : 131,
+        "y" : 1048
+      },
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 1048,
+          "height" : 12.500000000000014,
+          "x" : 131,
+          "width" : 272.5
+        },
+        "text" : "* (£s<fLaunchpad 00￿0 (IAI)o",
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "AXGroup with text '* (£s<fLaunchpad 00￿0 (IAI)o'",
+      "size" : {
+        "width" : 272.5,
+        "height" : 12.500000000000014
+      }
+    },
+    {
+      "isClickable" : false,
+      "type" : "TextContent",
+      "size" : {
+        "height" : 11.499999999999986,
+        "width" : 127.00000000000006
+      },
+      "semanticMeaning" : "Text content: 'Thought for 2 seconds'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 11.499999999999986,
+          "x" : 1294.5,
+          "width" : 127.00000000000006,
+          "y" : 395
+        },
+        "confidence" : 1,
+        "text" : "Thought for 2 seconds"
+      },
+      "confidence" : 1,
+      "visualText" : "Thought for 2 seconds",
+      "id" : "2D8A5CEF-1850-4BE5-BAAA-690F1E94C2AF",
+      "position" : {
+        "x" : 1294.5,
+        "y" : 395
+      }
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1120,
+        "y" : 421.99999999999994
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "Reject 3eN Accept %Y",
+        "boundingBox" : {
+          "x" : 1120,
+          "y" : 421.99999999999994,
+          "width" : 111.50000000000004,
+          "height" : 9.5000000000000426
+        },
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'Reject 3eN Accept %Y'",
+      "visualText" : "Reject 3eN Accept %Y",
+      "id" : "88D370B6-6E95-47FB-9651-6D75945A5230",
+      "size" : {
+        "width" : 111.50000000000004,
+        "height" : 9.5000000000000426
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "type" : "TextContent",
+      "confidence" : 1,
+      "position" : {
+        "x" : 1294.5,
+        "y" : 428.99999999999994
+      },
+      "size" : {
+        "height" : 12.000000000000114,
+        "width" : 146.50000000000006
+      },
+      "isClickable" : false,
+      "visualText" : ") python3 s rc\/main. py",
+      "semanticMeaning" : "Text content: ') python3 s rc\/main. py'",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : ") python3 s rc\/main. py",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1294.5,
+          "width" : 146.50000000000006,
+          "y" : 428.99999999999994,
+          "height" : 12.000000000000114
+        }
+      },
+      "id" : "AC04F28F-8258-4879-9CCD-820669D70963"
+    },
+    {
+      "position" : {
+        "y" : 428.99999999999994,
+        "x" : 1456
+      },
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "-task 'test",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1456,
+          "y" : 428.99999999999994,
+          "width" : 78.499999999999929,
+          "height" : 10.000000000000057
+        }
+      },
+      "id" : "6CD249AA-1CE0-4F47-9125-DDD79CD9D247",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 10.000000000000057,
+        "width" : 78.499999999999929
+      },
+      "visualText" : "-task 'test",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: '-task 'test'"
+    },
+    {
+      "isClickable" : false,
+      "id" : "BCB5476D-39E9-4115-9725-37C2806F17B8",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 236.00000000000009,
+        "height" : 12
+      },
+      "semanticMeaning" : "Text content: 'cent ralized prompt orchest ration\"'",
+      "position" : {
+        "x" : 1305,
+        "y" : 447
+      },
+      "visualText" : "cent ralized prompt orchest ration\"",
+      "ocr" : {
+        "text" : "cent ralized prompt orchest ration\"",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1305,
+          "y" : 447,
+          "width" : 236.00000000000009,
+          "height" : 12
+        }
+      },
+      "confidence" : 1,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '-debug'",
+      "position" : {
+        "x" : 1311.5,
+        "y" : 465.00000000000006
+      },
+      "visualText" : "-debug",
+      "ocr" : {
+        "text" : "-debug",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 465.00000000000006,
+          "height" : 11.999999999999886,
+          "width" : 42.000000000000128,
+          "x" : 1311.5
+        }
+      },
+      "confidence" : 1,
+      "size" : {
+        "width" : 42.000000000000128,
+        "height" : 11.999999999999886
+      },
+      "id" : "10C13B7F-1553-467C-BAE3-8FE2597F4DAD"
+    },
+    {
+      "size" : {
+        "height" : 9.5000000000000426,
+        "width" : 33.999999999999972
+      },
+      "visualText" : "Output",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1643.5,
+        "y" : 431.5
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Output'",
+      "id" : "34D04E1E-76AD-498F-82FB-B91BF3E5A217",
+      "ocr" : {
+        "text" : "Output",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1643.5,
+          "height" : 9.5000000000000426,
+          "width" : 33.999999999999972,
+          "y" : 431.5
+        }
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 1
+    },
+    {
+      "id" : "64AAA6BF-B191-413A-88C0-589AD8171B25",
+      "position" : {
+        "x" : 375.5,
+        "y" : 458.50000000000006
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'class PromptOrchest rator:'",
+      "interactions" : [
+
+      ],
+      "visualText" : "class PromptOrchest rator:",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "class PromptOrchest rator:",
+        "boundingBox" : {
+          "height" : 11.999999999999886,
+          "y" : 458.50000000000006,
+          "x" : 375.5,
+          "width" : 177.5
+        }
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "size" : {
+        "height" : 11.999999999999886,
+        "width" : 177.5
+      }
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: ''Cent ralized orchest rator f or all prompt assembly operations\"'",
+      "position" : {
+        "x" : 422.5,
+        "y" : 476.5
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 435,
+        "height" : 12
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 435,
+          "height" : 12,
+          "x" : 422.5,
+          "y" : 476.5
+        },
+        "text" : "'Cent ralized orchest rator f or all prompt assembly operations\""
+      },
+      "id" : "10FC1D74-59F7-4531-9E22-C939DE9CB9AB",
+      "confidence" : 1,
+      "type" : "TextContent",
+      "visualText" : "'Cent ralized orchest rator f or all prompt assembly operations\""
+    },
+    {
+      "visualText" : "113:09:50.7831 IMAINI Vl Task session created",
+      "interactions" : [
+
+      ],
+      "id" : "2D1F30DF-9C8C-491B-94D8-097538DDBC3A",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 11.000000000000085,
+        "width" : 311.49999999999989
+      },
+      "semanticMeaning" : "Text content: '113:09:50.7831 IMAINI Vl Task session created'",
+      "ocr" : {
+        "text" : "113:09:50.7831 IMAINI Vl Task session created",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 311.49999999999989,
+          "x" : 1299,
+          "y" : 493.49999999999994,
+          "height" : 11.000000000000085
+        }
+      },
+      "confidence" : 1,
+      "position" : {
+        "x" : 1299,
+        "y" : 493.49999999999994
+      },
+      "isClickable" : false
+    },
+    {
+      "id" : "441CC2ED-B0CD-4365-82EB-69CA5AA811D0",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "visualText" : "def",
+      "confidence" : 1,
+      "position" : {
+        "x" : 404.5,
+        "y" : 512.5
+      },
+      "size" : {
+        "height" : 10.000000000000057,
+        "width" : 21.499999999999993
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'def'",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 404.5,
+          "y" : 512.5,
+          "height" : 10.000000000000057,
+          "width" : 21.499999999999993
+        },
+        "text" : "def"
+      }
+    },
+    {
+      "position" : {
+        "y" : 512,
+        "x" : 448.5
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 448.5,
+          "width" : 299.5,
+          "y" : 512,
+          "height" : 12.500000000000014
+        },
+        "confidence" : 1,
+        "text" : "init ( sel f, prompt loader: PromptLoader) ."
+      },
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 299.5
+      },
+      "interactions" : [
+
+      ],
+      "id" : "E2E2A0F8-7BF6-4C95-8C52-5404C857D223",
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'init ( sel f, prompt loader: PromptLoader) .'",
+      "visualText" : "init ( sel f, prompt loader: PromptLoader) ."
+    },
+    {
+      "size" : {
+        "width" : 129.00000000000006,
+        "height" : 11.999999999999886
+      },
+      "isClickable" : false,
+      "id" : "BAA3ECD7-616F-45F6-86A0-5F3546E30656",
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'sel f . prompt loader'",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 530.5,
+        "x" : 433.5
+      },
+      "visualText" : "sel f . prompt loader",
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 11.999999999999886,
+          "x" : 433.5,
+          "y" : 530.5,
+          "width" : 129.00000000000006
+        },
+        "confidence" : 1,
+        "text" : "sel f . prompt loader"
+      }
+    },
+    {
+      "id" : "5FACB6BE-EFEB-4771-B25C-A324313519C0",
+      "ocr" : {
+        "text" : "prompt loader",
+        "boundingBox" : {
+          "y" : 530.5,
+          "x" : 585.5,
+          "height" : 11.999999999999886,
+          "width" : 92.499999999999972
+        },
+        "confidence" : 1
+      },
+      "type" : "TextContent",
+      "size" : {
+        "width" : 92.499999999999972,
+        "height" : 11.999999999999886
+      },
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'prompt loader'",
+      "position" : {
+        "x" : 585.5,
+        "y" : 530.5
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "visualText" : "prompt loader"
+    },
+    {
+      "size" : {
+        "height" : 10.000000000000057,
+        "width" : 97.5
+      },
+      "isClickable" : false,
+      "position" : {
+        "x" : 1317,
+        "y" : 536
+      },
+      "visualText" : "Task Execution",
+      "type" : "TextContent",
+      "id" : "05F73890-042C-4110-93DB-E1C25FE7BC4D",
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'Task Execution'",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Task Execution",
+        "boundingBox" : {
+          "x" : 1317,
+          "y" : 536,
+          "width" : 97.5,
+          "height" : 10.000000000000057
+        }
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "semanticMeaning" : "Text content: 'def build_complete messages I sel f,'",
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "ocr" : {
+        "text" : "def build_complete messages I sel f,",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 235.50000000000003,
+          "height" : 12.499999999999901,
+          "y" : 566,
+          "x" : 404.5
+        }
+      },
+      "position" : {
+        "x" : 404.5,
+        "y" : 566
+      },
+      "size" : {
+        "width" : 235.50000000000003,
+        "height" : 12.499999999999901
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "id" : "A1AD5352-6AA7-40D6-9916-BC7673A0044D",
+      "visualText" : "def build_complete messages I sel f,"
+    },
+    {
+      "position" : {
+        "y" : 584.5,
+        "x" : 593
+      },
+      "type" : "TextContent",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 593,
+          "y" : 584.5,
+          "height" : 12,
+          "width" : 126.49999999999994
+        },
+        "text" : "task message: str,",
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 12,
+        "width" : 126.49999999999994
+      },
+      "confidence" : 1,
+      "id" : "7464A668-85D2-45A4-A74F-E971701841C6",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'task message: str,'",
+      "visualText" : "task message: str,"
+    },
+    {
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 592.5,
+          "y" : 602,
+          "width" : 307.5,
+          "height" : 12.499999999999901
+        },
+        "text" : "conversation_history: List IDict Istr, strl I ,"
+      },
+      "semanticMeaning" : "Text content: 'conversation_history: List IDict Istr, strl I ,'",
+      "id" : "0438337E-8B3B-452C-BADF-55C68B97A237",
+      "size" : {
+        "width" : 307.5,
+        "height" : 12.499999999999901
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "position" : {
+        "y" : 602,
+        "x" : 592.5
+      },
+      "visualText" : "conversation_history: List IDict Istr, strl I ,",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "size" : {
+        "width" : 169.50000000000003,
+        "height" : 12.500000000000014
+      },
+      "id" : "F98C02F0-E3C4-4249-80CD-AFD9BCF4B435",
+      "isClickable" : false,
+      "visualText" : "ui_state: Optional IDictl",
+      "semanticMeaning" : "Text content: 'ui_state: Optional IDictl'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "ui_state: Optional IDictl",
+        "boundingBox" : {
+          "x" : 592.5,
+          "height" : 12.500000000000014,
+          "y" : 620,
+          "width" : 169.50000000000003
+        }
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "position" : {
+        "x" : 592.5,
+        "y" : 620
+      },
+      "confidence" : 0.5
+    },
+    {
+      "semanticMeaning" : "Text content: 'None,'",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 621,
+          "x" : 787,
+          "width" : 33.500000000000043,
+          "height" : 10.999999999999972
+        },
+        "text" : "None,",
+        "confidence" : 1
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "position" : {
+        "x" : 787,
+        "y" : 621
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 33.500000000000043,
+        "height" : 10.999999999999972
+      },
+      "visualText" : "None,",
+      "confidence" : 1,
+      "id" : "15F873EF-E30D-4FD3-B0FD-CB736B4136B9"
+    },
+    {
+      "semanticMeaning" : "Text content: 'avai lable_apps: str'",
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "isClickable" : false,
+      "visualText" : "avai lable_apps: str",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 638.5,
+          "x" : 592,
+          "width" : 137.00000000000003,
+          "height" : 12
+        },
+        "text" : "avai lable_apps: str"
+      },
+      "id" : "046F58B0-4446-4C1E-B517-ED0FDD42BF1E",
+      "position" : {
+        "y" : 638.5,
+        "x" : 592
+      },
+      "size" : {
+        "height" : 12,
+        "width" : 137.00000000000003
+      }
+    },
+    {
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 126.49999999999994,
+          "x" : 592.5,
+          "y" : 656.5,
+          "height" : 11.499999999999986
+        },
+        "text" : "ui formatter4lone,",
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "type" : "TextContent",
+      "position" : {
+        "x" : 592.5,
+        "y" : 656.5
+      },
+      "semanticMeaning" : "Text content: 'ui formatter4lone,'",
+      "interactions" : [
+
+      ],
+      "visualText" : "ui formatter4lone,",
+      "isClickable" : false,
+      "id" : "CA6FA0A7-3AC0-479E-B54A-B8B71399C825",
+      "size" : {
+        "height" : 11.499999999999986,
+        "width" : 126.49999999999994
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'context manager-None)'",
+      "visualText" : "context manager-None)",
+      "size" : {
+        "height" : 12.499999999999901,
+        "width" : 148.49999999999994
+      },
+      "position" : {
+        "x" : 592.5,
+        "y" : 674
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "context manager-None)",
+        "boundingBox" : {
+          "height" : 12.499999999999901,
+          "x" : 592.5,
+          "width" : 148.49999999999994,
+          "y" : 674
+        }
+      },
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "id" : "E25F302A-EFC9-45A8-9F5B-C1E907B8D004"
+    },
+    {
+      "size" : {
+        "width" : 188.5,
+        "height" : 12
+      },
+      "visualText" : "Starting Agent Computer Use",
+      "type" : "TextContent",
+      "position" : {
+        "y" : 564,
+        "x" : 1317.5
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Starting Agent Computer Use",
+        "boundingBox" : {
+          "x" : 1317.5,
+          "y" : 564,
+          "height" : 12,
+          "width" : 188.5
+        }
+      },
+      "id" : "C8C6D580-95A9-4AF2-A865-94FFB95EC823",
+      "isClickable" : false,
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Starting Agent Computer Use'"
+    },
+    {
+      "size" : {
+        "height" : 12,
+        "width" : 300.5
+      },
+      "semanticMeaning" : "Text content: 'Task: test centralized prompt orchestration'",
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Task: test centralized prompt orchestration",
+        "boundingBox" : {
+          "x" : 1317,
+          "y" : 578,
+          "height" : 12,
+          "width" : 300.5
+        }
+      },
+      "id" : "EB9504B2-4512-4F2B-BDC7-14C841688959",
+      "isClickable" : false,
+      "visualText" : "Task: test centralized prompt orchestration",
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1317,
+        "y" : 578
+      }
+    },
+    {
+      "confidence" : 0.30000001192092896,
+      "position" : {
+        "x" : 104.5,
+        "y" : 600
+      },
+      "semanticMeaning" : "Text content: 'utils'",
+      "visualText" : "utils",
+      "ocr" : {
+        "text" : "utils",
+        "confidence" : 0.30000001192092896,
+        "boundingBox" : {
+          "y" : 600,
+          "width" : 24.500000000000007,
+          "height" : 10.000000000000057,
+          "x" : 104.5
+        }
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "size" : {
+        "height" : 10.000000000000057,
+        "width" : 24.500000000000007
+      },
+      "interactions" : [
+
+      ],
+      "id" : "5B1FA614-8AD3-44AB-9453-EBF6C49DB2EB"
+    },
+    {
+      "size" : {
+        "width" : 188.5,
+        "height" : 12
+      },
+      "id" : "0E6B9759-F211-4361-B38C-77A258704E98",
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1317.5,
+          "width" : 188.5,
+          "height" : 12,
+          "y" : 606
+        },
+        "text" : "Sta rting Agent O rchest rato r"
+      },
+      "isClickable" : false,
+      "position" : {
+        "y" : 606,
+        "x" : 1317.5
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Sta rting Agent O rchest rato r",
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'Sta rting Agent O rchest rato r'"
+    },
+    {
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 1317,
+        "y" : 620
+      },
+      "id" : "43A42494-A639-4E73-82CC-C9E9AFB2245D",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12,
+        "width" : 300.5
+      },
+      "semanticMeaning" : "Text content: 'Task: test cent ralized p rompt o rchest ration'",
+      "visualText" : "Task: test cent ralized p rompt o rchest ration",
+      "ocr" : {
+        "text" : "Task: test cent ralized p rompt o rchest ration",
+        "boundingBox" : {
+          "width" : 300.5,
+          "y" : 620,
+          "x" : 1317,
+          "height" : 12
+        },
+        "confidence" : 1
+      }
+    },
+    {
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 622,
+          "height" : 9.9999999999999432,
+          "x" : 104.5,
+          "width" : 53.499999999999993
+        },
+        "text" : "workflow"
+      },
+      "position" : {
+        "x" : 104.5,
+        "y" : 622
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "visualText" : "workflow",
+      "id" : "3629AFD7-E7D7-43E6-B44A-1EB5B6D05819",
+      "semanticMeaning" : "Text content: 'workflow'",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 53.499999999999993
+      }
+    },
+    {
+      "id" : "581C232A-ADDA-4FEB-B352-FD1CCB7F8F5D",
+      "semanticMeaning" : "Text content: 'init .py'",
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 50.500000000000007
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.500000000000014,
+          "x" : 119,
+          "width" : 50.500000000000007,
+          "y" : 644
+        },
+        "text" : "init .py",
+        "confidence" : 0.30000001192092896
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 644,
+        "x" : 119
+      },
+      "confidence" : 0.30000001192092896,
+      "visualText" : "init .py",
+      "type" : "TextContent"
+    },
+    {
+      "isClickable" : false,
+      "size" : {
+        "width" : 161,
+        "height" : 13.499999999999929
+      },
+      "semanticMeaning" : "Text content: 'Pé _agent_orCheStratOr.py'",
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "visualText" : "Pé _agent_orCheStratOr.py",
+      "position" : {
+        "x" : 84,
+        "y" : 665
+      },
+      "id" : "05CEC6B4-7402-46DA-A74B-C0EAF31E502F",
+      "type" : "TextContent",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 665,
+          "x" : 84,
+          "width" : 161,
+          "height" : 13.499999999999929
+        },
+        "text" : "Pé _agent_orCheStratOr.py"
+      }
+    },
+    {
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'Pé communication.py'",
+      "position" : {
+        "y" : 687,
+        "x" : 84
+      },
+      "size" : {
+        "height" : 13.500000000000043,
+        "width" : 131
+      },
+      "type" : "TextContent",
+      "visualText" : "Pé communication.py",
+      "id" : "681833D8-C250-4E70-BAE9-85A05D791F2D",
+      "ocr" : {
+        "text" : "Pé communication.py",
+        "boundingBox" : {
+          "y" : 687,
+          "x" : 84,
+          "width" : 131,
+          "height" : 13.500000000000043
+        },
+        "confidence" : 0.5
+      }
+    },
+    {
+      "isClickable" : false,
+      "id" : "341E59FF-8D45-410A-9EDD-6360B0965956",
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "interactions" : [
+
+      ],
+      "visualText" : "Pé core.py",
+      "semanticMeaning" : "Text content: 'Pé core.py'",
+      "position" : {
+        "x" : 83.646488531567741,
+        "y" : 709
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 13.499999999999929,
+          "x" : 83.646488531567741,
+          "y" : 709,
+          "width" : 65.707022936864504
+        },
+        "confidence" : 0.5,
+        "text" : "Pé core.py"
+      },
+      "size" : {
+        "height" : 13.499999999999929,
+        "width" : 65.707022936864504
+      }
+    },
+    {
+      "type" : "TextContent",
+      "isClickable" : false,
+      "size" : {
+        "height" : 13.500000000000043,
+        "width" : 96.5
+      },
+      "id" : "41A90862-21D4-4F8D-8D9D-5FD75DA044F2",
+      "ocr" : {
+        "text" : "Pé execution.py",
+        "boundingBox" : {
+          "x" : 84,
+          "width" : 96.5,
+          "y" : 731,
+          "height" : 13.500000000000043
+        },
+        "confidence" : 0.5
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "visualText" : "Pé execution.py",
+      "position" : {
+        "y" : 731,
+        "x" : 84
+      },
+      "semanticMeaning" : "Text content: 'Pé execution.py'"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "semanticMeaning" : "Text content: 'Pé monitoring.py'",
+      "isClickable" : false,
+      "position" : {
+        "x" : 84,
+        "y" : 753
+      },
+      "size" : {
+        "width" : 103,
+        "height" : 13.499999999999929
+      },
+      "type" : "TextContent",
+      "confidence" : 0.5,
+      "ocr" : {
+        "text" : "Pé monitoring.py",
+        "boundingBox" : {
+          "y" : 753,
+          "x" : 84,
+          "height" : 13.499999999999929,
+          "width" : 103
+        },
+        "confidence" : 0.5
+      },
+      "visualText" : "Pé monitoring.py",
+      "id" : "361C2DDE-7157-45CC-A484-AC1C83F220BD"
+    },
+    {
+      "position" : {
+        "x" : 84,
+        "y" : 776
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "visualText" : "M+ README.md",
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "M+ README.md",
+        "boundingBox" : {
+          "height" : 10.000000000000057,
+          "x" : 84,
+          "y" : 776,
+          "width" : 94.999999999999986
+        }
+      },
+      "id" : "0B5A36F4-D384-45D7-AF65-45E14A9B4275",
+      "size" : {
+        "width" : 94.999999999999986,
+        "height" : 10.000000000000057
+      },
+      "isClickable" : false,
+      "confidence" : 0.5,
+      "semanticMeaning" : "Text content: 'M+ README.md'"
+    },
+    {
+      "visualText" : "Iteration 1\/20",
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "size" : {
+        "height" : 10.499999999999957,
+        "width" : 96.500000000000142
+      },
+      "ocr" : {
+        "text" : "Iteration 1\/20",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 96.500000000000142,
+          "height" : 10.499999999999957,
+          "x" : 1318,
+          "y" : 662
+        }
+      },
+      "position" : {
+        "y" : 662,
+        "x" : 1318
+      },
+      "type" : "TextContent",
+      "id" : "9C1917E5-F3CB-433F-92D0-7BB9D8A8751B",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'Iteration 1\/20'"
+    },
+    {
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '2025-06-29 13: 09: 51, 645 IINFOI HThP Request: POST https i I'",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 675.5,
+          "height" : 12.500000000000014,
+          "width" : 394.49999999999989,
+          "x" : 1296.5
+        },
+        "text" : "2025-06-29 13: 09: 51, 645 IINFOI HThP Request: POST https i I"
+      },
+      "position" : {
+        "y" : 675.5,
+        "x" : 1296.5
+      },
+      "id" : "24222EC7-CB4B-4C43-8ECD-A35326F5FFC4",
+      "size" : {
+        "height" : 12.500000000000014,
+        "width" : 394.49999999999989
+      },
+      "confidence" : 1,
+      "visualText" : "2025-06-29 13: 09: 51, 645 IINFOI HThP Request: POST https i I",
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "visualText" : "0 OK\"",
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 9.9999999999999432,
+          "width" : 32.999999999999929,
+          "y" : 690,
+          "x" : 1296.5
+        },
+        "text" : "0 OK\""
+      },
+      "id" : "22BECC14-6042-4A9D-A404-A8DA62FE5544",
+      "semanticMeaning" : "Text content: '0 OK\"'",
+      "position" : {
+        "x" : 1296.5,
+        "y" : 690
+      },
+      "size" : {
+        "height" : 9.9999999999999432,
+        "width" : 32.999999999999929
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "isClickable" : false
+    },
+    {
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 1297,
+          "width" : 199.50000000000011,
+          "y" : 703.5,
+          "height" : 12.500000000000014
+        },
+        "text" : "• Agent Response: I'action\":",
+        "confidence" : 1
+      },
+      "position" : {
+        "y" : 703.5,
+        "x" : 1297
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: '• Agent Response: I'action\":'",
+      "interactions" : [
+
+      ],
+      "visualText" : "• Agent Response: I'action\":",
+      "id" : "0FF2B4D2-6CE4-439D-B036-0A544A75F856",
+      "type" : "TextContent",
+      "size" : {
+        "width" : 199.50000000000011,
+        "height" : 12.500000000000014
+      }
+    },
+    {
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "'ui inspect\"",
+        "boundingBox" : {
+          "y" : 704,
+          "height" : 12,
+          "x" : 1510,
+          "width" : 79.000000000000043
+        },
+        "confidence" : 0.5
+      },
+      "size" : {
+        "width" : 79.000000000000043,
+        "height" : 12
+      },
+      "interactions" : [
+
+      ],
+      "position" : {
+        "y" : 704,
+        "x" : 1510
+      },
+      "visualText" : "'ui inspect\"",
+      "id" : "FDB88B5D-DCA0-40E8-919E-FCEF38268AF7",
+      "semanticMeaning" : "Text content: ''ui inspect\"'",
+      "type" : "TextContent",
+      "confidence" : 0.5
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 1608,
+          "height" : 12,
+          "y" : 704,
+          "width" : 78.999999999999858
+        },
+        "text" : "'pa rameters\""
+      },
+      "confidence" : 0.5,
+      "size" : {
+        "height" : 12,
+        "width" : 78.999999999999858
+      },
+      "position" : {
+        "x" : 1608,
+        "y" : 704
+      },
+      "semanticMeaning" : "Text content: ''pa rameters\"'",
+      "id" : "72C7D813-B055-419E-83AA-AFECB48B2430",
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "isClickable" : false,
+      "visualText" : "'pa rameters\""
+    },
+    {
+      "type" : "TextContent",
+      "visualText" : "understand the current state and identify any relevant I",
+      "semanticMeaning" : "Text content: 'understand the current state and identify any relevant I'",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 386.99999999999989,
+          "height" : 12,
+          "x" : 1304,
+          "y" : 718
+        },
+        "text" : "understand the current state and identify any relevant I",
+        "confidence" : 1
+      },
+      "isClickable" : false,
+      "id" : "71814014-422C-4EE9-91A0-E810FCAD1F0B",
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 1304,
+        "y" : 718
+      },
+      "size" : {
+        "width" : 386.99999999999989,
+        "height" : 12
+      }
+    },
+    {
+      "visualText" : "[13:09:5] w Executing: ui inspect",
+      "semanticMeaning" : "Text content: '[13:09:5] w Executing: ui inspect'",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 731.5,
+          "height" : 12.500000000000014,
+          "x" : 1299,
+          "width" : 234.49999999999994
+        },
+        "text" : "[13:09:5] w Executing: ui inspect",
+        "confidence" : 0.5
+      },
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 234.49999999999994,
+        "height" : 12.500000000000014
+      },
+      "id" : "49736D4D-AE13-4370-B638-674DFDDC1F28",
+      "type" : "TextContent",
+      "position" : {
+        "y" : 731.5,
+        "x" : 1299
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "isClickable" : false,
+      "position" : {
+        "x" : 1555.5,
+        "y" : 732
+      },
+      "semanticMeaning" : "Text content: 'Sta rting by inspect:'",
+      "type" : "TextContent",
+      "size" : {
+        "height" : 12,
+        "width" : 135.49999999999994
+      },
+      "interactions" : [
+
+      ],
+      "id" : "1863225A-8C55-4C31-9490-91CE19BB60AA",
+      "visualText" : "Sta rting by inspect:",
+      "confidence" : 1,
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 732,
+          "height" : 12,
+          "width" : 135.49999999999994,
+          "x" : 1555.5
+        },
+        "text" : "Sta rting by inspect:",
+        "confidence" : 1
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'ify any relevant elements for the task.'",
+      "size" : {
+        "width" : 269.50000000000011,
+        "height" : 12
+      },
+      "type" : "TextContent",
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "ify any relevant elements for the task.",
+        "boundingBox" : {
+          "x" : 1297,
+          "height" : 12,
+          "width" : 269.50000000000011,
+          "y" : 746
+        },
+        "confidence" : 1
+      },
+      "visualText" : "ify any relevant elements for the task.",
+      "position" : {
+        "x" : 1297,
+        "y" : 746
+      },
+      "id" : "9024B716-898B-44E1-B576-716768B3D1A1"
+    },
+    {
+      "id" : "7D47E8B9-019A-48CE-B3FD-B5CB404DD34E",
+      "semanticMeaning" : "Text content: 'List IDict Istr, strl I'",
+      "size" : {
+        "height" : 12,
+        "width" : 140.50000000000009
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "List IDict Istr, strl I",
+      "confidence" : 0.5,
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "List IDict Istr, strl I",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "height" : 12,
+          "width" : 140.50000000000009,
+          "x" : 773.5,
+          "y" : 674
+        }
+      },
+      "type" : "TextContent",
+      "position" : {
+        "x" : 773.5,
+        "y" : 674
+      }
+    },
+    {
+      "confidence" : 1,
+      "id" : "B1F58013-C237-4161-84AE-E58B08B7C298",
+      "position" : {
+        "y" : 710.5,
+        "x" : 433.5
+      },
+      "visualText" : "Build complete message list for LLM",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 433.5,
+          "width" : 251.5,
+          "height" : 12,
+          "y" : 710.5
+        },
+        "text" : "Build complete message list for LLM"
+      },
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'Build complete message list for LLM'",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 251.5,
+        "height" : 12
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 708,
+          "width" : 157.50000000000006,
+          "height" : 9.5000000000000426,
+          "y" : 711
+        },
+        "text" : "SINGLE SOURCE OF TRUTH"
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "SINGLE SOURCE OF TRUTH",
+      "id" : "F0EA0E34-069A-4F82-BAE7-5BE2F57DA18E",
+      "position" : {
+        "x" : 708,
+        "y" : 711
+      },
+      "size" : {
+        "width" : 157.50000000000006,
+        "height" : 9.5000000000000426
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'SINGLE SOURCE OF TRUTH'"
+    },
+    {
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "id" : "45854AE4-6633-4CFA-8498-05D1C1C573EF",
+      "visualText" : "This is the ONLY method that should assemble final messages for the LLM.",
+      "position" : {
+        "y" : 746.5,
+        "x" : 433
+      },
+      "ocr" : {
+        "text" : "This is the ONLY method that should assemble final messages for the LLM.",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 433,
+          "y" : 746.5,
+          "width" : 517.5,
+          "height" : 12
+        }
+      },
+      "size" : {
+        "height" : 12,
+        "width" : 517.5
+      },
+      "semanticMeaning" : "Text content: 'This is the ONLY method that should assemble final messages for the LLM.'",
+      "type" : "TextContent"
+    },
+    {
+      "type" : "TextContent",
+      "position" : {
+        "x" : 433,
+        "y" : 764.5
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 336.5,
+        "height" : 12
+      },
+      "id" : "BBDE7DBF-0DA8-4CEC-9A6C-9074C957C9A1",
+      "confidence" : 1,
+      "visualText" : "All other components should route through here.",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "All other components should route through here.",
+        "boundingBox" : {
+          "y" : 764.5,
+          "x" : 433,
+          "width" : 336.5,
+          "height" : 12
+        }
+      },
+      "semanticMeaning" : "Text content: 'All other components should route through here.'",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "visualText" : "Pé background_llm.py",
+      "position" : {
+        "x" : 76,
+        "y" : 797
+      },
+      "ocr" : {
+        "text" : "Pé background_llm.py",
+        "boundingBox" : {
+          "x" : 76,
+          "height" : 13.500000000000043,
+          "width" : 135.5,
+          "y" : 797
+        },
+        "confidence" : 0.5
+      },
+      "size" : {
+        "width" : 135.5,
+        "height" : 13.500000000000043
+      },
+      "semanticMeaning" : "AXGroup with text 'Pé background_llm.py'",
+      "id" : "34683F2B-ACDD-45EF-88DD-21E928D23E65",
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXGroup",
+        "enabled" : true,
+        "title" : null,
+        "description" : "group"
+      },
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993
+    },
+    {
+      "size" : {
+        "width" : 137.00000000000003,
+        "height" : 13.500000000000043
+      },
+      "semanticMeaning" : "AXGroup with text 'Pé blueprint_loader.py'",
+      "interactions" : [
+        "right_click"
+      ],
+      "id" : "7D5A4319-E26C-40D1-B253-4D39E16C54D5",
+      "type" : "AXGroup+OCR",
+      "isClickable" : false,
+      "confidence" : 1,
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXGroup",
+        "description" : "group",
+        "enabled" : true,
+        "focused" : false
+      },
+      "visualText" : "Pé blueprint_loader.py",
+      "position" : {
+        "x" : 76,
+        "y" : 819
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 76,
+          "height" : 13.500000000000043,
+          "y" : 819,
+          "width" : 137.00000000000003
+        },
+        "text" : "Pé blueprint_loader.py",
+        "confidence" : 1
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Pé dynamic_prompts.py",
+        "boundingBox" : {
+          "y" : 841,
+          "x" : 76,
+          "width" : 147,
+          "height" : 13.500000000000043
+        }
+      },
+      "size" : {
+        "width" : 147,
+        "height" : 13.500000000000043
+      },
+      "confidence" : 1,
+      "type" : "AXGroup+OCR",
+      "accessibility" : {
+        "description" : "group",
+        "role" : "AXGroup",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "visualText" : "Pé dynamic_prompts.py",
+      "position" : {
+        "x" : 76,
+        "y" : 841
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "AXGroup with text 'Pé dynamic_prompts.py'",
+      "id" : "5101D4FD-2B8D-4AE5-A667-E98B3B62C056",
+      "interactions" : [
+        "right_click"
+      ]
+    },
+    {
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXGroup",
+        "enabled" : true,
+        "description" : "group"
+      },
+      "position" : {
+        "x" : 76,
+        "y" : 863
+      },
+      "confidence" : 0.79999999999999993,
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 13.500000000000043,
+          "width" : 67,
+          "x" : 76,
+          "y" : 863
+        },
+        "text" : "Pé main.py",
+        "confidence" : 0.5
+      },
+      "isClickable" : false,
+      "id" : "805398D6-97BC-481E-A5DC-66F7024B7530",
+      "visualText" : "Pé main.py",
+      "semanticMeaning" : "AXGroup with text 'Pé main.py'",
+      "type" : "AXGroup+OCR",
+      "size" : {
+        "width" : 67,
+        "height" : 13.500000000000043
+      }
+    },
+    {
+      "semanticMeaning" : "AXGroup with text 'Pé task_classif ier.py'",
+      "position" : {
+        "y" : 885,
+        "x" : 76
+      },
+      "id" : "48FBD157-BB5D-4395-A6B5-F56D40B75904",
+      "size" : {
+        "height" : 13.500000000000043,
+        "width" : 124.00000000000003
+      },
+      "type" : "AXGroup+OCR",
+      "interactions" : [
+        "right_click"
+      ],
+      "visualText" : "Pé task_classif ier.py",
+      "accessibility" : {
+        "description" : "group",
+        "title" : null,
+        "role" : "AXGroup",
+        "enabled" : true,
+        "focused" : false
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "text" : "Pé task_classif ier.py",
+        "boundingBox" : {
+          "y" : 885,
+          "width" : 124.00000000000003,
+          "x" : 76,
+          "height" : 13.500000000000043
+        }
+      },
+      "confidence" : 0.79999999999999993,
+      "isClickable" : false
+    },
+    {
+      "size" : {
+        "width" : 119.00000000000009,
+        "height" : 10.499999999999957
+      },
+      "visualText" : "D Move to background",
+      "type" : "TextContent",
+      "confidence" : 1,
+      "position" : {
+        "x" : 1480.5,
+        "y" : 790
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'D Move to background'",
+      "id" : "1061235D-7657-4526-BE77-DB6C156872B7",
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "D Move to background",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 119.00000000000009,
+          "x" : 1480.5,
+          "y" : 790,
+          "height" : 10.499999999999957
+        }
+      }
+    },
+    {
+      "confidence" : 1,
+      "size" : {
+        "width" : 21.500000000000085,
+        "height" : 10.499999999999957
+      },
+      "type" : "TextContent",
+      "position" : {
+        "x" : 1644,
+        "y" : 790
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Skip",
+        "boundingBox" : {
+          "width" : 21.500000000000085,
+          "x" : 1644,
+          "y" : 790,
+          "height" : 10.499999999999957
+        }
+      },
+      "id" : "355CC0E2-5E30-402D-ADF2-1E51BEF145F8",
+      "interactions" : [
+
+      ],
+      "visualText" : "Skip",
+      "semanticMeaning" : "Text content: 'Skip'"
+    },
+    {
+      "type" : "TextContent",
+      "ocr" : {
+        "text" : "# l. Build dynamic content",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 432.5,
+          "y" : 800.5,
+          "width" : 187.5,
+          "height" : 12
+        }
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 187.5,
+        "height" : 12
+      },
+      "id" : "C373665D-57DB-4649-B797-0FEC873FCA23",
+      "position" : {
+        "x" : 432.5,
+        "y" : 800.5
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: '# l. Build dynamic content'",
+      "visualText" : "# l. Build dynamic content"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 433.5,
+        "y" : 818.5
+      },
+      "visualText" : "dynamic_content",
+      "isClickable" : false,
+      "type" : "TextContent",
+      "size" : {
+        "width" : 107.00000000000003,
+        "height" : 12
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12,
+          "x" : 433.5,
+          "width" : 107.00000000000003,
+          "y" : 818.5
+        },
+        "text" : "dynamic_content",
+        "confidence" : 1
+      },
+      "id" : "18197089-291A-4F91-B627-E9E88C6A2499",
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'dynamic_content'"
+    },
+    {
+      "semanticMeaning" : "Text content: 'sel f ._build_dynamic_content ('",
+      "position" : {
+        "y" : 818,
+        "x" : 563.5
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "sel f ._build_dynamic_content (",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "sel f ._build_dynamic_content (",
+        "boundingBox" : {
+          "height" : 12.500000000000014,
+          "x" : 563.5,
+          "y" : 818,
+          "width" : 199.5
+        }
+      },
+      "size" : {
+        "width" : 199.5,
+        "height" : 12.500000000000014
+      },
+      "type" : "TextContent",
+      "confidence" : 1,
+      "id" : "4B669B01-F380-4840-A38A-11A0BF7E3641",
+      "isClickable" : false
+    },
+    {
+      "confidence" : 1,
+      "visualText" : "ui_state-ui state,",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 462.5,
+        "y" : 836.5
+      },
+      "type" : "TextContent",
+      "size" : {
+        "width" : 126.49999999999994,
+        "height" : 11.499999999999986
+      },
+      "id" : "7B4F2FEA-D4D4-48D1-89A0-C3B71E4393F2",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'ui_state-ui state,'",
+      "ocr" : {
+        "text" : "ui_state-ui state,",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 836.5,
+          "width" : 126.49999999999994,
+          "height" : 11.499999999999986,
+          "x" : 462.5
+        }
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "ui formatter-ui f ormatter,",
+        "boundingBox" : {
+          "width" : 184.5,
+          "height" : 11.499999999999986,
+          "y" : 854.5,
+          "x" : 462.5
+        },
+        "confidence" : 1
+      },
+      "id" : "6E68846A-42CC-4F20-BD30-B76EBB0FE19F",
+      "position" : {
+        "x" : 462.5,
+        "y" : 854.5
+      },
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'ui formatter-ui f ormatter,'",
+      "size" : {
+        "height" : 11.499999999999986,
+        "width" : 184.5
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "visualText" : "ui formatter-ui f ormatter,"
+    },
+    {
+      "confidence" : 1,
+      "semanticMeaning" : "Text content: 'context manager-context manager'",
+      "visualText" : "context manager-context manager",
+      "ocr" : {
+        "text" : "context manager-context manager",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 462.5,
+          "width" : 223,
+          "height" : 10.999999999999972,
+          "y" : 873.5
+        }
+      },
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "position" : {
+        "y" : 873.5,
+        "x" : 462.5
+      },
+      "size" : {
+        "height" : 10.999999999999972,
+        "width" : 223
+      },
+      "id" : "4EE3C76D-EAF4-4D79-820B-783CB6BFC052",
+      "isClickable" : false
+    },
+    {
+      "isClickable" : false,
+      "position" : {
+        "y" : 902,
+        "x" : 1286
+      },
+      "id" : "CE9B137E-97F3-432B-9DF5-B53E66149979",
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "width" : 78,
+        "height" : 10.499999999999957
+      },
+      "confidence" : 1,
+      "visualText" : "",
+      "semanticMeaning" : "AXStaticText with text '> Generating...'",
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "description" : "text",
+        "focused" : false,
+        "role" : "AXStaticText"
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 78,
+          "x" : 1286,
+          "height" : 10.499999999999957,
+          "y" : 902
+        },
+        "text" : "> Generating...",
+        "confidence" : 1
+      }
+    },
+    {
+      "visualText" : "Stop",
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "focused" : false,
+        "description" : "text"
+      },
+      "semanticMeaning" : "AXStaticText with text 'Stop'",
+      "ocr" : {
+        "text" : "Stop",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1546.5,
+          "y" : 903,
+          "width" : 23.000000000000057,
+          "height" : 10.000000000000057
+        }
+      },
+      "confidence" : 1,
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "y" : 903,
+        "x" : 1546.5
+      },
+      "interactions" : [
+
+      ],
+      "id" : "6F585B46-7B06-4674-B223-777621464C03",
+      "size" : {
+        "width" : 23.000000000000057,
+        "height" : 10.000000000000057
+      },
+      "isClickable" : false
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'ccept'",
+      "id" : "847584C6-418F-4376-83B7-A21A2A26B374",
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 28.999999999999943,
+        "height" : 9.5000000000000426
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 9.5000000000000426,
+          "width" : 28.999999999999943,
+          "y" : 903.5,
+          "x" : 1627
+        },
+        "text" : "ccept",
+        "confidence" : 1
+      },
+      "position" : {
+        "x" : 1627,
+        "y" : 903.5
+      },
+      "isClickable" : false,
+      "visualText" : "Accept",
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "description" : "text",
+        "focused" : false,
+        "role" : "AXStaticText"
+      }
+    },
+    {
+      "visualText" : "config",
+      "semanticMeaning" : "Text content: 'config'",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 930,
+          "width" : 36.5,
+          "height" : 12.500000000000014,
+          "x" : 88.5
+        },
+        "text" : "config"
+      },
+      "position" : {
+        "x" : 88.5,
+        "y" : 930
+      },
+      "id" : "12A1D246-86A3-4F89-A682-B430E2554E81",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "size" : {
+        "width" : 36.5,
+        "height" : 12.500000000000014
+      },
+      "confidence" : 1,
+      "type" : "TextContent"
+    },
+    {
+      "visualText" : "core",
+      "position" : {
+        "y" : 954.5,
+        "x" : 88.5
+      },
+      "semanticMeaning" : "Text content: 'core'",
+      "isClickable" : false,
+      "id" : "CD86D9E5-AC30-4B88-B25A-19240E0C0BFF",
+      "ocr" : {
+        "text" : "core",
+        "boundingBox" : {
+          "width" : 26,
+          "x" : 88.5,
+          "y" : 954.5,
+          "height" : 7.4999999999999858
+        },
+        "confidence" : 1
+      },
+      "type" : "TextContent",
+      "size" : {
+        "width" : 26,
+        "height" : 7.4999999999999858
+      },
+      "confidence" : 1,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "visualText" : "# 2. Build complete system prompt",
+      "size" : {
+        "height" : 12,
+        "width" : 238.00000000000003
+      },
+      "semanticMeaning" : "Text content: '# 2. Build complete system prompt'",
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 432.5,
+        "y" : 926.5
+      },
+      "id" : "F3053FE5-6C28-4035-8A33-E4567707E614",
+      "isClickable" : false,
+      "confidence" : 1,
+      "type" : "TextContent",
+      "ocr" : {
+        "text" : "# 2. Build complete system prompt",
+        "boundingBox" : {
+          "width" : 238.00000000000003,
+          "x" : 432.5,
+          "height" : 12,
+          "y" : 926.5
+        },
+        "confidence" : 1
+      }
+    },
+    {
+      "semanticMeaning" : "Text content: 'system prompt'",
+      "position" : {
+        "y" : 945.5,
+        "x" : 434
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "system prompt",
+      "id" : "79371CF4-3204-4533-8D8F-83480D24267F",
+      "type" : "TextContent",
+      "confidence" : 1,
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 10.999999999999972,
+          "x" : 434,
+          "y" : 945.5,
+          "width" : 91.999999999999943
+        },
+        "confidence" : 1,
+        "text" : "system prompt"
+      },
+      "size" : {
+        "width" : 91.999999999999943,
+        "height" : 10.999999999999972
+      }
+    },
+    {
+      "visualText" : "self . prompt loader. load_system prompt (",
+      "id" : "661876D0-A356-483C-8D81-440E7177F8E1",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "position" : {
+        "y" : 944,
+        "x" : 549
+      },
+      "size" : {
+        "width" : 271.99999999999994,
+        "height" : 12.500000000000014
+      },
+      "confidence" : 1,
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "self . prompt loader. load_system prompt (",
+        "boundingBox" : {
+          "x" : 549,
+          "y" : 944,
+          "width" : 271.99999999999994,
+          "height" : 12.500000000000014
+        },
+        "confidence" : 1
+      },
+      "semanticMeaning" : "Text content: 'self . prompt loader. load_system prompt ('"
+    },
+    {
+      "confidence" : 1,
+      "visualText" : "avai lable_applications-available_apps,",
+      "size" : {
+        "width" : 271.5,
+        "height" : 12
+      },
+      "position" : {
+        "y" : 962.5,
+        "x" : 462
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "avai lable_applications-available_apps,",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 462,
+          "height" : 12,
+          "width" : 271.5,
+          "y" : 962.5
+        }
+      },
+      "id" : "D91A3276-EC96-4B9B-9B47-B5D0BC755808",
+      "type" : "TextContent",
+      "isClickable" : false,
+      "semanticMeaning" : "Text content: 'avai lable_applications-available_apps,'"
+    },
+    {
+      "id" : "BF758976-507E-4D30-B074-D935CCCDEC53",
+      "isClickable" : false,
+      "visualText" : "dynamicJ)rompt-dynamic_content",
+      "size" : {
+        "height" : 12,
+        "width" : 215.00000000000003
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: 'dynamicJ)rompt-dynamic_content'",
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 980.5,
+          "height" : 12,
+          "x" : 462.5,
+          "width" : 215.00000000000003
+        },
+        "text" : "dynamicJ)rompt-dynamic_content",
+        "confidence" : 1
+      },
+      "position" : {
+        "x" : 462.5,
+        "y" : 980.5
+      }
+    },
+    {
+      "id" : "FBD1F645-59D8-4A57-8245-8D9E2AE90560",
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "y" : 932,
+        "x" : 1295.5
+      },
+      "isClickable" : false,
+      "confidence" : 1,
+      "semanticMeaning" : "AXStaticText with text 'Add Context'",
+      "size" : {
+        "width" : 63.999999999999957,
+        "height" : 9.0000000000000284
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "text",
+        "role" : "AXStaticText",
+        "title" : null,
+        "focused" : false
+      },
+      "ocr" : {
+        "text" : "Add Context",
+        "boundingBox" : {
+          "x" : 1295.5,
+          "y" : 932,
+          "width" : 63.999999999999957,
+          "height" : 9.0000000000000284
+        },
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "Add Context"
+    },
+    {
+      "semanticMeaning" : "AXGroup with text '> NOTEPADS'",
+      "size" : {
+        "width" : 74,
+        "height" : 10.000000000000057
+      },
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "role" : "AXGroup",
+        "description" : "group",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false
+      },
+      "position" : {
+        "x" : 53.5,
+        "y" : 983
+      },
+      "isClickable" : false,
+      "visualText" : "> NOTEPADS",
+      "id" : "CE11BF84-5932-4F18-A333-E91FD5FA7C75",
+      "confidence" : 1,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 53.5,
+          "height" : 10.000000000000057,
+          "y" : 983,
+          "width" : 74
+        },
+        "text" : "> NOTEPADS"
+      },
+      "type" : "AXGroup+OCR"
+    },
+    {
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXGroup",
+        "focused" : false,
+        "description" : "group",
+        "enabled" : true
+      },
+      "size" : {
+        "width" : 61.499999999999943,
+        "height" : 10.499999999999957
+      },
+      "interactions" : [
+        "right_click"
+      ],
+      "position" : {
+        "y" : 992.5,
+        "x" : 1293.5
+      },
+      "visualText" : ".Agent xL.-",
+      "semanticMeaning" : "AXGroup with text '.Agent xL.-'",
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 61.499999999999943,
+          "y" : 992.5,
+          "height" : 10.499999999999957,
+          "x" : 1293.5
+        },
+        "text" : ".Agent xL.-",
+        "confidence" : 0.30000001192092896
+      },
+      "type" : "AXGroup+OCR",
+      "id" : "A0813EF8-848F-41C2-B311-CA3FB09F979E",
+      "isClickable" : false,
+      "confidence" : 0.60000001192092889
+    },
+    {
+      "semanticMeaning" : "AXGroup with text '> OUTLINE'",
+      "visualText" : "> OUTLINE",
+      "position" : {
+        "x" : 53.5,
+        "y" : 1005
+      },
+      "confidence" : 1,
+      "id" : "EB7F72C1-CC2B-42F6-9552-F48F56707EEF",
+      "accessibility" : {
+        "role" : "AXGroup",
+        "enabled" : true,
+        "description" : "group",
+        "focused" : false,
+        "title" : null
+      },
+      "ocr" : {
+        "text" : "> OUTLINE",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 62,
+          "y" : 1005,
+          "x" : 53.5,
+          "height" : 9.9999999999999432
+        }
+      },
+      "size" : {
+        "width" : 62,
+        "height" : 9.9999999999999432
+      },
+      "isClickable" : false,
+      "interactions" : [
+        "right_click"
+      ],
+      "type" : "AXGroup+OCR"
+    },
+    {
+      "ocr" : {
+        "text" : "claude-4-sonnet -",
+        "boundingBox" : {
+          "width" : 97.000000000000071,
+          "height" : 9.0000000000000284,
+          "x" : 1384,
+          "y" : 992.5
+        },
+        "confidence" : 0.5
+      },
+      "semanticMeaning" : "Text content: 'claude-4-sonnet -'",
+      "id" : "A199A390-FEC2-46E5-A5CF-052A26DCBD4D",
+      "confidence" : 0.5,
+      "size" : {
+        "width" : 97.000000000000071,
+        "height" : 9.0000000000000284
+      },
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "type" : "TextContent",
+      "visualText" : "claude-4-sonnet -",
+      "position" : {
+        "y" : 992.5,
+        "x" : 1384
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Reject file Accept file >EéJ",
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 10.500000000000071,
+          "width" : 176.00000000000003,
+          "x" : 741,
+          "y" : 1003.5
+        }
+      },
+      "semanticMeaning" : "Text content: 'Reject file Accept file >EéJ'",
+      "size" : {
+        "width" : 176.00000000000003,
+        "height" : 10.500000000000071
+      },
+      "confidence" : 1,
+      "position" : {
+        "y" : 1003.5,
+        "x" : 741
+      },
+      "id" : "6277D0BF-43FF-4104-9603-44D25E8E6AE1",
+      "visualText" : "Reject file Accept file >EéJ",
+      "type" : "TextContent"
+    },
+    {
+      "semanticMeaning" : "AXGroup with text '> TIMELINE'",
+      "id" : "118F4767-2BA4-448F-AD3F-7BE2F17D1318",
+      "type" : "AXGroup+OCR",
+      "size" : {
+        "height" : 10.000000000000057,
+        "width" : 65.5
+      },
+      "isClickable" : false,
+      "interactions" : [
+        "right_click"
+      ],
+      "position" : {
+        "x" : 53.5,
+        "y" : 1027
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 53.5,
+          "y" : 1027,
+          "width" : 65.5,
+          "height" : 10.000000000000057
+        },
+        "text" : "> TIMELINE"
+      },
+      "visualText" : "> TIMELINE",
+      "confidence" : 1,
+      "accessibility" : {
+        "focused" : false,
+        "description" : "group",
+        "role" : "AXGroup",
+        "enabled" : true,
+        "title" : null
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Sg main",
+        "boundingBox" : {
+          "height" : 14.000000000000057,
+          "x" : 87.5,
+          "y" : 1047,
+          "width" : 42
+        },
+        "confidence" : 1
+      },
+      "visualText" : "",
+      "size" : {
+        "height" : 14.000000000000057,
+        "width" : 42
+      },
+      "confidence" : 1,
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'Sg main'",
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : "text",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "80826BFF-34EA-4F34-950C-1BFCB03F4E42",
+      "position" : {
+        "y" : 1047,
+        "x" : 87.5
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXStaticText",
+        "title" : null
+      },
+      "position" : {
+        "x" : 1451,
+        "y" : 1023.5
+      },
+      "semanticMeaning" : "AXStaticText with text 'Start a new chat for better results. New Chat'",
+      "visualText" : "Start a new chat for better results.",
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Start a new chat for better results. New Chat",
+        "boundingBox" : {
+          "x" : 1451,
+          "height" : 9.0000000000000284,
+          "y" : 1023.5,
+          "width" : 238.49999999999991
+        }
+      },
+      "id" : "738DC89E-336B-43F8-806A-C3E54C6900F1",
+      "size" : {
+        "width" : 238.49999999999991,
+        "height" : 9.0000000000000284
+      },
+      "confidence" : 1
+    },
+    {
+      "id" : "218CE7AF-8F66-4D08-A706-3D81AECA85F5",
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '* _?. A.E.Epmh7p f7nal mp.E.Eanp T7.Et'",
+      "position" : {
+        "y" : 1034.5,
+        "x" : 432.5
+      },
+      "interactions" : [
+
+      ],
+      "confidence" : 0.5,
+      "visualText" : "* _?. A.E.Epmh7p f7nal mp.E.Eanp T7.Et",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "* _?. A.E.Epmh7p f7nal mp.E.Eanp T7.Et",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 231,
+          "x" : 432.5,
+          "y" : 1034.5,
+          "height" : 8.4999999999999005
+        }
+      },
+      "size" : {
+        "width" : 231,
+        "height" : 8.4999999999999005
+      }
+    },
+    {
+      "ocr" : {
+        "text" : "Cursor Tab Ln 117, Col 59 Spaces: 4 UTF-8 LF Python O Prettier",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 446.49999999999989,
+          "height" : 13.000000000000028,
+          "x" : 1218.5,
+          "y" : 1048
+        }
+      },
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "button"
+      },
+      "id" : "A6D9E17D-93ED-440C-9B11-213AA1E21B2E",
+      "confidence" : 1,
+      "size" : {
+        "width" : 446.49999999999989,
+        "height" : 13.000000000000028
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "type" : "AXButton+OCR",
+      "semanticMeaning" : "AXButton with text 'Cursor Tab Ln 117, Col 59 Spaces: 4 UTF-8 LF Python O Prettier'",
+      "position" : {
+        "y" : 1048,
+        "x" : 1218.5
+      },
+      "visualText" : "Cursor Tab Ln 117, Col 59 Spaces: 4 UTF-8 LF Python O Prettier"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 49,
+        "x" : 55
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "description" : "close button",
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : null
+      },
+      "size" : {
+        "width" : 16,
+        "height" : 16
+      },
+      "id" : "5D56FF8C-7A3D-4190-83C3-3665B39AA334",
+      "isClickable" : true,
+      "semanticMeaning" : "close button",
+      "actionHint" : "Click close button",
+      "type" : "AXButton"
+    },
+    {
+      "position" : {
+        "x" : 75,
+        "y" : 49
+      },
+      "actionHint" : "Click minimize button",
+      "size" : {
+        "height" : 16,
+        "width" : 16
+      },
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "title" : null,
+        "description" : "minimize button",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "E11ED7B6-4EAB-4745-BB78-B0C684F9D80A",
+      "isClickable" : true,
+      "semanticMeaning" : "minimize button"
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null,
+        "description" : "full screen button"
+      },
+      "id" : "358386E3-E4CD-4520-B3B9-5099135F50DD",
+      "position" : {
+        "x" : 95,
+        "y" : 49
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "full screen button",
+      "actionHint" : "Click full screen button",
+      "size" : {
+        "height" : 16,
+        "width" : 16
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "position" : {
+        "x" : 595,
+        "y" : 45
+      },
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "actionHint" : "Click button",
+      "id" : "F67BCB7A-D2AA-4222-81B4-FB91986097A4",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : null,
+        "focused" : false,
+        "description" : "button"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton"
+    },
+    {
+      "actionHint" : "Click button",
+      "id" : "9A59E2E4-3FFD-47B0-9EBE-6CF94DAFC2A7",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "isClickable" : true,
+      "position" : {
+        "y" : 45,
+        "x" : 621
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : false,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "semanticMeaning" : "button",
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      }
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 72,
+        "height" : 22
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "position" : {
+        "x" : 868,
+        "y" : 45
+      },
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true,
+        "title" : "augment",
+        "role" : "AXButton"
+      },
+      "id" : "DE8F06C8-3311-4EA5-B3C0-7373500A2C4B",
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "id" : "66809E68-0A3F-4015-AAEE-ABC76ABA7809",
+      "isClickable" : true,
+      "actionHint" : "Click checkbox",
+      "type" : "AXCheckBox",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "checkbox",
+        "role" : "AXCheckBox",
+        "title" : null,
+        "focused" : false,
+        "enabled" : true
+      },
+      "semanticMeaning" : "checkbox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "y" : 45,
+        "x" : 1598
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "description" : "checkbox",
+        "title" : null,
+        "role" : "AXCheckBox",
+        "enabled" : true
+      },
+      "position" : {
+        "y" : 45,
+        "x" : 1624
+      },
+      "actionHint" : "Click checkbox",
+      "id" : "EA37AD94-A2EA-49A4-A099-650390722FA0",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "type" : "AXCheckBox",
+      "isClickable" : true,
+      "semanticMeaning" : "checkbox"
+    },
+    {
+      "actionHint" : "Click checkbox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "semanticMeaning" : "checkbox",
+      "position" : {
+        "y" : 45,
+        "x" : 1650
+      },
+      "type" : "AXCheckBox",
+      "id" : "E691579A-C39B-44B8-A2C6-4E504E89570A",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "accessibility" : {
+        "description" : "checkbox",
+        "focused" : false,
+        "role" : "AXCheckBox",
+        "title" : null,
+        "enabled" : true
+      }
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      },
+      "actionHint" : "Click checkbox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "semanticMeaning" : "checkbox",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "checkbox",
+        "title" : null,
+        "role" : "AXCheckBox"
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "1BE95F4D-CABE-4CA6-BB67-F3E567300A7A",
+      "type" : "AXCheckBox",
+      "position" : {
+        "x" : 1676,
+        "y" : 45
+      }
+    },
+    {
+      "isClickable" : true,
+      "position" : {
+        "x" : 46,
+        "y" : 109
+      },
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "id" : "81AE70BD-5990-4D5E-867A-5389715E4A72",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click button",
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "button",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "type" : "AXRow",
+      "actionHint" : "Click outline row",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "role" : "AXRow",
+        "enabled" : true,
+        "description" : "outline row"
+      },
+      "position" : {
+        "y" : 132,
+        "x" : 46
+      },
+      "semanticMeaning" : "outline row",
+      "id" : "82455032-2613-4193-9763-530D6BF7A53D",
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "id" : "10FF69DA-F1E6-44D0-865D-89902CE6F70F",
+      "type" : "AXRow",
+      "position" : {
+        "x" : 46,
+        "y" : 154
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click outline row",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "title" : null,
+        "description" : "outline row",
+        "focused" : false,
+        "role" : "AXRow",
+        "enabled" : true
+      }
+    },
+    {
+      "type" : "AXRow",
+      "actionHint" : "Click outline row",
+      "position" : {
+        "x" : 46,
+        "y" : 176
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "CA76E4F1-3736-4B4A-BEB7-8F09CFE3848B",
+      "isClickable" : true,
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null
+      },
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      }
+    },
+    {
+      "actionHint" : "Click outline row",
+      "id" : "30C9B92D-21E6-4FF3-854F-9CFD9090C1B6",
+      "position" : {
+        "y" : 198,
+        "x" : 46
+      },
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "title" : null,
+        "description" : "outline row",
+        "role" : "AXRow"
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "type" : "AXRow"
+    },
+    {
+      "semanticMeaning" : "outline row",
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "outline row",
+        "role" : "AXRow",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "type" : "AXRow",
+      "position" : {
+        "x" : 46,
+        "y" : 220
+      },
+      "actionHint" : "Click outline row",
+      "id" : "9B5C14F2-B3A3-4D98-90AD-E0590EB820F2"
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXRow",
+        "title" : null,
+        "focused" : false,
+        "description" : "outline row",
+        "enabled" : true
+      },
+      "type" : "AXRow",
+      "semanticMeaning" : "outline row",
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "y" : 242,
+        "x" : 46
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "id" : "98C67AF6-C03C-4BB5-A9F3-2E17A3792DD8",
+      "actionHint" : "Click outline row"
+    },
+    {
+      "actionHint" : "Click outline row",
+      "semanticMeaning" : "outline row",
+      "isClickable" : true,
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "position" : {
+        "y" : 264,
+        "x" : 46
+      },
+      "type" : "AXRow",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "accessibility" : {
+        "role" : "AXRow",
+        "description" : "outline row",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "id" : "1ADC4EA9-732D-4D36-8451-BD068D7873D3"
+    },
+    {
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "x" : 46,
+        "y" : 286
+      },
+      "id" : "991A3974-4254-4D90-BD08-002D52B469CB",
+      "semanticMeaning" : "outline row",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click outline row",
+      "type" : "AXRow",
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : "outline row",
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXRow"
+      }
+    },
+    {
+      "actionHint" : "Click outline row",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "outline row",
+        "title" : null,
+        "focused" : false,
+        "role" : "AXRow"
+      },
+      "semanticMeaning" : "outline row",
+      "type" : "AXRow",
+      "id" : "31734330-2D88-4492-A56D-AE6F59E88D2D",
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "position" : {
+        "x" : 46,
+        "y" : 308
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "accessibility" : {
+        "description" : "outline row",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXRow",
+        "title" : null
+      },
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "outline row",
+      "id" : "6DAF700C-67F6-4B44-808A-F4223E1F5B30",
+      "position" : {
+        "x" : 46,
+        "y" : 330
+      },
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "actionHint" : "Click outline row",
+      "isClickable" : true,
+      "type" : "AXRow"
+    },
+    {
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "actionHint" : "Click outline row",
+      "id" : "A4FC09DD-8775-48B9-9003-13C5881EEAFA",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "semanticMeaning" : "outline row",
+      "position" : {
+        "y" : 352,
+        "x" : 46
+      },
+      "type" : "AXRow",
+      "accessibility" : {
+        "role" : "AXRow",
+        "title" : null,
+        "description" : "outline row",
+        "focused" : false,
+        "enabled" : true
+      },
+      "isClickable" : true
+    },
+    {
+      "isClickable" : true,
+      "id" : "FA4B2B5A-69B2-4B86-B52E-DCE91070FF25",
+      "semanticMeaning" : "outline row",
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "outline row",
+        "role" : "AXRow",
+        "enabled" : true,
+        "focused" : false,
+        "title" : null
+      },
+      "position" : {
+        "y" : 374,
+        "x" : 46
+      },
+      "actionHint" : "Click outline row",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "type" : "AXRow"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "id" : "A962C9C1-CCE9-481D-821A-7B89B5446B5F",
+      "isClickable" : true,
+      "semanticMeaning" : "outline row",
+      "interactions" : [
+        "click"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "description" : "outline row",
+        "focused" : false,
+        "role" : "AXRow"
+      },
+      "type" : "AXRow",
+      "position" : {
+        "y" : 396,
+        "x" : 46
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "actionHint" : "Click outline row"
+    },
+    {
+      "position" : {
+        "x" : 46,
+        "y" : 418
+      },
+      "actionHint" : "Click outline row",
+      "id" : "390535CF-DBDE-42DE-8EF1-4C34AD40FB03",
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null,
+        "focused" : false,
+        "enabled" : true
+      },
+      "semanticMeaning" : "outline row",
+      "type" : "AXRow"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "semanticMeaning" : "outline row",
+      "actionHint" : "Click outline row",
+      "accessibility" : {
+        "description" : "outline row",
+        "role" : "AXRow",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXRow",
+      "position" : {
+        "y" : 440,
+        "x" : 46
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "id" : "3378F4DF-3FF9-4356-AE06-2FEB8D041593"
+    },
+    {
+      "position" : {
+        "x" : 46,
+        "y" : 462
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "outline row",
+        "focused" : false,
+        "role" : "AXRow",
+        "title" : null
+      },
+      "type" : "AXRow",
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "semanticMeaning" : "outline row",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "actionHint" : "Click outline row",
+      "confidence" : 0.69999999999999996,
+      "id" : "59D4AB20-2481-46CB-A5B7-90AD78E38E9A"
+    },
+    {
+      "position" : {
+        "y" : 484,
+        "x" : 46
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "outline row",
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "accessibility" : {
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "actionHint" : "Click outline row",
+      "type" : "AXRow",
+      "id" : "B13E6DE5-6DD7-4D57-A773-E191BCA2A9B2",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      }
+    },
+    {
+      "position" : {
+        "x" : 46,
+        "y" : 506
+      },
+      "semanticMeaning" : "outline row",
+      "type" : "AXRow",
+      "actionHint" : "Click outline row",
+      "interactions" : [
+        "click"
+      ],
+      "accessibility" : {
+        "description" : "outline row",
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXRow",
+        "focused" : false
+      },
+      "id" : "4E32FCA0-CFFB-414D-B538-18A2F6887A0D",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true
+    },
+    {
+      "semanticMeaning" : "outline row",
+      "type" : "AXRow",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "description" : "outline row",
+        "focused" : false,
+        "role" : "AXRow"
+      },
+      "id" : "BE6BD1D0-81D0-47CE-BD33-F0847B620A35",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click outline row",
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "y" : 528,
+        "x" : 46
+      },
+      "isClickable" : true
+    },
+    {
+      "type" : "AXRow",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "15E382A6-A0F2-4DC7-928F-C0ACEDD8C11E",
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "semanticMeaning" : "outline row",
+      "position" : {
+        "x" : 46,
+        "y" : 550
+      },
+      "actionHint" : "Click outline row",
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "outline row",
+        "role" : "AXRow",
+        "focused" : false,
+        "title" : null
+      }
+    },
+    {
+      "actionHint" : "Click outline row",
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "description" : "outline row",
+        "role" : "AXRow",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "type" : "AXRow",
+      "id" : "B631456E-0442-4022-8B5C-7DF6F23C47FB",
+      "position" : {
+        "x" : 46,
+        "y" : 572
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "isClickable" : true
+    },
+    {
+      "position" : {
+        "x" : 46,
+        "y" : 594
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "actionHint" : "Click outline row",
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "outline row",
+      "id" : "C70B9D34-1EB9-47F1-8472-C97F1DDAB41A",
+      "type" : "AXRow",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXRow",
+        "title" : null,
+        "description" : "outline row"
+      }
+    },
+    {
+      "position" : {
+        "x" : 46,
+        "y" : 616
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "semanticMeaning" : "outline row",
+      "id" : "FB0F8127-8519-4BCE-A042-EA9632850CF6",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null
+      },
+      "type" : "AXRow",
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click outline row"
+    },
+    {
+      "id" : "C6202733-0753-42B6-B390-D8308F890073",
+      "isClickable" : true,
+      "semanticMeaning" : "outline row",
+      "actionHint" : "Click outline row",
+      "type" : "AXRow",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "outline row",
+        "role" : "AXRow",
+        "title" : null
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "y" : 638,
+        "x" : 46
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      }
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "type" : "AXRow",
+      "actionHint" : "Click outline row",
+      "accessibility" : {
+        "role" : "AXRow",
+        "title" : null,
+        "description" : "outline row",
+        "enabled" : true,
+        "focused" : false
+      },
+      "semanticMeaning" : "outline row",
+      "id" : "D5E166D1-9DF3-4B5F-8452-4D7C85C551F2",
+      "position" : {
+        "y" : 660,
+        "x" : 46
+      },
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "position" : {
+        "y" : 682,
+        "x" : 46
+      },
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXRow",
+        "description" : "outline row",
+        "enabled" : true,
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "87F7376F-6DB4-4933-89DF-8A212FF49661",
+      "type" : "AXRow",
+      "actionHint" : "Click outline row",
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "semanticMeaning" : "outline row",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click outline row",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "position" : {
+        "x" : 46,
+        "y" : 704
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXRow",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXRow",
+        "title" : null,
+        "description" : "outline row"
+      },
+      "id" : "57048453-BB10-4D65-8E13-F1290F3E0D37"
+    },
+    {
+      "isClickable" : true,
+      "type" : "AXRow",
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "x" : 46,
+        "y" : 726
+      },
+      "actionHint" : "Click outline row",
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null,
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "id" : "2121577F-C568-41D7-A39C-176B5028625C"
+    },
+    {
+      "isClickable" : true,
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "semanticMeaning" : "outline row",
+      "position" : {
+        "x" : 46,
+        "y" : 748
+      },
+      "type" : "AXRow",
+      "interactions" : [
+        "click"
+      ],
+      "id" : "4C237C26-1BD7-443C-B1F7-E5ECE5486C5A",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click outline row",
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "description" : "outline row",
+        "role" : "AXRow"
+      }
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click outline row",
+      "id" : "804CF58E-2BF3-4F44-AF5E-F07805BF7BF6",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "outline row",
+      "position" : {
+        "x" : 46,
+        "y" : 770
+      },
+      "accessibility" : {
+        "role" : "AXRow",
+        "title" : null,
+        "enabled" : true,
+        "description" : "outline row",
+        "focused" : false
+      },
+      "type" : "AXRow",
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "isClickable" : true,
+      "position" : {
+        "y" : 792,
+        "x" : 46
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "accessibility" : {
+        "description" : "outline row",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXRow"
+      },
+      "type" : "AXRow",
+      "semanticMeaning" : "outline row",
+      "actionHint" : "Click outline row",
+      "id" : "410AE540-7E5B-41E8-9261-324F9BA47610"
+    },
+    {
+      "actionHint" : "Click outline row",
+      "interactions" : [
+        "click"
+      ],
+      "id" : "32C3F3DB-05D0-44A3-B7A7-6F77273DDB6F",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXRow",
+        "description" : "outline row"
+      },
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "position" : {
+        "x" : 46,
+        "y" : 814
+      },
+      "type" : "AXRow",
+      "isClickable" : true,
+      "semanticMeaning" : "outline row"
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "description" : "outline row",
+        "focused" : false,
+        "role" : "AXRow"
+      },
+      "isClickable" : true,
+      "position" : {
+        "x" : 46,
+        "y" : 836
+      },
+      "type" : "AXRow",
+      "id" : "B1532800-1331-4F96-886D-843AEA3126B3",
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "actionHint" : "Click outline row",
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "isClickable" : true,
+      "type" : "AXRow",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null,
+        "enabled" : true
+      },
+      "id" : "3E2DD2E2-18CA-459B-B803-7E44E2D4CBF8",
+      "semanticMeaning" : "outline row",
+      "interactions" : [
+        "click"
+      ],
+      "actionHint" : "Click outline row",
+      "position" : {
+        "x" : 46,
+        "y" : 858
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "isClickable" : true,
+      "semanticMeaning" : "outline row",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 46,
+        "y" : 880
+      },
+      "interactions" : [
+        "click"
+      ],
+      "type" : "AXRow",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "accessibility" : {
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null,
+        "focused" : false,
+        "enabled" : true
+      },
+      "id" : "942FE76C-9661-45F3-8D8D-8F3B73BC6B29",
+      "actionHint" : "Click outline row"
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "semanticMeaning" : "outline row",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXRow",
+        "description" : "outline row",
+        "title" : null,
+        "enabled" : true
+      },
+      "id" : "420D7F8B-C88D-443A-BBF9-20E57E8C955F",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "confidence" : 0.69999999999999996,
+      "type" : "AXRow",
+      "isClickable" : true,
+      "position" : {
+        "x" : 46,
+        "y" : 902
+      },
+      "actionHint" : "Click outline row"
+    },
+    {
+      "id" : "19D17CAF-BE1C-4C09-8F20-3E43BC0CBC2F",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "outline row",
+        "role" : "AXRow",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false
+      },
+      "actionHint" : "Click outline row",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "type" : "AXRow",
+      "semanticMeaning" : "outline row",
+      "position" : {
+        "y" : 924,
+        "x" : 46
+      },
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true
+    },
+    {
+      "semanticMeaning" : "outline row",
+      "actionHint" : "Click outline row",
+      "position" : {
+        "y" : 946,
+        "x" : 46
+      },
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXRow",
+        "description" : "outline row"
+      },
+      "id" : "FC367ED2-B4E2-47D7-9BED-A1DE946F403C",
+      "interactions" : [
+        "click"
+      ],
+      "type" : "AXRow",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      }
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "semanticMeaning" : "outline row",
+      "type" : "AXRow",
+      "isClickable" : true,
+      "id" : "A2CC7A0A-33B2-45E8-8042-D66B0B6E2A41",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXRow",
+        "description" : "outline row"
+      },
+      "position" : {
+        "x" : 46,
+        "y" : 968
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click outline row",
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "semanticMeaning" : "button",
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "button",
+        "title" : null,
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "1511786E-8329-472D-BC1A-AD5D19330DC0",
+      "type" : "AXButton",
+      "position" : {
+        "y" : 977,
+        "x" : 46
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "button",
+        "title" : null
+      },
+      "id" : "A340E97A-2C98-489A-AF8A-464A107012FE",
+      "size" : {
+        "width" : 263,
+        "height" : 22
+      },
+      "semanticMeaning" : "button",
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 999,
+        "x" : 46
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "isClickable" : true,
+      "type" : "AXButton"
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 263
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "id" : "4EF399B6-16DA-4EB1-BF05-49542A2CA21A",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "position" : {
+        "y" : 1021,
+        "x" : 46
+      },
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "description" : "button"
+      },
+      "type" : "AXButton"
+    },
+    {
+      "id" : "78284EEB-C831-4B21-9B27-CFBB53CF49F9",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "tab",
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXRadioButton",
+        "title" : "Improve clarity in agent orchestrator "
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "y" : 81,
+        "x" : 1269
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "tab",
+      "actionHint" : "Click tab",
+      "size" : {
+        "height" : 22,
+        "width" : 227
+      },
+      "type" : "AXRadioButton"
+    },
+    {
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "description" : "button",
+        "focused" : false
+      },
+      "id" : "9A695489-B154-4D53-B8C9-89F3DDF0C2EB",
+      "position" : {
+        "y" : 81,
+        "x" : 1582
+      },
+      "actionHint" : "Click button",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "position" : {
+        "y" : 81,
+        "x" : 1606
+      },
+      "id" : "5CB1360D-AC03-472A-96B1-42F533946E1E",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : null
+      },
+      "semanticMeaning" : "button",
+      "isClickable" : true
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "button",
+        "focused" : false
+      },
+      "position" : {
+        "y" : 81,
+        "x" : 1630
+      },
+      "id" : "69DA498F-1F5F-4409-B85E-784A031D0E70",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "semanticMeaning" : "button",
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Click pop up button",
+      "isClickable" : true,
+      "size" : {
+        "height" : 22,
+        "width" : 22
+      },
+      "position" : {
+        "x" : 1654,
+        "y" : 81
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "pop up button",
+      "id" : "0A751862-B8E7-4CB5-97C8-3373FB6C75DD",
+      "type" : "AXPopUpButton",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : "pop up button",
+        "enabled" : true
+      }
+    },
+    {
+      "position" : {
+        "x" : 1678,
+        "y" : 81
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click button",
+      "type" : "AXButton",
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "button",
+        "focused" : false,
+        "title" : null
+      },
+      "id" : "AED90CC5-ACC9-4713-B03D-D33439A709FE",
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "size" : {
+        "width" : 22,
+        "height" : 22
+      }
+    },
+    {
+      "semanticMeaning" : "button",
+      "size" : {
+        "height" : 22,
+        "width" : 34
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 1043,
+        "x" : 46
+      },
+      "isClickable" : true,
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "description" : "button"
+      },
+      "id" : "EEE49AA5-EABC-45B6-93B9-51D5F6ED6123",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXButton",
+      "accessibility" : {
+        "title" : null,
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "size" : {
+        "width" : 57,
+        "height" : 22
+      },
+      "id" : "48D08CE0-F0F9-43C9-BD25-A96D43042450",
+      "isClickable" : true,
+      "actionHint" : "Click button",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 83,
+        "y" : 1043
+      }
+    },
+    {
+      "type" : "AXButton",
+      "id" : "45FB654E-F44D-40F5-A399-C3588AF3BF0A",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXButton"
+      },
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "size" : {
+        "height" : 22,
+        "width" : 21
+      },
+      "isClickable" : true,
+      "position" : {
+        "x" : 139,
+        "y" : 1043
+      }
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "actionHint" : "Click button",
+      "semanticMeaning" : "button",
+      "size" : {
+        "width" : 25,
+        "height" : 22
+      },
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : null,
+        "focused" : false,
+        "enabled" : true,
+        "description" : "button"
+      },
+      "position" : {
+        "x" : 165,
+        "y" : 1043
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "4A21FA37-3805-4EDD-A7C9-3F2D1A54100A"
+    },
+    {
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXButton",
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 22,
+        "width" : 104
+      },
+      "position" : {
+        "x" : 195,
+        "y" : 1043
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click button",
+      "id" : "64B0FA9A-F6F6-499A-B34F-A718637798E1",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "button"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "button",
+        "title" : null
+      },
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 22,
+        "width" : 64
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "id" : "D921032B-914D-4748-A7FE-0D2899A76C16",
+      "position" : {
+        "y" : 1043,
+        "x" : 305
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click button"
+    },
+    {
+      "semanticMeaning" : "button",
+      "size" : {
+        "width" : 36,
+        "height" : 22
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 374,
+        "y" : 1043
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXButton",
+        "description" : "button",
+        "focused" : false
+      },
+      "id" : "7032EB10-444B-426F-A9CB-6A14C2E349BE",
+      "actionHint" : "Click button",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "semanticMeaning" : "button",
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "button",
+        "focused" : false
+      },
+      "id" : "AC8E2577-D1B7-4EC3-9978-F36FEEEDA179",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 24,
+        "height" : 22
+      },
+      "position" : {
+        "x" : 1676,
+        "y" : 1043
+      }
+    },
+    {
+      "size" : {
+        "width" : 69,
+        "height" : 22
+      },
+      "isClickable" : true,
+      "actionHint" : "Click button",
+      "type" : "AXButton",
+      "id" : "DFE0FA1D-8A88-448F-A9F2-9EF8B3CD33DE",
+      "position" : {
+        "y" : 1043,
+        "x" : 1601
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true
+      }
+    },
+    {
+      "position" : {
+        "x" : 1545,
+        "y" : 1043
+      },
+      "isClickable" : true,
+      "id" : "19E4D7E4-E636-4070-AFA0-A6930132FB3E",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "actionHint" : "Click button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "button",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null
+      },
+      "type" : "AXButton",
+      "size" : {
+        "width" : 50,
+        "height" : 22
+      }
+    },
+    {
+      "position" : {
+        "y" : 1043,
+        "x" : 1515
+      },
+      "size" : {
+        "width" : 24,
+        "height" : 22
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "id" : "69928F60-67B8-484A-AC5D-50F46A5DE693",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXButton",
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXButton"
+    },
+    {
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "button",
+        "enabled" : true
+      },
+      "actionHint" : "Click button",
+      "position" : {
+        "y" : 1043,
+        "x" : 1463
+      },
+      "id" : "4CA631E8-2211-4766-9E08-0C7D7E9B5C33",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "width" : 47,
+        "height" : 22
+      },
+      "type" : "AXButton"
+    },
+    {
+      "id" : "494F8B9D-44EE-49E3-9F59-D4AFE21620F2",
+      "semanticMeaning" : "button",
+      "actionHint" : "Click button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true,
+        "description" : "button"
+      },
+      "isClickable" : true,
+      "size" : {
+        "width" : 66,
+        "height" : 22
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "x" : 1391,
+        "y" : 1043
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "size" : {
+        "height" : 22,
+        "width" : 94
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true,
+        "title" : null,
+        "role" : "AXButton"
+      },
+      "id" : "CC4F04C4-117E-438A-BA86-9CE910847D78",
+      "position" : {
+        "x" : 1291,
+        "y" : 1043
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "button",
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true
+    }
+  ],
+  "window" : {
+    "title" : "activwndw: Cursor - _prompt_orchestrator.py — augment",
+    "frame" : {
+      "y" : 39,
+      "x" : 46,
+      "width" : 1664,
+      "height" : 1026
+    }
+  }
+}

@@ -55,15 +55,14 @@ class PromptHistoryLogger:
                 f.write(f"⬆️ [{timestamp}] PROMPT TO LLM:\n")
                 f.write("=" * 50 + "\n")
                 
-                # Format messages in a readable way
-                for i, message in enumerate(messages, 1):
-                    role = message.get("role", "unknown")
+                # Write only the actual content sent to LLM (no headers)
+                f.write("\n")
+                for message in messages:
                     content = message.get("content", "")
-                    
-                    f.write(f"\n[Message {i} - {role.upper()}]:\n")
-                    f.write("-" * 30 + "\n")
                     f.write(content)
-                    f.write("\n" + "-" * 30 + "\n")
+                    if message != messages[-1]:  # Add separator between messages (except last)
+                        f.write("\n\n")
+                f.write("\n")
                 
                 # Log the response
                 f.write("\n" + "=" * 50 + "\n")
@@ -86,14 +85,14 @@ class PromptHistoryLogger:
                 f.write(f"⬆️ [{timestamp}] PROMPT TO LLM (ERROR):\n")
                 f.write("=" * 50 + "\n")
                 
-                for i, message in enumerate(messages, 1):
-                    role = message.get("role", "unknown")
+                # Write only the actual content sent to LLM (no headers)
+                f.write("\n")
+                for message in messages:
                     content = message.get("content", "")
-                    
-                    f.write(f"\n[Message {i} - {role.upper()}]:\n")
-                    f.write("-" * 30 + "\n")
                     f.write(content)
-                    f.write("\n" + "-" * 30 + "\n")
+                    if message != messages[-1]:  # Add separator between messages (except last)
+                        f.write("\n\n")
+                f.write("\n")
                 
                 # Log the error
                 f.write("\n" + "=" * 50 + "\n")

@@ -8,9 +8,7 @@ This module handles:
 - Context management
 """
 
-import json
 from typing import Dict, List, Any, Optional
-from ..dynamic_prompts import get_dynamic_prompt_injections
 
 
 class LLMCommunicator:
@@ -23,7 +21,7 @@ class LLMCommunicator:
         communicator.core = core
         communicator.llm_adapter = core.llm_adapter
         communicator.llm_info = core.llm_info
-        communicator.system_prompt = core.system_prompt
+        communicator.prompt_orchestrator = core.prompt_orchestrator
         communicator.conversation = core.conversation
         communicator.ui_formatter = core.ui_formatter
         communicator.context_manager = core.context_manager
@@ -79,41 +77,20 @@ class LLMCommunicator:
         return self._parse_llm_response(llm_response)
     
     def _build_messages(self, user_message: str, ui_state: Optional[Dict] = None) -> List[Dict[str, str]]:
-        """Build message list for LLM"""
-        messages = [{"role": "system", "content": self.system_prompt}]
-        messages.extend(self.conversation.get_history())
-        
-        # Add UI state
-        if ui_state:
-            formatted_ui = self.ui_formatter.format_ui_state_for_llm(ui_state)
-            messages.append({"role": "system", "content": f"Current UI State:\n{formatted_ui}"})
-            self.context_manager.inject_app_specific_guidance(ui_state)
-        
-        # Add dynamic guidance
-        dynamic_guidance = get_dynamic_prompt_injections(clear_after=True)
-        if dynamic_guidance:
-            messages.append({"role": "system", "content": dynamic_guidance})
-        
-        messages.append({"role": "user", "content": user_message})
-        return messages
+        """Build message list for LLM using centralized orchestrator"""
+        return self.prompt_orchestrator.build_complete_messages(
+            task_message=user_message,
+            conversation_history=self.conversation.get_history(),
+            ui_state=ui_state,
+            available_apps=self.core.available_apps,
+            ui_formatter=self.ui_formatter,
+            context_manager=self.context_manager
+        )
     
     def _build_task_message(self, session) -> str:
-        """Build task message based on session state"""
-        if session.iteration == 0:
-            return f"Task: {session.task}\n\nPlease start by inspecting the current UI state to understand what's on screen."
-        else:
-            return f"Continue with the task: {session.task}\n\nWhat should be the next action?"
+        """Build task message using centralized orchestrator"""
+        return self.prompt_orchestrator.build_task_message(session.task, session.iteration)
     
     def _parse_llm_response(self, llm_response: str) -> Dict[str, Any]:
-        """Parse LLM response into action data"""
-        try:
-            json_start = llm_response.find('{')
-            json_end = llm_response.rfind('}') + 1
-            if json_start != -1 and json_end > json_start:
-                json_str = llm_response[json_start:json_end]
-                return json.loads(json_str)
-            else:
-                raise json.JSONDecodeError("No JSON found", llm_response, 0)
-        except json.JSONDecodeError as e:
-            print(f"❌ Failed to parse Agent response as JSON: {llm_response}")
-            raise e 
+        """Parse LLM response using centralized orchestrator"""
+        return self.prompt_orchestrator.extract_llm_response_json(llm_response) 

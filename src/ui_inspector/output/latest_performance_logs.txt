@@ -2,26 +2,26 @@
 ⏱️  PERFORMANCE BREAKDOWN:
 ==================================================
 🎯 MASTER TIMING:
-  🏁 True Total Time: 0.754s (start to finish)
-  📊 Sum of Components: 0.754s
+  🏁 True Total Time: 0.965s (start to finish)
+  📊 Sum of Components: 0.965s
   ✅ Components account for all processing time
 
 📋 COMPONENT BREAKDOWN:
-  • App detection: 0.003s (0.4%)
-  • Window management: 0.148s (19.7%)
+  • App detection: 0.002s (0.2%)
+  • Window management: 0.212s (22.0%)
   • Coordinate system setup: 0.000s (0.0%)
   • Coordinate correction: 0.000s (0.0%)
-  • Data fusion: 0.007s (0.9%)
+  • Data fusion: 0.015s (1.5%)
   • Element filtering: 0.000s (0.0%)
-  • Menu bar integration: 0.013s (1.7%)
+  • Menu bar integration: 0.023s (2.4%)
   • Map creation: 0.000s (0.0%)
-  • Output generation: 0.011s (1.5%)
+  • Output generation: 0.029s (3.0%)
   • Compression: 0.000s (0.0%)
-  • System overhead: 0.034s (4.5%)
-  ⚡ Parallel Detection Group: 0.538s (71.3%)
-    ├─ OCR processing: 0.390s (51.7%)
-    ├─ Accessibility scan: 0.538s (71.3%)
+  • System overhead: 0.069s (7.1%)
+  ⚡ Parallel Detection Group: 0.615s (63.7%)
+    ├─ OCR processing: 0.615s (63.7%)
+    ├─ Accessibility scan: 0.190s (19.6%)
     ├─ Shape detection: 0.000s (0.0%)
-    └─ Sequential would be: 0.928s (1.7x speedup)
+    └─ Sequential would be: 0.804s (1.3x speedup)
 --------------------------------------------------
-  🏁 MASTER TOTAL: 0.754s
+  🏁 MASTER TOTAL: 0.965s

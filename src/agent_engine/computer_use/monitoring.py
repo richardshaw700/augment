@@ -54,6 +54,7 @@ class SessionMonitor:
         monitor.conversation = core.conversation
         monitor.completion_detector = core.completion_detector
         monitor.context_manager = core.context_manager
+        monitor.prompt_orchestrator = core.prompt_orchestrator
         return monitor
     
     def setup_task(self, task: str, max_iterations: int) -> TaskSession:
@@ -77,14 +78,14 @@ class SessionMonitor:
             "result": result
         })
         
-        # Build task message for logging
-        task_message = self._build_task_message(session)
+        # Build task message for logging using centralized orchestrator
+        task_message = self.prompt_orchestrator.build_task_message(session.task, session.iteration)
         
         # Log iteration
         self.logger.log_iteration(
             iteration=session.iteration,
             user_message=task_message,
-            system_prompt=self.core.system_prompt,
+            system_prompt="[Dynamic System Prompt - See prompt_history.txt for full content]",
             llm_response=json.dumps(decision),
             action_data=decision,
             action_result=result,
@@ -106,15 +107,13 @@ class SessionMonitor:
                 session.completion_reason = "action_execution_failures"
                 return session
         
-        # Update conversation
+        # Update conversation using centralized orchestrator
         self.conversation.add_user_message(task_message)
         self.conversation.add_assistant_message(json.dumps(decision))
         
-        if result.success:
-            context = f"Action succeeded: {result.output}"
-        else:
-            context = f"Action failed: {result.error}. Try a different approach."
-        self.conversation.add_system_message(context)
+        # Build context message using centralized orchestrator
+        context_message = self.prompt_orchestrator.build_context_message(result.output, result.success)
+        self.conversation.add_system_message(context_message)
         
         # Check completion
         if self.completion_detector.is_task_completed(decision):
@@ -158,9 +157,4 @@ class SessionMonitor:
         
         return session.results
     
-    def _build_task_message(self, session: TaskSession) -> str:
-        """Build task message for logging"""
-        if session.iteration == 1:
-            return f"Task: {session.task}\n\nPlease start by inspecting the current UI state to understand what's on screen."
-        else:
-            return f"Continue with the task: {session.task}\n\nWhat should be the next action?" 
+ 

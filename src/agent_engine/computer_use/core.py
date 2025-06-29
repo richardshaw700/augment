@@ -17,7 +17,7 @@ from .actions import UIActionExecutor, SystemActionExecutor
 from .session import SessionLogger, PerformanceTracker, ConversationManager, PromptHistoryLogger
 from .ui import UIFormatter, UIStateManager
 from .workflow import CompletionDetector, ContextManager
-from .prompts import PromptLoader
+from .prompts import PromptLoader, PromptOrchestrator
 from .utils import SystemUtils
 
 
@@ -61,12 +61,10 @@ class AgentCore:
         
         # Initialize prompt system (the "knowledge")
         self.prompt_loader = PromptLoader()
+        self.prompt_orchestrator = PromptOrchestrator(self.prompt_loader)
         
         # Load system configuration
         self.available_apps = SystemUtils.load_available_applications()
-        self.system_prompt = self.prompt_loader.load_system_prompt(
-            available_applications=self.available_apps
-        )
         
         # Store configuration
         self.debug = debug
@@ -74,9 +72,6 @@ class AgentCore:
     def refresh_applications(self):
         """Refresh applications list"""
         self.available_apps = SystemUtils.load_available_applications()
-        self.system_prompt = self.prompt_loader.load_system_prompt(
-            available_applications=self.available_apps
-        )
         print(f"🔄 Applications list refreshed: {len(self.available_apps)} characters loaded")
     
     def show_applications(self):
