@@ -65,8 +65,8 @@ python-test: build-ui-inspector
 
 # Run the built app
 run:
-	@echo "🚀 Launching $(PROJECT_NAME)..."
-	@open $(PROJECT_DIR)/build/Build/Products/$(CONFIGURATION)/$(PROJECT_NAME).app
+	@echo "🚀 Launching Nebula..."
+	@open $(PROJECT_DIR)/build/Build/Products/$(CONFIGURATION)/Nebula.app
 
 # Clean build artifacts
 clean:
@@ -91,13 +91,13 @@ install-deps:
 dev: full-build
 	@echo "🔧 Running in development mode with console output..."
 	@echo "💡 Press Ctrl+C to stop the app"
-	@$(PROJECT_DIR)/build/Build/Products/$(CONFIGURATION)/$(PROJECT_NAME).app/Contents/MacOS/$(PROJECT_NAME)
+	@$(PROJECT_DIR)/build/Build/Products/$(CONFIGURATION)/Nebula.app/Contents/MacOS/augment
 
 # Build and run with live log streaming
 logs: full-build
 	@echo "🚀 Launching app and streaming logs..."
 	@echo "💡 Press Ctrl+C to stop log streaming"
-	@open $(PROJECT_DIR)/build/Build/Products/$(CONFIGURATION)/$(PROJECT_NAME).app &
+	@open $(PROJECT_DIR)/build/Build/Products/$(CONFIGURATION)/Nebula.app &
 	@sleep 2
 	@log stream --info --predicate 'process == "augment"'
 

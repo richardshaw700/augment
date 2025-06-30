@@ -1,0 +1,1969 @@
+{
+  "totalElements" : 88,
+  "window" : {
+    "title" : "activwndw: Safari - #233 Re: Bug Report - Runzhe Li",
+    "frame" : {
+      "y" : 186,
+      "width" : 1231,
+      "x" : 226,
+      "height" : 841
+    }
+  },
+  "timestamp" : "2025-06-30T14:13:23Z",
+  "elements" : [
+    {
+      "boundingBox" : {
+        "center" : {
+          "y" : 67.999999999999986,
+          "x" : 926.5
+        },
+        "height" : 12.000000000000037,
+        "x" : 834,
+        "y" : 61.999999999999972,
+        "width" : 185.00000000000003
+      },
+      "id" : "4F51D619-7416-4379-9753-E5D6ADD94608",
+      "interactions" :[],
+      "isClickable" : false,
+      "type" : "TextContent",
+      "semanticMeaning" : "Text content: '\/ #233 Re: Bug Report - Runzhe Li'",
+      "text" : "\/ #233 Re: Bug Report - Runzhe Li"
+    },
+    {
+      "semanticMeaning" : "Text content: 'fields and they won't receive any posting updates thereafter?'",
+      "interactions" :[],
+      "type" : "TextContent",
+      "isClickable" : false,
+      "id" : "FA9F7D2B-FF44-4BCD-A8A1-67AA5F4B7DEA",
+      "text" : "fields and they won't receive any posting updates thereafter?",
+      "boundingBox" : {
+        "center" : {
+          "x" : 568.5,
+          "y" : 465.25
+        },
+        "x" : 376,
+        "height" : 13.499999999999995,
+        "y" : 458.5,
+        "width" : 385
+      }
+    },
+    {
+      "id" : "DF287E09-DD80-401B-987F-A2114852F0E7",
+      "boundingBox" : {
+        "y" : 771.5,
+        "width" : 56,
+        "height" : 13.500000000000089,
+        "center" : {
+          "y" : 778.25,
+          "x" : 532.5
+        },
+        "x" : 504.5
+      },
+      "type" : "TextContent",
+      "isClickable" : false,
+      "text" : "Reply R",
+      "semanticMeaning" : "Text content: 'Reply R'",
+      "interactions" :[]
+    },
+    {
+      "isClickable" : false,
+      "type" : "TextContent",
+      "interactions" :[],
+      "boundingBox" : {
+        "y" : 771.5,
+        "x" : 633,
+        "width" : 51.50000000000005,
+        "height" : 11.000000000000004,
+        "center" : {
+          "x" : 658.75,
+          "y" : 777
+        }
+      },
+      "text" : "Note N",
+      "semanticMeaning" : "Text content: 'Note N'",
+      "id" : "409BA6EB-1730-46DD-940E-13B5A239C317"
+    },
+    {
+      "isClickable" : true,
+      "boundingBox" : {
+        "width" : 445,
+        "center" : {
+          "x" : 611.5,
+          "y" : 32
+        },
+        "y" : 18,
+        "x" : 389,
+        "height" : 28
+      },
+      "semanticMeaning" : "text field,plchldr:ad secure.helpscout.net[UNFOCUSED]",
+      "accessibility" : {
+        "description" : "text field",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "45C62103-8A6B-43CD-AB29-C18470DD5A1F",
+      "text" : "text field,plchldr:ad secure.helpscout.net[UNFOCUSED]",
+      "interactions" :["click", "type", "focus"],
+      "type" : "AXTextField+OCR"
+    },
+    {
+      "semanticMeaning" : "AXGroup with text 'helpscout.comhelp@helpscout.com - Google Search'",
+      "id" : "E5AA0412-4FC4-458A-86D9-3C389AB727DC",
+      "isClickable" : false,
+      "boundingBox" : {
+        "x" : 180.5,
+        "width" : 274,
+        "y" : 61.999999999999972,
+        "height" : 10.500000000000078,
+        "center" : {
+          "x" : 317.5,
+          "y" : 67.250000000000014
+        }
+      },
+      "interactions" :["right_click"],
+      "type" : "AXGroup+OCR",
+      "accessibility" : {
+        "description" : "group",
+        "enabled" : true,
+        "focused" : false
+      },
+      "text" : "helpscout.comhelp@helpscout.com - Google Search"
+    },
+    {
+      "boundingBox" : {
+        "width" : 34.000000000000014,
+        "y" : 101.5,
+        "x" : 68,
+        "height" : 11.000000000000004,
+        "center" : {
+          "x" : 85,
+          "y" : 107
+        }
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : "text",
+        "enabled" : true
+      },
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "id" : "402162B8-3E55-4A01-A7BD-14ECED8EFFB6",
+      "semanticMeaning" : "AXStaticText with text 'Inbox'",
+      "interactions" :[],
+      "text" : "Inbox"
+    },
+    {
+      "isClickable" : false,
+      "text" : "Docs",
+      "interactions" :[],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      },
+      "boundingBox" : {
+        "height" : 11.000000000000004,
+        "width" : 45.499999999999993,
+        "center" : {
+          "x" : 161.25,
+          "y" : 107
+        },
+        "y" : 101.5,
+        "x" : 138.5
+      },
+      "id" : "5F59392F-AB72-4628-9EF3-51FBA7CDC376",
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Docs -'"
+    },
+    {
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "semanticMeaning" : "AXStaticText with text 'Messages'",
+      "interactions" :[],
+      "type" : "AXStaticText+OCR",
+      "boundingBox" : {
+        "height" : 13.499999999999995,
+        "center" : {
+          "x" : 249.25,
+          "y" : 108.25
+        },
+        "x" : 217,
+        "y" : 101.5,
+        "width" : 64.500000000000014
+      },
+      "id" : "D561EDAF-0FC8-45E2-9B8C-B32DB538408C",
+      "isClickable" : false,
+      "text" : "Messages"
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "text" : "Reports",
+      "interactions" :[],
+      "semanticMeaning" : "AXStaticText with text 'Reports -'",
+      "isClickable" : false,
+      "accessibility" : {
+        "focused" : false,
+        "description" : "text",
+        "enabled" : true
+      },
+      "boundingBox" : {
+        "x" : 318.5,
+        "y" : 101.5,
+        "width" : 63.499999999999986,
+        "height" : 13.499999999999995,
+        "center" : {
+          "y" : 108.25,
+          "x" : 350.25
+        }
+      },
+      "id" : "8C367370-8A01-4C17-B6DA-252687E70639"
+    },
+    {
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "interactions" :[],
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Customers'",
+      "id" : "4188A689-4DA1-4DF7-99E8-79621761874A",
+      "text" : "Customers",
+      "isClickable" : false,
+      "boundingBox" : {
+        "width" : 69.999999999999986,
+        "y" : 101.5,
+        "height" : 11.000000000000004,
+        "center" : {
+          "x" : 449,
+          "y" : 107
+        },
+        "x" : 414
+      }
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'Manage -'",
+      "type" : "AXStaticText+OCR",
+      "text" : "Manage",
+      "isClickable" : false,
+      "accessibility" : {
+        "description" : "text",
+        "focused" : false,
+        "enabled" : true
+      },
+      "id" : "A7F7D174-E49E-43CF-AF34-ABF92DE45B09",
+      "boundingBox" : {
+        "y" : 101.5,
+        "center" : {
+          "x" : 553,
+          "y" : 108.25
+        },
+        "height" : 13.499999999999995,
+        "width" : 63.999999999999979,
+        "x" : 521
+      },
+      "interactions" :[]
+    },
+    {
+      "isClickable" : false,
+      "boundingBox" : {
+        "width" : 66.500000000000014,
+        "height" : 11.50000000000002,
+        "x" : 879,
+        "y" : 102.49999999999994,
+        "center" : {
+          "y" : 108.24999999999996,
+          "x" : 912.25
+        }
+      },
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "text"
+      },
+      "type" : "AXStaticText+OCR",
+      "id" : "30C9A851-AC1A-4D86-9AA6-0DBCAC316E9E",
+      "text" : "Setup Guide",
+      "semanticMeaning" : "AXStaticText with text 'Setup Guide'",
+      "interactions" :[]
+    },
+    {
+      "id" : "D100C7FC-52A6-4A3B-A209-82471DF4C8D4",
+      "boundingBox" : {
+        "center" : {
+          "x" : 98.249999999999986,
+          "y" : 164
+        },
+        "y" : 155.5,
+        "width" : 154.49999999999997,
+        "x" : 21,
+        "height" : 17.000000000000021
+      },
+      "interactions" :[],
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "text" : "Customer Support",
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Customer Support'"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      },
+      "isClickable" : false,
+      "id" : "7F49B2E1-BAA7-476C-B63F-A22E91BB6CC3",
+      "semanticMeaning" : "AXStaticText with text 'Re: Bug Report'",
+      "text" : "Re: Bug Report",
+      "interactions" :[],
+      "boundingBox" : {
+        "height" : 14.000000000000012,
+        "y" : 164,
+        "width" : 102.00000000000004,
+        "center" : {
+          "y" : 171,
+          "x" : 363
+        },
+        "x" : 312
+      },
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "isClickable" : true,
+      "type" : "AXButton+OCR",
+      "id" : "3FEDC85E-F5B4-413E-A816-2B3F48CCF073",
+      "interactions" :["click", "double_click"],
+      "semanticMeaning" : "AXButton with text 'Active v'",
+      "text" : "Active v",
+      "boundingBox" : {
+        "y" : 164,
+        "x" : 661,
+        "width" : 56.000000000000071,
+        "center" : {
+          "x" : 689,
+          "y" : 169.25
+        },
+        "height" : 10.499999999999986
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true
+      }
+    },
+    {
+      "id" : "484DC53F-E70B-4500-ACF2-9605763AB1E4",
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "boundingBox" : {
+        "x" : 51.5,
+        "height" : 13.499999999999901,
+        "center" : {
+          "y" : 210.25,
+          "x" : 89.5
+        },
+        "y" : 203.50000000000006,
+        "width" : 76
+      },
+      "interactions" :[],
+      "semanticMeaning" : "AXStaticText with text 'Unassigned'",
+      "text" : "Unassigned",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      }
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "id" : "A9E0CF13-91B5-4E98-8817-3D053EE99BC2",
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "boundingBox" : {
+        "center" : {
+          "y" : 249.24999999999997,
+          "x" : 66.75
+        },
+        "width" : 29.499999999999993,
+        "x" : 52,
+        "height" : 10.500000000000078,
+        "y" : 243.99999999999994
+      },
+      "text" : "Mine",
+      "semanticMeaning" : "AXStaticText with text 'Mine'",
+      "interactions" :[],
+      "isClickable" : false
+    },
+    {
+      "id" : "B42AC59F-B556-4E57-B9C3-F1CFADD0BE00",
+      "type" : "AXButton+OCR",
+      "interactions" :["click", "double_click"],
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "button"
+      },
+      "text" : "Runzhe Li",
+      "isClickable" : true,
+      "boundingBox" : {
+        "x" : 976,
+        "height" : 11.999999999999943,
+        "width" : 71.000000000000043,
+        "center" : {
+          "x" : 1011.5,
+          "y" : 242.50000000000003
+        },
+        "y" : 236.50000000000006
+      },
+      "semanticMeaning" : "AXButton with text 'Runzhe Li'"
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'lirunzhe205@gmail.com'",
+      "text" : "lirunzhe205@gmail.com",
+      "id" : "9DC3CE79-EB8B-4FD5-8DAD-4730DC958C1D",
+      "interactions" :[],
+      "boundingBox" : {
+        "width" : 144.00000000000006,
+        "y" : 261.5,
+        "height" : 12.500000000000053,
+        "center" : {
+          "x" : 1047.5,
+          "y" : 267.75
+        },
+        "x" : 975.5
+      },
+      "accessibility" : {
+        "description" : "text",
+        "focused" : false,
+        "enabled" : true
+      },
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "boundingBox" : {
+        "width" : 38,
+        "height" : 11.000000000000004,
+        "center" : {
+          "y" : 289,
+          "x" : 71
+        },
+        "y" : 283.5,
+        "x" : 52
+      },
+      "interactions" :[],
+      "isClickable" : false,
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "type" : "AXStaticText+OCR",
+      "text" : "Drafts",
+      "id" : "114C4F3D-BF68-4B3E-A45E-6F187CAD969A",
+      "semanticMeaning" : "AXStaticText with text 'Drafts'"
+    },
+    {
+      "interactions" :[],
+      "id" : "7F2C03AD-F93E-4754-99A6-73310C9BE686",
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "boundingBox" : {
+        "height" : 11.50000000000002,
+        "y" : 274.00000000000006,
+        "x" : 377,
+        "width" : 65.499999999999957,
+        "center" : {
+          "x" : 409.75,
+          "y" : 279.75000000000006
+        }
+      },
+      "semanticMeaning" : "AXStaticText with text 'Runzhe Li'",
+      "text" : "Runzhe Li"
+    },
+    {
+      "isClickable" : false,
+      "text" : "Jun 29, 4:00 pm",
+      "boundingBox" : {
+        "y" : 274.50000000000006,
+        "width" : 94.000000000000057,
+        "height" : 11.999999999999943,
+        "center" : {
+          "x" : 774.5,
+          "y" : 280.5
+        },
+        "x" : 727.5
+      },
+      "interactions" :["right_click"],
+      "type" : "AXGroup+OCR",
+      "id" : "4B823110-B3E2-4747-9A7A-DFE692B79A8B",
+      "semanticMeaning" : "AXGroup with text 'Jun 29, 4:00 pm'",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "group",
+        "enabled" : true
+      }
+    },
+    {
+      "id" : "35918AB3-EE3C-4C55-B546-94E12F5D24EF",
+      "boundingBox" : {
+        "width" : 177.49999999999997,
+        "height" : 12.499999999999961,
+        "center" : {
+          "x" : 465.25,
+          "y" : 307.75000000000006
+        },
+        "x" : 376.5,
+        "y" : 301.50000000000006
+      },
+      "type" : "AXGroup+OCR",
+      "interactions" :["right_click"],
+      "text" : "From lirunzhe205@gmail.com",
+      "semanticMeaning" : "AXGroup with text 'From lirunzhe205@gmail.com'",
+      "isClickable" : false,
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "group",
+        "focused" : false
+      }
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "group"
+      },
+      "text" : "Anyone, Active",
+      "semanticMeaning" : "AXGroup with text 'Anyone, Active'",
+      "boundingBox" : {
+        "center" : {
+          "y" : 307.5,
+          "x" : 778.50000000000011
+        },
+        "y" : 301.50000000000006,
+        "width" : 87.999999999999986,
+        "height" : 11.999999999999943,
+        "x" : 734.50000000000011
+      },
+      "id" : "905236B4-1950-4442-86AE-1F308903FBA5",
+      "isClickable" : false,
+      "interactions" :["right_click"],
+      "type" : "AXGroup+OCR"
+    },
+    {
+      "id" : "983EE652-8DE1-4910-8619-A4194325BCA6",
+      "type" : "AXStaticText+OCR",
+      "text" : "Assigned",
+      "boundingBox" : {
+        "width" : 59,
+        "center" : {
+          "y" : 330.5,
+          "x" : 80.5
+        },
+        "height" : 12.999999999999885,
+        "x" : 51,
+        "y" : 324.00000000000006
+      },
+      "semanticMeaning" : "AXStaticText with text 'Assigned'",
+      "isClickable" : false,
+      "interactions" :[],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      }
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "description" : "heading",
+        "enabled" : true
+      },
+      "id" : "ACD8D16D-08F2-41DE-935D-5FABFA438077",
+      "type" : "AXHeading+OCR",
+      "interactions" :[],
+      "isClickable" : false,
+      "semanticMeaning" : "AXHeading with text 'Conversations'",
+      "text" : "Conversations",
+      "boundingBox" : {
+        "width" : 94.000000000000057,
+        "y" : 322,
+        "height" : 11.000000000000004,
+        "x" : 975.5,
+        "center" : {
+          "x" : 1022.5,
+          "y" : 327.5
+        }
+      }
+    },
+    {
+      "id" : "47B68852-D604-4583-B653-3A5579C8E8F0",
+      "boundingBox" : {
+        "y" : 363.5,
+        "x" : 51.5,
+        "height" : 11.000000000000004,
+        "center" : {
+          "y" : 369,
+          "x" : 73.25
+        },
+        "width" : 43.5
+      },
+      "interactions" :[],
+      "text" : "Closed",
+      "semanticMeaning" : "AXStaticText with text 'Closed'",
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "text" : "Hi Richard,",
+      "semanticMeaning" : "AXStaticText with text 'Hi Richard,'",
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : false,
+      "interactions" :[],
+      "id" : "FEDD6D15-9B95-418A-A926-9E6AB087E1CA",
+      "boundingBox" : {
+        "y" : 370.5,
+        "width" : 65.499999999999957,
+        "height" : 12.000000000000037,
+        "x" : 377,
+        "center" : {
+          "x" : 409.75,
+          "y" : 376.5
+        }
+      },
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      },
+      "text" : "Bug Report",
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Bug Report'",
+      "interactions" :[],
+      "boundingBox" : {
+        "y" : 362.5,
+        "width" : 65.500000000000028,
+        "height" : 12.000000000000037,
+        "center" : {
+          "y" : 368.5,
+          "x" : 1037.75
+        },
+        "x" : 1005
+      },
+      "id" : "AAB2977A-59BC-4A94-A7D9-80BC06A218CB"
+    },
+    {
+      "interactions" :[],
+      "text" : "I figured the transactions were stuck in pending if I manually removed some bank accounts. Perhaps that action would void their connection fields and they won't receive any posting updates thereafter?",
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'I figured the transactions were stuck in pending if I manually removed'",
+      "id" : "08AB5091-F602-4F11-A457-FA99BBAB5360",
+      "boundingBox" : {
+        "height" : 13.499999999999995,
+        "center" : {
+          "x" : 594.25,
+          "y" : 421.25
+        },
+        "x" : 377,
+        "y" : 414.5,
+        "width" : 434.5
+      },
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : false
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'some bankaccounts. Perhaps that action would void their connection'",
+      "text" : "I figured the transactions were stuck in pending if I manually removed some bank accounts. Perhaps that action would void their connection fields and they won't receive any posting updates thereafter?",
+      "id" : "02594525-DA5E-461B-A56A-4205AF123381",
+      "boundingBox" : {
+        "height" : 13.499999999999995,
+        "center" : {
+          "x" : 596.25,
+          "y" : 443.25
+        },
+        "y" : 436.5,
+        "width" : 439.5,
+        "x" : 376.5
+      },
+      "isClickable" : false,
+      "interactions" :[],
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      }
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'VIEWS'",
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "E81DE4EA-7AB4-4CB5-A325-1DBA13EF69DA",
+      "interactions" :[],
+      "boundingBox" : {
+        "height" : 9.499999999999952,
+        "width" : 38.500000000000007,
+        "y" : 468,
+        "center" : {
+          "x" : 39.25,
+          "y" : 472.75
+        },
+        "x" : 20
+      },
+      "text" : "VIEWS",
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false
+    },
+    {
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false
+      },
+      "boundingBox" : {
+        "height" : 13.499999999999995,
+        "x" : 376,
+        "width" : 429.5,
+        "center" : {
+          "x" : 590.75,
+          "y" : 509.25
+        },
+        "y" : 502.5
+      },
+      "type" : "AXStaticText+OCR",
+      "id" : "87D3D91F-C356-49BA-9921-0A86D21BAE2D",
+      "semanticMeaning" : "AXStaticText with text 'Anyways thanks for listening. You guys are doing really greatjobs on'",
+      "text" : "Anyways thanks for listening. You guys are doing really great jobs on this app.",
+      "interactions" :[],
+      "isClickable" : false
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "interactions" :[],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      },
+      "boundingBox" : {
+        "width" : 52.500000000000036,
+        "y" : 524.5,
+        "center" : {
+          "y" : 531.25,
+          "x" : 402.25
+        },
+        "x" : 376,
+        "height" : 13.499999999999995
+      },
+      "semanticMeaning" : "AXStaticText with text 'this app.'",
+      "isClickable" : false,
+      "id" : "5ED63DA5-9395-4FA9-B845-3B4094726267",
+      "text" : "Anyways thanks for listening. You guys are doing really great jobs on this app."
+    },
+    {
+      "accessibility" : {
+        "description" : "text",
+        "focused" : false,
+        "enabled" : true
+      },
+      "interactions" :[],
+      "semanticMeaning" : "AXStaticText with text 'Best,'",
+      "isClickable" : false,
+      "id" : "2ECFC692-B952-477C-99E1-0B6EB0EF1BBA",
+      "boundingBox" : {
+        "height" : 11.999999999999943,
+        "width" : 30.500000000000007,
+        "center" : {
+          "x" : 392.25,
+          "y" : 574.5
+        },
+        "x" : 377,
+        "y" : 568.5
+      },
+      "text" : "Best,",
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "text" : "Henry",
+      "isClickable" : false,
+      "id" : "C2F046E0-5821-4489-8CA0-61BAC6384214",
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "text"
+      },
+      "interactions" :[],
+      "semanticMeaning" : "AXStaticText with text 'Henry'",
+      "boundingBox" : {
+        "x" : 377,
+        "height" : 13.499999999999995,
+        "width" : 37.5,
+        "center" : {
+          "y" : 619.25,
+          "x" : 395.75
+        },
+        "y" : 612.5
+      }
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'This message relates to an older conversation that has been locked'",
+      "id" : "E1239884-AF5B-4B4F-A2A8-EFEE44B12FCA",
+      "boundingBox" : {
+        "x" : 396,
+        "height" : 12.000000000000037,
+        "y" : 666,
+        "center" : {
+          "y" : 672,
+          "x" : 598.5
+        },
+        "width" : 404.99999999999994
+      },
+      "text" : "This message relates to an",
+      "interactions" :[],
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "description" : "text",
+        "focused" : false,
+        "enabled" : true
+      }
+    },
+    {
+      "interactions" :["click", "double_click"],
+      "semanticMeaning" : "close button",
+      "id" : "B486EEE5-2551-4688-8612-E5646158A87C",
+      "type" : "AXButton",
+      "boundingBox" : {
+        "height" : 16,
+        "center" : {
+          "y" : 26,
+          "x" : 26
+        },
+        "x" : 18,
+        "width" : 16,
+        "y" : 18
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "close button"
+      },
+      "isClickable" : true,
+      "text" : "close button"
+    },
+    {
+      "semanticMeaning" : "minimize button",
+      "accessibility" : {
+        "description" : "minimize button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "text" : "minimize button",
+      "boundingBox" : {
+        "width" : 16,
+        "center" : {
+          "x" : 46,
+          "y" : 26
+        },
+        "height" : 16,
+        "x" : 38,
+        "y" : 18
+      },
+      "type" : "AXButton",
+      "id" : "64348950-8811-4093-8FBC-46B8C264367C",
+      "interactions" :["click", "double_click"],
+      "isClickable" : true
+    },
+    {
+      "text" : "full screen button",
+      "id" : "CFD256A7-9388-4B54-8DFB-EB5F4BE9EEDD",
+      "isClickable" : true,
+      "type" : "AXButton",
+      "interactions" :["click", "double_click"],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "full screen button"
+      },
+      "semanticMeaning" : "full screen button",
+      "boundingBox" : {
+        "y" : 18,
+        "height" : 16,
+        "width" : 16,
+        "center" : {
+          "x" : 66,
+          "y" : 26
+        },
+        "x" : 58
+      }
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "description" : "scroll area",
+        "enabled" : true
+      },
+      "boundingBox" : {
+        "width" : 1231,
+        "height" : 761,
+        "y" : 80,
+        "x" : 0,
+        "center" : {
+          "y" : 460.5,
+          "x" : 615.5
+        }
+      },
+      "isClickable" : false,
+      "semanticMeaning" : "scroll area",
+      "text" : "scroll area",
+      "interactions" :["scroll", "swipe"],
+      "id" : "A6A47241-DDFB-46A6-94A9-4AFD28810B24",
+      "type" : "AXScrollArea"
+    },
+    {
+      "id" : "FCBD9624-9DDE-4D65-A556-034B2BC24A11",
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "text" : "button",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "interactions" :["click", "double_click"],
+      "semanticMeaning" : "button",
+      "boundingBox" : {
+        "width" : 48,
+        "y" : 85,
+        "height" : 44,
+        "x" : 1121,
+        "center" : {
+          "x" : 1145,
+          "y" : 107
+        }
+      }
+    },
+    {
+      "type" : "AXButton",
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "enabled" : true
+      },
+      "boundingBox" : {
+        "x" : 1179,
+        "y" : 89,
+        "width" : 36,
+        "height" : 36,
+        "center" : {
+          "y" : 107,
+          "x" : 1197
+        }
+      },
+      "semanticMeaning" : "button",
+      "text" : "button",
+      "id" : "1A5BC7E8-3C73-46E0-AE0C-14F0182CBB05",
+      "isClickable" : true,
+      "interactions" :["click", "double_click"]
+    },
+    {
+      "type" : "AXButton",
+      "id" : "F4A2C7E8-EC6B-4D5A-88D0-05A05AF331F0",
+      "boundingBox" : {
+        "width" : 24,
+        "center" : {
+          "x" : 249,
+          "y" : 163
+        },
+        "x" : 237,
+        "height" : 24,
+        "y" : 151
+      },
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "button",
+        "focused" : false
+      },
+      "isClickable" : true,
+      "text" : "button",
+      "interactions" :["click", "double_click"]
+    },
+    {
+      "boundingBox" : {
+        "y" : 789,
+        "height" : 44,
+        "center" : {
+          "y" : 811,
+          "x" : 67.5
+        },
+        "x" : 8,
+        "width" : 119
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button"
+      },
+      "semanticMeaning" : "button",
+      "isClickable" : true,
+      "interactions" :["click", "double_click"],
+      "type" : "AXButton",
+      "text" : "button",
+      "id" : "2F6F9C73-B701-435B-A199-8A241C39AF2B"
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "boundingBox" : {
+        "x" : 263,
+        "height" : 40,
+        "y" : 149,
+        "center" : {
+          "y" : 169,
+          "x" : 283
+        },
+        "width" : 40
+      },
+      "interactions" :["click", "double_click"],
+      "id" : "590C268F-CFB8-45C0-892A-60B3AE87776A",
+      "text" : "button",
+      "semanticMeaning" : "button"
+    },
+    {
+      "id" : "11977CCC-4EE9-445F-BBF3-E34DFA901E89",
+      "text" : "button",
+      "interactions" :["click", "double_click"],
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "boundingBox" : {
+        "height" : 36,
+        "width" : 36,
+        "x" : 736,
+        "center" : {
+          "y" : 169,
+          "x" : 754
+        },
+        "y" : 151
+      },
+      "isClickable" : true,
+      "type" : "AXButton"
+    },
+    {
+      "id" : "45730545-CF04-402A-A5EB-65B4AAE81BBC",
+      "boundingBox" : {
+        "x" : 774,
+        "height" : 36,
+        "center" : {
+          "x" : 792,
+          "y" : 169
+        },
+        "width" : 36,
+        "y" : 151
+      },
+      "interactions" :["click", "double_click"],
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "text" : "button",
+      "type" : "AXButton",
+      "semanticMeaning" : "button"
+    },
+    {
+      "id" : "8A906151-01FC-478C-AFF1-0BF11409695C",
+      "text" : "pop up button",
+      "boundingBox" : {
+        "y" : 151,
+        "x" : 812,
+        "width" : 36,
+        "height" : 36,
+        "center" : {
+          "x" : 830,
+          "y" : 169
+        }
+      },
+      "interactions" :["click", "dropdown"],
+      "semanticMeaning" : "pop up button",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "pop up button"
+      },
+      "isClickable" : true,
+      "type" : "AXPopUpButton"
+    },
+    {
+      "semanticMeaning" : "pop up button",
+      "boundingBox" : {
+        "y" : 151,
+        "height" : 36,
+        "center" : {
+          "x" : 868,
+          "y" : 169
+        },
+        "width" : 36,
+        "x" : 850
+      },
+      "isClickable" : true,
+      "text" : "pop up button",
+      "interactions" :["click", "dropdown"],
+      "id" : "5855A7F1-5BAF-4158-A1A9-470B91FA33A1",
+      "type" : "AXPopUpButton",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "pop up button"
+      }
+    },
+    {
+      "type" : "AXPopUpButton",
+      "id" : "FCE9928B-BE48-4337-96B1-94D32127ACF2",
+      "text" : "pop up button",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "pop up button"
+      },
+      "interactions" :["click", "dropdown"],
+      "semanticMeaning" : "pop up button",
+      "isClickable" : true,
+      "boundingBox" : {
+        "height" : 36,
+        "center" : {
+          "x" : 906,
+          "y" : 169
+        },
+        "x" : 888,
+        "y" : 151,
+        "width" : 36
+      }
+    },
+    {
+      "interactions" :["click", "double_click"],
+      "isClickable" : true,
+      "id" : "A05A5571-29E9-4BB6-939A-FAA2790F1DBF",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button"
+      },
+      "boundingBox" : {
+        "y" : 129,
+        "width" : 37,
+        "center" : {
+          "x" : 434.5,
+          "y" : 154.5
+        },
+        "x" : 416,
+        "height" : 51
+      },
+      "text" : "button",
+      "type" : "AXButton",
+      "semanticMeaning" : "button"
+    },
+    {
+      "id" : "ABA77CA1-26F8-4C3C-B455-A4C29D8A3F09",
+      "semanticMeaning" : "text entry area",
+      "type" : "AXTextArea",
+      "isClickable" : false,
+      "interactions" :[],
+      "boundingBox" : {
+        "y" : 180,
+        "width" : 447,
+        "height" : 28,
+        "x" : 376,
+        "center" : {
+          "x" : 599.5,
+          "y" : 194
+        }
+      },
+      "text" : "Re: Bug Report",
+      "accessibility" : {
+        "description" : "text entry area",
+        "focused" : false,
+        "enabled" : true
+      }
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "description" : "pop up button",
+        "enabled" : true
+      },
+      "type" : "AXPopUpButton",
+      "semanticMeaning" : "pop up button",
+      "boundingBox" : {
+        "height" : 36,
+        "x" : 827,
+        "y" : 262,
+        "center" : {
+          "x" : 846,
+          "y" : 280
+        },
+        "width" : 38
+      },
+      "text" : "pop up button",
+      "id" : "786EA19D-5991-4DF0-9C2B-CE2F684CAB2A",
+      "interactions" :["click", "dropdown"]
+    },
+    {
+      "text" : "button",
+      "isClickable" : true,
+      "boundingBox" : {
+        "x" : 282,
+        "y" : 224,
+        "height" : 116,
+        "width" : 621,
+        "center" : {
+          "y" : 282,
+          "x" : 592.5
+        }
+      },
+      "id" : "5DB3C53A-33A5-46F7-97B7-775BC43F94F4",
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "enabled" : true
+      },
+      "interactions" :["click", "double_click"]
+    },
+    {
+      "boundingBox" : {
+        "width" : 125,
+        "height" : 44,
+        "center" : {
+          "x" : 536.5,
+          "y" : 777
+        },
+        "x" : 474,
+        "y" : 755
+      },
+      "semanticMeaning" : "button",
+      "text" : "button",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "interactions" :["click", "double_click"],
+      "id" : "059BBCEF-97EC-4448-A87D-7988596F23C2"
+    },
+    {
+      "id" : "2052B4FE-03BA-4C51-87A2-1DCA2D44B98D",
+      "boundingBox" : {
+        "height" : 44,
+        "x" : 600,
+        "center" : {
+          "x" : 662.5,
+          "y" : 777
+        },
+        "y" : 755,
+        "width" : 125
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "text" : "button",
+      "type" : "AXButton",
+      "interactions" :["click", "double_click"]
+    },
+    {
+      "semanticMeaning" : "button",
+      "boundingBox" : {
+        "y" : 152,
+        "width" : 72,
+        "center" : {
+          "y" : 188,
+          "x" : 1004
+        },
+        "x" : 968,
+        "height" : 72
+      },
+      "isClickable" : true,
+      "interactions" :["click", "double_click"],
+      "type" : "AXButton",
+      "id" : "E2972752-3D7A-45E4-9E1D-D81568890187",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true
+      },
+      "text" : "button"
+    },
+    {
+      "type" : "AXPopUpButton",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "pop up button",
+        "focused" : false
+      },
+      "boundingBox" : {
+        "x" : 1179,
+        "height" : 36,
+        "center" : {
+          "x" : 1198,
+          "y" : 216
+        },
+        "width" : 38,
+        "y" : 198
+      },
+      "semanticMeaning" : "pop up button",
+      "interactions" :["click", "dropdown"],
+      "text" : "pop up button",
+      "id" : "D734A33C-9293-4234-9ED7-72C6261427E0",
+      "isClickable" : true
+    },
+    {
+      "boundingBox" : {
+        "center" : {
+          "x" : 1189,
+          "y" : 257
+        },
+        "height" : 50,
+        "x" : 1171,
+        "width" : 36,
+        "y" : 232
+      },
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "14505733-DF14-4024-BA1A-38A3945607B7",
+      "type" : "AXButton",
+      "text" : "button",
+      "interactions" :["click", "double_click"],
+      "semanticMeaning" : "button",
+      "isClickable" : true
+    },
+    {
+      "boundingBox" : {
+        "y" : 302,
+        "center" : {
+          "y" : 327,
+          "x" : 1090.5
+        },
+        "width" : 271,
+        "x" : 955,
+        "height" : 50
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "id" : "30523179-FADE-4580-92ED-A39ECB672A0E",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "description" : "button"
+      },
+      "interactions" :["click", "double_click"],
+      "text" : "button",
+      "type" : "AXButton"
+    },
+    {
+      "text" : "button",
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "id" : "7861E4CE-F5FE-423E-A91D-BFDE9A1C5DE7",
+      "interactions" :["click", "double_click"],
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "button",
+        "focused" : false
+      },
+      "boundingBox" : {
+        "width" : 35.5,
+        "y" : 11,
+        "x" : 90,
+        "center" : {
+          "x" : 107.75,
+          "y" : 26
+        },
+        "height" : 30
+      }
+    },
+    {
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true
+      },
+      "boundingBox" : {
+        "center" : {
+          "y" : 26,
+          "x" : 167
+        },
+        "x" : 147,
+        "y" : 6,
+        "width" : 40,
+        "height" : 40
+      },
+      "interactions" :["click", "double_click"],
+      "id" : "34AC4D9A-130D-4FCA-AB57-353CEF653C6F",
+      "type" : "AXButton",
+      "text" : "button",
+      "isClickable" : true
+    },
+    {
+      "type" : "AXButton",
+      "semanticMeaning" : "button",
+      "interactions" :["click", "double_click"],
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "enabled" : false
+      },
+      "id" : "CF73F8CC-A374-47B6-8AB2-126D9A4E746F",
+      "isClickable" : true,
+      "boundingBox" : {
+        "height" : 40,
+        "x" : 187,
+        "width" : 39,
+        "center" : {
+          "x" : 206.5,
+          "y" : 26
+        },
+        "y" : 6
+      },
+      "text" : "button"
+    },
+    {
+      "id" : "33BA3596-1795-4E74-AC88-09E466821C49",
+      "isClickable" : true,
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true
+      },
+      "text" : "button",
+      "semanticMeaning" : "button",
+      "boundingBox" : {
+        "x" : 329,
+        "width" : 31,
+        "center" : {
+          "x" : 344.5,
+          "y" : 26
+        },
+        "y" : 11,
+        "height" : 30
+      },
+      "type" : "AXButton",
+      "interactions" :["click", "double_click"]
+    },
+    {
+      "type" : "AXButton",
+      "text" : "button",
+      "semanticMeaning" : "button",
+      "boundingBox" : {
+        "y" : 15,
+        "width" : 30.5,
+        "x" : 366,
+        "height" : 23,
+        "center" : {
+          "x" : 381.25,
+          "y" : 26.5
+        }
+      },
+      "id" : "317A4B34-E875-402D-AEF9-565476B8D210",
+      "isClickable" : true,
+      "interactions" :["click", "double_click"],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button"
+      }
+    },
+    {
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button"
+      },
+      "interactions" :["click", "double_click"],
+      "type" : "AXButton",
+      "isClickable" : true,
+      "text" : "button",
+      "id" : "9C1EE147-D9AD-4CD0-9FE7-9F1E58D79642",
+      "boundingBox" : {
+        "x" : 388,
+        "center" : {
+          "x" : 400,
+          "y" : 26
+        },
+        "y" : 14,
+        "width" : 24,
+        "height" : 24
+      }
+    },
+    {
+      "isClickable" : true,
+      "id" : "B13F52D9-A390-41C8-96E9-2A4B7050A440",
+      "boundingBox" : {
+        "width" : 15,
+        "height" : 11,
+        "center" : {
+          "y" : 27,
+          "x" : 549.5
+        },
+        "x" : 542,
+        "y" : 21.5
+      },
+      "semanticMeaning" : "button",
+      "interactions" :["click", "double_click"],
+      "type" : "AXButton",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true
+      },
+      "text" : "button"
+    },
+    {
+      "text" : "button",
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "interactions" :["click", "double_click"],
+      "type" : "AXButton",
+      "id" : "7A4430ED-7000-4967-86CA-81A80E62BAE1",
+      "boundingBox" : {
+        "y" : 15.5,
+        "center" : {
+          "x" : 851.75,
+          "y" : 27
+        },
+        "width" : 23.5,
+        "height" : 23,
+        "x" : 840
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button"
+      }
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button"
+      },
+      "type" : "AXButton",
+      "interactions" :["click", "double_click"],
+      "id" : "F6C744A7-11E2-4C84-B7A5-88E9A2723ADF",
+      "semanticMeaning" : "button",
+      "boundingBox" : {
+        "y" : 0,
+        "center" : {
+          "y" : 26,
+          "x" : 1128.5
+        },
+        "x" : 1110,
+        "width" : 37,
+        "height" : 52
+      },
+      "text" : "button"
+    },
+    {
+      "id" : "A5B066F0-7386-449B-8CF3-A243A9B6BFF6",
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "enabled" : true
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "boundingBox" : {
+        "height" : 52,
+        "center" : {
+          "x" : 1165,
+          "y" : 26
+        },
+        "x" : 1147,
+        "y" : 0,
+        "width" : 36
+      },
+      "semanticMeaning" : "button",
+      "text" : "button",
+      "interactions" :["click", "double_click"]
+    },
+    {
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "text" : "button",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "button",
+        "focused" : false
+      },
+      "boundingBox" : {
+        "center" : {
+          "y" : 26,
+          "x" : 1165
+        },
+        "y" : 11,
+        "height" : 30,
+        "x" : 1150,
+        "width" : 30
+      },
+      "interactions" :["click", "double_click"],
+      "isClickable" : true,
+      "id" : "8373F6BA-2D07-45FE-8A69-121A51651432"
+    },
+    {
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false
+      },
+      "isClickable" : true,
+      "id" : "2F565FCC-5C9A-4128-AF23-5808BF6051FE",
+      "boundingBox" : {
+        "x" : 1183,
+        "height" : 52,
+        "center" : {
+          "y" : 26,
+          "x" : 1203
+        },
+        "width" : 40,
+        "y" : 0
+      },
+      "interactions" :["click", "double_click"],
+      "text" : "button"
+    },
+    {
+      "isClickable" : true,
+      "id" : "FE7CCF28-3B6F-4F83-856B-B3F23F561945",
+      "semanticMeaning" : "tab",
+      "boundingBox" : {
+        "y" : 52,
+        "width" : 616,
+        "height" : 28,
+        "x" : 0,
+        "center" : {
+          "y" : 66,
+          "x" : 308
+        }
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "tab"
+      },
+      "text" : "tab",
+      "type" : "AXRadioButton",
+      "interactions" :["click", "toggle"]
+    },
+    {
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "button",
+        "focused" : false
+      },
+      "id" : "3A05EF73-BBDC-4ABF-8D74-CCEC8A7A1AEC",
+      "isClickable" : true,
+      "boundingBox" : {
+        "height" : 18,
+        "width" : 18,
+        "y" : 57.5,
+        "center" : {
+          "y" : 66.5,
+          "x" : 12
+        },
+        "x" : 3
+      },
+      "interactions" :["click", "double_click"],
+      "type" : "AXButton",
+      "text" : "button"
+    },
+    {
+      "interactions" :["click", "toggle"],
+      "type" : "AXRadioButton",
+      "boundingBox" : {
+        "x" : 614,
+        "center" : {
+          "x" : 923,
+          "y" : 66
+        },
+        "width" : 618,
+        "y" : 52,
+        "height" : 28
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "tab"
+      },
+      "semanticMeaning" : "tab",
+      "text" : "tab",
+      "isClickable" : true,
+      "id" : "36E38DC5-B945-41CB-9C69-0B08182D458D"
+    },
+    {
+      "type" : "AXButton",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "button",
+        "focused" : false
+      },
+      "isClickable" : true,
+      "text" : "button",
+      "semanticMeaning" : "button",
+      "boundingBox" : {
+        "width" : 18,
+        "x" : 618,
+        "y" : 57.5,
+        "height" : 18,
+        "center" : {
+          "x" : 627,
+          "y" : 66.5
+        }
+      },
+      "id" : "839BC18A-8158-415D-8DCD-0B0A7D509AC4",
+      "interactions" :["click", "double_click"]
+    },
+    {
+      "interactions" :["click"],
+      "text" : "Apple",
+      "semanticMeaning" : "Menu bar item: Apple",
+      "isClickable" : true,
+      "type" : "appMenu",
+      "boundingBox" : {
+        "height" : 38,
+        "x" : 10,
+        "y" : 0,
+        "center" : {
+          "y" : 19,
+          "x" : 27
+        },
+        "width" : 34
+      },
+      "id" : "481B6858-52EF-4D1F-A265-ABAD98F8DE20"
+    },
+    {
+      "text" : "Safari",
+      "id" : "60B34737-6AF4-4E00-B4C4-E9E55BB87898",
+      "interactions" :["click"],
+      "semanticMeaning" : "Menu bar item: Safari",
+      "type" : "appMenu",
+      "boundingBox" : {
+        "width" : 59,
+        "height" : 38,
+        "y" : 0,
+        "center" : {
+          "x" : 73.5,
+          "y" : 19
+        },
+        "x" : 44
+      },
+      "isClickable" : true
+    },
+    {
+      "semanticMeaning" : "Menu bar item: File",
+      "interactions" :["click"],
+      "type" : "appMenu",
+      "id" : "ECF1E2B3-F2D9-4659-BF01-59FEA6506AF8",
+      "text" : "File",
+      "boundingBox" : {
+        "center" : {
+          "x" : 124,
+          "y" : 19
+        },
+        "y" : 0,
+        "width" : 42,
+        "x" : 103,
+        "height" : 38
+      },
+      "isClickable" : true
+    },
+    {
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: Edit",
+      "isClickable" : true,
+      "interactions" :["click"],
+      "id" : "986E6329-6378-49FD-83F3-37754DF50B2E",
+      "boundingBox" : {
+        "center" : {
+          "x" : 167,
+          "y" : 19
+        },
+        "width" : 44,
+        "y" : 0,
+        "height" : 38,
+        "x" : 145
+      },
+      "text" : "Edit"
+    },
+    {
+      "id" : "21460B3F-AC9B-490A-9610-6A3356D5ED25",
+      "type" : "appMenu",
+      "text" : "View",
+      "interactions" :["click"],
+      "boundingBox" : {
+        "x" : 189,
+        "y" : 0,
+        "height" : 38,
+        "width" : 50,
+        "center" : {
+          "y" : 19,
+          "x" : 214
+        }
+      },
+      "semanticMeaning" : "Menu bar item: View",
+      "isClickable" : true
+    },
+    {
+      "id" : "DBA52B88-4445-43F6-90EF-BC6835B23E2E",
+      "semanticMeaning" : "Menu bar item: History",
+      "text" : "History",
+      "type" : "appMenu",
+      "interactions" :["click"],
+      "isClickable" : true,
+      "boundingBox" : {
+        "y" : 0,
+        "width" : 64,
+        "height" : 38,
+        "center" : {
+          "x" : 271,
+          "y" : 19
+        },
+        "x" : 239
+      }
+    },
+    {
+      "boundingBox" : {
+        "center" : {
+          "y" : 19,
+          "x" : 347
+        },
+        "width" : 88,
+        "x" : 303,
+        "height" : 38,
+        "y" : 0
+      },
+      "type" : "appMenu",
+      "text" : "Bookmarks",
+      "semanticMeaning" : "Menu bar item: Bookmarks",
+      "interactions" :["click"],
+      "id" : "1B832830-77D5-4797-9647-E4458ACA0EB0",
+      "isClickable" : true
+    },
+    {
+      "semanticMeaning" : "Menu bar item: Develop",
+      "id" : "7E0C552C-642A-430C-B59C-7D06B2380AE9",
+      "boundingBox" : {
+        "center" : {
+          "x" : 426,
+          "y" : 19
+        },
+        "x" : 391,
+        "y" : 0,
+        "width" : 70,
+        "height" : 38
+      },
+      "type" : "appMenu",
+      "text" : "Develop",
+      "isClickable" : true,
+      "interactions" :["click"]
+    },
+    {
+      "type" : "appMenu",
+      "id" : "5B4E21DC-A743-41D1-84CF-825E3B7A432E",
+      "isClickable" : true,
+      "boundingBox" : {
+        "x" : 461,
+        "width" : 69,
+        "y" : 0,
+        "height" : 38,
+        "center" : {
+          "y" : 19,
+          "x" : 495.5
+        }
+      },
+      "semanticMeaning" : "Menu bar item: Window",
+      "text" : "Window",
+      "interactions" :["click"]
+    },
+    {
+      "text" : "Help",
+      "interactions" :["click"],
+      "semanticMeaning" : "Menu bar item: Help",
+      "id" : "FED6E575-3FF8-4474-B60D-AF4563E62887",
+      "type" : "appMenu",
+      "boundingBox" : {
+        "y" : 0,
+        "width" : 48,
+        "x" : 530,
+        "height" : 38,
+        "center" : {
+          "x" : 554,
+          "y" : 19
+        }
+      },
+      "isClickable" : true
+    }
+  ]
+}
