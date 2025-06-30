@@ -19,7 +19,7 @@ swift ui_inspector.swift > "coordinate_debug_${TIMESTAMP}.log" 2>&1
 echo "🔍 Extracting coordinate data from latest JSON..."
 
 # Find the most recent JSON file
-LATEST_JSON=$(ls -t /Users/richardshaw/augment/ui_map_*.json 2>/dev/null | head -1)
+LATEST_JSON=$(ls -t ./ui_map_*.json 2>/dev/null | head -1)
 
 if [ -z "$LATEST_JSON" ]; then
     echo "❌ No JSON file found!"

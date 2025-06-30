@@ -7,7 +7,7 @@ struct AppConstants {
     
     // MARK: - File Paths
     struct Paths {
-        static let projectRoot = "/Users/richardshaw/augment"
+        static let projectRoot = getProjectRoot()
         static let pythonExecutable = "\(projectRoot)/venv/bin/python3"
         static let mainScript = "\(projectRoot)/src/main.py"
         static let pythonPath = "\(projectRoot)/src"
@@ -15,6 +15,58 @@ struct AppConstants {
         static let swiftFrontendLog = "\(debugOutputDirectory)/swift_frontend.txt"
         static let swiftCrashLog = "\(debugOutputDirectory)/swift_crash_logs.txt"
         static let chatDebugLog = "\(debugOutputDirectory)/chat_debug.txt"
+        
+        // MARK: - Dynamic Project Root Detection
+        private static func getProjectRoot() -> String {
+            // Try to get the bundle path first (for when running as an app)
+            if let bundlePath = Bundle.main.bundlePath as String? {
+                let bundleURL = URL(fileURLWithPath: bundlePath)
+                var currentURL = bundleURL.deletingLastPathComponent()
+                
+                // Look for characteristic files that indicate project root
+                let projectMarkers = ["src", "augment", "Makefile", "requirements.txt"]
+                
+                // Search up to 5 levels up from the bundle
+                for _ in 0..<5 {
+                    let hasMarkers = projectMarkers.allSatisfy { marker in
+                        FileManager.default.fileExists(atPath: currentURL.appendingPathComponent(marker).path)
+                    }
+                    
+                    if hasMarkers {
+                        return currentURL.path
+                    }
+                    
+                    currentURL = currentURL.deletingLastPathComponent()
+                }
+            }
+            
+            // Fallback: try current working directory and its parents
+            let currentDir = FileManager.default.currentDirectoryPath
+            var currentURL = URL(fileURLWithPath: currentDir)
+            let projectMarkers = ["src", "augment", "Makefile", "requirements.txt"]
+            
+            for _ in 0..<5 {
+                let hasMarkers = projectMarkers.allSatisfy { marker in
+                    FileManager.default.fileExists(atPath: currentURL.appendingPathComponent(marker).path)
+                }
+                
+                if hasMarkers {
+                    return currentURL.path
+                }
+                
+                currentURL = currentURL.deletingLastPathComponent()
+            }
+            
+            // Final fallback: use environment variable if set
+            if let envRoot = ProcessInfo.processInfo.environment["AUGMENT_PROJECT_ROOT"] {
+                return envRoot
+            }
+            
+            // Last resort: current directory
+            print("⚠️ Warning: Could not detect project root automatically. Using current directory: \(currentDir)")
+            print("💡 Hint: Set AUGMENT_PROJECT_ROOT environment variable if needed")
+            return currentDir
+        }
     }
     
     // MARK: - UI Constants

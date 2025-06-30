@@ -6,6 +6,10 @@ build/
 *.app
 *.dSYM/
 
+# Compiled Swift binaries (need to be built locally)
+compiled_ui_inspector
+*/compiled_ui_inspector
+
 # Python
 __pycache__/
 *.py[cod]

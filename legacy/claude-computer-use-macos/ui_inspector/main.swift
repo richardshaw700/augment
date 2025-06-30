@@ -309,8 +309,8 @@ class UIInspectorApp {
         dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
         let timestamp = dateFormatter.string(from: completeMap.timestamp)
         
-        let compressedPath = "/Users/richardshaw/augment/ui_compressed_\(timestamp).txt"
-        let jsonPath = "/Users/richardshaw/augment/ui_map_\(timestamp).json"
+        let compressedPath = "./ui_compressed_\(timestamp).txt"
+        let jsonPath = "./ui_map_\(timestamp).json"
         
         do {
             try compressedFormat.write(to: URL(fileURLWithPath: compressedPath), atomically: false, encoding: String.Encoding.utf8)

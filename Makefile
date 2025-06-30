@@ -4,7 +4,7 @@
 PROJECT_NAME = augment
 SCHEME = augment
 CONFIGURATION = Debug
-PROJECT_DIR = /Users/richardshaw/augment
+PROJECT_DIR ?= $(shell pwd)
 UI_INSPECTOR_DIR = $(PROJECT_DIR)/src/ui_inspector
 PYTHON_SRC_DIR = $(PROJECT_DIR)/src
 

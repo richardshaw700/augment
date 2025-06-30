@@ -1,0 +1,3203 @@
+{
+  "window" : {
+    "title" : "activwndw: Safari - Manage access",
+    "frame" : {
+      "x" : 222,
+      "y" : 146,
+      "width" : 1231,
+      "height" : 841
+    }
+  },
+  "compressedOutput" : "Safari | 1231x841\n\nMENU BAR\nmenu:Apple|34x38@-195:-127\nmenu:Safari|59x38@-148:-127\nmenu:File|42x38@-98:-127\nmenu:Edit|44x38@-55:-127\nmenu:View|50x38@-8:-127\nmenu:History|64x38@49:-127\nmenu:Bookmarks|88x38@125:-127\nmenu:Develop|70x38@204:-127\nmenu:Window|69x38@274:-127\nmenu:Help|48x38@332:-127\n\nAPP WINDOW\ntxtinp:search text field,plchldr:Find a collaborator...[UNFOCUSED]|734x32@59:66\ntxtinp:text field,plchldr:& github.com[UNFOCUSED]|445x28@49:3\ntxt:The Home Depot - Cart|122x11@17:7\ntxt:anage access|71x9@51:8\ntxt:Buff McBigHuge (Buff)|114x11@84:7\ntxt:O General|73x16@6:13\ntxt:Collaborators and teams|250x18@38:13\ntxt:Access|41x9@4:19\ntxt:Private repository|134x15@40:19\ntxt:Only those with access to this repository can view it|333x13@48:22\nlink:Ai Collaborators|115x12@7:23\ntxt:Manage visibility|109x13@85:22\ntxt:Code and automation|124x10@8:28\ntxt:Direct access|90x11@33:31\ntxt:Ai|16x11@47:30\ntxt:Branches|59x10@7:32\ntxt:2 entities|189x11@37:34\nlink:repository. 1 collaborator. 1|171x13@37:37\nlink:invitation.|61x10@32:39\ntxt:Ct Rules|58x16@5:40\ntxt:O Actions|72x16@6:43\ntxt:Models|45x11@7:47\ntxt:Preview|44x10@23:47\ntxt:Webhooks|67x11@7:51\ntxt:Manage access|160x22@35:51\nbtn:Add people|75x13@86:51\ntxt:Environments|45x13@7:55\ntxt:Environments|86x11@8:59\ntxt:Select all|61x11@34:58\nbtn:Type|31x13@84:59\ntxt:C) Codespaces|102x16@7:62\ntxt:Pages|38x13@6:66\ntxt:Security|48x12@5:72\ntxt:Buff|27x10@37:73\ntxt:Awaiting BuffMcBigHuge's response|204x12@44:76\ntxt:¢>|8x6@3:76\ntxt:Q Advanced Security|145x16@9:76\ntxt:Pending Invite|99x16@64:74\ntxt:Deploy keys|76x13@8:80\ntxt:hitzelcruz|65x11@38:82\ntxt:Collaborator|69x9@38:84\ntxt:O Secrets and variables|162x16@9:83\ntxt:Integrations|70x12@6:89\ntxt:00|13x6@3:92\ntxt:00|13x6@3:93\ntxt:Previous|75x10@56:92\ntxt:Next|48x10@63:92\ntxt:GitHub Apps|81x13@8:93\ntxt:Email notifications|116x11@10:96\ntxt:Element|1231x761@50:54",
+  "systemContext" : {
+    "menuItems" : [
+      {
+        "type" : "appMenu",
+        "title" : "Apple",
+        "actualPosition" : {
+          "x" : 10,
+          "y" : 0
+        },
+        "actualSize" : {
+          "width" : 34,
+          "height" : 38
+        },
+        "isSystemWide" : false,
+        "index" : 0
+      },
+      {
+        "actualPosition" : {
+          "x" : 44,
+          "y" : 0
+        },
+        "title" : "Safari",
+        "actualSize" : {
+          "height" : 38,
+          "width" : 59
+        },
+        "isSystemWide" : false,
+        "index" : 1,
+        "type" : "appMenu"
+      },
+      {
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 103
+        },
+        "isSystemWide" : false,
+        "actualSize" : {
+          "height" : 38,
+          "width" : 42
+        },
+        "index" : 2,
+        "title" : "File",
+        "type" : "appMenu"
+      },
+      {
+        "type" : "appMenu",
+        "index" : 3,
+        "isSystemWide" : false,
+        "title" : "Edit",
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 145
+        },
+        "actualSize" : {
+          "width" : 44,
+          "height" : 38
+        }
+      },
+      {
+        "actualSize" : {
+          "width" : 50,
+          "height" : 38
+        },
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 189
+        },
+        "type" : "appMenu",
+        "title" : "View",
+        "index" : 4,
+        "isSystemWide" : false
+      },
+      {
+        "actualSize" : {
+          "width" : 64,
+          "height" : 38
+        },
+        "type" : "appMenu",
+        "title" : "History",
+        "index" : 5,
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 239
+        },
+        "isSystemWide" : false
+      },
+      {
+        "title" : "Bookmarks",
+        "index" : 6,
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 303
+        },
+        "type" : "appMenu",
+        "actualSize" : {
+          "height" : 38,
+          "width" : 88
+        },
+        "isSystemWide" : false
+      },
+      {
+        "title" : "Develop",
+        "type" : "appMenu",
+        "index" : 7,
+        "actualSize" : {
+          "width" : 70,
+          "height" : 38
+        },
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 391
+        },
+        "isSystemWide" : false
+      },
+      {
+        "title" : "Window",
+        "index" : 8,
+        "isSystemWide" : false,
+        "type" : "appMenu",
+        "actualSize" : {
+          "width" : 69,
+          "height" : 38
+        },
+        "actualPosition" : {
+          "y" : 0,
+          "x" : 461
+        }
+      },
+      {
+        "type" : "appMenu",
+        "actualSize" : {
+          "width" : 48,
+          "height" : 38
+        },
+        "title" : "Help",
+        "index" : 9,
+        "isSystemWide" : false,
+        "actualPosition" : {
+          "x" : 530,
+          "y" : 0
+        }
+      }
+    ],
+    "timestamp" : "2025-06-30T03:31:07Z",
+    "activeApplication" : {
+      "bundleIdentifier" : "com.apple.Safari",
+      "name" : "Safari"
+    }
+  },
+  "metadata" : {
+    "timestamp" : "2025-06-30T03:31:07Z",
+    "processingTime" : 0.71135199069976807,
+    "performance" : {
+      "fusionTime" : 0.0043020248413085938,
+      "accessibilityTime" : 0.21894705295562744,
+      "totalElements" : 328,
+      "screenshotTime" : 0.2179110050201416,
+      "ocrTime" : 0.45056700706481934,
+      "fusedElements" : 99,
+      "memoryUsage" : 56705024
+    }
+  },
+  "elements" : [
+    {
+      "interactions" : [
+        "click",
+        "type",
+        "focus"
+      ],
+      "size" : {
+        "width" : 734,
+        "height" : 32
+      },
+      "actionHint" : "Text input with placeholder",
+      "type" : "AXTextField+OCR",
+      "visualText" : "search text field,plchldr:Find a collaborator...[UNFOCUSED]",
+      "isClickable" : true,
+      "position" : {
+        "y" : 690,
+        "x" : 591
+      },
+      "accessibility" : {
+        "role" : "AXTextField",
+        "description" : "search text field",
+        "title" : "Find a collaborator…",
+        "focused" : false,
+        "enabled" : true
+      },
+      "id" : "203F658C-39C6-4743-AFAC-D2CFE6FBEE26",
+      "semanticMeaning" : "search text field,plchldr:Find a collaborator...[UNFOCUSED]",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 701,
+          "x" : 625,
+          "width" : 129.00000000000003,
+          "height" : 10.499999999999986
+        },
+        "text" : "Find a collaborator..."
+      },
+      "confidence" : 0.89999997615814209
+    },
+    {
+      "position" : {
+        "y" : 164,
+        "x" : 611
+      },
+      "confidence" : 0.89999997615814209,
+      "ocr" : {
+        "text" : "& github.com",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 797,
+          "width" : 82.499999999999986,
+          "height" : 13.000000000000071,
+          "y" : 166.49999999999994
+        }
+      },
+      "size" : {
+        "width" : 445,
+        "height" : 28
+      },
+      "isClickable" : true,
+      "visualText" : "text field,plchldr:& github.com[UNFOCUSED]",
+      "type" : "AXTextField+OCR",
+      "semanticMeaning" : "text field,plchldr:& github.com[UNFOCUSED]",
+      "actionHint" : "Text input with placeholder",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "text field",
+        "focused" : false,
+        "role" : "AXTextField",
+        "title" : null
+      },
+      "id" : "51115F4E-F965-4D65-BC90-DFDD02EAD3FF",
+      "interactions" : [
+        "click",
+        "type",
+        "focus"
+      ]
+    },
+    {
+      "semanticMeaning" : "Text content: 'The Home Depot - Cart'",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "The Home Depot - Cart",
+        "boundingBox" : {
+          "x" : 376.5,
+          "width" : 121.99999999999999,
+          "y" : 207.99999999999997,
+          "height" : 10.500000000000078
+        }
+      },
+      "position" : {
+        "y" : 207.99999999999997,
+        "x" : 376.5
+      },
+      "id" : "76AE4925-8D9F-4A50-AEF4-5241A34A2886",
+      "size" : {
+        "width" : 121.99999999999999,
+        "height" : 10.500000000000078
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "visualText" : "The Home Depot - Cart",
+      "confidence" : 1,
+      "type" : "TextContent"
+    },
+    {
+      "position" : {
+        "y" : 209.99999999999994,
+        "x" : 817
+      },
+      "size" : {
+        "height" : 8.500000000000103,
+        "width" : 71.000000000000043
+      },
+      "confidence" : 1,
+      "type" : "TextContent",
+      "visualText" : "anage access",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 8.500000000000103,
+          "x" : 817,
+          "y" : 209.99999999999994,
+          "width" : 71.000000000000043
+        },
+        "text" : "anage access"
+      },
+      "id" : "5C6632E3-C146-406C-8D3E-7AFF60A3E907",
+      "semanticMeaning" : "Text content: 'anage access'"
+    },
+    {
+      "interactions" : [
+
+      ],
+      "visualText" : "Buff McBigHuge (Buff)",
+      "isClickable" : false,
+      "ocr" : {
+        "text" : "Buff McBigHuge (Buff)",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 113.99999999999997,
+          "height" : 10.500000000000078,
+          "x" : 1202,
+          "y" : 207.99999999999997
+        }
+      },
+      "semanticMeaning" : "Text content: 'Buff McBigHuge (Buff)'",
+      "id" : "C36B802E-2AF2-410B-8EE4-2330B8F7932E",
+      "type" : "TextContent",
+      "position" : {
+        "y" : 207.99999999999997,
+        "x" : 1202
+      },
+      "size" : {
+        "width" : 113.99999999999997,
+        "height" : 10.500000000000078
+      },
+      "confidence" : 1
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "position" : {
+        "x" : 262.5,
+        "y" : 253
+      },
+      "confidence" : 1,
+      "interactions" : [
+        "right_click"
+      ],
+      "id" : "9E4053D9-2F91-4C3F-977F-BBA64C9B3B2C",
+      "semanticMeaning" : "AXGroup with text 'O General'",
+      "visualText" : "O General",
+      "ocr" : {
+        "text" : "O General",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 262.5,
+          "y" : 253,
+          "width" : 73,
+          "height" : 15.999999999999988
+        }
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 73,
+        "height" : 15.999999999999988
+      },
+      "accessibility" : {
+        "focused" : false,
+        "title" : null,
+        "description" : "group",
+        "role" : "AXGroup",
+        "enabled" : true
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "id" : "46366FE3-3606-4A96-B74D-A2D3BA8925FA",
+      "confidence" : 1,
+      "semanticMeaning" : "AXStaticText with text 'Collaborators and teams'",
+      "size" : {
+        "width" : 249.99999999999997,
+        "height" : 18.000000000000057
+      },
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "y" : 254.49999999999997,
+        "x" : 575
+      },
+      "accessibility" : {
+        "description" : "text",
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 575,
+          "y" : 254.49999999999997,
+          "height" : 18.000000000000057,
+          "width" : 249.99999999999997
+        },
+        "text" : "Collaborators and teams",
+        "confidence" : 1
+      },
+      "visualText" : "Collaborators and teams",
+      "isClickable" : false
+    },
+    {
+      "confidence" : 1,
+      "id" : "2D3550A1-653C-45D9-A371-ACE8A6367EDB",
+      "ocr" : {
+        "text" : "Access",
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 40.999999999999993,
+          "height" : 8.5000000000000107,
+          "y" : 304.5,
+          "x" : 262.5
+        }
+      },
+      "position" : {
+        "y" : 304.5,
+        "x" : 262.5
+      },
+      "semanticMeaning" : "AXStaticText with text 'Access'",
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text"
+      },
+      "type" : "AXStaticText+OCR",
+      "visualText" : "Access",
+      "size" : {
+        "height" : 8.5000000000000107,
+        "width" : 40.999999999999993
+      },
+      "isClickable" : false
+    },
+    {
+      "id" : "9B5DE564-873A-49A6-A60D-28FE0B67D377",
+      "visualText" : "Private repository",
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "width" : 133.99999999999997,
+        "height" : 15.49999999999997
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "description" : "text",
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "title" : null
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 133.99999999999997,
+          "height" : 15.49999999999997,
+          "y" : 302.5,
+          "x" : 649
+        },
+        "text" : "Private repository",
+        "confidence" : 1
+      },
+      "confidence" : 1,
+      "position" : {
+        "x" : 649,
+        "y" : 302.5
+      },
+      "semanticMeaning" : "AXStaticText with text 'Private repository'"
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "confidence" : 1,
+      "semanticMeaning" : "AXStaticText with text 'Only those with access to this repository can view it'",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.999999999999977,
+          "width" : 333.49999999999994,
+          "y" : 326.5,
+          "x" : 648.5
+        },
+        "confidence" : 1,
+        "text" : "Only those with access to this repository can view it"
+      },
+      "position" : {
+        "x" : 648.5,
+        "y" : 326.5
+      },
+      "visualText" : "Only those with access to this repository can view it",
+      "id" : "A767D4E7-16B9-494B-8CEF-02E0B1B37CB5",
+      "size" : {
+        "height" : 12.999999999999977,
+        "width" : 333.49999999999994
+      },
+      "accessibility" : {
+        "title" : null,
+        "role" : "AXStaticText",
+        "focused" : false,
+        "description" : "text",
+        "enabled" : true
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "id" : "E084F75B-E19E-4D66-870C-A8DB74F9C835",
+      "size" : {
+        "width" : 115,
+        "height" : 11.50000000000002
+      },
+      "isClickable" : false,
+      "visualText" : "Ai Collaborators",
+      "confidence" : 1,
+      "semanticMeaning" : "AXLink with text 'Ai Collaborators'",
+      "interactions" : [
+
+      ],
+      "type" : "AXLink+OCR",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 11.50000000000002,
+          "width" : 115,
+          "x" : 262,
+          "y" : 334
+        },
+        "confidence" : 1,
+        "text" : "Ai Collaborators"
+      },
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "title" : "Collaborators",
+        "role" : "AXLink",
+        "description" : "link"
+      },
+      "position" : {
+        "x" : 262,
+        "y" : 334
+      }
+    },
+    {
+      "size" : {
+        "height" : 13.499999999999995,
+        "width" : 109.49999999999996
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "confidence" : 1,
+      "id" : "CCCD4AC1-8042-4304-8D21-8708569F5A91",
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Manage visibility'",
+      "ocr" : {
+        "text" : "Manage visibility",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1219.5,
+          "y" : 325.5,
+          "height" : 13.499999999999995,
+          "width" : 109.49999999999996
+        }
+      },
+      "position" : {
+        "y" : 325.5,
+        "x" : 1219.5
+      },
+      "visualText" : "Manage visibility",
+      "accessibility" : {
+        "focused" : false,
+        "description" : "text",
+        "role" : "AXStaticText",
+        "title" : null,
+        "enabled" : true
+      }
+    },
+    {
+      "ocr" : {
+        "text" : "Code and automation",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 262.5,
+          "y" : 382.50000000000006,
+          "width" : 124.5,
+          "height" : 9.999999999999968
+        }
+      },
+      "size" : {
+        "width" : 124.5,
+        "height" : 9.999999999999968
+      },
+      "type" : "AXHeading+OCR",
+      "visualText" : "Code and automation",
+      "confidence" : 1,
+      "accessibility" : {
+        "role" : "AXHeading",
+        "enabled" : true,
+        "title" : "Code and automation",
+        "focused" : false,
+        "description" : "heading"
+      },
+      "semanticMeaning" : "AXHeading with text 'Code and automation'",
+      "interactions" : [
+
+      ],
+      "id" : "003EABC8-7B8A-4F93-B3DF-7BE30AAEE4ED",
+      "position" : {
+        "y" : 382.50000000000006,
+        "x" : 262.5
+      },
+      "isClickable" : false
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'Direct access'",
+      "isClickable" : false,
+      "confidence" : 1,
+      "visualText" : "Direct access",
+      "size" : {
+        "width" : 89.999999999999972,
+        "height" : 11.000000000000004
+      },
+      "position" : {
+        "y" : 402,
+        "x" : 592
+      },
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXStaticText",
+        "title" : null
+      },
+      "type" : "AXStaticText+OCR",
+      "id" : "9F71148C-08E9-4098-A7B9-CAB084F3D8B9",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Direct access",
+        "boundingBox" : {
+          "x" : 592,
+          "height" : 11.000000000000004,
+          "width" : 89.999999999999972,
+          "y" : 402
+        }
+      }
+    },
+    {
+      "interactions" : [
+
+      ],
+      "type" : "TextContent",
+      "position" : {
+        "x" : 797,
+        "y" : 399.00000000000006
+      },
+      "semanticMeaning" : "Text content: 'Ai'",
+      "visualText" : "Ai",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Ai",
+        "boundingBox" : {
+          "y" : 399.00000000000006,
+          "width" : 16.000000000000028,
+          "x" : 797,
+          "height" : 11.000000000000004
+        }
+      },
+      "size" : {
+        "width" : 16.000000000000028,
+        "height" : 11.000000000000004
+      },
+      "isClickable" : false,
+      "id" : "A2C12638-2A32-424F-8CD3-4BB278926E20",
+      "confidence" : 1
+    },
+    {
+      "visualText" : "Branches",
+      "position" : {
+        "y" : 413.5,
+        "x" : 287
+      },
+      "confidence" : 1,
+      "id" : "4EFBEC2E-161A-4067-AC5A-154C9A86982F",
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "title" : null,
+        "focused" : false
+      },
+      "semanticMeaning" : "AXStaticText with text 'Branches'",
+      "isClickable" : false,
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 59,
+          "height" : 10.499999999999986,
+          "y" : 413.5,
+          "x" : 287
+        },
+        "confidence" : 1,
+        "text" : "Branches"
+      },
+      "size" : {
+        "width" : 59,
+        "height" : 10.499999999999986
+      }
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text '2 entities have access to this'",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 11.000000000000004,
+          "width" : 188.50000000000006,
+          "x" : 591.5,
+          "y" : 431.00000000000006
+        },
+        "text" : "2 entities have access to this"
+      },
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "height" : 11.000000000000004,
+        "width" : 188.50000000000006
+      },
+      "position" : {
+        "y" : 431.00000000000006,
+        "x" : 591.5
+      },
+      "interactions" : [
+
+      ],
+      "visualText" : "2 entities",
+      "accessibility" : {
+        "description" : "text",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXStaticText"
+      },
+      "id" : "3F124744-C666-4E5A-BC99-E61B51F1E506",
+      "isClickable" : false,
+      "confidence" : 1
+    },
+    {
+      "size" : {
+        "height" : 12.999999999999977,
+        "width" : 171.49999999999997
+      },
+      "confidence" : 1,
+      "visualText" : "repository. 1 collaborator. 1",
+      "type" : "AXLink+OCR",
+      "position" : {
+        "y" : 452.5,
+        "x" : 592
+      },
+      "semanticMeaning" : "AXLink with text 'repository. 1 collaborator. 1'",
+      "id" : "169551F0-B4B7-4F38-8F00-7D29827D64BC",
+      "isClickable" : false,
+      "interactions" : [
+
+      ],
+      "accessibility" : {
+        "role" : "AXLink",
+        "title" : "1 invitation",
+        "description" : "link",
+        "enabled" : true,
+        "focused" : false
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 592,
+          "height" : 12.999999999999977,
+          "y" : 452.5,
+          "width" : 171.49999999999997
+        },
+        "text" : "repository. 1 collaborator. 1",
+        "confidence" : 1
+      }
+    },
+    {
+      "size" : {
+        "width" : 61.000000000000014,
+        "height" : 10.499999999999986
+      },
+      "visualText" : "invitation.",
+      "position" : {
+        "y" : 473.5,
+        "x" : 591.5
+      },
+      "accessibility" : {
+        "role" : "AXLink",
+        "focused" : false,
+        "description" : "link",
+        "enabled" : true,
+        "title" : "1 invitation"
+      },
+      "ocr" : {
+        "text" : "invitation.",
+        "boundingBox" : {
+          "height" : 10.499999999999986,
+          "x" : 591.5,
+          "y" : 473.5,
+          "width" : 61.000000000000014
+        },
+        "confidence" : 1
+      },
+      "confidence" : 1,
+      "isClickable" : false,
+      "semanticMeaning" : "AXLink with text 'invitation.'",
+      "id" : "C37ECB7C-F899-427C-8BF8-183EB2F4E9EF",
+      "interactions" : [
+
+      ],
+      "type" : "AXLink+OCR"
+    },
+    {
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXGroup",
+        "description" : "group",
+        "title" : null,
+        "enabled" : true
+      },
+      "ocr" : {
+        "text" : "Ct Rules",
+        "boundingBox" : {
+          "y" : 475.00000000000006,
+          "x" : 263,
+          "height" : 15.999999999999988,
+          "width" : 58
+        },
+        "confidence" : 1
+      },
+      "type" : "AXGroup+OCR",
+      "position" : {
+        "x" : 263,
+        "y" : 475.00000000000006
+      },
+      "semanticMeaning" : "AXGroup with text 'Ct Rules'",
+      "id" : "7140425E-B59B-43FB-B2B5-CCA78347AF67",
+      "isClickable" : false,
+      "size" : {
+        "height" : 15.999999999999988,
+        "width" : 58
+      },
+      "confidence" : 1,
+      "visualText" : "Ct Rules",
+      "interactions" : [
+        "right_click"
+      ]
+    },
+    {
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXGroup",
+        "focused" : false,
+        "description" : "group",
+        "title" : null
+      },
+      "id" : "CF6347B5-95E8-4B27-80B9-98A53E04608F",
+      "type" : "AXGroup+OCR",
+      "visualText" : "O Actions",
+      "position" : {
+        "x" : 262,
+        "y" : 507
+      },
+      "interactions" : [
+        "right_click"
+      ],
+      "size" : {
+        "height" : 15.999999999999988,
+        "width" : 72
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "AXGroup with text 'O Actions'",
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "O Actions",
+        "boundingBox" : {
+          "x" : 262,
+          "height" : 15.999999999999988,
+          "y" : 507,
+          "width" : 72
+        }
+      }
+    },
+    {
+      "semanticMeaning" : "AXStaticText with text 'Models'",
+      "id" : "FF24F8A5-B3E5-4112-9561-C595EB2E8FA9",
+      "type" : "AXStaticText+OCR",
+      "confidence" : 1,
+      "ocr" : {
+        "text" : "Models",
+        "boundingBox" : {
+          "x" : 287,
+          "y" : 541.5,
+          "height" : 10.500000000000078,
+          "width" : 45.499999999999993
+        },
+        "confidence" : 1
+      },
+      "interactions" : [
+
+      ],
+      "position" : {
+        "x" : 287,
+        "y" : 541.5
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 45.499999999999993,
+        "height" : 10.500000000000078
+      },
+      "visualText" : "Models",
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : "text",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      }
+    },
+    {
+      "position" : {
+        "y" : 541.5,
+        "x" : 490
+      },
+      "confidence" : 1,
+      "size" : {
+        "width" : 44.499999999999986,
+        "height" : 9.5000000000000444
+      },
+      "interactions" : [
+
+      ],
+      "ocr" : {
+        "text" : "Preview",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 490,
+          "width" : 44.499999999999986,
+          "y" : 541.5,
+          "height" : 9.5000000000000444
+        }
+      },
+      "id" : "C7D13834-F070-49AF-940C-78F37FA2EFCC",
+      "semanticMeaning" : "AXStaticText with text 'Preview'",
+      "visualText" : "Preview",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "text",
+        "title" : null,
+        "role" : "AXStaticText",
+        "focused" : false
+      },
+      "isClickable" : false,
+      "type" : "AXStaticText+OCR"
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "confidence" : 0.79999999999999993,
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXStaticText",
+        "description" : "text",
+        "title" : null,
+        "enabled" : true
+      },
+      "interactions" : [
+
+      ],
+      "id" : "9593A5B0-3437-42C8-AAD1-78E8E1558955",
+      "ocr" : {
+        "text" : "Webhooks",
+        "boundingBox" : {
+          "height" : 10.500000000000078,
+          "y" : 573.5,
+          "width" : 67,
+          "x" : 286.5
+        },
+        "confidence" : 0.5
+      },
+      "size" : {
+        "width" : 67,
+        "height" : 10.500000000000078
+      },
+      "position" : {
+        "y" : 573.5,
+        "x" : 286.5
+      },
+      "visualText" : "Webhooks",
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'Webhooks'"
+    },
+    {
+      "position" : {
+        "y" : 565.5,
+        "x" : 575.5
+      },
+      "size" : {
+        "height" : 22.000000000000007,
+        "width" : 159.50000000000003
+      },
+      "id" : "68BCC018-AF3D-45AB-A479-572843B45252",
+      "ocr" : {
+        "text" : "Manage access",
+        "boundingBox" : {
+          "y" : 565.5,
+          "width" : 159.50000000000003,
+          "x" : 575.5,
+          "height" : 22.000000000000007
+        },
+        "confidence" : 1
+      },
+      "visualText" : "Manage access",
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Manage access'",
+      "interactions" : [
+
+      ],
+      "isClickable" : false,
+      "confidence" : 1,
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXStaticText",
+        "title" : null,
+        "description" : "text",
+        "enabled" : true
+      }
+    },
+    {
+      "confidence" : 1,
+      "semanticMeaning" : "AXButton with text 'Add people'",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "visualText" : "Add people",
+      "ocr" : {
+        "text" : "Add people",
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 1246,
+          "width" : 74.500000000000071,
+          "y" : 569,
+          "height" : 12.999999999999977
+        }
+      },
+      "type" : "AXButton+OCR",
+      "size" : {
+        "width" : 74.500000000000071,
+        "height" : 12.999999999999977
+      },
+      "accessibility" : {
+        "focused" : false,
+        "description" : "button",
+        "title" : "Add people",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "position" : {
+        "y" : 569,
+        "x" : 1246
+      },
+      "id" : "DFE0F7D3-5260-4973-BCDD-C58221482865",
+      "isClickable" : true,
+      "actionHint" : "Click button"
+    },
+    {
+      "type" : "AXStaticText+OCR",
+      "interactions" : [
+
+      ],
+      "id" : "D815828F-4B0F-4DF1-9D06-9F7AA24B20C2",
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'Copilot'",
+      "visualText" : "Environments",
+      "size" : {
+        "height" : 13.499999999999995,
+        "width" : 44.999999999999993
+      },
+      "confidence" : 0.79999999999999993,
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : "text",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true
+      },
+      "position" : {
+        "y" : 605,
+        "x" : 286.5
+      },
+      "ocr" : {
+        "text" : "Copilot",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 605,
+          "width" : 44.999999999999993,
+          "x" : 286.5,
+          "height" : 13.499999999999995
+        }
+      }
+    },
+    {
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Environments",
+        "boundingBox" : {
+          "y" : 637,
+          "height" : 11.000000000000004,
+          "width" : 86,
+          "x" : 287
+        }
+      },
+      "position" : {
+        "x" : 287,
+        "y" : 637
+      },
+      "accessibility" : {
+        "title" : null,
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text",
+        "role" : "AXStaticText"
+      },
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "size" : {
+        "height" : 11.000000000000004,
+        "width" : 86
+      },
+      "visualText" : "Environments",
+      "interactions" : [
+
+      ],
+      "id" : "615D562C-F95F-41B9-92F6-DECECFC47C82",
+      "confidence" : 1,
+      "semanticMeaning" : "AXStaticText with text 'Environments'"
+    },
+    {
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 619.5,
+          "height" : 11.000000000000004,
+          "y" : 636,
+          "width" : 60.500000000000021
+        },
+        "text" : "Select all"
+      },
+      "isClickable" : true,
+      "visualText" : "Select all",
+      "confidence" : 1,
+      "actionHint" : "Click text",
+      "id" : "A8E5169B-8306-4EC6-A101-8284DD3ABAC6",
+      "semanticMeaning" : "AXStaticText with text 'Select all'",
+      "interactions" : [
+        "click"
+      ],
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "height" : 11.000000000000004,
+        "width" : 60.500000000000021
+      },
+      "accessibility" : {
+        "description" : "text",
+        "title" : null,
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "focused" : false
+      },
+      "position" : {
+        "y" : 636,
+        "x" : 619.5
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "position" : {
+        "y" : 636.5,
+        "x" : 1248
+      },
+      "actionHint" : "Click pop up button",
+      "semanticMeaning" : "AXPopUpButton with text 'Type'",
+      "isClickable" : true,
+      "id" : "9B230D57-A36F-4052-959C-A927480FF684",
+      "size" : {
+        "width" : 31.499999999999996,
+        "height" : 12.500000000000053
+      },
+      "confidence" : 1,
+      "visualText" : "Type",
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "description" : "pop up button",
+        "title" : "Type",
+        "focused" : false,
+        "enabled" : true
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Type",
+        "boundingBox" : {
+          "y" : 636.5,
+          "x" : 1248,
+          "width" : 31.499999999999996,
+          "height" : 12.500000000000053
+        }
+      },
+      "type" : "AXPopUpButton+OCR"
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "size" : {
+        "width" : 101.5,
+        "height" : 15.500000000000064
+      },
+      "id" : "4656E2EF-A1C1-49C9-8641-F218972E5E32",
+      "semanticMeaning" : "AXGroup with text 'C) Codespaces'",
+      "visualText" : "C) Codespaces",
+      "isClickable" : false,
+      "interactions" : [
+        "right_click"
+      ],
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXGroup",
+        "title" : null,
+        "description" : "group",
+        "enabled" : true
+      },
+      "confidence" : 1,
+      "position" : {
+        "y" : 667,
+        "x" : 264
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "y" : 667,
+          "x" : 264,
+          "width" : 101.5,
+          "height" : 15.500000000000064
+        },
+        "text" : "C) Codespaces",
+        "confidence" : 1
+      }
+    },
+    {
+      "position" : {
+        "x" : 287,
+        "y" : 701.5
+      },
+      "type" : "AXStaticText+OCR",
+      "size" : {
+        "width" : 37.999999999999993,
+        "height" : 12.999999999999977
+      },
+      "confidence" : 1,
+      "id" : "70D22FF4-9112-4EED-B937-0687F06B5E6A",
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Pages",
+        "boundingBox" : {
+          "y" : 701.5,
+          "height" : 12.999999999999977,
+          "width" : 37.999999999999993,
+          "x" : 287
+        }
+      },
+      "semanticMeaning" : "AXStaticText with text 'Pages'",
+      "visualText" : "Pages",
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : "text",
+        "focused" : false,
+        "enabled" : true,
+        "title" : null
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "position" : {
+        "y" : 749.5,
+        "x" : 262.5
+      },
+      "interactions" : [
+
+      ],
+      "type" : "AXHeading+OCR",
+      "size" : {
+        "height" : 12.000000000000037,
+        "width" : 48.5
+      },
+      "accessibility" : {
+        "title" : "Security",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXHeading",
+        "description" : "heading"
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "AXHeading with text 'Security'",
+      "isClickable" : false,
+      "id" : "E9DFB05D-3758-4549-9F28-A71531E102A4",
+      "visualText" : "Security",
+      "ocr" : {
+        "boundingBox" : {
+          "height" : 12.000000000000037,
+          "x" : 262.5,
+          "y" : 749.5,
+          "width" : 48.5
+        },
+        "text" : "Security",
+        "confidence" : 1
+      }
+    },
+    {
+      "isClickable" : false,
+      "semanticMeaning" : "AXStaticText with text 'Buff'",
+      "type" : "AXStaticText+OCR",
+      "confidence" : 1,
+      "position" : {
+        "x" : 668,
+        "y" : 760.5
+      },
+      "interactions" : [
+
+      ],
+      "size" : {
+        "height" : 10.499999999999986,
+        "width" : 27.499999999999972
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXStaticText",
+        "description" : "text",
+        "title" : null
+      },
+      "visualText" : "Buff",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "x" : 668,
+          "y" : 760.5,
+          "height" : 10.499999999999986,
+          "width" : 27.499999999999972
+        },
+        "text" : "Buff"
+      },
+      "id" : "14766323-C55B-4F39-9C75-4F994F84E751"
+    },
+    {
+      "confidence" : 1,
+      "accessibility" : {
+        "description" : "group",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false,
+        "role" : "AXGroup"
+      },
+      "interactions" : [
+        "right_click"
+      ],
+      "size" : {
+        "height" : 11.50000000000002,
+        "width" : 203.99999999999994
+      },
+      "id" : "DCD548C8-BC87-406E-866B-9431B528BDB6",
+      "semanticMeaning" : "AXGroup with text 'Awaiting BuffMcBigHuge's response'",
+      "type" : "AXGroup+OCR",
+      "visualText" : "Awaiting BuffMcBigHuge's response",
+      "isClickable" : false,
+      "position" : {
+        "x" : 667,
+        "y" : 780
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 203.99999999999994,
+          "x" : 667,
+          "height" : 11.50000000000002,
+          "y" : 780
+        },
+        "text" : "Awaiting BuffMcBigHuge's response",
+        "confidence" : 1
+      }
+    },
+    {
+      "position" : {
+        "x" : 265.5,
+        "y" : 782.5
+      },
+      "accessibility" : {
+        "title" : "Security",
+        "enabled" : true,
+        "role" : "AXList",
+        "description" : "content list",
+        "focused" : false
+      },
+      "type" : "AXList+OCR",
+      "id" : "A8F51988-BFF8-4D9E-8221-79EE06346824",
+      "confidence" : 0.79999999999999993,
+      "interactions" : [
+
+      ],
+      "visualText" : "¢>",
+      "ocr" : {
+        "boundingBox" : {
+          "x" : 265.5,
+          "y" : 782.5,
+          "width" : 7.9999999999999973,
+          "height" : 6.0000000000000187
+        },
+        "confidence" : 0.5,
+        "text" : "¢>"
+      },
+      "semanticMeaning" : "AXList with text '¢>'",
+      "size" : {
+        "width" : 7.9999999999999973,
+        "height" : 6.0000000000000187
+      },
+      "isClickable" : false
+    },
+    {
+      "confidence" : 1,
+      "visualText" : "Q Advanced Security",
+      "type" : "AXList+OCR",
+      "position" : {
+        "y" : 778,
+        "x" : 262
+      },
+      "id" : "09340E60-373B-4A93-8025-0C33E655EFE3",
+      "semanticMeaning" : "AXList with text 'Q Advanced Security'",
+      "size" : {
+        "height" : 15.999999999999988,
+        "width" : 145
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "width" : 145,
+          "y" : 778,
+          "x" : 262,
+          "height" : 15.999999999999988
+        },
+        "text" : "Q Advanced Security"
+      },
+      "accessibility" : {
+        "role" : "AXList",
+        "title" : "Security",
+        "focused" : false,
+        "description" : "content list",
+        "enabled" : true
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "text",
+        "title" : null
+      },
+      "position" : {
+        "y" : 767,
+        "x" : 972
+      },
+      "type" : "AXStaticText+OCR",
+      "id" : "95C2C20D-B690-4290-86B8-F1B2205B86F0",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "height" : 15.999999999999988,
+          "x" : 972,
+          "width" : 99,
+          "y" : 767
+        },
+        "text" : "Pending Invite LEI"
+      },
+      "confidence" : 1,
+      "semanticMeaning" : "AXStaticText with text 'Pending Invite LEI'",
+      "interactions" : [
+
+      ],
+      "size" : {
+        "width" : 99,
+        "height" : 15.999999999999988
+      },
+      "visualText" : "Pending Invite",
+      "isClickable" : false
+    },
+    {
+      "interactions" : [
+
+      ],
+      "visualText" : "Deploy keys",
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Deploy keys",
+        "boundingBox" : {
+          "y" : 812.5,
+          "width" : 76.5,
+          "x" : 287,
+          "height" : 12.999999999999977
+        }
+      },
+      "semanticMeaning" : "AXStaticText with text 'Deploy keys'",
+      "position" : {
+        "y" : 812.5,
+        "x" : 287
+      },
+      "size" : {
+        "height" : 12.999999999999977,
+        "width" : 76.5
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXStaticText",
+        "description" : "text",
+        "title" : null
+      },
+      "type" : "AXStaticText+OCR",
+      "confidence" : 1,
+      "id" : "28AA4C62-9384-42B6-82EA-0FFAD342AE8B",
+      "isClickable" : false
+    },
+    {
+      "position" : {
+        "y" : 831,
+        "x" : 668
+      },
+      "semanticMeaning" : "AXStaticText with text 'hitzelcruz'",
+      "id" : "1492CB00-0274-4356-BFC5-F888B4E82F6C",
+      "visualText" : "hitzelcruz",
+      "size" : {
+        "width" : 64.999999999999972,
+        "height" : 11.000000000000004
+      },
+      "confidence" : 0.79999999999999993,
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "accessibility" : {
+        "description" : "text",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXStaticText"
+      },
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 64.999999999999972,
+          "height" : 11.000000000000004,
+          "x" : 668,
+          "y" : 831
+        },
+        "text" : "hitzelcruz"
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "id" : "A182FD07-7C02-4262-A2AB-53367DA96516",
+      "visualText" : "Collaborator",
+      "accessibility" : {
+        "enabled" : true,
+        "description" : "text",
+        "focused" : false,
+        "title" : null,
+        "role" : "AXStaticText"
+      },
+      "confidence" : 1,
+      "ocr" : {
+        "text" : "Collaborator",
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 851,
+          "x" : 667.5,
+          "width" : 69,
+          "height" : 9.0000000000000284
+        }
+      },
+      "isClickable" : false,
+      "size" : {
+        "width" : 69,
+        "height" : 9.0000000000000284
+      },
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Collaborator'",
+      "position" : {
+        "x" : 667.5,
+        "y" : 851
+      }
+    },
+    {
+      "type" : "AXGroup+OCR",
+      "isClickable" : false,
+      "size" : {
+        "width" : 162,
+        "height" : 15.999999999999988
+      },
+      "confidence" : 1,
+      "id" : "46C68549-CBE2-4667-89CF-F2591E666422",
+      "position" : {
+        "x" : 262,
+        "y" : 842
+      },
+      "semanticMeaning" : "AXGroup with text 'O Secrets and variables'",
+      "visualText" : "O Secrets and variables",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXGroup",
+        "description" : "group",
+        "title" : null,
+        "focused" : false
+      },
+      "ocr" : {
+        "boundingBox" : {
+          "width" : 162,
+          "height" : 15.999999999999988,
+          "y" : 842,
+          "x" : 262
+        },
+        "text" : "O Secrets and variables",
+        "confidence" : 1
+      },
+      "interactions" : [
+        "right_click"
+      ]
+    },
+    {
+      "position" : {
+        "y" : 892.5,
+        "x" : 263
+      },
+      "type" : "AXHeading+OCR",
+      "ocr" : {
+        "confidence" : 1,
+        "boundingBox" : {
+          "y" : 892.5,
+          "x" : 263,
+          "width" : 69.999999999999986,
+          "height" : 11.999999999999943
+        },
+        "text" : "Integrations"
+      },
+      "semanticMeaning" : "AXHeading with text 'Integrations'",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXHeading",
+        "description" : "heading",
+        "title" : "Integrations"
+      },
+      "id" : "E11D8813-2AD6-4849-BB6B-A1190A83505A",
+      "confidence" : 1,
+      "visualText" : "Integrations",
+      "size" : {
+        "width" : 69.999999999999986,
+        "height" : 11.999999999999943
+      },
+      "isClickable" : false,
+      "interactions" : [
+
+      ]
+    },
+    {
+      "size" : {
+        "height" : 5.9999999999999254,
+        "width" : 13.000000000000002
+      },
+      "id" : "AB58DEA0-C231-4450-9268-BC8E962D1D45",
+      "position" : {
+        "y" : 922.5,
+        "x" : 263.5
+      },
+      "visualText" : "00",
+      "accessibility" : {
+        "title" : "Integrations",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXList",
+        "description" : "content list"
+      },
+      "ocr" : {
+        "text" : "00",
+        "boundingBox" : {
+          "width" : 13.000000000000002,
+          "y" : 922.5,
+          "height" : 5.9999999999999254,
+          "x" : 263.5
+        },
+        "confidence" : 0.5
+      },
+      "confidence" : 0.79999999999999993,
+      "type" : "AXList+OCR",
+      "isClickable" : false,
+      "semanticMeaning" : "AXList with text '00'",
+      "interactions" : [
+
+      ]
+    },
+    {
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "y" : 929.5,
+          "width" : 13.000000000000002,
+          "height" : 6.0000000000000187,
+          "x" : 263.5
+        },
+        "text" : "00"
+      },
+      "type" : "AXGroup+OCR",
+      "size" : {
+        "height" : 6.0000000000000187,
+        "width" : 13.000000000000002
+      },
+      "accessibility" : {
+        "role" : "AXGroup",
+        "description" : "group",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "id" : "3FE0AF45-A7CB-4C89-A4B5-A957B53E6649",
+      "isClickable" : false,
+      "confidence" : 0.79999999999999993,
+      "position" : {
+        "y" : 929.5,
+        "x" : 263.5
+      },
+      "semanticMeaning" : "AXGroup with text '00'",
+      "interactions" : [
+        "right_click"
+      ],
+      "visualText" : "00"
+    },
+    {
+      "position" : {
+        "x" : 883,
+        "y" : 916.5
+      },
+      "visualText" : " Previous",
+      "id" : "7A915D75-38CE-42EE-8E11-C546D48EAC02",
+      "size" : {
+        "width" : 74.500000000000071,
+        "height" : 10.499999999999986
+      },
+      "confidence" : 0.79999999999999993,
+      "semanticMeaning" : "AXStaticText with text '< Previous'",
+      "ocr" : {
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "x" : 883,
+          "height" : 10.499999999999986,
+          "width" : 74.500000000000071,
+          "y" : 916.5
+        },
+        "text" : "< Previous"
+      },
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "description" : "text",
+        "role" : "AXStaticText",
+        "enabled" : true
+      },
+      "interactions" : [
+
+      ],
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click text",
+      "size" : {
+        "width" : 48.499999999999943,
+        "height" : 9.999999999999968
+      },
+      "type" : "AXStaticText+OCR",
+      "semanticMeaning" : "AXStaticText with text 'Next >'",
+      "id" : "703BF1C8-1A54-4965-98C0-5E7880E7E318",
+      "visualText" : "Next ",
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "description" : "text",
+        "title" : null
+      },
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "Next >",
+        "boundingBox" : {
+          "x" : 984.5,
+          "width" : 48.499999999999943,
+          "height" : 9.999999999999968,
+          "y" : 917
+        }
+      },
+      "position" : {
+        "y" : 917,
+        "x" : 984.5
+      },
+      "confidence" : 1,
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "confidence" : 1,
+      "size" : {
+        "height" : 13.499999999999995,
+        "width" : 81.499999999999986
+      },
+      "semanticMeaning" : "AXStaticText with text 'GitHub Apps'",
+      "visualText" : "GitHub Apps",
+      "type" : "AXStaticText+OCR",
+      "position" : {
+        "x" : 286.5,
+        "y" : 923
+      },
+      "interactions" : [
+
+      ],
+      "id" : "38A8E999-602D-46D4-BC77-9369B13F530D",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXStaticText",
+        "title" : null,
+        "focused" : false,
+        "description" : "text"
+      },
+      "isClickable" : false,
+      "ocr" : {
+        "confidence" : 1,
+        "text" : "GitHub Apps",
+        "boundingBox" : {
+          "x" : 286.5,
+          "height" : 13.499999999999995,
+          "width" : 81.499999999999986,
+          "y" : 923
+        }
+      }
+    },
+    {
+      "size" : {
+        "width" : 116.49999999999999,
+        "height" : 11.000000000000004
+      },
+      "position" : {
+        "x" : 287,
+        "y" : 955
+      },
+      "id" : "66A19D4E-D778-4732-AAD0-957341E29F1E",
+      "type" : "AXStaticText+OCR",
+      "isClickable" : false,
+      "visualText" : "Email notifications",
+      "accessibility" : {
+        "role" : "AXStaticText",
+        "description" : "text",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "semanticMeaning" : "AXStaticText with text 'Email notif ications'",
+      "confidence" : 0.79999999999999993,
+      "ocr" : {
+        "text" : "Email notif ications",
+        "confidence" : 0.5,
+        "boundingBox" : {
+          "width" : 116.49999999999999,
+          "height" : 11.000000000000004,
+          "x" : 287,
+          "y" : 955
+        }
+      },
+      "interactions" : [
+
+      ]
+    },
+    {
+      "semanticMeaning" : "close button",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null,
+        "enabled" : true,
+        "description" : "close button"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 240,
+        "y" : 164
+      },
+      "actionHint" : "Click close button",
+      "type" : "AXButton",
+      "size" : {
+        "width" : 16,
+        "height" : 16
+      },
+      "confidence" : 0.69999999999999996,
+      "id" : "28C49A84-A6D3-455F-B5C3-CBF52403789C",
+      "isClickable" : true
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 260,
+        "y" : 164
+      },
+      "id" : "710D0792-6838-45F9-B22A-8A436C9146E7",
+      "actionHint" : "Click minimize button",
+      "semanticMeaning" : "minimize button",
+      "accessibility" : {
+        "description" : "minimize button",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : null
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 16,
+        "width" : 16
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "size" : {
+        "width" : 16,
+        "height" : 16
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click full screen button",
+      "isClickable" : true,
+      "semanticMeaning" : "full screen button",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "position" : {
+        "x" : 280,
+        "y" : 164
+      },
+      "id" : "FA49E8E2-16F8-43F5-8A13-517CA2B247CD",
+      "accessibility" : {
+        "role" : "AXButton",
+        "title" : null,
+        "focused" : false,
+        "description" : "full screen button",
+        "enabled" : true
+      }
+    },
+    {
+      "position" : {
+        "x" : 222,
+        "y" : 226
+      },
+      "id" : "F0BEED01-F3B3-416C-88C3-16D4DFE3D93F",
+      "semanticMeaning" : "scroll area",
+      "size" : {
+        "height" : 761,
+        "width" : 1231
+      },
+      "interactions" : [
+        "scroll",
+        "swipe"
+      ],
+      "accessibility" : {
+        "description" : "scroll area",
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "role" : "AXScrollArea"
+      },
+      "isClickable" : false,
+      "type" : "AXScrollArea",
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "actionHint" : "Click button",
+      "size" : {
+        "width" : 32,
+        "height" : 32
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "description" : "button",
+        "title" : "Open global navigation menu",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton"
+      },
+      "id" : "59576A8A-1D7D-4188-B170-70E78E770053",
+      "position" : {
+        "y" : 146,
+        "x" : 238
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "type" : "AXButton",
+      "semanticMeaning" : "button",
+      "size" : {
+        "height" : 32,
+        "width" : 260
+      },
+      "accessibility" : {
+        "focused" : false,
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "button",
+        "title" : "Type \/ to search"
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click button",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 146,
+        "x" : 868
+      },
+      "id" : "335AAD44-96FC-44D2-9DFC-D577308F0C08"
+    },
+    {
+      "type" : "AXPopUpButton",
+      "isClickable" : true,
+      "semanticMeaning" : "pop up button",
+      "position" : {
+        "x" : 1168,
+        "y" : 146
+      },
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "id" : "9E4E6E6F-6DA6-4A64-9C0B-9D22B1101F23",
+      "actionHint" : "Click pop up button",
+      "size" : {
+        "height" : 32,
+        "width" : 24
+      },
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "title" : "Open Copilot…",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXPopUpButton",
+        "description" : "pop up button"
+      }
+    },
+    {
+      "isClickable" : true,
+      "id" : "32825E17-8885-425E-A6CE-F85C893AC9A5",
+      "size" : {
+        "width" : 58,
+        "height" : 32
+      },
+      "accessibility" : {
+        "role" : "AXPopUpButton",
+        "title" : "Create something new",
+        "focused" : false,
+        "description" : "pop up button",
+        "enabled" : true
+      },
+      "type" : "AXPopUpButton",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "semanticMeaning" : "pop up button",
+      "actionHint" : "Click pop up button",
+      "position" : {
+        "y" : 146,
+        "x" : 1217
+      }
+    },
+    {
+      "semanticMeaning" : "pop up button",
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "dropdown"
+      ],
+      "actionHint" : "Click pop up button",
+      "type" : "AXPopUpButton",
+      "accessibility" : {
+        "title" : "Open user navigation menu",
+        "role" : "AXPopUpButton",
+        "focused" : false,
+        "enabled" : true,
+        "description" : "pop up button"
+      },
+      "id" : "C04F5B96-BEAB-4E05-B83C-01FD935CF535",
+      "position" : {
+        "x" : 1403,
+        "y" : 146
+      },
+      "size" : {
+        "width" : 34,
+        "height" : 32
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "id" : "2D79266F-1A1C-4DD1-9B4F-2DBABBBD32C6",
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "description" : "button",
+        "title" : "Dismiss this message",
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : true
+      },
+      "type" : "AXButton",
+      "actionHint" : "Click button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1409,
+        "y" : 175
+      },
+      "size" : {
+        "height" : 26,
+        "width" : 28
+      },
+      "isClickable" : true
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 296,
+        "height" : 32
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "title" : "Rules",
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "type" : "AXButton",
+      "position" : {
+        "y" : 467,
+        "x" : 254
+      },
+      "isClickable" : true,
+      "id" : "5C129191-CCB7-4871-BF48-EEF669D0047B",
+      "semanticMeaning" : "button"
+    },
+    {
+      "id" : "845778B9-934E-4C61-A4A7-693627727357",
+      "actionHint" : "Click button",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "size" : {
+        "height" : 32,
+        "width" : 296
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "position" : {
+        "x" : 254,
+        "y" : 499
+      },
+      "accessibility" : {
+        "title" : "Actions",
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button",
+        "role" : "AXButton"
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXButton",
+      "position" : {
+        "x" : 254,
+        "y" : 595
+      },
+      "size" : {
+        "width" : 296,
+        "height" : 32
+      },
+      "id" : "18A5F2C8-F02C-45D6-B18B-CE2469A1D046",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "title" : "Copilot",
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "isClickable" : true
+    },
+    {
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "accessibility" : {
+        "focused" : false,
+        "title" : "Secrets and variables",
+        "role" : "AXButton",
+        "description" : "button",
+        "enabled" : true
+      },
+      "id" : "EAD59AED-08D2-4B5E-BA89-A15312D84876",
+      "position" : {
+        "x" : 254,
+        "y" : 834
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button",
+      "size" : {
+        "width" : 296,
+        "height" : 32
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "semanticMeaning" : "checkbox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Click checkbox",
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXCheckBox",
+        "title" : "Select all",
+        "description" : "checkbox"
+      },
+      "size" : {
+        "height" : 22,
+        "width" : 91
+      },
+      "type" : "AXCheckBox",
+      "id" : "D937AEAE-FCF1-41F9-B65D-8F467CB1CE0E",
+      "position" : {
+        "y" : 630,
+        "x" : 590
+      },
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "checkbox",
+        "role" : "AXCheckBox",
+        "title" : "invitation Buff",
+        "enabled" : true,
+        "focused" : false
+      },
+      "position" : {
+        "x" : 590,
+        "y" : 766
+      },
+      "actionHint" : "Click checkbox",
+      "size" : {
+        "width" : 14,
+        "height" : 16
+      },
+      "id" : "E8C07A2B-C12B-4EF0-89E3-D442F5DDEE67",
+      "isClickable" : true,
+      "type" : "AXCheckBox",
+      "semanticMeaning" : "checkbox",
+      "interactions" : [
+        "click",
+        "toggle"
+      ]
+    },
+    {
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click button",
+      "semanticMeaning" : "button",
+      "id" : "BDDBA6C6-44F8-4B40-8DE3-B91469120073",
+      "size" : {
+        "width" : 18,
+        "height" : 17
+      },
+      "position" : {
+        "y" : 766,
+        "x" : 1053
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "enabled" : true,
+        "focused" : false,
+        "description" : "button",
+        "title" : "Copy invite link",
+        "role" : "AXButton"
+      }
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "focused" : false,
+        "title" : "cancel invitation for user to access this repository",
+        "description" : "button",
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "6668B4C2-D12F-4DFF-A7B7-BD382247403A",
+      "confidence" : 0.69999999999999996,
+      "type" : "AXButton",
+      "position" : {
+        "x" : 1283,
+        "y" : 760
+      },
+      "size" : {
+        "height" : 29,
+        "width" : 42
+      },
+      "semanticMeaning" : "button"
+    },
+    {
+      "type" : "AXCheckBox",
+      "size" : {
+        "width" : 14,
+        "height" : 16
+      },
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click checkbox",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXCheckBox",
+        "title" : "user hitzelcruz",
+        "description" : "checkbox",
+        "enabled" : true
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "position" : {
+        "x" : 590,
+        "y" : 837
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "checkbox",
+      "id" : "2E7E173F-1522-4148-9124-BF7E3946C145"
+    },
+    {
+      "actionHint" : "Click button",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "button",
+        "title" : "remove access to user from this repository",
+        "enabled" : true
+      },
+      "id" : "DADBB681-C788-472E-9255-9C33E4A356F1",
+      "position" : {
+        "y" : 831,
+        "x" : 1283
+      },
+      "size" : {
+        "width" : 42,
+        "height" : 29
+      },
+      "type" : "AXButton",
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "size" : {
+        "width" : 93,
+        "height" : 18
+      },
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "semanticMeaning" : "button",
+      "isClickable" : true,
+      "position" : {
+        "x" : 922,
+        "y" : 987
+      },
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "focused" : false,
+        "role" : "AXButton",
+        "title" : "Manage cookies"
+      },
+      "id" : "1631D330-7CC7-4649-AA2D-D1FE6F04DF09"
+    },
+    {
+      "isClickable" : true,
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "focused" : false,
+        "description" : "button",
+        "title" : "Do not share my personal information"
+      },
+      "size" : {
+        "width" : 213,
+        "height" : 18
+      },
+      "id" : "27F01130-E688-4BBC-8CDE-062DA7A9862E",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "position" : {
+        "y" : 987,
+        "x" : 1030
+      },
+      "actionHint" : "Click button",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button"
+    },
+    {
+      "actionHint" : "Click button",
+      "position" : {
+        "x" : 312,
+        "y" : 157
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "button",
+      "id" : "D59A42EB-FF95-4853-8BBB-C3A50DA5ED50",
+      "size" : {
+        "height" : 30,
+        "width" : 35.5
+      },
+      "isClickable" : true,
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "description" : "button",
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : null,
+        "focused" : false
+      }
+    },
+    {
+      "position" : {
+        "x" : 369,
+        "y" : 152
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "accessibility" : {
+        "description" : "button",
+        "title" : null,
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 40,
+        "width" : 40
+      },
+      "id" : "6324C5CC-F478-4406-9EE3-C71FE79C3CA3",
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "actionHint" : "Click button"
+    },
+    {
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 409,
+        "y" : 152
+      },
+      "actionHint" : "Click button",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "height" : 40,
+        "width" : 39
+      },
+      "id" : "8EB4749D-27E6-44AF-8A34-F6F33899B96D",
+      "isClickable" : true,
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "enabled" : false,
+        "description" : "button",
+        "role" : "AXButton"
+      }
+    },
+    {
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "6AD22930-746D-4788-AD73-2840FC74D831",
+      "accessibility" : {
+        "role" : "AXButton",
+        "description" : "button",
+        "title" : null,
+        "enabled" : true,
+        "focused" : false
+      },
+      "position" : {
+        "x" : 551,
+        "y" : 157
+      },
+      "isClickable" : true,
+      "actionHint" : "Click button",
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "size" : {
+        "width" : 31,
+        "height" : 30
+      },
+      "semanticMeaning" : "button"
+    },
+    {
+      "id" : "9D61C819-7406-4C3D-B6C3-0308E2F5403F",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton",
+      "accessibility" : {
+        "enabled" : true,
+        "role" : "AXButton",
+        "description" : "button",
+        "title" : "Page Menu",
+        "focused" : false
+      },
+      "confidence" : 0.69999999999999996,
+      "position" : {
+        "y" : 161,
+        "x" : 588
+      },
+      "semanticMeaning" : "button",
+      "size" : {
+        "width" : 30.5,
+        "height" : 23
+      },
+      "isClickable" : true,
+      "actionHint" : "Click button"
+    },
+    {
+      "size" : {
+        "height" : 24,
+        "width" : 24
+      },
+      "position" : {
+        "x" : 610,
+        "y" : 160
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "id" : "46329681-70A8-4E9B-B875-A7B1E6354CB8",
+      "isClickable" : true,
+      "actionHint" : "Click button",
+      "accessibility" : {
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "button",
+        "enabled" : true,
+        "title" : "Add page to Reading List"
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "position" : {
+        "x" : 794,
+        "y" : 167.5
+      },
+      "semanticMeaning" : "button",
+      "isClickable" : true,
+      "size" : {
+        "width" : 15,
+        "height" : 11
+      },
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true,
+        "title" : "secure site certificate"
+      },
+      "id" : "9DDBCCA4-8BD3-45DF-9AE4-8626D3491185",
+      "confidence" : 0.69999999999999996,
+      "actionHint" : "Click button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "type" : "AXButton"
+    },
+    {
+      "position" : {
+        "x" : 1062,
+        "y" : 161.5
+      },
+      "id" : "A634911C-8E58-4C67-928A-5192D60A7B84",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "accessibility" : {
+        "role" : "AXButton",
+        "focused" : false,
+        "enabled" : true,
+        "description" : "button",
+        "title" : "Reload this page"
+      },
+      "size" : {
+        "width" : 23.5,
+        "height" : 23
+      },
+      "isClickable" : true,
+      "actionHint" : "Click button",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "type" : "AXButton"
+    },
+    {
+      "id" : "460DEB65-2066-4E9A-ADD0-A6EE687F624C",
+      "accessibility" : {
+        "description" : "button",
+        "focused" : false,
+        "title" : null,
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "position" : {
+        "y" : 146,
+        "x" : 1332
+      },
+      "actionHint" : "Click button",
+      "isClickable" : true,
+      "size" : {
+        "width" : 37,
+        "height" : 52
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ]
+    },
+    {
+      "accessibility" : {
+        "description" : "button",
+        "enabled" : true,
+        "role" : "AXButton",
+        "title" : null,
+        "focused" : false
+      },
+      "id" : "264AA6BD-6397-4872-BF02-1DB3D2997D15",
+      "type" : "AXButton",
+      "actionHint" : "Click button",
+      "size" : {
+        "width" : 36,
+        "height" : 52
+      },
+      "isClickable" : true,
+      "semanticMeaning" : "button",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "y" : 146,
+        "x" : 1369
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "accessibility" : {
+        "role" : "AXButton",
+        "enabled" : true,
+        "focused" : false,
+        "title" : null,
+        "description" : "button"
+      },
+      "actionHint" : "Click button",
+      "type" : "AXButton",
+      "id" : "DB58A5CB-BCB2-48CD-AB31-1AE7FBDF6305",
+      "position" : {
+        "x" : 1372,
+        "y" : 157
+      },
+      "semanticMeaning" : "button",
+      "isClickable" : true,
+      "size" : {
+        "width" : 30,
+        "height" : 30
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "type" : "AXButton",
+      "actionHint" : "Click button",
+      "confidence" : 0.69999999999999996,
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "94E9818C-E7AE-4659-9452-C0D8797C1EA1",
+      "position" : {
+        "y" : 146,
+        "x" : 1405
+      },
+      "accessibility" : {
+        "title" : null,
+        "focused" : false,
+        "description" : "button",
+        "enabled" : true,
+        "role" : "AXButton"
+      },
+      "isClickable" : true,
+      "size" : {
+        "height" : 52,
+        "width" : 40
+      },
+      "semanticMeaning" : "button"
+    },
+    {
+      "id" : "ABF8D8C2-865F-4BD2-8C25-C9F47F9357E2",
+      "type" : "AXRadioButton",
+      "position" : {
+        "x" : 222,
+        "y" : 198
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "size" : {
+        "height" : 28,
+        "width" : 411
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "The Home Depot - Cart",
+        "description" : "tab",
+        "focused" : false,
+        "role" : "AXRadioButton"
+      },
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "tab",
+      "actionHint" : "Click tab"
+    },
+    {
+      "position" : {
+        "x" : 225,
+        "y" : 203.5
+      },
+      "confidence" : 0.69999999999999996,
+      "isClickable" : true,
+      "size" : {
+        "height" : 18,
+        "width" : 18
+      },
+      "accessibility" : {
+        "title" : "close tab",
+        "enabled" : true,
+        "description" : "button",
+        "role" : "AXButton",
+        "focused" : false
+      },
+      "actionHint" : "Click button",
+      "type" : "AXButton",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "id" : "D354582D-0C63-4517-9983-E31E1899C6C6",
+      "semanticMeaning" : "button"
+    },
+    {
+      "position" : {
+        "x" : 1042,
+        "y" : 198
+      },
+      "type" : "AXRadioButton",
+      "isClickable" : true,
+      "id" : "38C43B8A-971C-4D23-A8B9-A6BA6E428163",
+      "size" : {
+        "width" : 412,
+        "height" : 28
+      },
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "actionHint" : "Click tab",
+      "semanticMeaning" : "tab",
+      "accessibility" : {
+        "role" : "AXRadioButton",
+        "enabled" : true,
+        "description" : "tab",
+        "focused" : false,
+        "title" : "BuffMcBigHuge (Buff)"
+      },
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "size" : {
+        "height" : 18,
+        "width" : 18
+      },
+      "accessibility" : {
+        "enabled" : true,
+        "title" : "close tab",
+        "focused" : false,
+        "role" : "AXButton",
+        "description" : "button"
+      },
+      "isClickable" : true,
+      "id" : "E18DC4DE-36DD-4DE5-B0F7-C146DBDED649",
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "position" : {
+        "x" : 1046,
+        "y" : 203.5
+      },
+      "type" : "AXButton",
+      "confidence" : 0.69999999999999996,
+      "semanticMeaning" : "button",
+      "actionHint" : "Click button"
+    },
+    {
+      "type" : "AXRadioButton",
+      "position" : {
+        "y" : 198,
+        "x" : 631
+      },
+      "actionHint" : "Click tab",
+      "confidence" : 0.69999999999999996,
+      "accessibility" : {
+        "title" : "Manage access",
+        "enabled" : true,
+        "description" : "tab",
+        "focused" : false,
+        "role" : "AXRadioButton"
+      },
+      "size" : {
+        "height" : 28,
+        "width" : 412
+      },
+      "isClickable" : true,
+      "interactions" : [
+        "click",
+        "toggle"
+      ],
+      "semanticMeaning" : "tab",
+      "id" : "507787A1-E57A-491F-8A21-0B4B4043CE91"
+    },
+    {
+      "position" : {
+        "x" : 635,
+        "y" : 203.5
+      },
+      "interactions" : [
+        "click",
+        "double_click"
+      ],
+      "semanticMeaning" : "button",
+      "accessibility" : {
+        "description" : "button",
+        "title" : "close tab",
+        "focused" : false,
+        "role" : "AXButton",
+        "enabled" : true
+      },
+      "actionHint" : "Click button",
+      "id" : "3F059749-DB9B-4ABA-8BF6-5DE953E78F52",
+      "size" : {
+        "width" : 18,
+        "height" : 18
+      },
+      "type" : "AXButton",
+      "isClickable" : true,
+      "confidence" : 0.69999999999999996
+    },
+    {
+      "actionHint" : "Click Apple",
+      "confidence" : 0.94999999999999996,
+      "size" : {
+        "width" : 34,
+        "height" : 38
+      },
+      "interactions" : [
+        "click"
+      ],
+      "isClickable" : true,
+      "id" : "CD4BD52B-8B3E-4B80-B564-08E0D45A5A5E",
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: Apple",
+      "visualText" : "Apple",
+      "position" : {
+        "y" : 0,
+        "x" : 10
+      }
+    },
+    {
+      "actionHint" : "Click Safari",
+      "semanticMeaning" : "Menu bar item: Safari",
+      "position" : {
+        "x" : 44,
+        "y" : 0
+      },
+      "isClickable" : true,
+      "size" : {
+        "height" : 38,
+        "width" : 59
+      },
+      "visualText" : "Safari",
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.94999999999999996,
+      "id" : "C83EE8D1-459C-4169-91AE-3F2C648F9ACD",
+      "type" : "appMenu"
+    },
+    {
+      "isClickable" : true,
+      "type" : "appMenu",
+      "position" : {
+        "y" : 0,
+        "x" : 103
+      },
+      "interactions" : [
+        "click"
+      ],
+      "id" : "D39A6C9E-6212-4359-857A-C7BD3C7EDF3E",
+      "size" : {
+        "height" : 38,
+        "width" : 42
+      },
+      "semanticMeaning" : "Menu bar item: File",
+      "visualText" : "File",
+      "actionHint" : "Click File",
+      "confidence" : 0.94999999999999996
+    },
+    {
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "height" : 38,
+        "width" : 44
+      },
+      "visualText" : "Edit",
+      "actionHint" : "Click Edit",
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Edit",
+      "type" : "appMenu",
+      "isClickable" : true,
+      "id" : "2D1659F1-5976-4BAF-A224-8095954AE48F",
+      "position" : {
+        "x" : 145,
+        "y" : 0
+      }
+    },
+    {
+      "confidence" : 0.94999999999999996,
+      "isClickable" : true,
+      "interactions" : [
+        "click"
+      ],
+      "id" : "F795ACDB-276E-459C-83B1-D3322BB76652",
+      "size" : {
+        "width" : 50,
+        "height" : 38
+      },
+      "visualText" : "View",
+      "actionHint" : "Click View",
+      "type" : "appMenu",
+      "semanticMeaning" : "Menu bar item: View",
+      "position" : {
+        "x" : 189,
+        "y" : 0
+      }
+    },
+    {
+      "isClickable" : true,
+      "semanticMeaning" : "Menu bar item: History",
+      "id" : "34F6F9E0-45A9-4DAC-86E5-7AD335D5FB37",
+      "type" : "appMenu",
+      "position" : {
+        "y" : 0,
+        "x" : 239
+      },
+      "visualText" : "History",
+      "confidence" : 0.94999999999999996,
+      "size" : {
+        "width" : 64,
+        "height" : 38
+      },
+      "actionHint" : "Click History",
+      "interactions" : [
+        "click"
+      ]
+    },
+    {
+      "isClickable" : true,
+      "type" : "appMenu",
+      "interactions" : [
+        "click"
+      ],
+      "size" : {
+        "width" : 88,
+        "height" : 38
+      },
+      "semanticMeaning" : "Menu bar item: Bookmarks",
+      "position" : {
+        "y" : 0,
+        "x" : 303
+      },
+      "id" : "2047E76B-51A6-492A-ABA2-A1D5678754F4",
+      "visualText" : "Bookmarks",
+      "actionHint" : "Click Bookmarks",
+      "confidence" : 0.94999999999999996
+    },
+    {
+      "isClickable" : true,
+      "actionHint" : "Click Develop",
+      "id" : "B05008F2-AA9B-4A2D-8206-88CD860AD54E",
+      "semanticMeaning" : "Menu bar item: Develop",
+      "interactions" : [
+        "click"
+      ],
+      "confidence" : 0.94999999999999996,
+      "visualText" : "Develop",
+      "type" : "appMenu",
+      "position" : {
+        "x" : 391,
+        "y" : 0
+      },
+      "size" : {
+        "height" : 38,
+        "width" : 70
+      }
+    },
+    {
+      "isClickable" : true,
+      "position" : {
+        "x" : 461,
+        "y" : 0
+      },
+      "visualText" : "Window",
+      "id" : "263981F9-C2CB-441B-96A3-A650BEDB017E",
+      "interactions" : [
+        "click"
+      ],
+      "type" : "appMenu",
+      "size" : {
+        "width" : 69,
+        "height" : 38
+      },
+      "confidence" : 0.94999999999999996,
+      "semanticMeaning" : "Menu bar item: Window",
+      "actionHint" : "Click Window"
+    },
+    {
+      "id" : "CFFF00DB-8426-44AC-B7E6-F92000C6C239",
+      "actionHint" : "Click Help",
+      "size" : {
+        "height" : 38,
+        "width" : 48
+      },
+      "semanticMeaning" : "Menu bar item: Help",
+      "visualText" : "Help",
+      "type" : "appMenu",
+      "isClickable" : true,
+      "confidence" : 0.94999999999999996,
+      "interactions" : [
+        "click"
+      ],
+      "position" : {
+        "x" : 530,
+        "y" : 0
+      }
+    }
+  ]
+}

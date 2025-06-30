@@ -473,8 +473,10 @@ def main():
         print(f"\n✅ {app_name} test completed successfully!")
         
         if files_generated:
+            ui_inspector_dir = os.path.dirname(os.path.dirname(__file__))
+            output_files_dir = os.path.join(ui_inspector_dir, 'output')
             print("\n📁 All output files are available in the main output directory:")
-            print("   /Users/richardshaw/augment/src/ui_inspector/output/")
+            print(f"   {os.path.abspath(output_files_dir)}")
             print("\n📋 File types generated:")
             print("• Raw JSON: Complete data with all accessibility/OCR information")
             print("• Cleaned JSON: Simplified data with essential element information")

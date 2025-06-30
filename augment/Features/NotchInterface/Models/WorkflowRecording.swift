@@ -307,7 +307,7 @@ class WorkflowRecordingManager: ObservableObject {
     // Add logging method
     private func logError(_ message: String) {
         // Create crash log file if it doesn't exist
-        let crashLogPath = "/Users/richardshaw/augment/src/debug_output/swift_crash_logs.txt"
+        let crashLogPath = AppConstants.Paths.swiftCrashLog
         let timestamp = DateFormatter().string(from: Date())
         let logEntry = "[\(timestamp)] WORKFLOW_RECORDER_ERROR: \(message)\n"
         
