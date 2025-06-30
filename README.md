@@ -1,10 +1,8 @@
-# 🚀 Augment - Revolutionary Computer Use AI System
+# 🔮 Nebula (codename: augment) - Computer-use AI agent
 
-**Cost-effective, precise, and powerful computer automation using structured UI understanding instead of expensive screenshots.**
+**Nearly zero RAM, CPU, or cost. New capability for humankind that is currently cost-prohibitive**
 
 ---
-
-## 🚀 **NEW DEVELOPER? START HERE!**
 
 ### **📋 Quick Setup**
 
@@ -13,8 +11,6 @@ git clone <this-repository>
 cd augment
 make install-deps && make augment
 ```
-
-The app should build and launch automatically. For more details and troubleshooting, see the guide below.
 
 <details>
 <summary>📖 Detailed Setup Guide & Troubleshooting</summary>
