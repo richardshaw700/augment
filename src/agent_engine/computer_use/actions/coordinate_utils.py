@@ -19,7 +19,14 @@ class CoordinateUtils:
         
         Returns center point coordinates for optimal clicking accuracy.
         """
+        import pyautogui
+        from datetime import datetime
+        
         grid_position = grid_position.strip()
+        
+        # Get screen dimensions for aspect ratio calculation
+        screen_width, screen_height = pyautogui.size()
+        screen_aspect = screen_width / screen_height
         
         # Handle the coordinate format: X:Y where X and Y are percentages
         if ":" in grid_position:
@@ -32,12 +39,44 @@ class CoordinateUtils:
                 window_width = window_frame.get('width', 1440)
                 window_height = window_frame.get('height', 900)
                 
+                # Calculate window aspect ratio
+                window_aspect = window_width / window_height
+                
                 # Convert percentage coordinates to screen coordinates
                 # X and Y are percentages of the window dimensions
-                x = window_x + (x_percent * window_width / 100)
-                y = window_y + (y_percent * window_height / 100)
+                x_pixels = x_percent * window_width / 100
+                y_pixels = y_percent * window_height / 100
+                x = window_x + x_pixels
+                y = window_y + y_pixels
                 
-                print(f"🎯 Coordinate conversion: {grid_position} -> window({window_x},{window_y},{window_width}x{window_height}) -> screen({int(x)},{int(y)})")
+                # Comprehensive debug logging
+                debug_info = f"""
+🎯 COORDINATE CONVERSION DEBUG - {datetime.now().strftime('%H:%M:%S.%f')[:-3]}
+==================================================================
+Input Grid Position: {grid_position} ({x_percent}% width, {y_percent}% height)
+Window Frame: x={window_x}, y={window_y}, width={window_width}, height={window_height}
+Window Offset: ({window_x}, {window_y})
+Window Aspect Ratio: {window_aspect:.3f} ({window_width}x{window_height})
+Screen Dimensions: {screen_width}x{screen_height}
+Screen Aspect Ratio: {screen_aspect:.3f}
+Calculations:
+  x_pixels = {x_percent}% * {window_width} / 100 = {x_pixels:.1f}px
+  y_pixels = {y_percent}% * {window_height} / 100 = {y_pixels:.1f}px
+  final_x = {window_x} + {x_pixels:.1f} = {x:.1f}
+  final_y = {window_y} + {y_pixels:.1f} = {y:.1f}
+Final Screen Coordinates: ({int(x)}, {int(y)})
+Window Bounds Check: x in [{window_x}, {window_x + window_width}], y in [{window_y}, {window_y + window_height}]
+Click Inside Window: {window_x <= x <= window_x + window_width and window_y <= y <= window_y + window_height}
+==================================================================
+"""
+                print(debug_info)
+                
+                # Also write to debug file
+                try:
+                    with open("src/debug_output/swift_frontend.txt", "a") as f:
+                        f.write(debug_info + "\n")
+                except Exception as e:
+                    print(f"⚠️ Failed to write coordinate debug to file: {e}")
                 
                 return (int(x), int(y))
             except ValueError:

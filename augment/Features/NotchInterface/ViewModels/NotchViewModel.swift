@@ -168,8 +168,6 @@ class NotchViewModel: ObservableObject {
         window.makeKeyAndOrderFront(nil)
     }
     
-
-    
     private func setupGlobalMouseTracking() {
         mouseMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.mouseMoved]) { [weak self] event in
             self?.handleGlobalMouseMove(event)
@@ -237,8 +235,6 @@ class NotchViewModel: ObservableObject {
             animateHoverOut()
         }
     }
-    
-
     
     // MARK: - Animation Methods
     private func animateHoverIn() {
@@ -347,7 +343,15 @@ struct GPTResponseParser {
         }
         
         if gptService.isRunning {
-            return parseGPTResponse(from: gptService.output) ?? "Thinking..."
+            let parsedText = parseGPTResponse(from: gptService.output) ?? "Thinking..."
+            
+            // Force UI update on main thread when new content is parsed
+            DispatchQueue.main.async {
+                // Trigger any necessary UI updates
+                NotificationCenter.default.post(name: NSNotification.Name("GPTResponseUpdated"), object: parsedText)
+            }
+            
+            return parsedText
         } else {
             return getStatusText(from: gptService)
         }
@@ -377,30 +381,99 @@ struct GPTResponseParser {
     
     private static func parseGPTResponse(from output: String) -> String? {
         let lines = output.components(separatedBy: .newlines)
-        let responseLines = lines.filter { $0.contains("🤖 GPT Response:") || $0.contains("🤖 OS Response:") }
         
-        guard let lastResponseLine = responseLines.last else { return nil }
+        // Find all "RESPONSE FROM LLM:" sections and get the last one
+        var allResponseSections: [[String]] = []
+        var currentResponseLines: [String] = []
+        var foundResponseMarker = false
         
-        let jsonStart: String.Index?
-        let jsonEnd: String.Index?
+        for line in lines {
+            if line.contains("RESPONSE FROM LLM:") {
+                // If we were already collecting a response, save it
+                if foundResponseMarker && !currentResponseLines.isEmpty {
+                    allResponseSections.append(currentResponseLines)
+                }
+                // Start collecting a new response
+                foundResponseMarker = true
+                currentResponseLines = []
+                continue
+            }
+            
+            // Skip separator lines
+            if line.trimmingCharacters(in: .whitespacesAndNewlines).starts(with: "==") {
+                if foundResponseMarker && !currentResponseLines.isEmpty {
+                    // End of current response section, save it
+                    allResponseSections.append(currentResponseLines)
+                    currentResponseLines = []
+                    foundResponseMarker = false
+                }
+                continue
+            }
+            
+            // Collect JSON lines after finding the response marker
+            if foundResponseMarker && !line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                currentResponseLines.append(line)
+            }
+        }
         
-        if lastResponseLine.contains("🤖 GPT Response:") {
-            jsonStart = lastResponseLine.range(of: "{")?.lowerBound
-            jsonEnd = lastResponseLine.range(of: "}", options: .backwards)?.upperBound
-        } else if lastResponseLine.contains("🤖 OS Response:") {
-            jsonStart = lastResponseLine.range(of: "{")?.lowerBound
-            jsonEnd = lastResponseLine.range(of: "}", options: .backwards)?.upperBound
-        } else {
+        // Add the last response if we were still collecting
+        if foundResponseMarker && !currentResponseLines.isEmpty {
+            allResponseSections.append(currentResponseLines)
+        }
+        
+        // Use the last (most recent) response
+        guard let lastResponseLines = allResponseSections.last, !lastResponseLines.isEmpty else {
+            // If no new format found, try the old format as fallback
+            let oldFormatLines = lines.filter { $0.contains("🤖 GPT Response:") || $0.contains("🤖 OS Response:") }
+            if let lastOldLine = oldFormatLines.last {
+                return parseOldFormatResponse(from: lastOldLine)
+            }
             return nil
         }
+        
+        // Parse the JSON from the most recent response
+        let jsonString = lastResponseLines.joined(separator: "")
+        
+        do {
+            guard let jsonData = jsonString.data(using: .utf8),
+                  let json = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
+                return nil
+            }
+            
+            // First try to use reasoning field (clean text)
+            if let reasoning = json["reasoning"] as? String,
+               !reasoning.isEmpty {
+                // Log successful parsing for debugging
+                FileLogger.shared.logDebug("Successfully parsed reasoning: \(String(reasoning.prefix(50)))...")
+                return reasoning
+            }
+            
+            // Fallback to raw_llm_response if reasoning is missing
+            if let rawResponse = json["raw_llm_response"] as? String,
+               !rawResponse.isEmpty {
+                // Log fallback usage for debugging
+                FileLogger.shared.logDebug("Using raw_llm_response fallback: \(String(rawResponse.prefix(50)))...")
+                return rawResponse
+            }
+            
+            return nil
+        } catch {
+            FileLogger.shared.logError("JSON parsing error: \(error.localizedDescription), JSON: \(jsonString)")
+            return nil
+        }
+    }
+    
+    private static func parseOldFormatResponse(from line: String) -> String? {
+        let jsonStart = line.range(of: "{")?.lowerBound
+        let jsonEnd = line.range(of: "}", options: .backwards)?.upperBound
         
         guard let start = jsonStart,
               let end = jsonEnd,
-              end <= lastResponseLine.endIndex else {
+              end <= line.endIndex else {
             return nil
         }
         
-        let jsonString = String(lastResponseLine[start..<end])
+        let jsonString = String(line[start..<end])
         
         do {
             guard let jsonData = jsonString.data(using: .utf8),
@@ -411,7 +484,6 @@ struct GPTResponseParser {
             }
             return reasoning
         } catch {
-            FileLogger.shared.logError("JSON parsing error: \(error.localizedDescription), JSON: \(jsonString)")
             return nil
         }
     }

@@ -169,7 +169,6 @@ extension CoordinateSystem {
         
         for item in menuItems {
             guard let title = item["title"] as? String,
-                  let menuBarPosition = item["menuBarPosition"] as? String,
                   let actualPosition = item["actualPosition"] as? [String: Double],
                   let actualSize = item["actualSize"] as? [String: Double],
                   let x = actualPosition["x"],
@@ -179,6 +178,8 @@ extension CoordinateSystem {
                 print("⚠️ Skipping menu item '\(item["title"] ?? "unknown")' - missing real position/size data")
                 continue
             }
+            
+            let index = item["index"] as? Int ?? 0
             
             let type = item["type"] as? String ?? "menu"
             let elementType = (type == "systemMenu") ? "systemMenu" : "appMenu"
@@ -200,7 +201,7 @@ extension CoordinateSystem {
                 context: UIElement.ElementContext(
                     purpose: isSystemWide ? "System Control" : "App Navigation",
                     region: "MenuBar",
-                    navigationPath: "MenuBar[\(menuBarPosition)] > \(title)",
+                    navigationPath: "MenuBar[\(index)] > \(title)",
                     availableActions: ["click"]
                 )
             )

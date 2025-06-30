@@ -154,6 +154,12 @@ class CompressionService {
         // Get element text using TextExtractor
         let displayText = TextExtractor.extractDisplayText(from: element)
         
+        // Filter out generic buttons with unhelpful text
+        let lowercaseText = displayText.lowercased()
+        if elementType == "btn" && (lowercaseText == "button" || lowercaseText == "radio button" || lowercaseText == "checkbox" || lowercaseText == "element" || displayText.isEmpty) {
+            return "" // Skip generic buttons
+        }
+        
         // Format: type:text|widthxheight@x:y
         // Example: txt:JD|21x13@7:50 or menu:Apple|60x24@0:0
         return String(format: "%@:%@|%.0fx%.0f@%@", 

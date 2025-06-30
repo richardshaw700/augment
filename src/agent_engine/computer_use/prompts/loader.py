@@ -58,7 +58,7 @@ class PromptLoader:
             logger.error(f"Error loading dynamic template {file_path}: {e}")
             return f"[ERROR LOADING: {template_name}]"
     
-    def load_system_prompt(self, available_applications: str = "", dynamic_prompt: str = "") -> str:
+    def load_system_prompt(self, available_applications: str = "", dynamic_prompt: str = "", task_context: str = "", conversation_history: str = "", ui_state: str = "", window_height_calc: str = "600") -> str:
         """Load and format the main system prompt"""
         system_template = self._load_file("system.txt")
         action_guide = self._load_file("action_guide.txt")
@@ -68,12 +68,16 @@ class PromptLoader:
         
         # Format the system prompt with components
         return system_template.format(
+            task_context=task_context,
             available_applications=available_applications,
             action_guide=action_guide,
             coordinate_guide=coordinate_guide,
+            ui_state=ui_state,
             goal_evaluation=goal_evaluation,
             response_format=response_format,
-            dynamic_prompt=dynamic_prompt
+            conversation_history=conversation_history,
+            dynamic_prompt=dynamic_prompt,
+            windowHeight75Calc=window_height_calc
         )
     
     def load_dynamic_prompt(self, template_name: str, **variables) -> str:

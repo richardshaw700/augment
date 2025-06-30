@@ -68,25 +68,26 @@ class SessionMonitor:
         
         return TaskSession(task=task, max_iterations=max_iterations)
     
-    def process_result(self, session: TaskSession, decision: Dict[str, Any], result: Any) -> TaskSession:
+    def process_result(self, session: TaskSession, decision: Dict[str, Any], result: Any, raw_llm_response: str = None) -> TaskSession:
         """Process action result and update session"""
         # Update session
         session.iteration += 1
         session.results.append({
             "iteration": session.iteration,
             "action": decision,
-            "result": result
+            "result": result,
+            "raw_llm_response": raw_llm_response  # Include raw LLM response for Swift frontend
         })
         
-        # Build task message for logging using centralized orchestrator
-        task_message = self.prompt_orchestrator.build_task_message(session.task, session.iteration)
+        # Build simple task description for logging
+        task_description = f"Task: {session.task} (Iteration {session.iteration})"
         
-        # Log iteration
+        # Log iteration with raw LLM response instead of parsed JSON
         self.logger.log_iteration(
             iteration=session.iteration,
-            user_message=task_message,
+            user_message=task_description,
             system_prompt="[Dynamic System Prompt - See prompt_history.txt for full content]",
-            llm_response=json.dumps(decision),
+            llm_response=raw_llm_response or json.dumps(decision),  # Use raw response if available
             action_data=decision,
             action_result=result,
             ui_state=session.current_ui_state
@@ -108,7 +109,9 @@ class SessionMonitor:
                 return session
         
         # Update conversation using centralized orchestrator
-        self.conversation.add_user_message(task_message)
+        # Task context is now in system prompt, so just add simple user prompt
+        user_prompt = "Please proceed with the next action." if session.iteration > 1 else "Please start by inspecting the current UI state."
+        self.conversation.add_user_message(user_prompt)
         self.conversation.add_assistant_message(json.dumps(decision))
         
         # Build context message using centralized orchestrator

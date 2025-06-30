@@ -89,7 +89,7 @@ class ActionSequences:
             
             return ActionResult(
                 success=True,
-                output=f"COMPLETE SEQUENCE EXECUTED: {combined_output} - Navigation initiated, no further action needed",
+                output=f"Sequence executed: {combined_output} - Navigation initiated",
                 execution_time=total_time
             )
             

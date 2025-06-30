@@ -63,6 +63,25 @@ class UIActionExecutor:
                     # Store UI state for smart focus detection
                     self._last_ui_state = ui_data
                     
+                    # Debug log the cached UI state info
+                    from datetime import datetime
+                    active_app = ui_data.get("systemContext", {}).get("activeApplication", {}).get("name", "Unknown")
+                    window_frame = ui_data.get("window", {}).get("frame", {})
+                    cache_debug = f"""
+💾 UI STATE CACHED - {datetime.now().strftime('%H:%M:%S.%f')[:-3]}
+==================================================================
+Active Application: {active_app}
+Window Frame Cached: {window_frame}
+Will be used for future coordinate conversions until next ui_inspect
+==================================================================
+"""
+                    print(cache_debug)
+                    try:
+                        with open("src/debug_output/swift_frontend.txt", "a") as f:
+                            f.write(cache_debug + "\n")
+                    except Exception as e:
+                        print(f"⚠️ Failed to write cache debug to file: {e}")
+                    
                     return ActionResult(
                         success=True,
                         output="UI state captured",
@@ -132,8 +151,44 @@ class UIActionExecutor:
                 print(f"📍 Current UI elements: {compressed[:200]}...")
                 # Still proceed with click but warn about potential coordinate drift
         
+        # Log detailed click execution info
+        from datetime import datetime
+        active_app = ui_state.get("systemContext", {}).get("activeApplication", {}).get("name", "Unknown")
+        click_debug = f"""
+🖱️ CLICK EXECUTION DEBUG - {datetime.now().strftime('%H:%M:%S.%f')[:-3]}
+==================================================================
+Target Grid Position: {grid_position}
+Active Application: {active_app}
+Window Frame Being Used: {window_frame}
+UI State Source: {'Fresh UI Inspect' if not hasattr(self, '_last_ui_state') or not self._last_ui_state else 'Cached UI State'}
+==================================================================
+"""
+        print(click_debug)
+        
+        # Write to debug file
+        try:
+            with open("src/debug_output/swift_frontend.txt", "a") as f:
+                f.write(click_debug + "\n")
+        except Exception as e:
+            print(f"⚠️ Failed to write click debug to file: {e}")
+        
         # Translate grid position to screen coordinates
         x, y = CoordinateUtils.grid_to_coordinates(grid_position, window_frame)
+        
+        # Log the actual click being performed
+        click_result_debug = f"""
+🖱️ EXECUTING CLICK - {datetime.now().strftime('%H:%M:%S.%f')[:-3]}
+==================================================================
+About to click at screen coordinates: ({x}, {y})
+pyautogui.click({x}, {y})
+==================================================================
+"""
+        print(click_result_debug)
+        try:
+            with open("src/debug_output/swift_frontend.txt", "a") as f:
+                f.write(click_result_debug + "\n")
+        except Exception as e:
+            print(f"⚠️ Failed to write click result debug to file: {e}")
         
         # Perform click
         pyautogui.click(x, y)

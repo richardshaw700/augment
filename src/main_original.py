@@ -188,7 +188,7 @@ class AugmentController:
     Main controller that coordinates between UI inspection, GPT reasoning, and action execution
     """
     
-    def __init__(self, debug: bool = DEBUG, max_iterations: int = 20):
+    def __init__(self, debug: bool = DEBUG, max_iterations: int = 100):
         self.debug = debug
         self.max_iterations = max_iterations
         
@@ -848,7 +848,7 @@ async def main():
     parser = argparse.ArgumentParser(description="Augment - AI Computer Control System")
     parser.add_argument("--debug", action="store_true", help="Enable debug mode")
     parser.add_argument("--verbose", action="store_true", help="Enable verbose mode")
-    parser.add_argument("--max-iterations", type=int, default=20, help="Maximum iterations per task")
+    parser.add_argument("--max-iterations", type=int, default=100, help="Maximum iterations per task")
     parser.add_argument("--task", type=str, help="Execute a single task and exit")
     parser.add_argument("--batch", type=str, help="Execute tasks from JSON file")
     parser.add_argument("--list-blueprints", action="store_true", help="List available action blueprints and exit")

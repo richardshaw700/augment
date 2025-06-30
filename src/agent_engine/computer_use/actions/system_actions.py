@@ -67,22 +67,32 @@ class SystemActionExecutor:
             output=f"Waited {seconds} seconds"
         )
     
-    async def execute_scroll(self, direction: str, amount: int) -> ActionResult:
-        """Execute a scroll action"""
+    async def execute_scroll(self, direction: str, amount) -> ActionResult:
+        """Execute a scroll action - handles both int and float amounts"""
         # Use the ActionExecutor's scroll method if available
         if self.action_executor and hasattr(self.action_executor, 'execute_scroll'):
             return await self.action_executor.execute_scroll(direction, amount)
         
         # Fallback basic scroll implementation
         try:
+            # Convert amount to int, handling both int and float inputs
+            # For pixel-based scrolling, we scale down large values
+            if isinstance(amount, (int, float)):
+                if amount > 50:  # Large pixel values - scale down for scroll clicks
+                    scroll_clicks = max(1, int(amount / 100))  # 1 click per 100 pixels
+                else:
+                    scroll_clicks = max(1, int(amount))  # Small values - ensure at least 1 click
+            else:
+                scroll_clicks = 3  # Default fallback
+            
             if direction.lower() == "down":
-                pyautogui.scroll(-amount)
+                pyautogui.scroll(-scroll_clicks)
             elif direction.lower() == "up":
-                pyautogui.scroll(amount)
+                pyautogui.scroll(scroll_clicks)
             elif direction.lower() == "left":
-                pyautogui.hscroll(-amount)
+                pyautogui.hscroll(-scroll_clicks)
             elif direction.lower() == "right":
-                pyautogui.hscroll(amount)
+                pyautogui.hscroll(scroll_clicks)
             else:
                 return ActionResult(
                     success=False,
@@ -92,7 +102,7 @@ class SystemActionExecutor:
             
             return ActionResult(
                 success=True,
-                output=f"Scrolled {direction} by {amount}"
+                output=f"Scrolled {direction} by {amount} ({scroll_clicks} clicks)"
             )
         except Exception as e:
             return ActionResult(

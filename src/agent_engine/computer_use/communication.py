@@ -29,14 +29,14 @@ class LLMCommunicator:
         communicator.prompt_history = core.prompt_history
         return communicator
     
-    async def get_decision(self, user_message: str, ui_state: Optional[Dict] = None) -> str:
+    async def get_decision(self, task: str, iteration: int, ui_state: Optional[Dict] = None) -> str:
         """Get LLM decision with message building and context injection"""
         model_display_name = f"{self.llm_info['provider']} {self.llm_info['model']}"
         start_time = self.performance.start_operation(model_display_name)
         
         try:
             # Build messages
-            messages = self._build_messages(user_message, ui_state)
+            messages = self._build_messages(task, iteration, ui_state)
             
             # Get LLM response
             llm_response = await self.llm_adapter.chat_completion(
@@ -56,7 +56,7 @@ class LLMCommunicator:
             
         except Exception as e:
             # Log the API error with the prompt that caused it
-            messages = self._build_messages(user_message, ui_state)
+            messages = self._build_messages(task, iteration, ui_state)
             self.prompt_history.log_api_error(messages, str(e))
             
             self.performance.end_operation(model_display_name, start_time, f"Error: {str(e)}")
@@ -64,32 +64,27 @@ class LLMCommunicator:
     
     async def get_next_decision(self, session) -> Dict[str, Any]:
         """Get next decision for a session"""
-        task_message = self._build_task_message(session)
-        
         # Inject context guidance
         self.context_manager.inject_messages_guidance_for_task(session.task, session.current_ui_state)
         
         # Get LLM response
-        llm_response = await self.get_decision(task_message, session.current_ui_state)
+        llm_response = await self.get_decision(session.task, session.iteration, session.current_ui_state)
         print(f"🤖 Agent Response: {llm_response}")
         
         # Parse response
         return self._parse_llm_response(llm_response)
     
-    def _build_messages(self, user_message: str, ui_state: Optional[Dict] = None) -> List[Dict[str, str]]:
+    def _build_messages(self, task: str, iteration: int, ui_state: Optional[Dict] = None) -> List[Dict[str, str]]:
         """Build message list for LLM using centralized orchestrator"""
         return self.prompt_orchestrator.build_complete_messages(
-            task_message=user_message,
+            task=task,
+            iteration=iteration,
             conversation_history=self.conversation.get_history(),
             ui_state=ui_state,
             available_apps=self.core.available_apps,
             ui_formatter=self.ui_formatter,
             context_manager=self.context_manager
         )
-    
-    def _build_task_message(self, session) -> str:
-        """Build task message using centralized orchestrator"""
-        return self.prompt_orchestrator.build_task_message(session.task, session.iteration)
     
     def _parse_llm_response(self, llm_response: str) -> Dict[str, Any]:
         """Parse LLM response using centralized orchestrator"""

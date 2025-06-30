@@ -31,7 +31,7 @@ class UIFormatter:
             compressed = ui_state["compressedOutput"]
             
             # Simply return the compressed output with a brief explanation
-            formatted_ui = f"UI Elements (text inputs ending with [FOCUSED] are ready for typing, [UNFOCUSED] must be clicked first):\n{compressed}"
+            formatted_ui = f"{compressed}"
             
             return formatted_ui
         

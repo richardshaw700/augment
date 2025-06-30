@@ -89,16 +89,32 @@ class ChatViewModel: ObservableObject {
         
         do {
             guard let data = response.data(using: .utf8),
-                  let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let reasoning = jsonObject["reasoning"] as? String,
-                  !reasoning.isEmpty else {
-                
+                  let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                 addFallbackMessage()
                 return
             }
             
-            let message = ChatMessage.gptMessage(reasoning)
-            messages.append(message)
+            // First try to use reasoning field (clean text)
+            if let reasoning = jsonObject["reasoning"] as? String,
+               !reasoning.isEmpty {
+                let message = ChatMessage.gptMessage(reasoning)
+                DispatchQueue.main.async {
+                    self.messages.append(message)
+                }
+                return
+            }
+            
+            // Fallback to raw_llm_response if reasoning is missing
+            if let rawResponse = jsonObject["raw_llm_response"] as? String,
+               !rawResponse.isEmpty {
+                let message = ChatMessage.gptMessage(rawResponse)
+                DispatchQueue.main.async {
+                    self.messages.append(message)
+                }
+                return
+            }
+            
+            addFallbackMessage()
             
         } catch {
             logger.logError("JSON parsing error: \(error.localizedDescription), JSON: \(response)")
@@ -108,7 +124,9 @@ class ChatViewModel: ObservableObject {
     
     private func addFallbackMessage() {
         let message = ChatMessage.gptMessage("Thinking...", type: .thinking)
-        messages.append(message)
+        DispatchQueue.main.async {
+            self.messages.append(message)
+        }
     }
     
     private func logDebugInfo(_ content: String) {
@@ -123,12 +141,23 @@ struct ChatParser {
     static func extractReasoningFromJSON(_ jsonString: String) -> String? {
         do {
             guard let data = jsonString.data(using: .utf8),
-                  let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let reasoning = json["reasoning"] as? String,
-                  !reasoning.isEmpty else {
+                  let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                 return nil
             }
-            return reasoning
+            
+            // First try to use reasoning field (clean text)
+            if let reasoning = json["reasoning"] as? String,
+               !reasoning.isEmpty {
+                return reasoning
+            }
+            
+            // Fallback to raw_llm_response if reasoning is missing
+            if let rawResponse = json["raw_llm_response"] as? String,
+               !rawResponse.isEmpty {
+                return rawResponse
+            }
+            
+            return nil
         } catch {
             return nil
         }

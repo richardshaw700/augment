@@ -5,6 +5,13 @@ This module handles dynamic feedback and guidance that gets injected into Agent 
 based on system state, action results, and context analysis.
 """
 
+# ===============================
+#  THIS IS TURNED OFF FOR NOW 
+#  ADD {dynamic_prompt} TO SYSTEM.TXT TO TURN IT BACK ON
+#  Super beta mode right now, don't trust it
+#  ===============================
+# ================================
+
 from typing import List, Dict, Any, Optional
 import logging
 from pathlib import Path

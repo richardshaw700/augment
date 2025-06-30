@@ -5,10 +5,10 @@ Examples of task completion:
 - "Go to amazon.ca, find dog food and add it to my cart" → COMPLETED when dog food is in the amazon cart
 - "Send a message to Cara that says xyz" → COMPLETED when xyz message is sent to Cara
 
-If the task IS COMPLETED, respond with: {{"action": "ui_inspect", "parameters": {{}}, "reasoning": "Task completed successfully - [brief description of what was accomplished]"}}
+If the task IS COMPLETED, respond with: {"action": "ui_inspect", "parameters": {}, "reasoning": "Task completed successfully - [brief description of what was accomplished]"}
 
 CRITICAL INSTRUCTIONS:
-1. ALWAYS start with "ui_inspect" to see current UI state
-2. Apps must be opened first before you can inspect their UI
-3. Always provide reasoning for each action
-4. EVALUATE GOAL COMPLETION BEFORE EVERY ACTION - Don't continue if task is done!
+1. Apps must be opened first before you can inspect their UI
+2. Always provide reasoning for each action
+3. EVALUATE GOAL COMPLETION BEFORE EVERY ACTION - Do not stop until the task is done. Do not continue if the task is done.
+4. For "add to cart" shopping tasks, you MUST CONFIRM the item is IN THE CART in the UI state for the task to be completed

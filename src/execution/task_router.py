@@ -18,7 +18,7 @@ from src.agent_engine.dynamic_prompts import inject_action_blueprint_guidance
 class TaskRouter:
     """Routes tasks to appropriate execution systems"""
     
-    def __init__(self, debug: bool = True, max_iterations: int = 20):
+    def __init__(self, debug: bool = True, max_iterations: int = 100):
         # Initialize execution systems
         from src.config.llm_config import LLMConfig
         from src.actions.action_executor import ActionExecutor

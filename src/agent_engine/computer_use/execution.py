@@ -98,12 +98,43 @@ class TaskExecutor:
             return result
         
         elif action == "scroll":
-            result = await self.system_executor.execute_scroll(
+            # Execute the scroll action
+            scroll_result = await self.system_executor.execute_scroll(
                 direction=parameters.get("direction", "down"),
                 amount=parameters.get("amount", 3)
             )
-            self.performance.end_operation(f"{action} action", start_time, f"Scrolled {parameters.get('direction', 'down')}")
-            return result
+            
+            # If scroll succeeded, automatically inspect UI to get fresh state
+            if scroll_result.success:
+                print("🔄 Auto-inspecting UI after scroll...")
+                ui_result = await self.ui_executor.execute_ui_inspect()
+                
+                if ui_result.success and ui_result.ui_state:
+                    # Update UI state manager with fresh state
+                    self.ui_state_manager.set_ui_state(ui_result.ui_state)
+                    
+                    # Combine scroll output with UI update notification
+                    combined_output = f"{scroll_result.output} + UI refreshed"
+                    
+                    # Return enhanced result with fresh UI state
+                    enhanced_result = ActionResult(
+                        success=True,
+                        output=combined_output,
+                        ui_state=ui_result.ui_state  # Include fresh UI state for next prompt
+                    )
+                    
+                    self.performance.end_operation(f"{action} action", start_time, f"Scrolled {parameters.get('direction', 'down')} + UI refreshed")
+                    print("✅ Scroll completed with automatic UI refresh")
+                    return enhanced_result
+                else:
+                    # Scroll succeeded but UI inspect failed - still return scroll success
+                    print("⚠️ Scroll succeeded but UI inspect failed")
+                    self.performance.end_operation(f"{action} action", start_time, f"Scrolled {parameters.get('direction', 'down')} (UI refresh failed)")
+                    return scroll_result
+            else:
+                # Scroll failed - return scroll failure without attempting UI inspect
+                self.performance.end_operation(f"{action} action", start_time, f"Scroll failed: {scroll_result.error}")
+                return scroll_result
         
         else:
             result = ActionResult(success=False, output="", error=f"Unknown action: {action}")

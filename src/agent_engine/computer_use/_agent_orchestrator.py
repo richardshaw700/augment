@@ -9,6 +9,7 @@ Think of this as a conductor's score - it tells each musician when to play.
 
 import asyncio
 from typing import Dict, List, Any, Optional
+import time
 
 from .core import AgentCore
 from .execution import TaskExecutor
@@ -53,7 +54,7 @@ class AgentOrchestrator:
         """Get LLM decision"""
         return await self.communicator.get_decision(user_message, ui_state)
     
-    async def execute_task(self, task: str, max_iterations: int = 20) -> List[Dict]:
+    async def execute_task(self, task: str, max_iterations: int = 100) -> List[Dict]:
 
         # === SETUP PHASE ===
         print("🚀 Starting Agent Computer Use")
@@ -70,20 +71,33 @@ class AgentOrchestrator:
         while not session.is_complete():
             print(f"\n🔄 Iteration {session.iteration + 1}/{max_iterations}")
             
-            # 1. Context Preparation
-            task_message = self._build_task_message(session)
-            
-            # 2. Inject Context-Specific Guidance
+            # 1. Inject Context-Specific Guidance
             self.communicator.context_manager.inject_messages_guidance_for_task(task, session.current_ui_state)
             
-            # 3. Get LLM Decision
-            llm_response = await self.communicator.get_decision(task_message, session.current_ui_state)
-            print(f"🤖 Agent Response: {llm_response}")
+            # 2. Get LLM Decision (task context now injected into system prompt)
+            llm_response = await self.communicator.get_decision(task, session.iteration, session.current_ui_state)
             
-            # 4. Parse LLM Response to Action
+            # Format response for Swift frontend consumption
+            timestamp = f"[{time.strftime('%H:%M:%S.%f')[:-3]}]"
+            print(f"⬇️ {timestamp} RESPONSE FROM LLM:")
+            
+            # Parse the JSON to get the action/reasoning
             try:
                 parsed_decision = self._parse_llm_response(llm_response)
+                
+                # Create enhanced JSON with raw response included
+                enhanced_response = parsed_decision.copy()
+                enhanced_response["raw_llm_response"] = llm_response
+                
+                # Output the enhanced JSON for Swift frontend
+                import json
+                print(json.dumps(enhanced_response, indent=2))
+                print("=" * 50)
+                
             except Exception as e:
+                # If parsing fails, still output the raw response
+                print(f'{{"action": "error", "parameters": {{}}, "reasoning": "Failed to parse LLM response", "raw_llm_response": {json.dumps(llm_response)}}}')
+                print("=" * 50)
                 print(f"❌ Failed to parse Agent response: {e}")
                 session.consecutive_failures += 1
                 if session.consecutive_failures >= 3:
@@ -98,7 +112,7 @@ class AgentOrchestrator:
             execution_result = await self.executor.execute_action(parsed_decision)
             
             # 7. Process Result and Update Session
-            session = self.monitor.process_result(session, parsed_decision, execution_result)
+            session = self.monitor.process_result(session, parsed_decision, execution_result, llm_response)
             
             # 8. Check Completion Status
             if session.completion_reason != "max_iterations_reached":
@@ -108,12 +122,7 @@ class AgentOrchestrator:
         final_results = self.monitor.finalize_task(session)
         return final_results
     
-    def _build_task_message(self, session) -> str:
-        """Build task message based on session iteration"""
-        if session.iteration == 0:
-            return f"Task: {session.task}\n\nPlease start by inspecting the current UI state to understand what's on screen."
-        else:
-            return f"Continue with the task: {session.task}\n\nWhat should be the next action?"
+
     
     def _parse_llm_response(self, llm_response: str) -> Dict[str, Any]:
         """Parse LLM response JSON"""

@@ -1,9 +1,11 @@
 You are an AI assistant that can control a computer by generating structured action commands.
 
-AVAILABLE APPS
-{available_applications}
+{task_context}
 
 {action_guide}
+
+AVAILABLE APPS
+{available_applications}
 
 {coordinate_guide}
 
@@ -11,4 +13,14 @@ AVAILABLE APPS
 
 {response_format}
 
-{dynamic_prompt}
+{conversation_history}
+
+UI STATE: 
+- Below is the ui state from the very last ui_inspect in the CONVERSATION HISTORY above
+- If your next action is click, select the relevant grid_position from below 
+- If actions since the last ui_inspect were focusing text input or typing it's safe to assume the ui state hasn't changed
+- If actions since the last ui_inspect were scroll, changing windows, or clicking buttons that change the UI, ui_inspect should be your next action
+- If you're in a web browser and confident you're on the right page but don't see the element you're looking for, try scrolling down {windowHeight75Calc} pixels and inspecting again
+- If you see a popup for cookies or location request, respond to the popup first or else it will block interaction with the webpage
+
+{ui_state}
