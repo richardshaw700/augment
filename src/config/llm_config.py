@@ -30,8 +30,14 @@ class LLMConfig:
         "ollama_tiny": "smollm2:360m",         # untested
     }
     
-    # Default selected LLM
+    # Default selected LLM (can be overridden by LLM_MODEL env var)
     _DEFAULT_SELECTED = "gemini_25_flash"
+    
+    @classmethod
+    def get_selected_key(cls) -> str:
+        """Get the selected LLM key from environment or default"""
+        load_dotenv()
+        return os.getenv('LLM_MODEL', cls._DEFAULT_SELECTED)
     
     @classmethod
     def get_available_providers(cls) -> Dict[str, str]:
@@ -41,8 +47,8 @@ class LLMConfig:
     @classmethod
     def get_selected_provider(cls) -> Tuple[str, str]:
         """Get the currently selected LLM provider and model"""
-        selected_key = cls._DEFAULT_SELECTED
-        model = cls._PROVIDERS[selected_key]
+        selected_key = cls.get_selected_key()
+        model = cls._PROVIDERS.get(selected_key, cls._PROVIDERS[cls._DEFAULT_SELECTED])
         
         # Determine the correct provider type from the selected LLM
         # Note: The provider name should match what create_llm_adapter() expects
@@ -56,11 +62,6 @@ class LLMConfig:
             provider = "openai"  # fallback
             
         return provider, model
-    
-    @classmethod
-    def get_selected_key(cls) -> str:
-        """Get the selected LLM key"""
-        return cls._DEFAULT_SELECTED
     
     @classmethod
     def validate_environment(cls) -> bool:
